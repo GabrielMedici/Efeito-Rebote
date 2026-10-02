@@ -37,12 +37,10 @@ COMUNIDADE = [
 
 DIMENSAO_PEDAGOGICA = [
     ("Justificativa", [
-        "A extensão universitária integra, ao lado do ensino e da pesquisa, o tripé da educação superior brasileira: a Constituição "
-        "Federal, em seu art. 207, estabelece a indissociabilidade entre ensino, pesquisa e extensão. A Resolução CNE/CES nº 7/2018, "
-        "que regulamenta a Meta 12.7 do Plano Nacional de Educação (Lei nº 13.005/2014), determina que as atividades de extensão "
-        "componham no mínimo 10% da carga horária curricular dos cursos de graduação e orienta que sejam dirigidas prioritariamente "
-        "a áreas de grande pertinência social. No curso de Direito, essa vivência permite ao acadêmico compreender a aplicação "
-        "prática das normas jurídicas e os efeitos que delas decorrem sobre a vida das pessoas.",
+        "A extensão universitária integra, ao lado do ensino e da pesquisa, o tripé que sustenta a educação superior brasileira. A Constituição Federal de 1988, em seu art. 207, estabelece que as universidades obedecerão ao princípio da indissociabilidade entre ensino, pesquisa e extensão (BRASIL, 1988), o que evidencia que a formação acadêmica não deve se restringir ao ambiente da sala de aula, mas alcançar também o contato com a realidade social. Nesse sentido, a Resolução CNE/CES nº 7, de 18 de dezembro de 2018, estabelece as Diretrizes para a Extensão na Educação Superior Brasileira, editada para regulamentar a Meta 12.7 do Plano Nacional de Educação então vigente (Lei nº 13.005/2014), determinando que as atividades de extensão componham, no mínimo, 10% do total da carga horária curricular dos cursos de graduação, devendo integrar a matriz curricular (BRASIL, 2014; BRASIL, 2018).",
+        "Para além de uma exigência normativa, a extensão aproxima o estudante das demandas concretas da sociedade. As diretrizes nacionais orientam que tais ações sejam direcionadas, prioritariamente, a áreas de grande pertinência social (BRASIL, 2018), permitindo que o conhecimento produzido no ambiente universitário retorne à comunidade sob a forma de reflexão, orientação e proposição de soluções. No âmbito do curso de Direito, essa vivência revela-se especialmente relevante, uma vez que possibilita ao acadêmico compreender a aplicação prática das normas jurídicas e os efeitos que delas decorrem sobre a vida dos indivíduos.",
+        "O projeto \"Efeito Rebote: o custo da reincidência\" insere-se nessa proposta ao abordar o sistema prisional brasileiro sob a perspectiva da reincidência criminal e de seus reflexos sociais e econômicos. Ao tratar desse tema, os acadêmicos são conduzidos a relacionar os conteúdos estudados em disciplinas como Direito Penal, Direito Processual Penal e Execução Penal a uma questão que repercute diretamente na segurança pública e na destinação dos recursos estatais. Dessa forma, o projeto busca contribuir para o desenvolvimento do senso crítico, da responsabilidade social e da capacidade de análise técnico-jurídica de seus participantes.",
+        "Além do aprendizado teórico, a experiência extensionista favorece o desenvolvimento de competências práticas, tais como o trabalho em equipe, a organização de atividades, a comunicação com o público e a gestão de recursos, habilidades igualmente exigidas no exercício profissional. Assim, o projeto de extensão cumpre dupla função: contribui para a formação de acadêmicos mais preparados para a atuação jurídica e reafirma o compromisso da instituição de ensino superior com a transformação da realidade social.",
         "O sistema carcerário brasileiro atravessa uma crise estrutural reconhecida pelo Supremo Tribunal Federal, no julgamento da "
         "ADPF 347, como um \"estado de coisas inconstitucional\". A Lei de Execução Penal (Lei nº 7.210/1984) assegura à pessoa presa "
         "assistência material e assistência à saúde de caráter preventivo e curativo (arts. 12, 14 e 41). A literatura científica, "
@@ -73,8 +71,7 @@ DIMENSAO_PEDAGOGICA = [
         "A intervenção proposta não pretende solucionar o problema estrutural da assistência material no sistema prisional nem "
         "substituir a responsabilidade estatal pela garantia desses direitos. A arrecadação e a entrega de materiais de higiene "
         "constituem uma intervenção pontual, voltada à mitigação de uma das consequências concretas dessa insuficiência, que permite "
-        "aos acadêmicos observar na prática os efeitos sociais e institucionais do problema estudado e relacioná-los aos conteúdos de "
-        "Direito Penal, Direito Processual Penal e Execução Penal.",
+        "aos acadêmicos observar na prática os efeitos sociais e institucionais do problema estudado.",
     ]),
     ("Objetivo da atividade na comunidade", [
         "Contribuir para a efetivação da assistência material às pessoas privadas de liberdade da PEM, da CCM e da CPIM, por meio da "
@@ -210,12 +207,13 @@ DIMENSAO_PEDAGOGICA = [
         "O quantitativo arrecadado será acompanhado semanalmente em relação à meta.",
     ]),
     ("Referências", [
-        "BRASIL. Constituição (1988). Constituição da República Federativa do Brasil. Brasília, DF: Presidência da República, 1988.",
+        "BRASIL. [Constituição (1988)]. Constituição da República Federativa do Brasil de 1988. Brasília, DF: Presidência da República, 1988.",
         "BRASIL. Lei nº 7.210, de 11 de julho de 1984. Institui a Lei de Execução Penal. Brasília, DF: Presidência da República, 1984.",
-        "BRASIL. Lei nº 13.005, de 25 de junho de 2014. Aprova o Plano Nacional de Educação - PNE e dá outras providências. "
+        "BRASIL. Lei nº 13.005, de 25 de junho de 2014. Aprova o Plano Nacional de Educação – PNE e dá outras providências. "
         "Brasília, DF: Presidência da República, 2014.",
         "BRASIL. Ministério da Educação. Conselho Nacional de Educação. Câmara de Educação Superior. Resolução nº 7, de 18 de "
-        "dezembro de 2018. Estabelece as Diretrizes para a Extensão na Educação Superior Brasileira. Brasília, DF: MEC, 2018.",
+        "dezembro de 2018. Estabelece as Diretrizes para a Extensão na Educação Superior Brasileira e regimenta o disposto na Meta "
+        "12.7 da Lei nº 13.005/2014. Brasília, DF: MEC, 2018.",
         "BRASIL. Supremo Tribunal Federal. Arguição de Descumprimento de Preceito Fundamental 347. Brasília, DF: STF, 2023.",
         "DIUANA, Vilma et al. Saúde em prisões: representações e práticas dos agentes de segurança penitenciária no Rio de Janeiro, "
         "Brasil. Cadernos de Saúde Pública, v. 24, n. 8, p. 1887-1896, 2008.",
