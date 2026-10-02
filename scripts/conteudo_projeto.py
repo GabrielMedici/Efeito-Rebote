@@ -87,7 +87,7 @@ DIMENSAO_PEDAGOGICA = [
         "Criação e Audiovisual, Pesquisa e Escrita, e Logística e Arrecadação —, e todo o conteúdo produzido é encaminhado à professora "
         "responsável para análise e aprovação antes da execução ou publicação.",
         "Itens arrecadados. Em conformidade com as restrições de segurança das unidades prisionais, serão aceitos exclusivamente: "
-        "(1) escova dental simples; (2) creme dental em tubo de até 100 g; (3) aparelho de barbear descartável de duas lâminas; "
+        "(1) escova dental simples; (2) creme dental de até 100 g; (3) aparelho de barbear descartável de duas lâminas; "
         "(4) sabão em pó em pacote de até 500 g; e (5) detergente em embalagem transparente de até 500 ml. Itens fora dessas "
         "especificações serão separados e destinados a outras instituições de caridade do município.",
         "Arrecadação direta. Caixas de coleta identificadas com a marca \"PONTO DE COLETA: EFEITO REBOTE\" e com a lista dos itens "
@@ -200,7 +200,7 @@ REGULAMENTO = [
     ("p", "A campanha tem por finalidade arrecadar itens de higiene pessoal destinados às pessoas privadas de liberdade da Penitenciária Estadual de Maringá (PEM), da Casa de Custódia de Maringá (CCM) e da Colônia Penal Industrial de Maringá (CPIM), por meio de doações diretas e de rifa solidária cujo valor será integralmente convertido na compra desses itens."),
     ("h", "2. Itens aceitos"),
     ("li", "Escova dental simples."),
-    ("li", "Creme dental em tubo de até 100 g."),
+    ("li", "Creme dental de até 100 g."),
     ("li", "Aparelho de barbear descartável de duas lâminas."),
     ("li", "Sabão em pó em pacote de até 500 g."),
     ("li", "Detergente em embalagem transparente de até 500 ml."),
