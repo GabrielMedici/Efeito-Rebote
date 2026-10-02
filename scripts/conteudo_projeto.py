@@ -135,10 +135,13 @@ DIMENSAO_PEDAGOGICA = [
         "contatos, o que distribui a responsabilidade de forma igualitária e dispensa a organização de eventos. Para que a rifa também cumpra função de "
         "conscientização, cada bilhete trará o perfil do projeto no Instagram (@efeitorebote.oficial) e um QR Code de "
         "acesso a ele, de modo que o comprador, ao guardar o bilhete, tenha acesso ao conteúdo informativo do projeto. Como cada "
-        "acadêmico vende de forma independente, o controle é centralizado em meio digital: a cada venda, o vendedor preenche o canhoto "
-        "e registra, no mesmo dia, o número do bilhete, o nome e o telefone do comprador e a forma de pagamento em formulário "
-        "on-line único, que constitui o registro oficial da rifa. O pagamento é feito preferencialmente por PIX diretamente na conta "
-        "da comissão financeira, com o número do bilhete na descrição, de modo que o dinheiro não fique com o vendedor; valores em "
+        "acadêmico vende de forma independente, o controle é centralizado no sistema on-line de vendas desenvolvido pela turma "
+        "(aplicativo web acessado pelo celular com o e-mail cadastrado do acadêmico): a cada venda, o vendedor preenche o canhoto e "
+        "registra no sistema, no mesmo dia, os números vendidos, o nome e o telefone do comprador e a forma de pagamento; o sistema só "
+        "permite registrar números do bloco do próprio acadêmico, impede que um número seja vendido duas vezes e constitui o registro "
+        "oficial da rifa. Para pagamentos por PIX, o sistema gera o código com o valor exato e a identificação do pedido, e o pagamento "
+        "cai diretamente na conta de recebimento da comissão financeira — conta de uso exclusivo da rifa, indicada pela comissão e "
+        "aprovada pela professora responsável —, de modo que o dinheiro não fique com o vendedor; valores em "
         "espécie são entregues à comissão nos acertos semanais, realizados às segundas-feiras nos encontros, quando o registro é "
         "conferido com os extratos. Somente participam do sorteio os bilhetes registrados e pagos até 30/10/2026, às 23h59; a lista "
         "dos números participantes, sem dados pessoais, é publicada no perfil do projeto em 01/11/2026. O prêmio será um tablet "
@@ -158,9 +161,27 @@ DIMENSAO_PEDAGOGICA = [
         "Visitas técnicas e entrega. As visitas à PEM, à CCM e à CPIM estão previstas para 04 e 05 de novembro, em grupos de até 50 "
         "alunos, com acompanhamento docente obrigatório e transporte institucional, observadas as normas de segurança das unidades. "
         "A entrega dos itens arrecadados será integrada às visitas e registrada em termo de entrega com os quantitativos por unidade.",
-        "Prestação de contas e frequência. Ao final, será elaborado relatório de transparência com o quantitativo arrecadado e "
+        "Proteção de dados. O nome e o telefone dos compradores são coletados exclusivamente para identificação dos bilhetes e "
+        "contato com o ganhador, ficam acessíveis apenas ao vendedor e à comissão financeira, não são divulgados e serão eliminados "
+        "após a entrega do prêmio, em observância à Lei Geral de Proteção de Dados (Lei nº 13.709/2018).",
+        "Impressão dos materiais. Os bilhetes (480 folhas A4, cinco bilhetes por folha, seis folhas por acadêmico) e os demais materiais "
+        "impressos serão produzidos com a cota de impressão institucional, [PENDENTE: confirmar com a coordenação se a cota comporta "
+        "esse volume]; não haverá gasto com impressão retirado dos recursos destinados aos itens.",
+        "Prestação de contas e frequência. A comissão financeira confirma cada pagamento no sistema após conferir o extrato ou receber "
+        "o valor em espécie; cada confirmação gera automaticamente o lançamento correspondente em livro-caixa que não admite edição nem "
+        "exclusão (correções apenas por estorno), e toda despesa exige número e imagem da nota fiscal. O sistema verifica "
+        "continuamente se as entradas correspondem aos bilhetes confirmados e se o saldo confere, e uma página pública de "
+        "transparência, divulgada no perfil do projeto, apresenta os números participantes e os valores arrecadados e gastos, sem "
+        "dados pessoais, levando à sociedade o acompanhamento da ação. Ao final, será elaborado relatório de transparência com o quantitativo arrecadado e "
         "entregue por tipo de item e por unidade, o valor obtido com a rifa e os comprovantes de compra. A frequência dos acadêmicos é "
         "registrada em cada encontro, e as entregas individuais descritas no cronograma compõem o relatório final do projeto.",
+        "Ajustes em relação ao pré-projeto aprovado. Esta versão mantém a fundamentação, os objetivos e a meta de referência de mais de "
+        "8.000 itens do pré-projeto (Anexo 3) e incorpora: (1) a lista atualizada de itens, que acrescenta o sabão em pó e define o "
+        "limite de cada produto; como o pré-projeto especificava creme dental branco, a lista final — tipo, cor, embalagem e forma de "
+        "entrega — será validada com a PEM, a CCM e a CPIM antes de qualquer aquisição; (2) a rifa solidária como fonte complementar de "
+        "recursos: a divulgação permanece de custo zero, e a receita da rifa, deduzido o prêmio, destina-se exclusivamente à compra de "
+        "itens; (3) as ações de mobilização e junto à sociedade; e (4) o sistema on-line de controle de vendas e prestação de contas. "
+        "O quantitativo arrecadado será acompanhado semanalmente em relação à meta.",
     ]),
 ]
 
@@ -182,7 +203,7 @@ CRONOGRAMA = [
          entrega="Contribuição individual registrada na construção do projeto (seção redigida, peça produzida ou proposta apresentada)."),
     dict(titulo="Execução Penal e Assistência Material", etapa=E3, carga=None,
          objetivos="Compreender os direitos assegurados pela LEP (arts. 12, 14 e 41) e a estrutura da PEM, da CCM e da CPIM; identificar lacunas de conhecimento da turma.",
-         atividades="Exposição dialogada; leitura orientada da LEP e das Regras de Mandela; levantamento de dúvidas a serem investigadas; apresentação das normas da Polícia Penal do Paraná sobre itens permitidos.",
+         atividades="Exposição dialogada; leitura orientada da LEP e das Regras de Mandela; levantamento de dúvidas a serem investigadas; apresentação das normas da Polícia Penal do Paraná sobre itens permitidos; contato da equipe de Logística e Arrecadação com a PEM, a CCM e a CPIM para validar a lista de itens e as condições de entrega.",
          entrega="Fichamento sobre a assistência material na execução penal."),
     dict(titulo="Lançamento da Campanha e Distribuição da Rifa", etapa=E5, carga=None,
          objetivos="Iniciar a campanha de conscientização e organizar a rifa solidária, mediante as aprovações necessárias.",
@@ -206,7 +227,7 @@ CRONOGRAMA = [
          entrega="Registro da triagem realizada pela equipe."),
     dict(titulo="Balanço da Rifa e Aquisição do Prêmio", etapa=E5, carga=None,
          objetivos="Avaliar o andamento das vendas e garantir a aquisição do prêmio com transparência.",
-         atividades="Conferência do formulário de vendas com os extratos da conta da comissão financeira; balanço por acadêmico; cotação em três lojas e aquisição do tablet com nota fiscal; reforço da divulgação junto aos acadêmicos com menos vendas.",
+         atividades="Conferência dos registros do sistema de vendas com os extratos da conta da comissão financeira; balanço por acadêmico; cotação em três lojas e aquisição do tablet com nota fiscal; reforço da divulgação junto aos acadêmicos com menos vendas.",
          entrega="Relatório descritivo da participação no balanço da rifa ou na aquisição do prêmio."),
     dict(titulo="Consolidação da Arrecadação", etapa=E5, carga=None,
          objetivos="Consolidar o quantitativo total arrecadado e organizar os itens para a entrega.",
@@ -222,7 +243,7 @@ CRONOGRAMA = [
          entrega="Checklist da equipe responsável pela logística."),
     dict(titulo="Encerramento da Rifa e Comunicação dos Resultados Parciais", etapa=E5, carga=None,
          objetivos="Encerrar a rifa com transparência e preparar a aquisição dos itens com os valores arrecadados.",
-         atividades="Acerto final de valores (prazo de vendas: 30/10); publicação da lista de números participantes (01/11); organização do sorteio transmitido ao vivo no @efeitorebote.oficial em 02/11, com ata e testemunhas; compra dos itens com nota fiscal; produção de conteúdo, previamente aprovado, sobre o quantitativo arrecadado.",
+         atividades="Acerto final de valores (prazo de vendas: 30/10); publicação da lista de números participantes (01/11); organização do sorteio transmitido ao vivo no @efeitorebote.oficial em 02/11, com ata e testemunhas; compra dos itens validados pelas unidades, com nota fiscal; produção de conteúdo, previamente aprovado, sobre o quantitativo arrecadado.",
          entrega="Relatório descritivo da participação no encerramento da rifa ou na comunicação dos resultados."),
     dict(titulo="Visitas Técnicas e Entrega dos Itens (04 e 05/11)", etapa=E5, carga=None,
          objetivos="Observar in loco a estrutura e o funcionamento das unidades e a aplicação da LEP; entregar os itens arrecadados.",
@@ -257,8 +278,8 @@ REGULAMENTO = [
     ("li", "Bilhetes numerados de 0001 a 2400, ao valor unitário de R$ 5,00."),
     ("li", "Cada acadêmico participante recebe um bloco de 30 bilhetes em sequência, registrado em planilha de distribuição."),
     ("li", "Cada bilhete traz o perfil do projeto no Instagram (@efeitorebote.oficial) e um QR Code de acesso a ele, para que o comprador conheça o projeto."),
-    ("li", "Cada acadêmico vende seus bilhetes de forma independente. A cada venda, preenche o canhoto (nome e telefone do comprador) e registra no mesmo dia, no formulário on-line oficial da rifa, o número do bilhete, os dados do comprador e a forma de pagamento. O formulário é o registro oficial para o sorteio."),
-    ("li", "O pagamento é feito preferencialmente por PIX diretamente na conta da comissão financeira ([PENDENTE: chave PIX da comissão]), com o número do bilhete na descrição. Valores em espécie são entregues à comissão nos acertos semanais, às segundas-feiras, nos encontros do projeto."),
+    ("li", "Cada acadêmico vende seus bilhetes de forma independente. A cada venda, preenche o canhoto (nome e telefone do comprador) e registra no mesmo dia, no sistema on-line de vendas do projeto, os números vendidos, os dados do comprador e a forma de pagamento. O sistema é o registro oficial para o sorteio: aceita apenas números do bloco do próprio acadêmico e impede venda duplicada."),
+    ("li", "O pagamento é feito preferencialmente por PIX, pelo código gerado no sistema (valor exato e identificação do pedido), diretamente na conta de recebimento de uso exclusivo da rifa, indicada pela comissão financeira e aprovada pela professora responsável ([PENDENTE: chave PIX da comissão]). Valores em espécie são entregues à comissão nos acertos semanais, às segundas-feiras, nos encontros do projeto."),
     ("li", "Prazo final de venda, registro e pagamento: 30/10/2026, às 23h59. Bilhetes não registrados ou não pagos até esse horário não concorrem."),
     ("li", "Em 01/11/2026, a lista dos números participantes (sem dados pessoais) é publicada no @efeitorebote.oficial."),
     ("li", "Os canhotos e os bilhetes não vendidos são entregues à comissão financeira no primeiro encontro após o sorteio, para conferência e arquivo."),
@@ -266,6 +287,7 @@ REGULAMENTO = [
     ("li", "Sorteio: 02/11/2026, às [PENDENTE: horário], com transmissão ao vivo no @efeitorebote.oficial. Os números da lista oficial são impressos, dobrados e depositados em urna; um número é retirado na presença da professora responsável e de duas testemunhas, com lavratura de ata e gravação do vídeo."),
     ("li", "O resultado será divulgado nos canais do projeto e o ganhador será contatado pelo telefone informado no canhoto, em até 24 horas após o sorteio, tendo 30 dias para retirar o prêmio. Se o prêmio não for retirado nesse prazo, será realizado novo sorteio entre os demais números participantes, divulgado nos mesmos canais."),
     ("li", "A realização da rifa está condicionada à autorização da instituição, observadas as normas institucionais e a legislação aplicável."),
+    ("li", "Dados pessoais: nome e telefone do comprador servem apenas para identificar o bilhete e contatar o ganhador; não são divulgados e serão eliminados após a entrega do prêmio (Lei nº 13.709/2018)."),
     ("h", "5. Destinação dos recursos e prestação de contas"),
     ("p", "Os valores arrecadados com a rifa, deduzido o custo de aquisição do prêmio, serão utilizados exclusivamente na compra dos itens listados no item 2, mediante nota fiscal. A comissão financeira, composta por [PENDENTE: integrantes da comissão financeira], manterá o controle de entradas e saídas. Ao final, será apresentado relatório de transparência à professora responsável e à turma, com o valor arrecadado, os comprovantes de compra e o quantitativo entregue por unidade."),
     ("h", "6. Entrega"),
