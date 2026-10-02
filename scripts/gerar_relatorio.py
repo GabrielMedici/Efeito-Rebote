@@ -31,6 +31,10 @@ def cabecalho_logos(doc, altura=1.4):
 
 
 def base(doc):
+    cp = doc.core_properties
+    cp.author = cp.last_modified_by = "Acadêmicos do 3º semestre noturno – Turma B"
+    cp.comments = ""
+    cp.title = "Projeto de Extensão Efeito Rebote"
     s = doc.sections[0]
     s.page_width, s.page_height = Cm(21), Cm(29.7)
     s.left_margin, s.right_margin, s.top_margin, s.bottom_margin = Cm(1.5), Cm(1.5), Cm(1.4), Cm(1.8)
