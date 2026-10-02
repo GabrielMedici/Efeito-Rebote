@@ -28,6 +28,7 @@ Uma tarefa só fica `done` quando:
 - Skills: `relatorio-extensao`, `post-redes`, `rifa` e `manutencao`.
 - Agentes: `revisor` (confere entregáveis contra as regras; barato) e `pesquisador` (busca fontes e dados sobre o sistema prisional).
 - Geradores: `python3 scripts/gerar_relatorio.py` (projeto e anexos), `scripts/gerar_rifas.py` (folhas de rifa), `scripts/gerar_controle_rifa.py` (planilha).
+- App de vendas: `vendas/` (Next.js + Supabase). Valide com `npm test && npm run test:db && npm run build` dentro de `vendas/`.
 - Para converter `.docx` em PDF: `soffice --headless --convert-to pdf <arquivo> --outdir entregas/`.
 
 ## Encerramento de sessão

@@ -60,6 +60,17 @@
       ],
       "status": "not-started",
       "evidence": ""
+    },
+    {
+      "id": "F08",
+      "name": "Facilitador de vendas da rifa (Next.js + Supabase)",
+      "description": "App em vendas/: vendedor registra vendas e gera PIX; comissão confirma, lança despesas com NF; livro-caixa imutável, auditoria e conciliacao(); página pública de transparência.",
+      "deadline": "antes do início das vendas",
+      "dependencies": [
+        "F02"
+      ],
+      "status": "in-progress",
+      "evidence": "2026-10-02: npm test 5/5; test:db com 15 bloqueios e conciliação ok, incluindo entrada forjada detectada; next build ok. Falta: deploy no Supabase e na Vercel e teste com contas reais."
     }
   ]
 }
