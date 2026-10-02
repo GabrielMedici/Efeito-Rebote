@@ -47,15 +47,15 @@ DIMENSAO_PEDAGOGICA = [
         "ADPF 347, como um \"estado de coisas inconstitucional\". A Lei de Execução Penal (Lei nº 7.210/1984) assegura à pessoa presa "
         "assistência material e assistência à saúde de caráter preventivo e curativo (arts. 12, 14 e 41). A literatura científica, "
         "contudo, documenta escassez crônica de insumos básicos de higiene nas unidades prisionais, o que submete os custodiados a "
-        "condições degradantes de habitação e convivência (SÁ et al., 2008; MINAYO; RIBEIRO, 2016; LÔBO et al., 2022). Diante dessa "
+        "condições degradantes de habitação e convivência (DIUANA et al., 2008; MINAYO; RIBEIRO, 2016; LÔBO et al., 2022). Diante dessa "
         "insuficiência, os familiares frequentemente assumem o custo dos itens de higiene e dos medicamentos de uso rotineiro "
-        "(SÁ et al., 2008; MINAYO; RIBEIRO, 2016).",
+        "(DIUANA et al., 2008; MINAYO; RIBEIRO, 2016).",
         "Os estudos indicam que a higiene precária mantém associação multifatorial com o adoecimento no cárcere, atuando em conjunto "
         "com a superlotação, a ventilação inadequada e a alimentação deficiente (GOIS et al., 2012; MINAYO; RIBEIRO, 2016). Em "
         "inquérito com 1.573 presos do Rio de Janeiro, Minayo e Ribeiro (2016) registraram elevada prevalência autorreferida de "
         "doenças de pele, com destaque para alergias e dermatites (43,4%). Quando o preso adoece, o Estado mobiliza atendimento interno, "
         "medicamentos, exames, agentes prisionais, escoltas e a rede externa do SUS; em unidades paulistas, a falta de escolta foi o "
-        "problema mais citado nos encaminhamentos de saúde, relatado por 76,8% das penitenciárias masculinas (FERNANDES et al., 2014). "
+        "problema mais citado nos encaminhamentos de saúde, relatado por 53 das 69 penitenciárias masculinas pesquisadas (FERNANDES et al., 2014). "
         "Esses estudos, porém, não apresentam valores em reais nem comparam o custo da prevenção com o do tratamento; por isso, o "
         "projeto trata a relação entre prevenção e redução de custos como hipótese, e não como fato comprovado.",
         "Nesse contexto, o projeto utiliza a expressão \"efeito rebote\" como categoria de análise para compreender o encadeamento de "
@@ -63,6 +63,13 @@ DIMENSAO_PEDAGOGICA = [
         "para o agravamento das condições sanitárias, gerando demandas posteriores de maior complexidade que retornam ao próprio Estado "
         "(atendimentos, deslocamentos e escoltas) e que alcançam também as famílias, sobre as quais recai parte dos custos, com "
         "prejuízo à manutenção dos vínculos durante o cumprimento da pena.",
+        "A realidade de Maringá confirma a pertinência do recorte. Relatórios de inspeção da Defensoria Pública do Paraná registraram, "
+        "em 2025, ocupação acima da capacidade nas três unidades: 1.198 presos para 960 vagas na CCM (março), 423 para 330 na CPIM e "
+        "523 para 360 na PEM (maio). Os mesmos relatórios apontam falta de creme dental e escova na CCM; falta de pasta de dente, "
+        "aparelho de barbear e escova na PEM; e, na CPIM, que o kit de higiene não vinha sendo enviado completo, sendo os itens em "
+        "falta supridos pelo Conselho da Comunidade (PARANÁ, 2025a; 2025b; 2025c). Trata-se de dados declarados pelas direções e referentes a um "
+        "único dia de inspeção, mas que indicam, no próprio território do projeto, a carência dos itens que a campanha pretende "
+        "arrecadar.",
         "A intervenção proposta não pretende solucionar o problema estrutural da assistência material no sistema prisional nem "
         "substituir a responsabilidade estatal pela garantia desses direitos. A arrecadação e a entrega de materiais de higiene "
         "constituem uma intervenção pontual, voltada à mitigação de uma das consequências concretas dessa insuficiência, que permite "
@@ -210,6 +217,8 @@ DIMENSAO_PEDAGOGICA = [
         "BRASIL. Ministério da Educação. Conselho Nacional de Educação. Câmara de Educação Superior. Resolução nº 7, de 18 de "
         "dezembro de 2018. Estabelece as Diretrizes para a Extensão na Educação Superior Brasileira. Brasília, DF: MEC, 2018.",
         "BRASIL. Supremo Tribunal Federal. Arguição de Descumprimento de Preceito Fundamental 347. Brasília, DF: STF, 2023.",
+        "DIUANA, Vilma et al. Saúde em prisões: representações e práticas dos agentes de segurança penitenciária no Rio de Janeiro, "
+        "Brasil. Cadernos de Saúde Pública, v. 24, n. 8, p. 1887-1896, 2008.",
         "FERNANDES, Luiz Henrique et al. Necessidade de aprimoramento do atendimento à saúde no sistema carcerário. Revista de Saúde "
         "Pública, v. 48, n. 2, p. 275-283, 2014.",
         "GOIS, Swyanne Macêdo et al. Para além das grades e punições: uma revisão sistemática sobre a saúde penitenciária. Ciência & "
@@ -218,8 +227,15 @@ DIMENSAO_PEDAGOGICA = [
         "Coletiva, v. 27, n. 12, 2022.",
         "MINAYO, Maria Cecília de Souza; RIBEIRO, Adalgisa Peixoto. Condições de saúde dos presos do estado do Rio de Janeiro, Brasil. "
         "Ciência & Saúde Coletiva, v. 21, n. 7, p. 2031-2040, 2016.",
-        "SÁ, Maria Cecília de et al. Saúde em prisões: representações e práticas dos agentes de segurança penitenciária no Rio de "
-        "Janeiro, Brasil. Cadernos de Saúde Pública, v. 24, n. 8, 2008.",
+        "PARANÁ. Defensoria Pública do Estado do Paraná. Núcleo da Política Criminal e da Execução Penal (NUPEP). Relatório de "
+        "inspeção na Casa de Custódia de Maringá (CCM). Curitiba, 2025a. Disponível em: https://www.defensoriapublica.pr.def.br/"
+        "sites/default/arquivos_restritos/files/documento/2025-03/relatorio_inspecao_ccm_1.pdf. Acesso em: 2 out. 2026.",
+        "PARANÁ. Defensoria Pública do Estado do Paraná. Núcleo da Política Criminal e da Execução Penal (NUPEP). Relatório de "
+        "inspeção na Colônia Penal Industrial de Maringá (CPIM). Curitiba, 2025b. Disponível em: https://www.defensoriapublica.pr.def.br/"
+        "sites/default/arquivos_restritos/files/documento/2025-09/relatorio_inspecao_cpim_final.pdf. Acesso em: 2 out. 2026.",
+        "PARANÁ. Defensoria Pública do Estado do Paraná. Núcleo da Política Criminal e da Execução Penal (NUPEP). Relatório de "
+        "inspeção na Penitenciária Estadual de Maringá (PEM). Curitiba, 2025c. Disponível em: https://www.defensoriapublica.pr.def.br/"
+        "sites/default/arquivos_restritos/files/documento/2025-10/relatorio_inspecao_pem.pdf. Acesso em: 2 out. 2026.",
     ]),
 ]
 

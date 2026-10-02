@@ -68,3 +68,10 @@ Os critérios são:
 
 ## Áudios da colega (01/10)
 A transcrição está em `docs/fonte/audios-transcricao.md`. Os pedidos já foram aplicados ao projeto escrito.
+
+## Dados de Maringá (inspeções da Defensoria Pública do PR, 2025; conferidos pelo pesquisador em 02/10/2026)
+- **CCM:** 1.198 presos para 960 vagas (21/03/2025). Faltaram creme dental e escova, repostos pelo Conselho da Comunidade. Houve racionamento de água.
+- **CPIM:** 423 presos para 330 vagas (ago/2025). O DEPPEN "não tem enviado o kit completo", e o Conselho da Comunidade supre a falta.
+- **PEM:** 523 presos para 360 vagas (13/05/2025). Faltavam pasta de dente, aparelho de barbear e escova. A reposição é quinzenal.
+- **Ressalva:** são dados declarados pelas direções, num único dia de inspeção. Não é série histórica.
+- O "Sá et al., 2008" da versão da turma é, na verdade, **DIUANA et al. (2008)**, Cad. Saúde Pública 24(8):1887-1896.
