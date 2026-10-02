@@ -16,7 +16,7 @@
 - Imagens do pré-projeto incluídas: logos no cabeçalho do projeto e dos anexos; Figuras 01 a 03 no campo "Identidade visual e materiais".
 
 ## Pendências do usuário
-- @ do Instagram e instituições parceiras confirmadas (igrejas, delegacias, comércios).
+- Método do sorteio (proposta: urna presencial com transmissão ao vivo) e, depois dele, os prazos. Nomes e forma de recebimento da comissão financeira. Alerta: 02/11 é feriado (Finados).
 - Arte da rifa: incluir QR Code e @ e usar numeração de 4 dígitos (sugestão: gerar a folha de impressão como tarefa F02).
 - Rifa: modelo do tablet (ver `entregas/rifa/custo-beneficio.md`), data, local e método do sorteio, comissão financeira, prazo de devolução e confirmação de que a rifa é permitida pela instituição.
 - Semestres participantes (o usuário pergunta em 03/10), datas de início e fim. A carga horária ficou como PENDENTE porque o usuário removeu a proposta.

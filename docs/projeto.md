@@ -39,9 +39,8 @@
   - cada aluno vende na sua rotina;
   - a carga fica dividida igualmente.
 - A arte está em `assets/rifa-arte-v1.jpg`. Os campos `[PRÊMIO]`, `[DATA]`, `[LOCAL]` e `[VALOR]` continuam em aberto.
-- **Prêmio:** um tablet (decidido em 02/10; modelo a definir). A análise de custo-benefício está em `entregas/rifa/custo-beneficio.md`.
+- **Prêmio:** tablet Samsung Galaxy Tab A11 (64 GB, Wi-Fi) ou equivalente; o modelo foi recomendado em 02/10 e aguarda o OK do usuário. **Sorteio:** 02/11/2026; o método ainda não foi definido. **Instagram:** @efeitorebote.oficial. **Instituição parceira:** UniCesumar. A análise de custo-benefício está em `entregas/rifa/custo-beneficio.md`.
 - **Pendentes:**
-  - modelo do tablet;
   - definir data e local do sorteio;
   - definir o método do sorteio;
   - definir o destino do dinheiro (compra dos itens).

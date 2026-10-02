@@ -113,21 +113,22 @@ DIMENSAO_PEDAGOGICA = [
         "aceitos serão instaladas em locais de grande circulação do campus, mediante autorização da instituição. A equipe de Logística "
         "e Arrecadação fará o recolhimento e a triagem semanal, registrando em planilha a quantidade de cada item recebido. Os itens "
         "serão armazenados em espaço cedido pela coordenação até a entrega.",
-        "Ações junto à sociedade. Para que o projeto alcance a comunidade externa e não apenas o ambiente acadêmico, serão "
-        "estabelecidas parcerias com instituições da comunidade de Maringá, como igrejas, delegacias e estabelecimentos comerciais, "
-        "para a instalação de pontos de coleta externos e a exposição de material informativo sobre o \"efeito rebote\" e os direitos "
-        "da pessoa presa. As instituições parceiras serão: [PENDENTE: instituições parceiras confirmadas]. Cada parceria será "
-        "formalizada mediante autorização do responsável pelo local, e os pontos externos seguirão as mesmas regras de identificação, "
-        "recolhimento, triagem e registro dos pontos do campus. Nessas ações, os acadêmicos atuarão como multiplicadores, explicando o "
-        "projeto ao público e levando a discussão sobre a realidade prisional para fora da universidade.",
+        "Ações junto à sociedade. Para que o projeto alcance a comunidade externa e não apenas o ambiente acadêmico, a rifa "
+        "funcionará também como instrumento de conscientização, pois cada bilhete leva o perfil @efeitorebote.oficial e um QR Code de "
+        "acesso ao conteúdo informativo do projeto, e os acadêmicos atuarão como multiplicadores, explicando o projeto a familiares, "
+        "amigos e colegas de trabalho no momento da venda. A instituição parceira é a UniCesumar, que cede os espaços do campus para os "
+        "pontos de coleta, o local de armazenamento, o transporte institucional e a cota de impressão. Outras instituições da "
+        "comunidade de Maringá, como igrejas, delegacias e estabelecimentos comerciais, poderão receber pontos de coleta externos e "
+        "material informativo sobre o \"efeito rebote\", mediante aprovação da professora responsável e autorização do responsável "
+        "pelo local, seguindo as mesmas regras de identificação, recolhimento, triagem e registro dos pontos do campus.",
         "Rifa solidária. Como forma complementar de arrecadação, será realizada uma rifa com bilhetes numerados de 0001 a 2400, ao "
         "valor de R$ 5,00 cada. Cada acadêmico receberá um bloco de 30 bilhetes numerados em sequência, vendidos em sua rede de "
         "contatos, o que distribui a responsabilidade de forma igualitária e dispensa a organização de eventos. Para que a rifa também cumpra função de "
-        "conscientização, cada bilhete trará o perfil do projeto no Instagram ([PENDENTE: @ do Instagram do projeto]) e um QR Code de "
+        "conscientização, cada bilhete trará o perfil do projeto no Instagram (@efeitorebote.oficial) e um QR Code de "
         "acesso a ele, de modo que o comprador, ao guardar o bilhete, tenha acesso ao conteúdo informativo do projeto. Regras: cada venda é "
         "registrada no canhoto (nome, telefone e confirmação de pagamento); os valores e os canhotos são entregues à comissão "
         "financeira em acertos periódicos, e os bilhetes não vendidos são devolvidos antes do sorteio; o prêmio será "
-        "um tablet ([PENDENTE: modelo]); o sorteio será público e registrado em vídeo, em [PENDENTE: data e local do sorteio], pelo método "
+        "um tablet Samsung Galaxy Tab A11 (64 GB, Wi-Fi) ou modelo equivalente; o sorteio será público e registrado em vídeo, em 02/11/2026, [PENDENTE: horário e local], pelo método "
         "[PENDENTE: método do sorteio]. Os valores arrecadados, deduzido o custo de aquisição do prêmio, serão destinados exclusivamente à compra dos itens listados, com "
         "comprovação por nota fiscal e prestação de contas à professora responsável e à turma. A realização da rifa está condicionada "
         "à autorização da instituição, observadas as normas institucionais e a legislação aplicável; o regulamento completo consta "
@@ -173,7 +174,7 @@ CRONOGRAMA = [
          entrega="Termo de recebimento do bloco de bilhetes e relato das primeiras ações de divulgação."),
     dict(titulo="Pontos de Coleta no Campus e na Comunidade", etapa=E5, carga=None,
          objetivos="Estruturar a arrecadação direta de itens no campus e em instituições parceiras da comunidade, ampliando a visibilidade do projeto junto à sociedade.",
-         atividades="Confecção das caixas de coleta com materiais reaproveitados e identificação visual do projeto; instalação nos locais autorizados do campus; contato e formalização das parcerias com igrejas, delegacias e comércios; entrega de material informativo aos parceiros; divulgação da lista de itens aceitos.",
+         atividades="Confecção das caixas de coleta com materiais reaproveitados e identificação visual do projeto; instalação nos locais autorizados do campus; contato com igrejas, delegacias e comércios interessados em receber pontos de coleta externos, mediante aprovação; entrega de material informativo aos parceiros; divulgação da lista de itens aceitos.",
          entrega="Relatório descritivo da participação na instalação ou na divulgação dos pontos de coleta."),
     dict(titulo="Conteúdo Informativo e Redes Sociais", etapa=E4, carga=None,
          objetivos="Produzir conteúdo informativo sobre a realidade prisional e o \"efeito rebote\" a partir de fontes oficiais.",
@@ -235,15 +236,15 @@ REGULAMENTO = [
     ("li", "Detergente em embalagem transparente de até 500 ml."),
     ("p", "Itens fora dessas especificações não serão entregues às unidades prisionais e serão destinados a outras instituições de caridade do município."),
     ("h", "3. Doações diretas"),
-    ("p", "As doações serão recebidas nas caixas de coleta identificadas do projeto, instaladas no campus em locais autorizados pela instituição e em instituições parceiras da comunidade (igrejas, delegacias e estabelecimentos comerciais), mediante autorização do responsável por cada local. A equipe de Logística e Arrecadação fará o recolhimento e a triagem semanal, com registro em planilha de controle."),
+    ("p", "As doações serão recebidas nas caixas de coleta identificadas do projeto, instaladas no campus da UniCesumar, instituição parceira, em locais autorizados, e, mediante aprovação da professora responsável, em outras instituições da comunidade (igrejas, delegacias e estabelecimentos comerciais), com autorização do responsável por cada local. A equipe de Logística e Arrecadação fará o recolhimento e a triagem semanal, com registro em planilha de controle."),
     ("h", "4. Rifa solidária"),
     ("li", "Bilhetes numerados de 0001 a 2400, ao valor unitário de R$ 5,00."),
     ("li", "Cada acadêmico participante recebe um bloco de 30 bilhetes em sequência, registrado em planilha de distribuição."),
-    ("li", "Cada bilhete traz o perfil do projeto no Instagram ([PENDENTE: @ do Instagram do projeto]) e um QR Code de acesso a ele, para que o comprador conheça o projeto."),
+    ("li", "Cada bilhete traz o perfil do projeto no Instagram (@efeitorebote.oficial) e um QR Code de acesso a ele, para que o comprador conheça o projeto."),
     ("li", "Cada venda deve ser registrada no canhoto, com nome e telefone do comprador e a confirmação de pagamento."),
     ("li", "Os valores e os canhotos são entregues à comissão financeira em acertos periódicos; os bilhetes não vendidos devem ser devolvidos até [PENDENTE: data-limite de devolução]."),
-    ("li", "Prêmio: 01 (um) tablet, modelo [PENDENTE: modelo], novo e com nota fiscal."),
-    ("li", "Sorteio: público e registrado em vídeo, em [PENDENTE: data, horário e local], pelo método [PENDENTE: método do sorteio]. Concorrem apenas os bilhetes pagos e registrados."),
+    ("li", "Prêmio: 01 (um) tablet Samsung Galaxy Tab A11 (64 GB, Wi-Fi) ou modelo equivalente, novo e com nota fiscal."),
+    ("li", "Sorteio: público e registrado em vídeo, em 02/11/2026, [PENDENTE: horário e local], pelo método [PENDENTE: método do sorteio]. Concorrem apenas os bilhetes pagos e registrados."),
     ("li", "O resultado será divulgado nos canais do projeto e o ganhador será contatado pelo telefone informado no canhoto, tendo [PENDENTE: prazo] para retirar o prêmio."),
     ("li", "A realização da rifa está condicionada à autorização da instituição, observadas as normas institucionais e a legislação aplicável."),
     ("h", "5. Destinação dos recursos e prestação de contas"),
