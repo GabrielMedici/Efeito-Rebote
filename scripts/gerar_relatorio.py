@@ -124,9 +124,9 @@ def cronograma(doc):
             run(q, f"{rotulo}: ", bold=True, color=CINZA)
             run(q, enc[chave], color=CINZA)
         c[1].add_paragraph()
-        run(c[2].paragraphs[0], f"{enc['carga']:.2f}", color=CINZA)
+        run(c[2].paragraphs[0], f"{enc['carga']:.2f}" if enc["carga"] else "", color=CINZA)
         c[2].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.RIGHT
-        total += enc["carga"]
+        total += enc["carga"] or 0
     larguras(t, (1.8, 14.2, 2.0))
     return total
 
@@ -142,7 +142,7 @@ def gerar_relatorio():
     secao(doc, "1) Identificação")
     campos(doc, C.IDENTIFICACAO)
 
-    total = sum(e["carga"] for e in C.CRONOGRAMA)
+    total = sum(e["carga"] or 0 for e in C.CRONOGRAMA)
     secao(doc, "2) Períodos e vagas")
     pares = [(k, (f"{total:g} h" if v == "{CARGA_TOTAL}" else v)) for k, v in C.PERIODOS]
     campos(doc, pares + [("Comunidade participante", C.COMUNIDADE)])

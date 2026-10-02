@@ -11,7 +11,7 @@
 2. Regenerar os arquivos, converter para PDF e entregar até sexta às 12h.
 
 ## Pendências do usuário
-- Rifa: prêmio, data, local e método do sorteio, comissão financeira, prazo de devolução e confirmação de que a rifa é permitida pela instituição.
-- Semestres participantes, datas de início e fim e carga horária (a proposta é de 51 h).
+- Rifa: modelo do tablet (ver `entregas/rifa/custo-beneficio.md`), data, local e método do sorteio, comissão financeira, prazo de devolução e confirmação de que a rifa é permitida pela instituição.
+- Semestres participantes (o usuário pergunta em 03/10), datas de início e fim. A carga horária ficou como PENDENTE porque o usuário removeu a proposta.
 - Confirmar se o creme dental precisa ser "branco", como dizia o PDF.
 - Escopo dos "áudios".

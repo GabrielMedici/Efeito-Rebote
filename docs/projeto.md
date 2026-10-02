@@ -23,7 +23,7 @@
   - penúltimo: visita;
   - último: resultados e relatório final.
 - As visitas estão previstas para **04 e 05/nov**.
-- Projeto escrito: entrega na **sexta às 12h**, adaptado ao modelo da professora. Depois disso pode haver pedidos de ajuste.
+- Projeto escrito: entrega na **sexta, 02/10, às 12h** (confirmado), adaptado ao modelo da professora. Depois disso pode haver pedidos de ajuste.
 - Material de divulgação: enviar até sexta para aprovação e publicar até segunda.
 
 ## Redes sociais
@@ -39,8 +39,9 @@
   - cada aluno vende na sua rotina;
   - a carga fica dividida igualmente.
 - A arte está em `assets/rifa-arte-v1.jpg`. Os campos `[PRÊMIO]`, `[DATA]`, `[LOCAL]` e `[VALOR]` continuam em aberto.
+- **Prêmio:** um tablet (decidido em 02/10; modelo a definir). A análise de custo-benefício está em `entregas/rifa/custo-beneficio.md`.
 - **Pendentes:**
-  - escolher o prêmio;
+  - modelo do tablet;
   - definir data e local do sorteio;
   - definir o método do sorteio;
   - definir o destino do dinheiro (compra dos itens).
