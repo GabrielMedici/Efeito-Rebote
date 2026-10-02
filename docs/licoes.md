@@ -9,3 +9,6 @@
 - 2026-10-02 [ambiente] O contêiner vem sem o LibreOffice Writer e sem o python-docx. Antes de converter, rode `apt-get install -y libreoffice-writer && pip install python-docx`. O `soffice` exige caminhos absolutos e `HOME` gravável.
 - 2026-10-02 [relatorio] Em tabelas geradas com o python-docx, a largura precisa ser fixada no `tblGrid` com layout fixo. Só a largura das células é ignorada.
 - 2026-10-02 [relatorio] Não proponha carga horária: o usuário removeu a sugestão. Use PENDENTE para dados institucionais (carga horária, datas, semestres).
+- 2026-10-02 [relatorio] A prof.ª Camila pede: (a) todos os 15 encontros explícitos, com o que acontece em cada um; (b) reuniões às segundas, deixado explícito; (c) ações que levem o projeto à sociedade (parceiros externos), já que a rifa sozinha não basta; (d) o pré-projeto aprovado vai como anexo.
+- 2026-10-02 [rifa] O bilhete precisa ter o @ do Instagram e um QR Code do projeto: a rifa também é ferramenta de conscientização.
+- 2026-10-02 [ambiente] Para transcrever áudios: `pip install faster-whisper`, modelo "medium", int8, idioma pt (cerca de 2 min de áudio levam poucos minutos em CPU).

@@ -69,5 +69,5 @@ Os critérios são:
 - A lista atual tem 5 itens: acrescenta o sabão em pó e limita o creme dental a 100 g.
 - O projeto escrito usa a lista atual. Falta confirmar se o creme dental precisa ser branco.
 
-## Em aberto
-- "Áudios": falta definir formato, finalidade e quantidade.
+## Áudios da colega (01/10)
+A transcrição está em `docs/fonte/audios-transcricao.md`. Os pedidos já foram aplicados ao projeto escrito.

@@ -10,8 +10,12 @@
 1. O usuário preenche os `[PENDENTE]` listados por `bash scripts/check.sh`.
 2. Regenerar os arquivos, converter para PDF e entregar até sexta às 12h.
 
+## Feito em 02/10
+- Áudios transcritos (`docs/fonte/audios-transcricao.md`) e aplicados: encontros às segundas, ações com a sociedade, QR Code e Instagram na rifa, pré-projeto como anexo 3.
+
 ## Pendências do usuário
+- @ do Instagram e instituições parceiras confirmadas (igrejas, delegacias, comércios).
+- Arte da rifa: incluir QR Code e @ e usar numeração de 4 dígitos (sugestão: gerar a folha de impressão como tarefa F02).
 - Rifa: modelo do tablet (ver `entregas/rifa/custo-beneficio.md`), data, local e método do sorteio, comissão financeira, prazo de devolução e confirmação de que a rifa é permitida pela instituição.
 - Semestres participantes (o usuário pergunta em 03/10), datas de início e fim. A carga horária ficou como PENDENTE porque o usuário removeu a proposta.
 - Confirmar se o creme dental precisa ser "branco", como dizia o PDF.
-- Escopo dos "áudios".

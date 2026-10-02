@@ -78,6 +78,10 @@ DIMENSAO_PEDAGOGICA = [
         "observância das normas de segurança durante as visitas técnicas.",
     ]),
     ("Metodologia", [
+        "Os encontros ocorrem semanalmente, às segundas-feiras, às 18h15, com acompanhamento da professora responsável e registro de "
+        "frequência, totalizando 15 encontros: o 1º e o 2º destinam-se à construção do projeto; do 3º ao 13º, ao desenvolvimento das "
+        "atividades conforme os encaminhamentos da turma; o 14º, às visitas técnicas; e o 15º, à discussão dos resultados e à "
+        "elaboração do relatório final. O conteúdo de cada encontro está detalhado no cronograma.",
         "A metodologia fundamenta-se na Aprendizagem Baseada em Projetos (PjBL), organizada em seis etapas integradas: (1) imersão e "
         "identificação do problema, com estudo da realidade prisional de Maringá; (2) seleção e delimitação do problema prioritário — "
         "a insuficiência de itens de higiene e o \"efeito rebote\"; (3) análise do problema e levantamento das necessidades de "
@@ -94,9 +98,18 @@ DIMENSAO_PEDAGOGICA = [
         "aceitos serão instaladas em locais de grande circulação do campus, mediante autorização da instituição. A equipe de Logística "
         "e Arrecadação fará o recolhimento e a triagem semanal, registrando em planilha a quantidade de cada item recebido. Os itens "
         "serão armazenados em espaço cedido pela coordenação até a entrega.",
+        "Ações junto à sociedade. Para que o projeto alcance a comunidade externa e não apenas o ambiente acadêmico, serão "
+        "estabelecidas parcerias com instituições da comunidade de Maringá, como igrejas, delegacias e estabelecimentos comerciais, "
+        "para a instalação de pontos de coleta externos e a exposição de material informativo sobre o \"efeito rebote\" e os direitos "
+        "da pessoa presa. As instituições parceiras serão: [PENDENTE: instituições parceiras confirmadas]. Cada parceria será "
+        "formalizada mediante autorização do responsável pelo local, e os pontos externos seguirão as mesmas regras de identificação, "
+        "recolhimento, triagem e registro dos pontos do campus. Nessas ações, os acadêmicos atuarão como multiplicadores, explicando o "
+        "projeto ao público e levando a discussão sobre a realidade prisional para fora da universidade.",
         "Rifa solidária. Como forma complementar de arrecadação, será realizada uma rifa com bilhetes numerados de 0001 a 2400, ao "
         "valor de R$ 5,00 cada. Cada acadêmico receberá um bloco de 30 bilhetes numerados em sequência, vendidos em sua rede de "
-        "contatos, o que distribui a responsabilidade de forma igualitária e dispensa a organização de eventos. Regras: cada venda é "
+        "contatos, o que distribui a responsabilidade de forma igualitária e dispensa a organização de eventos. Para que a rifa também cumpra função de "
+        "conscientização, cada bilhete trará o perfil do projeto no Instagram ([PENDENTE: @ do Instagram do projeto]) e um QR Code de "
+        "acesso a ele, de modo que o comprador, ao guardar o bilhete, tenha acesso ao conteúdo informativo do projeto. Regras: cada venda é "
         "registrada no canhoto (nome, telefone e confirmação de pagamento); os valores e os canhotos são entregues à comissão "
         "financeira em acertos periódicos, e os bilhetes não vendidos são devolvidos antes do sorteio; o prêmio será "
         "um tablet ([PENDENTE: modelo]); o sorteio será público e registrado em vídeo, em [PENDENTE: data e local do sorteio], pelo método "
@@ -143,9 +156,9 @@ CRONOGRAMA = [
          objetivos="Iniciar a campanha de conscientização e organizar a rifa solidária, mediante as aprovações necessárias.",
          atividades="Publicação do conteúdo de apresentação aprovado; distribuição dos blocos de 30 bilhetes por acadêmico, com registro em planilha; orientação sobre as regras de venda, registro nos canhotos e acertos com a comissão financeira.",
          entrega="Termo de recebimento do bloco de bilhetes e relato das primeiras ações de divulgação."),
-    dict(titulo="Instalação dos Pontos de Coleta", etapa=E5, carga=None,
-         objetivos="Estruturar a arrecadação direta de itens no campus.",
-         atividades="Confecção das caixas de coleta com materiais reaproveitados e identificação visual do projeto; instalação nos locais autorizados; divulgação da lista de itens aceitos e de suas especificações.",
+    dict(titulo="Pontos de Coleta no Campus e na Comunidade", etapa=E5, carga=None,
+         objetivos="Estruturar a arrecadação direta de itens no campus e em instituições parceiras da comunidade, ampliando a visibilidade do projeto junto à sociedade.",
+         atividades="Confecção das caixas de coleta com materiais reaproveitados e identificação visual do projeto; instalação nos locais autorizados do campus; contato e formalização das parcerias com igrejas, delegacias e comércios; entrega de material informativo aos parceiros; divulgação da lista de itens aceitos.",
          entrega="Relatório descritivo da participação na instalação ou na divulgação dos pontos de coleta."),
     dict(titulo="Conteúdo Informativo e Redes Sociais", etapa=E4, carga=None,
          objetivos="Produzir conteúdo informativo sobre a realidade prisional e o \"efeito rebote\" a partir de fontes oficiais.",
@@ -192,6 +205,7 @@ CRONOGRAMA = [
 ANEXOS = [
     ("Anexo 1 - Regulamento da campanha de arrecadação e da rifa solidária", "—"),
     ("Anexo 2 - Texto para apresentação do projeto Efeito Rebote", "—"),
+    ("Anexo 3 - Pré-projeto aprovado (Trabalho Escrito - Projeto de Extensão Efeito Rebote)", "—"),
 ]
 
 REGULAMENTO_TITULO = "ANEXO 1 — REGULAMENTO DA CAMPANHA DE ARRECADAÇÃO E DA RIFA SOLIDÁRIA\nProjeto de Extensão Efeito Rebote: o custo da reincidência"
@@ -206,10 +220,11 @@ REGULAMENTO = [
     ("li", "Detergente em embalagem transparente de até 500 ml."),
     ("p", "Itens fora dessas especificações não serão entregues às unidades prisionais e serão destinados a outras instituições de caridade do município."),
     ("h", "3. Doações diretas"),
-    ("p", "As doações serão recebidas nas caixas de coleta identificadas do projeto, instaladas em locais autorizados pela instituição. A equipe de Logística e Arrecadação fará o recolhimento e a triagem semanal, com registro em planilha de controle."),
+    ("p", "As doações serão recebidas nas caixas de coleta identificadas do projeto, instaladas no campus em locais autorizados pela instituição e em instituições parceiras da comunidade (igrejas, delegacias e estabelecimentos comerciais), mediante autorização do responsável por cada local. A equipe de Logística e Arrecadação fará o recolhimento e a triagem semanal, com registro em planilha de controle."),
     ("h", "4. Rifa solidária"),
     ("li", "Bilhetes numerados de 0001 a 2400, ao valor unitário de R$ 5,00."),
     ("li", "Cada acadêmico participante recebe um bloco de 30 bilhetes em sequência, registrado em planilha de distribuição."),
+    ("li", "Cada bilhete traz o perfil do projeto no Instagram ([PENDENTE: @ do Instagram do projeto]) e um QR Code de acesso a ele, para que o comprador conheça o projeto."),
     ("li", "Cada venda deve ser registrada no canhoto, com nome e telefone do comprador e a confirmação de pagamento."),
     ("li", "Os valores e os canhotos são entregues à comissão financeira em acertos periódicos; os bilhetes não vendidos devem ser devolvidos até [PENDENTE: data-limite de devolução]."),
     ("li", "Prêmio: 01 (um) tablet, modelo [PENDENTE: modelo], novo e com nota fiscal."),
