@@ -8,14 +8,14 @@
 ## Texto da arte
 1. **Capa:** "Efeito Rebote. O custo da reincidência: o que acontece quando falta o básico dentro do sistema prisional."
 2. **O que diz a lei:** "Higiene básica é direito, não favor." A LEP garante assistência material e à saúde (arts. 12, 14 e 41). Na prática, itens simples muitas vezes não chegam, e quem paga é a família.
-3. **O efeito rebote:** falta material de higiene → doenças se espalham → o Estado gasta mais com atendimento e escolta → a família assume o custo e as visitas diminuem → sem vínculo familiar, a volta à sociedade fica mais difícil.
+3. **O efeito rebote:** falta material de higiene → doenças se espalham → pode aumentar a demanda por atendimento e escolta → a família assume o custo e as visitas diminuem → sem vínculo familiar, a volta à sociedade fica mais difícil.
 4. **O que vamos fazer:** estudar, informar e conhecer de perto, com visitas técnicas à PEM, à CCM e à CPIM.
 5. **Encerramento:** "Dignidade também é eficiência." Chamada para acompanhar o @efeitorebote.oficial.
 
 ## Legenda
 Você já pensou no que acontece quando falta o básico dentro de uma unidade prisional?
 
-A Lei de Execução Penal garante à pessoa presa assistência material e à saúde. Na prática, itens simples como escova de dentes, creme dental e sabão nem sempre chegam. Quando faltam, aparecem doenças, o Estado gasta mais com atendimentos e escoltas, e o custo acaba nas costas das famílias, que muitas vezes deixam de visitar. Sem esse vínculo, voltar à sociedade fica mais difícil.
+A Lei de Execução Penal garante à pessoa presa assistência material e à saúde. Na prática, itens simples como escova de dentes, creme dental e sabão nem sempre chegam. Quando faltam, podem surgir doenças e aumentar a demanda por atendimentos e escoltas, e parte do custo acaba nas costas das famílias, que muitas vezes deixam de visitar. Sem esse vínculo, voltar à sociedade fica mais difícil.
 
 É esse ciclo que chamamos de efeito rebote.
 

@@ -190,9 +190,6 @@ def gerar_relatorio():
         run(c[0].paragraphs[0], nome, color=CINZA)
         run(c[1].paragraphs[0], cod, color=CINZA)
     larguras(t, (15.0, 3.0))
-    p = doc.add_paragraph()
-    p.paragraph_format.space_before = Pt(4)
-    run(p, "Obs.: por padrão, este relatório lista os anexos.", size=8, color=CINZA_CLARO)
 
     destino = os.path.join(RAIZ, "entregas", "projeto-escrito.docx")
     doc.save(destino)

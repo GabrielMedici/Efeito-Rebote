@@ -62,7 +62,7 @@ DIMENSAO_PEDAGOGICA = [
         "(atendimentos, deslocamentos e escoltas) e que alcançam também as famílias, sobre as quais recai parte dos custos, com "
         "prejuízo à manutenção dos vínculos durante o cumprimento da pena.",
         "A realidade de Maringá confirma a pertinência do recorte. Relatórios de inspeção da Defensoria Pública do Paraná registraram, "
-        "em 2025, ocupação acima da capacidade nas três unidades: 1.198 presos para 960 vagas na CCM (março), 423 para 330 na CPIM e "
+        "em 2025, ocupação acima da capacidade nas três unidades: 1.198 presos para 960 vagas na CCM (março), 423 para 330 na CPIM (agosto) e "
         "523 para 360 na PEM (maio). Os mesmos relatórios apontam falta de creme dental e escova na CCM; falta de pasta de dente, "
         "aparelho de barbear e escova na PEM; e, na CPIM, que o kit de higiene não vinha sendo enviado completo, sendo os itens em "
         "falta supridos pelo Conselho da Comunidade (PARANÁ, 2025a; 2025b; 2025c). Trata-se de dados declarados pelas direções e referentes a um "
@@ -174,7 +174,8 @@ DIMENSAO_PEDAGOGICA = [
         "de ata; por ser transmitido on-line, o sorteio independe do funcionamento do campus. Para que a compra dos itens ocorra entre o fim das vendas (30/10) e a entrega (04/11), a lista validada pelas unidades e as "
         "cotações serão preparadas antes do fim das vendas. O prêmio será adquirido somente quando a arrecadação cobrir seu custo com "
         "margem; se as vendas forem insuficientes, a comissão financeira e a professora responsável buscarão doação ou desconto do "
-        "prêmio, que permanece garantido aos compradores. Os valores arrecadados, deduzido o custo de aquisição do prêmio, serão destinados exclusivamente à compra dos itens listados, com "
+        "prêmio; não sendo possível, a rifa será cancelada e os valores devolvidos integralmente aos compradores, conforme o "
+        "Anexo 1. Os valores arrecadados, deduzido o custo de aquisição do prêmio, serão destinados exclusivamente à compra dos itens listados, com "
         "comprovação por nota fiscal e prestação de contas à professora responsável e à turma. A realização da rifa está condicionada "
         "à autorização da instituição e da professora responsável, observadas as normas institucionais e a legislação federal sobre "
         "distribuição de prêmios mediante sorteio (BRASIL, 1944; BRASIL, 1971); sem essa autorização, a rifa não será iniciada e a "
@@ -182,15 +183,17 @@ DIMENSAO_PEDAGOGICA = [
         "do Anexo 1.",
         "Divulgação e redes sociais. A divulgação adotará estratégias de custo zero: avisos nos murais e telões do campus, "
         "representantes de turma como multiplicadores e perfis do projeto nas redes sociais. A primeira publicação terá caráter "
-        "exclusivamente informativo, apresentando e explicando o projeto, sem pedido de arrecadação. As redes terão três publicações "
-        "semanais (carrosséis informativos, vídeos curtos e conteúdos sobre a realidade prisional e os direitos da pessoa presa), "
+        "exclusivamente informativo, apresentando e explicando o projeto, sem pedido de arrecadação (texto-base no Anexo 2). As redes terão três publicações "
+        "semanais (carrosséis informativos, vídeos curtos e conteúdos sobre a realidade prisional e os direitos da pessoa presa), com "
+        "acompanhamento do número de publicações, do alcance e dos acessos ao QR Code dos bilhetes, "
         "todas previamente aprovadas pela professora responsável e em conformidade com as regras institucionais. Não serão "
         "publicadas imagens ou dados que identifiquem pessoas privadas de liberdade.",
         "Visitas técnicas e entrega. As visitas à PEM, à CCM e à CPIM estão previstas para 04 e 05 de novembro, em grupos de até 50 "
-        "alunos, com acompanhamento docente obrigatório e transporte institucional, observadas as normas de segurança das unidades. "
+        "alunos, conforme previsto no pré-projeto, com acompanhamento docente obrigatório, mediante autorização das unidades prisionais e da "
+        "instituição, que também deverá autorizar o transporte institucional, observadas as normas de segurança das unidades. "
         "A entrega dos itens arrecadados será integrada às visitas e registrada em termo de entrega com os quantitativos por unidade.",
         "Acolhimento às famílias. Será realizada uma roda de conversa com familiares de pessoas privadas de liberdade, conduzida "
-        "pelos acadêmicos sob mediação da professora responsável, em [PENDENTE: data e local; sugestão: dependências da UniCesumar], "
+        "pelos acadêmicos, com organização da acadêmica Francieli Araújo e mediação da professora responsável, em [PENDENTE: data e local; sugestão: dependências da UniCesumar], "
         "com divulgação feita em parceria com [PENDENTE: instituição que fará a ponte com as famílias, como o Conselho da Comunidade "
         "ou a Defensoria Pública] e mediante autorização das instâncias envolvidas. O encontro terá caráter de escuta e acolhimento e "
         "abordará, em linguagem acessível, os direitos da pessoa presa e de seus familiares (assistência material e à saúde, regras "
@@ -237,7 +240,8 @@ DIMENSAO_PEDAGOGICA = [
         "BRASIL. Ministério da Educação. Conselho Nacional de Educação. Câmara de Educação Superior. Resolução nº 7, de 18 de "
         "dezembro de 2018. Estabelece as Diretrizes para a Extensão na Educação Superior Brasileira e regimenta o disposto na Meta "
         "12.7 da Lei nº 13.005/2014. Brasília, DF: MEC, 2018b.",
-        "BRASIL. Supremo Tribunal Federal. Arguição de Descumprimento de Preceito Fundamental 347. Brasília, DF: STF, 2023.",
+        "BRASIL. Supremo Tribunal Federal. Arguição de Descumprimento de Preceito Fundamental 347. Relator: Min. Marco Aurélio. "
+        "Brasília, DF: STF, 2023.",
         "DIUANA, Vilma et al. Saúde em prisões: representações e práticas dos agentes de segurança penitenciária no Rio de Janeiro, "
         "Brasil. Cadernos de Saúde Pública, v. 24, n. 8, p. 1887-1896, 2008.",
         "FERNANDES, Luiz Henrique et al. Necessidade de aprimoramento do atendimento à saúde no sistema carcerário. Revista de Saúde "
@@ -377,8 +381,8 @@ REGULAMENTO = [
 APRESENTACAO_TITULO = "ANEXO 2 — TEXTO PARA APRESENTAÇÃO DO PROJETO\nEfeito Rebote: o custo da reincidência"
 APRESENTACAO = [
     ("p", "Você sabia que itens simples, como uma escova de dentes ou um sabão, podem fazer diferença dentro e fora do sistema prisional?"),
-    ("p", "O Efeito Rebote é um projeto de extensão do curso de Direito que discute um problema pouco visível: a falta de itens básicos de higiene nas unidades prisionais. A Lei de Execução Penal garante à pessoa presa assistência material e à saúde, mas, na prática, esse cuidado muitas vezes não chega. Quando falta o básico, surgem doenças, aumentam os gastos públicos com atendimentos e escoltas, e o custo acaba recaindo sobre as famílias — o que pode afastá-las das visitas, enfraquecendo um dos vínculos mais importantes para evitar a reincidência."),
-    ("p", "É esse ciclo que chamamos de efeito rebote: economizar no que é preventivo sai muito mais caro depois, para o Estado e para toda a sociedade."),
+    ("p", "O Efeito Rebote é um projeto de extensão do curso de Direito que discute um problema pouco visível: a falta de itens básicos de higiene nas unidades prisionais. A Lei de Execução Penal garante à pessoa presa assistência material e à saúde, mas, na prática, esse cuidado muitas vezes não chega. Quando falta o básico, podem surgir doenças e aumentar a demanda por atendimentos e escoltas, e parte do custo acaba recaindo sobre as famílias, o que pode afastá-las das visitas e enfraquecer um dos vínculos mais importantes para evitar a reincidência."),
+    ("p", "É esse ciclo que chamamos de efeito rebote: a hipótese de que economizar no que é preventivo pode gerar demandas maiores depois, para o Estado, para as famílias e para toda a sociedade."),
     ("p", "Ao longo do semestre, nossa turma vai estudar a realidade das unidades prisionais de Maringá, produzir conteúdos informativos sobre o tema e realizar visitas técnicas à Penitenciária Estadual de Maringá, à Casa de Custódia de Maringá e à Colônia Penal Industrial de Maringá."),
     ("p", "Acompanhe nossas publicações para entender mais sobre o sistema prisional, os direitos da pessoa presa e por que a dignidade também é uma questão de eficiência."),
 ]
