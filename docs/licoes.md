@@ -16,3 +16,4 @@
 - 2026-10-02 [rifa] O prêmio precisa gerar interesse: o usuário rejeitou o modelo mais barato. Pondere apelo × custo, por exemplo em "bilhetes extras por aluno para se pagar". As vendas são descentralizadas, então o controle precisa ser digital e centralizado.
 - 2026-10-02 [app] Erro lançado em server action vira mensagem genérica em produção. Devolva o erro pela URL (?erro=) ou por useActionState. Parâmetros de função plpgsql levam o prefixo p_ para não colidir com nomes de coluna.
 - 2026-10-02 [app] Renomear identificadores com regex em SQL atinge textos literais (p_pedido nas mensagens). Revise as strings depois de cada rename e confira descrições nos testes. Capturas de tela pegam o que asserções não pegam.
+- 2026-10-02 [relatorio] Objetivos usam verbos compatíveis com o que o projeto entrega: identificar e analisar, não comprovar nem correlacionar sem pesquisa de dados. Sugestão do usuário.

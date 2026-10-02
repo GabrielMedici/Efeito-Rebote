@@ -60,8 +60,8 @@ DIMENSAO_PEDAGOGICA = [
         "conscientizar a comunidade acadêmica e externa sobre o \"efeito rebote\" da desassistência material, promovendo, ao mesmo "
         "tempo, a formação humanística, crítica e cidadã dos acadêmicos de Direito.",
         "Objetivos específicos: (1) analisar, durante as visitas técnicas, a estrutura das unidades e a aplicação prática da LEP, com "
-        "foco na assistência material; (2) correlacionar a omissão no fornecimento de itens básicos com a elevação dos custos sociais, "
-        "institucionais e de saúde pública; (3) produzir conteúdo informativo para as redes sociais e materiais de comunicação visual "
+        "foco na assistência material; (2) identificar a ocorrência do fenômeno \"efeito rebote\" como problema social, a partir da "
+        "literatura e das observações realizadas nas visitas técnicas; (3) produzir conteúdo informativo para as redes sociais e materiais de comunicação visual "
         "que sensibilizem a comunidade sobre a realidade prisional; (4) executar campanha de arrecadação com meta superior a 8.000 "
         "itens de higiene, encerrando o ciclo com a entrega nas unidades; (5) estimular a responsabilidade social, o trabalho em "
         "equipe e a empatia dos acadêmicos envolvidos.",
@@ -180,7 +180,9 @@ DIMENSAO_PEDAGOGICA = [
         "limite de cada produto; como o pré-projeto especificava creme dental branco, a lista final — tipo, cor, embalagem e forma de "
         "entrega — será validada com a PEM, a CCM e a CPIM antes de qualquer aquisição; (2) a rifa solidária como fonte complementar de "
         "recursos: a divulgação permanece de custo zero, e a receita da rifa, deduzido o prêmio, destina-se exclusivamente à compra de "
-        "itens; (3) as ações de mobilização e junto à sociedade; e (4) o sistema on-line de controle de vendas e prestação de contas. "
+        "itens; (3) as ações de mobilização e junto à sociedade; (4) o sistema on-line de controle de vendas e prestação de contas; e (5) a reformulação do "
+        "objetivo específico relativo ao \"efeito rebote\", que passa de comprovar para identificar o fenômeno, uma vez que sua "
+        "comprovação exigiria levantamento de dados de custos públicos alheio ao escopo da ação extensionista. "
         "O quantitativo arrecadado será acompanhado semanalmente em relação à meta.",
     ]),
 ]
