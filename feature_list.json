@@ -6,9 +6,8 @@
       "description": "Adaptar docs/fonte/Trabalho Escrito.pdf ao modelo relatorio_extensao_projeto word.docx, incluindo todas as ações (rifa com regulamento, pontos de coleta, redes sociais, visita) com regras e forma de execução. Saída: entregas/projeto-escrito.docx e .pdf",
       "deadline": "sexta 12h",
       "dependencies": [],
-      "status": "not-started",
-      "blocked_by": "aguardando os 2 arquivos-fonte em docs/fonte/",
-      "evidence": ""
+      "status": "in-progress",
+      "evidence": "2026-10-02: entregas/projeto-escrito.docx/.pdf + anexos 1 e 2 gerados por scripts/gerar_relatorio.py; check.sh 0 erros; aguardando pendências do usuário e revisão"
     },
     {
       "id": "F02",
@@ -16,8 +15,8 @@
       "description": "Regulamento (prêmio, sorteio, prestação de contas), numeração 0001-2400, distribuição de 30 números por aluno, planilha de controle. Usado dentro do F01.",
       "deadline": "sexta 12h (resumo no F01)",
       "dependencies": [],
-      "status": "not-started",
-      "evidence": ""
+      "status": "in-progress",
+      "evidence": "Regulamento rascunhado em entregas/anexo-1-regulamento-arrecadacao-rifa.docx; faltam prêmio, sorteio, comissão financeira, distribuição/controle CSV"
     },
     {
       "id": "F03",
@@ -26,7 +25,7 @@
       "deadline": "envio sexta; publicação até segunda",
       "dependencies": [],
       "status": "not-started",
-      "evidence": ""
+      "evidence": "Texto-base em entregas/anexo-2-texto-apresentacao.docx (falta arte/legenda)"
     },
     {
       "id": "F04",
@@ -42,7 +41,9 @@
       "name": "Calendário editorial (3x/semana)",
       "description": "Pauta de posts até a visita, com status de aprovação por post.",
       "deadline": "antes do 3º encontro",
-      "dependencies": ["F03"],
+      "dependencies": [
+        "F03"
+      ],
       "status": "not-started",
       "evidence": ""
     },
@@ -51,7 +52,9 @@
       "name": "Controle da arrecadação",
       "description": "Planilha de itens recebidos por tipo e por aluno, valores da rifa, compras.",
       "deadline": "antes do 3º encontro",
-      "dependencies": ["F02"],
+      "dependencies": [
+        "F02"
+      ],
       "status": "not-started",
       "evidence": ""
     },
@@ -60,7 +63,10 @@
       "name": "Relatório final",
       "description": "Resultados, visita de 04-05/nov, avaliação qualitativa, no modelo da instituição.",
       "deadline": "último encontro",
-      "dependencies": ["F01", "F06"],
+      "dependencies": [
+        "F01",
+        "F06"
+      ],
       "status": "not-started",
       "evidence": ""
     }

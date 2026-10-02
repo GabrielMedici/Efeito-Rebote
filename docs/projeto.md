@@ -57,8 +57,16 @@ Os critérios são:
 - métodos de arrecadação.
 
 ## Arquivos-fonte (`docs/fonte/`)
-- `Trabalho Escrito.pdf`: projeto aprovado na fase 1. **Ainda não foi enviado.**
-- `relatorio_extensao_projeto word.docx`: modelo da professora. **Ainda não foi enviado.**
+- `Trabalho Escrito.pdf`: projeto aprovado na fase 1, da Unicesumar Maringá (Direito, 3º semestre noturno, turma B). Prevê:
+  - meta de mais de 8.000 itens;
+  - visitas à PEM, à CCM e à CPIM;
+  - equipes Apresentação e Visitas, Criação e Audiovisual, Pesquisa e Escrita, e Logística e Arrecadação.
+- `relatorio_extensao_projeto word.docx`: exportação do UniGestor de outro projeto ("Diálogos Conexão", ID 505). É uma conversão de PDF para Word com o layout quebrado, por isso o `scripts/gerar_relatorio.py` recria o mesmo formato do zero.
+
+## Divergências entre o trabalho escrito e a lista atual de itens
+- O PDF lista 4 itens: aparelho de barbear, escova, creme dental **branco** e detergente transparente.
+- A lista atual tem 5 itens: acrescenta o sabão em pó e limita o creme dental a 100 g.
+- O projeto escrito usa a lista atual. Falta confirmar se o creme dental precisa ser branco.
 
 ## Em aberto
 - "Áudios": falta definir formato, finalidade e quantidade.

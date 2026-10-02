@@ -19,7 +19,7 @@ description: Adapta conteúdo do projeto Efeito Rebote ao modelo .docx da profes
    - redes sociais (3 posts por semana, sempre com aprovação prévia);
    - visita (04–05/nov);
    - cronograma dos 15 encontros.
-5. **Gerar o `.docx` preservando o modelo.** Copie o modelo e substitua o conteúdo, mantendo estilos, margens, fontes e cabeçalhos. Uma opção é usar `python-docx` (instale com `pip install python-docx`, se faltar). A outra é editar o `document.xml`. Depois converta para PDF com `soffice --headless --convert-to pdf`.
+5. **Gerar o `.docx`.** O caminho padrão é editar `scripts/conteudo_projeto.py` e rodar `python3 scripts/gerar_relatorio.py`, que gera o relatório e os anexos em `entregas/`. Alternativa antiga: Copie o modelo e substitua o conteúdo, mantendo estilos, margens, fontes e cabeçalhos. Uma opção é usar `python-docx` (instale com `pip install python-docx`, se faltar). A outra é editar o `document.xml`. Depois converta para PDF com `soffice --headless --convert-to pdf`.
 6. **Verificar.** Rode `bash scripts/check.sh entregas/<arquivo>.docx` e depois o agente `revisor`. Por fim, informe ao usuário a lista de `[PENDENTE]`.
 
 ## Armadilhas
