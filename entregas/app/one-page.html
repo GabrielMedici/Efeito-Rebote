@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Sistema de vendas e prestação de contas — Rifa Efeito Rebote</title>
+<style>
+@font-face{font-family:Barlow;font-style:normal;font-weight:400;font-display:swap;src:url(../posts/2026-10-02-apresentacao/fontes/88e4012f2051f8b4-s.woff2) format("woff2");unicode-range:u+0102-0103,u+0110-0111,u+0128-0129,u+0168-0169,u+01a0-01a1,u+01af-01b0,u+0300-0301,u+0303-0304,u+0308-0309,u+0323,u+0329,u+1ea0-1ef9,u+20ab}
+@font-face{font-family:Barlow;font-style:normal;font-weight:400;font-display:swap;src:url(../posts/2026-10-02-apresentacao/fontes/0be08cad6fae8421-s.woff2) format("woff2");unicode-range:u+0100-02ba,u+02bd-02c5,u+02c7-02cc,u+02ce-02d7,u+02dd-02ff,u+0304,u+0308,u+0329,u+1d00-1dbf,u+1e00-1e9f,u+1ef2-1eff,u+2020,u+20a0-20ab,u+20ad-20c0,u+2113,u+2c60-2c7f,u+a720-a7ff}
+@font-face{font-family:Barlow;font-style:normal;font-weight:400;font-display:swap;src:url(../posts/2026-10-02-apresentacao/fontes/61d96c4884191721-s.p.woff2) format("woff2");unicode-range:u+00??,u+0131,u+0152-0153,u+02bb-02bc,u+02c6,u+02da,u+02dc,u+0304,u+0308,u+0329,u+2000-206f,u+20ac,u+2122,u+2191,u+2193,u+2212,u+2215,u+feff,u+fffd}
+@font-face{font-family:Barlow;font-style:normal;font-weight:500;font-display:swap;src:url(../posts/2026-10-02-apresentacao/fontes/cd5242d34e82716d-s.woff2) format("woff2");unicode-range:u+0102-0103,u+0110-0111,u+0128-0129,u+0168-0169,u+01a0-01a1,u+01af-01b0,u+0300-0301,u+0303-0304,u+0308-0309,u+0323,u+0329,u+1ea0-1ef9,u+20ab}
+@font-face{font-family:Barlow;font-style:normal;font-weight:500;font-display:swap;src:url(../posts/2026-10-02-apresentacao/fontes/6662f7f4c6f2f062-s.woff2) format("woff2");unicode-range:u+0100-02ba,u+02bd-02c5,u+02c7-02cc,u+02ce-02d7,u+02dd-02ff,u+0304,u+0308,u+0329,u+1d00-1dbf,u+1e00-1e9f,u+1ef2-1eff,u+2020,u+20a0-20ab,u+20ad-20c0,u+2113,u+2c60-2c7f,u+a720-a7ff}
+@font-face{font-family:Barlow;font-style:normal;font-weight:500;font-display:swap;src:url(../posts/2026-10-02-apresentacao/fontes/b0bb26939bb40fdb-s.p.woff2) format("woff2");unicode-range:u+00??,u+0131,u+0152-0153,u+02bb-02bc,u+02c6,u+02da,u+02dc,u+0304,u+0308,u+0329,u+2000-206f,u+20ac,u+2122,u+2191,u+2193,u+2212,u+2215,u+feff,u+fffd}
+@font-face{font-family:Barlow;font-style:normal;font-weight:600;font-display:swap;src:url(../posts/2026-10-02-apresentacao/fontes/7816b93d847886e9-s.woff2) format("woff2");unicode-range:u+0102-0103,u+0110-0111,u+0128-0129,u+0168-0169,u+01a0-01a1,u+01af-01b0,u+0300-0301,u+0303-0304,u+0308-0309,u+0323,u+0329,u+1ea0-1ef9,u+20ab}
+@font-face{font-family:Barlow;font-style:normal;font-weight:600;font-display:swap;src:url(../posts/2026-10-02-apresentacao/fontes/ea06843a6d8e9ab3-s.woff2) format("woff2");unicode-range:u+0100-02ba,u+02bd-02c5,u+02c7-02cc,u+02ce-02d7,u+02dd-02ff,u+0304,u+0308,u+0329,u+1d00-1dbf,u+1e00-1e9f,u+1ef2-1eff,u+2020,u+20a0-20ab,u+20ad-20c0,u+2113,u+2c60-2c7f,u+a720-a7ff}
+@font-face{font-family:Barlow;font-style:normal;font-weight:600;font-display:swap;src:url(../posts/2026-10-02-apresentacao/fontes/60c9b95e8d9e49be-s.p.woff2) format("woff2");unicode-range:u+00??,u+0131,u+0152-0153,u+02bb-02bc,u+02c6,u+02da,u+02dc,u+0304,u+0308,u+0329,u+2000-206f,u+20ac,u+2122,u+2191,u+2193,u+2212,u+2215,u+feff,u+fffd}
+@font-face{font-family:Barlow;font-style:normal;font-weight:700;font-display:swap;src:url(../posts/2026-10-02-apresentacao/fontes/1e6ec62843814326-s.woff2) format("woff2");unicode-range:u+0102-0103,u+0110-0111,u+0128-0129,u+0168-0169,u+01a0-01a1,u+01af-01b0,u+0300-0301,u+0303-0304,u+0308-0309,u+0323,u+0329,u+1ea0-1ef9,u+20ab}
+@font-face{font-family:Barlow;font-style:normal;font-weight:700;font-display:swap;src:url(../posts/2026-10-02-apresentacao/fontes/a8bcd0492b5976ee-s.woff2) format("woff2");unicode-range:u+0100-02ba,u+02bd-02c5,u+02c7-02cc,u+02ce-02d7,u+02dd-02ff,u+0304,u+0308,u+0329,u+1d00-1dbf,u+1e00-1e9f,u+1ef2-1eff,u+2020,u+20a0-20ab,u+20ad-20c0,u+2113,u+2c60-2c7f,u+a720-a7ff}
+@font-face{font-family:Barlow;font-style:normal;font-weight:700;font-display:swap;src:url(../posts/2026-10-02-apresentacao/fontes/6ad0344ed98ac2e9-s.p.woff2) format("woff2");unicode-range:u+00??,u+0131,u+0152-0153,u+02bb-02bc,u+02c6,u+02da,u+02dc,u+0304,u+0308,u+0329,u+2000-206f,u+20ac,u+2122,u+2191,u+2193,u+2212,u+2215,u+feff,u+fffd}
+@font-face{font-family:Barlow Fallback;src:local("Arial");ascent-override:103.43%;descent-override:20.69%;line-gap-override:0.00%;size-adjust:96.68%}
+@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:600;font-display:swap;src:url(../posts/2026-10-02-apresentacao/fontes/d6e015f239232eb3-s.woff2) format("woff2");unicode-range:u+0102-0103,u+0110-0111,u+0128-0129,u+0168-0169,u+01a0-01a1,u+01af-01b0,u+0300-0301,u+0303-0304,u+0308-0309,u+0323,u+0329,u+1ea0-1ef9,u+20ab}
+@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:600;font-display:swap;src:url(../posts/2026-10-02-apresentacao/fontes/55b35d87b6156eea-s.woff2) format("woff2");unicode-range:u+0100-02ba,u+02bd-02c5,u+02c7-02cc,u+02ce-02d7,u+02dd-02ff,u+0304,u+0308,u+0329,u+1d00-1dbf,u+1e00-1e9f,u+1ef2-1eff,u+2020,u+20a0-20ab,u+20ad-20c0,u+2113,u+2c60-2c7f,u+a720-a7ff}
+@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:600;font-display:swap;src:url(../posts/2026-10-02-apresentacao/fontes/5fb5c05ff73c0616-s.p.woff2) format("woff2");unicode-range:u+00??,u+0131,u+0152-0153,u+02bb-02bc,u+02c6,u+02da,u+02dc,u+0304,u+0308,u+0329,u+2000-206f,u+20ac,u+2122,u+2191,u+2193,u+2212,u+2215,u+feff,u+fffd}
+@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:700;font-display:swap;src:url(../posts/2026-10-02-apresentacao/fontes/8599be8653318abe-s.woff2) format("woff2");unicode-range:u+0102-0103,u+0110-0111,u+0128-0129,u+0168-0169,u+01a0-01a1,u+01af-01b0,u+0300-0301,u+0303-0304,u+0308-0309,u+0323,u+0329,u+1ea0-1ef9,u+20ab}
+@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:700;font-display:swap;src:url(../posts/2026-10-02-apresentacao/fontes/3352fdb488e19d84-s.woff2) format("woff2");unicode-range:u+0100-02ba,u+02bd-02c5,u+02c7-02cc,u+02ce-02d7,u+02dd-02ff,u+0304,u+0308,u+0329,u+1d00-1dbf,u+1e00-1e9f,u+1ef2-1eff,u+2020,u+20a0-20ab,u+20ad-20c0,u+2113,u+2c60-2c7f,u+a720-a7ff}
+@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:700;font-display:swap;src:url(../posts/2026-10-02-apresentacao/fontes/437e5f23c97e320c-s.p.woff2) format("woff2");unicode-range:u+00??,u+0131,u+0152-0153,u+02bb-02bc,u+02c6,u+02da,u+02dc,u+0304,u+0308,u+0329,u+2000-206f,u+20ac,u+2122,u+2191,u+2193,u+2212,u+2215,u+feff,u+fffd}
+@font-face{font-family:Barlow Condensed Fallback;src:local("Arial");ascent-override:130.73%;descent-override:26.15%;line-gap-override:0.00%;size-adjust:76.49%}
+:root{--azul:#1B3A8C;--verm:#B5121B;--ouro:#E9C46A;--tinta:#141B2D;--cinza:#4A5568;--linha:#E1E6F0;--fundo:#F4F6FB;--ok:#1E6B3A}
+@page{size:A4;margin:0}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Barlow',sans-serif;color:var(--tinta);font-size:9.6pt;line-height:1.32}
+.pg{width:210mm;height:297mm;display:flex;flex-direction:column;overflow:hidden}
+header{background:var(--azul);color:#fff;padding:7mm 12mm 5.5mm;display:flex;gap:6mm;align-items:center}
+header img{width:24mm;height:24mm;border-radius:50%}
+.kicker{font-family:'Barlow Condensed';font-weight:700;letter-spacing:2px;color:var(--ouro);font-size:9.5pt}
+h1{font-family:'Barlow Condensed';font-weight:700;font-size:25pt;line-height:1;margin:1mm 0 1.5mm}
+header p{margin:0;color:#D7DEF2;font-size:10.5pt}
+main{padding:5mm 12mm 0;display:grid;grid-template-columns:1fr 1fr;gap:4mm 7mm;flex:1;align-content:start}
+h2{font-family:'Barlow Condensed';font-weight:700;color:var(--azul);font-size:14pt;margin:0 0 1.5mm}
+ul{margin:0;padding-left:4.5mm}
+li{margin:0 0 .7mm}
+b{color:var(--azul)}
+.box{background:var(--fundo);border:1px solid var(--linha);border-radius:3mm;padding:3mm 4mm}
+.full{grid-column:1/-1}
+.telas{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;align-items:start}
+.telas figure{margin:0}
+.telas img{width:100%;height:44mm;object-fit:cover;object-position:top;border:1px solid var(--linha);border-radius:2mm}
+.telas figcaption{font-size:8.5pt;color:var(--cinza);margin-top:1mm;text-align:center}
+.fluxo{display:flex;gap:2mm;align-items:stretch}
+.etapa{flex:1;background:#fff;border:1px solid var(--linha);border-radius:2.5mm;padding:2mm 2.5mm;font-size:8.6pt;line-height:1.28}
+.etapa .n{display:inline-flex;width:5.5mm;height:5.5mm;border-radius:50%;background:var(--verm);color:#fff;font-family:'Barlow Condensed';font-weight:700;align-items:center;justify-content:center;margin:0 1.5mm .5mm 0;vertical-align:middle}
+.seta{align-self:center;color:var(--verm);font-weight:700}
+.status td{padding:.6mm 2mm .6mm 0;vertical-align:top}
+.ok{color:var(--ok);font-weight:700}
+.pend{color:#8A5A00;font-weight:700}
+footer{padding:2.5mm 12mm 5mm;color:var(--cinza);font-size:8.5pt;display:flex;justify-content:space-between;border-top:1px solid var(--linha);margin-top:4mm}
+</style>
+</head>
+<body>
+<div class="pg">
+<header>
+  <img src="../posts/2026-10-02-apresentacao/selo.jpg" alt="Selo Efeito Rebote">
+  <div>
+    <div class="kicker">RIFA SOLIDÁRIA · EFEITO REBOTE</div>
+    <h1>Sistema de vendas e prestação de contas</h1>
+    <p>Aplicativo web da turma para registrar cada venda, receber por PIX e fechar o caixa sem divergência.</p>
+  </div>
+</header>
+
+<main>
+  <section>
+    <h2>Por que um sistema próprio</h2>
+    <ul>
+      <li>São <b>80 vendedores</b>, <b>2.400 bilhetes</b> e até <b>R$ 12.000</b>: planilha e papel não garantem que a conta feche.</li>
+      <li>Cada aluno vende de forma independente; o controle precisa ser <b>centralizado e em tempo real</b>.</li>
+      <li>A prestação de contas precisa ser <b>verificável</b> por qualquer pessoa, item por item.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Como a conta sempre fecha</h2>
+    <ul>
+      <li><b>Livro-caixa imutável:</b> nenhum lançamento pode ser editado ou apagado; correção só por estorno.</li>
+      <li><b>Regras no banco de dados:</b> só o dono do bloco vende seus números; nenhum número é vendido duas vezes.</li>
+      <li><b>Despesa só com nota fiscal</b> (número e foto) e nunca acima do saldo.</li>
+      <li><b>Conciliação automática:</b> 8 verificações provam que entradas = bilhetes confirmados × R$ 5.</li>
+      <li><b>Auditoria:</b> toda ação fica registrada com autor e horário.</li>
+    </ul>
+  </section>
+
+  <section class="full">
+    <h2>Fluxo de uma venda</h2>
+    <div class="fluxo">
+      <div class="etapa"><div class="n">1</div>O aluno entra pelo celular com seu e-mail e vê apenas os 30 números do seu bloco.</div>
+      <div class="seta">›</div>
+      <div class="etapa"><div class="n">2</div>Marca os números, informa comprador e telefone e escolhe PIX ou dinheiro.</div>
+      <div class="seta">›</div>
+      <div class="etapa"><div class="n">3</div>O sistema gera o PIX com valor exato e código do pedido; o dinheiro cai direto na conta da comissão.</div>
+      <div class="seta">›</div>
+      <div class="etapa"><div class="n">4</div>A comissão confere o extrato e confirma; o lançamento entra no caixa automaticamente.</div>
+      <div class="seta">›</div>
+      <div class="etapa"><div class="n">5</div>Só bilhetes confirmados entram na lista do sorteio, publicada sem dados pessoais.</div>
+    </div>
+  </section>
+
+  <section class="full">
+    <div class="telas">
+      <figure><img src="2-vendedor.png" alt="Tela do vendedor"><figcaption>Bloco do vendedor</figcaption></figure>
+      <figure><img src="3-pix.png" alt="Tela do PIX"><figcaption>PIX com valor exato</figcaption></figure>
+      <figure><img src="5-comissao.png" alt="Painel da comissão" style="object-position:left top"><figcaption>Painel da comissão</figcaption></figure>
+      <figure><img src="4-transparencia.png" alt="Página de transparência"><figcaption>Transparência pública</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="box">
+    <h2>Transparência e proteção de dados</h2>
+    <ul>
+      <li>Página pública com bilhetes pagos, valor arrecadado, gastos e saldo, para divulgar no Instagram.</li>
+      <li>Nome e telefone do comprador visíveis só ao vendedor e à comissão; eliminados após a entrega do prêmio (LGPD).</li>
+      <li>Exportação da prestação de contas e da lista do sorteio em planilha.</li>
+    </ul>
+  </section>
+
+  <section class="box">
+    <h2>Situação atual</h2>
+    <table class="status">
+      <tr><td class="ok">Pronto</td><td>Sistema completo, testado de ponta a ponta com navegador e banco de dados reais (18 de 18 verificações).</td></tr>
+      <tr><td class="ok">Pronto</td><td>Teste de fraude: entrada forjada no caixa é detectada pela conciliação.</td></tr>
+      <tr><td class="pend">Falta</td><td>Publicar (Supabase + Vercel, gratuitos) e cadastrar e-mails dos alunos, comissão e chave PIX.</td></tr>
+      <tr><td class="pend">Falta</td><td>Aprovação da professora para a rifa e para a conta de recebimento.</td></tr>
+    </table>
+  </section>
+</main>
+
+<footer>
+  <span>Tecnologia: Next.js, Supabase (PostgreSQL), PIX padrão Banco Central · custo de operação: zero</span>
+  <span>@efeitorebote.oficial</span>
+</footer>
+</div>
+</body>
+</html>
