@@ -1,0 +1,76 @@
+{
+  "features": [
+    {
+      "id": "F01",
+      "name": "Projeto escrito no modelo da professora",
+      "description": "Adaptar docs/fonte/Trabalho Escrito.pdf ao modelo relatorio_extensao_projeto word.docx, incluindo todas as ações (rifa com regulamento, pontos de coleta, redes sociais, visita) com regras e forma de execução. Saída: entregas/projeto-escrito.docx e .pdf",
+      "deadline": "sexta 12h",
+      "dependencies": [],
+      "status": "in-progress",
+      "evidence": "2026-10-02: projeto-escrito + anexos 1-3 em entregas/; pedidos dos áudios aplicados; check.sh 0 erros; faltam PENDENTEs do usuário"
+    },
+    {
+      "id": "F02",
+      "name": "Regulamento e controle da rifa",
+      "description": "Regulamento (prêmio, sorteio, prestação de contas), numeração 0001-2400, distribuição de 30 números por aluno, planilha de controle. Usado dentro do F01.",
+      "deadline": "sexta 12h (resumo no F01)",
+      "dependencies": [],
+      "status": "in-progress",
+      "evidence": "2026-10-02: regulamento (anexo 1) com prazos e método; folhas-rifa-0001-2400.pdf (480 folhas, 5 por folha, 6 por aluno, QR para @efeitorebote.oficial); controle-rifa.xlsx (fórmulas testadas no LibreOffice); formulario-vendas.md. Faltam comissão, PIX e horário do sorteio."
+    },
+    {
+      "id": "F03",
+      "name": "Post de apresentação do projeto",
+      "description": "Arte e legenda explicando o projeto, sem pedido de doação. Enviar à prof.ª Camila.",
+      "deadline": "envio sexta; publicação até segunda",
+      "dependencies": [],
+      "status": "in-progress",
+      "evidence": "2026-10-02: carrossel de 5 slides 1080x1350 + legenda em entregas/posts/2026-10-02-apresentacao/ (aguardando aprovação); check.sh ok; sem pedido de doação. Falta: aprovação da prof.ª Camila e publicação até segunda."
+    },
+    {
+      "id": "F05",
+      "name": "Calendário editorial (3x/semana)",
+      "description": "Pauta de posts até a visita, com status de aprovação por post.",
+      "deadline": "antes do 3º encontro",
+      "dependencies": [
+        "F03"
+      ],
+      "status": "not-started",
+      "evidence": ""
+    },
+    {
+      "id": "F06",
+      "name": "Controle da arrecadação",
+      "description": "Planilha de itens recebidos por tipo e por aluno, valores da rifa, compras.",
+      "deadline": "antes do 3º encontro",
+      "dependencies": [
+        "F02"
+      ],
+      "status": "in-progress",
+      "evidence": "Controle da rifa pronto em entregas/rifa/controle-rifa.xlsx; falta o controle dos itens doados"
+    },
+    {
+      "id": "F07",
+      "name": "Relatório final",
+      "description": "Resultados, visita de 04-05/nov, avaliação qualitativa, no modelo da instituição. Seguir docs/roteiro-relatorio-final.md.",
+      "deadline": "último encontro",
+      "dependencies": [
+        "F01",
+        "F06"
+      ],
+      "status": "not-started",
+      "evidence": ""
+    },
+    {
+      "id": "F08",
+      "name": "Facilitador de vendas da rifa (Next.js + Supabase)",
+      "description": "App em vendas/: vendedor registra vendas e gera PIX; comissão confirma, lança despesas com NF; livro-caixa imutável, auditoria e conciliacao(); página pública de transparência.",
+      "deadline": "antes do início das vendas",
+      "dependencies": [
+        "F02"
+      ],
+      "status": "in-progress",
+      "evidence": "2026-10-02: visual igual ao design (artifact YHeJpL9y99VaEhj3bTtwff); npm test 5/5; test:db ok; test:e2e 18/18 com navegador real (venda PIX e dinheiro, isolamento entre vendedores, confirmação, conciliação 8/8, CSV, bloqueio de acesso, transparência sem dados pessoais). Falta: deploy no Supabase e na Vercel com contas reais (login por e-mail e upload de nota fiscal não exercitados localmente)."
+    }
+  ]
+}
