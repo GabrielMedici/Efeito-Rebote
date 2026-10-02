@@ -1,4 +1,4 @@
-# Roteiro do relatório final (F07)
+# Roteiro do relatório final
 
 > Tirado das orientações que vieram na versão da turma (seções 6.6 e 6.7, notas de orientação). Use como checklist ao redigir o relatório final.
 

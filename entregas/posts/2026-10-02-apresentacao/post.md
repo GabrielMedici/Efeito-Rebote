@@ -1,7 +1,7 @@
 # Post 1: apresentação do projeto
 
 **Status:** aguardando aprovação (prof.ª Camila)
-**Formato:** carrossel no feed do Instagram com 5 imagens de 1080×1350 (`slide-1.png` a `slide-5.png`)
+**Formato:** carrossel no feed do Instagram com 5 imagens de 1080×1350 (slide-1.png a slide-5.png)
 **Objetivo:** apresentar e explicar o projeto. **Não pede doações**, conforme a orientação de que a primeira postagem é só informativa.
 **Publicação:** até segunda-feira, depois da aprovação.
 

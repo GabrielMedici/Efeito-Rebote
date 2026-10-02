@@ -21,6 +21,7 @@ def cabecalho(ws, cols, larg):
 
 
 wb = Workbook()
+wb.properties.creator = wb.properties.lastModifiedBy = "Acadêmicos do 3º semestre noturno – Turma B"
 res = wb.active
 res.title = "Resumo"
 dist = wb.create_sheet("Distribuição")

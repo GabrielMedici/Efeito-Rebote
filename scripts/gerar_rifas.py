@@ -109,6 +109,9 @@ def gerar(amostra=False):
     destino = os.path.join(RAIZ, "entregas", "rifa", "folhas-rifa-amostra.pdf" if amostra else "folhas-rifa-0001-2400.pdf")
     c = canvas.Canvas(destino, pagesize=A4)
     c.setTitle("Rifa solidária Efeito Rebote")
+    c.setAuthor("Acadêmicos do 3º semestre noturno – Turma B")
+    c.setCreator("Acadêmicos do 3º semestre noturno – Turma B")
+    c.setProducer("Efeito Rebote")
     folhas = TOTAL // POR_FOLHA
     for f in range(2 if amostra else folhas):
         n0 = f * POR_FOLHA + 1

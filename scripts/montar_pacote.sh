@@ -4,6 +4,7 @@
 set -e
 cd "$(dirname "$0")/.."
 P=pacote/Efeito-Rebote
+python3 scripts/limpar_metadados.py
 rm -rf pacote && mkdir -p "$P"/{01-Projeto-Escrito,02-Anexos,03-Rifa,04-Redes-Sociais,05-App-de-Vendas,06-Fontes-e-Pesquisa,07-Identidade-Visual}
 E=entregas
 cp $E/projeto-escrito.docx "$P/01-Projeto-Escrito/Projeto-Escrito-Efeito-Rebote.docx"
