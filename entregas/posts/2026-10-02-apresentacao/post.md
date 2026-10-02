@@ -34,4 +34,4 @@ Acompanhe e entenda por que o básico importa para todos nós.
 - Não usa imagem de pessoas presas nem tom sensacionalista.
 - Nenhuma menção avaliativa.
 - Não traz número sem fonte: o único dado é a lei, que está citada.
-- A legenda tem cerca de 140 palavras e 5 hashtags.
+- A legenda tem cerca de 120 palavras e 5 hashtags.
