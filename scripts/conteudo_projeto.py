@@ -78,10 +78,11 @@ DIMENSAO_PEDAGOGICA = [
         "arrecadação, triagem e entrega de itens de higiene pessoal em conformidade com as normas da Polícia Penal do Paraná, e "
         "conscientizar a comunidade acadêmica e externa sobre o \"efeito rebote\" da desassistência material, promovendo, ao mesmo "
         "tempo, a formação humanística, crítica e cidadã dos acadêmicos de Direito.",
-        "Objetivos específicos: (1) avaliar condições que coloquem apenados em situação de risco; (2) promover o acolhimento às "
-        "famílias daqueles em reclusão; (3) realizar busca e arrecadação de insumos conforme a necessidade das instituições PEM, CCM "
-        "e CPIM; (4) promover campanhas de doação para as instituições PEM, CCM e CPIM; (5) estimular nos acadêmicos de Direito o "
-        "pensamento crítico, humanístico e de cidadania; e (6) promover na sociedade em geral a responsabilidade social.",
+        "Objetivos específicos: (1) identificar a ocorrência do fenômeno \"efeito rebote\" como problema social; (2) observar, nas "
+        "visitas técnicas, as condições de assistência material nas unidades; (3) promover o acolhimento às famílias daqueles em "
+        "reclusão, por meio de roda de conversa; (4) realizar busca, arrecadação e campanhas de doação de insumos conforme a "
+        "necessidade da PEM, da CCM e da CPIM; (5) estimular nos acadêmicos de Direito o pensamento crítico, humanístico e de "
+        "cidadania; e (6) promover a responsabilidade social na comunidade por meio das redes sociais e das ações de mobilização.",
     ]),
     ("Habilidades e atitudes desenvolvidas", [
         "Conhecimentos: execução penal e direitos da pessoa presa (LEP, Constituição Federal, Regras de Mandela); estrutura e "
@@ -181,6 +182,14 @@ DIMENSAO_PEDAGOGICA = [
         "Visitas técnicas e entrega. As visitas à PEM, à CCM e à CPIM estão previstas para 04 e 05 de novembro, em grupos de até 50 "
         "alunos, com acompanhamento docente obrigatório e transporte institucional, observadas as normas de segurança das unidades. "
         "A entrega dos itens arrecadados será integrada às visitas e registrada em termo de entrega com os quantitativos por unidade.",
+        "Acolhimento às famílias. Será realizada uma roda de conversa com familiares de pessoas privadas de liberdade, conduzida "
+        "pelos acadêmicos sob mediação da professora responsável, em [PENDENTE: data e local; sugestão: dependências da UniCesumar], "
+        "com divulgação feita em parceria com [PENDENTE: instituição que fará a ponte com as famílias, como o Conselho da Comunidade "
+        "ou a Defensoria Pública] e mediante autorização das instâncias envolvidas. O encontro terá caráter de escuta e acolhimento e "
+        "abordará, em linguagem acessível, os direitos da pessoa presa e de seus familiares (assistência material e à saúde, regras "
+        "de visita) e os canais públicos de apoio. Regras: participação voluntária; sigilo sobre os relatos; nenhum registro de "
+        "imagem ou dado que identifique os participantes, sendo a presença registrada apenas em número; e vedação de orientação "
+        "jurídica individual pelos acadêmicos, com encaminhamento dos casos concretos à Defensoria Pública.",
         "Proteção de dados. O nome e o telefone dos compradores são coletados exclusivamente para identificação dos bilhetes e "
         "contato com o ganhador, ficam acessíveis apenas ao vendedor e à comissão financeira, não são divulgados e serão eliminados "
         "após a entrega do prêmio, em observância à Lei Geral de Proteção de Dados (Lei nº 13.709/2018).",
@@ -200,7 +209,7 @@ DIMENSAO_PEDAGOGICA = [
         "limite de cada produto; como o pré-projeto especificava creme dental branco, a lista final — tipo, cor, embalagem e forma de "
         "entrega — será validada com a PEM, a CCM e a CPIM antes de qualquer aquisição; (2) a rifa solidária como fonte complementar de "
         "recursos: a divulgação permanece de custo zero, e a receita da rifa, deduzido o prêmio, destina-se exclusivamente à compra de "
-        "itens; (3) as ações de mobilização e junto à sociedade; (4) o sistema on-line de controle de vendas e prestação de contas; e (5) a reformulação dos "
+        "itens; (3) as ações de mobilização e junto à sociedade, incluindo a roda de conversa com familiares; (4) o sistema on-line de controle de vendas e prestação de contas; e (5) a reformulação dos "
         "objetivos específicos e o tratamento do \"efeito rebote\" como categoria de análise fundamentada na literatura, sem "
         "pretensão de comprovar a relação entre prevenção e custos públicos, o que exigiria levantamento de dados alheio ao escopo "
         "da ação extensionista. "
@@ -267,24 +276,24 @@ CRONOGRAMA = [
          entrega="Relatório descritivo da participação na instalação ou na divulgação dos pontos de coleta."),
     dict(titulo="Conteúdo Informativo e Redes Sociais", etapa=E4, carga=None,
          objetivos="Produzir conteúdo informativo sobre a realidade prisional e o \"efeito rebote\" a partir de fontes oficiais.",
-         atividades="Pesquisa de dados (SENAPPEN, CNJ, Defensoria Pública do Paraná); produção de carrosséis e vídeos curtos; organização do calendário de três publicações semanais e envio prévio para aprovação.",
+         atividades="Pesquisa de dados (SENAPPEN, CNJ, Defensoria Pública do Paraná); produção de carrosséis e vídeos curtos; organização do calendário de três publicações semanais e envio prévio para aprovação; elaboração do roteiro da roda de conversa com familiares e contato com a instituição parceira para a divulgação.",
          entrega="Peça de conteúdo produzida ou roteiro, com as fontes utilizadas."),
     dict(titulo="Intervenção no Pátio e Acompanhamento da Arrecadação", etapa=E5, carga=None,
          objetivos="Dar visibilidade à campanha no campus e monitorar o andamento da arrecadação e da rifa.",
          atividades="Montagem do cenário temático no pátio do campus, com exposição dos itens aceitos, caixa de coleta e escala de acadêmicos para atendimento ao público; recolhimento e triagem semanal dos itens do campus e dos comércios parceiros; acerto semanal da rifa com a comissão financeira.",
          entrega="Relatório descritivo da participação na intervenção ou na arrecadação."),
-    dict(titulo="Triagem e Conferência dos Itens", etapa=E5, carga=None,
-         objetivos="Assegurar que os itens arrecadados atendam às especificações exigidas pelas unidades prisionais.",
-         atividades="Conferência item a item (tipo, peso, volume e embalagem); separação dos itens fora do padrão para destinação a outras instituições; contabilização parcial por tipo de item.",
-         entrega="Registro da triagem realizada pela equipe."),
+    dict(titulo="Triagem, Conferência e Consolidação dos Itens", etapa=E5, carga=None,
+         objetivos="Assegurar que os itens atendam às especificações das unidades e consolidar o quantitativo arrecadado.",
+         atividades="Conferência item a item (tipo, peso, volume e embalagem); separação dos itens fora do padrão para destinação a outras instituições; contagem por tipo de item; separação dos lotes por unidade (PEM, CCM e CPIM), conforme a orientação das unidades; atualização do relatório de transparência.",
+         entrega="Registro da triagem e da consolidação realizadas pela equipe."),
     dict(titulo="Balanço da Rifa e Aquisição do Prêmio", etapa=E5, carga=None,
          objetivos="Avaliar o andamento das vendas e garantir a aquisição do prêmio com transparência.",
          atividades="Conferência dos registros do sistema de vendas com os extratos da conta da comissão financeira; balanço por acadêmico; cotação em três lojas e aquisição do tablet com nota fiscal; reforço da divulgação junto aos acadêmicos com menos vendas.",
          entrega="Relatório descritivo da participação no balanço da rifa ou na aquisição do prêmio."),
-    dict(titulo="Consolidação da Arrecadação", etapa=E5, carga=None,
-         objetivos="Consolidar o quantitativo total arrecadado e organizar os itens para a entrega.",
-         atividades="Contagem final por tipo de item; separação dos lotes por unidade (PEM, CCM e CPIM), conforme a orientação das unidades; atualização do relatório de transparência.",
-         entrega="Relatório descritivo da etapa de consolidação."),
+    dict(titulo="Roda de Conversa com Familiares", etapa=E5, carga=None,
+         objetivos="Acolher familiares de pessoas privadas de liberdade e compartilhar informações sobre direitos e canais públicos de apoio.",
+         atividades="Recepção e escuta dos familiares; apresentação, em linguagem acessível, dos direitos relativos à assistência material, à saúde e às visitas; indicação dos canais de apoio (Defensoria Pública, Conselho da Comunidade); registro apenas do número de participantes, sem identificação.",
+         entrega="Relatório reflexivo sobre a escuta das famílias e a relação com o efeito rebote."),
     dict(titulo="Preparação Técnica para as Visitas", etapa=E4, carga=None,
          objetivos="Preparar os acadêmicos para uma visita respeitosa, segura e orientada pela observação crítica.",
          atividades="Apresentação das normas de segurança e de conduta das unidades; elaboração do roteiro de observação (estrutura, assistência material, boas práticas de ressocialização); divisão dos grupos de visita.",

@@ -10,7 +10,7 @@ PENDENTE='\[PENDENTE[^]]*\]|\[PR[ÊE]MIO\]|\[DATA\]|\[LOCAL\]|\[VALOR\]'
 texto() {
   case "$1" in
     *.docx) unzip -p "$1" word/document.xml 2>/dev/null | sed -e 's/<\/w:p>/\n/g' -e 's/<[^>]*>//g' ;;
-    *.pdf)  command -v pdftotext >/dev/null && pdftotext "$1" - | tr '\n' ' ' | sed 's/\([.;]\) /\1\n/g' ;;  # junta linhas quebradas por frase
+    *.pdf)  command -v pdftotext >/dev/null && pdftotext "$1" - | tr '\n' ' ' | sed 's/\. /.\n/g' ;;  # junta linhas quebradas por frase
     *.md|*.txt|*.csv) cat "$1" ;;
   esac
 }
