@@ -24,8 +24,8 @@
       "description": "Arte e legenda explicando o projeto, sem pedido de doação. Enviar à prof.ª Camila.",
       "deadline": "envio sexta; publicação até segunda",
       "dependencies": [],
-      "status": "not-started",
-      "evidence": "Texto-base em entregas/anexo-2-texto-apresentacao.docx (falta arte/legenda)"
+      "status": "in-progress",
+      "evidence": "2026-10-02: carrossel de 5 slides 1080x1350 + legenda em entregas/posts/2026-10-02-apresentacao/ (aguardando aprovação); check.sh ok; sem pedido de doação. Falta: aprovação da prof.ª Camila e publicação até segunda."
     },
     {
       "id": "F05",

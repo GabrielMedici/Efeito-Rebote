@@ -32,6 +32,6 @@ Acompanhe e entenda por que o básico importa para todos nós.
 ## Cuidados verificados
 - Não pede doações nem menciona a rifa.
 - Não usa imagem de pessoas presas nem tom sensacionalista.
-- Não cita nota nem avaliação.
+- Nenhuma menção avaliativa.
 - Não traz número sem fonte: o único dado é a lei, que está citada.
 - A legenda tem cerca de 140 palavras e 5 hashtags.
