@@ -1,0 +1,35 @@
+#!/bin/bash
+# Monta a pasta de entrega organizada (pacote/Efeito-Rebote/) e o zip correspondente.
+# Uso: bash scripts/montar_pacote.sh   (regenere os documentos antes, se algo mudou)
+set -e
+cd "$(dirname "$0")/.."
+P=pacote/Efeito-Rebote
+rm -rf pacote && mkdir -p "$P"/{01-Projeto-Escrito,02-Anexos,03-Rifa,04-Redes-Sociais,05-App-de-Vendas,06-Fontes-e-Pesquisa}
+E=entregas
+cp $E/projeto-escrito.docx "$P/01-Projeto-Escrito/Projeto-Escrito-Efeito-Rebote.docx"
+cp $E/projeto-escrito.pdf "$P/01-Projeto-Escrito/Projeto-Escrito-Efeito-Rebote.pdf"
+cp $E/projeto-completo-com-anexos.pdf "$P/01-Projeto-Escrito/Projeto-Completo-com-Anexos.pdf"
+cp $E/anexo-1-regulamento-arrecadacao-rifa.docx "$P/02-Anexos/Anexo-1-Regulamento-Arrecadacao-e-Rifa.docx"
+cp $E/anexo-1-regulamento-arrecadacao-rifa.pdf "$P/02-Anexos/Anexo-1-Regulamento-Arrecadacao-e-Rifa.pdf"
+cp $E/anexo-2-texto-apresentacao.docx "$P/02-Anexos/Anexo-2-Texto-de-Apresentacao.docx"
+cp $E/anexo-2-texto-apresentacao.pdf "$P/02-Anexos/Anexo-2-Texto-de-Apresentacao.pdf"
+cp $E/anexo-3-pre-projeto-aprovado.pdf "$P/02-Anexos/Anexo-3-Pre-Projeto-Aprovado.pdf"
+cp $E/rifa/folhas-rifa-0001-2400.pdf "$P/03-Rifa/Folhas-de-Rifa-0001-a-2400-IMPRESSAO.pdf"
+cp $E/rifa/folhas-rifa-amostra.pdf "$P/03-Rifa/Folhas-de-Rifa-AMOSTRA-2-folhas.pdf"
+cp $E/rifa/controle-rifa.xlsx "$P/03-Rifa/Planilha-de-Controle-da-Rifa.xlsx"
+cp $E/rifa/formulario-vendas.md "$P/03-Rifa/Formulario-de-Vendas-Especificacao.md"
+cp $E/rifa/custo-beneficio.md "$P/03-Rifa/Custo-Beneficio-do-Premio.md"
+mkdir -p "$P/04-Redes-Sociais/Post-01-Apresentacao"
+cp $E/posts/2026-10-02-apresentacao/slide-*.png "$P/04-Redes-Sociais/Post-01-Apresentacao/"
+cp $E/posts/2026-10-02-apresentacao/post.md "$P/04-Redes-Sociais/Post-01-Apresentacao/Legenda-e-Ficha-do-Post.md"
+cp $E/app/one-page-sistema-vendas.pdf "$P/05-App-de-Vendas/One-Page-Sistema-de-Vendas.pdf"
+mkdir -p "$P/05-App-de-Vendas/Telas"
+for f in 2-vendedor 3-pix 5-comissao 4-transparencia; do cp $E/app/$f.png "$P/05-App-de-Vendas/Telas/"; done
+cp vendas/README.md "$P/05-App-de-Vendas/Como-Publicar-o-App.md"
+cp "docs/fonte/Projeto de Extensao - Efeito Rebote (versao turma).pdf" "$P/06-Fontes-e-Pesquisa/Versao-da-Turma-Fundamentacao.pdf"
+cp docs/fonte/audios-transcricao.md "$P/06-Fontes-e-Pesquisa/Transcricao-dos-Audios.md"
+cp docs/roteiro-relatorio-final.md "$P/06-Fontes-e-Pesquisa/Roteiro-do-Relatorio-Final.md"
+sed -n '/^## Dados de Maringá/,$p' docs/projeto.md > "$P/06-Fontes-e-Pesquisa/Dados-de-Maringa-Defensoria-2025.md"
+cp docs/LEIA-ME-pacote.md "$P/LEIA-ME.md"
+(cd pacote && zip -qr Efeito-Rebote.zip Efeito-Rebote)
+echo "ok: pacote/Efeito-Rebote ($(find "$P" -type f | wc -l) arquivos) e pacote/Efeito-Rebote.zip ($(du -h pacote/Efeito-Rebote.zip | cut -f1))"
