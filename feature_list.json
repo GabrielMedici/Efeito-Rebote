@@ -16,7 +16,7 @@
       "deadline": "sexta 12h (resumo no F01)",
       "dependencies": [],
       "status": "in-progress",
-      "evidence": "Regulamento rascunhado em entregas/anexo-1-regulamento-arrecadacao-rifa.docx; faltam prêmio, sorteio, comissão financeira, distribuição/controle CSV"
+      "evidence": "2026-10-02: regulamento (anexo 1) com prazos e método; folhas-rifa-0001-2400.pdf (480 folhas, 5 por folha, 6 por aluno, QR para @efeitorebote.oficial); controle-rifa.xlsx (fórmulas testadas no LibreOffice); formulario-vendas.md. Faltam comissão, PIX e horário do sorteio."
     },
     {
       "id": "F03",
@@ -46,8 +46,8 @@
       "dependencies": [
         "F02"
       ],
-      "status": "not-started",
-      "evidence": ""
+      "status": "in-progress",
+      "evidence": "Controle da rifa pronto em entregas/rifa/controle-rifa.xlsx; falta o controle dos itens doados"
     },
     {
       "id": "F07",

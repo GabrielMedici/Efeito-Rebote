@@ -15,8 +15,10 @@
 
 - Imagens do pré-projeto incluídas: logos no cabeçalho do projeto e dos anexos; Figuras 01 a 03 no campo "Identidade visual e materiais".
 
+- Ações de mobilização (cenário no pátio, caixas em comércios, banners; outdoor só se cedido) no projeto. Folhas de rifa, planilha de controle e especificação do formulário prontas.
+
 ## Pendências do usuário
-- Comissão financeira: nomes e chave PIX. Horário do sorteio (02/11, ao vivo). Criar o formulário on-line de registro das vendas (tarefa F02/F06).
+- Comissão financeira: nomes e chave PIX. Horário do sorteio (02/11, ao vivo). Criar o Google Form conforme entregas/rifa/formulario-vendas.md.
 - Arte da rifa: incluir QR Code e @ e usar numeração de 4 dígitos (sugestão: gerar a folha de impressão como tarefa F02).
 - Rifa: modelo do tablet (ver `entregas/rifa/custo-beneficio.md`), data, local e método do sorteio, comissão financeira, prazo de devolução e confirmação de que a rifa é permitida pela instituição.
 - Semestres participantes (o usuário pergunta em 03/10), datas de início e fim. A carga horária ficou como PENDENTE porque o usuário removeu a proposta.

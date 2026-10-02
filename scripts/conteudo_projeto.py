@@ -121,6 +121,15 @@ DIMENSAO_PEDAGOGICA = [
         "comunidade de Maringá, como igrejas, delegacias e estabelecimentos comerciais, poderão receber pontos de coleta externos e "
         "material informativo sobre o \"efeito rebote\", mediante aprovação da professora responsável e autorização do responsável "
         "pelo local, seguindo as mesmas regras de identificação, recolhimento, triagem e registro dos pontos do campus.",
+        "Ações de mobilização para a arrecadação. Para chamar a atenção da comunidade e ampliar as doações, serão realizadas: "
+        "(1) intervenção visual no pátio do campus, com cenário temático montado com a identidade visual do projeto, exposição dos "
+        "cinco itens aceitos, informações sobre o \"efeito rebote\" e caixa de coleta, com acadêmicos em escala para explicar o projeto "
+        "ao público; (2) caixas de coleta personalizadas em comércios locais de Maringá, instaladas com autorização do responsável "
+        "por cada estabelecimento e recolhidas semanalmente pela equipe de Logística e Arrecadação; e (3) peças de grande formato, como "
+        "banners e faixas no campus, produzidas com a cota de impressão institucional — a veiculação em outdoor somente ocorrerá se "
+        "houver cessão gratuita do espaço, preservando a estratégia de custo zero. Todas as ações dependem de autorização prévia da "
+        "professora responsável e da instituição, e o cenário evitará qualquer representação sensacionalista ou estigmatizante das "
+        "pessoas privadas de liberdade.",
         "Rifa solidária. Como forma complementar de arrecadação, será realizada uma rifa com bilhetes numerados de 0001 a 2400, ao "
         "valor de R$ 5,00 cada. Cada acadêmico receberá um bloco de 30 bilhetes numerados em sequência, vendidos em sua rede de "
         "contatos, o que distribui a responsabilidade de forma igualitária e dispensa a organização de eventos. Para que a rifa também cumpra função de "
@@ -187,10 +196,10 @@ CRONOGRAMA = [
          objetivos="Produzir conteúdo informativo sobre a realidade prisional e o \"efeito rebote\" a partir de fontes oficiais.",
          atividades="Pesquisa de dados (SENAPPEN, CNJ, Defensoria Pública do Paraná); produção de carrosséis e vídeos curtos; organização do calendário de três publicações semanais e envio prévio para aprovação.",
          entrega="Peça de conteúdo produzida ou roteiro, com as fontes utilizadas."),
-    dict(titulo="Acompanhamento da Arrecadação e da Rifa", etapa=E5, carga=None,
-         objetivos="Monitorar o andamento da campanha e garantir a transparência no controle de itens e valores.",
-         atividades="Recolhimento e triagem semanal dos itens; atualização da planilha de controle; acerto parcial de valores e canhotos da rifa com a comissão financeira; ajuste das estratégias de divulgação.",
-         entrega="Relatório descritivo das tarefas assumidas na arrecadação."),
+    dict(titulo="Intervenção no Pátio e Acompanhamento da Arrecadação", etapa=E5, carga=None,
+         objetivos="Dar visibilidade à campanha no campus e monitorar o andamento da arrecadação e da rifa.",
+         atividades="Montagem do cenário temático no pátio do campus, com exposição dos itens aceitos, caixa de coleta e escala de acadêmicos para atendimento ao público; recolhimento e triagem semanal dos itens do campus e dos comércios parceiros; acerto semanal da rifa com a comissão financeira.",
+         entrega="Relatório descritivo da participação na intervenção ou na arrecadação."),
     dict(titulo="Triagem e Conferência dos Itens", etapa=E5, carga=None,
          objetivos="Assegurar que os itens arrecadados atendam às especificações exigidas pelas unidades prisionais.",
          atividades="Conferência item a item (tipo, peso, volume e embalagem); separação dos itens fora do padrão para destinação a outras instituições; contabilização parcial por tipo de item.",
