@@ -16,6 +16,18 @@ import conteudo_projeto as C  # noqa: E402
 RAIZ = os.path.join(os.path.dirname(__file__), "..")
 CINZA = RGBColor(0x44, 0x44, 0x44)
 CINZA_CLARO = RGBColor(0x66, 0x66, 0x66)
+ASSETS = os.path.join(RAIZ, "assets")
+
+
+def cabecalho_logos(doc, altura=1.4):
+    """Logo da instituição à esquerda e selo do projeto à direita, como na capa do pré-projeto."""
+    t = doc.add_table(rows=1, cols=2)
+    esq, dir_ = t.rows[0].cells
+    esq.paragraphs[0].add_run().add_picture(os.path.join(ASSETS, "logo-unicesumar.png"), height=Cm(altura * 0.75))
+    dir_.paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.RIGHT
+    dir_.paragraphs[0].add_run().add_picture(os.path.join(ASSETS, "selo-efeito-rebote.jpg"), height=Cm(altura * 1.4))
+    esq.vertical_alignment = 1  # centro
+    larguras(t, (9.0, 9.0))
 
 
 def base(doc):
@@ -93,6 +105,15 @@ def campos(doc, pares, largura_rotulo=4.2):
         paragrafos = valor if isinstance(valor, list) else [valor]
         for i, texto in enumerate(paragrafos):
             p = c2.paragraphs[0] if i == 0 else c2.add_paragraph()
+            if isinstance(texto, dict):  # figura: {"img", "legenda", "largura"}
+                p.paragraph_format.space_before = Pt(8)
+                run(p, texto["legenda"], bold=True, size=8.5, color=CINZA)
+                q = c2.add_paragraph()
+                q.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                q.add_run().add_picture(os.path.join(ASSETS, texto["img"]), width=Cm(texto.get("largura", 12)))
+                f = c2.add_paragraph()
+                run(f, "Fonte: Elaborado pelos autores (2026).", size=8, color=CINZA_CLARO)
+                continue
             p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
             if i:
                 p.paragraph_format.space_before = Pt(4)
@@ -134,7 +155,9 @@ def cronograma(doc):
 def gerar_relatorio():
     doc = Document()
     base(doc)
+    cabecalho_logos(doc)
     p = doc.add_paragraph()
+    p.paragraph_format.space_before = Pt(6)
     run(p, "Relatório da Atividade Extensionista", bold=True, size=16)
     p = doc.add_paragraph()
     run(p, C.CABECALHO, size=8, color=CINZA_CLARO)
@@ -177,7 +200,9 @@ def gerar_anexo(nome_arquivo, titulo, blocos):
     doc = Document()
     base(doc)
     doc.styles["Normal"].font.size = Pt(11)
+    cabecalho_logos(doc)
     p = doc.add_paragraph()
+    p.paragraph_format.space_before = Pt(8)
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     run(p, titulo, bold=True, size=13)
     p.paragraph_format.space_after = Pt(10)

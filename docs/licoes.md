@@ -12,3 +12,4 @@
 - 2026-10-02 [relatorio] A prof.ª Camila pede: (a) todos os 15 encontros explícitos, com o que acontece em cada um; (b) reuniões às segundas, deixado explícito; (c) ações que levem o projeto à sociedade (parceiros externos), já que a rifa sozinha não basta; (d) o pré-projeto aprovado vai como anexo.
 - 2026-10-02 [rifa] O bilhete precisa ter o @ do Instagram e um QR Code do projeto: a rifa também é ferramenta de conscientização.
 - 2026-10-02 [ambiente] Para transcrever áudios: `pip install faster-whisper`, modelo "medium", int8, idioma pt (cerca de 2 min de áudio levam poucos minutos em CPU).
+- 2026-10-02 [relatorio] As imagens do pré-projeto estão em `assets/`: logo da UniCesumar, selo, Figuras 01 a 03. O PNG da UniCesumar extraído do PDF vinha com transparência fraca (alfa máximo de 69) e precisou ser normalizado.

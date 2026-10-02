@@ -77,6 +77,21 @@ DIMENSAO_PEDAGOGICA = [
         "compromisso com a dignidade da pessoa humana; ética e transparência no manejo de doações e recursos; postura respeitosa e "
         "observância das normas de segurança durante as visitas técnicas.",
     ]),
+    ("Identidade visual e materiais", [
+        "A identidade visual do projeto baseia-se em um emblema circular que traduz as falhas estruturais da execução penal. O azul "
+        "marinho da borda e da tipografia transmite institucionalidade e seriedade jurídica; o ciclo de setas em vermelho bordô e "
+        "amarelo dourado, cores de alerta, representa a continuidade e o alto custo do ciclo de reincidência (Figuras 01 e 02). Ao "
+        "centro, a balança da justiça contrapõe o peso da lei, representado pelo Código Penal, ao peso econômico da desassistência, "
+        "representado por um cifrão fraturado com moedas em queda; ao fundo, grades e muros fundidos à arquitetura estatal situam o "
+        "problema na intersecção entre o cárcere e as políticas públicas.",
+        {"img": "fig01-logo-oficial.jpg", "legenda": "Figura 01: Logotipo oficial do projeto Efeito Rebote.", "largura": 11},
+        {"img": "fig02-logo-estilizado.jpg", "legenda": "Figura 02: Logotipo Efeito Rebote (versão estilizada).", "largura": 11},
+        "Com base nessa identidade, foram prototipados os materiais da campanha (Figura 03): folder tríptico educativo com resumo dos "
+        "arts. 12 e 14 da LEP; flyer de balcão com QR Code para os pontos de coleta e as restrições dos itens; caixas de coleta "
+        "padronizadas, nos modelos em papelão reaproveitado e compacto em madeira; e peças digitais para as redes sociais, como "
+        "carrosséis informativos sobre os itens aceitos. Todo material segue as regras de aprovação prévia descritas na metodologia.",
+        {"img": "fig03-mockups-materiais.jpg", "legenda": "Figura 03: Mockups dos materiais da campanha Efeito Rebote.", "largura": 13},
+    ]),
     ("Metodologia", [
         "Os encontros ocorrem semanalmente, às segundas-feiras, às 18h15, com acompanhamento da professora responsável e registro de "
         "frequência, totalizando 15 encontros: o 1º e o 2º destinam-se à construção do projeto; do 3º ao 13º, ao desenvolvimento das "

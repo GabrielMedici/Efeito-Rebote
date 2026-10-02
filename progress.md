@@ -13,6 +13,8 @@
 ## Feito em 02/10
 - Áudios transcritos (`docs/fonte/audios-transcricao.md`) e aplicados: encontros às segundas, ações com a sociedade, QR Code e Instagram na rifa, pré-projeto como anexo 3.
 
+- Imagens do pré-projeto incluídas: logos no cabeçalho do projeto e dos anexos; Figuras 01 a 03 no campo "Identidade visual e materiais".
+
 ## Pendências do usuário
 - @ do Instagram e instituições parceiras confirmadas (igrejas, delegacias, comércios).
 - Arte da rifa: incluir QR Code e @ e usar numeração de 4 dígitos (sugestão: gerar a folha de impressão como tarefa F02).
