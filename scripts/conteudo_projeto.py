@@ -125,11 +125,18 @@ DIMENSAO_PEDAGOGICA = [
         "valor de R$ 5,00 cada. Cada acadêmico receberá um bloco de 30 bilhetes numerados em sequência, vendidos em sua rede de "
         "contatos, o que distribui a responsabilidade de forma igualitária e dispensa a organização de eventos. Para que a rifa também cumpra função de "
         "conscientização, cada bilhete trará o perfil do projeto no Instagram (@efeitorebote.oficial) e um QR Code de "
-        "acesso a ele, de modo que o comprador, ao guardar o bilhete, tenha acesso ao conteúdo informativo do projeto. Regras: cada venda é "
-        "registrada no canhoto (nome, telefone e confirmação de pagamento); os valores e os canhotos são entregues à comissão "
-        "financeira em acertos periódicos, e os bilhetes não vendidos são devolvidos antes do sorteio; o prêmio será "
-        "um tablet Samsung Galaxy Tab A11 (64 GB, Wi-Fi) ou modelo equivalente; o sorteio será público e registrado em vídeo, em 02/11/2026, [PENDENTE: horário e local], pelo método "
-        "[PENDENTE: método do sorteio]. Os valores arrecadados, deduzido o custo de aquisição do prêmio, serão destinados exclusivamente à compra dos itens listados, com "
+        "acesso a ele, de modo que o comprador, ao guardar o bilhete, tenha acesso ao conteúdo informativo do projeto. Como cada "
+        "acadêmico vende de forma independente, o controle é centralizado em meio digital: a cada venda, o vendedor preenche o canhoto "
+        "e registra, no mesmo dia, o número do bilhete, o nome e o telefone do comprador e a forma de pagamento em formulário "
+        "on-line único, que constitui o registro oficial da rifa. O pagamento é feito preferencialmente por PIX diretamente na conta "
+        "da comissão financeira, com o número do bilhete na descrição, de modo que o dinheiro não fique com o vendedor; valores em "
+        "espécie são entregues à comissão nos acertos semanais, realizados às segundas-feiras nos encontros, quando o registro é "
+        "conferido com os extratos. Somente participam do sorteio os bilhetes registrados e pagos até 30/10/2026, às 23h59; a lista "
+        "dos números participantes, sem dados pessoais, é publicada no perfil do projeto em 01/11/2026. O prêmio será um tablet "
+        "Samsung Galaxy Tab A11+ (11 polegadas, Wi-Fi) ou modelo equivalente. O sorteio ocorrerá em 02/11/2026, às "
+        "[PENDENTE: horário], com transmissão ao vivo no @efeitorebote.oficial: os números da lista oficial são impressos, dobrados "
+        "e depositados em urna, e um número é retirado na presença da professora responsável e de duas testemunhas, com lavratura "
+        "de ata; por ser transmitido on-line, o sorteio independe do funcionamento do campus. Os valores arrecadados, deduzido o custo de aquisição do prêmio, serão destinados exclusivamente à compra dos itens listados, com "
         "comprovação por nota fiscal e prestação de contas à professora responsável e à turma. A realização da rifa está condicionada "
         "à autorização da instituição, observadas as normas institucionais e a legislação aplicável; o regulamento completo consta "
         "do Anexo 1.",
@@ -188,10 +195,10 @@ CRONOGRAMA = [
          objetivos="Assegurar que os itens arrecadados atendam às especificações exigidas pelas unidades prisionais.",
          atividades="Conferência item a item (tipo, peso, volume e embalagem); separação dos itens fora do padrão para destinação a outras instituições; contabilização parcial por tipo de item.",
          entrega="Registro da triagem realizada pela equipe."),
-    dict(titulo="Sorteio da Rifa e Aquisição dos Itens", etapa=E5, carga=None,
-         objetivos="Concluir a rifa com transparência e converter os valores arrecadados em itens de higiene.",
-         atividades="Acerto final de valores e devolução dos bilhetes não vendidos; sorteio público e registrado em vídeo; pesquisa de preços e compra dos itens; arquivamento das notas fiscais para a prestação de contas.",
-         entrega="Relatório descritivo da participação no encerramento da rifa ou na aquisição dos itens."),
+    dict(titulo="Balanço da Rifa e Aquisição do Prêmio", etapa=E5, carga=None,
+         objetivos="Avaliar o andamento das vendas e garantir a aquisição do prêmio com transparência.",
+         atividades="Conferência do formulário de vendas com os extratos da conta da comissão financeira; balanço por acadêmico; cotação em três lojas e aquisição do tablet com nota fiscal; reforço da divulgação junto aos acadêmicos com menos vendas.",
+         entrega="Relatório descritivo da participação no balanço da rifa ou na aquisição do prêmio."),
     dict(titulo="Consolidação da Arrecadação", etapa=E5, carga=None,
          objetivos="Consolidar o quantitativo total arrecadado e organizar os itens para a entrega.",
          atividades="Contagem final por tipo de item; separação dos lotes por unidade (PEM, CCM e CPIM), conforme a orientação das unidades; atualização do relatório de transparência.",
@@ -204,10 +211,10 @@ CRONOGRAMA = [
          objetivos="Organizar o transporte, os grupos e a entrega dos itens nas unidades.",
          atividades="Confirmação das listas de participantes e dos documentos exigidos pelas unidades; organização do transporte institucional; preparação dos lotes e dos termos de entrega.",
          entrega="Checklist da equipe responsável pela logística."),
-    dict(titulo="Comunicação dos Resultados Parciais", etapa=E5, carga=None,
-         objetivos="Dar transparência às ações realizadas junto à comunidade acadêmica.",
-         atividades="Produção de conteúdo, previamente aprovado, sobre o andamento do projeto e o quantitativo arrecadado; agradecimento aos apoiadores.",
-         entrega="Peça de comunicação ou relato da participação na divulgação."),
+    dict(titulo="Encerramento da Rifa e Comunicação dos Resultados Parciais", etapa=E5, carga=None,
+         objetivos="Encerrar a rifa com transparência e preparar a aquisição dos itens com os valores arrecadados.",
+         atividades="Acerto final de valores (prazo de vendas: 30/10); publicação da lista de números participantes (01/11); organização do sorteio transmitido ao vivo no @efeitorebote.oficial em 02/11, com ata e testemunhas; compra dos itens com nota fiscal; produção de conteúdo, previamente aprovado, sobre o quantitativo arrecadado.",
+         entrega="Relatório descritivo da participação no encerramento da rifa ou na comunicação dos resultados."),
     dict(titulo="Visitas Técnicas e Entrega dos Itens (04 e 05/11)", etapa=E5, carga=None,
          objetivos="Observar in loco a estrutura e o funcionamento das unidades e a aplicação da LEP; entregar os itens arrecadados.",
          atividades="Visitas técnicas à PEM, à CCM e à CPIM, com acompanhamento docente; entrega dos itens aos gestores das unidades, com assinatura do termo de entrega; registro das observações conforme o roteiro.",
@@ -241,11 +248,14 @@ REGULAMENTO = [
     ("li", "Bilhetes numerados de 0001 a 2400, ao valor unitário de R$ 5,00."),
     ("li", "Cada acadêmico participante recebe um bloco de 30 bilhetes em sequência, registrado em planilha de distribuição."),
     ("li", "Cada bilhete traz o perfil do projeto no Instagram (@efeitorebote.oficial) e um QR Code de acesso a ele, para que o comprador conheça o projeto."),
-    ("li", "Cada venda deve ser registrada no canhoto, com nome e telefone do comprador e a confirmação de pagamento."),
-    ("li", "Os valores e os canhotos são entregues à comissão financeira em acertos periódicos; os bilhetes não vendidos devem ser devolvidos até [PENDENTE: data-limite de devolução]."),
-    ("li", "Prêmio: 01 (um) tablet Samsung Galaxy Tab A11 (64 GB, Wi-Fi) ou modelo equivalente, novo e com nota fiscal."),
-    ("li", "Sorteio: público e registrado em vídeo, em 02/11/2026, [PENDENTE: horário e local], pelo método [PENDENTE: método do sorteio]. Concorrem apenas os bilhetes pagos e registrados."),
-    ("li", "O resultado será divulgado nos canais do projeto e o ganhador será contatado pelo telefone informado no canhoto, tendo [PENDENTE: prazo] para retirar o prêmio."),
+    ("li", "Cada acadêmico vende seus bilhetes de forma independente. A cada venda, preenche o canhoto (nome e telefone do comprador) e registra no mesmo dia, no formulário on-line oficial da rifa, o número do bilhete, os dados do comprador e a forma de pagamento. O formulário é o registro oficial para o sorteio."),
+    ("li", "O pagamento é feito preferencialmente por PIX diretamente na conta da comissão financeira ([PENDENTE: chave PIX da comissão]), com o número do bilhete na descrição. Valores em espécie são entregues à comissão nos acertos semanais, às segundas-feiras, nos encontros do projeto."),
+    ("li", "Prazo final de venda, registro e pagamento: 30/10/2026, às 23h59. Bilhetes não registrados ou não pagos até esse horário não concorrem."),
+    ("li", "Em 01/11/2026, a lista dos números participantes (sem dados pessoais) é publicada no @efeitorebote.oficial."),
+    ("li", "Os canhotos e os bilhetes não vendidos são entregues à comissão financeira no primeiro encontro após o sorteio, para conferência e arquivo."),
+    ("li", "Prêmio: 01 (um) tablet Samsung Galaxy Tab A11+ (11 polegadas, Wi-Fi) ou modelo equivalente, novo e com nota fiscal."),
+    ("li", "Sorteio: 02/11/2026, às [PENDENTE: horário], com transmissão ao vivo no @efeitorebote.oficial. Os números da lista oficial são impressos, dobrados e depositados em urna; um número é retirado na presença da professora responsável e de duas testemunhas, com lavratura de ata e gravação do vídeo."),
+    ("li", "O resultado será divulgado nos canais do projeto e o ganhador será contatado pelo telefone informado no canhoto, em até 24 horas após o sorteio, tendo 30 dias para retirar o prêmio. Se o prêmio não for retirado nesse prazo, será realizado novo sorteio entre os demais números participantes, divulgado nos mesmos canais."),
     ("li", "A realização da rifa está condicionada à autorização da instituição, observadas as normas institucionais e a legislação aplicável."),
     ("h", "5. Destinação dos recursos e prestação de contas"),
     ("p", "Os valores arrecadados com a rifa, deduzido o custo de aquisição do prêmio, serão utilizados exclusivamente na compra dos itens listados no item 2, mediante nota fiscal. A comissão financeira, composta por [PENDENTE: integrantes da comissão financeira], manterá o controle de entradas e saídas. Ao final, será apresentado relatório de transparência à professora responsável e à turma, com o valor arrecadado, os comprovantes de compra e o quantitativo entregue por unidade."),
