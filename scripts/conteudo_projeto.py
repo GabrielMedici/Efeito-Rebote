@@ -37,13 +37,13 @@ COMUNIDADE = [
 
 DIMENSAO_PEDAGOGICA = [
     ("Justificativa", [
-        "A extensão universitária integra, ao lado do ensino e da pesquisa, o tripé que sustenta a educação superior brasileira. A Constituição Federal de 1988, em seu art. 207, estabelece que as universidades obedecerão ao princípio da indissociabilidade entre ensino, pesquisa e extensão (BRASIL, 1988), o que evidencia que a formação acadêmica não deve se restringir ao ambiente da sala de aula, mas alcançar também o contato com a realidade social. Nesse sentido, a Resolução CNE/CES nº 7, de 18 de dezembro de 2018, estabelece as Diretrizes para a Extensão na Educação Superior Brasileira, editada para regulamentar a Meta 12.7 do Plano Nacional de Educação então vigente (Lei nº 13.005/2014), determinando que as atividades de extensão componham, no mínimo, 10% do total da carga horária curricular dos cursos de graduação, devendo integrar a matriz curricular (BRASIL, 2014; BRASIL, 2018).",
-        "Para além de uma exigência normativa, a extensão aproxima o estudante das demandas concretas da sociedade. As diretrizes nacionais orientam que tais ações sejam direcionadas, prioritariamente, a áreas de grande pertinência social (BRASIL, 2018), permitindo que o conhecimento produzido no ambiente universitário retorne à comunidade sob a forma de reflexão, orientação e proposição de soluções. No âmbito do curso de Direito, essa vivência revela-se especialmente relevante, uma vez que possibilita ao acadêmico compreender a aplicação prática das normas jurídicas e os efeitos que delas decorrem sobre a vida dos indivíduos.",
+        "A extensão universitária integra, ao lado do ensino e da pesquisa, o tripé que sustenta a educação superior brasileira. A Constituição Federal de 1988, em seu art. 207, estabelece que as universidades obedecerão ao princípio da indissociabilidade entre ensino, pesquisa e extensão (BRASIL, 1988), o que evidencia que a formação acadêmica não deve se restringir ao ambiente da sala de aula, mas alcançar também o contato com a realidade social. Nesse sentido, a Resolução CNE/CES nº 7, de 18 de dezembro de 2018, estabelece as Diretrizes para a Extensão na Educação Superior Brasileira, editada para regulamentar a Meta 12.7 do Plano Nacional de Educação então vigente (Lei nº 13.005/2014), determinando que as atividades de extensão componham, no mínimo, 10% do total da carga horária curricular dos cursos de graduação, devendo integrar a matriz curricular (BRASIL, 2014; BRASIL, 2018b).",
+        "Para além de uma exigência normativa, a extensão aproxima o estudante das demandas concretas da sociedade. As diretrizes nacionais orientam que tais ações sejam direcionadas, prioritariamente, a áreas de grande pertinência social (BRASIL, 2018b), permitindo que o conhecimento produzido no ambiente universitário retorne à comunidade sob a forma de reflexão, orientação e proposição de soluções. No âmbito do curso de Direito, essa vivência revela-se especialmente relevante, uma vez que possibilita ao acadêmico compreender a aplicação prática das normas jurídicas e os efeitos que delas decorrem sobre a vida dos indivíduos.",
         "O projeto \"Efeito Rebote: o custo da reincidência\" insere-se nessa proposta ao abordar o sistema prisional brasileiro sob a perspectiva da reincidência criminal e de seus reflexos sociais e econômicos. Ao tratar desse tema, os acadêmicos são conduzidos a relacionar os conteúdos estudados em disciplinas como Direito Penal, Direito Processual Penal e Execução Penal a uma questão que repercute diretamente na segurança pública e na destinação dos recursos estatais. Dessa forma, o projeto busca contribuir para o desenvolvimento do senso crítico, da responsabilidade social e da capacidade de análise técnico-jurídica de seus participantes.",
         "Além do aprendizado teórico, a experiência extensionista favorece o desenvolvimento de competências práticas, tais como o trabalho em equipe, a organização de atividades, a comunicação com o público e a gestão de recursos, habilidades igualmente exigidas no exercício profissional. Assim, o projeto de extensão cumpre dupla função: contribui para a formação de acadêmicos mais preparados para a atuação jurídica e reafirma o compromisso da instituição de ensino superior com a transformação da realidade social.",
         "O sistema carcerário brasileiro atravessa uma crise estrutural reconhecida pelo Supremo Tribunal Federal, no julgamento da "
-        "ADPF 347, como um \"estado de coisas inconstitucional\". A Lei de Execução Penal (Lei nº 7.210/1984) assegura à pessoa presa "
-        "assistência material e assistência à saúde de caráter preventivo e curativo (arts. 12, 14 e 41). A literatura científica, "
+        "ADPF 347, como um \"estado de coisas inconstitucional\" (BRASIL, 2023). A Lei de Execução Penal (Lei nº 7.210/1984) assegura à pessoa presa "
+        "assistência material e assistência à saúde de caráter preventivo e curativo (BRASIL, 1984, arts. 12, 14 e 41). A literatura científica, "
         "contudo, documenta escassez crônica de insumos básicos de higiene nas unidades prisionais, o que submete os custodiados a "
         "condições degradantes de habitação e convivência (DIUANA et al., 2008; MINAYO; RIBEIRO, 2016; LÔBO et al., 2022). Diante dessa "
         "insuficiência, os familiares frequentemente assumem o custo dos itens de higiene e dos medicamentos de uso rotineiro "
@@ -51,7 +51,7 @@ DIMENSAO_PEDAGOGICA = [
         "Os estudos indicam que a higiene precária mantém associação multifatorial com o adoecimento no cárcere, atuando em conjunto "
         "com a superlotação, a ventilação inadequada e a alimentação deficiente (GOIS et al., 2012; MINAYO; RIBEIRO, 2016). Em "
         "inquérito com 1.573 presos do Rio de Janeiro, Minayo e Ribeiro (2016) registraram elevada prevalência autorreferida de "
-        "doenças de pele, com destaque para alergias e dermatites (43,4%). Quando o preso adoece, o Estado mobiliza atendimento interno, "
+        "doenças de pele, com destaque para alergias e dermatites (43,4%). Quando a pessoa presa adoece, o Estado mobiliza atendimento interno, "
         "medicamentos, exames, agentes prisionais, escoltas e a rede externa do SUS; em unidades paulistas, a falta de escolta foi o "
         "problema mais citado nos encaminhamentos de saúde, relatado por 53 das 69 penitenciárias masculinas pesquisadas (FERNANDES et al., 2014). "
         "Esses estudos, porém, não apresentam valores em reais nem comparam o custo da prevenção com o do tratamento; por isso, o "
@@ -85,7 +85,7 @@ DIMENSAO_PEDAGOGICA = [
         "cidadania; e (6) promover a responsabilidade social na comunidade por meio das redes sociais e das ações de mobilização.",
     ]),
     ("Habilidades e atitudes desenvolvidas", [
-        "Conhecimentos: execução penal e direitos da pessoa presa (LEP, Constituição Federal, Regras de Mandela); estrutura e "
+        "Conhecimentos: execução penal e direitos da pessoa presa (LEP, Constituição Federal e Regras de Mandela, ORGANIZAÇÃO DAS NAÇÕES UNIDAS, 2015); estrutura e "
         "finalidade dos estabelecimentos prisionais de Maringá; impactos sociais, econômicos e sanitários da insuficiência da "
         "assistência material; noções de gestão de campanhas e de prestação de contas.",
         "Habilidades: pesquisa e análise crítica de dados oficiais; comunicação escrita e oral; produção de conteúdo informativo para "
@@ -117,14 +117,16 @@ DIMENSAO_PEDAGOGICA = [
         "Os encontros ocorrem semanalmente, às segundas-feiras, às 18h15, com acompanhamento da professora responsável e registro de "
         "frequência, totalizando 15 encontros: o 1º e o 2º destinam-se à construção do projeto; do 3º ao 13º, ao desenvolvimento das "
         "atividades conforme os encaminhamentos da turma; o 14º, às visitas técnicas; e o 15º, à discussão dos resultados e à "
-        "elaboração do relatório final. O conteúdo de cada encontro está detalhado no cronograma.",
+        "elaboração do relatório final. O conteúdo de cada encontro está detalhado no cronograma. Algumas ações ocorrem fora do "
+        "horário dos encontros, em datas próprias: o encerramento das vendas da rifa (30/10), a publicação da lista de números (01/11), "
+        "o sorteio transmitido ao vivo (02/11) e as visitas técnicas (04 e 05/11); os encontros correspondentes preparam e avaliam essas ações.",
         "A metodologia fundamenta-se na Aprendizagem Baseada em Projetos (PjBL), organizada em seis etapas integradas: (1) imersão e "
-        "identificação do problema, com estudo da realidade prisional de Maringá; (2) seleção e delimitação do problema prioritário — "
+        "identificação do problema, com estudo da realidade prisional de Maringá; (2) seleção e delimitação do problema prioritário: "
         "a insuficiência de itens de higiene e o \"efeito rebote\"; (3) análise do problema e levantamento das necessidades de "
-        "aprendizagem; (4) estudo e investigação, com aprofundamento teórico e normativo; (5) planejamento e execução da intervenção — "
+        "aprendizagem; (4) estudo e investigação, com aprofundamento teórico e normativo; (5) planejamento e execução da intervenção: "
         "campanha de conscientização, arrecadação, rifa solidária e visitas técnicas com entrega dos itens; e (6) sistematização dos "
-        "resultados, reflexão e elaboração do relatório final. Os estudantes organizam-se em quatro equipes — Apresentação e Visitas, "
-        "Criação e Audiovisual, Pesquisa e Escrita, e Logística e Arrecadação —, e todo o conteúdo produzido é encaminhado à professora "
+        "resultados, reflexão e elaboração do relatório final. Os estudantes organizam-se em quatro equipes (Apresentação e Visitas, "
+        "Criação e Audiovisual, Pesquisa e Escrita, e Logística e Arrecadação), e todo o conteúdo produzido é encaminhado à professora "
         "responsável para análise e aprovação antes da execução ou publicação.",
         "Itens arrecadados. Em conformidade com as restrições de segurança das unidades prisionais, serão aceitos exclusivamente: "
         "(1) escova dental simples; (2) creme dental de até 100 g; (3) aparelho de barbear descartável de duas lâminas; "
@@ -137,7 +139,7 @@ DIMENSAO_PEDAGOGICA = [
         "Ações junto à sociedade. Para que o projeto alcance a comunidade externa e não apenas o ambiente acadêmico, a rifa "
         "funcionará também como instrumento de conscientização, pois cada bilhete leva o perfil @efeitorebote.oficial e um QR Code de "
         "acesso ao conteúdo informativo do projeto, e os acadêmicos atuarão como multiplicadores, explicando o projeto a familiares, "
-        "amigos e colegas de trabalho no momento da venda. A instituição parceira é a UniCesumar, que cede os espaços do campus para os "
+        "amigos e colegas de trabalho no momento da venda. A instituição parceira é a UniCesumar, que, mediante autorização, poderá ceder os espaços do campus para os "
         "pontos de coleta, o local de armazenamento, o transporte institucional e a cota de impressão. Outras instituições da "
         "comunidade de Maringá, como igrejas, delegacias e estabelecimentos comerciais, poderão receber pontos de coleta externos e "
         "material informativo sobre o \"efeito rebote\", mediante aprovação da professora responsável e autorização do responsável "
@@ -147,7 +149,7 @@ DIMENSAO_PEDAGOGICA = [
         "cinco itens aceitos, informações sobre o \"efeito rebote\" e caixa de coleta, com acadêmicos em escala para explicar o projeto "
         "ao público; (2) caixas de coleta personalizadas em comércios locais de Maringá, instaladas com autorização do responsável "
         "por cada estabelecimento e recolhidas semanalmente pela equipe de Logística e Arrecadação; e (3) peças de grande formato, como "
-        "banners e faixas no campus, produzidas com a cota de impressão institucional — a veiculação em outdoor somente ocorrerá se "
+        "banners e faixas no campus, produzidas com a cota de impressão institucional; a veiculação em outdoor somente ocorrerá se "
         "houver cessão gratuita do espaço, preservando a estratégia de custo zero. Todas as ações dependem de autorização prévia da "
         "professora responsável e da instituição, e o cenário evitará qualquer representação sensacionalista ou estigmatizante das "
         "pessoas privadas de liberdade.",
@@ -161,17 +163,22 @@ DIMENSAO_PEDAGOGICA = [
         "registra no sistema, no mesmo dia, os números vendidos, o nome e o telefone do comprador e a forma de pagamento; o sistema só "
         "permite registrar números do bloco do próprio acadêmico, impede que um número seja vendido duas vezes e constitui o registro "
         "oficial da rifa. Para pagamentos por PIX, o sistema gera o código com o valor exato e a identificação do pedido, e o pagamento "
-        "cai diretamente na conta de recebimento da comissão financeira — conta de uso exclusivo da rifa, indicada pela comissão e "
-        "aprovada pela professora responsável —, de modo que o dinheiro não fique com o vendedor; valores em "
+        "cai diretamente na conta de recebimento da comissão financeira (conta de uso exclusivo da rifa, indicada pela comissão e "
+        "aprovada pela professora responsável), de modo que o dinheiro não fique com o vendedor; valores em "
         "espécie são entregues à comissão nos acertos semanais, realizados às segundas-feiras nos encontros, quando o registro é "
         "conferido com os extratos. Somente participam do sorteio os bilhetes registrados e pagos até 30/10/2026, às 23h59; a lista "
         "dos números participantes, sem dados pessoais, é publicada no perfil do projeto em 01/11/2026. O prêmio será um tablet "
         "Samsung Galaxy Tab A11+ (11 polegadas, Wi-Fi) ou modelo equivalente. O sorteio ocorrerá em 02/11/2026, às "
         "[PENDENTE: horário], com transmissão ao vivo no @efeitorebote.oficial: os números da lista oficial são impressos, dobrados "
         "e depositados em urna, e um número é retirado na presença da professora responsável e de duas testemunhas, com lavratura "
-        "de ata; por ser transmitido on-line, o sorteio independe do funcionamento do campus. Os valores arrecadados, deduzido o custo de aquisição do prêmio, serão destinados exclusivamente à compra dos itens listados, com "
+        "de ata; por ser transmitido on-line, o sorteio independe do funcionamento do campus. Para que a compra dos itens ocorra entre o fim das vendas (30/10) e a entrega (04/11), a lista validada pelas unidades e as "
+        "cotações serão preparadas antes do fim das vendas. O prêmio será adquirido somente quando a arrecadação cobrir seu custo com "
+        "margem; se as vendas forem insuficientes, a comissão financeira e a professora responsável buscarão doação ou desconto do "
+        "prêmio, que permanece garantido aos compradores. Os valores arrecadados, deduzido o custo de aquisição do prêmio, serão destinados exclusivamente à compra dos itens listados, com "
         "comprovação por nota fiscal e prestação de contas à professora responsável e à turma. A realização da rifa está condicionada "
-        "à autorização da instituição, observadas as normas institucionais e a legislação aplicável; o regulamento completo consta "
+        "à autorização da instituição e da professora responsável, observadas as normas institucionais e a legislação federal sobre "
+        "distribuição de prêmios mediante sorteio (BRASIL, 1944; BRASIL, 1971); sem essa autorização, a rifa não será iniciada e a "
+        "arrecadação seguirá apenas por doações diretas; o regulamento completo consta "
         "do Anexo 1.",
         "Divulgação e redes sociais. A divulgação adotará estratégias de custo zero: avisos nos murais e telões do campus, "
         "representantes de turma como multiplicadores e perfis do projeto nas redes sociais. A primeira publicação terá caráter "
@@ -192,7 +199,7 @@ DIMENSAO_PEDAGOGICA = [
         "jurídica individual pelos acadêmicos, com encaminhamento dos casos concretos à Defensoria Pública.",
         "Proteção de dados. O nome e o telefone dos compradores são coletados exclusivamente para identificação dos bilhetes e "
         "contato com o ganhador, ficam acessíveis apenas ao vendedor e à comissão financeira, não são divulgados e serão eliminados "
-        "após a entrega do prêmio, em observância à Lei Geral de Proteção de Dados (Lei nº 13.709/2018).",
+        "após a entrega do prêmio, em observância à Lei Geral de Proteção de Dados Pessoais (BRASIL, 2018a).",
         "Impressão dos materiais. Os bilhetes (480 folhas A4, cinco bilhetes por folha, seis folhas por acadêmico) e os demais materiais "
         "impressos serão produzidos com a cota de impressão institucional, [PENDENTE: confirmar com a coordenação se a cota comporta "
         "esse volume]; não haverá gasto com impressão retirado dos recursos destinados aos itens.",
@@ -206,23 +213,30 @@ DIMENSAO_PEDAGOGICA = [
         "registrada em cada encontro, e as entregas individuais descritas no cronograma compõem o relatório final do projeto.",
         "Ajustes em relação ao pré-projeto aprovado. Esta versão mantém a fundamentação, os objetivos e a meta de referência de mais de "
         "8.000 itens do pré-projeto (Anexo 3) e incorpora: (1) a lista atualizada de itens, que acrescenta o sabão em pó e define o "
-        "limite de cada produto; como o pré-projeto especificava creme dental branco, a lista final — tipo, cor, embalagem e forma de "
-        "entrega — será validada com a PEM, a CCM e a CPIM antes de qualquer aquisição; (2) a rifa solidária como fonte complementar de "
+        "limite de cada produto; como o pré-projeto especificava creme dental branco, a lista final (tipo, cor, embalagem e forma de "
+        "entrega) será validada com a PEM, a CCM e a CPIM antes de qualquer aquisição; (2) a rifa solidária como fonte complementar de "
         "recursos: a divulgação permanece de custo zero, e a receita da rifa, deduzido o prêmio, destina-se exclusivamente à compra de "
         "itens; (3) as ações de mobilização e junto à sociedade, incluindo a roda de conversa com familiares; (4) o sistema on-line de controle de vendas e prestação de contas; e (5) a reformulação dos "
         "objetivos específicos e o tratamento do \"efeito rebote\" como categoria de análise fundamentada na literatura, sem "
         "pretensão de comprovar a relação entre prevenção e custos públicos, o que exigiria levantamento de dados alheio ao escopo "
         "da ação extensionista. "
-        "O quantitativo arrecadado será acompanhado semanalmente em relação à meta.",
+        "O quantitativo arrecadado será acompanhado semanalmente em relação à meta, que depende principalmente das doações diretas; a "
+        "receita da rifa, deduzido o prêmio, tem caráter complementar.",
     ]),
     ("Referências", [
-        "BRASIL. [Constituição (1988)]. Constituição da República Federativa do Brasil de 1988. Brasília, DF: Presidência da República, 1988.",
+        "BRASIL. Decreto-Lei nº 6.259, de 10 de fevereiro de 1944. Dispõe sobre o serviço de loterias, e dá outras providências. "
+        "Rio de Janeiro: Presidência da República, 1944.",
+        "BRASIL. Lei nº 5.768, de 20 de dezembro de 1971. Altera a legislação sobre distribuição gratuita de prêmios, mediante sorteio, "
+        "vale-brinde ou concurso, a título de propaganda, estabelece normas de proteção à poupança popular, e dá outras providências. Brasília, DF: Presidência da República, 1971.",
         "BRASIL. Lei nº 7.210, de 11 de julho de 1984. Institui a Lei de Execução Penal. Brasília, DF: Presidência da República, 1984.",
+        "BRASIL. [Constituição (1988)]. Constituição da República Federativa do Brasil de 1988. Brasília, DF: Presidência da República, 1988.",
         "BRASIL. Lei nº 13.005, de 25 de junho de 2014. Aprova o Plano Nacional de Educação – PNE e dá outras providências. "
         "Brasília, DF: Presidência da República, 2014.",
+        "BRASIL. Lei nº 13.709, de 14 de agosto de 2018. Lei Geral de Proteção de Dados Pessoais (LGPD). Brasília, DF: Presidência da "
+        "República, 2018a.",
         "BRASIL. Ministério da Educação. Conselho Nacional de Educação. Câmara de Educação Superior. Resolução nº 7, de 18 de "
         "dezembro de 2018. Estabelece as Diretrizes para a Extensão na Educação Superior Brasileira e regimenta o disposto na Meta "
-        "12.7 da Lei nº 13.005/2014. Brasília, DF: MEC, 2018.",
+        "12.7 da Lei nº 13.005/2014. Brasília, DF: MEC, 2018b.",
         "BRASIL. Supremo Tribunal Federal. Arguição de Descumprimento de Preceito Fundamental 347. Brasília, DF: STF, 2023.",
         "DIUANA, Vilma et al. Saúde em prisões: representações e práticas dos agentes de segurança penitenciária no Rio de Janeiro, "
         "Brasil. Cadernos de Saúde Pública, v. 24, n. 8, p. 1887-1896, 2008.",
@@ -234,6 +248,8 @@ DIMENSAO_PEDAGOGICA = [
         "Coletiva, v. 27, n. 12, 2022.",
         "MINAYO, Maria Cecília de Souza; RIBEIRO, Adalgisa Peixoto. Condições de saúde dos presos do estado do Rio de Janeiro, Brasil. "
         "Ciência & Saúde Coletiva, v. 21, n. 7, p. 2031-2040, 2016.",
+        "ORGANIZAÇÃO DAS NAÇÕES UNIDAS. Regras mínimas das Nações Unidas para o tratamento de reclusos (Regras de Nelson Mandela). "
+        "Nova York: ONU, 2015.",
         "PARANÁ. Defensoria Pública do Estado do Paraná. Núcleo da Política Criminal e da Execução Penal (NUPEP). Relatório de "
         "inspeção na Casa de Custódia de Maringá (CCM). Curitiba, 2025a. Disponível em: https://www.defensoriapublica.pr.def.br/"
         "sites/default/arquivos_restritos/files/documento/2025-03/relatorio_inspecao_ccm_1.pdf. Acesso em: 2 out. 2026.",
@@ -288,7 +304,7 @@ CRONOGRAMA = [
          entrega="Registro da triagem e da consolidação realizadas pela equipe."),
     dict(titulo="Balanço da Rifa e Aquisição do Prêmio", etapa=E5, carga=None,
          objetivos="Avaliar o andamento das vendas e garantir a aquisição do prêmio com transparência.",
-         atividades="Conferência dos registros do sistema de vendas com os extratos da conta da comissão financeira; balanço por acadêmico; cotação em três lojas e aquisição do tablet com nota fiscal; reforço da divulgação junto aos acadêmicos com menos vendas.",
+         atividades="Conferência dos registros do sistema de vendas com os extratos da conta da comissão financeira; balanço por acadêmico; cotação em três lojas e aquisição do tablet com nota fiscal quando a arrecadação cobrir seu custo com margem; preparação da lista de compras e das cotações dos itens; reforço da divulgação junto aos acadêmicos com menos vendas.",
          entrega="Relatório descritivo da participação no balanço da rifa ou na aquisição do prêmio."),
     dict(titulo="Roda de Conversa com Familiares", etapa=E5, carga=None,
          objetivos="Acolher familiares de pessoas privadas de liberdade e compartilhar informações sobre direitos e canais públicos de apoio.",
@@ -347,7 +363,8 @@ REGULAMENTO = [
     ("li", "Prêmio: 01 (um) tablet Samsung Galaxy Tab A11+ (11 polegadas, Wi-Fi) ou modelo equivalente, novo e com nota fiscal."),
     ("li", "Sorteio: 02/11/2026, às [PENDENTE: horário], com transmissão ao vivo no @efeitorebote.oficial. Os números da lista oficial são impressos, dobrados e depositados em urna; um número é retirado na presença da professora responsável e de duas testemunhas, com lavratura de ata e gravação do vídeo."),
     ("li", "O resultado será divulgado nos canais do projeto e o ganhador será contatado pelo telefone informado no canhoto, em até 24 horas após o sorteio, tendo 30 dias para retirar o prêmio. Se o prêmio não for retirado nesse prazo, será realizado novo sorteio entre os demais números participantes, divulgado nos mesmos canais."),
-    ("li", "A realização da rifa está condicionada à autorização da instituição, observadas as normas institucionais e a legislação aplicável."),
+    ("li", "A realização da rifa está condicionada à autorização da instituição e da professora responsável, observadas as normas institucionais e a legislação federal sobre distribuição de prêmios mediante sorteio (Decreto-Lei nº 6.259/1944 e Lei nº 5.768/1971). Sem essa autorização, a rifa não será iniciada."),
+    ("li", "Se o sorteio precisar ser adiado, a nova data será divulgada com antecedência nos canais do projeto. Se a rifa for cancelada, o valor pago será integralmente devolvido a cada comprador pela mesma forma de pagamento."),
     ("li", "Dados pessoais: nome e telefone do comprador servem apenas para identificar o bilhete e contatar o ganhador; não são divulgados e serão eliminados após a entrega do prêmio (Lei nº 13.709/2018)."),
     ("h", "5. Destinação dos recursos e prestação de contas"),
     ("p", "Os valores arrecadados com a rifa, deduzido o custo de aquisição do prêmio, serão utilizados exclusivamente na compra dos itens listados no item 2, mediante nota fiscal. A comissão financeira, composta por [PENDENTE: integrantes da comissão financeira], manterá o controle de entradas e saídas. Ao final, será apresentado relatório de transparência à professora responsável e à turma, com o valor arrecadado, os comprovantes de compra e o quantitativo entregue por unidade."),
