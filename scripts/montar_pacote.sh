@@ -4,7 +4,7 @@
 set -e
 cd "$(dirname "$0")/.."
 P=pacote/Efeito-Rebote
-rm -rf pacote && mkdir -p "$P"/{01-Projeto-Escrito,02-Anexos,03-Rifa,04-Redes-Sociais,05-App-de-Vendas,06-Fontes-e-Pesquisa,07-Identidade-Visual,08-Codigo-e-Geradores}
+rm -rf pacote && mkdir -p "$P"/{01-Projeto-Escrito,02-Anexos,03-Rifa,04-Redes-Sociais,05-App-de-Vendas,06-Fontes-e-Pesquisa,07-Identidade-Visual}
 E=entregas
 cp $E/projeto-escrito.docx "$P/01-Projeto-Escrito/Projeto-Escrito-Efeito-Rebote.docx"
 cp $E/projeto-escrito.pdf "$P/01-Projeto-Escrito/Projeto-Escrito-Efeito-Rebote.pdf"
@@ -32,8 +32,6 @@ cp docs/roteiro-relatorio-final.md "$P/06-Fontes-e-Pesquisa/Roteiro-do-Relatorio
 sed -n '/^## Dados de Maringá/,$p' docs/projeto.md > "$P/06-Fontes-e-Pesquisa/Dados-de-Maringa-Defensoria-2025.md"
 cp docs/LEIA-ME-pacote.md "$P/LEIA-ME.md"
 cp $E/guia-do-pacote.pdf "$P/00-GUIA-DO-PACOTE.pdf"
-cp $E/posts/2026-10-02-apresentacao/carrossel.html "$P/04-Redes-Sociais/Post-01-Apresentacao/Carrossel-editavel.html"
-cp -r $E/posts/2026-10-02-apresentacao/fontes $E/posts/2026-10-02-apresentacao/selo.jpg "$P/04-Redes-Sociais/Post-01-Apresentacao/"
 cp "docs/fonte/Trabalho Escrito.pdf" "$P/06-Fontes-e-Pesquisa/Pre-Projeto-Original-Trabalho-Escrito.pdf"
 cp "docs/fonte/relatorio_extensao_projeto word.docx" "$P/06-Fontes-e-Pesquisa/Modelo-UniGestor-da-Professora.docx"
 cp assets/fig01-logo-oficial.jpg "$P/07-Identidade-Visual/Figura-1-Logo-Oficial.jpg"
@@ -42,8 +40,5 @@ cp assets/fig03-mockups-materiais.jpg "$P/07-Identidade-Visual/Figura-3-Mockups-
 cp assets/selo-efeito-rebote.jpg "$P/07-Identidade-Visual/Selo-Efeito-Rebote.jpg"
 cp assets/logo-unicesumar.png "$P/07-Identidade-Visual/Logo-UniCesumar.png"
 cp assets/rifa-arte-v1.jpg "$P/07-Identidade-Visual/Rifa-Arte-Inicial-v1-substituida.jpg"
-mkdir -p "$P/08-Codigo-e-Geradores/scripts"
-cp scripts/*.py scripts/*.sh "$P/08-Codigo-e-Geradores/scripts/"
-git archive --format=zip -o "$P/08-Codigo-e-Geradores/App-de-Vendas-codigo-fonte.zip" HEAD:vendas
 (cd pacote && zip -qr Efeito-Rebote.zip Efeito-Rebote)
 echo "ok: pacote/Efeito-Rebote ($(find "$P" -type f | wc -l) arquivos) e pacote/Efeito-Rebote.zip ($(du -h pacote/Efeito-Rebote.zip | cut -f1))"

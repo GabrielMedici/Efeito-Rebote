@@ -14,7 +14,6 @@ Comece pelo **00-GUIA-DO-PACOTE.pdf**: uma página com o conteúdo de cada pasta
 | **05-App-de-Vendas** | Resumo de uma página, telas do sistema e passo a passo para publicar | Publicar antes de começar as vendas |
 | **06-Fontes-e-Pesquisa** | Versão da turma (fundamentação), transcrição dos áudios, dados de Maringá (Defensoria 2025), roteiro do relatório final, pré-projeto original e modelo do UniGestor | Consulta e relatório final |
 | **07-Identidade-Visual** | Figuras 1 a 3 do projeto, selo, logo da UniCesumar e arte inicial da rifa (substituída pelas folhas) | Usar nos materiais |
-| **08-Codigo-e-Geradores** | Código-fonte do app de vendas (zip) e scripts que geram projeto, anexos, bilhetes e planilha | Refazer documentos após ajustes |
 
 ## Pendências (aparecem como [PENDENTE] nos documentos)
 - **Roda de conversa** (organização: Francieli Araújo): data e local; instituição que fará a ponte com as famílias (Conselho da Comunidade ou Defensoria).
