@@ -175,12 +175,12 @@ begin
   if p.status <> 'pendente' then raise exception 'Pedido % não está pendente', p_pedido; end if;
   select count(*) into qtd from pedido_bilhetes where pedido_id = p_pedido and ativo;
   select preco_centavos into preco from config;
-  if qtd * preco <> p.valor_centavos then raise exception 'Valor do p_pedido não bate com os bilhetes'; end if;
+  if qtd * preco <> p.valor_centavos then raise exception 'Valor do pedido não bate com os bilhetes'; end if;
   update pedidos set status = 'confirmado', confirmado_em = now(), confirmado_por = email_atual()
   where id = p_pedido returning * into p;
   insert into lancamentos (tipo, categoria, valor_centavos, descricao, pedido_id, criado_por)
   values ('entrada', case p.forma when 'pix' then 'rifa_pix' else 'rifa_dinheiro' end, p.valor_centavos,
-          'Rifa: p_pedido ' || p.txid || ' (aluno ' || p.aluno_num || ', ' || qtd || ' bilhete(s))', p.id, email_atual());
+          'Rifa: pedido ' || p.txid || ' (aluno ' || p.aluno_num || ', ' || qtd || ' bilhete(s))', p.id, email_atual());
   return p;
 end $$;
 
@@ -190,16 +190,16 @@ declare p pedidos; v vendedores;
 begin
   select * into p from pedidos where id = p_pedido for update;
   if not found then raise exception 'Pedido % não encontrado', p_pedido; end if;
-  if length(trim(coalesce(p_motivo, ''))) = 0 then raise exception 'Informe o p_motivo do cancelamento'; end if;
+  if length(trim(coalesce(p_motivo, ''))) = 0 then raise exception 'Informe o motivo do cancelamento'; end if;
   v := meu_vendedor();
   if p.status = 'cancelado' then raise exception 'Pedido já cancelado'; end if;
   -- vendedor pode cancelar o próprio p_pedido pendente; confirmado só a comissão (com estorno)
   if not (e_comissao() or (p.status = 'pendente' and v.aluno_num = p.aluno_num)) then
-    raise exception 'Sem permissão para cancelar este p_pedido';
+    raise exception 'Sem permissão para cancelar este pedido';
   end if;
   if p.status = 'confirmado' then
     insert into lancamentos (tipo, categoria, valor_centavos, descricao, pedido_id, criado_por)
-    values ('saida', 'estorno', p.valor_centavos, 'Estorno do p_pedido ' || p.txid || ': ' || p_motivo, p.id, email_atual());
+    values ('saida', 'estorno', p.valor_centavos, 'Estorno do pedido ' || p.txid || ': ' || p_motivo, p.id, email_atual());
   end if;
   update pedido_bilhetes set ativo = false where pedido_id = p_pedido;
   update pedidos set status = 'cancelado', cancelado_em = now(), cancelado_por = email_atual(),

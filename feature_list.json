@@ -70,7 +70,7 @@
         "F02"
       ],
       "status": "in-progress",
-      "evidence": "2026-10-02: npm test 5/5; test:db com 15 bloqueios e conciliação ok, incluindo entrada forjada detectada; next build ok. Falta: deploy no Supabase e na Vercel e teste com contas reais."
+      "evidence": "2026-10-02: visual igual ao design (artifact YHeJpL9y99VaEhj3bTtwff); npm test 5/5; test:db ok; test:e2e 18/18 com navegador real (venda PIX e dinheiro, isolamento entre vendedores, confirmação, conciliação 8/8, CSV, bloqueio de acesso, transparência sem dados pessoais). Falta: deploy no Supabase e na Vercel com contas reais (login por e-mail e upload de nota fiscal não exercitados localmente)."
     }
   ]
 }

@@ -21,6 +21,7 @@ App em Next.js e Supabase para registrar as vendas da rifa, cobrar por PIX e faz
 ```bash
 npm test          # PIX: CRC e estrutura do BR Code, conferidos com o exemplo do Banco Central
 npm run test:db   # banco: cenário completo com 15 tentativas de fraude bloqueadas e conciliação (requer postgresql)
+npm run test:e2e  # ponta a ponta: Postgres + PostgREST + login simulado + app compilado + navegador (18 passos)
 npm run build
 ```
 

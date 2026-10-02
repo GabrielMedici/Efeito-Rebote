@@ -2,13 +2,28 @@
 
 @theme {
   --color-azul: #1b3a8c;
+  --color-azul-escuro: #122a66;
   --color-vermelho: #b5121b;
-  --color-ouro: #8a6d1e;
+  --color-ouro: #e9c46a;
   --color-fundo: #eef2fb;
+  --color-tinta: #141b2d;
+  --color-cinza: #4a5568;
+  --color-linha: #e1e6f0;
+  --color-borda: #b8c0d4;
+  --color-ok: #1e6b3a;
+  --color-ok-fundo: #cdebd6;
+  --color-pend: #6b4600;
+  --color-pend-fundo: #fce7b2;
+  --font-sans: var(--font-barlow), system-ui, sans-serif;
+  --font-display: var(--font-barlow-condensed), var(--font-barlow), sans-serif;
 }
 
-body { @apply bg-slate-50 text-slate-900 antialiased; }
-.cartao { @apply rounded-2xl bg-white p-4 shadow-sm ring-1 ring-slate-200; }
-.botao { @apply inline-flex items-center justify-center rounded-xl bg-azul px-4 py-2.5 font-semibold text-white disabled:opacity-50; }
-.botao-sec { @apply inline-flex items-center justify-center rounded-xl px-3 py-2 font-medium ring-1 ring-slate-300 bg-white; }
-.campo { @apply w-full rounded-xl border border-slate-300 px-3 py-2.5 outline-none focus:ring-2 focus:ring-azul/40; }
+body { @apply bg-[#f4f6fb] font-sans text-tinta antialiased; }
+.cartao { @apply rounded-2xl border border-linha bg-white p-4; }
+.titulo { @apply font-display text-xl font-bold text-azul; }
+.botao { @apply inline-flex h-13 items-center justify-center rounded-xl bg-vermelho px-4 font-display text-xl font-bold tracking-wide text-white uppercase disabled:opacity-50; }
+.botao-azul { @apply inline-flex h-10 items-center justify-center rounded-xl bg-azul px-4 font-semibold text-white disabled:opacity-50; }
+.botao-sec { @apply inline-flex h-10 items-center justify-center gap-2 rounded-xl border border-borda bg-white px-3 font-semibold; }
+.campo { @apply h-11 w-full rounded-xl border border-borda bg-white px-3 text-base outline-none focus:ring-2 focus:ring-azul/40; }
+.rotulo { @apply text-sm font-semibold; }
+.num { @apply font-display text-3xl font-bold; }

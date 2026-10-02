@@ -61,6 +61,11 @@ select pg_temp.como('bruno@x.com');
 select registrar_venda(array[31], 'Nova compradora', '44966665555', 'dinheiro');
 select pg_temp.como('carla@x.com');
 
+do $$ begin
+  if exists (select 1 from lancamentos where descricao like '%p\_%') then raise exception 'FALHOU: descrição do caixa com nome de parâmetro'; end if;
+  if not exists (select 1 from lancamentos where descricao like 'Estorno do pedido ER%: Comprador desistiu%') then raise exception 'FALHOU: descrição do estorno'; end if;
+  if not exists (select 1 from lancamentos where descricao like 'Rifa: pedido ER% (aluno 1, 3 bilhete(s))') then raise exception 'FALHOU: descrição da entrada'; end if;
+end $$;
 \echo '--- caixa (centavos)'
 select * from resumo_caixa;
 \echo '--- conciliação'

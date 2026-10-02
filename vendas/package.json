@@ -7,7 +7,8 @@
     "start": "next start",
     "lint": "tsc --noEmit",
     "test": "vitest run",
-    "test:db": "bash supabase/tests/rodar.sh"
+    "test:db": "bash supabase/tests/rodar.sh",
+    "test:e2e": "bash e2e/rodar-e2e.sh"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",
@@ -23,6 +24,7 @@
     "@types/qrcode": "^1.5.5",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "playwright-core": "1.56",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9",
     "vitest": "^3.2.4"
