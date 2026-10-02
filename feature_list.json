@@ -1,0 +1,68 @@
+{
+  "features": [
+    {
+      "id": "F01",
+      "name": "Projeto escrito no modelo da professora",
+      "description": "Adaptar docs/fonte/Trabalho Escrito.pdf ao modelo relatorio_extensao_projeto word.docx, incluindo todas as ações (rifa com regulamento, pontos de coleta, redes sociais, visita) com regras e forma de execução. Saída: entregas/projeto-escrito.docx e .pdf",
+      "deadline": "sexta 12h",
+      "dependencies": [],
+      "status": "not-started",
+      "blocked_by": "aguardando os 2 arquivos-fonte em docs/fonte/",
+      "evidence": ""
+    },
+    {
+      "id": "F02",
+      "name": "Regulamento e controle da rifa",
+      "description": "Regulamento (prêmio, sorteio, prestação de contas), numeração 0001-2400, distribuição de 30 números por aluno, planilha de controle. Usado dentro do F01.",
+      "deadline": "sexta 12h (resumo no F01)",
+      "dependencies": [],
+      "status": "not-started",
+      "evidence": ""
+    },
+    {
+      "id": "F03",
+      "name": "Post de apresentação do projeto",
+      "description": "Arte e legenda explicando o projeto, sem pedido de doação. Enviar à prof.ª Camila.",
+      "deadline": "envio sexta; publicação até segunda",
+      "dependencies": [],
+      "status": "not-started",
+      "evidence": ""
+    },
+    {
+      "id": "F04",
+      "name": "Áudios",
+      "description": "Escopo a definir com o usuário (formato, finalidade, quantidade).",
+      "deadline": "a definir",
+      "dependencies": [],
+      "status": "not-started",
+      "evidence": ""
+    },
+    {
+      "id": "F05",
+      "name": "Calendário editorial (3x/semana)",
+      "description": "Pauta de posts até a visita, com status de aprovação por post.",
+      "deadline": "antes do 3º encontro",
+      "dependencies": ["F03"],
+      "status": "not-started",
+      "evidence": ""
+    },
+    {
+      "id": "F06",
+      "name": "Controle da arrecadação",
+      "description": "Planilha de itens recebidos por tipo e por aluno, valores da rifa, compras.",
+      "deadline": "antes do 3º encontro",
+      "dependencies": ["F02"],
+      "status": "not-started",
+      "evidence": ""
+    },
+    {
+      "id": "F07",
+      "name": "Relatório final",
+      "description": "Resultados, visita de 04-05/nov, avaliação qualitativa, no modelo da instituição.",
+      "deadline": "último encontro",
+      "dependencies": ["F01", "F06"],
+      "status": "not-started",
+      "evidence": ""
+    }
+  ]
+}
