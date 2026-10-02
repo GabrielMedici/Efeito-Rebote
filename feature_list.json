@@ -52,7 +52,7 @@
     {
       "id": "F07",
       "name": "Relatório final",
-      "description": "Resultados, visita de 04-05/nov, avaliação qualitativa, no modelo da instituição.",
+      "description": "Resultados, visita de 04-05/nov, avaliação qualitativa, no modelo da instituição. Seguir docs/roteiro-relatorio-final.md.",
       "deadline": "último encontro",
       "dependencies": [
         "F01",

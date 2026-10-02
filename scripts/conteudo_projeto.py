@@ -37,34 +37,47 @@ COMUNIDADE = [
 
 DIMENSAO_PEDAGOGICA = [
     ("Justificativa", [
+        "A extensão universitária integra, ao lado do ensino e da pesquisa, o tripé da educação superior brasileira: a Constituição "
+        "Federal, em seu art. 207, estabelece a indissociabilidade entre ensino, pesquisa e extensão. A Resolução CNE/CES nº 7/2018, "
+        "que regulamenta a Meta 12.7 do Plano Nacional de Educação (Lei nº 13.005/2014), determina que as atividades de extensão "
+        "componham no mínimo 10% da carga horária curricular dos cursos de graduação e orienta que sejam dirigidas prioritariamente "
+        "a áreas de grande pertinência social. No curso de Direito, essa vivência permite ao acadêmico compreender a aplicação "
+        "prática das normas jurídicas e os efeitos que delas decorrem sobre a vida das pessoas.",
         "O sistema carcerário brasileiro atravessa uma crise estrutural reconhecida pelo Supremo Tribunal Federal, no julgamento da "
-        "ADPF 347, como um \"estado de coisas inconstitucional\", marcado pela superlotação, por um déficit superior a 200 mil vagas "
-        "segundo dados da Secretaria Nacional de Políticas Penais (SENAPPEN) e pela violação sistemática de direitos fundamentais. "
-        "A Lei de Execução Penal (Lei nº 7.210/1984) determina, em seus arts. 12 e 14, a obrigatoriedade da assistência material e da "
-        "assistência à saúde, e, em seu art. 41, assegura esses direitos à pessoa presa. Na prática, contudo, a insuficiência de itens "
-        "básicos de higiene agrava as condições sanitárias das unidades e transfere indevidamente às famílias um encargo que caberia "
-        "ao Estado.",
-        "Esse ciclo é o que o projeto denomina \"efeito rebote\": a omissão no fornecimento de itens preventivos de baixo custo gera "
-        "despesas muito superiores com internações na rede pública, escoltas para atendimento externo e gestão de crises, além de "
-        "comprometer a regularidade das visitas familiares, cujo vínculo é reconhecido como um dos principais fatores de redução da "
-        "reincidência. Ao mesmo tempo, a formação jurídica ainda enfrenta a dissociação entre a teoria estudada em sala e a realidade "
-        "da execução penal, frequentemente percebida pela sociedade de forma estigmatizada e sensacionalista.",
-        "Justifica-se, assim, uma ação extensionista que aproxime os estudantes da realidade das unidades prisionais de Maringá, "
-        "articule os conteúdos de Direito Penal, Prática Penal e Execução Penal com uma intervenção concreta e ofereça à comunidade "
-        "uma resposta prática por meio da arrecadação e entrega de itens de higiene, em consonância com os princípios da dignidade da "
-        "pessoa humana (CF, art. 1º, III) e da intranscendência da pena.",
+        "ADPF 347, como um \"estado de coisas inconstitucional\". A Lei de Execução Penal (Lei nº 7.210/1984) assegura à pessoa presa "
+        "assistência material e assistência à saúde de caráter preventivo e curativo (arts. 12, 14 e 41). A literatura científica, "
+        "contudo, documenta escassez crônica de insumos básicos de higiene nas unidades prisionais, o que submete os custodiados a "
+        "condições degradantes de habitação e convivência (SÁ et al., 2008; MINAYO; RIBEIRO, 2016; LÔBO et al., 2022). Diante dessa "
+        "insuficiência, os familiares frequentemente assumem o custo dos itens de higiene e dos medicamentos de uso rotineiro "
+        "(SÁ et al., 2008; MINAYO; RIBEIRO, 2016).",
+        "Os estudos indicam que a higiene precária mantém associação multifatorial com o adoecimento no cárcere, atuando em conjunto "
+        "com a superlotação, a ventilação inadequada e a alimentação deficiente (GOIS et al., 2012; MINAYO; RIBEIRO, 2016). Em "
+        "inquérito com 1.573 presos do Rio de Janeiro, Minayo e Ribeiro (2016) registraram elevada prevalência autorreferida de "
+        "doenças de pele, com destaque para alergias e dermatites (43,4%). Quando o preso adoece, o Estado mobiliza atendimento interno, "
+        "medicamentos, exames, agentes prisionais, escoltas e a rede externa do SUS; em unidades paulistas, a falta de escolta foi o "
+        "problema mais citado nos encaminhamentos de saúde, relatado por 76,8% das penitenciárias masculinas (FERNANDES et al., 2014). "
+        "Esses estudos, porém, não apresentam valores em reais nem comparam o custo da prevenção com o do tratamento; por isso, o "
+        "projeto trata a relação entre prevenção e redução de custos como hipótese, e não como fato comprovado.",
+        "Nesse contexto, o projeto utiliza a expressão \"efeito rebote\" como categoria de análise para compreender o encadeamento de "
+        "consequências decorrentes da insuficiência da assistência material: a ausência de itens básicos de higiene pode contribuir "
+        "para o agravamento das condições sanitárias, gerando demandas posteriores de maior complexidade que retornam ao próprio Estado "
+        "(atendimentos, deslocamentos e escoltas) e que alcançam também as famílias, sobre as quais recai parte dos custos, com "
+        "prejuízo à manutenção dos vínculos durante o cumprimento da pena.",
+        "A intervenção proposta não pretende solucionar o problema estrutural da assistência material no sistema prisional nem "
+        "substituir a responsabilidade estatal pela garantia desses direitos. A arrecadação e a entrega de materiais de higiene "
+        "constituem uma intervenção pontual, voltada à mitigação de uma das consequências concretas dessa insuficiência, que permite "
+        "aos acadêmicos observar na prática os efeitos sociais e institucionais do problema estudado e relacioná-los aos conteúdos de "
+        "Direito Penal, Direito Processual Penal e Execução Penal.",
     ]),
     ("Objetivo da atividade na comunidade", [
         "Contribuir para a efetivação da assistência material às pessoas privadas de liberdade da PEM, da CCM e da CPIM, por meio da "
         "arrecadação, triagem e entrega de itens de higiene pessoal em conformidade com as normas da Polícia Penal do Paraná, e "
         "conscientizar a comunidade acadêmica e externa sobre o \"efeito rebote\" da desassistência material, promovendo, ao mesmo "
         "tempo, a formação humanística, crítica e cidadã dos acadêmicos de Direito.",
-        "Objetivos específicos: (1) analisar, durante as visitas técnicas, a estrutura das unidades e a aplicação prática da LEP, com "
-        "foco na assistência material; (2) identificar a ocorrência do fenômeno \"efeito rebote\" como problema social, a partir da "
-        "literatura e das observações realizadas nas visitas técnicas; (3) produzir conteúdo informativo para as redes sociais e materiais de comunicação visual "
-        "que sensibilizem a comunidade sobre a realidade prisional; (4) executar campanha de arrecadação com meta superior a 8.000 "
-        "itens de higiene, encerrando o ciclo com a entrega nas unidades; (5) estimular a responsabilidade social, o trabalho em "
-        "equipe e a empatia dos acadêmicos envolvidos.",
+        "Objetivos específicos: (1) avaliar condições que coloquem apenados em situação de risco; (2) promover o acolhimento às "
+        "famílias daqueles em reclusão; (3) realizar busca e arrecadação de insumos conforme a necessidade das instituições PEM, CCM "
+        "e CPIM; (4) promover campanhas de doação para as instituições PEM, CCM e CPIM; (5) estimular nos acadêmicos de Direito o "
+        "pensamento crítico, humanístico e de cidadania; e (6) promover na sociedade em geral a responsabilidade social.",
     ]),
     ("Habilidades e atitudes desenvolvidas", [
         "Conhecimentos: execução penal e direitos da pessoa presa (LEP, Constituição Federal, Regras de Mandela); estrutura e "
@@ -76,6 +89,9 @@ DIMENSAO_PEDAGOGICA = [
         "Atitudes: empatia e compreensão humanizada da realidade prisional, superando estigmas; responsabilidade social e "
         "compromisso com a dignidade da pessoa humana; ética e transparência no manejo de doações e recursos; postura respeitosa e "
         "observância das normas de segurança durante as visitas técnicas.",
+        "A participação nas etapas de pesquisa, organização, arrecadação, triagem, visitas técnicas e entrega aproxima os acadêmicos "
+        "de uma realidade conhecida, em geral, apenas pela legislação, pela doutrina e pelos estudos acadêmicos, ampliando a "
+        "compreensão da diferença entre a previsão formal de direitos e sua efetiva concretização no sistema prisional.",
     ]),
     ("Identidade visual e materiais", [
         "A identidade visual do projeto baseia-se em um emblema circular que traduz as falhas estruturais da execução penal. O azul "
@@ -180,10 +196,30 @@ DIMENSAO_PEDAGOGICA = [
         "limite de cada produto; como o pré-projeto especificava creme dental branco, a lista final — tipo, cor, embalagem e forma de "
         "entrega — será validada com a PEM, a CCM e a CPIM antes de qualquer aquisição; (2) a rifa solidária como fonte complementar de "
         "recursos: a divulgação permanece de custo zero, e a receita da rifa, deduzido o prêmio, destina-se exclusivamente à compra de "
-        "itens; (3) as ações de mobilização e junto à sociedade; (4) o sistema on-line de controle de vendas e prestação de contas; e (5) a reformulação do "
-        "objetivo específico relativo ao \"efeito rebote\", que passa de comprovar para identificar o fenômeno, uma vez que sua "
-        "comprovação exigiria levantamento de dados de custos públicos alheio ao escopo da ação extensionista. "
+        "itens; (3) as ações de mobilização e junto à sociedade; (4) o sistema on-line de controle de vendas e prestação de contas; e (5) a reformulação dos "
+        "objetivos específicos e o tratamento do \"efeito rebote\" como categoria de análise fundamentada na literatura, sem "
+        "pretensão de comprovar a relação entre prevenção e custos públicos, o que exigiria levantamento de dados alheio ao escopo "
+        "da ação extensionista. "
         "O quantitativo arrecadado será acompanhado semanalmente em relação à meta.",
+    ]),
+    ("Referências", [
+        "BRASIL. Constituição (1988). Constituição da República Federativa do Brasil. Brasília, DF: Presidência da República, 1988.",
+        "BRASIL. Lei nº 7.210, de 11 de julho de 1984. Institui a Lei de Execução Penal. Brasília, DF: Presidência da República, 1984.",
+        "BRASIL. Lei nº 13.005, de 25 de junho de 2014. Aprova o Plano Nacional de Educação - PNE e dá outras providências. "
+        "Brasília, DF: Presidência da República, 2014.",
+        "BRASIL. Ministério da Educação. Conselho Nacional de Educação. Câmara de Educação Superior. Resolução nº 7, de 18 de "
+        "dezembro de 2018. Estabelece as Diretrizes para a Extensão na Educação Superior Brasileira. Brasília, DF: MEC, 2018.",
+        "BRASIL. Supremo Tribunal Federal. Arguição de Descumprimento de Preceito Fundamental 347. Brasília, DF: STF, 2023.",
+        "FERNANDES, Luiz Henrique et al. Necessidade de aprimoramento do atendimento à saúde no sistema carcerário. Revista de Saúde "
+        "Pública, v. 48, n. 2, p. 275-283, 2014.",
+        "GOIS, Swyanne Macêdo et al. Para além das grades e punições: uma revisão sistemática sobre a saúde penitenciária. Ciência & "
+        "Saúde Coletiva, v. 17, n. 5, p. 1235-1246, 2012.",
+        "LÔBO, Nancy Meriane de Nóvoa et al. Análise do cuidado em saúde no sistema prisional do Pará, Brasil. Ciência & Saúde "
+        "Coletiva, v. 27, n. 12, 2022.",
+        "MINAYO, Maria Cecília de Souza; RIBEIRO, Adalgisa Peixoto. Condições de saúde dos presos do estado do Rio de Janeiro, Brasil. "
+        "Ciência & Saúde Coletiva, v. 21, n. 7, p. 2031-2040, 2016.",
+        "SÁ, Maria Cecília de et al. Saúde em prisões: representações e práticas dos agentes de segurança penitenciária no Rio de "
+        "Janeiro, Brasil. Cadernos de Saúde Pública, v. 24, n. 8, 2008.",
     ]),
 ]
 
