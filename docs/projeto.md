@@ -41,7 +41,8 @@
 - A arte está em `assets/rifa-arte-v1.jpg`. Os campos `[PRÊMIO]`, `[DATA]`, `[LOCAL]` e `[VALOR]` continuam em aberto.
 - **Prêmio:** tablet Samsung Galaxy Tab A11+ (11", Wi-Fi) ou equivalente (decidido em 02/10). **Venda:** descentralizada; cada aluno registra cada venda num formulário on-line único, o pagamento vai por PIX direto para a comissão e o acerto é às segundas. **Prazo:** vendas até 30/10, às 23h59; lista dos números publicada em 01/11. **Sorteio:** 02/11/2026 (feriado), com urna e live no Instagram, ata e testemunhas. **Retirada do prêmio:** até 30 dias; se não for retirado, há novo sorteio. **Instagram:** @efeitorebote.oficial. **Instituição parceira:** UniCesumar. A análise de custo-benefício está em `entregas/acao-arrecadacao/custo-beneficio.md`.
 - **Controle:** sistema on-line próprio (`vendas/`); conta de recebimento de uso exclusivo da rifa, aprovada pela professora; dados dos compradores eliminados depois da entrega do prêmio (LGPD).
-- **Pendentes:** horário do sorteio, comissão, chave PIX e confirmação da cota de impressão (480 folhas).
+- **Chave PIX (aleatória):** fe5450d9-8b9e-470e-8b46-0d07e4a86d0d (informada em 05/10). One-page com QR estático em `entregas/acao-arrecadacao/pix/`.
+- **Pendentes:** horário do sorteio, comissão e confirmação da cota de impressão (480 folhas).
 - **Folhas de impressão:** `entregas/acao-arrecadacao/folhas-bilhetes-0001-2400.pdf` (4 dígitos, QR e @), que substitui a arte v1.
 - **Ponto de atenção:** a legislação federal restringe rifas sem autorização (Decreto-Lei 6.259/44 e Lei 5.768/71). O formato precisa ser confirmado com a instituição ou com a prof.ª Camila antes da venda, e o projeto deve citar essa aprovação.
 

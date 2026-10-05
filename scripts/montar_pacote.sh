@@ -20,6 +20,7 @@ cp $E/acao-arrecadacao/folhas-bilhetes-amostra.pdf "$P/03-Acao-de-Arrecadacao/Fo
 cp $E/acao-arrecadacao/controle-acao-arrecadacao.xlsx "$P/03-Acao-de-Arrecadacao/Planilha-de-Controle-da-Acao-de-Arrecadacao.xlsx"
 cp $E/acao-arrecadacao/formulario-vendas.md "$P/03-Acao-de-Arrecadacao/Formulario-de-Vendas-Especificacao.md"
 cp $E/acao-arrecadacao/custo-beneficio.md "$P/03-Acao-de-Arrecadacao/Custo-Beneficio-do-Premio.md"
+cp $E/acao-arrecadacao/pix/one-page-pix.jpg "$P/03-Acao-de-Arrecadacao/PIX-One-Page-QR-Code.jpg"
 mkdir -p "$P/04-Redes-Sociais/Post-01-Apresentacao"
 cp $E/posts/2026-10-02-apresentacao/slide-*.png "$P/04-Redes-Sociais/Post-01-Apresentacao/"
 cp $E/posts/2026-10-02-apresentacao/post.md "$P/04-Redes-Sociais/Post-01-Apresentacao/Legenda-e-Ficha-do-Post.md"
