@@ -32,13 +32,13 @@ Atividades: leitura orientada da LEP e das Regras de Mandela; normas da Polícia
 Entrega: fichamento sobre a assistência material na execução penal.
 ```
 
-### Encontro 4 (486 caracteres)
+### Encontro 4 (493 caracteres)
 
 ```
 ENCONTRO 4 – Lançamento da Campanha e Distribuição dos Bilhetes
 Etapa 5 – Planejamento e execução da intervenção.
 Objetivos: iniciar a campanha de conscientização e organizar a ação de arrecadação solidária, após as aprovações.
-Atividades: publicação do conteúdo aprovado; entrega dos blocos de 30 bilhetes, com registro em planilha; orientação sobre venda, canhotos e acertos com a comissão financeira.
+Atividades: publicação do conteúdo aprovado; entrega dos blocos de 30 bilhetes, com registro em planilha; orientação sobre venda, canhotos e repasse de R$ 150,00 por bloco até 30/10.
 Entrega: termo de recebimento do bloco e relato das primeiras ações de divulgação.
 ```
 
@@ -62,13 +62,13 @@ Atividades: pesquisa (SENAPPEN, CNJ, Defensoria Pública do PR); carrosséis e v
 Entrega: peça ou roteiro produzido, com as fontes.
 ```
 
-### Encontro 7 (471 caracteres)
+### Encontro 7 (465 caracteres)
 
 ```
 ENCONTRO 7 – Intervenção no Pátio e Acompanhamento da Arrecadação
 Etapa 5 – Planejamento e execução da intervenção.
 Objetivos: dar visibilidade à campanha no campus e monitorar a doação de itens e a ação de arrecadação.
-Atividades: cenário temático no pátio, com itens aceitos, caixa de coleta e escala de atendimento; recolhimento e triagem semanal dos itens; acerto semanal com a comissão financeira.
+Atividades: cenário temático no pátio, com itens aceitos, caixa de coleta e escala de atendimento; recolhimento e triagem semanal dos itens; acompanhamento dos blocos quitados.
 Entrega: relatório da participação na intervenção ou na arrecadação.
 ```
 
@@ -82,13 +82,13 @@ Atividades: conferência de tipo, peso, volume e embalagem; destinação dos ite
 Entrega: registro da triagem e da consolidação.
 ```
 
-### Encontro 9 (486 caracteres)
+### Encontro 9 (487 caracteres)
 
 ```
 ENCONTRO 9 – Balanço da Ação de Arrecadação e Aquisição do Prêmio
 Etapa 5 – Planejamento e execução da intervenção.
-Objetivos: avaliar as vendas e adquirir o prêmio com transparência.
-Atividades: conferência do sistema de vendas com os extratos; balanço por acadêmico; cotação em três lojas e compra do tablet com nota fiscal, quando a arrecadação cobrir o custo; cotação dos itens; reforço com quem vendeu menos.
+Objetivos: avaliar os repasses e adquirir o prêmio com transparência.
+Atividades: conferência dos repasses com o extrato e a planilha; balanço dos blocos; cotação em três lojas e compra do tablet com nota fiscal, quando a arrecadação cobrir o custo; cotação dos itens; reforço com blocos pendentes.
 Entrega: relatório da participação no balanço ou na aquisição do prêmio.
 ```
 
@@ -122,13 +122,13 @@ Atividades: confirmação das listas de participantes e dos documentos exigidos 
 Entrega: checklist da equipe responsável pela logística.
 ```
 
-### Encontro 13 (488 caracteres)
+### Encontro 13 (495 caracteres)
 
 ```
 ENCONTRO 13 – Encerramento da Ação de Arrecadação e Resultados Parciais
 Etapa 5 – Planejamento e execução da intervenção.
 Objetivos: encerrar a ação com transparência e preparar a compra dos itens.
-Atividades: acerto final (vendas até 30/10); lista de números (01/11); sorteio ao vivo no Instagram (02/11), com ata e testemunhas; compra dos itens validados, com nota fiscal; conteúdo aprovado sobre o total arrecadado.
+Atividades: conferência final dos repasses e canhotos (30/10); lista de números (01/11); sorteio ao vivo no Instagram (02/11), com ata e testemunhas; compra dos itens validados, com nota fiscal; conteúdo aprovado sobre o total.
 Entrega: relatório da participação no encerramento ou na comunicação.
 ```
 

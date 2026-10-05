@@ -158,15 +158,15 @@ DIMENSAO_PEDAGOGICA = [
         "contatos, o que distribui a responsabilidade de forma igualitária e dispensa a organização de eventos. Para que a ação de arrecadação também cumpra função de "
         "conscientização, cada bilhete trará o perfil do projeto no Instagram (@efeitorebote.oficial) e um QR Code de "
         "acesso a ele, de modo que o comprador, ao guardar o bilhete, tenha acesso ao conteúdo informativo do projeto. Como cada "
-        "acadêmico vende de forma independente, o controle é centralizado no sistema on-line de vendas desenvolvido pela turma "
-        "(aplicativo web acessado pelo celular com o e-mail cadastrado do acadêmico): a cada venda, o vendedor preenche o canhoto e "
-        "registra no sistema, no mesmo dia, os números vendidos, o nome e o telefone do comprador e a forma de pagamento; o sistema só "
-        "permite registrar números do bloco do próprio acadêmico, impede que um número seja vendido duas vezes e constitui o registro "
-        "oficial da ação de arrecadação. Para pagamentos por PIX, o sistema gera o código com o valor exato e a identificação do pedido, e o pagamento "
-        "cai diretamente na conta de recebimento da comissão financeira (conta de uso exclusivo da ação de arrecadação, indicada pela comissão e "
-        "aprovada pela professora responsável), de modo que o dinheiro não fique com o vendedor; valores em "
-        "espécie são entregues à comissão nos acertos semanais, realizados às segundas-feiras nos encontros, quando o registro é "
-        "conferido com os extratos. Somente participam do sorteio os bilhetes registrados e pagos até 30/10/2026, às 23h59; a lista "
+        "acadêmico vende de forma independente, o controle é feito por bloco: a cada venda, o acadêmico preenche o canhoto (nome e "
+        "telefone do comprador) e recebe o valor diretamente; até 30/10/2026, às 23h59, repassa o valor integral do bloco, "
+        "R$ 150,00 (30 bilhetes de R$ 5,00), por PIX, à conta de recebimento de uso exclusivo da ação de arrecadação (chave "
+        "aleatória fe5450d9-8b9e-470e-8b46-0d07e4a86d0d), sob a responsabilidade de Edgar [PENDENTE: nome completo], indicado pela turma e aprovado "
+        "pela professora responsável. O repasse deve partir de conta do próprio acadêmico ou trazer seu nome na mensagem do PIX, e é "
+        "acompanhado da entrega dos canhotos à comissão financeira. Os bilhetes não vendidos são completados pelo próprio acadêmico, "
+        "com recursos próprios, e concorrem em seu nome. O bloco é considerado quitado quando o repasse de R$ 150,00 é identificado no "
+        "extrato e os canhotos são conferidos, o que é registrado em planilha de controle; o acadêmico responde, perante os compradores, "
+        "pelos bilhetes que vendeu. Somente participam do sorteio os bilhetes de blocos quitados até 30/10/2026, às 23h59; a lista "
         "dos números participantes, sem dados pessoais, é publicada no perfil do projeto em 01/11/2026. O prêmio será um tablet "
         "Samsung Galaxy Tab A11+ (11 polegadas, Wi-Fi) ou modelo equivalente. O sorteio ocorrerá em 02/11/2026, às "
         "[PENDENTE: horário], com transmissão ao vivo no @efeitorebote.oficial: os números da lista oficial são impressos, dobrados "
@@ -210,12 +210,11 @@ DIMENSAO_PEDAGOGICA = [
         "Impressão dos materiais. Os bilhetes (480 folhas A4, cinco bilhetes por folha, seis folhas por acadêmico) e os demais materiais "
         "impressos serão produzidos com a cota de impressão institucional, [PENDENTE: confirmar com a coordenação se a cota comporta "
         "esse volume]; não haverá gasto com impressão retirado dos recursos destinados aos itens.",
-        "Prestação de contas e frequência. A comissão financeira confirma cada pagamento no sistema após conferir o extrato ou receber "
-        "o valor em espécie; cada confirmação gera automaticamente o lançamento correspondente em livro-caixa que não admite edição nem "
-        "exclusão (correções apenas por estorno), e toda despesa exige número e imagem da nota fiscal. O sistema verifica "
-        "continuamente se as entradas correspondem aos bilhetes confirmados e se o saldo confere, e uma página pública de "
-        "transparência, divulgada no perfil do projeto, apresenta os números participantes e os valores arrecadados e gastos, sem "
-        "dados pessoais, levando à sociedade o acompanhamento da ação. Ao final, será elaborado relatório de transparência com o quantitativo arrecadado e "
+        "Prestação de contas e frequência. A comissão financeira registra em planilha de controle, para cada acadêmico, a data e o "
+        "valor do repasse identificado no extrato e a entrega dos canhotos; o saldo da conta deve corresponder ao número de blocos "
+        "quitados multiplicado por R$ 150,00, deduzidas as despesas, e toda despesa exige nota fiscal. O extrato da conta de uso "
+        "exclusivo e a planilha compõem a prestação de contas, e um resumo dos valores arrecadados e gastos, sem dados pessoais, será "
+        "divulgado no perfil do projeto, levando à sociedade o acompanhamento da ação. Ao final, será elaborado relatório de transparência com o quantitativo arrecadado e "
         "entregue por tipo de item e por unidade, o valor obtido com a ação de arrecadação e os comprovantes de compra. A frequência dos acadêmicos é "
         "registrada em cada encontro, e as entregas individuais descritas no cronograma compõem o relatório final do projeto.",
         "Ajustes em relação ao pré-projeto aprovado. Esta versão mantém a fundamentação, os objetivos e a meta de referência de mais de "
@@ -223,7 +222,7 @@ DIMENSAO_PEDAGOGICA = [
         "limite de cada produto; como o pré-projeto especificava creme dental branco, a lista final (tipo, cor, embalagem e forma de "
         "entrega) será validada com a PEM, a CCM e a CPIM antes de qualquer aquisição; (2) a ação de arrecadação solidária como fonte complementar de "
         "recursos: a divulgação permanece de custo zero, e a receita da ação de arrecadação, deduzido o prêmio, destina-se exclusivamente à compra de "
-        "itens; (3) as ações de mobilização e junto à sociedade, incluindo o café da manhã de acolhimento às famílias; (4) o sistema on-line de controle de vendas e prestação de contas; e (5) a reformulação dos "
+        "itens; (3) as ações de mobilização e junto à sociedade, incluindo o café da manhã de acolhimento às famílias; (4) o controle financeiro por bloco, com repasse individual de cada acadêmico à conta de uso exclusivo; e (5) a reformulação dos "
         "objetivos específicos e o tratamento do \"efeito rebote\" como categoria de análise fundamentada na literatura, sem "
         "pretensão de comprovar a relação entre prevenção e custos públicos, o que exigiria levantamento de dados alheio ao escopo "
         "da ação extensionista. "
@@ -294,7 +293,7 @@ CRONOGRAMA = [
          entrega="Fichamento sobre a assistência material na execução penal."),
     dict(titulo="Lançamento da Campanha e Distribuição dos Bilhetes", etapa=E5, carga=None,
          objetivos="Iniciar a campanha de conscientização e organizar a ação de arrecadação solidária, mediante as aprovações necessárias.",
-         atividades="Publicação do conteúdo de apresentação aprovado; distribuição dos blocos de 30 bilhetes por acadêmico, com registro em planilha; orientação sobre as regras de venda, registro nos canhotos e acertos com a comissão financeira.",
+         atividades="Publicação do conteúdo de apresentação aprovado; distribuição dos blocos de 30 bilhetes por acadêmico, com registro em planilha; orientação sobre as regras de venda, o preenchimento dos canhotos e o repasse de R$ 150,00 por bloco até 30/10.",
          entrega="Termo de recebimento do bloco de bilhetes e relato das primeiras ações de divulgação."),
     dict(titulo="Pontos de Coleta no Campus e na Comunidade", etapa=E5, carga=None,
          objetivos="Estruturar a arrecadação direta de itens no campus e em instituições parceiras da comunidade, ampliando a visibilidade do projeto junto à sociedade.",
@@ -306,7 +305,7 @@ CRONOGRAMA = [
          entrega="Peça de conteúdo produzida ou roteiro, com as fontes utilizadas."),
     dict(titulo="Intervenção no Pátio e Acompanhamento da Arrecadação", etapa=E5, carga=None,
          objetivos="Dar visibilidade à campanha no campus e monitorar o andamento da doação de itens e da ação de arrecadação.",
-         atividades="Montagem do cenário temático no pátio do campus, com exposição dos itens aceitos, caixa de coleta e escala de acadêmicos para atendimento ao público; recolhimento e triagem semanal dos itens do campus e dos comércios parceiros; acerto semanal da ação de arrecadação com a comissão financeira.",
+         atividades="Montagem do cenário temático no pátio do campus, com exposição dos itens aceitos, caixa de coleta e escala de acadêmicos para atendimento ao público; recolhimento e triagem semanal dos itens do campus e dos comércios parceiros; acompanhamento, pela comissão financeira, dos blocos já quitados.",
          entrega="Relatório descritivo da participação na intervenção ou na arrecadação."),
     dict(titulo="Triagem, Conferência e Consolidação dos Itens", etapa=E5, carga=None,
          objetivos="Assegurar que os itens atendam às especificações das unidades e consolidar o quantitativo arrecadado.",
@@ -314,7 +313,7 @@ CRONOGRAMA = [
          entrega="Registro da triagem e da consolidação realizadas pela equipe."),
     dict(titulo="Balanço da Ação de Arrecadação e Aquisição do Prêmio", etapa=E5, carga=None,
          objetivos="Avaliar o andamento das vendas e garantir a aquisição do prêmio com transparência.",
-         atividades="Conferência dos registros do sistema de vendas com os extratos da conta da comissão financeira; balanço por acadêmico; cotação em três lojas e aquisição do tablet com nota fiscal quando a arrecadação cobrir seu custo com margem; preparação da lista de compras e das cotações dos itens; reforço da divulgação junto aos acadêmicos com menos vendas.",
+         atividades="Conferência dos repasses recebidos com o extrato da conta de uso exclusivo e a planilha de controle; balanço dos blocos quitados e pendentes; cotação em três lojas e aquisição do tablet com nota fiscal quando a arrecadação cobrir seu custo com margem; preparação da lista de compras e das cotações dos itens; reforço da divulgação junto aos acadêmicos com blocos pendentes.",
          entrega="Relatório descritivo da participação no balanço da ação de arrecadação ou na aquisição do prêmio."),
     dict(titulo="Preparação do Café da Manhã de Acolhimento às Famílias", etapa=E5, carga=None,
          objetivos="Organizar o café da manhã de acolhimento às famílias e às crianças que visitam os pais na unidade, conforme as regras da unidade.",
@@ -330,7 +329,7 @@ CRONOGRAMA = [
          entrega="Checklist da equipe responsável pela logística."),
     dict(titulo="Encerramento da Ação de Arrecadação e Comunicação dos Resultados Parciais", etapa=E5, carga=None,
          objetivos="Encerrar a ação de arrecadação com transparência e preparar a aquisição dos itens com os valores arrecadados.",
-         atividades="Acerto final de valores (prazo de vendas: 30/10); publicação da lista de números participantes (01/11); organização do sorteio transmitido ao vivo no @efeitorebote.oficial em 02/11, com ata e testemunhas; compra dos itens validados pelas unidades, com nota fiscal; produção de conteúdo, previamente aprovado, sobre o quantitativo arrecadado.",
+         atividades="Conferência final dos repasses de R$ 150,00 e dos canhotos (prazo: 30/10); publicação da lista de números participantes (01/11); organização do sorteio transmitido ao vivo no @efeitorebote.oficial em 02/11, com ata e testemunhas; compra dos itens validados pelas unidades, com nota fiscal; produção de conteúdo, previamente aprovado, sobre o quantitativo arrecadado.",
          entrega="Relatório descritivo da participação no encerramento da ação de arrecadação ou na comunicação dos resultados."),
     dict(titulo="Visitas Técnicas e Entrega dos Itens (04 e 05/11)", etapa=E5, carga=None,
          objetivos="Observar in loco a estrutura e o funcionamento das unidades e a aplicação da LEP; entregar os itens arrecadados.",
@@ -365,19 +364,19 @@ REGULAMENTO = [
     ("li", "Bilhetes numerados de 0001 a 2400, ao valor unitário de R$ 5,00."),
     ("li", "Cada acadêmico participante recebe um bloco de 30 bilhetes em sequência, registrado em planilha de distribuição."),
     ("li", "Cada bilhete traz o perfil do projeto no Instagram (@efeitorebote.oficial) e um QR Code de acesso a ele, para que o comprador conheça o projeto."),
-    ("li", "Cada acadêmico vende seus bilhetes de forma independente. A cada venda, preenche o canhoto (nome e telefone do comprador) e registra no mesmo dia, no sistema on-line de vendas do projeto, os números vendidos, os dados do comprador e a forma de pagamento. O sistema é o registro oficial para o sorteio: aceita apenas números do bloco do próprio acadêmico e impede venda duplicada."),
-    ("li", "O pagamento é feito preferencialmente por PIX, pelo código gerado no sistema (valor exato e identificação do pedido), diretamente na conta de recebimento de uso exclusivo da ação de arrecadação, indicada pela comissão financeira e aprovada pela professora responsável ([PENDENTE: chave PIX da comissão]). Valores em espécie são entregues à comissão nos acertos semanais, às segundas-feiras, nos encontros do projeto."),
-    ("li", "Prazo final de venda, registro e pagamento: 30/10/2026, às 23h59. Bilhetes não registrados ou não pagos até esse horário não concorrem."),
+    ("li", "Cada acadêmico vende seus bilhetes de forma independente, preenche o canhoto de cada bilhete vendido (nome e telefone do comprador) e recebe o valor diretamente do comprador."),
+    ("li", "Até 30/10/2026, às 23h59, cada acadêmico repassa o valor integral do bloco, R$ 150,00, por PIX, à conta de recebimento de uso exclusivo da ação de arrecadação (chave aleatória fe5450d9-8b9e-470e-8b46-0d07e4a86d0d), sob a responsabilidade de Edgar [PENDENTE: nome completo], aprovada pela professora responsável. O repasse deve partir de conta do próprio acadêmico ou trazer seu nome na mensagem do PIX."),
+    ("li", "Junto com o repasse, o acadêmico entrega à comissão financeira os 30 canhotos preenchidos. Os bilhetes não vendidos são completados pelo próprio acadêmico, com recursos próprios, e concorrem em seu nome."),
+    ("li", "O bloco é considerado quitado quando o repasse de R$ 150,00 é identificado no extrato e os canhotos são conferidos. Somente concorrem os bilhetes de blocos quitados até 30/10/2026, às 23h59. O acadêmico responde, perante os compradores, pelos bilhetes que vendeu."),
     ("li", "Em 01/11/2026, a lista dos números participantes (sem dados pessoais) é publicada no @efeitorebote.oficial."),
-    ("li", "Os canhotos e os bilhetes não vendidos são entregues à comissão financeira no primeiro encontro após o sorteio, para conferência e arquivo."),
     ("li", "Prêmio: 01 (um) tablet Samsung Galaxy Tab A11+ (11 polegadas, Wi-Fi) ou modelo equivalente, novo e com nota fiscal."),
     ("li", "Sorteio: 02/11/2026, às [PENDENTE: horário], com transmissão ao vivo no @efeitorebote.oficial. Os números da lista oficial são impressos, dobrados e depositados em urna; um número é retirado na presença da professora responsável e de duas testemunhas, com lavratura de ata e gravação do vídeo."),
     ("li", "O resultado será divulgado nos canais do projeto e o ganhador será contatado pelo telefone informado no canhoto, em até 24 horas após o sorteio, tendo 30 dias para retirar o prêmio. Se o prêmio não for retirado nesse prazo, será realizado novo sorteio entre os demais números participantes, divulgado nos mesmos canais."),
     ("li", "A realização da ação de arrecadação está condicionada à autorização da instituição e da professora responsável, observadas as normas institucionais e a legislação federal sobre distribuição de prêmios mediante sorteio (Decreto-Lei nº 6.259/1944 e Lei nº 5.768/1971). Sem essa autorização, a ação de arrecadação não será iniciada."),
-    ("li", "Se o sorteio precisar ser adiado, a nova data será divulgada com antecedência nos canais do projeto. Se a ação de arrecadação for cancelada, o valor pago será integralmente devolvido a cada comprador pela mesma forma de pagamento."),
+    ("li", "Se o sorteio precisar ser adiado, a nova data será divulgada com antecedência nos canais do projeto. Se a ação de arrecadação for cancelada, a comissão financeira devolverá o valor integral de cada bloco ao respectivo acadêmico, que o restituirá aos compradores."),
     ("li", "Dados pessoais: nome e telefone do comprador servem apenas para identificar o bilhete e contatar o ganhador; não são divulgados e serão eliminados após a entrega do prêmio (Lei nº 13.709/2018)."),
     ("h", "5. Destinação dos recursos e prestação de contas"),
-    ("p", "Os valores arrecadados com a ação de arrecadação, deduzido o custo de aquisição do prêmio, serão utilizados exclusivamente na compra dos itens listados no item 2, mediante nota fiscal. A comissão financeira, composta por [PENDENTE: integrantes da comissão financeira], manterá o controle de entradas e saídas. Ao final, será apresentado relatório de transparência à professora responsável e à turma, com o valor arrecadado, os comprovantes de compra e o quantitativo entregue por unidade."),
+    ("p", "Os valores arrecadados com a ação de arrecadação, deduzido o custo de aquisição do prêmio, serão utilizados exclusivamente na compra dos itens listados no item 2, mediante nota fiscal. A comissão financeira, composta por [PENDENTE: integrantes da comissão financeira], manterá a planilha de controle dos repasses por bloco e das saídas, conferida com o extrato da conta de uso exclusivo. Ao final, será apresentado relatório de transparência à professora responsável e à turma, com o valor arrecadado, os comprovantes de compra e o quantitativo entregue por unidade."),
     ("h", "6. Entrega"),
     ("p", "Os itens serão entregues aos gestores das unidades durante as visitas técnicas previstas para 04 e 05 de novembro, com assinatura de termo de entrega."),
     ("h", "7. Disposições finais"),
