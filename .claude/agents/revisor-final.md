@@ -9,7 +9,7 @@ Você é o revisor final do projeto de extensão "Efeito Rebote: o custo da rein
 
 ## O que ler
 - O texto do projeto: rode `pdftotext -layout entregas/projeto-escrito.pdf -` e leia tudo.
-- O texto do regulamento: rode `pdftotext entregas/anexo-1-regulamento-arrecadacao-rifa.pdf -`.
+- O texto do regulamento: rode `pdftotext entregas/anexo-1-regulamento-acao-arrecadacao.pdf -`.
 - Os fatos e as regras: `CLAUDE.md`, `docs/projeto.md`, `docs/licoes.md` e `docs/fonte/audios-transcricao.md`.
 - O modelo da professora: `unzip -p "docs/fonte/relatorio_extensao_projeto word.docx" word/document.xml | sed -e 's/<\/w:p>/\n/g' -e 's/<[^>]*>//g' | grep -v '^\s*$' | head -80`. Leia só a estrutura; o conteúdo do modelo é de outro projeto.
 

@@ -8,7 +8,7 @@ description: Regulamento, numeração, distribuição por aluno e controle finan
 Os fatos ficam em `docs/projeto.md`, seção Rifa: 80 alunos × 30 números × R$ 5,00, o que dá 2.400 números e R$ 12.000 se todos forem vendidos.
 
 ## Entregáveis
-- `entregas/rifa/regulamento.md`. Deve conter:
+- `entregas/acao-arrecadacao/regulamento.md`. Deve conter:
   - organização e finalidade (compra dos 5 itens);
   - prêmio;
   - valor;
@@ -17,8 +17,8 @@ Os fatos ficam em `docs/projeto.md`, seção Rifa: 80 alunos × 30 números × R
   - como o ganhador será comunicado e o prazo para retirar o prêmio;
   - destino do valor arrecadado e prestação de contas;
   - menção à aprovação institucional.
-- `entregas/rifa/distribuicao.csv`: as colunas são `aluno,periodo,numero_inicial,numero_final`, com blocos contínuos de 30 números (aluno 1 = 0001–0030).
-- `entregas/rifa/controle.csv`: as colunas são `numero,aluno,comprador,telefone,pago,data`. É gerado a partir da distribuição.
+- `entregas/acao-arrecadacao/distribuicao.csv`: as colunas são `aluno,periodo,numero_inicial,numero_final`, com blocos contínuos de 30 números (aluno 1 = 0001–0030).
+- `entregas/acao-arrecadacao/controle.csv`: as colunas são `numero,aluno,comprador,telefone,pago,data`. É gerado a partir da distribuição.
 
 ## Regras
 - A numeração tem **4 dígitos** (0001–2400). A arte v1 usa 3 dígitos e precisa ser ajustada.

@@ -69,7 +69,7 @@ for (let i = 0; i < 2; i++) {
 }
 checar(await p.getByText("Caixa conciliado: tudo bate").isVisible(), "conciliação: tudo bate");
 checar(await p.getByText("8 de 8 verificações OK").isVisible(), "8 de 8 verificações OK");
-checar(await p.getByText("Rifa: pedido ER00000001 (aluno 1, 3 bilhete(s))").isVisible(), "livro-caixa com descrição correta");
+checar(await p.getByText("Ação de arrecadação: pedido ER00000001 (aluno 1, 3 bilhete(s))").isVisible(), "livro-caixa com descrição correta");
 checar(await p.locator("p.num", { hasText: "R$ 20,00" }).count() >= 2, "entradas e saldo = R$ 20,00");
 await p.screenshot({ path: `${SAIDA}/5-comissao.png`, fullPage: true });
 const csv = await (await p.request.get(`${BASE}/api/export/prestacao`)).text();

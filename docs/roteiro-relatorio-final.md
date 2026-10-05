@@ -7,7 +7,7 @@ Pergunta central: **como a ação de extensão atua sobre o problema identificad
 - [ ] Qual ação foi realizada.
 - [ ] Por que essa ação foi escolhida.
 - [ ] Quais itens foram arrecadados, com quantitativo por tipo e por unidade.
-- [ ] Como ocorreu a mobilização: pontos de coleta, rifa, redes, parceiros.
+- [ ] Como ocorreu a mobilização: pontos de coleta, ação de arrecadação, redes, parceiros.
 - [ ] Quem participou.
 - [ ] Para quem os itens foram destinados (PEM, CCM, CPIM) e o termo de entrega.
 - [ ] Qual foi o resultado da arrecadação em relação à meta.

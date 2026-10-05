@@ -10,7 +10,7 @@ export default function Login() {
       <Image src="/selo.jpg" alt="Selo Efeito Rebote: o custo da reincidência" width={168} height={168} priority className="rounded-full shadow-xl" />
       <div className="text-center text-white">
         <p className="font-display text-sm font-bold tracking-[2px] text-ouro">PROJETO SISTEMA PRISIONAL</p>
-        <h1 className="font-display text-5xl leading-none font-bold">RIFA SOLIDÁRIA</h1>
+        <h1 className="font-display text-5xl leading-none font-bold">AÇÃO DE ARRECADAÇÃO SOLIDÁRIA</h1>
         <p className="mt-2 text-[#d7def2]">Registre suas vendas e acompanhe seu bloco</p>
       </div>
       <form action={acao} className="flex w-full max-w-sm flex-col gap-3 rounded-2xl bg-white p-6">

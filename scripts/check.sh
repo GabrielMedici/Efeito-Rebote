@@ -5,6 +5,8 @@ cd "$(dirname "$0")/.." || exit 1
 
 # Termos proibidos em material do projeto (regra inviolável do CLAUDE.md)
 PROIBIDO='\bnotas?\b(?! fisca| t[ée]cnica| de rodap)|\bAEP\b|\bprovas? ?[0-9]?\b|pontua[çc][ãa]o|vale(ndo)? [0-9,.]+ ?pontos?|\b[0-9],[0-9] pontos?\b|nota final|m[ée]dia final'
+# O termo "rifa" foi substituído por "ação de arrecadação" a pedido da turma
+PROIBIDO="$PROIBIDO|\\brifas?\\b"
 PENDENTE='\[PENDENTE[^]]*\]|\[PR[ÊE]MIO\]|\[DATA\]|\[LOCAL\]|\[VALOR\]'
 
 texto() {
@@ -24,7 +26,7 @@ for f in "${arquivos[@]}"; do
   t=$(texto "$f")
   [ -z "$t" ] && { echo "AVISO  $f: não foi possível extrair texto"; avisos=$((avisos+1)); continue; }
   hits=$(grep -inoP "$PROIBIDO" <<<"$t" | head -5)
-  [ -n "$hits" ] && { echo "ERRO   $f: termo avaliativo proibido -> $(tr '\n' ' ' <<<"$hits")"; erros=$((erros+1)); }
+  [ -n "$hits" ] && { echo "ERRO   $f: termo proibido -> $(tr '\n' ' ' <<<"$hits")"; erros=$((erros+1)); }
   pend=$(grep -oP "$PENDENTE" <<<"$t" | sort -u | tr '\n' ' ')
   [ -n "$pend" ] && { echo "AVISO  $f: pendências -> $pend"; avisos=$((avisos+1)); }
 done

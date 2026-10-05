@@ -1,5 +1,5 @@
 // Gera o "PIX copia e cola" (BR Code, padrão EMV do Banco Central) com valor e identificador (txid).
-// O txid aparece no extrato do recebedor e liga o pagamento ao pedido da rifa.
+// O txid aparece no extrato do recebedor e liga o pagamento ao pedido da ação de arrecadação.
 
 function campo(id: string, valor: string): string {
   return id + valor.length.toString().padStart(2, "0") + valor;

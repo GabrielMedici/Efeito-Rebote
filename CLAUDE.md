@@ -27,7 +27,7 @@ Uma tarefa só fica `done` quando:
 ## Ferramentas do projeto
 - Skills: `relatorio-extensao`, `post-redes`, `rifa` e `manutencao`.
 - Agentes: `revisor` (confere entregáveis contra as regras; barato), `revisor-final` (revisão completa antes de entregar: modelo, orientações, matriz objetivo→ação→evidência, citações) e `pesquisador` (busca fontes e dados sobre o sistema prisional).
-- Geradores: `python3 scripts/gerar_relatorio.py` (projeto e anexos), `scripts/gerar_rifas.py` (folhas de rifa), `scripts/gerar_controle_rifa.py` (planilha).
+- Geradores: `python3 scripts/gerar_relatorio.py` (projeto e anexos), `scripts/gerar_bilhetes.py` (folhas de rifa), `scripts/gerar_controle_arrecadacao.py` (planilha).
 - App de vendas: `vendas/` (Next.js + Supabase). Valide com `npm test && npm run test:db && npm run build` dentro de `vendas/`.
 - Pacote de entrega organizado: `bash scripts/montar_pacote.sh` (gera `pacote/Efeito-Rebote/` e o `.zip`).
 - Para converter `.docx` em PDF: `soffice --headless --convert-to pdf <arquivo> --outdir entregas/`.

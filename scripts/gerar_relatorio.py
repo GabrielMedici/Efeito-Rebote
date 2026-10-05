@@ -228,5 +228,5 @@ def gerar_anexo(nome_arquivo, titulo, blocos):
 if __name__ == "__main__":
     d, total = gerar_relatorio()
     print(f"ok {d} (carga total {total:g} h)")
-    print("ok", gerar_anexo("anexo-1-regulamento-arrecadacao-rifa.docx", C.REGULAMENTO_TITULO, C.REGULAMENTO))
+    print("ok", gerar_anexo("anexo-1-regulamento-acao-arrecadacao.docx", C.REGULAMENTO_TITULO, C.REGULAMENTO))
     print("ok", gerar_anexo("anexo-2-texto-apresentacao.docx", C.APRESENTACAO_TITULO, C.APRESENTACAO))

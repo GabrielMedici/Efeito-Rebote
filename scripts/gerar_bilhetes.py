@@ -1,5 +1,5 @@
-"""Gera a folha de rifas para impressão (A4, 5 bilhetes por folha = 6 folhas por aluno).
-Uso: python3 scripts/gerar_rifas.py [--amostra]   (--amostra gera só as 2 primeiras folhas)
+"""Gera a folha de bilhetes para impressão (A4, 5 bilhetes por folha = 6 folhas por aluno).
+Uso: python3 scripts/gerar_bilhetes.py [--amostra]   (--amostra gera só as 2 primeiras folhas)
 Requer: pip install reportlab segno"""
 import io
 import os
@@ -73,8 +73,12 @@ def bilhete(c, x, y, n):
     c.setFont("Helvetica-Bold", 7)
     c.drawString(tx, y + TH - 8 * mm, "PROJETO SISTEMA PRISIONAL")
     c.setFillColor(AZUL)
-    c.setFont("Helvetica-Bold", 19)
-    c.drawString(tx, y + TH - 15.5 * mm, "RIFA SOLIDÁRIA")
+    titulo, tam = "AÇÃO DE ARRECADAÇÃO SOLIDÁRIA", 19
+    limite = x + TW - 19 * mm - 8 * mm - tx  # até o QR Code
+    while c.stringWidth(titulo, "Helvetica-Bold", tam) > limite:
+        tam -= 0.5
+    c.setFont("Helvetica-Bold", tam)
+    c.drawString(tx, y + TH - 15.5 * mm, titulo)
     c.setFillColor(CINZA)
     c.setFont("Helvetica-Oblique", 7)
     c.drawString(tx, y + TH - 19.5 * mm, "Efeito Rebote: o custo da reincidência")
@@ -106,9 +110,9 @@ def bilhete(c, x, y, n):
 
 
 def gerar(amostra=False):
-    destino = os.path.join(RAIZ, "entregas", "rifa", "folhas-rifa-amostra.pdf" if amostra else "folhas-rifa-0001-2400.pdf")
+    destino = os.path.join(RAIZ, "entregas", "acao-arrecadacao", "folhas-bilhetes-amostra.pdf" if amostra else "folhas-bilhetes-0001-2400.pdf")
     c = canvas.Canvas(destino, pagesize=A4)
-    c.setTitle("Rifa solidária Efeito Rebote")
+    c.setTitle("Ação de arrecadação solidária Efeito Rebote")
     c.setAuthor("Acadêmicos do 3º semestre noturno – Turma B")
     c.setCreator("Acadêmicos do 3º semestre noturno – Turma B")
     c.setProducer("Efeito Rebote")

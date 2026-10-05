@@ -12,3 +12,17 @@ for rel in ("entregas/guia-do-pacote.pdf", "entregas/app/one-page-sistema-vendas
     w.metadata = None
     w.add_metadata({"/Title": titulo, "/Author": AUTOR, "/Creator": AUTOR, "/Producer": "Efeito Rebote"})
     w.write(f)
+
+# Planilha: o openpyxl grava o próprio nome como aplicativo.
+import shutil
+import zipfile
+
+xl = os.path.join(RAIZ, "entregas", "acao-arrecadacao", "controle-acao-arrecadacao.xlsx")
+tmp = xl + ".tmp"
+with zipfile.ZipFile(xl) as zi, zipfile.ZipFile(tmp, "w", zipfile.ZIP_DEFLATED) as zo:
+    for it in zi.infolist():
+        d = zi.read(it.filename)
+        if it.filename == "docProps/app.xml":
+            d = d.replace(b"Microsoft Excel Compatible / Openpyxl 3.1.5", b"Microsoft Excel")
+        zo.writestr(it, d)
+shutil.move(tmp, xl)

@@ -1,4 +1,4 @@
--- Facilitador de vendas da Rifa Solidária Efeito Rebote.
+-- Facilitador de vendas da Ação de Arrecadação Solidária Efeito Rebote.
 -- Princípios: (1) o banco é a fonte da verdade; (2) livro-caixa e auditoria são imutáveis (correção só por estorno);
 -- (3) toda escrita sensível passa por funções RPC que validam papel, bloco e prazo; (4) conciliacao() prova que o caixa fecha.
 
@@ -7,7 +7,7 @@ create type forma_pagamento as enum ('pix', 'dinheiro');
 create type status_pedido as enum ('pendente', 'confirmado', 'cancelado');
 create type tipo_lancamento as enum ('entrada', 'saida');
 
--- Parâmetros da rifa (linha única)
+-- Parâmetros da ação de arrecadação (linha única)
 create table config (
   id boolean primary key default true check (id),
   preco_centavos int not null default 500 check (preco_centavos > 0),
@@ -61,7 +61,7 @@ create unique index bilhete_vendido_uma_vez on pedido_bilhetes (numero) where at
 create table lancamentos (
   id bigint generated always as identity primary key,
   tipo tipo_lancamento not null,
-  categoria text not null check (categoria in ('rifa_pix', 'rifa_dinheiro', 'estorno', 'premio', 'itens', 'outros')),
+  categoria text not null check (categoria in ('venda_pix', 'venda_dinheiro', 'estorno', 'premio', 'itens', 'outros')),
   valor_centavos int not null check (valor_centavos > 0),
   descricao text not null,
   pedido_id bigint references pedidos,
@@ -69,8 +69,8 @@ create table lancamentos (
   comprovante_path text,
   criado_em timestamptz not null default now(),
   criado_por text not null,
-  check ((categoria in ('rifa_pix', 'rifa_dinheiro')) = (tipo = 'entrada')),
-  check (categoria not in ('rifa_pix', 'rifa_dinheiro', 'estorno') or pedido_id is not null),
+  check ((categoria in ('venda_pix', 'venda_dinheiro')) = (tipo = 'entrada')),
+  check (categoria not in ('venda_pix', 'venda_dinheiro', 'estorno') or pedido_id is not null),
   -- saída de dinheiro (exceto estorno) exige nota fiscal: a prestação de contas precisa de comprovação
   check (tipo = 'entrada' or categoria = 'estorno' or (nota_fiscal is not null and comprovante_path is not null))
 );
@@ -179,8 +179,8 @@ begin
   update pedidos set status = 'confirmado', confirmado_em = now(), confirmado_por = email_atual()
   where id = p_pedido returning * into p;
   insert into lancamentos (tipo, categoria, valor_centavos, descricao, pedido_id, criado_por)
-  values ('entrada', case p.forma when 'pix' then 'rifa_pix' else 'rifa_dinheiro' end, p.valor_centavos,
-          'Rifa: pedido ' || p.txid || ' (aluno ' || p.aluno_num || ', ' || qtd || ' bilhete(s))', p.id, email_atual());
+  values ('entrada', case p.forma when 'pix' then 'venda_pix' else 'venda_dinheiro' end, p.valor_centavos,
+          'Ação de arrecadação: pedido ' || p.txid || ' (aluno ' || p.aluno_num || ', ' || qtd || ' bilhete(s))', p.id, email_atual());
   return p;
 end $$;
 
@@ -249,8 +249,8 @@ create view resumo_caixa with (security_invoker = true) as
 select coalesce(sum(valor_centavos) filter (where tipo = 'entrada'), 0) as entradas,
        coalesce(sum(valor_centavos) filter (where tipo = 'saida'), 0) as saidas,
        coalesce(sum(case tipo when 'entrada' then valor_centavos else -valor_centavos end), 0) as saldo,
-       coalesce(sum(valor_centavos) filter (where categoria = 'rifa_pix'), 0) as entradas_pix,
-       coalesce(sum(valor_centavos) filter (where categoria = 'rifa_dinheiro'), 0) as entradas_dinheiro,
+       coalesce(sum(valor_centavos) filter (where categoria = 'venda_pix'), 0) as entradas_pix,
+       coalesce(sum(valor_centavos) filter (where categoria = 'venda_dinheiro'), 0) as entradas_dinheiro,
        coalesce(sum(valor_centavos) filter (where categoria = 'estorno'), 0) as estornos,
        coalesce(sum(valor_centavos) filter (where categoria = 'premio'), 0) as premio,
        coalesce(sum(valor_centavos) filter (where categoria = 'itens'), 0) as itens
@@ -270,7 +270,7 @@ language sql stable security definer set search_path = public as $$
   from ped where status = 'confirmado'
     and (select count(*) from lancamentos l where l.pedido_id = ped.id and l.tipo = 'entrada' and l.valor_centavos = ped.valor_centavos) <> 1
   union all
-  select '2. Nenhuma entrada da rifa sem pedido confirmado ou estornado',
+  select '2. Nenhuma entrada da ação de arrecadação sem pedido confirmado ou estornado',
          count(*) = 0, coalesce(string_agg(l.id::text, ', '), '')
   from lancamentos l join pedidos p on p.id = l.pedido_id
   where l.tipo = 'entrada' and not (p.status = 'confirmado' or (p.status = 'cancelado' and p.confirmado_em is not null))
@@ -288,7 +288,7 @@ language sql stable security definer set search_path = public as $$
          count(*) = 0, coalesce(string_agg(txid, ', '), '')
   from ped where status = 'cancelado' and ativos > 0
   union all
-  select '6. Entradas da rifa = bilhetes confirmados × preço',
+  select '6. Entradas da ação de arrecadação = bilhetes confirmados × preço',
          (select coalesce(sum(valor_centavos), 0) from lancamentos where tipo = 'entrada')
            - (select coalesce(sum(valor_centavos), 0) from lancamentos where categoria = 'estorno')
            = (select count(*) from pedido_bilhetes b join pedidos p on p.id = b.pedido_id where b.ativo and p.status = 'confirmado') * (select p from preco),

@@ -118,13 +118,13 @@ DIMENSAO_PEDAGOGICA = [
         "frequência, totalizando 15 encontros: o 1º e o 2º destinam-se à construção do projeto; do 3º ao 13º, ao desenvolvimento das "
         "atividades conforme os encaminhamentos da turma; o 14º, às visitas técnicas; e o 15º, à discussão dos resultados e à "
         "elaboração do relatório final. O conteúdo de cada encontro está detalhado no cronograma. Algumas ações ocorrem fora do "
-        "horário dos encontros, em datas próprias: o encerramento das vendas da rifa (30/10), a publicação da lista de números (01/11), "
+        "horário dos encontros, em datas próprias: o encerramento das vendas da ação de arrecadação (30/10), a publicação da lista de números (01/11), "
         "o sorteio transmitido ao vivo (02/11) e as visitas técnicas (04 e 05/11); os encontros correspondentes preparam e avaliam essas ações.",
         "A metodologia fundamenta-se na Aprendizagem Baseada em Projetos (PjBL), organizada em seis etapas integradas: (1) imersão e "
         "identificação do problema, com estudo da realidade prisional de Maringá; (2) seleção e delimitação do problema prioritário: "
         "a insuficiência de itens de higiene e o \"efeito rebote\"; (3) análise do problema e levantamento das necessidades de "
         "aprendizagem; (4) estudo e investigação, com aprofundamento teórico e normativo; (5) planejamento e execução da intervenção: "
-        "campanha de conscientização, arrecadação, rifa solidária e visitas técnicas com entrega dos itens; e (6) sistematização dos "
+        "campanha de conscientização, doação de itens, ação de arrecadação solidária e visitas técnicas com entrega dos itens; e (6) sistematização dos "
         "resultados, reflexão e elaboração do relatório final. Os estudantes organizam-se em quatro equipes (Apresentação e Visitas, "
         "Criação e Audiovisual, Pesquisa e Escrita, e Logística e Arrecadação), e todo o conteúdo produzido é encaminhado à professora "
         "responsável para análise e aprovação antes da execução ou publicação.",
@@ -136,7 +136,7 @@ DIMENSAO_PEDAGOGICA = [
         "aceitos serão instaladas em locais de grande circulação do campus, mediante autorização da instituição. A equipe de Logística "
         "e Arrecadação fará o recolhimento e a triagem semanal, registrando em planilha a quantidade de cada item recebido. Os itens "
         "serão armazenados em espaço cedido pela coordenação até a entrega.",
-        "Ações junto à sociedade. Para que o projeto alcance a comunidade externa e não apenas o ambiente acadêmico, a rifa "
+        "Ações junto à sociedade. Para que o projeto alcance a comunidade externa e não apenas o ambiente acadêmico, a ação de arrecadação "
         "funcionará também como instrumento de conscientização, pois cada bilhete leva o perfil @efeitorebote.oficial e um QR Code de "
         "acesso ao conteúdo informativo do projeto, e os acadêmicos atuarão como multiplicadores, explicando o projeto a familiares, "
         "amigos e colegas de trabalho no momento da venda. A instituição parceira é a UniCesumar, que, mediante autorização, poderá ceder os espaços do campus para os "
@@ -153,17 +153,17 @@ DIMENSAO_PEDAGOGICA = [
         "houver cessão gratuita do espaço, preservando a estratégia de custo zero. Todas as ações dependem de autorização prévia da "
         "professora responsável e da instituição, e o cenário evitará qualquer representação sensacionalista ou estigmatizante das "
         "pessoas privadas de liberdade.",
-        "Rifa solidária. Como forma complementar de arrecadação, será realizada uma rifa com bilhetes numerados de 0001 a 2400, ao "
+        "Ação de arrecadação solidária. Como forma complementar de obtenção de recursos, será realizada uma ação de arrecadação com bilhetes numerados de 0001 a 2400, ao "
         "valor de R$ 5,00 cada. Cada acadêmico receberá um bloco de 30 bilhetes numerados em sequência, vendidos em sua rede de "
-        "contatos, o que distribui a responsabilidade de forma igualitária e dispensa a organização de eventos. Para que a rifa também cumpra função de "
+        "contatos, o que distribui a responsabilidade de forma igualitária e dispensa a organização de eventos. Para que a ação de arrecadação também cumpra função de "
         "conscientização, cada bilhete trará o perfil do projeto no Instagram (@efeitorebote.oficial) e um QR Code de "
         "acesso a ele, de modo que o comprador, ao guardar o bilhete, tenha acesso ao conteúdo informativo do projeto. Como cada "
         "acadêmico vende de forma independente, o controle é centralizado no sistema on-line de vendas desenvolvido pela turma "
         "(aplicativo web acessado pelo celular com o e-mail cadastrado do acadêmico): a cada venda, o vendedor preenche o canhoto e "
         "registra no sistema, no mesmo dia, os números vendidos, o nome e o telefone do comprador e a forma de pagamento; o sistema só "
         "permite registrar números do bloco do próprio acadêmico, impede que um número seja vendido duas vezes e constitui o registro "
-        "oficial da rifa. Para pagamentos por PIX, o sistema gera o código com o valor exato e a identificação do pedido, e o pagamento "
-        "cai diretamente na conta de recebimento da comissão financeira (conta de uso exclusivo da rifa, indicada pela comissão e "
+        "oficial da ação de arrecadação. Para pagamentos por PIX, o sistema gera o código com o valor exato e a identificação do pedido, e o pagamento "
+        "cai diretamente na conta de recebimento da comissão financeira (conta de uso exclusivo da ação de arrecadação, indicada pela comissão e "
         "aprovada pela professora responsável), de modo que o dinheiro não fique com o vendedor; valores em "
         "espécie são entregues à comissão nos acertos semanais, realizados às segundas-feiras nos encontros, quando o registro é "
         "conferido com os extratos. Somente participam do sorteio os bilhetes registrados e pagos até 30/10/2026, às 23h59; a lista "
@@ -174,11 +174,11 @@ DIMENSAO_PEDAGOGICA = [
         "de ata; por ser transmitido on-line, o sorteio independe do funcionamento do campus. Para que a compra dos itens ocorra entre o fim das vendas (30/10) e a entrega (04/11), a lista validada pelas unidades e as "
         "cotações serão preparadas antes do fim das vendas. O prêmio será adquirido somente quando a arrecadação cobrir seu custo com "
         "margem; se as vendas forem insuficientes, a comissão financeira e a professora responsável buscarão doação ou desconto do "
-        "prêmio; não sendo possível, a rifa será cancelada e os valores devolvidos integralmente aos compradores, conforme o "
+        "prêmio; não sendo possível, a ação de arrecadação será cancelada e os valores devolvidos integralmente aos compradores, conforme o "
         "Anexo 1. Os valores arrecadados, deduzido o custo de aquisição do prêmio, serão destinados exclusivamente à compra dos itens listados, com "
-        "comprovação por nota fiscal e prestação de contas à professora responsável e à turma. A realização da rifa está condicionada "
+        "comprovação por nota fiscal e prestação de contas à professora responsável e à turma. A realização da ação de arrecadação está condicionada "
         "à autorização da instituição e da professora responsável, observadas as normas institucionais e a legislação federal sobre "
-        "distribuição de prêmios mediante sorteio (BRASIL, 1944; BRASIL, 1971); sem essa autorização, a rifa não será iniciada e a "
+        "distribuição de prêmios mediante sorteio (BRASIL, 1944; BRASIL, 1971); sem essa autorização, a ação de arrecadação não será iniciada e a "
         "arrecadação seguirá apenas por doações diretas; o regulamento completo consta "
         "do Anexo 1.",
         "Divulgação e redes sociais. A divulgação adotará estratégias de custo zero: avisos nos murais e telões do campus, "
@@ -212,19 +212,19 @@ DIMENSAO_PEDAGOGICA = [
         "continuamente se as entradas correspondem aos bilhetes confirmados e se o saldo confere, e uma página pública de "
         "transparência, divulgada no perfil do projeto, apresenta os números participantes e os valores arrecadados e gastos, sem "
         "dados pessoais, levando à sociedade o acompanhamento da ação. Ao final, será elaborado relatório de transparência com o quantitativo arrecadado e "
-        "entregue por tipo de item e por unidade, o valor obtido com a rifa e os comprovantes de compra. A frequência dos acadêmicos é "
+        "entregue por tipo de item e por unidade, o valor obtido com a ação de arrecadação e os comprovantes de compra. A frequência dos acadêmicos é "
         "registrada em cada encontro, e as entregas individuais descritas no cronograma compõem o relatório final do projeto.",
         "Ajustes em relação ao pré-projeto aprovado. Esta versão mantém a fundamentação, os objetivos e a meta de referência de mais de "
         "8.000 itens do pré-projeto (Anexo 3) e incorpora: (1) a lista atualizada de itens, que acrescenta o sabão em pó e define o "
         "limite de cada produto; como o pré-projeto especificava creme dental branco, a lista final (tipo, cor, embalagem e forma de "
-        "entrega) será validada com a PEM, a CCM e a CPIM antes de qualquer aquisição; (2) a rifa solidária como fonte complementar de "
-        "recursos: a divulgação permanece de custo zero, e a receita da rifa, deduzido o prêmio, destina-se exclusivamente à compra de "
+        "entrega) será validada com a PEM, a CCM e a CPIM antes de qualquer aquisição; (2) a ação de arrecadação solidária como fonte complementar de "
+        "recursos: a divulgação permanece de custo zero, e a receita da ação de arrecadação, deduzido o prêmio, destina-se exclusivamente à compra de "
         "itens; (3) as ações de mobilização e junto à sociedade, incluindo a roda de conversa com familiares; (4) o sistema on-line de controle de vendas e prestação de contas; e (5) a reformulação dos "
         "objetivos específicos e o tratamento do \"efeito rebote\" como categoria de análise fundamentada na literatura, sem "
         "pretensão de comprovar a relação entre prevenção e custos públicos, o que exigiria levantamento de dados alheio ao escopo "
         "da ação extensionista. "
         "O quantitativo arrecadado será acompanhado semanalmente em relação à meta, que depende principalmente das doações diretas; a "
-        "receita da rifa, deduzido o prêmio, tem caráter complementar.",
+        "receita da ação de arrecadação, deduzido o prêmio, tem caráter complementar.",
     ]),
     ("Referências", [
         "BRASIL. Decreto-Lei nº 6.259, de 10 de fevereiro de 1944. Dispõe sobre o serviço de loterias, e dá outras providências. "
@@ -280,14 +280,14 @@ CRONOGRAMA = [
          entrega="Relatório reflexivo inicial sobre as expectativas em relação ao projeto e a percepção prévia sobre o sistema prisional."),
     dict(titulo="Construção do Projeto Escrito e Definição das Estratégias", etapa=E2, carga=None,
          objetivos="Delimitar o problema do \"efeito rebote\" e consolidar o projeto escrito; definir os métodos de arrecadação e o plano de comunicação.",
-         atividades="Adaptação do projeto ao modelo institucional; definição dos itens aceitos e de suas especificações; deliberação sobre a rifa solidária e as regras de execução; elaboração do material de apresentação para as redes sociais e envio para aprovação.",
+         atividades="Adaptação do projeto ao modelo institucional; definição dos itens aceitos e de suas especificações; deliberação sobre a ação de arrecadação solidária e as regras de execução; elaboração do material de apresentação para as redes sociais e envio para aprovação.",
          entrega="Contribuição individual registrada na construção do projeto (seção redigida, peça produzida ou proposta apresentada)."),
     dict(titulo="Execução Penal e Assistência Material", etapa=E3, carga=None,
          objetivos="Compreender os direitos assegurados pela LEP (arts. 12, 14 e 41) e a estrutura da PEM, da CCM e da CPIM; identificar lacunas de conhecimento da turma.",
          atividades="Exposição dialogada; leitura orientada da LEP e das Regras de Mandela; levantamento de dúvidas a serem investigadas; apresentação das normas da Polícia Penal do Paraná sobre itens permitidos; contato da equipe de Logística e Arrecadação com a PEM, a CCM e a CPIM para validar a lista de itens e as condições de entrega.",
          entrega="Fichamento sobre a assistência material na execução penal."),
-    dict(titulo="Lançamento da Campanha e Distribuição da Rifa", etapa=E5, carga=None,
-         objetivos="Iniciar a campanha de conscientização e organizar a rifa solidária, mediante as aprovações necessárias.",
+    dict(titulo="Lançamento da Campanha e Distribuição dos Bilhetes", etapa=E5, carga=None,
+         objetivos="Iniciar a campanha de conscientização e organizar a ação de arrecadação solidária, mediante as aprovações necessárias.",
          atividades="Publicação do conteúdo de apresentação aprovado; distribuição dos blocos de 30 bilhetes por acadêmico, com registro em planilha; orientação sobre as regras de venda, registro nos canhotos e acertos com a comissão financeira.",
          entrega="Termo de recebimento do bloco de bilhetes e relato das primeiras ações de divulgação."),
     dict(titulo="Pontos de Coleta no Campus e na Comunidade", etapa=E5, carga=None,
@@ -299,17 +299,17 @@ CRONOGRAMA = [
          atividades="Pesquisa de dados (SENAPPEN, CNJ, Defensoria Pública do Paraná); produção de carrosséis e vídeos curtos; organização do calendário de três publicações semanais e envio prévio para aprovação; elaboração do roteiro da roda de conversa com familiares e contato com a instituição parceira para a divulgação.",
          entrega="Peça de conteúdo produzida ou roteiro, com as fontes utilizadas."),
     dict(titulo="Intervenção no Pátio e Acompanhamento da Arrecadação", etapa=E5, carga=None,
-         objetivos="Dar visibilidade à campanha no campus e monitorar o andamento da arrecadação e da rifa.",
-         atividades="Montagem do cenário temático no pátio do campus, com exposição dos itens aceitos, caixa de coleta e escala de acadêmicos para atendimento ao público; recolhimento e triagem semanal dos itens do campus e dos comércios parceiros; acerto semanal da rifa com a comissão financeira.",
+         objetivos="Dar visibilidade à campanha no campus e monitorar o andamento da doação de itens e da ação de arrecadação.",
+         atividades="Montagem do cenário temático no pátio do campus, com exposição dos itens aceitos, caixa de coleta e escala de acadêmicos para atendimento ao público; recolhimento e triagem semanal dos itens do campus e dos comércios parceiros; acerto semanal da ação de arrecadação com a comissão financeira.",
          entrega="Relatório descritivo da participação na intervenção ou na arrecadação."),
     dict(titulo="Triagem, Conferência e Consolidação dos Itens", etapa=E5, carga=None,
          objetivos="Assegurar que os itens atendam às especificações das unidades e consolidar o quantitativo arrecadado.",
          atividades="Conferência item a item (tipo, peso, volume e embalagem); separação dos itens fora do padrão para destinação a outras instituições; contagem por tipo de item; separação dos lotes por unidade (PEM, CCM e CPIM), conforme a orientação das unidades; atualização do relatório de transparência.",
          entrega="Registro da triagem e da consolidação realizadas pela equipe."),
-    dict(titulo="Balanço da Rifa e Aquisição do Prêmio", etapa=E5, carga=None,
+    dict(titulo="Balanço da Ação de Arrecadação e Aquisição do Prêmio", etapa=E5, carga=None,
          objetivos="Avaliar o andamento das vendas e garantir a aquisição do prêmio com transparência.",
          atividades="Conferência dos registros do sistema de vendas com os extratos da conta da comissão financeira; balanço por acadêmico; cotação em três lojas e aquisição do tablet com nota fiscal quando a arrecadação cobrir seu custo com margem; preparação da lista de compras e das cotações dos itens; reforço da divulgação junto aos acadêmicos com menos vendas.",
-         entrega="Relatório descritivo da participação no balanço da rifa ou na aquisição do prêmio."),
+         entrega="Relatório descritivo da participação no balanço da ação de arrecadação ou na aquisição do prêmio."),
     dict(titulo="Roda de Conversa com Familiares", etapa=E5, carga=None,
          objetivos="Acolher familiares de pessoas privadas de liberdade e compartilhar informações sobre direitos e canais públicos de apoio.",
          atividades="Recepção e escuta dos familiares; apresentação, em linguagem acessível, dos direitos relativos à assistência material, à saúde e às visitas; indicação dos canais de apoio (Defensoria Pública, Conselho da Comunidade); registro apenas do número de participantes, sem identificação.",
@@ -322,10 +322,10 @@ CRONOGRAMA = [
          objetivos="Organizar o transporte, os grupos e a entrega dos itens nas unidades.",
          atividades="Confirmação das listas de participantes e dos documentos exigidos pelas unidades; organização do transporte institucional; preparação dos lotes e dos termos de entrega.",
          entrega="Checklist da equipe responsável pela logística."),
-    dict(titulo="Encerramento da Rifa e Comunicação dos Resultados Parciais", etapa=E5, carga=None,
-         objetivos="Encerrar a rifa com transparência e preparar a aquisição dos itens com os valores arrecadados.",
+    dict(titulo="Encerramento da Ação de Arrecadação e Comunicação dos Resultados Parciais", etapa=E5, carga=None,
+         objetivos="Encerrar a ação de arrecadação com transparência e preparar a aquisição dos itens com os valores arrecadados.",
          atividades="Acerto final de valores (prazo de vendas: 30/10); publicação da lista de números participantes (01/11); organização do sorteio transmitido ao vivo no @efeitorebote.oficial em 02/11, com ata e testemunhas; compra dos itens validados pelas unidades, com nota fiscal; produção de conteúdo, previamente aprovado, sobre o quantitativo arrecadado.",
-         entrega="Relatório descritivo da participação no encerramento da rifa ou na comunicação dos resultados."),
+         entrega="Relatório descritivo da participação no encerramento da ação de arrecadação ou na comunicação dos resultados."),
     dict(titulo="Visitas Técnicas e Entrega dos Itens (04 e 05/11)", etapa=E5, carga=None,
          objetivos="Observar in loco a estrutura e o funcionamento das unidades e a aplicação da LEP; entregar os itens arrecadados.",
          atividades="Visitas técnicas à PEM, à CCM e à CPIM, com acompanhamento docente; entrega dos itens aos gestores das unidades, com assinatura do termo de entrega; registro das observações conforme o roteiro.",
@@ -337,15 +337,15 @@ CRONOGRAMA = [
 ]
 
 ANEXOS = [
-    ("Anexo 1 - Regulamento da campanha de arrecadação e da rifa solidária", "—"),
+    ("Anexo 1 - Regulamento da campanha de doação de itens e da ação de arrecadação solidária", "—"),
     ("Anexo 2 - Texto para apresentação do projeto Efeito Rebote", "—"),
     ("Anexo 3 - Pré-projeto aprovado (Trabalho Escrito - Projeto de Extensão Efeito Rebote)", "—"),
 ]
 
-REGULAMENTO_TITULO = "ANEXO 1 — REGULAMENTO DA CAMPANHA DE ARRECADAÇÃO E DA RIFA SOLIDÁRIA\nProjeto de Extensão Efeito Rebote: o custo da reincidência"
+REGULAMENTO_TITULO = "ANEXO 1 — REGULAMENTO DA CAMPANHA DE DOAÇÃO DE ITENS E DA AÇÃO DE ARRECADAÇÃO SOLIDÁRIA\nProjeto de Extensão Efeito Rebote: o custo da reincidência"
 REGULAMENTO = [
     ("h", "1. Finalidade"),
-    ("p", "A campanha tem por finalidade arrecadar itens de higiene pessoal destinados às pessoas privadas de liberdade da Penitenciária Estadual de Maringá (PEM), da Casa de Custódia de Maringá (CCM) e da Colônia Penal Industrial de Maringá (CPIM), por meio de doações diretas e de rifa solidária cujo valor será integralmente convertido na compra desses itens."),
+    ("p", "A campanha tem por finalidade arrecadar itens de higiene pessoal destinados às pessoas privadas de liberdade da Penitenciária Estadual de Maringá (PEM), da Casa de Custódia de Maringá (CCM) e da Colônia Penal Industrial de Maringá (CPIM), por meio de doações diretas e da ação de arrecadação solidária cujo valor será integralmente convertido na compra desses itens."),
     ("h", "2. Itens aceitos"),
     ("li", "Escova dental simples."),
     ("li", "Creme dental de até 100 g."),
@@ -355,23 +355,23 @@ REGULAMENTO = [
     ("p", "Itens fora dessas especificações não serão entregues às unidades prisionais e serão destinados a outras instituições de caridade do município."),
     ("h", "3. Doações diretas"),
     ("p", "As doações serão recebidas nas caixas de coleta identificadas do projeto, instaladas no campus da UniCesumar, instituição parceira, em locais autorizados, e, mediante aprovação da professora responsável, em outras instituições da comunidade (igrejas, delegacias e estabelecimentos comerciais), com autorização do responsável por cada local. A equipe de Logística e Arrecadação fará o recolhimento e a triagem semanal, com registro em planilha de controle."),
-    ("h", "4. Rifa solidária"),
+    ("h", "4. Ação de arrecadação solidária"),
     ("li", "Bilhetes numerados de 0001 a 2400, ao valor unitário de R$ 5,00."),
     ("li", "Cada acadêmico participante recebe um bloco de 30 bilhetes em sequência, registrado em planilha de distribuição."),
     ("li", "Cada bilhete traz o perfil do projeto no Instagram (@efeitorebote.oficial) e um QR Code de acesso a ele, para que o comprador conheça o projeto."),
     ("li", "Cada acadêmico vende seus bilhetes de forma independente. A cada venda, preenche o canhoto (nome e telefone do comprador) e registra no mesmo dia, no sistema on-line de vendas do projeto, os números vendidos, os dados do comprador e a forma de pagamento. O sistema é o registro oficial para o sorteio: aceita apenas números do bloco do próprio acadêmico e impede venda duplicada."),
-    ("li", "O pagamento é feito preferencialmente por PIX, pelo código gerado no sistema (valor exato e identificação do pedido), diretamente na conta de recebimento de uso exclusivo da rifa, indicada pela comissão financeira e aprovada pela professora responsável ([PENDENTE: chave PIX da comissão]). Valores em espécie são entregues à comissão nos acertos semanais, às segundas-feiras, nos encontros do projeto."),
+    ("li", "O pagamento é feito preferencialmente por PIX, pelo código gerado no sistema (valor exato e identificação do pedido), diretamente na conta de recebimento de uso exclusivo da ação de arrecadação, indicada pela comissão financeira e aprovada pela professora responsável ([PENDENTE: chave PIX da comissão]). Valores em espécie são entregues à comissão nos acertos semanais, às segundas-feiras, nos encontros do projeto."),
     ("li", "Prazo final de venda, registro e pagamento: 30/10/2026, às 23h59. Bilhetes não registrados ou não pagos até esse horário não concorrem."),
     ("li", "Em 01/11/2026, a lista dos números participantes (sem dados pessoais) é publicada no @efeitorebote.oficial."),
     ("li", "Os canhotos e os bilhetes não vendidos são entregues à comissão financeira no primeiro encontro após o sorteio, para conferência e arquivo."),
     ("li", "Prêmio: 01 (um) tablet Samsung Galaxy Tab A11+ (11 polegadas, Wi-Fi) ou modelo equivalente, novo e com nota fiscal."),
     ("li", "Sorteio: 02/11/2026, às [PENDENTE: horário], com transmissão ao vivo no @efeitorebote.oficial. Os números da lista oficial são impressos, dobrados e depositados em urna; um número é retirado na presença da professora responsável e de duas testemunhas, com lavratura de ata e gravação do vídeo."),
     ("li", "O resultado será divulgado nos canais do projeto e o ganhador será contatado pelo telefone informado no canhoto, em até 24 horas após o sorteio, tendo 30 dias para retirar o prêmio. Se o prêmio não for retirado nesse prazo, será realizado novo sorteio entre os demais números participantes, divulgado nos mesmos canais."),
-    ("li", "A realização da rifa está condicionada à autorização da instituição e da professora responsável, observadas as normas institucionais e a legislação federal sobre distribuição de prêmios mediante sorteio (Decreto-Lei nº 6.259/1944 e Lei nº 5.768/1971). Sem essa autorização, a rifa não será iniciada."),
-    ("li", "Se o sorteio precisar ser adiado, a nova data será divulgada com antecedência nos canais do projeto. Se a rifa for cancelada, o valor pago será integralmente devolvido a cada comprador pela mesma forma de pagamento."),
+    ("li", "A realização da ação de arrecadação está condicionada à autorização da instituição e da professora responsável, observadas as normas institucionais e a legislação federal sobre distribuição de prêmios mediante sorteio (Decreto-Lei nº 6.259/1944 e Lei nº 5.768/1971). Sem essa autorização, a ação de arrecadação não será iniciada."),
+    ("li", "Se o sorteio precisar ser adiado, a nova data será divulgada com antecedência nos canais do projeto. Se a ação de arrecadação for cancelada, o valor pago será integralmente devolvido a cada comprador pela mesma forma de pagamento."),
     ("li", "Dados pessoais: nome e telefone do comprador servem apenas para identificar o bilhete e contatar o ganhador; não são divulgados e serão eliminados após a entrega do prêmio (Lei nº 13.709/2018)."),
     ("h", "5. Destinação dos recursos e prestação de contas"),
-    ("p", "Os valores arrecadados com a rifa, deduzido o custo de aquisição do prêmio, serão utilizados exclusivamente na compra dos itens listados no item 2, mediante nota fiscal. A comissão financeira, composta por [PENDENTE: integrantes da comissão financeira], manterá o controle de entradas e saídas. Ao final, será apresentado relatório de transparência à professora responsável e à turma, com o valor arrecadado, os comprovantes de compra e o quantitativo entregue por unidade."),
+    ("p", "Os valores arrecadados com a ação de arrecadação, deduzido o custo de aquisição do prêmio, serão utilizados exclusivamente na compra dos itens listados no item 2, mediante nota fiscal. A comissão financeira, composta por [PENDENTE: integrantes da comissão financeira], manterá o controle de entradas e saídas. Ao final, será apresentado relatório de transparência à professora responsável e à turma, com o valor arrecadado, os comprovantes de compra e o quantitativo entregue por unidade."),
     ("h", "6. Entrega"),
     ("p", "Os itens serão entregues aos gestores das unidades durante as visitas técnicas previstas para 04 e 05 de novembro, com assinatura de termo de entrega."),
     ("h", "7. Disposições finais"),

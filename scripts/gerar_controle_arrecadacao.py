@@ -1,5 +1,5 @@
-"""Gera entregas/rifa/controle-rifa.xlsx (distribuição, vendas, balanço por aluno e resumo).
-Importe no Google Planilhas e ligue ao formulário de vendas. Uso: python3 scripts/gerar_controle_rifa.py"""
+"""Gera entregas/acao-arrecadacao/controle-acao-arrecadacao.xlsx (distribuição, vendas, balanço por aluno e resumo).
+Importe no Google Planilhas e ligue ao formulário de vendas. Uso: python3 scripts/gerar_controle_arrecadacao.py"""
 import os
 from openpyxl import Workbook
 from openpyxl.formatting.rule import CellIsRule
@@ -66,7 +66,7 @@ linhas = [
     ("Prazo final de vendas", "30/10/2026 23h59"),
     ("Sorteio", "02/11/2026, ao vivo @efeitorebote.oficial"),
 ]
-res.append(["Rifa solidária Efeito Rebote: resumo", ""])
+res.append(["Ação de arrecadação solidária Efeito Rebote: resumo", ""])
 res["A1"].font = Font(bold=True, size=13, color="1B3A8C")
 for rot, val in linhas:
     res.append([rot, val])
@@ -75,6 +75,6 @@ res["B6"].number_format = "0.0%"
 for c in ("B5", "B7", "B10", "B11", "B12"):
     res[c].number_format = '"R$" #,##0.00'
 
-destino = os.path.join(RAIZ, "entregas", "rifa", "controle-rifa.xlsx")
+destino = os.path.join(RAIZ, "entregas", "acao-arrecadacao", "controle-acao-arrecadacao.xlsx")
 wb.save(destino)
 print("ok", destino)

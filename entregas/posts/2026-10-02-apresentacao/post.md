@@ -30,7 +30,7 @@ Acompanhe e entenda por que o básico importa para todos nós.
 - Pré-projeto aprovado (Anexo 3): fundamentação sobre o efeito rebote e as unidades PEM, CCM e CPIM.
 
 ## Cuidados verificados
-- Não pede doações nem menciona a rifa.
+- Não pede doações nem menciona a ação de arrecadação.
 - Não usa imagem de pessoas presas nem tom sensacionalista.
 - Nenhuma menção avaliativa.
 - Não traz número sem fonte: o único dado é a lei, que está citada.

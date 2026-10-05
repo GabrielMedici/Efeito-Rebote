@@ -5,7 +5,7 @@ import "./globals.css";
 const barlow = Barlow({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-barlow" });
 const condensed = Barlow_Condensed({ subsets: ["latin"], weight: ["600", "700"], variable: "--font-barlow-condensed" });
 
-export const metadata: Metadata = { title: "Rifa Efeito Rebote", description: "Vendas e prestação de contas da rifa solidária" };
+export const metadata: Metadata = { title: "Ação de Arrecadação Efeito Rebote", description: "Vendas e prestação de contas da ação de arrecadação solidária" };
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#1b3a8c" };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

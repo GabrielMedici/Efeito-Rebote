@@ -3,7 +3,7 @@
 # Requer: postgresql, chromium do Playwright em /opt/pw-browsers. Uso: bash e2e/rodar-e2e.sh [pasta-de-screenshots]
 set -e
 cd "$(dirname "$0")/.."
-SAIDA=${1:-/tmp/e2e-rifa}; mkdir -p "$SAIDA"
+SAIDA=${1:-/tmp/e2e-arrecadacao}; mkdir -p "$SAIDA"
 PGBIN=$(ls -d /usr/lib/postgresql/*/bin | tail -1)
 DIR=$(mktemp -d); chown postgres "$DIR"
 PIDS=()

@@ -1,6 +1,6 @@
-# Facilitador de vendas da Rifa Efeito Rebote
+# Facilitador de vendas da Ação de Arrecadação Efeito Rebote
 
-App em Next.js e Supabase para registrar as vendas da rifa, cobrar por PIX e fazer a prestação de contas.
+App em Next.js e Supabase para registrar as vendas da ação de arrecadação, cobrar por PIX e fazer a prestação de contas.
 
 ## Telas
 - **Vendedor** (`/vendedor`): mostra os 30 números do bloco do aluno e registra cada venda (comprador, telefone, PIX ou dinheiro). Nas vendas por PIX, gera o QR Code e o "copia e cola" com o valor exato e o identificador do pedido (txid).
@@ -28,7 +28,7 @@ npm run build
 ## Implantação (cerca de 20 min, sem custo)
 1. **Supabase** (supabase.com, plano gratuito):
    1. Crie um projeto.
-   2. No *SQL Editor*, rode `supabase/migrations/0001_rifa.sql` e depois `0002_storage.sql`.
+   2. No *SQL Editor*, rode `supabase/migrations/0001_arrecadacao.sql` e depois `0002_storage.sql`.
    3. Preencha `supabase/seed_vendedores.sql` com os 80 alunos (e-mail em minúsculas e papel) e a chave PIX da comissão, e rode.
    4. Em *Authentication → URL Configuration*, coloque a URL da Vercel em *Site URL* e `https://SUA-URL/auth/callback` em *Redirect URLs*.
 2. **Vercel** (vercel.com, plano gratuito):

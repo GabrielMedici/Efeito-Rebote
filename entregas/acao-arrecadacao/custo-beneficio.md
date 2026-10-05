@@ -1,4 +1,4 @@
-# Rifa: custo-benefício do prêmio (tablet)
+# Ação de arrecadação: custo-benefício do prêmio (tablet)
 
 > Documento interno de decisão. **Não** é material público. Os preços foram pesquisados em out/2026 e variam entre lojas; cote antes de comprar.
 
@@ -23,6 +23,6 @@
 - Regra interna: comprar depois de 640 bilhetes pagos (2× o ponto de equilíbrio), cotando em 3 lojas. Antes disso, tentar doação ou desconto.
 
 ## Leitura
-- **A rifa sozinha não cobre a meta de 8.000 itens.** Com custo médio estimado de R$ 4 a R$ 6 por item, a meta exigiria de R$ 32.000 a R$ 48.000. Vendendo 100% dos bilhetes, sobram cerca de R$ 11.000, o que compra de 1.800 a 2.750 itens. As doações diretas continuam sendo a principal fonte.
+- **A ação de arrecadação sozinha não cobre a meta de 8.000 itens.** Com custo médio estimado de R$ 4 a R$ 6 por item, a meta exigiria de R$ 32.000 a R$ 48.000. Vendendo 100% dos bilhetes, sobram cerca de R$ 11.000, o que compra de 1.800 a 2.750 itens. As doações diretas continuam sendo a principal fonte.
 
 Fontes de preço: TechTudo e TecMundo (lançamento do A11 a R$ 1.099), Magazine Luiza e Amazon (A11 de R$ 959 a R$ 1.080), TechTudo e Tecnoblog (guias de 2026 para Redmi Pad 2 e A11+).

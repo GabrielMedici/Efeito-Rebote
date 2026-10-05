@@ -18,3 +18,4 @@
 - 2026-10-02 [app] Renomear identificadores com regex em SQL atinge textos literais (p_pedido nas mensagens). Revise as strings depois de cada rename e confira descrições nos testes. Capturas de tela pegam o que asserções não pegam.
 - 2026-10-02 [relatorio] Objetivos usam verbos compatíveis com o que o projeto entrega: identificar e analisar, não comprovar nem correlacionar sem pesquisa de dados. Sugestão do usuário.
 - 2026-10-02 [relatorio] Confira a autoria das referências vindas de colegas: o 'Sá et al., 2008' era DIUANA et al. Mesmo autor e ano exigem as letras a, b, c (ABNT).
+- **Nunca usar a palavra "rifa"** em nenhum documento: usar "ação de arrecadação" ("ação de arrecadação solidária" no título) e "bilhetes". O `check.sh` barra o termo. (05/10)

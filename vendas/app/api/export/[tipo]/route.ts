@@ -23,7 +23,7 @@ export async function GET(_: NextRequest, { params }: { params: Promise<{ tipo: 
     ]);
     const r = (c: number) => (c / 100).toFixed(2).replace(".", ",");
     corpo = csv([
-      ["PRESTAÇÃO DE CONTAS – RIFA SOLIDÁRIA EFEITO REBOTE", `gerado em ${new Date().toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" })}`],
+      ["PRESTAÇÃO DE CONTAS – AÇÃO DE ARRECADAÇÃO SOLIDÁRIA EFEITO REBOTE", `gerado em ${new Date().toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" })}`],
       [],
       ["Entradas", r(caixa?.entradas ?? 0)], ["Saídas", r(caixa?.saidas ?? 0)], ["Saldo", r(caixa?.saldo ?? 0)],
       [],
@@ -38,6 +38,6 @@ export async function GET(_: NextRequest, { params }: { params: Promise<{ tipo: 
   }
 
   return new NextResponse(corpo, {
-    headers: { "Content-Type": "text/csv; charset=utf-8", "Content-Disposition": `attachment; filename="rifa-${tipo}.csv"` },
+    headers: { "Content-Type": "text/csv; charset=utf-8", "Content-Disposition": `attachment; filename="arrecadacao-${tipo}.csv"` },
   });
 }

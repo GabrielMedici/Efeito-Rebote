@@ -64,7 +64,7 @@ select pg_temp.como('carla@x.com');
 do $$ begin
   if exists (select 1 from lancamentos where descricao like '%p\_%') then raise exception 'FALHOU: descrição do caixa com nome de parâmetro'; end if;
   if not exists (select 1 from lancamentos where descricao like 'Estorno do pedido ER%: Comprador desistiu%') then raise exception 'FALHOU: descrição do estorno'; end if;
-  if not exists (select 1 from lancamentos where descricao like 'Rifa: pedido ER% (aluno 1, 3 bilhete(s))') then raise exception 'FALHOU: descrição da entrada'; end if;
+  if not exists (select 1 from lancamentos where descricao like 'Ação de arrecadação: pedido ER% (aluno 1, 3 bilhete(s))') then raise exception 'FALHOU: descrição da entrada'; end if;
 end $$;
 \echo '--- caixa (centavos)'
 select * from resumo_caixa;
@@ -86,7 +86,7 @@ end $$;
 -- Adulteração direta no banco (por quem tem acesso de administrador) precisa ser denunciada pela conciliação
 begin;
 insert into lancamentos (tipo, categoria, valor_centavos, descricao, pedido_id, criado_por)
-select 'entrada', 'rifa_dinheiro', 500, 'entrada forjada', id, 'intruso' from pedidos where status = 'pendente' limit 1;
+select 'entrada', 'venda_dinheiro', 500, 'entrada forjada', id, 'intruso' from pedidos where status = 'pendente' limit 1;
 do $$ begin
   if (select bool_and(ok) from conciliacao()) then raise exception 'FALHOU: conciliação não detectou entrada forjada'; end if;
   raise notice 'ok (detectado): entrada forjada quebra a conciliação';

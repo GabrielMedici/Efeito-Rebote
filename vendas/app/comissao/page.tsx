@@ -32,7 +32,7 @@ export default async function Comissao({ searchParams }: { searchParams: Promise
 
   return (
     <>
-      <Topo titulo="Comissão financeira · Rifa Efeito Rebote">
+      <Topo titulo="Comissão financeira · Ação de Arrecadação Efeito Rebote">
         <nav className="hidden gap-2 text-sm sm:flex">
           <a className="rounded-lg border border-white/50 px-3 py-1.5" href="/api/export/prestacao">Prestação de contas</a>
           <a className="rounded-lg border border-white/50 px-3 py-1.5" href="/api/export/sorteio">Lista do sorteio</a>

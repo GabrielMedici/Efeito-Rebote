@@ -13,7 +13,7 @@ export default async function Vendedor({ searchParams }: { searchParams: Promise
   if (!eu?.aluno_num) {
     return (
       <>
-        <Topo titulo="Rifa Solidária · Efeito Rebote" />
+        <Topo titulo="Ação de Arrecadação Solidária · Efeito Rebote" />
         <main className="mx-auto max-w-md p-4"><div className="cartao">Seu e-mail não está cadastrado como vendedor. Procure a comissão financeira.</div></main>
       </>
     );
