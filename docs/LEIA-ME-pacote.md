@@ -16,7 +16,7 @@ Comece pelo **00-GUIA-DO-PACOTE.pdf**: uma página com o conteúdo de cada pasta
 | **07-Identidade-Visual** | Figuras 1 a 3 do projeto, selo, logo da UniCesumar e arte inicial da ação de arrecadação (substituída pelas folhas) | Usar nos materiais |
 
 ## Pendências (aparecem como [PENDENTE] nos documentos)
-- **Roda de conversa** (organização: Francieli Araújo): data e local; instituição que fará a ponte com as famílias (Conselho da Comunidade ou Defensoria).
+- **Café da manhã de acolhimento às famílias** (organização: Francieli Araújo): unidade e data, conforme o dia de visitação; autorização da direção da unidade; doações de alimentos.
 - **Ação de arrecadação:**
   - horário do sorteio (02/11);
   - integrantes da comissão financeira;

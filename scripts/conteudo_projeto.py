@@ -80,7 +80,7 @@ DIMENSAO_PEDAGOGICA = [
         "tempo, a formação humanística, crítica e cidadã dos acadêmicos de Direito.",
         "Objetivos específicos: (1) identificar a ocorrência do fenômeno \"efeito rebote\" como problema social; (2) observar, nas "
         "visitas técnicas, as condições de assistência material nas unidades; (3) promover o acolhimento às famílias daqueles em "
-        "reclusão, por meio de roda de conversa; (4) realizar busca, arrecadação e campanhas de doação de insumos conforme a "
+        "reclusão, por meio de café da manhã de acolhimento realizado na unidade prisional em dia de visitação, com atenção às crianças; (4) realizar busca, arrecadação e campanhas de doação de insumos conforme a "
         "necessidade da PEM, da CCM e da CPIM; (5) estimular nos acadêmicos de Direito o pensamento crítico, humanístico e de "
         "cidadania; e (6) promover a responsabilidade social na comunidade por meio das redes sociais e das ações de mobilização.",
     ]),
@@ -119,7 +119,7 @@ DIMENSAO_PEDAGOGICA = [
         "atividades conforme os encaminhamentos da turma; o 14º, às visitas técnicas; e o 15º, à discussão dos resultados e à "
         "elaboração do relatório final. O conteúdo de cada encontro está detalhado no cronograma. Algumas ações ocorrem fora do "
         "horário dos encontros, em datas próprias: o encerramento das vendas da ação de arrecadação (30/10), a publicação da lista de números (01/11), "
-        "o sorteio transmitido ao vivo (02/11) e as visitas técnicas (04 e 05/11); os encontros correspondentes preparam e avaliam essas ações.",
+        "o sorteio transmitido ao vivo (02/11), as visitas técnicas (04 e 05/11) e o café da manhã de acolhimento às famílias, em data a definir com a direção da unidade; os encontros correspondentes preparam e avaliam essas ações.",
         "A metodologia fundamenta-se na Aprendizagem Baseada em Projetos (PjBL), organizada em seis etapas integradas: (1) imersão e "
         "identificação do problema, com estudo da realidade prisional de Maringá; (2) seleção e delimitação do problema prioritário: "
         "a insuficiência de itens de higiene e o \"efeito rebote\"; (3) análise do problema e levantamento das necessidades de "
@@ -192,14 +192,18 @@ DIMENSAO_PEDAGOGICA = [
         "alunos, conforme previsto no pré-projeto, com acompanhamento docente obrigatório, mediante autorização das unidades prisionais e da "
         "instituição, que também deverá autorizar o transporte institucional, observadas as normas de segurança das unidades. "
         "A entrega dos itens arrecadados será integrada às visitas e registrada em termo de entrega com os quantitativos por unidade.",
-        "Acolhimento às famílias. Será realizada uma roda de conversa com familiares de pessoas privadas de liberdade, conduzida "
-        "pelos acadêmicos, com organização da acadêmica Francieli Araújo e mediação da professora responsável, em [PENDENTE: data e local; sugestão: dependências da UniCesumar], "
-        "com divulgação feita em parceria com [PENDENTE: instituição que fará a ponte com as famílias, como o Conselho da Comunidade "
-        "ou a Defensoria Pública] e mediante autorização das instâncias envolvidas. O encontro terá caráter de escuta e acolhimento e "
-        "abordará, em linguagem acessível, os direitos da pessoa presa e de seus familiares (assistência material e à saúde, regras "
-        "de visita) e os canais públicos de apoio. Regras: participação voluntária; sigilo sobre os relatos; nenhum registro de "
-        "imagem ou dado que identifique os participantes, sendo a presença registrada apenas em número; e vedação de orientação "
-        "jurídica individual pelos acadêmicos, com encaminhamento dos casos concretos à Defensoria Pública.",
+        "Acolhimento às famílias. Será realizado um café da manhã de acolhimento às famílias de pessoas privadas de liberdade, na "
+        "própria unidade prisional e em dia de visitação, com atenção especial às crianças que visitam os pais nessa data. A ação "
+        "será organizada pela acadêmica Francieli Araújo, com acompanhamento da professora responsável, em [PENDENTE: unidade e "
+        "data, conforme o calendário de visitação definido pela direção da unidade], e depende de autorização prévia da direção da "
+        "unidade e da instituição. Os alimentos serão obtidos por doações específicas, sem uso dos recursos da ação de arrecadação, "
+        "que permanecem destinados exclusivamente aos itens de higiene, e seguirão as regras da unidade quanto aos produtos "
+        "permitidos, às embalagens e à revista. O momento terá caráter de acolhimento e convivência: recepção das famílias, oferta "
+        "do café da manhã, atenção às crianças e informação, em linguagem acessível, sobre os canais públicos de apoio aos "
+        "familiares. Regras: participação voluntária; nenhum registro de imagem ou de dado que identifique familiares, crianças ou "
+        "pessoas privadas de liberdade, em respeito à proteção integral da criança e do adolescente (BRASIL, 1990), sendo a presença "
+        "registrada apenas em número; observância das normas de segurança e de conduta da unidade; e vedação de orientação jurídica "
+        "individual pelos acadêmicos, com encaminhamento dos casos concretos à Defensoria Pública.",
         "Proteção de dados. O nome e o telefone dos compradores são coletados exclusivamente para identificação dos bilhetes e "
         "contato com o ganhador, ficam acessíveis apenas ao vendedor e à comissão financeira, não são divulgados e serão eliminados "
         "após a entrega do prêmio, em observância à Lei Geral de Proteção de Dados Pessoais (BRASIL, 2018a).",
@@ -219,7 +223,7 @@ DIMENSAO_PEDAGOGICA = [
         "limite de cada produto; como o pré-projeto especificava creme dental branco, a lista final (tipo, cor, embalagem e forma de "
         "entrega) será validada com a PEM, a CCM e a CPIM antes de qualquer aquisição; (2) a ação de arrecadação solidária como fonte complementar de "
         "recursos: a divulgação permanece de custo zero, e a receita da ação de arrecadação, deduzido o prêmio, destina-se exclusivamente à compra de "
-        "itens; (3) as ações de mobilização e junto à sociedade, incluindo a roda de conversa com familiares; (4) o sistema on-line de controle de vendas e prestação de contas; e (5) a reformulação dos "
+        "itens; (3) as ações de mobilização e junto à sociedade, incluindo o café da manhã de acolhimento às famílias; (4) o sistema on-line de controle de vendas e prestação de contas; e (5) a reformulação dos "
         "objetivos específicos e o tratamento do \"efeito rebote\" como categoria de análise fundamentada na literatura, sem "
         "pretensão de comprovar a relação entre prevenção e custos públicos, o que exigiria levantamento de dados alheio ao escopo "
         "da ação extensionista. "
@@ -233,6 +237,8 @@ DIMENSAO_PEDAGOGICA = [
         "vale-brinde ou concurso, a título de propaganda, estabelece normas de proteção à poupança popular, e dá outras providências. Brasília, DF: Presidência da República, 1971.",
         "BRASIL. Lei nº 7.210, de 11 de julho de 1984. Institui a Lei de Execução Penal. Brasília, DF: Presidência da República, 1984.",
         "BRASIL. [Constituição (1988)]. Constituição da República Federativa do Brasil de 1988. Brasília, DF: Presidência da República, 1988.",
+        "BRASIL. Lei nº 8.069, de 13 de julho de 1990. Dispõe sobre o Estatuto da Criança e do Adolescente e dá outras "
+        "providências. Brasília, DF: Presidência da República, 1990.",
         "BRASIL. Lei nº 13.005, de 25 de junho de 2014. Aprova o Plano Nacional de Educação – PNE e dá outras providências. "
         "Brasília, DF: Presidência da República, 2014.",
         "BRASIL. Lei nº 13.709, de 14 de agosto de 2018. Lei Geral de Proteção de Dados Pessoais (LGPD). Brasília, DF: Presidência da "
@@ -296,7 +302,7 @@ CRONOGRAMA = [
          entrega="Relatório descritivo da participação na instalação ou na divulgação dos pontos de coleta."),
     dict(titulo="Conteúdo Informativo e Redes Sociais", etapa=E4, carga=None,
          objetivos="Produzir conteúdo informativo sobre a realidade prisional e o \"efeito rebote\" a partir de fontes oficiais.",
-         atividades="Pesquisa de dados (SENAPPEN, CNJ, Defensoria Pública do Paraná); produção de carrosséis e vídeos curtos; organização do calendário de três publicações semanais e envio prévio para aprovação; elaboração do roteiro da roda de conversa com familiares e contato com a instituição parceira para a divulgação.",
+         atividades="Pesquisa de dados (SENAPPEN, CNJ, Defensoria Pública do Paraná); produção de carrosséis e vídeos curtos; organização do calendário de três publicações semanais e envio prévio para aprovação; início do planejamento do café da manhã de acolhimento às famílias e contato com a direção da unidade para autorização e definição da data.",
          entrega="Peça de conteúdo produzida ou roteiro, com as fontes utilizadas."),
     dict(titulo="Intervenção no Pátio e Acompanhamento da Arrecadação", etapa=E5, carga=None,
          objetivos="Dar visibilidade à campanha no campus e monitorar o andamento da doação de itens e da ação de arrecadação.",
@@ -310,10 +316,10 @@ CRONOGRAMA = [
          objetivos="Avaliar o andamento das vendas e garantir a aquisição do prêmio com transparência.",
          atividades="Conferência dos registros do sistema de vendas com os extratos da conta da comissão financeira; balanço por acadêmico; cotação em três lojas e aquisição do tablet com nota fiscal quando a arrecadação cobrir seu custo com margem; preparação da lista de compras e das cotações dos itens; reforço da divulgação junto aos acadêmicos com menos vendas.",
          entrega="Relatório descritivo da participação no balanço da ação de arrecadação ou na aquisição do prêmio."),
-    dict(titulo="Roda de Conversa com Familiares", etapa=E5, carga=None,
-         objetivos="Acolher familiares de pessoas privadas de liberdade e compartilhar informações sobre direitos e canais públicos de apoio.",
-         atividades="Recepção e escuta dos familiares; apresentação, em linguagem acessível, dos direitos relativos à assistência material, à saúde e às visitas; indicação dos canais de apoio (Defensoria Pública, Conselho da Comunidade); registro apenas do número de participantes, sem identificação.",
-         entrega="Relatório reflexivo sobre a escuta das famílias e a relação com o efeito rebote."),
+    dict(titulo="Preparação do Café da Manhã de Acolhimento às Famílias", etapa=E5, carga=None,
+         objetivos="Organizar o café da manhã de acolhimento às famílias e às crianças que visitam os pais na unidade, conforme as regras da unidade.",
+         atividades="Confirmação da autorização, da data e das regras da unidade (alimentos permitidos, embalagens, revista e número de acadêmicos); organização das doações de alimentos; divisão das tarefas; orientação da equipe sobre a conduta no acolhimento das famílias e das crianças e sobre a vedação de registros de imagem; após a ação, registro apenas do número de famílias e de crianças acolhidas.",
+         entrega="Relatório reflexivo sobre o acolhimento das famílias e a relação com o efeito rebote."),
     dict(titulo="Preparação Técnica para as Visitas", etapa=E4, carga=None,
          objetivos="Preparar os acadêmicos para uma visita respeitosa, segura e orientada pela observação crítica.",
          atividades="Apresentação das normas de segurança e de conduta das unidades; elaboração do roteiro de observação (estrutura, assistência material, boas práticas de ressocialização); divisão dos grupos de visita.",

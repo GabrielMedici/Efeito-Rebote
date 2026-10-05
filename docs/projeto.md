@@ -75,3 +75,7 @@ A transcrição está em `docs/fonte/audios-transcricao.md`. Os pedidos já fora
 - **PEM:** 523 presos para 360 vagas (13/05/2025). Faltavam pasta de dente, aparelho de barbear e escova. A reposição é quinzenal.
 - **Ressalva:** são dados declarados pelas direções, num único dia de inspeção. Não é série histórica.
 - O "Sá et al., 2008" da versão da turma é, na verdade, **DIUANA et al. (2008)**, Cad. Saúde Pública 24(8):1887-1896.
+
+## Acolhimento às famílias (decidido em 05/10)
+- Café da manhã de acolhimento às famílias **na própria unidade prisional, em dia de visitação**, com foco nas crianças que visitam os pais. Substitui a roda de conversa na UniCesumar.
+- Organização: acadêmica Francieli Araújo. Pendentes: unidade e data (calendário de visitação), autorização da direção da unidade e doações de alimentos (sem usar recursos da ação de arrecadação).
