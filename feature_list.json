@@ -11,7 +11,7 @@
     },
     {
       "id": "F02",
-      "name": "Regulamento e controle da rifa",
+      "name": "Regulamento e controle da ação de arrecadação (bilhetes)",
       "description": "Regulamento (prêmio, sorteio, prestação de contas), numeração 0001-2400, distribuição de 30 números por aluno, planilha de controle. Usado dentro do F01.",
       "deadline": "sexta 12h (resumo no F01)",
       "dependencies": [],
@@ -42,7 +42,7 @@
     {
       "id": "F06",
       "name": "Controle da arrecadação",
-      "description": "Planilha de itens recebidos por tipo e por aluno, valores da rifa, compras.",
+      "description": "Planilha de itens recebidos por tipo e por aluno, repasses da ação de arrecadação e doações em dinheiro, compras.",
       "deadline": "antes do 3º encontro",
       "dependencies": [
         "F02"
@@ -75,10 +75,22 @@
     },
     {
       "id": "F09",
-      "title": "Organização das equipes da turma",
+      "name": "Organização das equipes da turma",
       "description": "Arrecadação e Captação (todos) + 5 equipes fixas com funções, vagas e líder; planilha de vagas para os nomes.",
       "status": "in-progress",
-      "evidence": "2026-10-06: entregas/equipes/ — organograma A4 paisagem (1 pág.), organizacao-equipes md/pdf, planilha-equipes.xlsx (fórmulas testadas), mensagens-whatsapp.md (aviso + 5 listas, líderes preenchidos); check.sh 0 erros. Falta: nomes após 07/10 12h e atualizar projeto escrito (cita 4 equipes)."
+      "evidence": "2026-10-06: entregas/equipes/ — organograma A4 paisagem (1 pág.), organizacao-equipes md/pdf, planilha-equipes.xlsx (fórmulas testadas), mensagens-whatsapp.md (aviso + 5 listas, líderes preenchidos); check.sh 0 erros. Falta: nomes após 07/10 12h e atualizar projeto escrito (cita 4 equipes).",
+      "dependencies": []
+    },
+    {
+      "id": "F10",
+      "name": "Café da manhã com as famílias",
+      "description": "Café da manhã na unidade, em dia de visitação, com foco nas crianças (org.: Francieli Araújo). Definir unidade e data, obter autorização da direção e doações de alimentos; descrever no projeto escrito.",
+      "deadline": "[PENDENTE: data da visitação]",
+      "dependencies": [
+        "F01"
+      ],
+      "status": "not-started",
+      "evidence": ""
     }
   ]
 }

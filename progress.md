@@ -9,7 +9,6 @@
 - Dinheiro (05/10): app ABANDONADO. Cada aluno repassa R$ 150 por PIX (chave fe5450d9-8b9e-470e-8b46-0d07e4a86d0d, conta exclusiva do Edgar) até 30/10 23h59 + 30 canhotos = bloco quitado. Não vendidos: aluno completa e concorrem no nome dele.
 - Planilha nova (Repasses/Bilhetes/Despesas/Resumo) e one-page do repasse com QR já em R$ 150 (`entregas/acao-arrecadacao/pix/`).
 - Pacote: `bash scripts/montar_pacote.sh` → 32 arquivos, pastas 01–06; zips em 2 partes (limite de envio ~30 MB).
-
 - F09 equipes (06/10): Grupo Geral Arrecadação e Captação (todos, líder Sidney) + 5 fixas: Comunicação 14 (Vitória/Flauany), Eventos 22 (Luan/Lorena), Relatório 12 (Gabriel/vice aberta), Financeiro 7 (Franciele/Edgar), Triagem 25 (Anna/vice aberta) = 80. Fonte única: `scripts/gerar_equipes.py` (dict PREENCHIDOS) → organograma PDF/JPG, md, planilha, `mensagens-whatsapp.md` (aviso + 5 listas). Vagas preenchidas nos grupos da comunidade do WhatsApp até 07/10 12h; depois sorteio. Financeiro = comissão financeira do regulamento.
 - Conferência dos grupos (06/10 14h34, prints do WhatsApp): `entregas/equipes/conferencia-grupos.pdf` (1 pág., HTML editável ao lado). Duplicados: Vitória/Flauany (ficam Comunicação), Lorena (fica Eventos), Evelyn e Simone devem escolher. Eventos 23/22; Relatório 4/12; Triagem 15/25; Financeiro sem print. 21 fora dos 4 grupos.
 
@@ -26,5 +25,6 @@
 
 ## Sugestões registradas (não executadas)
 - Reescrever o projeto no estilo do pré-projeto (120 ponto e vírgula vs. 18): oferecido, sem resposta.
-- 80 one-pages por bloco (txid BLOCO01..80): superado pelo repasse único.
-- `licoes.md` passou de 15 itens: rodar a skill `manutencao`.
+- Renomear a skill `rifa` para `acao-arrecadacao` (proposto na manutenção de 06/10).
+
+manutencao: 2026-10-06

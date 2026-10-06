@@ -18,6 +18,8 @@ Projeto de extensão universitária sobre o sistema prisional: arrecadação de 
 - Toda ação (ação de arrecadação, coleta, posts, visita) precisa constar no projeto escrito, com regras e forma de execução.
 - Não invente dados, como prêmio, datas, quantidades ou parceiros. Use `[PENDENTE: ...]` e liste os pendentes ao usuário.
 - Escreva em português formal acadêmico nos documentos e em linguagem acessível nos posts.
+- Diga a verdade com embasamento, sem bajular: aponte riscos (legais, de prazo, de aval da professora) mesmo sem ter sido perguntado. Sobre uso de IA, recomende declarar o uso em vez de esconder marcas.
+- Quando um plano mudar, atualize juntos todos os materiais que dependem dele (projeto, regulamento, cronograma, planilha, guia, LEIA-ME) a partir dos geradores parametrizados.
 
 ## Pronto = verificado
 Uma tarefa só fica `done` quando:
@@ -30,8 +32,9 @@ Uma tarefa só fica `done` quando:
 - Agentes: `revisor` (confere entregáveis contra as regras; barato), `revisor-final` (revisão completa antes de entregar: modelo, orientações, matriz objetivo→ação→evidência, citações) e `pesquisador` (busca fontes e dados sobre o sistema prisional).
 - Geradores: `python3 scripts/gerar_relatorio.py` (projeto e anexos), `scripts/gerar_bilhetes.py` (folhas de bilhetes), `scripts/gerar_controle_arrecadacao.py` (planilha de repasses), `scripts/cronograma_compacto.py` (encontros ≤500 caracteres), `node scripts/renderizar.mjs` (HTML → PDF/JPG) e `scripts/limpar_metadados.py`.
 - App de vendas `vendas/`: DESCONTINUADO em 05/10 (controle agora é repasse de R$ 150 por aluno). Não incluir no pacote nem citar nos documentos.
-- Pacote de entrega organizado: `bash scripts/montar_pacote.sh` (gera `pacote/Efeito-Rebote/` e o `.zip`).
-- Para converter `.docx` em PDF: `(export HOME=/tmp/h; soffice --headless --convert-to pdf <arquivo> --outdir entregas/)` — em subshell, para não quebrar o git.
+- Pacote de entrega organizado: `bash scripts/montar_pacote.sh` (gera `pacote/Efeito-Rebote/` e o `.zip`). O envio tem limite de ~30 MB: divida o zip em partes, teste com `unzip -t` e diga ao usuário exatamente o que apagar ou substituir no Drive.
+- Para converter `.docx` em PDF: `(export HOME=/tmp/h; soffice --headless --convert-to pdf <arquivo> --outdir entregas/)` — em subshell, para não quebrar o git, com caminhos absolutos. Se faltar: `apt-get install -y libreoffice-writer && pip install python-docx`.
+- Transcrever áudios: `pip install faster-whisper`, modelo "medium", int8, idioma pt.
 
 ## Encerramento de sessão
 Atualize `progress.md` (no máximo 30 linhas, sobrescrevendo o que ficou velho) e `session-handoff.md`. Se o usuário corrigiu algo, acrescente a lição em `docs/licoes.md`. A cada cerca de 5 sessões, ou quando `licoes.md` passar de 15 itens, rode a skill `manutencao`.
