@@ -10,7 +10,7 @@
 - Planilha nova (Repasses/Bilhetes/Despesas/Resumo) e one-page do repasse com QR já em R$ 150 (`entregas/acao-arrecadacao/pix/`).
 - Pacote: `bash scripts/montar_pacote.sh` → 32 arquivos, pastas 01–06; zips em 2 partes (limite de envio ~30 MB).
 - F09 equipes (06/10): Grupo Geral Arrecadação e Captação (todos, líder Sidney) + 5 fixas: Comunicação 14 (Vitória/Flauany), Eventos 22 (Luan/Lorena), Relatório 12 (Gabriel/vice aberta), Financeiro 7 (Franciele/Edgar), Triagem 25 (Anna/vice aberta) = 80. Fonte única: `scripts/gerar_equipes.py` (dict PREENCHIDOS) → organograma PDF/JPG, md, planilha, `mensagens-whatsapp.md` (aviso + 5 listas). Vagas preenchidas nos grupos da comunidade do WhatsApp até 07/10 12h; depois sorteio. Financeiro = comissão financeira do regulamento.
-- Conferência dos grupos refeita com o export de membros (06/10, fim da tarde): `entregas/equipes/conferencia-grupos.pdf`. 10 pessoas em dois grupos; Eventos 23/22 e Financeiro 10/7 acima; Francieli e Edgar não aparecem no grupo do Financeiro; 13 fora de todos os grupos. O export (versão de teste) ocultou parte dos nomes.
+- Conferência dos grupos (06/10): export de membros + print do Financeiro às 18h → `entregas/equipes/conferencia-grupos.pdf` (sem telefones no repositório; versão com telefones só entregue ao usuário). 5 em dois grupos; Eventos 23/22; Financeiro 5/7 (Francieli, Edgar, João Felipe, Mari, rafaogera); 15 fora dos grupos.
 
 - Redes (06/10): a prof.ª mandou ocultar e não responder comentários hostis e criar posts informativos sobre as objeções (F11). Comunicação ainda tem vagas: 3 Design, 2 Roteiro e Legendas, 1 Captação.
 ## Pendentes do usuário
