@@ -28,7 +28,7 @@ Uma tarefa só fica `done` quando:
 3. a evidência foi registrada no campo `evidence` do `feature_list.json`.
 
 ## Ferramentas do projeto
-- Skills: `relatorio-extensao`, `post-redes`, `acao-arrecadacao`, `equipes` e `manutencao`.
+- Skills: `relatorio-extensao`, `post-redes`, `acao-arrecadacao`, `equipes`, `mensagem-whatsapp` e `manutencao`.
 - Agentes: `revisor` (confere entregáveis contra as regras; barato), `revisor-final` (revisão completa antes de entregar: modelo, orientações, matriz objetivo→ação→evidência, citações) e `pesquisador` (busca fontes e dados sobre o sistema prisional).
 - Geradores: `python3 scripts/gerar_relatorio.py` (projeto e anexos), `scripts/gerar_bilhetes.py` (folhas de bilhetes), `scripts/gerar_controle_arrecadacao.py` (planilha de repasses), `scripts/cronograma_compacto.py` (encontros ≤500 caracteres), `node scripts/renderizar.mjs` (HTML → PDF/JPG) e `scripts/limpar_metadados.py`.
 - App de vendas `vendas/`: DESCONTINUADO em 05/10 (controle agora é repasse de R$ 150 por aluno). Não incluir no pacote nem citar nos documentos.

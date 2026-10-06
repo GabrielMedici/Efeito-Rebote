@@ -18,6 +18,7 @@ Os fatos ficam em `docs/projeto.md`, seção "Equipes": o Grupo Geral Arrecadaç
 - A equipe Financeiro e Prestação de Contas é a comissão financeira do regulamento: ao preencher os nomes, atualize também o `[PENDENTE: integrantes da comissão financeira]` no projeto escrito.
 
 ## Mensagens de WhatsApp
+- Formatação e entrega seguem a skill `mensagem-whatsapp`.
 - Siga o padrão do usuário: "*Grupo X*"; "*Função (n vagas):* 1. 2." na mesma linha; linha em branco entre as funções; bloco "> 📌 *Como preencher:*"; negrito em asteriscos.
 - O aviso geral é enxuto, porque o organograma vai junto: só o passo a passo e os líderes.
 - Cada lista vai no grupo da equipe na comunidade do WhatsApp e é respondida lá.
