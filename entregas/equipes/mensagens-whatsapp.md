@@ -6,168 +6,140 @@ Uma mensagem por grupo; copie cada bloco entre as linhas.
 
 Todos os acadêmicos fazem parte deste grupo, além do seu grupo fixo.
 
-*Líder:* 
+*Líder:*
 
-📌 *Como preencher:* quem quiser liderar coloca o nome acima e envia de novo no grupo. Prazo: *amanhã, quarta-feira (07/10), às 12h*. Quem pegar primeiro fica com a vaga. Quem assumir continua também na sua vaga em um dos 5 grupos fixos. Se ninguém se candidatar até o prazo, o líder será escolhido aleatoriamente.
+> 📌 *Como preencher:*
+Quem quiser liderar coloca o nome acima e envia de novo no grupo.
+*Prazo: amanhã, quarta-feira (07/10), às 12h.*
 
-────────────────────
+Quem assumir continua também na sua vaga em um dos 5 grupos fixos.
 
-*Grupo 1: Comunicação e Redes Sociais* (14 vagas)
-
-*Líder:* 
-
-*Vice-líder:* 
-
-*Roteiro e legendas* (2 vagas):
-1. 
-2. 
-
-*Design* (3 vagas):
-1. 
-2. 
-3. 
-
-*Audiovisual* (2 vagas):
-1. 
-2. 
-
-*Engajamento* (2 vagas):
-1. 
-2. 
-
-*Registro de imagens* (2 vagas):
-1. 
-2. 
-
-*Arquivo de aprovações:* 
-
-📌 *Como preencher:* copie esta mensagem, coloque seu nome em uma vaga livre e envie de novo no grupo. Prazo: *amanhã, quarta-feira (07/10), às 12h*. Quem pegar a vaga primeiro fica com ela. Cada pessoa entra em *apenas um* dos 5 grupos. Quem não colocar o nome até o prazo será alocado aleatoriamente nas vagas que sobrarem. A descrição de cada função está no organograma.
+Se ninguém se candidatar até o prazo, o líder será escolhido aleatoriamente.
 
 ────────────────────
 
-*Grupo 2: Criatividade e Organização de Eventos* (22 vagas)
+*Grupo 1: Comunicação e Redes Sociais (14 vagas)*
 
-*Líder:* 
+*Líder:* Vitória
 
-*Vice-líder:* 
+*Vice-líder:* Flauany
 
-*Cenário temático no pátio* (6 vagas):
-1. 
-2. 
-3. 
-4. 
-5. 
-6. 
+*Roteiro e legendas (2 vagas):* 1. 2.
 
-*Café da manhã com as famílias* (6 vagas):
-1. 
-2. 
-3. 
-4. 
-5. 
-6. 
+*Design (3 vagas):* 1. 2. 3.
 
-*Sorteio* (3 vagas):
-1. 
-2. 
-3. 
+*Audiovisual (2 vagas):* 1. 2.
 
-*Visitas técnicas (04 e 05/11)* (5 vagas):
-1. 
-2. 
-3. 
-4. 
-5. 
+*Engajamento (2 vagas):* 1. 2.
 
-📌 *Como preencher:* copie esta mensagem, coloque seu nome em uma vaga livre e envie de novo no grupo. Prazo: *amanhã, quarta-feira (07/10), às 12h*. Quem pegar a vaga primeiro fica com ela. Cada pessoa entra em *apenas um* dos 5 grupos. Quem não colocar o nome até o prazo será alocado aleatoriamente nas vagas que sobrarem. A descrição de cada função está no organograma.
+*Registro de imagens (2 vagas):* 1. 2.
+
+*Arquivo de aprovações:*
+
+> 📌 *Como preencher:*
+Copie esta mensagem, coloque seu nome em uma vaga livre e envie de novo no grupo.
+*Prazo: amanhã, quarta-feira (07/10), às 12h.*
+
+Quem pegar a vaga primeiro fica com ela. Cada pessoa entra em *apenas um* dos 5 grupos.
+
+Quem não colocar o nome até o prazo será *alocado aleatoriamente* nas vagas que sobrarem. A descrição de cada função está no *organograma fixado*.
 
 ────────────────────
 
-*Grupo 3: Relatório Final e Documentação* (12 vagas)
+*Grupo 2: Criatividade e Organização de Eventos (22 vagas)*
 
-*Líder:* 
+*Líder:*
 
-*Vice-líder:* 
+*Vice-líder:*
 
-*Atas e frequência* (2 vagas):
-1. 
-2. 
+*Cenário temático no pátio (6 vagas):* 1. 2. 3. 4. 5. 6.
 
-*Evidências* (2 vagas):
-1. 
-2. 
+*Café da manhã com as famílias (6 vagas):* 1. 2. 3. 4. 5. 6.
 
-*Pesquisa e referências* (2 vagas):
-1. 
-2. 
+*Sorteio (3 vagas):* 1. 2. 3.
 
-*Redação* (3 vagas):
-1. 
-2. 
-3. 
+*Visitas técnicas (04 e 05/11) (5 vagas):* 1. 2. 3. 4. 5.
 
-*Revisão e formatação:* 
+> 📌 *Como preencher:*
+Copie esta mensagem, coloque seu nome em uma vaga livre e envie de novo no grupo.
+*Prazo: amanhã, quarta-feira (07/10), às 12h.*
 
-📌 *Como preencher:* copie esta mensagem, coloque seu nome em uma vaga livre e envie de novo no grupo. Prazo: *amanhã, quarta-feira (07/10), às 12h*. Quem pegar a vaga primeiro fica com ela. Cada pessoa entra em *apenas um* dos 5 grupos. Quem não colocar o nome até o prazo será alocado aleatoriamente nas vagas que sobrarem. A descrição de cada função está no organograma.
+Quem pegar a vaga primeiro fica com ela. Cada pessoa entra em *apenas um* dos 5 grupos.
+
+Quem não colocar o nome até o prazo será *alocado aleatoriamente* nas vagas que sobrarem. A descrição de cada função está no *organograma fixado*.
 
 ────────────────────
 
-*Grupo 4: Financeiro e Prestação de Contas* (6 vagas)
+*Grupo 3: Relatório Final e Documentação (12 vagas)*
 
-*Líder:* 
+*Líder:* Gabriel
 
-*Conferência de repasses* (2 vagas):
-1. 
-2. 
+*Vice-líder:*
 
-*Compras e notas fiscais:* 
+*Atas e frequência (2 vagas):* 1. 2.
 
-*Despesas e comprovantes:* 
+*Evidências (2 vagas):* 1. 2.
 
-*Transparência:* 
+*Pesquisa e referências (2 vagas):* 1. 2.
 
-📌 *Como preencher:* copie esta mensagem, coloque seu nome em uma vaga livre e envie de novo no grupo. Prazo: *amanhã, quarta-feira (07/10), às 12h*. Quem pegar a vaga primeiro fica com ela. Cada pessoa entra em *apenas um* dos 5 grupos. Quem não colocar o nome até o prazo será alocado aleatoriamente nas vagas que sobrarem. A descrição de cada função está no organograma.
+*Redação (3 vagas):* 1. 2. 3.
+
+*Revisão e formatação:*
+
+> 📌 *Como preencher:*
+Copie esta mensagem, coloque seu nome em uma vaga livre e envie de novo no grupo.
+*Prazo: amanhã, quarta-feira (07/10), às 12h.*
+
+Quem pegar a vaga primeiro fica com ela. Cada pessoa entra em *apenas um* dos 5 grupos.
+
+Quem não colocar o nome até o prazo será *alocado aleatoriamente* nas vagas que sobrarem. A descrição de cada função está no *organograma fixado*.
 
 ────────────────────
 
-*Grupo 5: Triagem e Aferição dos Itens* (26 vagas)
+*Grupo 4: Financeiro e Prestação de Contas (7 vagas)*
 
-*Líder:* 
+*Líder:* Franciele
 
-*Vice-líder:* 
+*Vice-líder:* Edgar
 
-*Recolhimento no campus* (4 vagas):
-1. 
-2. 
-3. 
-4. 
+*Conferência de repasses (2 vagas):* 1. 2.
 
-*Recolhimento nos parceiros* (5 vagas):
-1. 
-2. 
-3. 
-4. 
-5. 
+*Compras e notas fiscais:*
 
-*Triagem e conformidade* (8 vagas):
-1. 
-2. 
-3. 
-4. 
-5. 
-6. 
-7. 
-8. 
+*Despesas e comprovantes:*
 
-*Contagem e registro* (3 vagas):
-1. 
-2. 
-3. 
+*Transparência:*
 
-*Kits e armazenamento* (4 vagas):
-1. 
-2. 
-3. 
-4. 
+> 📌 *Como preencher:*
+Copie esta mensagem, coloque seu nome em uma vaga livre e envie de novo no grupo.
+*Prazo: amanhã, quarta-feira (07/10), às 12h.*
 
-📌 *Como preencher:* copie esta mensagem, coloque seu nome em uma vaga livre e envie de novo no grupo. Prazo: *amanhã, quarta-feira (07/10), às 12h*. Quem pegar a vaga primeiro fica com ela. Cada pessoa entra em *apenas um* dos 5 grupos. Quem não colocar o nome até o prazo será alocado aleatoriamente nas vagas que sobrarem. A descrição de cada função está no organograma.
+Quem pegar a vaga primeiro fica com ela. Cada pessoa entra em *apenas um* dos 5 grupos.
+
+Quem não colocar o nome até o prazo será *alocado aleatoriamente* nas vagas que sobrarem. A descrição de cada função está no *organograma fixado*.
+
+────────────────────
+
+*Grupo 5: Triagem e Aferição dos Itens (25 vagas)*
+
+*Líder:* Sidney
+
+*Vice-líder:*
+
+*Recolhimento no campus (4 vagas):* 1. 2. 3. 4.
+
+*Recolhimento nos parceiros (5 vagas):* 1. 2. 3. 4. 5.
+
+*Triagem e conformidade (7 vagas):* 1. 2. 3. 4. 5. 6. 7.
+
+*Contagem e registro (3 vagas):* 1. 2. 3.
+
+*Kits e armazenamento (4 vagas):* 1. 2. 3. 4.
+
+> 📌 *Como preencher:*
+Copie esta mensagem, coloque seu nome em uma vaga livre e envie de novo no grupo.
+*Prazo: amanhã, quarta-feira (07/10), às 12h.*
+
+Quem pegar a vaga primeiro fica com ela. Cada pessoa entra em *apenas um* dos 5 grupos.
+
+Quem não colocar o nome até o prazo será *alocado aleatoriamente* nas vagas que sobrarem. A descrição de cada função está no *organograma fixado*.

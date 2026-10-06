@@ -63,6 +63,7 @@ EQUIPES = [
     ("Financeiro e Prestação de Contas",
      "Atuar como a comissão financeira prevista no regulamento: controlar cada real que entra e sai.",
      [("Líder", 1, "responde pela planilha de controle e pelo relatório de transparência; ponto focal dos membros na arrecadação."),
+      ("Vice-líder", 1, "substitui o líder nas ausências e fornece os extratos da conta de uso exclusivo para a conferência."),
       ("Conferência de repasses", 2, "confere extrato × planilha × canhotos de cada bloco (dupla conferência)."),
       ("Compras e notas fiscais", 1, "orçamentos, compra do prêmio e dos itens, sempre com nota fiscal."),
       ("Despesas e comprovantes", 1, "lança as saídas e arquiva os comprovantes."),
@@ -73,7 +74,7 @@ EQUIPES = [
       ("Vice-líder", 1, "substitui o líder nas ausências e coordena a triagem."),
       ("Recolhimento no campus", 4, "esvazia as caixas de coleta do campus toda semana."),
       ("Recolhimento nos parceiros", 5, "recolhe semanalmente as caixas dos comércios, igrejas e delegacias."),
-      ("Triagem e conformidade", 8, "confere se o item está na lista, lacrado e dentro das regras (creme dental de até 100 g, aparelho descartável de duas lâminas); separa o que não serve."),
+      ("Triagem e conformidade", 7, "confere se o item está na lista, lacrado e dentro das regras (creme dental de até 100 g, aparelho descartável de duas lâminas); separa o que não serve."),
       ("Contagem e registro", 3, "lança na planilha a quantidade por tipo de item."),
       ("Kits e armazenamento", 4, "embala e etiqueta os itens por unidade (PEM, CCM, CPIM) para a entrega.")]),
 ]
@@ -245,23 +246,44 @@ open(os.path.join(SAIDA, "organograma-equipes.html"), "w").write("\n".join(o))
 
 # ---------- Mensagens de WhatsApp (uma por grupo, lista para preencher) ----------
 PRAZO = "amanhã, quarta-feira (07/10), às 12h"
-REGRA = (f"📌 *Como preencher:* copie esta mensagem, coloque seu nome em uma vaga livre e envie de novo no grupo. "
-         f"Prazo: *{PRAZO}*. Quem pegar a vaga primeiro fica com ela. Cada pessoa entra em *apenas um* dos 5 grupos. "
-         f"Quem não colocar o nome até o prazo será alocado aleatoriamente nas vagas que sobrarem. "
-         f"A descrição de cada função está no organograma.")
+# Nomes já confirmados: {(equipe, função): [nomes]}
+PREENCHIDOS = {
+    ("Comunicação e Redes Sociais", "Líder"): ["Vitória"],
+    ("Comunicação e Redes Sociais", "Vice-líder"): ["Flauany"],
+    ("Financeiro e Prestação de Contas", "Líder"): ["Franciele"],
+    ("Financeiro e Prestação de Contas", "Vice-líder"): ["Edgar"],
+    ("Relatório Final e Documentação", "Líder"): ["Gabriel"],
+    ("Triagem e Aferição dos Itens", "Líder"): ["Sidney"],  # "líder de logística": recolhimento, armazenamento e entrega
+}
+
+
+def instrucao(texto_vaga):
+    return ("> 📌 *Como preencher:*\n"
+            f"{texto_vaga}\n"
+            f"*Prazo: {PRAZO}.*\n\n")
+
+
+def vagas(equipe, f, v):
+    nomes = PREENCHIDOS.get((equipe, f), [])
+    if v == 1:
+        return f"*{f}:* {nomes[0] if nomes else ''}".rstrip()
+    itens = " ".join(f"{k}. {nomes[k - 1] if k <= len(nomes) else ''}".rstrip() for k in range(1, v + 1))
+    return f"*{f} ({v} vagas):* {itens}"
+
+
+lg = PREENCHIDOS.get((TRANSVERSAL["nome"], "Líder"), [""])[0]
 msgs = [f"*Grupo Geral: {TRANSVERSAL['nome']}*\n\nTodos os acadêmicos fazem parte deste grupo, além do seu grupo fixo.\n\n"
-        "*Líder:* \n\n📌 *Como preencher:* quem quiser liderar coloca o nome acima e envia de novo no grupo. "
-        f"Prazo: *{PRAZO}*. Quem pegar primeiro fica com a vaga. Quem assumir continua também na sua vaga em um dos 5 grupos fixos. "
+        f"*Líder:* {lg}".rstrip() + "\n\n"
+        + instrucao("Quem quiser liderar coloca o nome acima e envia de novo no grupo.")
+        + "Quem assumir continua também na sua vaga em um dos 5 grupos fixos.\n\n"
         "Se ninguém se candidatar até o prazo, o líder será escolhido aleatoriamente."]
 for i, (nome, _, fs) in enumerate(EQUIPES, 1):
-    linhas = [f"*Grupo {i}: {nome}* ({sum(v for _, v, _ in fs)} vagas)", ""]
-    for f, v, _ in fs:
-        if v == 1:
-            linhas.append(f"*{f}:* ")
-        else:
-            linhas += [f"*{f}* ({v} vagas):"] + [f"{k}. " for k in range(1, v + 1)]
-        linhas.append("")
-    msgs.append("\n".join(linhas + [REGRA]))
+    corpo = "\n\n".join(vagas(nome, f, v) for f, v, _ in fs)
+    msgs.append(f"*Grupo {i}: {nome} ({sum(v for _, v, _ in fs)} vagas)*\n\n{corpo}\n\n"
+                + instrucao("Copie esta mensagem, coloque seu nome em uma vaga livre e envie de novo no grupo.")
+                + "Quem pegar a vaga primeiro fica com ela. Cada pessoa entra em *apenas um* dos 5 grupos.\n\n"
+                "Quem não colocar o nome até o prazo será *alocado aleatoriamente* nas vagas que sobrarem. "
+                "A descrição de cada função está no *organograma fixado*.")
 SEP = "\n\n" + "─" * 20 + "\n\n"
 open(os.path.join(SAIDA, "mensagens-whatsapp.md"), "w").write(
     "# Mensagens de WhatsApp: preenchimento das vagas\n\nUma mensagem por grupo; copie cada bloco entre as linhas.\n\n"

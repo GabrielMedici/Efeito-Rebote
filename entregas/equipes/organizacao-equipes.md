@@ -70,19 +70,20 @@ Registrar tudo o que o projeto fizer e produzir o relatório final no modelo da 
 | Redação | 3 | escreve as seções do relatório a partir das evidências. | |
 | Revisão e formatação | 1 | revisão final, padronização no modelo e conferência das citações. | |
 
-## 4. Financeiro e Prestação de Contas (6 membros)
+## 4. Financeiro e Prestação de Contas (7 membros)
 
 Atuar como a comissão financeira prevista no regulamento: controlar cada real que entra e sai.
 
 | Função | Vagas | O que faz | Nome(s) |
 |---|---|---|---|
 | Líder | 1 | responde pela planilha de controle e pelo relatório de transparência; ponto focal dos membros na arrecadação. | |
+| Vice-líder | 1 | substitui o líder nas ausências e fornece os extratos da conta de uso exclusivo para a conferência. | |
 | Conferência de repasses | 2 | confere extrato × planilha × canhotos de cada bloco (dupla conferência). | |
 | Compras e notas fiscais | 1 | orçamentos, compra do prêmio e dos itens, sempre com nota fiscal. | |
 | Despesas e comprovantes | 1 | lança as saídas e arquiva os comprovantes. | |
 | Transparência | 1 | prepara o relatório de transparência para a professora e a turma. | |
 
-## 5. Triagem e Aferição dos Itens (26 membros)
+## 5. Triagem e Aferição dos Itens (25 membros)
 
 Recolher, conferir, contar e preparar os itens para a entrega nas unidades.
 
@@ -92,7 +93,7 @@ Recolher, conferir, contar e preparar os itens para a entrega nas unidades.
 | Vice-líder | 1 | substitui o líder nas ausências e coordena a triagem. | |
 | Recolhimento no campus | 4 | esvazia as caixas de coleta do campus toda semana. | |
 | Recolhimento nos parceiros | 5 | recolhe semanalmente as caixas dos comércios, igrejas e delegacias. | |
-| Triagem e conformidade | 8 | confere se o item está na lista, lacrado e dentro das regras (creme dental de até 100 g, aparelho descartável de duas lâminas); separa o que não serve. | |
+| Triagem e conformidade | 7 | confere se o item está na lista, lacrado e dentro das regras (creme dental de até 100 g, aparelho descartável de duas lâminas); separa o que não serve. | |
 | Contagem e registro | 3 | lança na planilha a quantidade por tipo de item. | |
 | Kits e armazenamento | 4 | embala e etiqueta os itens por unidade (PEM, CCM, CPIM) para a entrega. | |
 
@@ -104,6 +105,6 @@ Recolher, conferir, contar e preparar os itens para a entrega nas unidades.
 | Comunicação e Redes Sociais | 14 |
 | Criatividade e Organização de Eventos | 22 |
 | Relatório Final e Documentação | 12 |
-| Financeiro e Prestação de Contas | 6 |
-| Triagem e Aferição dos Itens | 26 |
+| Financeiro e Prestação de Contas | 7 |
+| Triagem e Aferição dos Itens | 25 |
 | **Total nas equipes fixas** | **80** |
