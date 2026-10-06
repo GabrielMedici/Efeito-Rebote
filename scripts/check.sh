@@ -2,6 +2,7 @@
 # Portão de verificação dos entregáveis. Uso: bash scripts/check.sh [arquivo...]
 # Sem argumentos, verifica tudo em entregas/. Sai com código 1 se encontrar violação.
 cd "$(dirname "$0")/.." || exit 1
+export LC_ALL=C.UTF-8  # sem isso, o grep -P não casa letras acentuadas ([çc], [ãa]) dentro de colchetes
 
 # Termos proibidos em material do projeto (regra inviolável do CLAUDE.md)
 PROIBIDO='\bnotas?\b(?! fisca| t[ée]cnica| de rodap)|\bAEP\b|\bprovas? ?[0-9]?\b|pontua[çc][ãa]o|vale(ndo)? [0-9,.]+ ?pontos?|\b[0-9],[0-9] pontos?\b|nota final|m[ée]dia final'

@@ -25,6 +25,6 @@
 
 ## Sugestões registradas (não executadas)
 - Reescrever o projeto no estilo do pré-projeto (120 ponto e vírgula vs. 18): oferecido, sem resposta.
-- Renomear a skill `rifa` para `acao-arrecadacao` (proposto na manutenção de 06/10).
+- `coerencia.sh` (06/10) acusa 14 restos de planos antigos: 4 equipes antigas no projeto escrito, no Anexo 1 e no cronograma (aguarda autorização); `entregas/app/`, `formulario-vendas.md` e menções ao app no guia e em `limpar_metadados.py` (apagar? perguntar ao usuário).
 
 manutencao: 2026-10-06

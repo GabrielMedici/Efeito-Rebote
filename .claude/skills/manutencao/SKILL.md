@@ -15,6 +15,6 @@ O orçamento é de, no máximo, cerca de 10 leituras curtas. Não leia os entreg
    - `feature_list.json` deve ter `evidence` preenchida em toda tarefa marcada como `done`. As tarefas novas que surgiram nas conversas devem ser incluídas.
    - Os fatos que mudaram devem ser atualizados em `docs/projeto.md`.
 3. **Custo.** `CLAUDE.md` deve ter no máximo cerca de 50 linhas. A `description` de cada skill deve ter no máximo cerca de 30 palavras, porque é carregada em todo turno.
-4. **Verificação.** Rode `bash scripts/check.sh` e `node .claude/skills/harness-creator/scripts/validate-harness.mjs --target .`.
+4. **Verificação.** Rode `bash scripts/check.sh`, `bash scripts/coerencia.sh` e `node .claude/skills/harness-creator/scripts/validate-harness.mjs --target .`.
 5. **Sugestões.** Proponha ao usuário, em no máximo 3 itens, novas skills, agentes ou scripts. Só sugira o que tenha surgido de uma tarefa repetida 2 vezes ou mais ou de um erro recorrente. **Não crie nada sem aprovação.**
 6. Registre em `progress.md` a linha `manutencao: AAAA-MM-DD`.

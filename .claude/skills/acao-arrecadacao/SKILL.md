@@ -1,5 +1,5 @@
 ---
-name: rifa
+name: acao-arrecadacao
 description: Ação de arrecadação solidária (bilhetes) do Efeito Rebote — regulamento, bilhetes, repasse de R$ 150 por aluno, PIX e planilha de controle. Use para qualquer tarefa dessa ação.
 ---
 
