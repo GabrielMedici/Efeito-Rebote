@@ -23,3 +23,5 @@
 - 2026-10-05 [pacote] Envio de arquivo tem limite (~30 MB): dividir o zip em partes e testar com `unzip -t`. O usuário sobe o pacote no Drive: mande lista exata do que apagar/substituir.
 - 2026-10-05 [relatorio] Trocar um termo em todo o projeto exige revisar frases que ficam redundantes ("arrecadação e da ação de arrecadação") e não pode alterar citação literal (transcrição usa colchetes).
 - 2026-10-05 [rifa] Plano do dinheiro mudou para repasse fixo de R$ 150 por aluno; o app saiu. Planos mudam rápido: mantenha geradores parametrizados e atualize projeto, regulamento, cronograma, planilha, guia e LEIA-ME juntos.
+- 2026-10-06 [equipes] Mensagens de WhatsApp: seguir o padrão do usuário ("*Grupo X*", "*Função (n vagas):* 1. 2." na mesma linha, linha em branco entre funções, bloco "> 📌 *Como preencher:*") com negrito em asteriscos. Aviso geral enxuto: o organograma vai junto, então só o passo a passo e os líderes.
+- 2026-10-06 [equipes] Cada lista vai no grupo da equipe na comunidade do WhatsApp e é respondida lá; não usar "(outro período)" no vice-líder. Nomes informados soltos ("líder de logística") podem não casar com as equipes: pergunte antes de alocar.

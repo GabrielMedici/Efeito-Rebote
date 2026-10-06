@@ -1,20 +1,19 @@
 # Passagem de sessão (sobrescreva a cada encerramento)
 
 **Atualizado:** 2026-10-06
-**Objetivo atual:** manter os entregáveis coerentes com as decisões novas; aguardar pendentes do usuário.
+**Objetivo atual:** fechar F09 (equipes) após o prazo de 07/10 12h; seguir F02 (regulamento) com os pendentes.
 
-## Decisões desta sessão (02 a 06/10)
-1. "rifa" → "ação de arrecadação" em tudo (docs, bilhetes, planilha, nomes de arquivo). Transcrição dos áudios no pacote usa "[ação de arrecadação]" entre colchetes.
-2. Roda de conversa → café da manhã de acolhimento às famílias na unidade (Francieli).
-3. App de vendas fora do pacote; controle por repasse de R$ 150 por bloco ao PIX do Edgar. Código do app continua em `vendas/` (não apagar).
-4. Pacote sem pasta de código, sem fontes woff2, sem arte antiga; metadados padronizados (autor = turma) via `scripts/limpar_metadados.py`.
+## Decisões desta sessão (06/10)
+1. Nova estrutura de equipes (ver `docs/projeto.md` › Equipes): Grupo Geral de arrecadação (todos) + 5 equipes fixas, 80 vagas. Líderes definidos; vices de Relatório e Triagem abertos.
+2. Financeiro ganhou vice (Edgar); vaga tirada de "Triagem e conformidade" (8→7). Conferência de repasses por duas pessoas, sem o titular da conta sozinho.
+3. Mensagens: aviso geral enxuto + uma lista por grupo da comunidade, respondida no próprio grupo; prazo 07/10 12h, depois sorteio.
 
 ## Arquivos-chave
-- Conteúdo: `scripts/conteudo_projeto.py` · geradores: `gerar_relatorio.py`, `gerar_bilhetes.py`, `gerar_controle_arrecadacao.py`, `cronograma_compacto.py`.
-- Páginas HTML → PDF/JPG: `node scripts/renderizar.mjs <html> <saida> [.pg largura altura]` (guia: 794×1123 PDF; one-page PIX: `.pg 1240 1754` JPG).
-- Guia do pacote: `entregas/guia-do-pacote.html`; LEIA-ME: `docs/LEIA-ME-pacote.md`.
-- soffice precisa de `HOME` gravável: rode em subshell `(export HOME=/tmp/h; soffice ...)` para não quebrar o git.
+- `scripts/gerar_equipes.py`: dados das equipes (EQUIPES, PREENCHIDOS, PRAZO) → `entregas/equipes/` (md, html, xlsx, mensagens). Depois rode `renderizar.mjs` para `organizacao-equipes.pdf` e `organograma-equipes.{pdf,jpg}` (`.pg 1123 794`) e `limpar_metadados.py`.
+- Demais geradores e regras: ver `progress.md` e `CLAUDE.md`. soffice só em subshell com `HOME=/tmp/h`.
 
 ## Próxima sessão
-- Preencher os PENDENTE quando o usuário mandar (Edgar, comissão, horário, café).
+- Receber os nomes das vagas → PREENCHIDOS → regenerar; preencher comissão financeira no regulamento (anexo 1) e regenerar o projeto.
+- Se autorizado, trocar as 4 equipes antigas em `scripts/conteudo_projeto.py` (linhas ~128 e ~284) pelas novas.
+- `licoes.md` com 21 itens: rodar a skill `manutencao`.
 - Branch `claude/trusting-wright-2tp73o`, PR GabrielMedici/Efeito-Rebote#1 (rascunho, aberto).

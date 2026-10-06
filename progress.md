@@ -11,11 +11,11 @@
 - Pacote: `bash scripts/montar_pacote.sh` → 32 arquivos, pastas 01–06; zips em 2 partes (limite de envio ~30 MB).
 - Cronograma compacto (≤500 caracteres/encontro): `python3 scripts/cronograma_compacto.py`.
 
-- Equipes (06/10): Arrecadação e Captação (todos) + Comunicação 14, Eventos 22, Relatório 12, Financeiro 6, Triagem 26 = 80. `python3 scripts/gerar_equipes.py` → `entregas/equipes/` (inclui organograma A4 paisagem; renderizar PDF/JPG). Financeiro = comissão financeira do regulamento.
+- F09 equipes (06/10): Grupo Geral Arrecadação e Captação (todos, líder Sidney) + 5 fixas: Comunicação 14 (Vitória/Flauany), Eventos 22 (Luan/Lorena), Relatório 12 (Gabriel/vice aberta), Financeiro 7 (Franciele/Edgar), Triagem 25 (Anna/vice aberta) = 80. Fonte única: `scripts/gerar_equipes.py` (dict PREENCHIDOS) → organograma PDF/JPG, md, planilha, `mensagens-whatsapp.md` (aviso + 5 listas). Vagas preenchidas nos grupos da comunidade do WhatsApp até 07/10 12h; depois sorteio. Financeiro = comissão financeira do regulamento.
 
 ## Pendentes do usuário
-- Líderes (06/10): Comunicação Vitória/vice Flauany; Financeiro Franciele/vice Edgar; Relatório Gabriel; Eventos Luan/vice Lorena; Triagem Anna; Geral (Arrecadação) Sidney. Aviso geral no topo de mensagens-whatsapp.md. Vagas abertas até 07/10 12h, depois sorteio. Financeiro passou a 7 (Triagem e conformidade 8→7).
-- Nomes das demais vagas; autorizar a troca, no projeto escrito, as 4 equipes antigas pelas novas.
+- Nomes das vagas (após 07/10 12h): lançar em PREENCHIDOS, regenerar e preencher [PENDENTE: integrantes da comissão financeira] no regulamento.
+- Autorizar trocar, no projeto escrito, as 4 equipes antigas pelas novas. Confirmar grafia Franciele × Francieli.
 - Nome completo do Edgar; integrantes da comissão; horário do sorteio; semestres; datas de início/fim; carga horária; cota de impressão (480 folhas).
 - Café da manhã: unidade e data (calendário de visitação), autorização da direção, doações de alimentos.
 

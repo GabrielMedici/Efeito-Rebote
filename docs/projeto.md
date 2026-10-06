@@ -80,3 +80,9 @@ A transcrição está em `docs/fonte/audios-transcricao.md`. Os pedidos já fora
 ## Acolhimento às famílias (decidido em 05/10)
 - Café da manhã de acolhimento às famílias **na própria unidade prisional, em dia de visitação**, com foco nas crianças que visitam os pais. Substitui a roda de conversa na UniCesumar.
 - Organização: acadêmica Francieli Araújo. Pendentes: unidade e data (calendário de visitação), autorização da direção da unidade e doações de alimentos (sem usar recursos da ação de arrecadação).
+
+## Equipes (decidido em 06/10; substitui as 4 equipes do pré-projeto)
+- Grupo Geral Arrecadação e Captação: todos (vender o bloco, trazer itens, indicar parceiros); líder Sidney.
+- Fixas (cada aluno em uma só): Comunicação e Redes Sociais 14 (líder Vitória, vice Flauany); Criatividade e Organização de Eventos 22 (Luan, Lorena); Relatório Final e Documentação 12 (Gabriel); Financeiro e Prestação de Contas 7 = comissão financeira (Franciele, vice Edgar, titular da conta); Triagem e Aferição dos Itens 25 (Anna).
+- Preenchimento: listas nos grupos da comunidade do WhatsApp, primeiro a pegar fica, prazo 07/10 12h; quem não escolher é alocado aleatoriamente.
+- O projeto escrito ainda cita as 4 equipes antigas (pendente de autorização para atualizar).
