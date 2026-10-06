@@ -24,5 +24,5 @@ Os fatos ficam em `docs/projeto.md`, seção "Equipes": o Grupo Geral Arrecadaç
 - Cada lista vai no grupo da equipe na comunidade do WhatsApp e é respondida lá.
 
 ## Conferência dos grupos
-- Cruze os prints da comunidade com os grupos. Anna e Gabriel aparecem em todos, mas contam só no Financeiro e Prestação de Contas (correção do usuário em 06/10).
+- Cruze os prints da comunidade com os grupos. Anna e Gabriel aparecem em todos, mas contam só onde estão de fato: Anna no Financeiro e Prestação de Contas; Gabriel no Financeiro e no Relatório Final e Documentação (correção do usuário em 06/10).
 - Saída em uma página (`entregas/equipes/conferencia-grupos.pdf`, com o HTML editável ao lado): totais por equipe × vagas, duplicados e quem ainda está fora dos grupos.
