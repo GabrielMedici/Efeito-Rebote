@@ -3,7 +3,7 @@
 **Atualizado:** 2026-10-06
 
 ## Estado
-- F01 projeto escrito: entregue em 02/10 e ajustado depois (11 págs.). Editar `scripts/conteudo_projeto.py` e rodar `gerar_relatorio.py` + soffice + pdfunite.
+- F01 projeto escrito: versão de 06/10 (12 págs.) enviada em .docx à prof.ª Camila, que edita e insere no UniGestor. Já tem doações em dinheiro (PIX, mesma conta), prestação de contas em 4 componentes (ação, doações, compras, itens), Edgar Gabriel Castro Rocha, carga "40 ou 60 h", semestre/datas "a preencher pela professora". Editar `scripts/conteudo_projeto.py` e rodar `gerar_relatorio.py` + soffice + pdfunite.
 - Termo "rifa" BANIDO: usar "ação de arrecadação (solidária)" e "bilhetes". `check.sh` dá erro se aparecer.
 - Acolhimento às famílias = café da manhã NA UNIDADE, em dia de visitação, foco nas crianças (org.: Francieli Araújo); ECA (BRASIL, 1990) citado.
 - Dinheiro (05/10): app ABANDONADO. Cada aluno repassa R$ 150 por PIX (chave fe5450d9-8b9e-470e-8b46-0d07e4a86d0d, conta exclusiva do Edgar) até 30/10 23h59 + 30 canhotos = bloco quitado. Não vendidos: aluno completa e concorrem no nome dele.
@@ -16,12 +16,12 @@
 ## Pendentes do usuário
 - Nomes das vagas (após 07/10 12h): lançar em PREENCHIDOS, regenerar e preencher [PENDENTE: integrantes da comissão financeira] no regulamento.
 - Autorizar trocar, no projeto escrito, as 4 equipes antigas pelas novas. Confirmar grafia Franciele × Francieli.
-- Integrantes da comissão; horário do sorteio; cota de impressão (480 folhas). (06/10: Edgar Gabriel Castro Rocha; semestre/datas a cargo da prof.ª; carga 40 ou 60 h; doações em dinheiro aceitas por PIX — já no projeto.)
+- Ainda [PENDENTE]: horário do sorteio; comissão financeira (6 ou 7 nomes? sem resposta da prof.ª); cota de impressão; unidade e data do café.
 - Planilha de controle (F06) ainda sem aba de doações em dinheiro.
 - Café da manhã: unidade e data (calendário de visitação), autorização da direção, doações de alimentos.
 
 ## Riscos (levar à prof.ª Camila)
-- Compromisso de R$ 150 por aluno (quem não vende paga) precisa de aval; autorização da ação e da conta antes de imprimir.
+- Compromisso de R$ 150 por aluno (quem não vende paga) precisa de aval (perguntado em 06/10, sem resposta explícita); autorização da ação e da conta antes de imprimir.
 - Validar lista de itens com PEM, CCM e CPIM. Testar PIX real na chave antes de divulgar o one-page.
 
 ## Sugestões registradas (não executadas)
