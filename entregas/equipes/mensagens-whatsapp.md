@@ -14,29 +14,14 @@ Segue o organograma com os grupos e as funções.
 5. Quem não escolher até o prazo será *alocado aleatoriamente* nas vagas que sobrarem.
 
 *Líderes:*
+• *Grupo Geral (Arrecadação e Captação)*: Sidney
 1. *Comunicação e Redes Sociais*: Vitória (vice: Flauany)
 2. *Criatividade e Organização de Eventos*: Luan (vice: Lorena)
 3. *Relatório Final e Documentação*: Gabriel (vice: vaga aberta)
 4. *Financeiro e Prestação de Contas*: Franciele (vice: Edgar)
-5. *Triagem e Aferição dos Itens*: Sidney (vice: vaga aberta)
+5. *Triagem e Aferição dos Itens*: Anna (vice: vaga aberta)
 
 Dúvidas: fale com o líder do seu grupo.
-
-────────────────────
-
-*Grupo Geral: Arrecadação e Captação*
-
-Todos os acadêmicos fazem parte deste grupo, além do seu grupo fixo.
-
-*Líder:*
-
-> 📌 *Como preencher:*
-Quem quiser liderar coloca o nome acima e envia de novo no grupo.
-*Prazo: amanhã, quarta-feira (07/10), às 12h.*
-
-Quem assumir continua também na sua vaga em um dos 5 grupos fixos.
-
-Se ninguém se candidatar até o prazo, o líder será escolhido aleatoriamente.
 
 ────────────────────
 
@@ -144,7 +129,7 @@ Quem não colocar o nome até o prazo será *alocado aleatoriamente* nas vagas q
 
 *Grupo 5: Triagem e Aferição dos Itens (25 vagas)*
 
-*Líder:* Sidney
+*Líder:* Anna
 
 *Vice-líder:*
 

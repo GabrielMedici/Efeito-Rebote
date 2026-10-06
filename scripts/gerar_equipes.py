@@ -255,7 +255,8 @@ PREENCHIDOS = {
     ("Criatividade e Organização de Eventos", "Líder"): ["Luan"],
     ("Criatividade e Organização de Eventos", "Vice-líder"): ["Lorena"],
     ("Relatório Final e Documentação", "Líder"): ["Gabriel"],
-    ("Triagem e Aferição dos Itens", "Líder"): ["Sidney"],  # "líder de logística": recolhimento, armazenamento e entrega
+    ("Triagem e Aferição dos Itens", "Líder"): ["Anna"],
+    (TRANSVERSAL["nome"], "Líder"): ["Sidney"],
 }
 
 
@@ -307,9 +308,10 @@ Segue o organograma com os grupos e as funções.
 5. Quem não escolher até o prazo será *alocado aleatoriamente* nas vagas que sobrarem.
 
 *Líderes:*
+• *Grupo Geral ({TRANSVERSAL['nome']})*: {nomes(TRANSVERSAL['nome'], 'Líder')}
 {lideres}
 
 Dúvidas: fale com o líder do seu grupo."""
 open(os.path.join(SAIDA, "mensagens-whatsapp.md"), "w").write(
     "# Mensagens de WhatsApp: preenchimento das vagas\n\nPrimeiro o aviso geral; depois uma mensagem por grupo. Copie cada bloco entre as linhas.\n\n"
-    + SEP.join([AVISO] + msgs) + "\n")
+    + SEP.join([AVISO] + (msgs[1:] if lg else msgs)) + "\n")
