@@ -242,3 +242,27 @@ o = ["<!doctype html><html lang='pt-BR'><meta charset='utf-8'><title>Organograma
      f"<span>{total} vagas nas equipes fixas</span></div>",
      "</div></body></html>"]
 open(os.path.join(SAIDA, "organograma-equipes.html"), "w").write("\n".join(o))
+
+# ---------- Mensagens de WhatsApp (uma por grupo, lista para preencher) ----------
+PRAZO = "amanhã, quarta-feira (07/10), às 12h"
+REGRA = (f"📌 *Como preencher:* copie esta mensagem, coloque seu nome em uma vaga livre e envie de novo no grupo. "
+         f"Prazo: *{PRAZO}*. Quem pegar a vaga primeiro fica com ela. Cada pessoa entra em *apenas um* dos 5 grupos. "
+         f"Quem não colocar o nome até o prazo será alocado aleatoriamente nas vagas que sobrarem. "
+         f"A descrição de cada função está no organograma.")
+msgs = [f"*Grupo Geral: {TRANSVERSAL['nome']}*\n\nTodos os acadêmicos fazem parte deste grupo, além do seu grupo fixo.\n\n"
+        "*Líder:* \n\n📌 *Como preencher:* quem quiser liderar coloca o nome acima e envia de novo no grupo. "
+        f"Prazo: *{PRAZO}*. Quem pegar primeiro fica com a vaga. Quem assumir continua também na sua vaga em um dos 5 grupos fixos. "
+        "Se ninguém se candidatar até o prazo, o líder será escolhido aleatoriamente."]
+for i, (nome, _, fs) in enumerate(EQUIPES, 1):
+    linhas = [f"*Grupo {i}: {nome}* ({sum(v for _, v, _ in fs)} vagas)", ""]
+    for f, v, _ in fs:
+        if v == 1:
+            linhas.append(f"*{f}:* ")
+        else:
+            linhas += [f"*{f}* ({v} vagas):"] + [f"{k}. " for k in range(1, v + 1)]
+        linhas.append("")
+    msgs.append("\n".join(linhas + [REGRA]))
+SEP = "\n\n" + "─" * 20 + "\n\n"
+open(os.path.join(SAIDA, "mensagens-whatsapp.md"), "w").write(
+    "# Mensagens de WhatsApp: preenchimento das vagas\n\nUma mensagem por grupo; copie cada bloco entre as linhas.\n\n"
+    + SEP.join(msgs) + "\n")
