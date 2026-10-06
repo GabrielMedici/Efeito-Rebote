@@ -252,6 +252,8 @@ PREENCHIDOS = {
     ("Comunicação e Redes Sociais", "Vice-líder"): ["Flauany"],
     ("Financeiro e Prestação de Contas", "Líder"): ["Franciele"],
     ("Financeiro e Prestação de Contas", "Vice-líder"): ["Edgar"],
+    ("Criatividade e Organização de Eventos", "Líder"): ["Luan"],
+    ("Criatividade e Organização de Eventos", "Vice-líder"): ["Lorena"],
     ("Relatório Final e Documentação", "Líder"): ["Gabriel"],
     ("Triagem e Aferição dos Itens", "Líder"): ["Sidney"],  # "líder de logística": recolhimento, armazenamento e entrega
 }
@@ -285,6 +287,37 @@ for i, (nome, _, fs) in enumerate(EQUIPES, 1):
                 "Quem não colocar o nome até o prazo será *alocado aleatoriamente* nas vagas que sobrarem. "
                 "A descrição de cada função está no *organograma fixado*.")
 SEP = "\n\n" + "─" * 20 + "\n\n"
+
+
+def nomes(eq, f):
+    return PREENCHIDOS.get((eq, f), [""])[0] or "vaga aberta"
+
+
+lideres = "\n".join(f"{i}. *{n}*: {nomes(n, 'Líder')}" + (f" (vice: {nomes(n, 'Vice-líder')})" if any(f == "Vice-líder" for f, _, _ in fs) else "")
+                     for i, (n, _, fs) in enumerate(EQUIPES, 1))
+AVISO = f"""📢 *EFEITO REBOTE: ORGANIZAÇÃO DAS EQUIPES*
+
+Pessoal, como somos muitos, a turma foi dividida em equipes para que cada um tenha uma função clara.
+
+*Como funciona:*
+• Todos fazem parte do *Grupo Geral: {TRANSVERSAL['nome']}*. Cada um vende o seu bloco de 30 bilhetes e repassa *R$ 150,00 por PIX, com os 30 canhotos, até 30/10, às 23h59*.
+• Além disso, cada um entra em *apenas um* dos 5 grupos fixos abaixo, com uma função definida.
+• O que cada função faz está no *organograma fixado*.
+
+*Líderes definidos:*
+{lideres}
+
+*Para escolher sua vaga:*
+Logo abaixo vou mandar a lista de cada grupo. Copie a lista, coloque seu nome em uma vaga livre e envie de novo.
+*Prazo: {PRAZO}.*
+Quem pegar a vaga primeiro fica com ela. Quem não escolher até o prazo será *alocado aleatoriamente* nas vagas que sobrarem.
+
+*Depois disso:*
+• Cada líder acompanha os membros do seu grupo, inclusive o repasse dos bilhetes.
+• Os líderes se reúnem com a prof.ª Camila *às segundas*.
+• Nada é publicado, comprado ou combinado com parceiros sem aprovação da prof.ª Camila.
+
+Dúvidas sobre a sua função? Fale com o líder do seu grupo. 💪"""
 open(os.path.join(SAIDA, "mensagens-whatsapp.md"), "w").write(
-    "# Mensagens de WhatsApp: preenchimento das vagas\n\nUma mensagem por grupo; copie cada bloco entre as linhas.\n\n"
-    + SEP.join(msgs) + "\n")
+    "# Mensagens de WhatsApp: preenchimento das vagas\n\nPrimeiro o aviso geral; depois uma mensagem por grupo. Copie cada bloco entre as linhas.\n\n"
+    + SEP.join([AVISO] + msgs) + "\n")

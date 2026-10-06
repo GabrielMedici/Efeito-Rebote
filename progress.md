@@ -14,7 +14,7 @@
 - Equipes (06/10): Arrecadação e Captação (todos) + Comunicação 14, Eventos 22, Relatório 12, Financeiro 6, Triagem 26 = 80. `python3 scripts/gerar_equipes.py` → `entregas/equipes/` (inclui organograma A4 paisagem; renderizar PDF/JPG). Financeiro = comissão financeira do regulamento.
 
 ## Pendentes do usuário
-- Líderes (06/10): Comunicação Vitória/vice Flauany; Financeiro Franciele/vice Edgar; Relatório Gabriel; Triagem Sidney ("logística", confirmar). Vagas abertas até 07/10 12h, depois sorteio. Financeiro passou a 7 (Triagem e conformidade 8→7).
+- Líderes (06/10): Comunicação Vitória/vice Flauany; Financeiro Franciele/vice Edgar; Relatório Gabriel; Eventos Luan/vice Lorena; Triagem Sidney ("logística", confirmar). Aviso geral no topo de mensagens-whatsapp.md. Vagas abertas até 07/10 12h, depois sorteio. Financeiro passou a 7 (Triagem e conformidade 8→7).
 - Nomes das demais vagas; autorizar a troca, no projeto escrito, as 4 equipes antigas pelas novas.
 - Nome completo do Edgar; integrantes da comissão; horário do sorteio; semestres; datas de início/fim; carga horária; cota de impressão (480 folhas).
 - Café da manhã: unidade e data (calendário de visitação), autorização da direção, doações de alimentos.
