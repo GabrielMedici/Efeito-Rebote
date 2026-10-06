@@ -1,10 +1,12 @@
-"""Padroniza autor/criador dos PDFs gerados pelo navegador (guia e resumo do app). Rodado pelo montar_pacote.sh."""
+"""Padroniza autor/criador dos PDFs gerados pelo navegador (guia e resumo do app). Rodado pelo montar_pacote.sh.
+Com argumentos, trata só os PDFs indicados: python3 scripts/limpar_metadados.py entregas/equipes/x.pdf"""
 import os
+import sys
 import pypdf
 
 RAIZ = os.path.join(os.path.dirname(__file__), "..")
 AUTOR = "Acadêmicos do 3º semestre noturno – Turma B"
-for rel in ("entregas/guia-do-pacote.pdf", "entregas/app/one-page-sistema-vendas.pdf"):
+for rel in sys.argv[1:] or ("entregas/guia-do-pacote.pdf", "entregas/app/one-page-sistema-vendas.pdf"):
     f = os.path.join(RAIZ, rel)
     r = pypdf.PdfReader(f)
     titulo = (r.metadata or {}).get("/Title", "")

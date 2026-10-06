@@ -3,12 +3,12 @@
 @page{size:A4;margin:0}
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#1a1a1a;font-size:9.6pt}
-.pg{width:210mm;height:297mm;padding:12mm 13mm 10mm;display:flex;flex-direction:column;gap:7px;overflow:hidden}
-.top{border-bottom:3px solid #1B3A8C;padding-bottom:5px;display:flex;justify-content:space-between;align-items:flex-end}
+.pg{width:210mm;height:297mm;padding:8mm 12mm 6mm;display:flex;flex-direction:column;gap:5px;overflow:hidden}
+.top{border-bottom:3px solid #1B3A8C;padding-bottom:5px;display:flex;gap:12px;justify-content:space-between;align-items:flex-end}
 h1{margin:0;color:#1B3A8C;font-size:19pt;line-height:1}
 .top p{margin:3px 0 0;color:#555;font-size:8.6pt}
 .prazo{background:#1B3A8C;color:#fff;border-radius:5px;padding:5px 10px;font-weight:700;font-size:9.4pt;text-align:center;white-space:nowrap}
-h2{margin:6px 0 3px;font-size:11pt;color:#fff;background:#1B3A8C;padding:4px 8px;border-radius:3px}
+h2{margin:4px 0 2px;font-size:11pt;color:#fff;background:#1B3A8C;padding:4px 8px;border-radius:3px}
 table{width:100%;border-collapse:collapse}
 th,td{border:1px solid #c9cfdc;padding:3.5px 6px;text-align:left;vertical-align:middle}
 th{background:#e8ecf6;font-size:8.8pt}
@@ -16,7 +16,11 @@ td.n,th.n{text-align:center;white-space:nowrap}
 .g{display:inline-block;border-left:4px solid var(--c);padding-left:6px;font-weight:700;color:var(--c)}
 .tag{display:inline-block;border-radius:3px;padding:1px 6px;font-size:8.2pt;font-weight:700}
 .ok{background:#E6F4EA;color:#1E6B34}.al{background:#FDECEC;color:#A11}.at{background:#FFF4DB;color:#8A5A00}.cz{background:#EEE;color:#444}
-.lista{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.lista{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:6px}
+td{font-size:8.6pt}
+.d th,.d td{padding:2px 5px;line-height:1.25}
+.d td:nth-child(1){width:17%}.d td:nth-child(2){width:39%}.d td:nth-child(3){width:28%}
+.bx ul{line-height:1.28}.duas{column-count:2;column-gap:10px}.duas li{break-inside:avoid}
 .bx{border:1px solid #c9cfdc;border-radius:4px;padding:6px 8px;background:#F7F8FC}
 .bx h3{margin:0 0 3px;font-size:9.4pt;color:#1B3A8C}
 .bx ul{margin:0;padding-left:14px;line-height:1.38}
@@ -25,35 +29,27 @@ td.n,th.n{text-align:center;white-space:nowrap}
 .nota b{color:#1B3A8C}
 </style></head><body><div class="pg">
 <div class="top"><div><h1>Efeito Rebote: conferência dos grupos</h1>
-<p>Situação em 06/10, às 14h34, conferida pelos prints dos grupos da comunidade do WhatsApp. Anna e Gabriel estão em todos os grupos para acompanhar, mas contam só nas próprias equipes.</p></div>
+<p>Situação em 06/10, no fim da tarde, conferida pelo export dos membros dos grupos da comunidade do WhatsApp. Anna, Gabriel e a prof.ª Camila acompanham todos os grupos e não entram nas contagens.</p></div>
 <div class="prazo">Prazo para escolher a vaga<br>07/10, 12h</div></div>
 
-<h2>1. Pessoas que estão em dois grupos</h2>
-<table><tr><th>Pessoa</th><th>Está em</th><th>Deve ficar em</th><th>O que fazer</th></tr>
-<tr><td>Vitória (líder)</td><td>Comunicação e Redes Sociais<br>Criatividade e Organização de Eventos</td><td><span class="g" style="--c:#C2410C">Comunicação e Redes Sociais</span></td><td>Sair de Criatividade e Organização de Eventos</td></tr>
-<tr><td>Flauany (vice-líder)</td><td>Comunicação e Redes Sociais<br>Criatividade e Organização de Eventos</td><td><span class="g" style="--c:#C2410C">Comunicação e Redes Sociais</span></td><td>Sair de Criatividade e Organização de Eventos</td></tr>
-<tr><td>Lorena (vice-líder)</td><td>Criatividade e Organização de Eventos<br>Comunicação e Redes Sociais</td><td><span class="g" style="--c:#7C3AED">Criatividade e Organização de Eventos</span></td><td>Sair de Comunicação e Redes Sociais</td></tr>
-<tr><td><b>Evelyn Noefer</b></td><td>Comunicação e Redes Sociais<br>Criatividade e Organização de Eventos</td><td><span class="tag at">Precisa escolher</span></td><td>Ficar em um grupo e sair do outro</td></tr>
-<tr><td><b>Simone Teixeira</b></td><td>Triagem e Aferição dos Itens<br>Relatório Final e Documentação</td><td><span class="tag at">Precisa escolher</span></td><td>Ficar em um grupo e sair do outro</td></tr>
+<h2>1. Pessoas que estão em dois grupos (10)</h2>
+<table class="d"><tr><th>Pessoa</th><th>Está em</th><th>Deve ficar em</th><th>O que fazer</th></tr>
+<tr><td>Vitória (líder)</td><td>Comunicação e Redes Sociais<br>Criatividade e Organização de Eventos</td><td><span class="g" style="--c:#C2410C">Comunicação e Redes Sociais</span></td><td>Sair do outro grupo</td></tr><tr><td>Flauany (vice-líder)</td><td>Comunicação e Redes Sociais<br>Criatividade e Organização de Eventos</td><td><span class="g" style="--c:#C2410C">Comunicação e Redes Sociais</span></td><td>Sair do outro grupo</td></tr><tr><td>Lorena (vice-líder)</td><td>Criatividade e Organização de Eventos<br>Comunicação e Redes Sociais</td><td><span class="g" style="--c:#7C3AED">Criatividade e Organização de Eventos</span></td><td>Sair do outro grupo</td></tr><tr><td><b>Evelyn Noefer</b></td><td>Comunicação e Redes Sociais<br>Criatividade e Organização de Eventos</td><td><span class="tag at">Precisa escolher</span></td><td>Escolher um grupo</td></tr><tr><td><b>Simone Teixeira</b></td><td>Triagem e Aferição dos Itens<br>Relatório Final e Documentação</td><td><span class="tag at">Precisa escolher</span></td><td>Escolher um grupo</td></tr><tr><td><b>amanda</b></td><td>Criatividade e Organização de Eventos<br>Financeiro e Prestação de Contas</td><td><span class="tag at">Precisa escolher</span></td><td>Escolher um grupo</td></tr><tr><td><b>fernanda</b></td><td>Triagem e Aferição dos Itens<br>Financeiro e Prestação de Contas</td><td><span class="tag at">Precisa escolher</span></td><td>Escolher um grupo</td></tr><tr><td><b>Giandon</b>*</td><td>Criatividade e Organização de Eventos<br>Financeiro e Prestação de Contas</td><td><span class="tag at">Precisa escolher</span></td><td>Escolher um grupo</td></tr><tr><td><b>Lucas Salvador</b>*</td><td>Criatividade e Organização de Eventos<br>Financeiro e Prestação de Contas</td><td><span class="tag at">Precisa escolher</span></td><td>Escolher um grupo</td></tr><tr><td><b>William</b>*</td><td>Criatividade e Organização de Eventos<br>Financeiro e Prestação de Contas</td><td><span class="tag at">Precisa escolher</span></td><td>Escolher um grupo</td></tr>
 </table>
 
-<h2>2. Ocupação de cada grupo (sem contar Anna e Gabriel)</h2>
+<h2>2. Ocupação de cada grupo</h2>
 <table><tr><th>Grupo</th><th class="n">Vagas</th><th class="n">Membros hoje</th><th class="n">Após os ajustes</th><th>Situação</th></tr>
-<tr><td><span class="g" style="--c:#C2410C">Comunicação e Redes Sociais</span></td><td class="n">14</td><td class="n">13</td><td class="n">11 a 12</td><td><span class="tag at">Faltam 2 a 3</span></td></tr>
-<tr><td><span class="g" style="--c:#7C3AED">Criatividade e Organização de Eventos</span></td><td class="n">22</td><td class="n"><b style="color:#A11">23</b></td><td class="n">20 a 21</td><td><span class="tag al">Lotado hoje</span> passa a ter 1 ou 2 vagas</td></tr>
-<tr><td><span class="g" style="--c:#0F766E">Relatório Final e Documentação</span></td><td class="n">12</td><td class="n">4</td><td class="n">3 a 4</td><td><span class="tag at">Faltam 8 a 9</span></td></tr>
-<tr><td><span class="g" style="--c:#B45309">Financeiro e Prestação de Contas</span></td><td class="n">7</td><td class="n">sem print</td><td class="n">—</td><td><span class="tag cz">Conferir com a Francieli</span></td></tr>
-<tr><td><span class="g" style="--c:#1D4ED8">Triagem e Aferição dos Itens</span></td><td class="n">25</td><td class="n">15</td><td class="n">14 a 15</td><td><span class="tag at">Faltam 10 a 11</span></td></tr>
-<tr><th>Total</th><th class="n">80</th><th class="n" colspan="2">cerca de 74 alunos na comunidade</th><th>Devem sobrar cerca de 6 vagas mesmo com todos alocados</th></tr>
+<tr><td><span class="g" style="--c:#C2410C">Comunicação e Redes Sociais</span></td><td class="n">14</td><td class="n">14</td><td class="n">12 a 13</td><td><span class="tag at">Faltam 1 a 2</span></td></tr><tr><td><span class="g" style="--c:#7C3AED">Criatividade e Organização de Eventos</span></td><td class="n">22</td><td class="n"><b style="color:#A11">23</b></td><td class="n">16 a 21</td><td><span class="tag al">Acima hoje</span> passa a ter 1 a 6 vagas</td></tr><tr><td><span class="g" style="--c:#0F766E">Relatório Final e Documentação</span></td><td class="n">12</td><td class="n">4</td><td class="n">3 a 4</td><td><span class="tag at">Faltam 8 a 9</span></td></tr><tr><td><span class="g" style="--c:#B45309">Financeiro e Prestação de Contas</span></td><td class="n">7</td><td class="n"><b style="color:#A11">10</b></td><td class="n">5 a 10</td><td><span class="tag al">Pode passar de 7</span> e ainda faltam Francieli e Edgar</td></tr><tr><td><span class="g" style="--c:#1D4ED8">Triagem e Aferição dos Itens</span></td><td class="n">25</td><td class="n">15</td><td class="n">13 a 15</td><td><span class="tag at">Faltam 10 a 12</span></td></tr><tr><th>Total</th><th class="n">80</th><th class="n" colspan="2">74 alunos no grupo principal</th><th>Devem sobrar cerca de 6 vagas mesmo com todos alocados</th></tr>
 </table>
 
-<h2>3. Quem não está em nenhum dos quatro grupos conferidos (21 pessoas)</h2>
+<h2>3. Quem ainda não aparece em nenhum grupo de equipe</h2>
 <div class="lista">
-<div class="bx"><h3>Provavelmente em Financeiro e Prestação de Contas</h3><p>Confirmar quando chegar o print do grupo.</p><ul><li>Francieli (líder)</li><li>Edgar (vice-líder)</li></ul>
-<h3 style="margin-top:7px">Administradoras da comunidade</h3><p>Confirmar se são alunas.</p><ul><li>Je Amorzinho</li><li>Laurinha</li><li>Mari Turma B (admin)</li><li>Vanessa Godoi</li></ul></div>
-<div class="bx"><h3>Precisam entrar em um grupo (1/2)</h3><ul><li>Bianca Niclevski</li><li>Emilly Beatriz</li><li>João Felipe</li><li>Joao Pedro Ramos (EP)</li><li>João Pedro</li><li>Marcelo Martins</li><li>Mari💕 Turma B</li><li>Maria ap. (EP)</li></ul></div>
-<div class="bx"><h3>Precisam entrar em um grupo (2/2)</h3><ul><li>Maria do carboidrato</li><li>Maria Macedo (AV)</li><li>Nicolas Maschio</li><li>rafagera</li><li>Gabriela Benatti</li><li>Gabriella Nery</li><li>Nathalia Domingos</li><li>Dois contatos salvos como “. Turma B”, que precisam se identificar</li></ul></div>
+<div class="bx"><h3>Atenção: Financeiro e Prestação de Contas</h3><p>Líder e vice não aparecem no grupo da equipe. Confirmar.</p><ul><li>Francieli (líder)</li><li>Edgar (vice-líder)</li></ul>
+<h3 style="margin-top:7px">Já entraram desde a última conferência</h3><ul><li>Je Amorzinho: Relatório Final e Documentação</li><li>João Felipe: Financeiro e Prestação de Contas</li><li>João Pedro: Comunicação e Redes Sociais</li><li>Mari Turma B: Financeiro e Prestação de Contas</li></ul></div>
+<div class="bx"><h3>Precisam entrar em um grupo (13)</h3><ul class="duas"><li>Bianca Niclevski</li><li>Emilly Beatriz</li><li>Joao Pedro Ramos (EP)</li><li>Laurinha</li><li>Marcelo Martins</li><li>Mari💕 Turma B</li><li>Maria ap. (EP)</li><li>Maria do carboidrato</li><li>Nicolas Maschio</li><li>rafagera</li><li>Nathalia Domingos</li><li>Vanessa Godoi</li><li>2 contatos “. Turma B” (identificar)</li></ul></div>
+<div class="bx"><h3>Não foi possível confirmar</h3><p>O export ocultou parte dos nomes. Podem já estar em um grupo:</p><ul><li>Maria Macedo (AV): há uma “Maria…” em Criatividade e Organização de Eventos</li><li>Gabriela Benatti e Gabriella Nery: há uma “Gaby” em Criatividade e Organização de Eventos</li></ul>
+<p style="margin-top:6px">* Giandon, Lucas e William aparecem com o nome abreviado em Criatividade e Organização de Eventos; é provável, mas não certo, que sejam as mesmas pessoas.</p></div>
 </div>
 
-<div class="nota"><b>Observações.</b> Os grupos de equipe são fixos e cada pessoa fica em apenas um. O Grupo Geral de Arrecadação e Captação reúne todos os acadêmicos e não entra nesta conta. Estar no grupo não garante a vaga: vale o nome colocado na lista de vagas enviada no próprio grupo. Quem não escolher até 07/10, às 12h, será alocado aleatoriamente nas vagas que sobrarem.</div>
+<div class="nota"><b>Observações.</b> Cada pessoa fica em uma só equipe fixa; o Grupo Geral de Arrecadação e Captação reúne todos e não entra na conta. Vale o nome colocado na lista de vagas do grupo. Quem não escolher até 07/10, às 12h, será alocado aleatoriamente. As contagens são exatas; alguns nomes vieram ocultos no export.</div>
 </div></body></html>
