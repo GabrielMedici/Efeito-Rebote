@@ -11,7 +11,10 @@
 - Pacote: `bash scripts/montar_pacote.sh` → 32 arquivos, pastas 01–06; zips em 2 partes (limite de envio ~30 MB).
 - Cronograma compacto (≤500 caracteres/encontro): `python3 scripts/cronograma_compacto.py`.
 
+- Equipes (06/10): Arrecadação e Captação (todos) + Comunicação 14, Eventos 22, Relatório 12, Financeiro 6, Triagem 26 = 80. `python3 scripts/gerar_equipes.py` → `entregas/equipes/`. Financeiro = comissão financeira do regulamento.
+
 ## Pendentes do usuário
+- Nomes e líderes das equipes; aprovar o projeto escrito trocar as 4 equipes antigas pelas novas.
 - Nome completo do Edgar; integrantes da comissão; horário do sorteio; semestres; datas de início/fim; carga horária; cota de impressão (480 folhas).
 - Café da manhã: unidade e data (calendário de visitação), autorização da direção, doações de alimentos.
 

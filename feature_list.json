@@ -72,6 +72,13 @@
       ],
       "status": "cancelled",
       "evidence": "Cancelado em 05/10: substituído por repasse de R$150 por bloco via PIX. Código mantido em vendas/."
+    },
+    {
+      "id": "F09",
+      "title": "Organização das equipes da turma",
+      "description": "Arrecadação e Captação (todos) + 5 equipes fixas com funções, vagas e líder; planilha de vagas para os nomes.",
+      "status": "in-progress",
+      "evidence": "2026-10-06: entregas/equipes/ (md, pdf 3 págs., planilha-equipes.xlsx com fórmulas testadas no LibreOffice); check.sh 0 erros. Faltam nomes/líderes e atualizar o projeto escrito (hoje cita 4 equipes)."
     }
   ]
 }
