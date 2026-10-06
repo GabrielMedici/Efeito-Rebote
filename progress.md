@@ -12,12 +12,12 @@
 - F09 equipes (06/10): Grupo Geral Arrecadação e Captação (todos, líder Sidney) + 5 fixas: Comunicação 14 (Vitória/Flauany), Eventos 22 (Luan/Lorena), Relatório 12 (Gabriel/vice aberta), Financeiro 7 (Franciele/Edgar), Triagem 25 (Anna/vice aberta) = 80. Fonte única: `scripts/gerar_equipes.py` (dict PREENCHIDOS) → organograma PDF/JPG, md, planilha, `mensagens-whatsapp.md` (aviso + 5 listas). Vagas preenchidas nos grupos da comunidade do WhatsApp até 07/10 12h; depois sorteio. Financeiro = comissão financeira do regulamento.
 - Conferência dos grupos (06/10 14h34, prints do WhatsApp): `entregas/equipes/conferencia-grupos.pdf` (1 pág., HTML editável ao lado). Duplicados: Vitória/Flauany (ficam Comunicação), Lorena (fica Eventos), Evelyn e Simone devem escolher. Eventos 23/22; Relatório 4/12; Triagem 15/25; Financeiro sem print. 21 fora dos 4 grupos.
 
+- Redes (06/10): a prof.ª mandou ocultar e não responder comentários hostis e criar posts informativos sobre as objeções (F11). Comunicação ainda tem vagas: 3 Design, 2 Roteiro e Legendas, 1 Captação.
 ## Pendentes do usuário
 - Nomes das vagas (após 07/10 12h): lançar em PREENCHIDOS, regenerar e preencher [PENDENTE: integrantes da comissão financeira] no regulamento.
 - Autorizar trocar, no projeto escrito, as 4 equipes antigas pelas novas. Confirmar grafia Franciele × Francieli.
 - Ainda [PENDENTE]: horário do sorteio; comissão financeira (6 ou 7 nomes? sem resposta da prof.ª); cota de impressão; unidade e data do café.
 - Planilha de controle (F06) ainda sem aba de doações em dinheiro.
-- Café da manhã: unidade e data (calendário de visitação), autorização da direção, doações de alimentos.
 
 ## Riscos (levar à prof.ª Camila)
 - Compromisso de R$ 150 por aluno (quem não vende paga) precisa de aval (perguntado em 06/10, sem resposta explícita); autorização da ação e da conta antes de imprimir.

@@ -91,6 +91,17 @@
       ],
       "status": "not-started",
       "evidence": ""
+    },
+    {
+      "id": "F11",
+      "name": "Posts informativos que respondem às objeções",
+      "description": "Série de posts que explica por que ajudar pessoas presas e suas famílias também protege a sociedade (custo da reincidência, famílias que sustentam o básico, ressocialização), em resposta indireta a comentários hostis. Pedido da prof.ª Camila em 06/10.",
+      "deadline": "[PENDENTE: definir no calendário editorial]",
+      "dependencies": [
+        "F03"
+      ],
+      "status": "not-started",
+      "evidence": ""
     }
   ]
 }

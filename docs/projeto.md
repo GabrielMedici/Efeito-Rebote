@@ -29,6 +29,9 @@
 ## Redes sociais
 - O primeiro post apresenta e explica o projeto e **não pede arrecadação**.
 - A frequência é de 3 publicações por semana, sempre com aprovação prévia da prof.ª Camila e seguindo as regras institucionais.
+- **Comentários hostis (decidido em 06/10, 15h29, pela prof.ª Camila, no grupo da turma):** comentários do tipo "vão ajudar os velhinhos do Hospital do Câncer, mulheres vítimas…" são **ocultados e não respondidos**. Em vez de responder, a turma produz **posts informativos** que tratem dessas objeções: "a página do projeto deve ser para esse tipo de pessoa; precisamos criar informação e desenvolver o perfil para fazer políticas públicas". Antes de ocultar, salve um print do comentário (evidência para o relatório). Proposta de colegas ainda não decidida: classificar os tipos de comentário e decidir caso a caso entre responder e ocultar.
+- **Engajamento (06/10):** só 5 alunos repostaram nos stories; a equipe de Comunicação pediu que todos sigam, curtam, comentem e repostem os posts fixados.
+- **Orientação fixada por Sidney no grupo (06/10):** não publicar fotos nem divulgar a ação daquela forma; a atividade deve ser chamada de "ação solidária" (texto completo não conferido).
 
 ## Ação de arrecadação (bilhetes; o termo "rifa" não é usado nos materiais)
 - Cada aluno recebe 30 números, a R$ 5,00 cada. Com 80 alunos, são **2.400 números**, o que dá **R$ 12.000** se todos forem vendidos.

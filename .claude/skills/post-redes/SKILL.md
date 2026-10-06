@@ -10,6 +10,7 @@ description: Cria posts/legendas/roteiros (inclusive áudios) para as redes do E
 - Até haver liberação, o objetivo é **explicar** o projeto: o tema, o porquê e a reincidência. **Não peça doações.**
 - Não citar nota nem avaliação. Não expor pessoas privadas de liberdade (nem nomes nem imagens) e não usar tom sensacionalista ou estigmatizante.
 - Dados e estatísticas só entram com fonte citada na legenda ou registrada no arquivo.
+- Comentários hostis não são respondidos: são ocultados (com print salvo antes, como evidência) e viram pauta de post informativo que responda à objeção sem citar o comentário nem quem o fez (decisão da prof.ª Camila, 06/10).
 
 ## Saída
 Cada post vai para `entregas/posts/AAAA-MM-DD-tema.md`, com estas partes:
