@@ -301,8 +301,8 @@ Segue o organograma com os grupos e as funções.
 
 *Como funciona:*
 1. Todos estão no *Grupo Geral* (arrecadação): cada um vende seu bloco e repassa *R$ 150,00 por PIX + 30 canhotos até 30/10, 23h59*.
-2. Cada um escolhe *uma única vaga* em *um* dos 5 grupos.
-3. Em seguida vão as listas: copie a lista do grupo, coloque seu nome numa vaga livre e envie de novo.
+2. Cada equipe tem seu grupo aqui na comunidade, e a lista de vagas está *lá*. Entre no grupo da sua equipe, copie a lista, coloque seu nome numa vaga livre e envie *no próprio grupo*.
+3. Cada pessoa fica em *um só* grupo de equipe.
 4. *Prazo: {PRAZO}.* Quem pegar a vaga primeiro fica com ela.
 5. Quem não escolher até o prazo será *alocado aleatoriamente* nas vagas que sobrarem.
 
