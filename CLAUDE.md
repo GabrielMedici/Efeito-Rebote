@@ -1,6 +1,6 @@
 # Efeito Rebote — o custo da reincidência
 
-Projeto de extensão universitária sobre o sistema prisional: arrecadação de itens de higiene, rifa solidária, redes sociais e visita (04–05/nov). Não é um projeto de software: os entregáveis são documentos, posts e controles.
+Projeto de extensão universitária sobre o sistema prisional: arrecadação de itens de higiene, ação de arrecadação solidária (bilhetes), café da manhã com as famílias, redes sociais e visita (04–05/nov). Não é um projeto de software: os entregáveis são documentos, posts e controles.
 
 ## Ao iniciar uma sessão
 0. Rode `bash init.sh` para ver o status e verificar os entregáveis.
@@ -14,7 +14,8 @@ Projeto de extensão universitária sobre o sistema prisional: arrecadação de 
 - **Nunca mencionar nota, pontuação, AEP, prova ou qualquer valor avaliativo** em relatório, post ou material público. O `scripts/check.sh` confere isso.
 - Todo conteúdo público passa pela aprovação da prof.ª Camila antes de ser publicado. Marque o rascunho como `aguardando aprovação`.
 - Posts de apresentação **explicam** o projeto e **não pedem doações** até haver liberação.
-- Toda ação (rifa, coleta, posts, visita) precisa constar no projeto escrito, com regras e forma de execução.
+- Nunca escrever "rifa" em material algum: use "ação de arrecadação" e "bilhetes" (o `check.sh` barra).
+- Toda ação (ação de arrecadação, coleta, posts, visita) precisa constar no projeto escrito, com regras e forma de execução.
 - Não invente dados, como prêmio, datas, quantidades ou parceiros. Use `[PENDENTE: ...]` e liste os pendentes ao usuário.
 - Escreva em português formal acadêmico nos documentos e em linguagem acessível nos posts.
 
@@ -25,12 +26,12 @@ Uma tarefa só fica `done` quando:
 3. a evidência foi registrada no campo `evidence` do `feature_list.json`.
 
 ## Ferramentas do projeto
-- Skills: `relatorio-extensao`, `post-redes`, `rifa` e `manutencao`.
+- Skills: `relatorio-extensao`, `post-redes`, `rifa` (ação de arrecadação) e `manutencao`.
 - Agentes: `revisor` (confere entregáveis contra as regras; barato), `revisor-final` (revisão completa antes de entregar: modelo, orientações, matriz objetivo→ação→evidência, citações) e `pesquisador` (busca fontes e dados sobre o sistema prisional).
-- Geradores: `python3 scripts/gerar_relatorio.py` (projeto e anexos), `scripts/gerar_bilhetes.py` (folhas de rifa), `scripts/gerar_controle_arrecadacao.py` (planilha).
-- App de vendas: `vendas/` (Next.js + Supabase). Valide com `npm test && npm run test:db && npm run build` dentro de `vendas/`.
+- Geradores: `python3 scripts/gerar_relatorio.py` (projeto e anexos), `scripts/gerar_bilhetes.py` (folhas de bilhetes), `scripts/gerar_controle_arrecadacao.py` (planilha de repasses), `scripts/cronograma_compacto.py` (encontros ≤500 caracteres), `node scripts/renderizar.mjs` (HTML → PDF/JPG) e `scripts/limpar_metadados.py`.
+- App de vendas `vendas/`: DESCONTINUADO em 05/10 (controle agora é repasse de R$ 150 por aluno). Não incluir no pacote nem citar nos documentos.
 - Pacote de entrega organizado: `bash scripts/montar_pacote.sh` (gera `pacote/Efeito-Rebote/` e o `.zip`).
-- Para converter `.docx` em PDF: `soffice --headless --convert-to pdf <arquivo> --outdir entregas/`.
+- Para converter `.docx` em PDF: `(export HOME=/tmp/h; soffice --headless --convert-to pdf <arquivo> --outdir entregas/)` — em subshell, para não quebrar o git.
 
 ## Encerramento de sessão
 Atualize `progress.md` (no máximo 30 linhas, sobrescrevendo o que ficou velho) e `session-handoff.md`. Se o usuário corrigiu algo, acrescente a lição em `docs/licoes.md`. A cada cerca de 5 sessões, ou quando `licoes.md` passar de 15 itens, rode a skill `manutencao`.

@@ -19,3 +19,7 @@
 - 2026-10-02 [relatorio] Objetivos usam verbos compatíveis com o que o projeto entrega: identificar e analisar, não comprovar nem correlacionar sem pesquisa de dados. Sugestão do usuário.
 - 2026-10-02 [relatorio] Confira a autoria das referências vindas de colegas: o 'Sá et al., 2008' era DIUANA et al. Mesmo autor e ano exigem as letras a, b, c (ABNT).
 - **Nunca usar a palavra "rifa"** em nenhum documento: usar "ação de arrecadação" ("ação de arrecadação solidária" no título) e "bilhetes". O `check.sh` barra o termo. (05/10)
+- 2026-10-05 [geral] Ao "esconder marcas de IA": metadados (autor, Creator/Producer de PDF, app do xlsx), nomes de agente ("pesquisador"), ferramentas (Whisper) e códigos internos (F07) denunciam. O estilo também: o pré-projeto da turma tem ~18 ponto e vírgula em 6 mil palavras. Seja honesto: declarar o uso é mais seguro.
+- 2026-10-05 [pacote] Envio de arquivo tem limite (~30 MB): dividir o zip em partes e testar com `unzip -t`. O usuário sobe o pacote no Drive: mande lista exata do que apagar/substituir.
+- 2026-10-05 [relatorio] Trocar um termo em todo o projeto exige revisar frases que ficam redundantes ("arrecadação e da ação de arrecadação") e não pode alterar citação literal (transcrição usa colchetes).
+- 2026-10-05 [rifa] Plano do dinheiro mudou para repasse fixo de R$ 150 por aluno; o app saiu. Planos mudam rápido: mantenha geradores parametrizados e atualize projeto, regulamento, cronograma, planilha, guia e LEIA-ME juntos.
