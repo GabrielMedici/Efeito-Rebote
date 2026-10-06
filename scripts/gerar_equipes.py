@@ -181,3 +181,64 @@ res["A" + str(r + 2)] = "Arrecadação e Captação inclui todos; a linha dela c
 res["A" + str(r + 2)].alignment = Alignment(wrap_text=False)
 wb.save(os.path.join(SAIDA, "planilha-equipes.xlsx"))
 print(f"ok: {total} vagas em {len(EQUIPES)} equipes fixas + {TRANSVERSAL['nome']} -> {os.path.relpath(SAIDA, RAIZ)}")
+
+# ---------- Organograma (A4 paisagem, uma página) ----------
+# Renderizar: node scripts/renderizar.mjs entregas/equipes/organograma-equipes.html entregas/equipes/organograma-equipes.pdf
+#             node scripts/renderizar.mjs entregas/equipes/organograma-equipes.html entregas/equipes/organograma-equipes.jpg .pg 1123 794
+guia = open(os.path.join(RAIZ, "entregas", "guia-do-pacote.html")).read()
+fontes = "\n".join(l.replace("url(posts/", "url(../posts/") for l in guia.splitlines() if l.startswith("@font-face"))
+CORES = ["#C2410C", "#7C3AED", "#0F766E", "#B45309", "#1D4ED8"]
+
+
+def cartao(f, v, t, cor):
+    lider = f.startswith(("Líder", "Vice"))
+    nome = "<div class='nm'>Nome: ______________________</div>" if lider else ""
+    vagas = "" if v == 1 and lider else f"<span class='vg'>{v} {'vaga' if v == 1 else 'vagas'}</span>"
+    return (f"<div class='cd{' ld' if lider else ''}' style='--c:{cor}'><div class='ft'>{e(f)}{vagas}</div>"
+            f"<div class='ds'>{e(t[0].upper() + t[1:])}</div>{nome}</div>")
+
+
+cols = []
+for (nome, missao, fs), cor in zip(EQUIPES, CORES):
+    n = sum(v for _, v, _ in fs)
+    cols.append(f"<div class='col'><div class='eq' style='background:{cor}'><b>{e(nome)}</b><span>{n} membros</span></div>"
+                f"<div class='ms'>{e(missao)}</div>" + "".join(cartao(f, v, t, cor) for f, v, t in fs) + "</div>")
+
+o = ["<!doctype html><html lang='pt-BR'><meta charset='utf-8'><title>Organograma das equipes</title><style>", fontes,
+     "@page{size:A4 landscape;margin:0}*{box-sizing:border-box}html,body{margin:0;background:#fff}",
+     ".pg{width:1123px;height:794px;padding:18px 20px 14px;font-family:Barlow,'Barlow Fallback',Arial,sans-serif;color:#1a1a1a;display:flex;flex-direction:column;overflow:hidden}",
+     ".top{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid #1B3A8C;padding-bottom:6px}",
+     "h1{font-family:'Barlow Condensed',Arial,sans-serif;font-size:27px;margin:0;color:#1B3A8C;letter-spacing:.3px;line-height:1}",
+     ".top p{margin:2px 0 0;font-size:11px;color:#555}.ig{font-size:11px;color:#1B3A8C;font-weight:600;text-align:right}",
+     ".cm{align-self:center;margin-top:8px;background:#1B3A8C;color:#fff;border-radius:6px;padding:5px 16px;font-size:11px;text-align:center;line-height:1.25}",
+     ".cm b{font-family:'Barlow Condensed',Arial,sans-serif;font-size:14px;letter-spacing:.3px}",
+     ".ln{width:2px;height:8px;background:#1B3A8C;align-self:center}",
+     ".ar{border:2px solid #1B3A8C;border-radius:6px;background:#EEF2FB;padding:5px 10px;display:grid;grid-template-columns:230px 1fr 1fr;gap:12px;font-size:9.6px;line-height:1.28}",
+     ".ar h2{font-family:'Barlow Condensed',Arial,sans-serif;margin:0;font-size:16px;color:#1B3A8C;line-height:1.05}.ar .tg{display:inline-block;background:#1B3A8C;color:#fff;border-radius:3px;padding:1px 6px;font-size:10px;font-weight:700;margin:3px 0}",
+     ".ar h3{margin:0 0 1px;font-size:10px;color:#1B3A8C;text-transform:uppercase;letter-spacing:.4px}.ar ul{margin:0;padding-left:12px}.ar li{margin:0}",
+     ".bar{height:10px;margin:0 calc(10% - 2px);border:2px solid #1B3A8C;border-bottom:none;border-radius:4px 4px 0 0;margin-top:6px}",
+     ".cols{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;flex:1;min-height:0}",
+     ".col{display:flex;flex-direction:column;gap:3px;min-height:0}",
+     ".eq{color:#fff;border-radius:5px;padding:4px 7px;display:flex;justify-content:space-between;align-items:baseline;gap:4px}",
+     ".eq b{font-family:'Barlow Condensed',Arial,sans-serif;font-size:13.5px;line-height:1.05}.eq span{font-size:9.5px;white-space:nowrap;font-weight:600}",
+     ".ms{font-size:8.6px;color:#444;font-style:italic;line-height:1.2;padding:0 2px 1px}",
+     ".cd{border-left:4px solid var(--c);background:#F7F7F9;border-radius:3px;padding:3px 6px;font-size:9.3px;line-height:1.24}",
+     ".cd.ld{background:#FFF8E6}.ft{font-weight:700;font-size:10.3px;color:var(--c);display:flex;justify-content:space-between;gap:4px}",
+     ".vg{color:#333;font-weight:600;font-size:8.6px;white-space:nowrap}.ds{color:#222}.nm{font-size:8.6px;color:#555;margin-top:1px}",
+     ".rod{margin-top:6px;font-size:9px;color:#555;display:flex;justify-content:space-between;border-top:1px solid #ccd;padding-top:3px}",
+     "</style><body><div class='pg'>",
+     "<div class='top'><div><h1>EFEITO REBOTE · ORGANOGRAMA DAS EQUIPES</h1>"
+     f"<p>Cerca de {ALUNOS} acadêmicos (matutino e noturno). Cada um está em Arrecadação e Captação e em <b>uma</b> das cinco equipes fixas.</p></div>"
+     "<div class='ig'>@efeitorebote.oficial</div></div>",
+     "<div class='cm'><b>COMITÊ DE LÍDERES</b><br>Prof.ª Camila (aprova tudo antes de publicar, comprar ou firmar parceria) · líderes das 6 equipes · reunião às segundas</div>",
+     "<div class='ln'></div>",
+     f"<div class='ar'><div><h2>{e(TRANSVERSAL['nome'])}</h2><span class='tg'>TODOS OS ACADÊMICOS</span>"
+     f"<div style='font-size:9px'>{e(TRANSVERSAL['missao'])}</div><div class='nm' style='margin-top:2px'>Líder: ______________________</div></div>"
+     "<div><h3>Líder</h3><ul>" + "".join(f"<li>{e(t[0].upper() + t[1:].rstrip(';.'))}</li>" for t in TRANSVERSAL["lider"]) + "</ul></div>"
+     "<div><h3>Todos</h3><ul>" + "".join(f"<li>{e(t[0].upper() + t[1:].rstrip(';.'))}</li>" for t in TRANSVERSAL["todos"]) + "</ul></div></div>",
+     "<div class='bar'></div>",
+     "<div class='cols'>" + "".join(cols) + "</div>",
+     "<div class='rod'><span>Líder e vice-líder de períodos diferentes · cada líder acompanha os repasses dos próprios membros · repasses conferidos sempre por duas pessoas</span>"
+     f"<span>{total} vagas nas equipes fixas</span></div>",
+     "</div></body></html>"]
+open(os.path.join(SAIDA, "organograma-equipes.html"), "w").write("\n".join(o))
