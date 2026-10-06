@@ -215,13 +215,20 @@ DIMENSAO_PEDAGOGICA = [
         "Impressão dos materiais. Os bilhetes (480 folhas A4, cinco bilhetes por folha, seis folhas por acadêmico) e os demais materiais "
         "impressos serão produzidos com a cota de impressão institucional, [PENDENTE: confirmar com a coordenação se a cota comporta "
         "esse volume]; não haverá gasto com impressão retirado dos recursos destinados aos itens.",
-        "Prestação de contas e frequência. A comissão financeira registra em planilha de controle, para cada acadêmico, a data e o "
-        "valor do repasse identificado no extrato e a entrega dos canhotos; o saldo da conta deve corresponder ao número de blocos "
-        "quitados multiplicado por R$ 150,00, somadas as doações em dinheiro e deduzidas as despesas, e toda despesa exige nota fiscal. O extrato da conta de uso "
-        "exclusivo e a planilha compõem a prestação de contas, e um resumo dos valores arrecadados e gastos, sem dados pessoais, será "
-        "divulgado no perfil do projeto, levando à sociedade o acompanhamento da ação. Ao final, será elaborado relatório de transparência com o quantitativo arrecadado e "
-        "entregue por tipo de item e por unidade, o valor obtido com a ação de arrecadação, o total das doações em dinheiro e os comprovantes de compra. A frequência dos acadêmicos é "
-        "registrada em cada encontro, e as entregas individuais descritas no cronograma compõem o relatório final do projeto.",
+        "Prestação de contas. Haverá prestação de contas de todas as frentes do projeto, e não apenas do valor financeiro, em quatro "
+        "componentes: (1) ação de arrecadação: a comissão financeira registra em planilha de controle, para cada acadêmico, a data e o "
+        "valor do repasse identificado no extrato e a entrega dos canhotos; (2) doações em dinheiro: registradas em planilha própria, "
+        "com data, valor e identificação conforme o extrato; (3) compras: toda despesa exige nota fiscal, e a planilha relaciona cada "
+        "compra aos itens adquiridos e às respectivas quantidades; e (4) itens arrecadados: a quantidade de cada item recebido nas caixas "
+        "de coleta, registrada na triagem semanal, e a quantidade entregue a cada unidade, comprovada pelo termo de entrega. O saldo da "
+        "conta deve corresponder ao número de blocos quitados multiplicado por R$ 150,00, somadas as doações em dinheiro e deduzidas as "
+        "despesas. O extrato da conta de uso exclusivo, as planilhas, as notas fiscais e os termos de entrega compõem a prestação de contas, "
+        "e um resumo dos valores arrecadados e gastos e dos itens arrecadados e entregues, sem dados pessoais, será divulgado no perfil do "
+        "projeto, levando à sociedade o acompanhamento da ação. Ao final, será elaborado relatório de transparência, apresentado à professora "
+        "responsável e à turma, com o quantitativo arrecadado e entregue por tipo de item e por unidade, o valor obtido com a ação de "
+        "arrecadação, o total das doações em dinheiro e os comprovantes de compra.",
+        "Frequência. A frequência dos acadêmicos é registrada em cada encontro, e as entregas individuais descritas no cronograma compõem "
+        "o relatório final do projeto.",
         "Ajustes em relação ao pré-projeto aprovado. Esta versão mantém a fundamentação, os objetivos e a meta de referência de mais de "
         "8.000 itens do pré-projeto (Anexo 3) e incorpora: (1) a lista atualizada de itens, que acrescenta o sabão em pó e define o "
         "limite de cada produto; como o pré-projeto especificava creme dental branco, a lista final (tipo, cor, embalagem e forma de "
