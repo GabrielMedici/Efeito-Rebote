@@ -15,13 +15,13 @@ IDENTIFICACAO = [
     ("ODS principal", "16 - Paz, Justiça e Instituições Eficazes"),
     ("ODS secundárias", "3 - Saúde e Bem-Estar • 10 - Redução das Desigualdades"),
     ("Ciclo", "Semestral"),
-    ("Semestre(s)", "[PENDENTE: semestres das turmas participantes]"),
+    ("Semestre(s)", "A preencher pela professora responsável"),
 ]
 
 PERIODOS = [
-    ("Início / Fim da atividade", "[PENDENTE: data de início] — [PENDENTE: data do último encontro]"),
+    ("Início / Fim da atividade", "Encontros semanais às segundas-feiras; datas de início e de término a preencher pela professora responsável"),
     ("Inscrições", "Inscrição dos participantes realizada pela coordenação do curso no UniGestor, após a aprovação do projeto"),
-    ("Carga horária total", "[PENDENTE: carga horária total definida pela coordenação]"),
+    ("Carga horária total", "40 ou 60 horas, conforme definição da instituição"),
     ("Vagas", "80"),
 ]
 
@@ -161,7 +161,7 @@ DIMENSAO_PEDAGOGICA = [
         "acadêmico vende de forma independente, o controle é feito por bloco: a cada venda, o acadêmico preenche o canhoto (nome e "
         "telefone do comprador) e recebe o valor diretamente; até 30/10/2026, às 23h59, repassa o valor integral do bloco, "
         "R$ 150,00 (30 bilhetes de R$ 5,00), por PIX, à conta de recebimento de uso exclusivo da ação de arrecadação (chave "
-        "aleatória fe5450d9-8b9e-470e-8b46-0d07e4a86d0d), sob a responsabilidade de Edgar [PENDENTE: nome completo], indicado pela turma e aprovado "
+        "aleatória fe5450d9-8b9e-470e-8b46-0d07e4a86d0d), sob a responsabilidade de Edgar Gabriel Castro Rocha, titular da conta, indicado pela turma e aprovado "
         "pela professora responsável. O repasse deve partir de conta do próprio acadêmico ou trazer seu nome na mensagem do PIX, e é "
         "acompanhado da entrega dos canhotos à comissão financeira. Os bilhetes não vendidos são completados pelo próprio acadêmico, "
         "com recursos próprios, e concorrem em seu nome. O bloco é considerado quitado quando o repasse de R$ 150,00 é identificado no "
@@ -181,6 +181,11 @@ DIMENSAO_PEDAGOGICA = [
         "distribuição de prêmios mediante sorteio (BRASIL, 1944; BRASIL, 1971); sem essa autorização, a ação de arrecadação não será iniciada e a "
         "arrecadação seguirá apenas por doações diretas; o regulamento completo consta "
         "do Anexo 1.",
+        "Doações em dinheiro. Também serão aceitas doações em dinheiro de pessoas da comunidade, exclusivamente por PIX à mesma conta "
+        "de recebimento de uso exclusivo, com a identificação do doador ou a indicação \"doação\" na mensagem do PIX; não será recebido "
+        "dinheiro em espécie pelos acadêmicos. A divulgação dessa modalidade depende de liberação da professora responsável. Cada "
+        "doação é registrada pela comissão financeira em planilha própria, separada dos repasses dos bilhetes, com data, valor e "
+        "identificação conforme o extrato, e o valor é destinado exclusivamente à compra dos itens listados, mediante nota fiscal.",
         "Divulgação e redes sociais. A divulgação adotará estratégias de custo zero: avisos nos murais e telões do campus, "
         "representantes de turma como multiplicadores e perfis do projeto nas redes sociais. A primeira publicação terá caráter "
         "exclusivamente informativo, apresentando e explicando o projeto, sem pedido de arrecadação (texto-base no Anexo 2). As redes terão três publicações "
@@ -212,10 +217,10 @@ DIMENSAO_PEDAGOGICA = [
         "esse volume]; não haverá gasto com impressão retirado dos recursos destinados aos itens.",
         "Prestação de contas e frequência. A comissão financeira registra em planilha de controle, para cada acadêmico, a data e o "
         "valor do repasse identificado no extrato e a entrega dos canhotos; o saldo da conta deve corresponder ao número de blocos "
-        "quitados multiplicado por R$ 150,00, deduzidas as despesas, e toda despesa exige nota fiscal. O extrato da conta de uso "
+        "quitados multiplicado por R$ 150,00, somadas as doações em dinheiro e deduzidas as despesas, e toda despesa exige nota fiscal. O extrato da conta de uso "
         "exclusivo e a planilha compõem a prestação de contas, e um resumo dos valores arrecadados e gastos, sem dados pessoais, será "
         "divulgado no perfil do projeto, levando à sociedade o acompanhamento da ação. Ao final, será elaborado relatório de transparência com o quantitativo arrecadado e "
-        "entregue por tipo de item e por unidade, o valor obtido com a ação de arrecadação e os comprovantes de compra. A frequência dos acadêmicos é "
+        "entregue por tipo de item e por unidade, o valor obtido com a ação de arrecadação, o total das doações em dinheiro e os comprovantes de compra. A frequência dos acadêmicos é "
         "registrada em cada encontro, e as entregas individuais descritas no cronograma compõem o relatório final do projeto.",
         "Ajustes em relação ao pré-projeto aprovado. Esta versão mantém a fundamentação, os objetivos e a meta de referência de mais de "
         "8.000 itens do pré-projeto (Anexo 3) e incorpora: (1) a lista atualizada de itens, que acrescenta o sabão em pó e define o "
@@ -365,7 +370,7 @@ REGULAMENTO = [
     ("li", "Cada acadêmico participante recebe um bloco de 30 bilhetes em sequência, registrado em planilha de distribuição."),
     ("li", "Cada bilhete traz o perfil do projeto no Instagram (@efeitorebote.oficial) e um QR Code de acesso a ele, para que o comprador conheça o projeto."),
     ("li", "Cada acadêmico vende seus bilhetes de forma independente, preenche o canhoto de cada bilhete vendido (nome e telefone do comprador) e recebe o valor diretamente do comprador."),
-    ("li", "Até 30/10/2026, às 23h59, cada acadêmico repassa o valor integral do bloco, R$ 150,00, por PIX, à conta de recebimento de uso exclusivo da ação de arrecadação (chave aleatória fe5450d9-8b9e-470e-8b46-0d07e4a86d0d), sob a responsabilidade de Edgar [PENDENTE: nome completo], aprovada pela professora responsável. O repasse deve partir de conta do próprio acadêmico ou trazer seu nome na mensagem do PIX."),
+    ("li", "Até 30/10/2026, às 23h59, cada acadêmico repassa o valor integral do bloco, R$ 150,00, por PIX, à conta de recebimento de uso exclusivo da ação de arrecadação (chave aleatória fe5450d9-8b9e-470e-8b46-0d07e4a86d0d), sob a responsabilidade de Edgar Gabriel Castro Rocha, titular da conta, aprovada pela professora responsável. O repasse deve partir de conta do próprio acadêmico ou trazer seu nome na mensagem do PIX."),
     ("li", "Junto com o repasse, o acadêmico entrega à comissão financeira os 30 canhotos preenchidos. Os bilhetes não vendidos são completados pelo próprio acadêmico, com recursos próprios, e concorrem em seu nome."),
     ("li", "O bloco é considerado quitado quando o repasse de R$ 150,00 é identificado no extrato e os canhotos são conferidos. Somente concorrem os bilhetes de blocos quitados até 30/10/2026, às 23h59. O acadêmico responde, perante os compradores, pelos bilhetes que vendeu."),
     ("li", "Em 01/11/2026, a lista dos números participantes (sem dados pessoais) é publicada no @efeitorebote.oficial."),
@@ -376,7 +381,7 @@ REGULAMENTO = [
     ("li", "Se o sorteio precisar ser adiado, a nova data será divulgada com antecedência nos canais do projeto. Se a ação de arrecadação for cancelada, a comissão financeira devolverá o valor integral de cada bloco ao respectivo acadêmico, que o restituirá aos compradores."),
     ("li", "Dados pessoais: nome e telefone do comprador servem apenas para identificar o bilhete e contatar o ganhador; não são divulgados e serão eliminados após a entrega do prêmio (Lei nº 13.709/2018)."),
     ("h", "5. Destinação dos recursos e prestação de contas"),
-    ("p", "Os valores arrecadados com a ação de arrecadação, deduzido o custo de aquisição do prêmio, serão utilizados exclusivamente na compra dos itens listados no item 2, mediante nota fiscal. A comissão financeira, composta por [PENDENTE: integrantes da comissão financeira], manterá a planilha de controle dos repasses por bloco e das saídas, conferida com o extrato da conta de uso exclusivo. Ao final, será apresentado relatório de transparência à professora responsável e à turma, com o valor arrecadado, os comprovantes de compra e o quantitativo entregue por unidade."),
+    ("p", "Os valores arrecadados com a ação de arrecadação, deduzido o custo de aquisição do prêmio, e as doações em dinheiro recebidas por PIX na mesma conta serão utilizados exclusivamente na compra dos itens listados no item 2, mediante nota fiscal. A comissão financeira, composta por [PENDENTE: integrantes da comissão financeira], manterá a planilha de controle dos repasses por bloco, das doações em dinheiro e das saídas, conferida com o extrato da conta de uso exclusivo. Ao final, será apresentado relatório de transparência à professora responsável e à turma, com o valor arrecadado na ação de arrecadação, o total das doações em dinheiro, os comprovantes de compra e o quantitativo de itens arrecadados e entregue por unidade."),
     ("h", "6. Entrega"),
     ("p", "Os itens serão entregues aos gestores das unidades durante as visitas técnicas previstas para 04 e 05 de novembro, com assinatura de termo de entrega."),
     ("h", "7. Disposições finais"),

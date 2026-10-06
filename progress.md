@@ -16,7 +16,8 @@
 ## Pendentes do usuário
 - Nomes das vagas (após 07/10 12h): lançar em PREENCHIDOS, regenerar e preencher [PENDENTE: integrantes da comissão financeira] no regulamento.
 - Autorizar trocar, no projeto escrito, as 4 equipes antigas pelas novas. Confirmar grafia Franciele × Francieli.
-- Nome completo do Edgar; integrantes da comissão; horário do sorteio; semestres; datas de início/fim; carga horária; cota de impressão (480 folhas).
+- Integrantes da comissão; horário do sorteio; cota de impressão (480 folhas). (06/10: Edgar Gabriel Castro Rocha; semestre/datas a cargo da prof.ª; carga 40 ou 60 h; doações em dinheiro aceitas por PIX — já no projeto.)
+- Planilha de controle (F06) ainda sem aba de doações em dinheiro.
 - Café da manhã: unidade e data (calendário de visitação), autorização da direção, doações de alimentos.
 
 ## Riscos (levar à prof.ª Camila)
