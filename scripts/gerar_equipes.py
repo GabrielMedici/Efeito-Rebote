@@ -36,7 +36,7 @@ EQUIPES = [
     ("Comunicação e Redes Sociais",
      "Manter o Instagram @efeitorebote.oficial ativo (3 posts por semana) e explicar o projeto à sociedade.",
      [("Líder", 1, "fecha o calendário editorial, envia cada peça à prof.ª Camila e só publica o que foi aprovado; ponto focal dos membros na arrecadação."),
-      ("Vice-líder (outro período)", 1, "substitui o líder e repassa as decisões ao outro período."),
+      ("Vice-líder", 1, "substitui o líder nas ausências e repassa as decisões à equipe."),
       ("Roteiro e legendas", 2, "textos dos posts, legendas e roteiros de vídeo e áudio, em linguagem acessível."),
       ("Design", 3, "artes, carrosséis e stories na identidade visual do projeto."),
       ("Audiovisual", 2, "gravação e edição de vídeos e áudios; transmissão ao vivo do sorteio, junto com Eventos."),
@@ -46,7 +46,7 @@ EQUIPES = [
     ("Criatividade e Organização de Eventos",
      "Planejar e executar os eventos presenciais do projeto.",
      [("Líder", 1, "cronograma dos eventos, pedidos de autorização (campus e unidades) e divisão das escalas; ponto focal dos membros na arrecadação."),
-      ("Vice-líder (outro período)", 1, "substitui o líder e organiza as escalas do outro período."),
+      ("Vice-líder", 1, "substitui o líder nas ausências e organiza as escalas."),
       ("Cenário temático no pátio", 6, "montagem, exposição dos itens aceitos, caixa de coleta e escala de atendimento ao público."),
       ("Café da manhã com as famílias", 6, "doações de alimentos, regras da unidade (alimentos, embalagens, revista), acolhimento das crianças; sem registro de imagens."),
       ("Sorteio", 3, "urna, conferência dos canhotos com o Financeiro, ata e testemunhas; apoio à transmissão ao vivo."),
@@ -54,7 +54,7 @@ EQUIPES = [
     ("Relatório Final e Documentação",
      "Registrar tudo o que o projeto fizer e produzir o relatório final no modelo da professora.",
      [("Líder", 1, "estrutura do relatório, prazos internos e envio à professora; ponto focal dos membros na arrecadação."),
-      ("Vice-líder (outro período)", 1, "substitui o líder e coleta os registros do outro período."),
+      ("Vice-líder", 1, "substitui o líder nas ausências e coleta os registros da equipe."),
       ("Atas e frequência", 2, "ata de cada reunião de segunda e lista de presença dos encontros."),
       ("Evidências", 2, "reúne fotos autorizadas, métricas das redes, planilhas e termos de entrega, organizados por ação."),
       ("Pesquisa e referências", 2, "dados e fontes sobre o sistema prisional, com citações conferidas (ABNT)."),
@@ -70,7 +70,7 @@ EQUIPES = [
     ("Triagem e Aferição dos Itens",
      "Recolher, conferir, contar e preparar os itens para a entrega nas unidades.",
      [("Líder", 1, "escala de recolhimento, local de armazenamento e termo de entrega por unidade; ponto focal dos membros na arrecadação."),
-      ("Vice-líder (outro período)", 1, "substitui o líder e coordena a triagem no outro período."),
+      ("Vice-líder", 1, "substitui o líder nas ausências e coordena a triagem."),
       ("Recolhimento no campus", 4, "esvazia as caixas de coleta do campus toda semana."),
       ("Recolhimento nos parceiros", 5, "recolhe semanalmente as caixas dos comércios, igrejas e delegacias."),
       ("Triagem e conformidade", 8, "confere se o item está na lista, lacrado e dentro das regras (creme dental de até 100 g, aparelho descartável de duas lâminas); separa o que não serve."),
@@ -84,7 +84,7 @@ os.makedirs(SAIDA, exist_ok=True)
 
 REGRAS = [
     "Cada acadêmico participa de Arrecadação e Captação e de exatamente UMA das cinco equipes fixas.",
-    "Cada equipe fixa deve ter membros dos dois períodos; quando há vice-líder, ele é do período oposto ao do líder.",
+    "Cada equipe fixa deve ter membros dos dois períodos (matutino e noturno).",
     "Os líderes das cinco equipes, o líder de Arrecadação e Captação e a prof.ª Camila formam o comitê de líderes, que se reúne às segundas.",
     "Nada é publicado, comprado ou combinado com terceiros sem aprovação da prof.ª Camila.",
     "Quem é titular da conta da ação de arrecadação não deve ser o único a conferir os repasses: a conferência é sempre feita por duas pessoas.",
@@ -238,7 +238,7 @@ o = ["<!doctype html><html lang='pt-BR'><meta charset='utf-8'><title>Organograma
      "<div><h3>Todos</h3><ul>" + "".join(f"<li>{e(t[0].upper() + t[1:].rstrip(';.'))}</li>" for t in TRANSVERSAL["todos"]) + "</ul></div></div>",
      "<div class='bar'></div>",
      "<div class='cols'>" + "".join(cols) + "</div>",
-     "<div class='rod'><span>Líder e vice-líder de períodos diferentes · cada líder acompanha os repasses dos próprios membros · repasses conferidos sempre por duas pessoas</span>"
+     "<div class='rod'><span>Equipes com membros dos dois períodos · cada líder acompanha os repasses dos próprios membros · repasses conferidos sempre por duas pessoas</span>"
      f"<span>{total} vagas nas equipes fixas</span></div>",
      "</div></body></html>"]
 open(os.path.join(SAIDA, "organograma-equipes.html"), "w").write("\n".join(o))
