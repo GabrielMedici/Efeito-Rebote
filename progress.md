@@ -1,7 +1,7 @@
 # Progresso (máx. 30 linhas; sobrescreva o que ficou velho)
 
 **Atualizado:** 2026-10-07
-**Próximo passo (comece a sessão por aqui e pergunte ao usuário):** usuário enviar as 3 imagens do calendário + mensagem (`entregas/posts/mensagem-calendario.md`) ao grupo da Comunicação; depois voltar à F02 (regulamento, prazo sexta 12h).
+**Próximo passo (comece a sessão por aqui e pergunte ao usuário):** (1) resposta pendente: configurar Root Directory da Vercel = `entregas/posts/site` (sem isso, mesclar o PR publica o repositório inteiro no link); (2) conferir se os plugins carregaram (`/ui-craft:`); (3) voltar à F02 (regulamento, prazo sexta 12h).
 ## Estado
 - F01 projeto escrito: versão de 06/10 (12 págs.) enviada em .docx à prof.ª Camila, que edita e insere no UniGestor. Já tem doações em dinheiro (PIX, mesma conta), prestação de contas em 4 componentes (ação, doações, compras, itens), Edgar Gabriel Castro Rocha, carga "40 ou 60 h", semestre/datas "a preencher pela professora". Editar `scripts/conteudo_projeto.py` e rodar `gerar_relatorio.py` + soffice + pdfunite.
 - Termo "rifa" BANIDO: usar "ação de arrecadação (solidária)" e "bilhetes". `check.sh` dá erro se aparecer.
@@ -23,7 +23,8 @@
 - Compromisso de R$ 150 por aluno (quem não vende paga) precisa de aval (perguntado em 06/10, sem resposta explícita); autorização da ação e da conta antes de imprimir.
 - Validar lista de itens com PEM, CCM e CPIM. Testar PIX real na chave antes de divulgar o one-page.
 
-- Plugins opcionais em `plugins/` (ui-craft e marketing-skills, MIT): fora do harness, sem disparo automático; instalar só sob pedido (ver `plugins/README.md`).
+- Plugins ui-craft e marketing-skills ATIVADOS em 07/10 via `.claude/settings.json` (extraKnownMarketplaces → ./plugins + enabledPlugins), pois `/plugin` não existe na nuvem; skills seguem só por chamada (`/ui-craft:...`).
+- Vercel: projeto `calendario-efeito-rebote` (conta do usuário) ficou ligado ao GitHub; previews do PR exigem login (testado), mas produção ao mesclar = repo inteiro. NÃO mesclar o PR até ajustar Root Directory.
 ## Sugestões registradas (não executadas)
 - Reescrever o projeto no estilo do pré-projeto (120 ponto e vírgula vs. 18): oferecido, sem resposta.
 - `coerencia.sh` (06/10) acusa 14 restos de planos antigos: 4 equipes antigas no projeto escrito, no Anexo 1 e no cronograma (aguarda autorização); `entregas/app/`, `formulario-vendas.md` e menções ao app no guia e em `limpar_metadados.py` (apagar? perguntar ao usuário).
