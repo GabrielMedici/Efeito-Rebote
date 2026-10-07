@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
-<meta name="theme-color" content="#F4F6FB" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0E1322" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#F4F6FB">
 <title>Kit da Comunicação</title>
 <link rel="stylesheet" href="fontes.css">
 <style>
@@ -37,17 +37,10 @@
   --shadow-card:0 1px 2px rgba(20,27,45,.06),0 6px 18px rgba(20,27,45,.06);
   /* 3. COMPONENTE */
   --tap:44px; --btn-radius:var(--r-control); --card-radius:var(--r-card); --card-pad:var(--s-4); --chip-radius:var(--r-control);
-  color-scheme:light;
+  color-scheme:only light;
 }
-/* ESCURO: fonte única entre os marcadores; o gerador copia para a media query */
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --surface-canvas:var(--d-950); --surface-raised:var(--d-900); --surface-sunken:var(--d-975); --surface-overlay:var(--d-850);
-  --text-primary:var(--d-100); --text-secondary:var(--d-300);
-  --border-subtle:var(--d-700); --border-control:var(--d-500);
-  --accent:var(--blue-300); --accent-soft:var(--d-800); --on-accent:var(--d-950);
-  --danger:var(--red-300); --danger-soft:var(--red-950); --warning:var(--amber-300); --warning-soft:var(--amber-950);
-  --shadow-card:0 0 0 1px var(--d-700),0 1px 2px rgba(0,0,0,.4);
-  color-scheme:dark;}}
+/* ESCURO (desligado): fonte única entre os marcadores */
+/* Tema: o site é sempre claro (decisão do usuário, 07/10). O bloco escuro abaixo só vale se alguém ligar data-theme="dark" à mão. */
 :root[data-theme="dark"]{/*DARK<*/
   --surface-canvas:var(--d-950); --surface-raised:var(--d-900); --surface-sunken:var(--d-975); --surface-overlay:var(--d-850);
   --text-primary:var(--d-100); --text-secondary:var(--d-300);

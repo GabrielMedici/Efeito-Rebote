@@ -15,3 +15,4 @@
 - F02 regulamento (prazo sexta 12h): horário do sorteio; nomes da comissão financeira (vagas fecharam 07/10 12h).
 - Aval da prof.ª Camila: R$ 150 por aluno, autorização da ação e da conta.
 - Site do calendário: https://calendario-efeito-rebote.vercel.app; republicar exige novo `npx vercel login` (ver CLAUDE.md).
+- Tema (07/10): o usuário pediu o site SEMPRE claro. Calendário e kit usam `color-scheme: only light`; o escuro está desligado nos modelos (`scripts/modelos/kit.html` e `calendario-site.html`) e registrado no brief. Para voltar ao escuro automático, reponha a media query `prefers-color-scheme: dark` nos dois modelos.
