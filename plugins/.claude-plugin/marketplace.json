@@ -1,0 +1,10 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "efeito-rebote-plugins",
+  "owner": { "name": "Gabriel Medici" },
+  "description": "Plugins de terceiros copiados para uso opcional no Efeito Rebote. Nada é instalado nem disparado automaticamente.",
+  "plugins": [
+    { "name": "ui-craft", "source": "./ui-craft", "description": "Design de interfaces sem cara de IA (educlopez/ui-craft, MIT)." },
+    { "name": "marketing-skills", "source": "./marketingskills", "description": "50 skills de marketing: copy, conteúdo, redes, SEO (coreyhaines31/marketingskills, MIT)." }
+  ]
+}

@@ -23,8 +23,8 @@
 - Compromisso de R$ 150 por aluno (quem não vende paga) precisa de aval (perguntado em 06/10, sem resposta explícita); autorização da ação e da conta antes de imprimir.
 - Validar lista de itens com PEM, CCM e CPIM. Testar PIX real na chave antes de divulgar o one-page.
 
+- Plugins opcionais em `plugins/` (ui-craft e marketing-skills, MIT): fora do harness, sem disparo automático; instalar só sob pedido (ver `plugins/README.md`).
 ## Sugestões registradas (não executadas)
 - Reescrever o projeto no estilo do pré-projeto (120 ponto e vírgula vs. 18): oferecido, sem resposta.
 - `coerencia.sh` (06/10) acusa 14 restos de planos antigos: 4 equipes antigas no projeto escrito, no Anexo 1 e no cronograma (aguarda autorização); `entregas/app/`, `formulario-vendas.md` e menções ao app no guia e em `limpar_metadados.py` (apagar? perguntar ao usuário).
-
 manutencao: 2026-10-06 | skills novas: equipes, mensagem-whatsapp
