@@ -4,11 +4,11 @@
 **Comece por aqui:** `docs/kit-v2/README.md`. O usuário quer elevar o Kit da Comunicação (copy, design, qualidade visual, retenção) com as skills de marketing e ui-craft; exportar PNG fica por último.
 
 ## Onde parou
-- Protótipo do post de 12/10 refeito e APROVADO (6 slides): `docs/kit-v2/proposta-1210.png` e `p1210.html` (fontes locais em `entregas/posts/2026-10-02-apresentacao/fontes.css`).
-- Passo 1 (skill social → reescrever `CONTEUDO` do gerador) tinha começado: nada foi alterado no gerador ainda. O rascunho post a post está no README do kit-v2.
-- O usuário interrompeu para perguntar **como instalar os plugins**: `/marketing-skills:social` não existe na sessão, então `extraKnownMarketplaces`/`enabledPlugins` com marketplace de diretório não carregou na nuvem. Pesquise a forma documentada (agente claude-code-guide) antes de responder. Alternativa que funciona hoje: ler o SKILL.md em `plugins/` e aplicar.
-- Erros já identificados no kit atual: "todo o valor vai para itens" (28/10 e 02/11) contradiz o projeto (o prêmio sai do valor); post de 28/10 sem trava de autorização; "a lei garante esses itens" (reel 23/10, 16/10) não bate com o texto literal da LEP.
-- Correção minha: o "texto estourando" que apontei era a fonte de reserva do Playwright (sem Google Fonts); com Barlow carregada não há estouro.
+- Plano v2 do Kit da Comunicação executado inteiro (passos 1 a 5): conteúdo reescrito em `scripts/gerar_kit_comunicacao.py` (com conferidor automático das regras de copy: travessão, "não é X, é Y", 150 palavras, 40 por slide, ponte em todo slide), modelo novo em `scripts/modelos/kit.html` (slides `.sd` em cqw, o mesmo código do mockup e da exportação), página com um post por vez e `scripts/exportar_kit_png.mjs` (PNG 1080×1350; fontes locais; acusa estouro).
+- PNG gerados só para os posts sem pendência e sem trava: 12/10, 14/10, 16/10, 19/10 e 30/10 (`entregas/posts/kit-png/`). 26/10 e 28/10 (travados) e os de evento (ainda com [PENDENTE]) não foram exportados.
+- Erros do kit antigo corrigidos: "todo o valor vira itens" (agora "descontado o custo do prêmio"), "a lei garante itens" (a LEP fala em "instalações higiênicas"; escova não aparece), Pastoral R$ 263 removida, 28/10 travado.
+- Não conferido ainda (aviso nos "cuidados" de cada post): frase da Defensoria sobre kit incompleto e reposição pelo Conselho da Comunidade e famílias; fonte de saúde para transmissão de doenças (14/10); a frase da PLOS ONE está na revisão de literatura do artigo.
+- Plugins: `/marketing-skills:social` não existe na nuvem; usei o SKILL.md em `plugins/` (social, carrossel Problem-Proof/Value-Stack) e as regras de copy. A skill ui-craft só foi aplicada como critério (hierarquia, um destaque por slide, ponte), não carregada.
 
 ## Pendências de antes (continuam)
 - Vercel: Root Directory = `entregas/posts/site` antes de mesclar o PR GabrielMedici/Efeito-Rebote#1 (rascunho), senão o link expõe o repositório.

@@ -1,5 +1,7 @@
 # Kit da Comunicação v2 — plano aprovado e fontes (07/10/2026)
 
+> **Status (07/10, fim do dia): passos 1 a 5 executados.** Conteúdo em `scripts/gerar_kit_comunicacao.py`; modelo em `scripts/modelos/kit.html`; PNG em `entregas/posts/kit-png/` (só 12, 14, 16, 19 e 30/10). Aguardando aval do usuário e da prof.ª Camila.
+
 ## Decisões do usuário
 - Direção do protótipo de 12/10 APROVADA (`proposta-1210.png`, `p1210.html`): carrossel de **6 slides**; capa com dado (não pergunta); título em letra normal (sem caixa-alta); pergunta-ponte no rodapé de cada slide interno ("E quantas pessoas reincidem? →"); bolinhas de progresso no lugar do contador e do @; último slide anuncia o próximo post ("Na quarta, parte 2: …") com UM pedido só ("Siga @efeitorebote.oficial"); seta de "rebote" (SVG) como marca na capa e no fechamento; um destaque de cor por slide; corpo 42 px em 1080.
 - Usar as skills de marketing (social, copywriting, copy-editing) e de UI (ui-craft) para elevar copy, design, qualidade visual e retenção. Exportar PNG 1080×1350 fica POR ÚLTIMO.

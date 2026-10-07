@@ -53,16 +53,18 @@ header{display:grid;gap:8px}
 .pill.gold{background:var(--gold-soft);color:var(--gold)}
 .pill.red{background:var(--red-soft);color:var(--red)}
 .pill.blue{background:var(--accent-soft);color:var(--accent)}
-.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:6px;display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;min-height:48px;background:var(--bg);padding-block:6px;display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
 .tab{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:8px 4px;font-weight:600;font-size:.92rem}
 .tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
 .panel{display:grid;gap:16px}
 .intro{font-size:.95rem;color:var(--muted);max-width:62ch}
 
-/* índice de posts */
-.index{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
-.index a{flex:none;text-decoration:none;border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:6px 10px;font-size:.84rem;font-weight:600;color:var(--ink);white-space:nowrap}
-.index a.next{border-color:var(--accent);color:var(--accent)}
+/* índice de posts: barra fixa logo abaixo das abas, rola de lado e centraliza a data aberta */
+.index{position:sticky;top:calc(env(safe-area-inset-top,0px) + 52px);z-index:4;background:var(--bg);display:flex;gap:6px;overflow-x:auto;padding:4px 0 8px;scrollbar-width:thin;margin-bottom:12px}
+.index button{flex:none;border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:8px 12px;font-size:.88rem;font-weight:600;color:var(--ink);white-space:nowrap}
+.index button[data-next]{border-color:var(--accent);color:var(--accent)}
+.index button[aria-current="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.pager{display:flex;justify-content:space-between;gap:8px;border-top:1px solid var(--line);padding-top:12px}
 
 /* cartão de post */
 .post{background:var(--surface);border-radius:14px;box-shadow:var(--shadow);padding:16px;display:grid;gap:14px;scroll-margin-top:64px}
@@ -149,8 +151,57 @@ details[open] summary{margin-bottom:10px}
 .mk .stk .cd{font-family:"Barlow Condensed",Arial,sans-serif;font-weight:700;font-size:11cqw;color:var(--m-verm);letter-spacing:.04em}
 .mk .stk .bar{height:3cqw;border-radius:2cqw;background:linear-gradient(90deg,var(--m-azul) 0 55%,var(--m-linha) 55%)}
 .mk .mini{width:62cqw;margin:0 auto;aspect-ratio:4/5;background:var(--m-fundo);border-radius:2cqw;border:1.5cqw solid var(--m-branco);display:grid;place-items:center;padding:4cqw;font-family:"Barlow Condensed",Arial,sans-serif;font-weight:700;color:var(--m-azul);font-size:7cqw;text-align:center;line-height:1}
-.slab{font-size:.78rem;color:var(--muted);margin-top:4px;max-width:240px}
+.slab{font-size:.78rem;color:var(--muted);margin-top:4px;max-width:min(300px,78vw)}
 .mkw{flex:none;display:grid;gap:2px}
+
+/* ===== slides do carrossel (.sd): desenho aprovado em 07/10 (docs/kit-v2). Tudo em cqw: 1080 px = 100cqw ===== */
+.sd{flex:none;width:min(300px,78vw);aspect-ratio:4/5;container-type:inline-size;border-radius:6px;overflow:hidden;position:relative;box-shadow:0 2px 10px rgba(20,27,45,.18);font-family:Barlow,Arial,sans-serif;background:var(--m-fundo);color:var(--m-tinta)}
+.sd .in{position:absolute;inset:0;padding:10.2cqw 8.9cqw 8.9cqw;display:flex;flex-direction:column;gap:3.7cqw}
+.sd.azul{background:var(--m-azul);color:#fff}
+.sd .tag{font:600 2.96cqw/1 Barlow,Arial,sans-serif;color:var(--m-verm)}
+.sd.azul .tag{color:var(--m-ouro)}
+.sd .in>.tag:first-child{margin-bottom:auto}
+.sd h1,.sd h2{margin:0;font-family:"Barlow Condensed","Arial Narrow",Arial,sans-serif;font-weight:700;letter-spacing:-.015em;line-height:.98;text-wrap:balance}
+.sd h1{font-size:12.2cqw;color:#fff}
+.sd h2{font-size:9.26cqw;color:var(--m-azul)}
+.sd.azul h2{color:#fff}
+.sd .lead{font-size:3.89cqw;line-height:1.3;max-width:24ch;color:rgba(255,255,255,.9)}
+.sd p{margin:0;font-size:3.89cqw;line-height:1.38}
+.sd .box{background:#fff;border:.19cqw solid var(--m-linha);border-radius:2cqw;padding:3.7cqw 4.07cqw;font-size:3.89cqw;line-height:1.38;color:var(--m-tinta)}
+.sd .box b{color:var(--m-azul)}
+.sd .num{font:700 27.8cqw/.85 "Barlow Condensed","Arial Narrow",Arial,sans-serif;color:var(--m-verm);letter-spacing:-.03em}
+.sd .fonte{font-size:2.4cqw;line-height:1.35;color:var(--m-cinza)}
+.sd.azul .fonte{color:rgba(255,255,255,.7)}
+.sd .grp{margin-top:auto;display:grid;gap:3.3cqw}
+.sd .pe{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;gap:2.8cqw}
+.sd .ponte{font:700 3.7cqw/1.15 "Barlow Condensed","Arial Narrow",Arial,sans-serif;color:var(--m-azul);display:flex;align-items:center;gap:1.3cqw}
+.sd.azul .ponte{color:var(--m-ouro)}
+.sd .ponte svg{width:3.7cqw;height:3.7cqw;flex:none}
+.sd .dots{display:flex;gap:.93cqw;flex:none}
+.sd .dots i{width:1.3cqw;height:1.3cqw;border-radius:50%;background:var(--m-linha)}
+.sd .dots i.on{width:3.7cqw;border-radius:.65cqw;background:var(--m-azul)}
+.sd.azul .dots i{background:rgba(255,255,255,.3)}
+.sd.azul .dots i.on{background:var(--m-ouro)}
+.sd .rebote{position:absolute;right:-8.3cqw;top:8.3cqw;width:57.4cqw;height:57.4cqw;opacity:.14;color:var(--m-ouro);pointer-events:none}
+.sd .selo{width:13.9cqw;height:13.9cqw;border-radius:50%;background:center/cover no-repeat var(--m-branco);flex:none}
+.sd .ciclo{display:grid;gap:2cqw;margin:0;padding:0}
+.sd .ciclo li{list-style:none;display:grid;grid-template-columns:6.67cqw 1fr;gap:2.4cqw;align-items:center;font-size:3.89cqw;line-height:1.3;background:#fff;border-radius:2cqw;padding:2.6cqw 3cqw;border:.19cqw solid var(--m-linha)}
+.sd .ciclo li span{width:6.67cqw;height:6.67cqw;border-radius:50%;background:var(--m-verm);color:#fff;font:700 3.7cqw/6.67cqw "Barlow Condensed",Arial,sans-serif;text-align:center}
+.sd .ciclo li.volta,.sd .ciclo li.fim{background:var(--m-azul);color:#fff;border-color:var(--m-azul)}
+.sd .ciclo li.volta span{background:var(--m-ouro);color:var(--m-azul)}
+.sd .ciclo li.fim{grid-template-columns:1fr}
+.sd .serie{display:grid;margin:0;padding:0}
+.sd .serie li{list-style:none;display:grid;grid-template-columns:18.5cqw 1fr;gap:1.85cqw;padding:2.8cqw 0;border-top:.19cqw solid var(--m-linha);font-size:3.89cqw;line-height:1.25}
+.sd .serie li b{font:700 4.26cqw/1 "Barlow Condensed",Arial,sans-serif;color:var(--m-verm)}
+.sd .cta{align-self:center;background:var(--m-ouro);color:var(--m-azul);font:700 4.8cqw/1 "Barlow Condensed",Arial,sans-serif;padding:2.8cqw 4.26cqw;border-radius:999px;text-align:center}
+.sd.final .in{align-items:center;justify-content:center;text-align:center}
+.sd.final h2{font-size:9.26cqw}
+.sd.foto{background:repeating-linear-gradient(135deg,#C9D1E3 0 6cqw,#D6DCEA 6cqw 12cqw)}
+.sd.foto .in{justify-content:flex-end}
+.sd .ph{position:absolute;top:8cqw;left:8.9cqw;right:8.9cqw;font-size:3cqw;font-weight:700;color:var(--m-cinza);text-transform:uppercase;letter-spacing:.08em}
+.sd .cap{background:var(--m-azul);color:#fff;padding:4cqw;border-radius:2cqw;display:grid;gap:1.5cqw}
+.sd .cap h2{color:#fff;font-size:7.4cqw}
+.sd .cap p{color:rgba(255,255,255,.9);font-size:3.4cqw}
 
 /* copy e identidade */
 .card{background:var(--surface);border-radius:14px;box-shadow:var(--shadow);padding:16px;display:grid;gap:10px}
@@ -175,6 +226,10 @@ footer{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);paddi
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="seta" viewBox="0 0 200 200"><path d="M40 40 L40 120 A50 50 0 0 0 140 120 L140 70" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round"/><path d="M110 92 L140 60 L170 92" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="dir" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</defs></svg>
 <div class="wrap">
   <header>
     <span class="brand">Efeito Rebote · Comunicação e redes</span>
@@ -207,16 +262,36 @@ const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const sl = () => '<i class="sl" style="background-image:url(' + SELO + ')"></i>';
 
+const rich = t => esc(t).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>");
+const ARR = '<svg viewBox="0 0 24 24"><use href="#dir"/></svg>';
+const dots = (i, n) => '<div class="dots">' + Array.from({length: n}, (_, k) => '<i' + (k === i ? ' class="on"' : '') + '></i>').join("") + '</div>';
+const pe = (txt, i, n) => '<div class="pe"><div class="ponte">' + (txt ? esc(txt) + ARR : "") + '</div>' + dots(i, n) + '</div>';
+const seloSd = () => '<i class="selo" style="background-image:url(' + SELO + ')"></i>';
+const rebote = () => '<svg class="rebote" viewBox="0 0 200 200"><use href="#seta"/></svg>';
+
+/* Um slide do carrossel. O mesmo código serve ao mockup da página e à exportação em 1080 × 1350 (container em cqw). */
 function slide(s, i, n){
-  const ft = '<div class="ft"><span>' + (s.tipo === "capa" ? "Arraste para o lado" : "@efeitorebote.oficial") + '</span><span>' + (i + 1) + '/' + n + '</span></div>';
-  let h = "";
-  if (s.tipo === "capa") h = sl() + '<span class="eb">' + esc(s.eb || "Efeito Rebote") + '</span><div class="t">' + esc(s.t) + '</div>' + (s.p ? '<p class="p">' + esc(s.p) + '</p>' : '') + ft;
-  else if (s.tipo === "final") h = sl() + '<div class="t">' + esc(s.t) + '</div>' + (s.p ? '<p class="p">' + esc(s.p) + '</p>' : '') + '<div class="h">@efeitorebote.oficial</div>' + ft;
-  else if (s.tipo === "dado") h = '<span class="eb">' + esc(s.eb || "") + '</span><div class="num">' + esc(s.num) + '</div><div class="t" style="font-size:8cqw">' + esc(s.t) + '</div>' + (s.p ? '<p class="p">' + esc(s.p) + '</p>' : '') + '<p class="fonte">Fonte: ' + esc(s.fonte) + '</p>' + ft;
-  else if (s.tipo === "passos") h = '<span class="eb">' + esc(s.eb || "") + '</span><div class="t" style="font-size:9cqw">' + esc(s.t) + '</div><ol class="steps">' + s.itens.map((x, k) => '<li><span>' + (k + 1) + '</span>' + esc(x) + '</li>').join("") + (s.fim ? '<li class="end">' + esc(s.fim) + '</li>' : '') + '</ol>' + ft;
-  else if (s.tipo === "foto") h = '<span class="ph">' + esc(s.ph || "Foto real aqui") + '</span><div class="cap"><div class="t">' + esc(s.t) + '</div>' + (s.p ? '<p class="p">' + esc(s.p) + '</p>' : '') + '</div>';
-  else h = '<span class="eb">' + esc(s.eb || "") + '</span><div class="t">' + esc(s.t) + '</div>' + (s.box ? '<div class="box">' + esc(s.box) + '</div>' : '') + (s.p ? '<p class="p">' + esc(s.p) + '</p>' : '') + ft;
-  return '<div class="mkw"><div class="mk ' + esc(s.tipo) + '" role="img" aria-label="Slide ' + (i + 1) + ': ' + esc(s.t) + '"><div class="in">' + h + '</div></div>' + (s.nota ? '<span class="slab">' + esc(s.nota) + '</span>' : '') + '</div>';
+  const tag = s.eb ? '<div class="tag">' + esc(s.eb) + '</div>' : "";
+  let cls = s.tipo, h = "";
+  if (s.tipo === "capa") {
+    cls = "capa azul";
+    h = rebote() + seloSd() + '<div class="grp">' + tag + '<h1>' + esc(s.t) + '</h1>' + (s.p ? '<div class="lead">' + esc(s.p) + '</div>' : '') + (s.fonte ? '<div class="fonte">' + esc(s.fonte) + '</div>' : '') + '</div>' + pe("Arraste", i, n);
+  } else if (s.tipo === "final") {
+    cls = "final azul";
+    h = rebote() + seloSd() + tag + '<h2>' + esc(s.t) + '</h2>' + (s.cta ? '<div class="cta">' + esc(s.cta) + '</div>' : '');
+  } else if (s.tipo === "foto") {
+    h = '<span class="ph">' + esc(s.ph || "Foto real aqui") + '</span><div class="cap"><h2>' + esc(s.t) + '</h2>' + (s.p ? '<p>' + esc(s.p) + '</p>' : '') + '</div>';
+  } else if (s.tipo === "dado") {
+    h = tag + '<div class="num">' + esc(s.num) + '</div><h2 style="font-size:7.04cqw">' + esc(s.t) + '</h2>' + (s.p ? '<p>' + esc(s.p) + '</p>' : '') + '<div class="fonte">' + esc(s.fonte) + '</div>' + pe(s.ponte, i, n);
+  } else if (s.tipo === "passos") {
+    const its = s.itens.map((x, k) => '<li' + (s.volta && k === s.itens.length - 1 ? ' class="volta"' : '') + '><span>' + (k + 1) + '</span>' + rich(x) + '</li>').join("") + (s.fim ? '<li class="fim">' + rich(s.fim) + '</li>' : '');
+    h = tag + '<h2>' + esc(s.t) + '</h2><ol class="ciclo">' + its + '</ol>' + pe(s.ponte, i, n);
+  } else if (s.tipo === "serie") {
+    h = tag + '<h2>' + esc(s.t) + '</h2><ul class="serie">' + s.itens.map(x => '<li><b>' + esc(x[0]) + '</b><span>' + esc(x[1]) + '</span></li>').join("") + '</ul>' + pe(s.ponte, i, n);
+  } else {
+    h = tag + '<h2>' + esc(s.t) + '</h2>' + (s.box ? '<div class="box">' + rich(s.box) + '</div>' : '') + (s.p ? '<p>' + rich(s.p) + '</p>' : '') + pe(s.ponte, i, n);
+  }
+  return '<div class="mkw"><div class="sd ' + cls + '" role="img" aria-label="Slide ' + (i + 1) + ': ' + esc(s.t) + '"><div class="in">' + h + '</div></div>' + (s.nota ? '<span class="slab">' + esc(s.nota) + '</span>' : '') + '</div>';
 }
 
 function story(s){
@@ -236,27 +311,44 @@ async function copiar(btn, txt){
   catch(e){ const pre = btn.closest(".block").querySelector(".legend"); const r = document.createRange(); r.selectNodeContents(pre); const s = getSelection(); s.removeAllRanges(); s.addRange(r); out.textContent = "Texto selecionado: copie com o menu do celular."; }
 }
 
+function postHtml(p, prox, i){
+  const n = p.slides.length;
+  let h = '<article class="post" id="' + p.id + '"><div class="post-h"><div class="meta"><span class="date">' + esc(p.rot) + '</span><span>' + esc(p.fmt) + '</span>'
+    + (p === prox ? '<span class="pill blue">Próximo</span>' : '') + (p.lock ? '<span class="pill red">Só após liberação</span>' : '') + (p.pend ? '<span class="pill gold">' + esc(p.pend) + '</span>' : '') + '</div>'
+    + '<h2>' + esc(p.tema) + '</h2><p class="goal"><b>Objetivo:</b> ' + esc(p.objetivo) + '</p></div>';
+  if (p.lock) h += '<p class="lock">Não publicar nem adiantar nos stories antes de a prof.ª Camila liberar a divulgação da arrecadação.</p>';
+  h += '<div class="strip" aria-label="Slides do post">' + p.slides.map((s, k) => slide(s, k, n)).join("") + '</div>';
+  h += '<div class="block"><h3>Ganchos para a capa (escolha um)</h3><ul class="hooks">' + p.ganchos.map(g => '<li><span class="tec">' + esc(g[0]) + '</span><span class="txt">' + esc(g[1]) + '</span></li>').join("") + '</ul></div>';
+  h += '<div class="block"><h3>Legenda pronta</h3><pre class="legend">' + esc(p.legenda) + '</pre><div class="copy-row"><button class="btn" data-copy="' + p.id + '">Copiar legenda</button><span class="copied" aria-live="polite"></span></div></div>';
+  h += '<details><summary>Fontes, cuidados e dica de arte</summary><div class="panel">'
+    + '<div class="block"><h3>Fontes</h3><div class="src">' + p.fontes.map(f => '<span>' + esc(f) + '</span>').join("") + '</div></div>'
+    + '<div class="block"><h3>Cuidados</h3><ul class="list warn">' + p.cuidados.map(c => '<li>' + esc(c) + '</li>').join("") + '</ul></div>'
+    + (p.arte ? '<p class="tip"><b>Arte:</b> ' + esc(p.arte) + '</p>' : '') + '</div></details>';
+  h += '<div class="pager">' + (i > 0 ? '<button class="btn ghost" data-go="' + D.posts[i - 1].id + '">← ' + esc(D.posts[i - 1].rot) + '</button>' : '<span></span>')
+    + (i < D.posts.length - 1 ? '<button class="btn ghost" data-go="' + D.posts[i + 1].id + '">' + esc(D.posts[i + 1].rot) + ' →</button>' : '<span></span>') + '</div></article>';
+  return h;
+}
+
 function renderPosts(){
   const hoje = new Date(); const k = hoje.getFullYear() + "-" + String(hoje.getMonth() + 1).padStart(2, "0") + "-" + String(hoje.getDate()).padStart(2, "0");
   const prox = D.posts.find(p => p.d && p.d >= k);
-  let h = '<p class="intro">Toque no post para pular até ele. O próximo a ir ao ar está em destaque.</p><nav class="index" aria-label="Posts">'
-    + D.posts.map(p => '<a href="#' + p.id + '"' + (p === prox ? ' class="next"' : '') + '>' + esc(p.rot) + '</a>').join("") + '</nav>';
-  D.posts.forEach(p => {
-    const n = p.slides.length;
-    h += '<article class="post" id="' + p.id + '"><div class="post-h"><div class="meta"><span class="date">' + esc(p.rot) + '</span><span>' + esc(p.fmt) + '</span>'
-      + (p === prox ? '<span class="pill blue">Próximo</span>' : '') + (p.lock ? '<span class="pill red">Só após liberação</span>' : '') + (p.pend ? '<span class="pill gold">' + esc(p.pend) + '</span>' : '') + '</div>'
-      + '<h2>' + esc(p.tema) + '</h2><p class="goal"><b>Objetivo:</b> ' + esc(p.objetivo) + '</p></div>';
-    if (p.lock) h += '<p class="lock">Não publicar nem adiantar nos stories antes de a prof.ª Camila liberar a divulgação da arrecadação.</p>';
-    h += '<div class="strip" aria-label="Slides do post">' + p.slides.map((s, i) => slide(s, i, n)).join("") + '</div>';
-    h += '<div class="block"><h3>Ganchos para a capa (escolha um)</h3><ul class="hooks">' + p.ganchos.map(g => '<li><span class="tec">' + esc(g[0]) + '</span><span class="txt">' + esc(g[1]) + '</span></li>').join("") + '</ul></div>';
-    h += '<div class="block"><h3>Legenda pronta</h3><pre class="legend">' + esc(p.legenda) + '</pre><div class="copy-row"><button class="btn" data-copy="' + p.id + '">Copiar legenda</button><span class="copied" aria-live="polite"></span></div></div>';
-    h += '<details><summary>Fontes, cuidados e dica de arte</summary><div class="panel">'
-      + '<div class="block"><h3>Fontes</h3><div class="src">' + p.fontes.map(f => '<span>' + esc(f) + '</span>').join("") + '</div></div>'
-      + '<div class="block"><h3>Cuidados</h3><ul class="list warn">' + p.cuidados.map(c => '<li>' + esc(c) + '</li>').join("") + '</ul></div>'
-      + (p.arte ? '<p class="tip"><b>Arte:</b> ' + esc(p.arte) + '</p>' : '') + '</div></details></article>';
-  });
-  $("#p-posts").innerHTML = h;
-  $("#p-posts").querySelectorAll("[data-copy]").forEach(b => b.addEventListener("click", () => copiar(b, D.posts.find(p => p.id === b.dataset.copy).legenda)));
+  const ids = D.posts.map(p => p.id);
+  const doHash = decodeURIComponent(location.hash.slice(1));
+  let atual = ids.includes(doHash) ? doHash : (prox || D.posts[0]).id;
+  $("#p-posts").innerHTML = '<nav class="index" aria-label="Posts por data">'
+    + D.posts.map(p => '<button data-go="' + p.id + '"' + (p === prox ? ' data-next="1"' : '') + '>' + esc(p.rot) + '</button>').join("") + '</nav><div id="post-atual"></div>';
+  function mostrar(id, rolar){
+    atual = id;
+    const i = ids.indexOf(id);
+    $("#post-atual").innerHTML = postHtml(D.posts[i], prox, i);
+    $("#p-posts").querySelectorAll(".index button").forEach(b => { const on = b.dataset.go === id; b.setAttribute("aria-current", on ? "true" : "false"); if (on) b.scrollIntoView({inline: "center", block: "nearest"}); });
+    $("#post-atual").querySelectorAll("[data-copy]").forEach(b => b.addEventListener("click", () => copiar(b, D.posts[i].legenda)));
+    $("#post-atual").querySelectorAll("[data-go]").forEach(b => b.addEventListener("click", () => mostrar(b.dataset.go, true)));
+    try { history.replaceState(null, "", "#" + id); } catch(e){}
+    if (rolar) window.scrollTo({top: 0});
+  }
+  $("#p-posts").querySelectorAll(".index button").forEach(b => b.addEventListener("click", () => mostrar(b.dataset.go, true)));
+  mostrar(atual, false);
 }
 
 function renderStories(){
