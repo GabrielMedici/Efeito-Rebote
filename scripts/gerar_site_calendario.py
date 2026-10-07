@@ -146,7 +146,14 @@ def main():
     saida = modelo.replace("/*DADOS*/null", json.dumps(dados, ensure_ascii=False))
     with open(os.path.join(POSTS, "calendario-site.html"), "w", encoding="utf-8") as f:
         f.write(saida)
-    print("ok entregas/posts/calendario-site.html", len(dados["eventos"]), "prazos")
+    # versão autônoma para a Vercel (pasta entregas/posts/site)
+    doc = ('<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
+           '<meta name="robots" content="noindex,nofollow"><style>html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body>'
+           + saida + '</body></html>')
+    os.makedirs(os.path.join(POSTS, "site"), exist_ok=True)
+    with open(os.path.join(POSTS, "site", "index.html"), "w", encoding="utf-8") as f:
+        f.write(doc)
+    print("ok entregas/posts/calendario-site.html e site/index.html", len(dados["eventos"]), "prazos")
 
 
 if __name__ == "__main__":

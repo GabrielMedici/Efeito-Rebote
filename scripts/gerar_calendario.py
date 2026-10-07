@@ -264,11 +264,81 @@ def main():
     fontes = fontes.replace("url(fontes/", "url(2026-10-02-apresentacao/fontes/")
     doc = (f'<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">'
            f'<meta name="viewport" content="width=device-width, initial-scale=1">'
-           f'<title>Calendário da Comunicação</title><style>{fontes}{CSS}</style></head><body>'
-           f'{card1(equipe)}{card2(equipe)}{card3(posts)}</body></html>')
+           f'<title>Calendário da Comunicação</title><style>{fontes}{CSS}{ONEPAGE_CSS}</style></head><body>'
+           f'{card1(equipe)}{card2(equipe)}{card3(posts)}{onepage(equipe, posts)}</body></html>')
     with open(os.path.join(POSTS, "calendario.html"), "w", encoding="utf-8") as f:
         f.write(doc)
     print("ok entregas/posts/calendario.html")
+
+
+
+ONEPAGE_CSS = """
+.one{width:800px;min-height:1131px;background:var(--fundo);padding:30px 32px 18px;display:flex;flex-direction:column;gap:14px;margin:0 auto}
+.one h1{font-size:44px}
+.one .sub{max-width:none;font-size:15px}
+.one .cols{display:grid;grid-template-columns:1.05fr 1fr;gap:16px;align-items:start}
+.one h2{font-size:20px;margin-bottom:6px}
+.one .roles{border-radius:10px}
+.one .role{grid-template-columns:118px 1fr;gap:8px;padding:7px 10px}
+.one .fn{font-size:10.5px}
+.one .people{font-size:13.5px}
+.one .role .dl li{grid-template-columns:62px 1fr;font-size:12px;gap:6px}
+.one .when{font-size:13.5px}
+.one .tag{font-size:11px}
+.one .alert{padding:9px 12px;gap:4px}
+.one .alert h2{font-size:17px;margin:0}
+.one .alert .dl li{grid-template-columns:104px 1fr;font-size:12.5px}
+.one .cycle{padding:2px 10px}
+.one .step{grid-template-columns:44px 1fr;gap:8px;padding:5px 0}
+.one .day{font-size:10.5px;padding:2px 0 3px}
+.one .day b{font-size:15px}
+.one .name{font-size:12.5px}
+.one .task{font-size:11.5px}
+.one .note{font-size:11.5px}
+.one .weeks{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.one .wkb{background:#fff;border-radius:10px;padding:8px 9px;display:grid;gap:5px;align-content:start;box-shadow:0 1px 2px rgba(20,27,45,.06),0 4px 14px rgba(20,27,45,.05)}
+.one .wkb h3{font-family:var(--cond);font-size:16px;color:var(--azul);margin:0}
+.one .wkb small{font-size:10px;color:var(--cinza)}
+.one .pp{display:grid;gap:1px;border-top:1px solid var(--linha);padding-top:4px}
+.one .pp b{font-family:var(--cond);font-size:13px;color:var(--azul)}
+.one .pp span{font-size:11.5px;line-height:1.25;font-weight:600}
+.one .pp i{font-style:normal;font-size:10px;color:var(--cinza)}
+.one .ft{font-size:10.5px}
+"""
+
+
+def onepage(equipe, posts):
+    linhas = []
+    for funcao, _, quem in equipe:
+        pessoas = '<span class="tag gold">Vaga livre</span>' if pendente(quem) else "<br>".join(e(n) for n in nomes(quem))
+        prazos = "".join(f'<li><b class="when">{e(q)}</b><span>{e(o)}</span></li>' for q, o in PRAZOS[funcao][:2])
+        lider = " lead" if funcao in ("Líder", "Vice-líder") else ""
+        linhas.append(f'<section class="role{lider}"><div class="who"><span class="fn">{e(funcao)}</span><span class="people">{pessoas}</span></div><ul class="dl">{prazos}</ul></section>')
+    mapa = {f: (junta(nomes(q)) if not pendente(q) else "vaga livre") for f, _, q in equipe}
+    passos = "".join(f'<li class="step"><span class="day"><b>{e(d)}</b>{e(h)}</span><div><span class="name">{e(preencher(q, mapa)).replace("|", "<br>")}</span>'
+                     f'<span class="task">{e(t)}</span></div></li>' for d, h, q, t in CICLO)
+    prim = "".join(f'<li><b class="when">{e(d)}, {e(h)}</b><span>{e(o)}</span></li>' for d, h, o in PRIMEIRA)
+    por_data = {p[0][:5]: p for p in posts}
+    blocos = []
+    usados = set()
+    for rot, envio, datas in SEMANAS:
+        itens = ""
+        for dd in datas:
+            data, tema, fmt, obs = por_data[dd]
+            usados.add(dd)
+            trava = " · só após liberação" if "liberação" in obs.lower() else ""
+            itens += f'<div class="pp"><b>{e(data.split(" ")[1].strip("()").capitalize())} {dd}</b><span>{e(tema)}</span><i>{e(fmt)}{trava}</i></div>'
+        blocos.append(f'<div class="wkb"><h3>{e(rot)}</h3><small>Envio à prof.ª: {e(envio)}</small>{itens}</div>')
+    resto = "".join(f'<div class="pp"><b>{e("A definir" if pendente(p[0]) else p[0])}</b><span>{e(p[1])}</span><i>{e(p[2])}</i></div>'
+                    for p in posts if p[0][:5] not in usados)
+    blocos.append(f'<div class="wkb"><h3>Encerramento</h3><small>Envio na sexta anterior</small>{resto}</div>')
+    return (f'<article class="card one" id="c0">{card_head(1, "Calendário da Comunicação", "Quem faz o quê, a semana de produção e tudo o que vai ao ar de 12/10 a 13/11.").replace("1/3", "07/10")}'
+            f'<div class="cols"><div><h2>Quem faz o quê</h2><div class="roles">{"".join(linhas)}</div></div>'
+            f'<div style="display:grid;gap:10px"><section class="alert"><h2>Esta semana é diferente</h2><ul class="dl">{prim}</ul></section>'
+            f'<div><h2>Toda semana, a partir de 12/10</h2><ol class="cycle">{passos}</ol></div>'
+            f'<p class="note">Produz numa semana, vai ao ar na seguinte. Cada etapa começa quando a anterior entrega.</p></div></div>'
+            f'<div><h2>O que vai ao ar</h2><div class="weeks">{"".join(blocos)}</div></div>'
+            f'<footer class="ft">Proposta de 07/10, aguardando aprovação da prof.ª Camila · Site com seus prazos: calendario-efeito-rebote.vercel.app</footer></article>')
 
 
 if __name__ == "__main__":

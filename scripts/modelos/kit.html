@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Kit da Comunicação</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap">
+<style>
+/* Layout: coluna de celular; abas Posts (mockup + roteiro + copy por post), Stories, Copy, Identidade.
+   Os mockups reproduzem o sistema visual dos carrosséis já aprovados (capa azul com selo, rótulo dourado, título condensado). */
+:root{
+  --bg:#F4F6FB; --surface:#FFFFFF; --ink:#141B2D; --muted:#4A5568; --line:#DCE1EC;
+  --accent:#1B3A8C; --accent-soft:#E8EDF8; --on-accent:#FFFFFF;
+  --red:#B5121B; --red-soft:#FBEAEB; --gold:#7A5600; --gold-soft:#FBEFCF;
+  --shadow:0 1px 2px rgba(20,27,45,.06),0 6px 18px rgba(20,27,45,.06);
+  /* cores fixas da marca, iguais nos dois temas (são as cores dos posts) */
+  --m-azul:#1B3A8C; --m-azul-2:#152E70; --m-ouro:#E9C46A; --m-verm:#B5121B; --m-fundo:#F4F6FB; --m-tinta:#141B2D; --m-cinza:#4A5568; --m-branco:#FFFFFF; --m-linha:#DCE1EC;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:Barlow,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1322; --surface:#161D30; --ink:#E9ECF5; --muted:#A4ACC2; --line:#2A3350;
+  --accent:#9DB4F5; --accent-soft:#1E2A52; --on-accent:#0E1322;
+  --red:#F28B93; --red-soft:#3A1A20; --gold:#EBC468; --gold-soft:#3A2F12; --shadow:0 1px 2px rgba(0,0,0,.4); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1322; --surface:#161D30; --ink:#E9ECF5; --muted:#A4ACC2; --line:#2A3350;
+  --accent:#9DB4F5; --accent-soft:#1E2A52; --on-accent:#0E1322;
+  --red:#F28B93; --red-soft:#3A1A20; --gold:#EBC468; --gold-soft:#3A2F12; --shadow:0 1px 2px rgba(0,0,0,.4); color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 var(--body);padding-inline:16px;padding-block:20px 56px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;display:grid;gap:18px}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;line-height:1.05}
+h1{font-size:clamp(2.1rem,8vw,2.8rem);color:var(--accent);letter-spacing:-.01em}
+h2{font-size:1.5rem}
+h3{font-size:1.15rem}
+p{margin:0}
+ul,ol{margin:0;padding:0;list-style:none}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+a{color:var(--accent)}
+.muted{color:var(--muted)}
+.small{font-size:.86rem}
+header{display:grid;gap:8px}
+.brand{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.status{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;font-size:.86rem;color:var(--muted)}
+.pill{display:inline-block;border-radius:999px;padding:2px 10px;font-size:.78rem;font-weight:700;white-space:nowrap}
+.pill.gold{background:var(--gold-soft);color:var(--gold)}
+.pill.red{background:var(--red-soft);color:var(--red)}
+.pill.blue{background:var(--accent-soft);color:var(--accent)}
+.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:6px;display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+.tab{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:8px 4px;font-weight:600;font-size:.92rem}
+.tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.panel{display:grid;gap:16px}
+.intro{font-size:.95rem;color:var(--muted);max-width:62ch}
+
+/* índice de posts */
+.index{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+.index a{flex:none;text-decoration:none;border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:6px 10px;font-size:.84rem;font-weight:600;color:var(--ink);white-space:nowrap}
+.index a.next{border-color:var(--accent);color:var(--accent)}
+
+/* cartão de post */
+.post{background:var(--surface);border-radius:14px;box-shadow:var(--shadow);padding:16px;display:grid;gap:14px;scroll-margin-top:64px}
+.post-h{display:grid;gap:6px}
+.post-h .meta{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-size:.86rem;color:var(--muted)}
+.post-h .date{font-family:var(--display);font-weight:700;font-size:1.1rem;color:var(--accent)}
+.post-h h2{font-size:1.45rem}
+.goal{font-size:.92rem;color:var(--muted)}
+.strip{display:flex;gap:10px;overflow-x:auto;padding-bottom:8px;scroll-snap-type:x mandatory;scrollbar-width:thin}
+.strip>*{scroll-snap-align:start}
+.block{display:grid;gap:8px}
+.block h3{font-size:1.05rem;color:var(--accent)}
+.hooks{display:grid;gap:8px}
+.hooks li{border:1px solid var(--line);border-radius:10px;padding:9px 12px;display:grid;gap:2px}
+.hooks .tec{font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.hooks .txt{font-weight:600}
+.legend{font-family:inherit;margin:0;white-space:pre-wrap;background:var(--bg);border-radius:10px;padding:12px 14px;font-size:.93rem;max-height:260px;overflow:auto}
+.copy-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.btn{border:0;border-radius:8px;padding:8px 14px;font-weight:700;background:var(--accent);color:var(--on-accent)}
+.btn.ghost{background:var(--accent-soft);color:var(--accent)}
+.copied{font-size:.84rem;color:var(--muted)}
+.list{display:grid;gap:4px;font-size:.92rem}
+.list li{display:grid;grid-template-columns:16px 1fr;gap:6px}
+.list li::before{content:"•";color:var(--accent);font-weight:700}
+.list.warn li::before{content:"!";color:var(--red)}
+.src{font-size:.84rem;color:var(--muted);display:grid;gap:4px}
+.lock{background:var(--red-soft);color:var(--red);border-radius:10px;padding:10px 12px;font-size:.9rem;font-weight:600}
+.tip{background:var(--gold-soft);color:var(--ink);border-radius:10px;padding:10px 12px;font-size:.9rem}
+.tip b{color:var(--gold)}
+details{border-top:1px solid var(--line);padding-top:10px}
+summary{cursor:pointer;font-weight:700;color:var(--accent)}
+details[open] summary{margin-bottom:10px}
+
+/* ===== mockups (sempre com as cores da marca) ===== */
+.mk{flex:none;width:min(240px,62vw);aspect-ratio:4/5;container-type:inline-size;border-radius:6px;overflow:hidden;position:relative;box-shadow:0 2px 10px rgba(20,27,45,.18);font-family:Barlow,Arial,sans-serif;background:var(--m-fundo);color:var(--m-tinta)}
+.mk.story{aspect-ratio:9/16;width:min(200px,52vw)}
+.mk .in{position:absolute;inset:0;padding:8cqw 8cqw 6cqw;display:flex;flex-direction:column;gap:3.5cqw}
+.mk .eb{font-size:3.4cqw;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--m-verm)}
+.mk .t{font-family:"Barlow Condensed",Arial,sans-serif;font-weight:700;font-size:10.5cqw;line-height:1;color:var(--m-azul);letter-spacing:-.01em}
+.mk .p{font-size:4.6cqw;line-height:1.35;color:var(--m-tinta)}
+.mk .box{background:var(--m-branco);border:1px solid var(--m-linha);border-radius:2cqw;padding:4cqw;font-size:4.3cqw;line-height:1.35}
+.mk .ft{margin-top:auto;display:flex;justify-content:space-between;font-size:3cqw;color:var(--m-cinza)}
+.mk .sl{width:16cqw;height:16cqw;border-radius:50%;background:center/cover no-repeat var(--m-branco)}
+/* capa */
+.mk.capa{background:var(--m-azul);color:var(--m-branco)}
+.mk.capa .eb{color:var(--m-ouro);margin-top:auto}
+.mk.capa .t{color:var(--m-branco);text-transform:uppercase;font-size:12.5cqw}
+.mk.capa .p{color:var(--m-branco);opacity:.9}
+.mk.capa .ft{margin-top:4cqw;color:rgba(255,255,255,.75)}
+.mk.capa::after{content:"";position:absolute;right:-18cqw;bottom:-18cqw;width:70cqw;height:70cqw;border-radius:50%;background:var(--sl) center/cover;opacity:.12}
+/* fechamento */
+.mk.final{background:var(--m-azul);color:var(--m-branco);text-align:center}
+.mk.final .in{justify-content:center;align-items:center}
+.mk.final .t{color:var(--m-branco);font-size:11cqw}
+.mk.final .p{color:var(--m-branco);opacity:.9}
+.mk.final .h{font-family:"Barlow Condensed",Arial,sans-serif;font-weight:700;font-size:7cqw;margin-top:3cqw}
+.mk.final .ft{position:absolute;left:8cqw;right:8cqw;bottom:6cqw;color:rgba(255,255,255,.75)}
+/* dado */
+.mk .num{font-family:"Barlow Condensed",Arial,sans-serif;font-weight:700;font-size:26cqw;line-height:.9;color:var(--m-verm);letter-spacing:-.02em}
+.mk .fonte{font-size:3cqw;color:var(--m-cinza);border-top:1px solid var(--m-linha);padding-top:2cqw}
+/* passos */
+.mk .steps{display:grid;gap:2.4cqw}
+.mk .steps li{display:grid;grid-template-columns:7cqw 1fr;gap:2.5cqw;align-items:center;background:var(--m-branco);border:1px solid var(--m-linha);border-radius:2cqw;padding:2.4cqw 3cqw;font-size:4cqw;font-weight:600;line-height:1.25}
+.mk .steps li span{width:7cqw;height:7cqw;border-radius:50%;background:var(--m-verm);color:var(--m-branco);display:grid;place-items:center;font-size:3.6cqw;font-weight:700}
+.mk .steps li.end{background:var(--m-azul);color:var(--m-branco);border-color:var(--m-azul);grid-template-columns:1fr}
+/* foto (placeholder de fotografia real) */
+.mk.foto{background:repeating-linear-gradient(135deg,#C9D1E3 0 6cqw,#D6DCEA 6cqw 12cqw)}
+.mk.foto .in{justify-content:flex-end}
+.mk.foto .ph{position:absolute;top:8cqw;left:8cqw;right:8cqw;font-size:3.6cqw;font-weight:700;color:var(--m-cinza);text-transform:uppercase;letter-spacing:.08em}
+.mk.foto .cap{background:var(--m-azul);color:var(--m-branco);padding:4cqw;border-radius:2cqw;display:grid;gap:1.5cqw}
+.mk.foto .cap .t{color:var(--m-branco);font-size:8.5cqw}
+.mk.foto .cap .p{color:var(--m-branco);font-size:4cqw}
+/* story */
+.mk.story .in{padding:9cqw 7cqw;gap:5cqw;justify-content:center}
+.mk.story{background:var(--m-azul);color:var(--m-branco)}
+.mk.story .t{color:var(--m-branco);font-size:11cqw;text-align:center}
+.mk.story .p{color:var(--m-branco);text-align:center;font-size:5cqw}
+.mk.story .top{position:absolute;top:5cqw;left:7cqw;right:7cqw;display:flex;align-items:center;gap:3cqw;font-size:4cqw;font-weight:700}
+.mk.story .top .sl{width:10cqw;height:10cqw}
+.mk .stk{background:var(--m-branco);color:var(--m-tinta);border-radius:4cqw;padding:5cqw;display:grid;gap:3cqw;text-align:center;box-shadow:0 2cqw 6cqw rgba(0,0,0,.25)}
+.mk .stk .q{font-weight:700;font-size:5.4cqw;line-height:1.2}
+.mk .stk .opt{border:1px solid var(--m-linha);border-radius:3cqw;padding:3cqw;font-weight:700;font-size:5cqw;color:var(--m-azul)}
+.mk .stk .field{background:var(--m-fundo);border-radius:3cqw;padding:4cqw;font-size:4.4cqw;color:var(--m-cinza)}
+.mk .stk .cd{font-family:"Barlow Condensed",Arial,sans-serif;font-weight:700;font-size:11cqw;color:var(--m-verm);letter-spacing:.04em}
+.mk .stk .bar{height:3cqw;border-radius:2cqw;background:linear-gradient(90deg,var(--m-azul) 0 55%,var(--m-linha) 55%)}
+.mk .mini{width:62cqw;margin:0 auto;aspect-ratio:4/5;background:var(--m-fundo);border-radius:2cqw;border:1.5cqw solid var(--m-branco);display:grid;place-items:center;padding:4cqw;font-family:"Barlow Condensed",Arial,sans-serif;font-weight:700;color:var(--m-azul);font-size:7cqw;text-align:center;line-height:1}
+.slab{font-size:.78rem;color:var(--muted);margin-top:4px;max-width:240px}
+.mkw{flex:none;display:grid;gap:2px}
+
+/* copy e identidade */
+.card{background:var(--surface);border-radius:14px;box-shadow:var(--shadow);padding:16px;display:grid;gap:10px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.two>div{border-radius:10px;padding:10px 12px;font-size:.92rem;display:grid;gap:4px;min-width:0}
+.yes{background:var(--accent-soft)}
+.no{background:var(--red-soft)}
+.two b{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+.no b{color:var(--red)}
+.yes b{color:var(--accent)}
+.sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px}
+.sw div{border-radius:10px;overflow:hidden;border:1px solid var(--line);font-size:.84rem}
+.sw i{display:block;height:54px}
+.sw span{display:block;padding:6px 8px;background:var(--surface)}
+.sw code{font-size:.8rem;color:var(--muted)}
+.steps-copy{display:grid;gap:8px;counter-reset:s}
+.steps-copy li{display:grid;grid-template-columns:30px 1fr;gap:8px;counter-increment:s;font-size:.94rem}
+.steps-copy li::before{content:counter(s);width:26px;height:26px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-weight:700;font-size:.85rem}
+footer{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+@media (max-width:480px){.two{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:no-preference){.tab{transition:background-color .15s,border-color .15s}.strip{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="brand">Efeito Rebote · Comunicação e redes</span>
+    <h1>Kit da Comunicação</h1>
+    <div class="status"><span class="pill gold">Proposta aguardando aprovação da prof.ª Camila</span><a href="../">Voltar ao calendário</a></div>
+    <p class="intro">Mockup, roteiro slide a slide, ganchos e legenda pronta de cada post do calendário, mais modelos de story e as regras de texto e de arte. Use como ponto de partida e confira cada dado na fonte antes de publicar.</p>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Seções">
+    <button class="tab" role="tab" id="t-posts" aria-selected="true" aria-controls="p-posts">Posts</button>
+    <button class="tab" role="tab" id="t-stories" aria-selected="false" aria-controls="p-stories">Stories</button>
+    <button class="tab" role="tab" id="t-copy" aria-selected="false" aria-controls="p-copy">Texto</button>
+    <button class="tab" role="tab" id="t-id" aria-selected="false" aria-controls="p-id">Arte</button>
+  </nav>
+
+  <main>
+    <section id="p-posts" role="tabpanel" aria-labelledby="t-posts" class="panel"></section>
+    <section id="p-stories" role="tabpanel" aria-labelledby="t-stories" class="panel" hidden></section>
+    <section id="p-copy" role="tabpanel" aria-labelledby="t-copy" class="panel" hidden></section>
+    <section id="p-id" role="tabpanel" aria-labelledby="t-id" class="panel" hidden></section>
+  </main>
+
+  <footer>Projeto de extensão Efeito Rebote: o custo da reincidência. Todo post passa pela prof.ª Camila antes de ir ao ar. Mockups são referência de layout: a arte final é da equipe de Design.</footer>
+</div>
+<script>
+const D = /*DADOS*/null;
+const SELO = "/*SELO*/";
+document.documentElement.style.setProperty("--sl", "url(" + SELO + ")");
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const sl = () => '<i class="sl" style="background-image:url(' + SELO + ')"></i>';
+
+function slide(s, i, n){
+  const ft = '<div class="ft"><span>' + (s.tipo === "capa" ? "Arraste para o lado" : "@efeitorebote.oficial") + '</span><span>' + (i + 1) + '/' + n + '</span></div>';
+  let h = "";
+  if (s.tipo === "capa") h = sl() + '<span class="eb">' + esc(s.eb || "Efeito Rebote") + '</span><div class="t">' + esc(s.t) + '</div>' + (s.p ? '<p class="p">' + esc(s.p) + '</p>' : '') + ft;
+  else if (s.tipo === "final") h = sl() + '<div class="t">' + esc(s.t) + '</div>' + (s.p ? '<p class="p">' + esc(s.p) + '</p>' : '') + '<div class="h">@efeitorebote.oficial</div>' + ft;
+  else if (s.tipo === "dado") h = '<span class="eb">' + esc(s.eb || "") + '</span><div class="num">' + esc(s.num) + '</div><div class="t" style="font-size:8cqw">' + esc(s.t) + '</div>' + (s.p ? '<p class="p">' + esc(s.p) + '</p>' : '') + '<p class="fonte">Fonte: ' + esc(s.fonte) + '</p>' + ft;
+  else if (s.tipo === "passos") h = '<span class="eb">' + esc(s.eb || "") + '</span><div class="t" style="font-size:9cqw">' + esc(s.t) + '</div><ol class="steps">' + s.itens.map((x, k) => '<li><span>' + (k + 1) + '</span>' + esc(x) + '</li>').join("") + (s.fim ? '<li class="end">' + esc(s.fim) + '</li>' : '') + '</ol>' + ft;
+  else if (s.tipo === "foto") h = '<span class="ph">' + esc(s.ph || "Foto real aqui") + '</span><div class="cap"><div class="t">' + esc(s.t) + '</div>' + (s.p ? '<p class="p">' + esc(s.p) + '</p>' : '') + '</div>';
+  else h = '<span class="eb">' + esc(s.eb || "") + '</span><div class="t">' + esc(s.t) + '</div>' + (s.box ? '<div class="box">' + esc(s.box) + '</div>' : '') + (s.p ? '<p class="p">' + esc(s.p) + '</p>' : '') + ft;
+  return '<div class="mkw"><div class="mk ' + esc(s.tipo) + '" role="img" aria-label="Slide ' + (i + 1) + ': ' + esc(s.t) + '"><div class="in">' + h + '</div></div>' + (s.nota ? '<span class="slab">' + esc(s.nota) + '</span>' : '') + '</div>';
+}
+
+function story(s){
+  let inner = '<div class="top">' + sl() + 'efeitorebote.oficial</div>';
+  if (s.tipo === "enquete") inner += '<div class="t">' + esc(s.t) + '</div><div class="stk"><span class="q">' + esc(s.q) + '</span>' + s.ops.map(o => '<span class="opt">' + esc(o) + '</span>').join("") + '</div>';
+  else if (s.tipo === "caixinha") inner += '<div class="t">' + esc(s.t) + '</div><div class="stk"><span class="q">' + esc(s.q) + '</span><span class="field">Escreva aqui…</span></div>';
+  else if (s.tipo === "quiz") inner += '<div class="t">' + esc(s.t) + '</div><div class="stk"><span class="q">' + esc(s.q) + '</span>' + s.ops.map(o => '<span class="opt">' + esc(o) + '</span>').join("") + '</div>';
+  else if (s.tipo === "contagem") inner += '<div class="t">' + esc(s.t) + '</div><div class="stk"><span class="q">' + esc(s.q) + '</span><span class="cd">' + esc(s.cd) + '</span></div>';
+  else if (s.tipo === "repost") inner += '<p class="p">' + esc(s.q) + '</p><div class="mini">' + esc(s.t) + '</div><div class="stk"><span class="q">' + esc(s.cta) + '</span></div>';
+  else if (s.tipo === "deslize") inner += '<div class="t">' + esc(s.t) + '</div><div class="stk"><span class="q">' + esc(s.q) + '</span><span class="bar"></span></div>';
+  return '<div class="mkw"><div class="mk story" role="img" aria-label="Modelo de story: ' + esc(s.nome) + '"><div class="in">' + inner + '</div></div></div>';
+}
+
+async function copiar(btn, txt){
+  const out = btn.parentElement.querySelector(".copied");
+  try { await navigator.clipboard.writeText(txt); out.textContent = "Legenda copiada."; }
+  catch(e){ const pre = btn.closest(".block").querySelector(".legend"); const r = document.createRange(); r.selectNodeContents(pre); const s = getSelection(); s.removeAllRanges(); s.addRange(r); out.textContent = "Texto selecionado: copie com o menu do celular."; }
+}
+
+function renderPosts(){
+  const hoje = new Date(); const k = hoje.getFullYear() + "-" + String(hoje.getMonth() + 1).padStart(2, "0") + "-" + String(hoje.getDate()).padStart(2, "0");
+  const prox = D.posts.find(p => p.d && p.d >= k);
+  let h = '<p class="intro">Toque no post para pular até ele. O próximo a ir ao ar está em destaque.</p><nav class="index" aria-label="Posts">'
+    + D.posts.map(p => '<a href="#' + p.id + '"' + (p === prox ? ' class="next"' : '') + '>' + esc(p.rot) + '</a>').join("") + '</nav>';
+  D.posts.forEach(p => {
+    const n = p.slides.length;
+    h += '<article class="post" id="' + p.id + '"><div class="post-h"><div class="meta"><span class="date">' + esc(p.rot) + '</span><span>' + esc(p.fmt) + '</span>'
+      + (p === prox ? '<span class="pill blue">Próximo</span>' : '') + (p.lock ? '<span class="pill red">Só após liberação</span>' : '') + (p.pend ? '<span class="pill gold">' + esc(p.pend) + '</span>' : '') + '</div>'
+      + '<h2>' + esc(p.tema) + '</h2><p class="goal"><b>Objetivo:</b> ' + esc(p.objetivo) + '</p></div>';
+    if (p.lock) h += '<p class="lock">Não publicar nem adiantar nos stories antes de a prof.ª Camila liberar a divulgação da arrecadação.</p>';
+    h += '<div class="strip" aria-label="Slides do post">' + p.slides.map((s, i) => slide(s, i, n)).join("") + '</div>';
+    h += '<div class="block"><h3>Ganchos para a capa (escolha um)</h3><ul class="hooks">' + p.ganchos.map(g => '<li><span class="tec">' + esc(g[0]) + '</span><span class="txt">' + esc(g[1]) + '</span></li>').join("") + '</ul></div>';
+    h += '<div class="block"><h3>Legenda pronta</h3><pre class="legend">' + esc(p.legenda) + '</pre><div class="copy-row"><button class="btn" data-copy="' + p.id + '">Copiar legenda</button><span class="copied" aria-live="polite"></span></div></div>';
+    h += '<details><summary>Fontes, cuidados e dica de arte</summary><div class="panel">'
+      + '<div class="block"><h3>Fontes</h3><div class="src">' + p.fontes.map(f => '<span>' + esc(f) + '</span>').join("") + '</div></div>'
+      + '<div class="block"><h3>Cuidados</h3><ul class="list warn">' + p.cuidados.map(c => '<li>' + esc(c) + '</li>').join("") + '</ul></div>'
+      + (p.arte ? '<p class="tip"><b>Arte:</b> ' + esc(p.arte) + '</p>' : '') + '</div></details></article>';
+  });
+  $("#p-posts").innerHTML = h;
+  $("#p-posts").querySelectorAll("[data-copy]").forEach(b => b.addEventListener("click", () => copiar(b, D.posts.find(p => p.id === b.dataset.copy).legenda)));
+}
+
+function renderStories(){
+  let h = '<p class="intro">Modelos para a equipe de Engajamento: 1 a 3 stories por dia. Troque só o texto; mantenha a ordem dos elementos.</p>';
+  D.stories.forEach(s => {
+    h += '<article class="post"><div class="post-h"><div class="meta"><span class="date">' + esc(s.nome) + '</span><span>' + esc(s.quando) + '</span>' + (s.lock ? '<span class="pill red">Só após liberação</span>' : '') + '</div>'
+      + '<p class="goal">' + esc(s.para) + '</p></div><div class="strip">' + story(s) + '</div>'
+      + '<div class="block"><h3>Outras perguntas prontas</h3><ul class="list">' + s.mais.map(x => '<li>' + esc(x) + '</li>').join("") + '</ul></div></article>';
+  });
+  $("#p-stories").innerHTML = h;
+}
+
+function renderCopy(){
+  const C = D.copy;
+  let h = '<div class="card"><h2>Gancho: a primeira linha decide</h2><p class="muted">A capa e a primeira linha da legenda precisam fazer a pessoa parar de rolar. Escolha uma das 4 fórmulas.</p><ul class="hooks">'
+    + C.ganchos.map(g => '<li><span class="tec">' + esc(g[0]) + '</span><span class="txt">' + esc(g[1]) + '</span><span class="small muted">' + esc(g[2]) + '</span></li>').join("") + '</ul></div>';
+  h += '<div class="card"><h2>Estrutura do carrossel</h2><ol class="steps-copy">' + C.estrutura.map(x => '<li><span><b>' + esc(x[0]) + '.</b> ' + esc(x[1]) + '</span></li>').join("") + '</ol></div>';
+  h += '<div class="card"><h2>Legenda em 4 partes</h2><ol class="steps-copy">' + C.legenda.map(x => '<li><span><b>' + esc(x[0]) + '.</b> ' + esc(x[1]) + '</span></li>').join("") + '</ol></div>';
+  h += '<div class="card"><h2>Palavras</h2><div class="two"><div class="yes"><b>Use</b>' + C.use.map(x => '<span>' + esc(x) + '</span>').join("") + '</div><div class="no"><b>Evite</b>' + C.evite.map(x => '<span>' + esc(x) + '</span>').join("") + '</div></div></div>';
+  h += '<div class="card"><h2>Chamada para ação (CTA)</h2><div class="two"><div class="yes"><b>Agora</b>' + C.cta_agora.map(x => '<span>' + esc(x) + '</span>').join("") + '</div><div class="no"><b>Só após liberação</b>' + C.cta_depois.map(x => '<span>' + esc(x) + '</span>').join("") + '</div></div></div>';
+  h += '<div class="card"><h2>Texto com cara de gente</h2><ul class="list warn">' + C.natural.map(x => '<li>' + esc(x) + '</li>').join("") + '</ul></div>';
+  $("#p-copy").innerHTML = h;
+}
+
+function renderId(){
+  const I = D.identidade;
+  let h = '<div class="card"><h2>Cores</h2><div class="sw">' + I.cores.map(c => '<div><i style="background:' + c[1] + '"></i><span><b>' + esc(c[0]) + '</b><br><code>' + c[1] + '</code><br>' + esc(c[2]) + '</span></div>').join("") + '</div></div>';
+  h += '<div class="card"><h2>Tipos de slide</h2><p class="muted">Os 6 layouts que se repetem em todos os posts. Copie a estrutura do mockup.</p><div class="strip">' + I.tipos.map((s, i) => slide(s, i, I.tipos.length)).join("") + '</div></div>';
+  h += '<div class="card"><h2>Regras de arte</h2><ul class="list">' + I.regras.map(x => '<li>' + esc(x) + '</li>').join("") + '</ul></div>';
+  h += '<div class="card"><h2>Checklist antes de enviar à revisão</h2><ul class="list warn">' + I.checklist.map(x => '<li>' + esc(x) + '</li>').join("") + '</ul></div>';
+  $("#p-id").innerHTML = h;
+}
+
+function setTab(id){
+  ["posts","stories","copy","id"].forEach(t => { $("#t-" + t).setAttribute("aria-selected", t === id); $("#p-" + t).hidden = t !== id; });
+  try { localStorage.setItem("er-kit-aba", id); } catch(e){}
+}
+document.querySelectorAll(".tab").forEach(b => b.addEventListener("click", () => setTab(b.id.slice(2))));
+renderPosts(); renderStories(); renderCopy(); renderId();
+let aba = "posts"; try { aba = localStorage.getItem("er-kit-aba") || "posts"; } catch(e){}
+setTab(["posts","stories","copy","id"].includes(aba) ? aba : "posts");
+</script>
+</body>
+</html>
