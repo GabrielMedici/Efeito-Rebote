@@ -1,7 +1,7 @@
 # Progresso (máx. 30 linhas; sobrescreva o que ficou velho)
 
 **Atualizado:** 2026-10-07
-**Próximo passo (comece a sessão por aqui e pergunte ao usuário):** (1) resposta pendente: configurar Root Directory da Vercel = `entregas/posts/site` (sem isso, mesclar o PR publica o repositório inteiro no link); (2) conferir se os plugins carregaram (`/ui-craft:`); (3) voltar à F02 (regulamento, prazo sexta 12h).
+**Próximo passo (comece a sessão por aqui):** Kit da Comunicação v2 (dentro da F05). Leia `docs/kit-v2/README.md` (plano aprovado, rascunho por post, fontes conferidas) e continue pelo passo 1: reescrever `CONTEUDO` em `scripts/gerar_kit_comunicacao.py` aplicando a skill social (ler `plugins/marketingskills/skills/social/`, pois `/marketing-skills:...` não carregou na nuvem). Pendências antigas: Root Directory da Vercel (NÃO mesclar o PR antes) e F02 (regulamento, prazo sexta 12h).
 ## Estado
 - F01 projeto escrito: versão de 06/10 (12 págs.) enviada em .docx à prof.ª Camila, que edita e insere no UniGestor. Já tem doações em dinheiro (PIX, mesma conta), prestação de contas em 4 componentes (ação, doações, compras, itens), Edgar Gabriel Castro Rocha, carga "40 ou 60 h", semestre/datas "a preencher pela professora". Editar `scripts/conteudo_projeto.py` e rodar `gerar_relatorio.py` + soffice + pdfunite.
 - Termo "rifa" BANIDO: usar "ação de arrecadação (solidária)" e "bilhetes". `check.sh` dá erro se aparecer.
@@ -22,7 +22,7 @@
 - Compromisso de R$ 150 por aluno (quem não vende paga) precisa de aval (perguntado em 06/10, sem resposta explícita); autorização da ação e da conta antes de imprimir.
 - Validar lista de itens com PEM, CCM e CPIM. Testar PIX real na chave antes de divulgar o one-page.
 
-- Plugins ui-craft e marketing-skills ATIVADOS em 07/10 via `.claude/settings.json` (extraKnownMarketplaces → ./plugins + enabledPlugins), pois `/plugin` não existe na nuvem; skills seguem só por chamada (`/ui-craft:...`).
+- Plugins ui-craft e marketing-skills: a ativação pelo `.claude/settings.json` NÃO funcionou (comando não existe na sessão). O usuário perguntou como instalar: pesquisar a forma documentada (ex.: copiar skills para `.claude/skills/`) antes de responder; não chutar passos.
 - Vercel: projeto `calendario-efeito-rebote` (conta do usuário) ficou ligado ao GitHub; previews do PR exigem login (testado), mas produção ao mesclar = repo inteiro. NÃO mesclar o PR até ajustar Root Directory.
 ## Sugestões registradas (não executadas)
 - Reescrever o projeto no estilo do pré-projeto (120 ponto e vírgula vs. 18): oferecido, sem resposta.
