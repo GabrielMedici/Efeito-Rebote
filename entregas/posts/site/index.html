@@ -50,7 +50,13 @@ header{display:grid;gap:6px}
 .pill.blue{background:var(--accent-soft);color:var(--accent)}
 .pill.ok{background:var(--ok-soft);color:var(--ok)}
 .pill svg{width:12px;height:12px}
-.kit{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:8px 14px;border-radius:var(--r-md);background:var(--surface);box-shadow:var(--shadow);font-weight:700;text-decoration:none}
+.kit{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:center;padding:14px 16px;border-radius:var(--r-lg);background:var(--accent-soft);border:2px solid var(--accent);color:var(--ink);text-decoration:none;box-shadow:var(--shadow)}
+.kit:hover{background:#DCE4F7}
+.kit .ic{grid-row:1/4;width:44px;height:44px;border-radius:var(--r-md);background:var(--accent);color:var(--on-accent);display:grid;place-items:center}
+.kit .ic svg{width:24px;height:24px}
+.kit .k-t{font-family:var(--display);font-weight:700;font-size:1.35rem;line-height:1.05;color:var(--accent)}
+.kit .k-p{font-size:.9rem;color:var(--muted)}
+.kit .k-cta{justify-self:start;margin-top:4px;background:var(--accent);color:var(--on-accent);border-radius:var(--r-sm);padding:8px 14px;font-weight:700;min-height:40px;display:inline-flex;align-items:center}
 /* quem é você */
 .eu{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:end;background:var(--surface);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:12px 14px}
 .eu label{display:grid;gap:4px;font-size:.8rem;font-weight:700;color:var(--muted)}
@@ -157,7 +163,7 @@ footer{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);paddi
     <span class="brand">Efeito Rebote · Comunicação e redes</span>
     <h1>Calendário da Comunicação</h1>
     <div class="status"><span class="pill gold">Aguardando aprovação da prof.ª Camila</span><span id="upd"></span></div>
-    <a class="kit" href="kit/">Kit da Comunicação: textos e modelos de cada post →</a>
+    <a class="kit" href="kit/" aria-label="Abrir o Kit da Comunicação: artes, textos e modelos do Canva de cada post"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z M4 15l5-5 4 4 3-3 4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span><span class="k-t">Kit da Comunicação</span><span class="k-p">Artes prontas, legendas e roteiros de cada post. Baixe em PNG ou edite no Canva.</span><span class="k-cta">Abrir o Kit →</span></a>
   </header>
 
   <div class="eu">
