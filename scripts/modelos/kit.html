@@ -80,13 +80,16 @@ a{color:var(--accent)}
 header{display:grid;gap:var(--s-2)}
 .brand{font-size:var(--t-xs);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary)}
 .status{display:flex;flex-wrap:wrap;gap:var(--s-2) var(--s-3);align-items:center;font-size:var(--t-xs);color:var(--text-secondary)}
-.pill{display:inline-block;max-width:100%;border-radius:var(--r-pill);padding:2px var(--s-3);font-size:var(--t-xs);font-weight:700}
+.pill{display:inline-block;max-width:100%;border-radius:var(--r-pill);padding:var(--s-1) var(--s-3);font-size:var(--t-xs);font-weight:700}
 .pill.gold{background:var(--warning-soft);color:var(--warning)}
 .pill.red{background:var(--danger-soft);color:var(--danger)}
 .pill.blue{background:var(--accent-soft);color:var(--accent)}
-.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:var(--z-sticky);background:var(--surface-canvas);padding-block:var(--s-2);display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s-1)}
-.tab{border:1px solid var(--border-control);background:var(--surface-raised);border-radius:var(--chip-radius);padding:0 var(--s-1);min-height:var(--tap);font-weight:600;font-size:var(--t-sm)}
-.tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:var(--z-sticky);background:var(--surface-canvas);padding-block:var(--s-2)}
+.seg{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border-control);border-radius:var(--chip-radius);overflow:hidden;background:var(--surface-raised)}
+.tab{border:0;border-left:1px solid var(--border-subtle);background:transparent;color:var(--text-primary);border-radius:0;padding:0 var(--s-1);min-height:var(--tap);font-weight:600;font-size:var(--t-sm)}
+.tab:first-child{border-left:0}
+.tab:focus-visible{outline-offset:-3px}
+.tab[aria-selected="true"]{background:var(--accent);color:var(--on-accent)}
 .panel{display:grid;gap:var(--s-4)}
 .intro{font-size:var(--t-sm);color:var(--text-secondary);max-width:62ch}
 
@@ -100,7 +103,7 @@ header{display:grid;gap:var(--s-2)}
 @media (max-height:520px){.index{position:static}}
 
 /* cartão de post */
-.post{background:var(--surface-raised);border-radius:var(--card-radius);box-shadow:var(--shadow-card);padding:var(--card-pad);display:grid;gap:var(--s-6);scroll-margin-top:calc(var(--tabs-h,56px) + 60px)}
+.post{background:var(--surface-raised);border-radius:var(--card-radius);box-shadow:var(--shadow-card);padding:var(--card-pad);display:grid;gap:var(--s-6);scroll-margin-top:calc(var(--tabs-h,56px) + var(--s-12) + var(--s-3))}
 .post-h{display:grid;gap:var(--s-2)}
 .post-h .meta{display:flex;flex-wrap:wrap;gap:var(--s-2) var(--s-3);align-items:center;font-size:var(--t-xs);color:var(--text-secondary)}
 .post-h .date{font-family:var(--display);font-weight:700;font-size:var(--t-md);color:var(--text-primary)}
@@ -120,14 +123,14 @@ header{display:grid;gap:var(--s-2)}
 .hooks li:first-child{border-top:0;padding-top:0}
 .hooks .tec{font-size:var(--t-xs);font-weight:600;color:var(--text-secondary)}
 .hooks .txt{font-weight:600}
-.legend{font-family:inherit;margin:0;white-space:pre-wrap;background:var(--surface-sunken);border-radius:var(--r-field);padding:var(--s-4) var(--s-4);font-size:var(--t-base);line-height:1.5}
+.legend{font-family:inherit;margin:0;white-space:pre-wrap;background:var(--surface-sunken);border-radius:var(--r-field);padding:var(--s-4) var(--s-4);font-size:var(--t-base);line-height:1.5;max-width:68ch}
 .copy-row{display:flex;gap:var(--s-2);align-items:center;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s-2);border:1px solid var(--accent);border-radius:var(--btn-radius);padding:0 var(--s-4);min-height:var(--tap);font-weight:700;background:var(--accent);color:var(--on-accent)}
 .btn svg{width:18px;height:18px;flex:none}
 .btn.ghost{background:var(--surface-raised);border-color:var(--border-control);color:var(--text-primary)}
 .btn.ok{background:var(--surface-raised);color:var(--text-primary)}
 .cols{display:grid;gap:var(--s-6)}
-@media (min-width:1024px){.wrap{max-width:1040px}.cols{grid-template-columns:1.5fr 1fr;gap:28px;align-items:start}}
+@media (min-width:1024px){.wrap{max-width:1040px}.cols{grid-template-columns:1.5fr 1fr;gap:var(--s-8);align-items:start}}
 .copied{font-size:var(--t-xs);color:var(--text-secondary);min-height:1.2em}
 .list{display:grid;gap:var(--s-1);font-size:var(--t-sm)}
 .list li{display:grid;grid-template-columns:16px 1fr;gap:var(--s-2)}
@@ -196,7 +199,7 @@ details[open] summary{margin-bottom:var(--s-3)}
 .mk .mini{width:62cqw;margin:0 auto;aspect-ratio:4/5;background:var(--m-fundo);border-radius:2cqw;border:1.5cqw solid var(--m-branco);display:grid;place-items:center;padding:4cqw;font-family:"Barlow Condensed",Arial,sans-serif;font-weight:700;color:var(--m-azul);font-size:7cqw;text-align:center;line-height:1}
 .slab{font-size:var(--t-xs);color:var(--text-secondary);margin-top:var(--s-1);max-width:min(340px,86vw)}
 .mkw{flex:none;display:grid;gap:2px;position:relative}
-.ampliar{position:absolute;top:8px;right:8px;width:var(--tap);height:var(--tap);border-radius:50%;border:1px solid var(--border-control);background:var(--m-branco);color:var(--m-azul);display:grid;place-items:center;padding:0}
+.ampliar{position:absolute;top:var(--s-2);right:var(--s-2);width:var(--tap);height:var(--tap);border-radius:50%;border:1px solid var(--border-control);background:var(--m-branco);color:var(--m-azul);display:grid;place-items:center;padding:0}
 .ampliar svg{width:20px;height:20px}
 dialog#zoom{border:0;padding:0;background:transparent;max-width:none;max-height:none;overflow:visible}
 dialog#zoom::backdrop{background:rgba(10,14,30,.78)}
@@ -276,7 +279,7 @@ footer{font-size:var(--t-xs);color:var(--text-secondary);border-top:1px solid va
 @keyframes aparecer{from{opacity:0}to{opacity:1}}
 @keyframes ampliar-entra{from{opacity:0;transform:scale(.98)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:no-preference){.post{animation:aparecer var(--dur-fast) var(--ease-out)}dialog#zoom[open]{animation:ampliar-entra var(--dur-base) var(--ease-out)}dialog#zoom[open]::backdrop{animation:aparecer var(--dur-base) var(--ease-out)}}
-@media (hover:hover) and (pointer:fine){.tab:hover,.index button:hover,.btn.ghost:hover{border-color:var(--accent)}.btn:not(.ghost):not(.ok):hover{background:var(--accent);filter:brightness(1.12)}}
+@media (hover:hover) and (pointer:fine){.index button:hover,.btn.ghost:hover{border-color:var(--accent)}.tab:not([aria-selected="true"]):hover{background:var(--accent-soft)}.btn:not(.ghost):not(.ok):hover{background:var(--accent);filter:brightness(1.12)}}
 </style>
 </head>
 <body>
@@ -293,12 +296,12 @@ footer{font-size:var(--t-xs);color:var(--text-secondary);border-top:1px solid va
     <p class="intro">Slides, ganchos e legenda pronta de cada post, mais modelos de story e regras de texto e de arte. Confira cada dado na fonte antes de publicar.</p>
   </header>
 
-  <nav class="tabs" role="tablist" aria-label="Seções">
+  <nav class="tabs" aria-label="Seções"><div class="seg" role="tablist">
     <button class="tab" role="tab" id="t-posts" aria-selected="true" aria-controls="p-posts">Posts</button>
     <button class="tab" role="tab" id="t-stories" aria-selected="false" aria-controls="p-stories">Stories</button>
     <button class="tab" role="tab" id="t-copy" aria-selected="false" aria-controls="p-copy">Texto</button>
     <button class="tab" role="tab" id="t-id" aria-selected="false" aria-controls="p-id">Arte</button>
-  </nav>
+  </div></nav>
 
   <main id="conteudo" tabindex="-1">
     <noscript><div class="erro"><h2>Este kit precisa de JavaScript</h2><p>Ative o JavaScript para ver os slides. O texto de cada post (ganchos e legenda) está abaixo, sem formatação.</p><!--NOSCRIPT--></div></noscript>
@@ -349,7 +352,7 @@ function slide(s, i, n, noZoom){
   } else {
     h = tag + '<div class="h2">' + esc(s.t) + '</div>' + (s.box ? '<div class="box">' + rich(s.box) + '</div>' : '') + (s.p ? '<p>' + rich(s.p) + '</p>' : '') + pe(s.ponte, i, n);
   }
-  const ampliar = noZoom ? '' : '<button class="ampliar" type="button" aria-label="Ampliar o slide ' + (i + 1) + ' de ' + n + '"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>';
+  const ampliar = noZoom ? '' : '<button class="ampliar" type="button" aria-label="Ampliar o slide ' + (i + 1) + ' de ' + n + '"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>';
   return '<div class="mkw"><div class="sd ' + cls + '" role="group" aria-roledescription="slide" aria-label="Slide ' + (i + 1) + ' de ' + n + '"><div class="in">' + h + '</div></div>' + ampliar + (s.nota ? '<span class="slab">' + esc(s.nota) + '</span>' : '') + '</div>';
 }
 
@@ -365,7 +368,7 @@ function story(s){
 }
 
 const ICO_COPIA = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
-const ICO_OK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const ICO_OK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 function restaurarBotao(btn){ btn.classList.remove("ok"); btn.innerHTML = ICO_COPIA + "Copiar legenda"; }
 async function copiar(btn, txt){
   const out = btn.closest(".block").querySelector(".copied");
