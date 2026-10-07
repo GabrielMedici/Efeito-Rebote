@@ -11,6 +11,7 @@ if(ativa) console.log(`Ativa: ${ativa.id} ${ativa.name} | prazo: ${ativa.deadlin
 for a in "docs/fonte/Trabalho Escrito.pdf" "docs/fonte/relatorio_extensao_projeto word.docx"; do
   [ -f "$a" ] || echo "Falta: $a"
 done
+grep -m1 "^\*\*Próximo passo" progress.md 2>/dev/null | sed "s/\*\*//g"
 n=$(grep -c '^- 20' docs/licoes.md 2>/dev/null)
 [ "${n:-0}" -gt 15 ] && echo "licoes.md tem $n itens: rode a skill manutencao."
 exit 0

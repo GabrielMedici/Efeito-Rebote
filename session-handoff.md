@@ -1,19 +1,21 @@
 # Passagem de sessão (sobrescreva a cada encerramento)
 
-**Atualizado:** 2026-10-06 (noite)
-**Objetivo atual:** fechar F09 (equipes) após 07/10 12h; seguir F02 (regulamento); F11 (posts informativos) quando a Comunicação pedir.
+**Atualizado:** 2026-10-07
+**Comece por aqui:** pergunte ao usuário se segue com o **redesign do calendário da Comunicação** usando o plugin `ui-craft`.
 
-## Decisões e entregas desta sessão (06/10, noite)
-1. Manutenção do harness: `licoes.md` zerado (lições foram para `CLAUDE.md` e skills); skill `rifa` virou `acao-arrecadacao`; novas skills `equipes` e `mensagem-whatsapp`; `scripts/coerencia.sh` + `obsoletos.txt` (termos de planos antigos); `check.sh` corrigido (LC_ALL=C.UTF-8: antes não barrava palavras acentuadas como "pontuação").
-2. Comentário hostil no Instagram: a prof.ª Camila mandou ocultar, não responder e criar posts informativos (F11; regra em `post-redes` e `docs/projeto.md`). Proposta da Je (classificar comentários) ainda não decidida.
-3. Identidade visual em `entregas/identidade-visual/`: logo chapado e selo fotorrealista ampliados (4096 px, transparente/fundo branco, 1080 px), cena e mockups sem a marca ✦ do Gemini. Figuras 2 e 3 do projeto escrito trocadas pelas versões sem a marca (texto idêntico); `projeto-completo-com-anexos.pdf` refeito.
-4. A prof.ª pediu que o usuário enviasse ao grupo o projeto original (pré-projeto) e o atual para leitura obrigatória: PDFs e mensagem entregues.
-5. Conferência dos grupos refeita com o export de membros (WAXP, versão de teste: nomes parcialmente ocultos, contagens exatas): `entregas/equipes/conferencia-grupos.pdf` + `mensagem-conferencia-grupos.md`. Francieli e Edgar não aparecem no grupo do Financeiro.
+## Calendário da Comunicação (F05, em andamento)
+- Fonte: `entregas/posts/calendario.md`; versões `calendario.html` (design reprovado pelo usuário) e `calendario.pdf`.
+- Conteúdo já aprovado pelo usuário: equipe com nomes por função (Vitória líder, Flauany vice; Roteiro Nathan e Leonardo; Design Geraldo, João Dionísio, Evelyn; Audiovisual Laura Martins, Anna Laura; Engajamento Lívia, Mayara Mendoza; Registro Maria Eduarda Mendonça, Laura Mell; Arquivo de aprovações vago). Ciclo semanal SEM reunião: pauta por mensagem segunda 20h, confirmação até terça 12h; texto ter 20h, revisão qua 20h, artes/vídeo qui 20h, envio à prof.ª sex 12h, ajustes fim de semana, publicação seg/qua/sex; stories diários. Dois alinhamentos online sugeridos (08/10 e 29/10, 19h, até 30 min). Calendário 12/10 a 13/11 (série informativa primeiro; itens e ação de arrecadação só após liberação; sorteio 02/11; visita 04–05/11).
+- Pedido do usuário: design novo com o ui-craft (`plugins/ui-craft/skills/ui-craft/SKILL.md` e comandos em `plugins/ui-craft/commands/`). Ler a skill do disco; não instalar o plugin sem pedido.
+- A confirmar: João Dionísio = "João Pedro Turma B"? Anna Laura = "nalaura"? Grafia "Laura Mel" × "Laura Mell".
 
-## Pendentes / próxima sessão
-- Após 07/10 12h: nomes das vagas → `scripts/gerar_equipes.py` PREENCHIDOS → organograma e comissão financeira no regulamento.
-- `bash scripts/coerencia.sh` acusa: 4 equipes antigas (projeto, Anexo 1, cronograma — aguarda autorização) e restos do app (`entregas/app/`, `formulario-vendas.md`, guia) — perguntar se pode apagar.
-- Legenda das figuras geradas por IA ("Elaborado pelos autores") — sugerido incluir "com auxílio de IA generativa"; sem resposta.
-- Mensagem fixada do Sidney ("ação solidária") veio cortada: confirmar se muda o nome da ação.
-- F06: aba "Doações" na planilha. Se a professora devolver o Word editado, trazer as mudanças para `scripts/conteudo_projeto.py`.
-- Branch `claude/trusting-wright-2tp73o`, PR GabrielMedici/Efeito-Rebote#1 (rascunho); check-in automático do PR agendado.
+## Plugins (07/10)
+`plugins/` guarda cópias MIT de educlopez/ui-craft e coreyhaines31/marketingskills como plugins isolados (marketplace local `efeito-rebote-plugins`), com `disable-model-invocation: true` em todas as skills e sem o MCP. Não mexer no harness por causa deles; ver `plugins/README.md`.
+
+## Equipes (F09)
+Conferência fechada pelos prints de 06/10 (`entregas/equipes/conferencia-grupos.pdf`, sem telefones no repositório). Simone ainda precisa escolher (Triagem ou Relatório); 12 fora dos grupos. Anna conta no Financeiro e na Triagem (líder); Gabriel no Financeiro e no Relatório (líder). Nomes da Comunicação já em `scripts/gerar_equipes.py`; faltam as outras equipes.
+
+## Outros pendentes
+- `coerencia.sh`: 4 equipes antigas no projeto escrito/Anexo 1/cronograma (aguarda autorização) e restos do app (apagar? perguntar).
+- Legenda das figuras geradas por IA; mensagem do Sidney ("ação solidária") cortada; aba Doações na planilha (F06).
+- Branch `claude/trusting-wright-2tp73o`, PR GabrielMedici/Efeito-Rebote#1 (rascunho).
