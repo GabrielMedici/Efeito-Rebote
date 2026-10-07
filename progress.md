@@ -12,7 +12,7 @@
 - F09 equipes (06/10): Grupo Geral Arrecadação e Captação (todos, líder Sidney) + 5 fixas: Comunicação 14 (Vitória/Flauany), Eventos 22 (Luan/Lorena), Relatório 12 (Gabriel/vice aberta), Financeiro 7 (Franciele/Edgar), Triagem 25 (Anna/vice aberta) = 80. Fonte única: `scripts/gerar_equipes.py` (dict PREENCHIDOS) → organograma PDF/JPG, md, planilha, `mensagens-whatsapp.md` (aviso + 5 listas). Vagas preenchidas nos grupos da comunidade do WhatsApp até 07/10 12h; depois sorteio. Financeiro = comissão financeira do regulamento.
 - Conferência dos grupos fechada (06/10, 18h15, prints dos 5 grupos): `entregas/equipes/conferencia-grupos.pdf` (sem telefones no repositório; com telefones só entregue ao usuário). 5 em dois grupos (Vitória, Flauany, Lorena, Evelyn, Simone); Com 14/14, Eventos 23/22, Relatório 5/12, Financeiro 7/7, Triagem 17/25; 12 fora dos grupos. Anna conta em Financeiro e Triagem (líder); Gabriel em Financeiro e Relatório (líder).
 
-- Redes (06/10): a prof.ª mandou ocultar e não responder comentários hostis e criar posts informativos sobre as objeções (F11). Comunicação ainda tem vagas: 3 Design, 2 Roteiro e Legendas, 1 Captação.
+- Redes: calendário editorial + ciclo de produção da Comunicação em `entregas/posts/calendario.pdf` (07/10, aguardando aprovação; faltam nomes por função). Comentários hostis: ocultar e responder com posts informativos (F11).
 ## Pendentes do usuário
 - Nomes das vagas (após 07/10 12h): lançar em PREENCHIDOS, regenerar e preencher [PENDENTE: integrantes da comissão financeira] no regulamento.
 - Autorizar trocar, no projeto escrito, as 4 equipes antigas pelas novas. Confirmar grafia Franciele × Francieli.

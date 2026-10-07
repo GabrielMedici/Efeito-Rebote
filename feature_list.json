@@ -36,8 +36,8 @@
       "dependencies": [
         "F03"
       ],
-      "status": "not-started",
-      "evidence": ""
+      "status": "in-progress",
+      "evidence": "2026-10-07: entregas/posts/calendario.md/.pdf (equipe e funções, ciclo semanal de entrega seg→sex, calendário 12/10–13/11, checklist); check.sh 0 erros. Falta: nomes por função e aprovação da prof.ª Camila."
     },
     {
       "id": "F06",
