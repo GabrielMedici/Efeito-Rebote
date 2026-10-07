@@ -7,3 +7,5 @@ Apresenta[çc][ãa]o e Visitas|Cria[çc][ãa]o e Audiovisual|Pesquisa e Escrita|
 chave PIX[^.\n]{0,40}PENDENTE|05/10: a chave PIX já foi definida (docs/projeto.md)
 todo o valor (arrecadado )?(vira|será usado|compra)|07/10: o prêmio sai do valor arrecadado; escreva "descontado o custo do prêmio, o valor compra itens"
 a lei garante (esses )?itens|07/10: a LEP (art. 12) fala em "instalações higiênicas" e o art. 14 inclui atendimento odontológico; não diga que ela garante itens ou escova
+segundas, quartas e sextas|seg(unda)?, qua(rta)? e sex(ta)?|Seg, qua, sex|07/10: a Comunicação publica às terças, quintas e sábados (plano da líder Vitória)
+[Aa]linhamento online|07/10: no plano da líder, o alinhamento é o encontro de segunda, 18h15

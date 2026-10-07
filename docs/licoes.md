@@ -9,3 +9,5 @@
 - 2026-10-07 [publicação] Ao publicar na Vercel, o projeto pode se ligar ao GitHub: confira o Root Directory antes de qualquer merge, para não expor o repositório.
 - 2026-10-07 [render] Playwright aqui não baixa Google Fonts: renderize com as fontes locais (`entregas/posts/2026-10-02-apresentacao/fontes.css`) ou intercepte e busque com curl; senão o texto parece estourar (fonte de reserva mais larga). Não aponte estouro sem conferir a fonte carregada.
 - 2026-10-07 [dados] Dado de confiança média ou só de reportagem (ex.: Pastoral R$ 263) fica fora dos posts; prefira fonte oficial (STF, LEP literal) ou artigo revisado por pares, com o limite dito no post.
+- 2026-10-07 [comunicação] O material da líder (guia + planilha da Vitória) é a referência do calendário: adapte o nosso a ele, corrija só no nosso o que fere regra do projeto e explique a ela com educação, deixando a decisão com ela.
+- 2026-10-07 [git] Antes de mexer no kit ou no site, confira PRs abertos de outras sessões (ex.: GabrielMedici/Efeito-Rebote#3) e não edite o branch delas; avise o usuário da sobreposição.

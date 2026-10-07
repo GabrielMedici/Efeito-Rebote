@@ -12,63 +12,73 @@ RAIZ = os.path.join(os.path.dirname(__file__), "..")
 POSTS = os.path.join(RAIZ, "entregas", "posts")
 FONTES = os.path.join(POSTS, "2026-10-02-apresentacao", "carrossel.html")  # mesma Barlow dos posts
 
-# Entrega e prazos de cada função (seção 2 do calendario.md). Cada prazo: (quando, o quê)
+# Entrega e prazos de cada função (guia da líder Vitória, 06/10). Cada prazo: (quando, o quê)
 PRAZOS = {
-    "Líder": [("Seg 20h", "posta a pauta da semana seguinte no grupo"),
-              ("Sex 12h", "envia o pacote completo à prof.ª Camila"),
-              ("Dia de post", "publica só o post aprovado (seg, qua e sex)")],
-    "Vice-líder": [("Qua 20h", "revisa os textos pelo checklist e devolve ajustes no mesmo dia"),
-                   ("Sempre", "substitui a líder e também pode publicar")],
-    "Roteiro e legendas": [("Ter 20h", "texto de cada slide, legenda (até ~150 palavras e 5 hashtags) e fonte dos dados"),
-                           ("Sáb e dom", "ajustes pedidos pela prof.ª")],
-    "Design": [("Qui 20h", "artes finais (1080 × 1350) e modelos de story, a partir do texto revisado"),
-               ("Sáb e dom", "ajustes pedidos pela prof.ª")],
-    "Audiovisual": [("Qui 20h", "vídeos e áudios editados"),
-                    ("02/11", "live do sorteio, com a equipe de Eventos")],
-    "Engajamento": [("Todo dia", "1 a 3 stories com os modelos aprovados"),
-                    ("Dia do post", "repost nos stories e convite para a turma compartilhar"),
-                    ("Domingo", "métricas da semana (alcance, seguidores, salvamentos)")],
-    "Registro de imagens": [("Eventos", "fotos e vídeos só com autorização, nunca de pessoas privadas de liberdade")],
-    "Arquivo de aprovações": [("Sex 12h", "registra o que foi enviado (data e versão)"),
-                              ("Sáb e dom", "registra a resposta da prof.ª")],
+    "Líder": [("Seg 18h15", "encontro do projeto: fecha a pauta da semana"),
+              ("Qui 12h", "revisa cada peça pelo checklist"),
+              ("Dia do post", "publica só o aprovado, fica 1h online e oculta comentário negativo")],
+    "Vice-líder": [("Qui 18h", "envia o material à prof.ª Camila e cobra o retorno"),
+                   ("Qui e sex", "atualiza a planilha de controle"),
+                   ("Sex", "ajustes pedidos pela prof.ª e agendamento")],
+    "Publicação e segurança": [("Dom 20h", "3 números da semana: alcance, salvamentos e compartilhamentos"),
+                               ("Dia do Reel", "publica Reels e lives, inclusive o sorteio de 02/11"),
+                               ("Sempre", "verificação em duas etapas; oculta comentário negativo se a líder estiver fora")],
+    "Roteiro de carrossel": [("Ter 20h", "texto de cada slide (até ~25 palavras) e legenda com gancho, chamada final e fontes"),
+                             ("Sex", "ajustes pedidos pela prof.ª")],
+    "Roteiro de Reels e stories": [("Ter 20h", "roteiro de Reels (20 a 40 s) e stories, perguntas de enquete e o que gravar"),
+                                   ("Sex", "ajustes pedidos pela prof.ª")],
+    "Design": [("Qua 20h", "carrosséis (1080 × 1350), capas de Reels e stories (1080 × 1920) em PNG"),
+               ("Sex", "ajustes pedidos pela prof.ª")],
+    "Gravação": [("Qua 20h", "vídeo bruto dos Reels na vertical, 2 takes por cena, e cortes para stories")],
+    "Edição": [("Qui 12h", "Reel editado no CapCut, com legenda na tela, em 9:16")],
+    "Ideias e parcerias": [("Dom 20h", "3 ideias para a pauta (tema, gancho e por que funciona)"),
+                           ("Quinzenal", "lista de parcerias com contato"),
+                           ("Dia do post", "curte, salva, comenta e compartilha em até 1h")],
+    "Interação e mobilização": [("Qua 20h", "enquetes, quizzes e caixinhas prontos"),
+                                ("Dia do post", "avisa a turma no grupo e engaja em até 1h")],
+    "Registro de imagens": [("Seg 18h15", "fotos do encontro do projeto"),
+                            ("Em até 24h", "fotos e vídeos das ações no Drive, só com autorização e nunca de pessoas presas")],
 }
 
 # Ciclo semanal (card 2). Funções entre chaves viram os nomes da tabela de equipe.
 CICLO = [
-    ("Seg", "20h", "{Líder}", "Posta a pauta dos 3 posts da semana seguinte. Todos confirmam até terça, 12h."),
-    ("Ter", "20h", "{Roteiro e legendas}", "Texto dos slides, legenda e fonte de cada dado."),
-    ("Qua", "20h", "{Vice-líder}", "Revisa pelo checklist e devolve os ajustes no mesmo dia."),
-    ("Qui", "20h", "Design: {Design}|Audiovisual: {Audiovisual}", "Artes, modelos de story, vídeo e áudio, a partir do texto revisado."),
-    ("Sex", "12h", "{Líder}", "Envia o pacote à prof.ª Camila. O Arquivo de aprovações registra o envio."),
-    ("Sáb", "e dom", "Roteiro e Design", "Fazem os ajustes pedidos pela prof.ª."),
+    ("Dom", "20h", "{Ideias e parcerias}|{Publicação e segurança}", "3 ideias para a pauta e os 3 números da semana."),
+    ("Seg", "18h15", "{Líder}", "Encontro do projeto: fecha a pauta. O Registro fotografa."),
+    ("Ter", "20h", "{Roteiro de carrossel}|{Roteiro de Reels e stories}", "Textos, legendas e roteiros, com a fonte de cada dado."),
+    ("Qua", "20h", "{Design}|{Gravação}|{Interação e mobilização}", "Artes em PNG, vídeo bruto e stories prontos."),
+    ("Qui", "12h", "{Edição}|{Líder}", "Edição final e revisão pelo checklist."),
+    ("Qui", "18h", "{Vice-líder}", "Envia o material à prof.ª Camila."),
+    ("Sex", "", "Quem criou a peça", "Ajustes pedidos pela prof.ª; a vice-líder agenda."),
 ]
 NO_AR = [
-    ("Seg, qua, sex", "{Líder} ou {Vice-líder}", "publicam só o post aprovado"),
-    ("Dia do post", "{Engajamento}", "repost nos stories"),
-    ("Todo dia", "{Engajamento}", "1 a 3 stories"),
-    ("Domingo", "{Engajamento}", "métricas da semana"),
+    ("Ter, qui e sáb", "{Líder}, {Vice-líder} ou {Publicação e segurança}", "publicam só o que está aprovado"),
+    ("Na hora do post", "{Interação e mobilização}", "avisa a turma no grupo; todos engajam na 1ª hora"),
+    ("Comentário negativo", "{Líder}", "oculta, sem responder; quem vir manda print no grupo"),
 ]
-# Primeira semana, comprimida (calendario.md, nota após a seção 3)
+# Semanas 1 e 2 (posts de 09 a 17/10), produzidas juntas e comprimidas (calendario.md, seção 2)
 PRIMEIRA = [
-    ("Qui 08/10", "12h", "Texto pronto (Roteiro)"),
-    ("Qui 08/10", "19h", "Alinhamento online, até 30 min (sugestão)"),
-    ("Qui 08/10", "20h", "Revisão pronta (vice-líder)"),
-    ("Sex 09/10", "10h", "Artes prontas (Design)"),
-    ("Sex 09/10", "12h", "Envio à prof.ª Camila (líder)"),
+    ("Ter 06/10", "20h", "Roteiros das semanas 1 e 2"),
+    ("Qua 07/10", "20h", "Artes, gravação e stories"),
+    ("Qui 08/10", "12h", "Edição e revisão pela líder"),
+    ("Qui 08/10", "18h", "Envio à prof.ª Camila (vice-líder)"),
+    ("Sex 09/10", "", "Ajustes, agendamento e 1º post"),
 ]
 # Semanas do calendário: (rótulo, envio à prof.ª, datas que pertencem a ela)
 SEMANAS = [
-    ("12 a 16/10", "09/10", ("12/10", "14/10", "16/10")),
-    ("19 a 23/10", "16/10", ("19/10", "21/10", "23/10")),
-    ("26 a 30/10", "23/10", ("26/10", "28/10", "30/10")),
-    ("02 a 06/11", "30/10", ("02/11", "04/11", "06/11")),
+    ("Semana 1", "qui 08/10", ("09/10", "10/10", "11/10")),
+    ("Semana 2", "qui 08/10", ("13/10", "15/10", "17/10")),
+    ("Semana 3", "qui 15/10", ("20/10", "22/10", "24/10")),
+    ("Semana 4", "qui 22/10", ("27/10", "29/10", "01/11")),
+    ("Semana 5", "qui 29/10", ("02/11", "05/11", "07/11")),
+    ("Semana 6", "qui 05/11", ("10/11", "12/11", "14/11")),
 ]
 REGRAS = [
-    "Nada de pedir doação ou divulgar a ação de arrecadação antes da liberação.",
-    "Nunca citar avaliação da disciplina. Escreva sempre “ação de arrecadação” e “bilhetes”.",
-    "Todo dado precisa de fonte registrada.",
-    "Nenhuma imagem ou nome de pessoa privada de liberdade. Sem sensacionalismo nem estigma.",
-    "Comentário hostil não se responde: salve o print, oculte e leve ao grupo.",
+    "Nada vai ao ar sem a aprovação da prof.ª Camila.",
+    "Nada de pedir doação ou divulgar a ação de arrecadação antes da liberação. Escreva “ação de arrecadação” e “bilhetes”.",
+    "Todo dado com fonte. A lei prevê assistência material e à saúde: não escreva que ela “garante” itens.",
+    "Nenhuma imagem ou dado de pessoa privada de liberdade. Sem sensacionalismo, vitimização nem tom partidário.",
+    "Nunca citar avaliação da disciplina.",
+    "Comentário negativo: ninguém responde. Print e link no grupo; a Vitória oculta (ou o Gabriel).",
 ]
 
 
@@ -142,19 +152,18 @@ def preencher(texto, mapa):
 
 def card2(equipe):
     mapa = {f: (junta(nomes(q)) if not pendente(q) else "vaga livre") for f, _, q in equipe}
-    prim = "".join(f'<li><b class="when">{e(d)}, {e(h)}</b><span>{e(o)}</span></li>' for d, h, o in PRIMEIRA)
+    prim = "".join(f'<li><b class="when">{e(d)}{", " + e(h) if h else ""}</b><span>{e(o)}</span></li>' for d, h, o in PRIMEIRA)
     passos = "".join(
         f'<li class="step"><span class="day"><b>{e(d)}</b>{e(h)}</span><div><span class="name">{e(preencher(q, mapa)).replace("|", "<br>")}</span>'
         f'<span class="task">{e(t)}</span></div></li>' for d, h, q, t in CICLO)
     ar = "".join(f'<li><b class="when">{e(q)}</b><span><span class="name">{e(preencher(w, mapa))}</span>: {e(t)}</span></li>'
                  for q, w, t in NO_AR)
     return (f'<article class="card" id="c2">{card_head(2, "A semana de produção", "O que a equipe produz numa semana vai ao ar na semana seguinte.")}'
-            f'<section class="alert"><h2>Esta semana é diferente</h2><p>O 1º pacote (posts de 12/10) vai à prof.ª já na sexta.</p><ul class="dl">{prim}</ul></section>'
-            f'<section><h2>A partir de 12/10, toda semana</h2><ol class="cycle">{passos}</ol>'
+            f'<section class="alert"><h2>Esta semana é diferente</h2><p>Os posts de 09 a 17/10 são produzidos juntos e vão à prof.ª já nesta quinta.</p><ul class="dl">{prim}</ul></section>'
+            f'<section><h2>A partir da semana 3, toda semana</h2><ol class="cycle">{passos}</ol>'
             f'<p class="note">Cada etapa começa quando a anterior entrega. Atraso numa atrasa todas.</p></section>'
-            f'<section><h2>Depois de aprovado</h2><ul class="dl">{ar}</ul></section>'
-            f'<p class="note">Só há mais um alinhamento online: qui 29/10, 19h (sugestão), sobre a live do sorteio e a visita. '
-            f'O resto se resolve no grupo.</p>{rodape()}</article>')
+            f'<section><h2>Depois de aprovado</h2><ul class="dl ar">{ar}</ul></section>'
+            f'<p class="note">O encontro de segunda, às 18h15, é o momento de alinhar. O resto se resolve no grupo.</p>{rodape()}</article>')
 
 
 def post_linha(data, tema, fmt, obs):
@@ -182,11 +191,12 @@ def card3(posts):
     blocos = []
     for rot, envio, datas in SEMANAS:
         itens = "".join(post_linha(*por_data[d]) for d in datas)
-        blocos.append(f'<section class="week"><div class="wk"><h2>{e(rot)}</h2><span>Envio à prof.ª: sex {e(envio)}</span></div><ol>{itens}</ol></section>')
+        blocos.append(f'<section class="week"><div class="wk"><h2>{e(rot)}</h2><span>Envio à prof.ª: {e(envio)}</span></div><ol>{itens}</ol></section>')
     resto = [p for p in posts if p[0][:5] not in {d for _, _, ds in SEMANAS for d in ds}]
     itens = "".join(post_linha(*p) for p in resto)
-    blocos.append(f'<section class="week"><div class="wk"><h2>Encerramento</h2><span>Envio na sexta anterior</span></div><ol>{itens}</ol></section>')
-    return (f'<article class="card" id="c3">{card_head(3, "O que vai ao ar", "3 posts por semana, às segundas, quartas e sextas, mais stories todo dia.")}'
+    if resto:
+        blocos.append(f'<section class="week"><div class="wk"><h2>Encerramento</h2><span>Envio na quinta anterior</span></div><ol>{itens}</ol></section>')
+    return (f'<article class="card" id="c3">{card_head(3, "O que vai ao ar", "3 peças por semana, às terças, quintas e sábados, de 09/10 a 14/11.")}'
             f'{"".join(blocos)}{rodape()}</article>')
 
 
@@ -212,6 +222,7 @@ h2{font-size:21px;line-height:1.1;font-weight:700;color:var(--tinta)}
 .tag.gold{background:var(--ouro-2);color:var(--ouro)}
 .tag.red{background:var(--verm-2);color:var(--verm)}
 .ft{margin-top:auto;font-size:11.5px;color:var(--cinza);border-top:1px solid var(--linha);padding-top:10px}
+.dl.ar li{grid-template-columns:150px 1fr}
 .note{margin:0;font-size:13.5px;color:var(--cinza)}
 /* card 1 */
 .roles{display:grid;background:#fff;border-radius:12px;box-shadow:0 1px 2px rgba(20,27,45,.06),0 4px 14px rgba(20,27,45,.05);overflow:hidden}
@@ -295,7 +306,7 @@ ONEPAGE_CSS = """
 .one .name{font-size:12.5px}
 .one .task{font-size:11.5px}
 .one .note{font-size:11.5px}
-.one .weeks{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.one .weeks{display:grid;grid-template-columns:repeat(6,1fr);gap:7px}
 .one .wkb{background:#fff;border-radius:10px;padding:8px 9px;display:grid;gap:5px;align-content:start;box-shadow:0 1px 2px rgba(20,27,45,.06),0 4px 14px rgba(20,27,45,.05)}
 .one .wkb h3{font-family:var(--cond);font-size:16px;color:var(--azul);margin:0}
 .one .wkb small{font-size:10px;color:var(--cinza)}
@@ -317,7 +328,7 @@ def onepage(equipe, posts):
     mapa = {f: (junta(nomes(q)) if not pendente(q) else "vaga livre") for f, _, q in equipe}
     passos = "".join(f'<li class="step"><span class="day"><b>{e(d)}</b>{e(h)}</span><div><span class="name">{e(preencher(q, mapa)).replace("|", "<br>")}</span>'
                      f'<span class="task">{e(t)}</span></div></li>' for d, h, q, t in CICLO)
-    prim = "".join(f'<li><b class="when">{e(d)}, {e(h)}</b><span>{e(o)}</span></li>' for d, h, o in PRIMEIRA)
+    prim = "".join(f'<li><b class="when">{e(d)}{", " + e(h) if h else ""}</b><span>{e(o)}</span></li>' for d, h, o in PRIMEIRA)
     por_data = {p[0][:5]: p for p in posts}
     blocos = []
     usados = set()
@@ -331,11 +342,12 @@ def onepage(equipe, posts):
         blocos.append(f'<div class="wkb"><h3>{e(rot)}</h3><small>Envio à prof.ª: {e(envio)}</small>{itens}</div>')
     resto = "".join(f'<div class="pp"><b>{e("A definir" if pendente(p[0]) else p[0])}</b><span>{e(p[1])}</span><i>{e(p[2])}</i></div>'
                     for p in posts if p[0][:5] not in usados)
-    blocos.append(f'<div class="wkb"><h3>Encerramento</h3><small>Envio na sexta anterior</small>{resto}</div>')
-    return (f'<article class="card one" id="c0">{card_head(1, "Calendário da Comunicação", "Quem faz o quê, a semana de produção e tudo o que vai ao ar de 12/10 a 13/11.").replace("1/3", "07/10")}'
+    if resto:
+        blocos.append(f'<div class="wkb"><h3>Encerramento</h3><small>Envio na quinta anterior</small>{resto}</div>')
+    return (f'<article class="card one" id="c0">{card_head(1, "Calendário da Comunicação", "Quem faz o quê, a semana de produção e tudo o que vai ao ar de 09/10 a 14/11.").replace("1/3", "07/10")}'
             f'<div class="cols"><div><h2>Quem faz o quê</h2><div class="roles">{"".join(linhas)}</div></div>'
             f'<div style="display:grid;gap:10px"><section class="alert"><h2>Esta semana é diferente</h2><ul class="dl">{prim}</ul></section>'
-            f'<div><h2>Toda semana, a partir de 12/10</h2><ol class="cycle">{passos}</ol></div>'
+            f'<div><h2>Toda semana, a partir da semana 3</h2><ol class="cycle">{passos}</ol></div>'
             f'<p class="note">Produz numa semana, vai ao ar na seguinte. Cada etapa começa quando a anterior entrega.</p></div></div>'
             f'<div><h2>O que vai ao ar</h2><div class="weeks">{"".join(blocos)}</div></div>'
             f'<footer class="ft">Proposta de 07/10, aguardando aprovação da prof.ª Camila · Site com seus prazos: calendario-efeito-rebote.vercel.app</footer></article>')
