@@ -5,10 +5,12 @@ o conteúdo editorial fica em CONTEUDO abaixo (plano v2: docs/kit-v2/README.md).
 fica como [PENDENTE: ...]. Marcação nos textos: **negrito** vira destaque na caixa.
 Uso: python3 scripts/gerar_kit_comunicacao.py  (depois publique a pasta entregas/posts/site na Vercel)"""
 import base64
+import html as _html
 import io
 import json
 import os
 import re
+import shutil
 import sys
 
 sys.path.insert(0, os.path.dirname(__file__))
@@ -420,9 +422,21 @@ def main():
     for a in conferir(dados["posts"]):
         print("AVISO", a)
     modelo = open(os.path.join(os.path.dirname(__file__), "modelos", "kit.html"), encoding="utf-8").read()
-    html = modelo.replace("/*DADOS*/null", json.dumps(dados, ensure_ascii=False)).replace("/*SELO*/", selo_data_uri())
+    ns = "".join(f"<h3>{_html.escape(p['rot'])}: {_html.escape(p['capa']['t'] if p['capa'] else p['tema'])}</h3><ul>"
+                 + "".join(f"<li>{_html.escape(g[0])}: {_html.escape(g[1])}</li>" for g in p["ganchos"])
+                 + f"</ul><pre style=\"white-space:pre-wrap\">{_html.escape(p['legenda'])}</pre>" for p in dados["posts"])
+    html = (modelo.replace("/*DADOS*/null", json.dumps(dados, ensure_ascii=False)).replace("/*SELO*/", selo_data_uri())
+            .replace("<!--NOSCRIPT-->", ns))
     saida = os.path.join(POSTS, "site", "kit")
     os.makedirs(saida, exist_ok=True)
+    # Barlow hospedada junto do kit: nada depende do Google e a página funciona offline
+    ap = os.path.join(POSTS, "2026-10-02-apresentacao")
+    css = open(os.path.join(ap, "fontes.css"), encoding="utf-8").read()
+    os.makedirs(os.path.join(saida, "fontes"), exist_ok=True)
+    for f in sorted(set(re.findall(r"fontes/[A-Za-z0-9._-]+\.woff2", css))):
+        shutil.copyfile(os.path.join(ap, f), os.path.join(saida, f))  # falta de arquivo = erro, nunca fonte de reserva em silêncio
+    with open(os.path.join(saida, "fontes.css"), "w", encoding="utf-8") as f:
+        f.write(css)
     with open(os.path.join(saida, "index.html"), "w", encoding="utf-8") as f:
         f.write(html)
     # cópia em texto para o check.sh (palavras proibidas e pendências)

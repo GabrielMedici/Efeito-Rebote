@@ -7,9 +7,7 @@
 <meta name="theme-color" content="#F4F6FB" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0E1322" media="(prefers-color-scheme: dark)">
 <title>Kit da Comunicação</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap">
+<link rel="stylesheet" href="fontes.css">
 <style>
 /* Layout: coluna de celular; abas Posts (mockup + roteiro + copy por post), Stories, Copy, Identidade.
    Os mockups reproduzem o sistema visual dos carrosséis já aprovados (capa azul com selo, rótulo dourado, título condensado). */
@@ -35,8 +33,16 @@
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 var(--body);padding-inline:max(16px,env(safe-area-inset-left)) max(16px,env(safe-area-inset-right));padding-block:20px 56px;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+body{overflow-wrap:break-word;margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 var(--body);padding-inline:max(16px,env(safe-area-inset-left)) max(16px,env(safe-area-inset-right));padding-block:20px 56px;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
 .wrap{max-width:720px;margin:0 auto;display:grid;gap:18px}
+.post>*,.cols>*,.block,.panel>*{min-width:0}
+.src span,.legend,.list li,.tip,.goal,.tema,.hooks .txt,.lock{overflow-wrap:anywhere}
+.hint{font-size:.86rem;color:var(--muted)}
+.pos{font-size:.86rem;color:var(--muted);align-self:center}
+.note{background:var(--gold-soft);color:var(--ink);border-radius:10px;padding:10px 12px;font-size:.92rem}
+.aviso{background:var(--red-soft);color:var(--red);border-radius:8px;padding:6px 10px;font-size:.82rem;font-weight:600;max-width:min(340px,86vw)}
+.erro{background:var(--surface);border-radius:14px;box-shadow:var(--shadow);padding:16px;display:grid;gap:12px}
+.sem-dialog .ampliar{display:none}
 .sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .skip{position:absolute;left:12px;top:-60px;z-index:20;background:var(--accent);color:var(--on-accent);padding:12px 16px;border-radius:8px;font-weight:700;text-decoration:none}
 .skip:focus{top:calc(env(safe-area-inset-top,0px) + 8px)}
@@ -55,7 +61,7 @@ a{color:var(--accent)}
 header{display:grid;gap:8px}
 .brand{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .status{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;font-size:.86rem;color:var(--muted)}
-.pill{display:inline-block;border-radius:999px;padding:2px 10px;font-size:.78rem;font-weight:700;white-space:nowrap}
+.pill{display:inline-block;max-width:100%;border-radius:999px;padding:2px 10px;font-size:.78rem;font-weight:700}
 .pill.gold{background:var(--gold-soft);color:var(--gold)}
 .pill.red{background:var(--red-soft);color:var(--red)}
 .pill.blue{background:var(--accent-soft);color:var(--accent)}
@@ -272,6 +278,125 @@ footer{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);paddi
   </nav>
 
   <main id="conteudo" tabindex="-1">
+    <noscript><div class="erro"><h2>Este kit precisa de JavaScript</h2><p>Ative o JavaScript para ver os slides. O texto de cada post (ganchos e legenda) está abaixo, sem formatação.</p><h3>Seg 12/10: Quase 1 em cada 4 volta a ser condenado.</h3><ul><li>Dado: Quase 1 em cada 4 volta a ser condenado.</li><li>Pergunta direta: Você sabe o que é reincidência?</li><li>Curiosidade: Por que um projeto de Direito se chama Efeito Rebote?</li></ul><pre style="white-space:pre-wrap">24,4%. Esse foi o percentual de pessoas que voltaram a ser condenadas em até cinco anos, num estudo do Ipea para o CNJ em cinco estados, entre eles o Paraná.
+
+Pelo Código Penal, reincidir é cometer um novo crime depois de uma condenação definitiva. Outras pesquisas contam quem volta à prisão, mesmo sem nova condenação, e chegam a 36% a 42%. São medidas diferentes, e por isso os números mudam de um estudo para outro.
+
+O nome do projeto vem desse movimento. Quando falta o básico dentro do sistema prisional, o custo volta para fora, na saúde, na segurança e no orçamento das famílias.
+
+Na quarta, parte 2. Siga o perfil para acompanhar a série.
+
+#EfeitoRebote #SistemaPrisional #ExecuçãoPenal #DireitosHumanos #ExtensãoUniversitária</pre><h3>Qua 14/10: No Brasil, toda pena tem fim.</h3><ul><li>Dado local: 1.198 pessoas em 960 vagas. Aqui em Maringá.</li><li>Fato surpreendente: No Brasil, toda pena tem fim. E depois?</li><li>Pergunta direta: Por que cuidar de quem está preso?</li></ul><pre style="white-space:pre-wrap">Em Maringá, a Casa de Custódia tinha 1.198 pessoas para 960 vagas. Na inspeção da Defensoria Pública do Paraná, em 21 de março de 2025, a unidade estava cerca de 25% acima da capacidade.
+
+Isso importa para quem está fora porque no Brasil não existe prisão perpétua. A Constituição proíbe penas de caráter perpétuo, e o Código Penal limita o cumprimento a 40 anos. Toda pessoa presa hoje vai voltar a conviver em sociedade, e as condições da pena influenciam como ela sai.
+
+Em lugares lotados e com pouca higiene, doenças se espalham com mais facilidade, e servidores e visitantes circulam por ali todos os dias. Garantir o básico funciona como prevenção.
+
+Na sexta, parte 3. Siga o perfil para não perder.
+
+#EfeitoRebote #SistemaPrisional #ExecuçãoPenal #DireitosHumanos #ExtensãoUniversitária</pre><h3>Sex 16/10: Escova de dente é direito de quem está preso?</h3><ul><li>Fato surpreendente: A Lei de Execução Penal não cita escova de dente.</li><li>Pergunta direta: Escova de dente é direito de quem está preso?</li><li>Lista: 3 itens que faltavam numa penitenciária de Maringá.</li></ul><pre style="white-space:pre-wrap">A Lei de Execução Penal não cita escova de dente.
+
+O art. 12 diz que a assistência material inclui alimentação, vestuário e instalações higiênicas, e o art. 14 prevê atendimento médico, farmacêutico e odontológico. Em 2023, o STF reconheceu um cenário de violação massiva de direitos no sistema prisional, entre eles o direito à higiene (ADPF 347).
+
+Nas inspeções da Defensoria Pública do Paraná em 2025, a Penitenciária Estadual de Maringá estava sem pasta de dente, aparelho de barbear e escova. Na Colônia Penal Industrial, a direção relatou que o kit de higiene não tem chegado completo. Quando falta, o Conselho da Comunidade e as famílias cobrem parte.
+
+Na segunda, parte 4. Siga o perfil para acompanhar.
+
+#EfeitoRebote #SistemaPrisional #ExecuçãoPenal #DireitosHumanos #ExtensãoUniversitária</pre><h3>Seg 19/10: Quem paga a conta quando falta o básico?</h3><ul><li>Mudança de ponto de vista: Quando falta o básico, alguém compra o que falta.</li><li>Pergunta direta: Quem paga a conta quando falta o básico na prisão?</li><li>Curiosidade: O custo do sistema prisional que ninguém coloca na conta.</li></ul><pre style="white-space:pre-wrap">Quando o kit de higiene não chega completo, alguém compra o que falta.
+
+Nas inspeções da Defensoria Pública do Paraná em 2025, a direção da Colônia Penal Industrial de Maringá relatou que o kit não tem chegado completo, e o Conselho da Comunidade e as famílias cobrem parte dos itens. Uma pesquisa de Minas Gerais, publicada na PLOS ONE em 2025, descreve algo parecido: a população presa depende de instituições religiosas ou de familiares para ter escova e pasta.
+
+Isso pesa porque uma revisão de 144 estudos brasileiros, do Instituto Igarapé, associa a falta de apoio da família a mais chances de voltar à prisão. É uma associação, e não uma garantia.
+
+Por isso o projeto prevê um café da manhã com as famílias, com atenção especial às crianças.
+
+Na quarta, conheça a turma. Siga o perfil.
+
+#EfeitoRebote #SistemaPrisional #ExecuçãoPenal #DireitosHumanos #ExtensãoUniversitária</pre><h3>Qua 21/10: Conheça a turma e as equipes por trás do projeto</h3><ul><li>Bastidor: Quem está por trás do Efeito Rebote?</li><li>Número: 80 estudantes de Direito, 5 equipes, um projeto.</li><li>Convite: Conheça a turma que está estudando o sistema prisional de Maringá.</li></ul><pre style="white-space:pre-wrap">Somos cerca de 80 acadêmicos do curso de Direito da UniCesumar. Neste semestre, estamos estudando a realidade das unidades prisionais de Maringá e transformando esse estudo em informação e ação.
+
+Nos organizamos em cinco equipes: Comunicação, Eventos, Relatório, Financeiro e Triagem. E todo mundo participa junto da arrecadação.
+
+Cada post que você vê aqui passa por pesquisa, revisão e aprovação da nossa professora antes de ser publicado.
+
+Marque um colega da turma nos comentários.
+
+#EfeitoRebote #SistemaPrisional #ExecuçãoPenal #DireitosHumanos #ExtensãoUniversitária</pre><h3>Sex 23/10: O que falta dentro da prisão não fica lá dentro.</h3><ul><li>Afirmação forte: O que falta dentro da prisão não fica lá dentro.</li><li>Pergunta: Você sabe o que é o efeito rebote?</li><li>Dado local: Em 2025, faltou escova de dente numa penitenciária de Maringá.</li></ul><pre style="white-space:pre-wrap">Em 30 segundos, explicamos por que escolhemos o nome Efeito Rebote e o que vamos fazer neste semestre.
+
+São cerca de 80 estudantes de Direito estudando a realidade das unidades prisionais de Maringá, com dados e fonte em cada post.
+
+Dê o play e compartilhe com quem ainda não conhece o projeto.
+
+#EfeitoRebote #SistemaPrisional #ExecuçãoPenal #DireitosHumanos #ExtensãoUniversitária</pre><h3>Seg 26/10: 5 itens que fazem diferença numa unidade prisional.</h3><ul><li>Lista: 5 itens que fazem diferença dentro de uma unidade prisional.</li><li>Pedido claro: Quer ajudar? Esta é a lista certa.</li><li>Curiosidade: Por que o detergente precisa ser transparente?</li></ul><pre style="white-space:pre-wrap">Quer ajudar? Esta é a lista certa.
+
+O Efeito Rebote está arrecadando 5 itens de higiene para as unidades prisionais de Maringá:
+
+1. Escova dental simples
+2. Creme dental de até 100 g
+3. Aparelho de barbear descartável, de duas lâminas
+4. Sabão em pó, pacote de até 500 g
+5. Detergente em embalagem transparente, de até 500 ml
+
+Siga as especificações: itens fora do padrão podem não entrar nas unidades. A Triagem confere cada doação antes de levar.
+
+Pontos de coleta: [PENDENTE: pontos de coleta, dias e horários]
+
+Compartilhe a lista com quem pode ajudar.
+
+#EfeitoRebote #SistemaPrisional #ExecuçãoPenal #DireitosHumanos #ExtensãoUniversitária</pre><h3>Qua 28/10: Com R$ 5, você concorre a um tablet.</h3><ul><li>Benefício duplo: Com R$ 5, você concorre a um tablet e ajuda a comprar itens de higiene.</li><li>Pergunta: Sabe como funciona a nossa ação de arrecadação?</li><li>Transparência: Para onde vai o dinheiro dos bilhetes.</li></ul><pre style="white-space:pre-wrap">Com R$ 5, você concorre a um tablet e ajuda a comprar itens de higiene.
+
+Funciona assim: você compra um bilhete com um aluno da turma, guarda o canhoto com o seu número e acompanha o sorteio ao vivo aqui no perfil, em 02/11, com ata e testemunhas. A lista dos números participantes, sem dados pessoais, sai em 01/11.
+
+O prêmio é um tablet Samsung Galaxy Tab A11+ ou equivalente, conforme o regulamento. Descontado o custo do prêmio, o valor arrecadado compra itens de higiene para as unidades prisionais de Maringá, com nota fiscal e prestação de contas publicada aqui.
+
+Regulamento: [PENDENTE: onde fica publicado]
+
+Fale com um aluno da turma e garanta o seu número.
+
+#EfeitoRebote #SistemaPrisional #ExecuçãoPenal #DireitosHumanos #ExtensãoUniversitária</pre><h3>Sex 30/10: 3 caminhos que ajudam a não voltar.</h3><ul><li>Número: 12 horas de estudo valem 1 dia a menos de pena.</li><li>Fato pouco conhecido: Estudar na prisão diminui a pena. Está na lei.</li><li>Pergunta: O que ajuda alguém a não voltar para a prisão?</li></ul><pre style="white-space:pre-wrap">12 horas de estudo valem 1 dia a menos de pena.
+
+É a remição, prevista na Lei de Execução Penal (art. 126): 1 dia de pena a cada 12 horas de frequência escolar, divididas em no mínimo 3 dias, e 1 dia a cada 3 dias de trabalho.
+
+As pesquisas apontam um terceiro caminho. Uma revisão de 144 estudos brasileiros, do Instituto Igarapé, associa a falta de apoio da família, e não estudar nem trabalhar, a mais chances de voltar à prisão. É uma associação, e não uma garantia.
+
+Na semana que vem, a visita às unidades. Siga o perfil para acompanhar.
+
+#EfeitoRebote #SistemaPrisional #ExecuçãoPenal #DireitosHumanos #ExtensãoUniversitária</pre><h3>Seg 02/11: Sorteio hoje</h3><ul><li>Urgência: É hoje: sorteio ao vivo às [PENDENTE: horário].</li><li>Resultado: Saiu o número sorteado da ação de arrecadação.</li><li>Gratidão: Obrigado a cada pessoa que comprou um bilhete.</li></ul><pre style="white-space:pre-wrap">Saiu o número sorteado da ação de arrecadação do Efeito Rebote!
+
+O sorteio foi ao vivo aqui no perfil, com ata e testemunhas, e a gravação fica salva nos destaques. Número sorteado: [PENDENTE]. A comissão financeira vai entrar em contato pelos dados do canhoto.
+
+Obrigado a cada pessoa que comprou um bilhete. Descontado o custo do prêmio, o valor arrecadado compra itens de higiene para as unidades prisionais de Maringá, com nota fiscal, e a prestação de contas sai aqui na próxima semana.
+
+#EfeitoRebote #SistemaPrisional #ExecuçãoPenal #DireitosHumanos #ExtensãoUniversitária</pre><h3>Qua 04/11: Visita às unidades</h3><ul><li>Bastidor: Como foi a nossa visita às unidades prisionais de Maringá.</li><li>Entrega: Os itens que vocês doaram chegaram.</li><li>Aprendizado: O que aprendemos visitando o sistema prisional de perto.</li></ul><pre style="white-space:pre-wrap">Hoje o Efeito Rebote conheceu de perto as unidades prisionais de Maringá.
+
+[Preencher depois da visita: 2 ou 3 frases sobre o que a equipe viu e aprendeu.]
+
+Também entregamos os itens de higiene arrecadados com a ajuda de vocês: [PENDENTE: quantidade por unidade].
+
+Obrigado a todos que fizeram parte disso.
+
+#EfeitoRebote #SistemaPrisional #ExecuçãoPenal #DireitosHumanos #ExtensãoUniversitária</pre><h3>Sex 06/11: Bastidores e agradecimento</h3><ul><li>Gratidão: Obrigado a cada pessoa que fez parte do Efeito Rebote.</li><li>Bastidor: O que ninguém viu por trás deste projeto.</li><li>Número: [PENDENTE: nº de itens] itens de higiene. Feito por muita gente.</li></ul><pre style="white-space:pre-wrap">Obrigado a cada pessoa que fez parte do Efeito Rebote.
+
+[Preencher: 2 frases sobre o caminho da turma, das primeiras reuniões à visita.]
+
+A prestação de contas completa sai aqui na próxima semana.
+
+#EfeitoRebote #SistemaPrisional #ExecuçãoPenal #DireitosHumanos #ExtensãoUniversitária</pre><h3>09 a 13/11: Prestação de contas</h3><ul><li>Transparência: Para onde foi cada real: a prestação de contas do Efeito Rebote.</li><li>Número: [PENDENTE: nº] itens de higiene entregues em Maringá.</li><li>Confiança: Prometemos mostrar tudo. Aqui está.</li></ul><pre style="white-space:pre-wrap">Prometemos mostrar para onde foi cada real. Aqui está.
+
+Entrou: R$ [PENDENTE], somando a ação de arrecadação e as doações.
+Saiu: R$ [PENDENTE] em itens de higiene e no prêmio.
+Entregamos [PENDENTE] itens nas unidades prisionais de Maringá.
+
+Os comprovantes ficam com a comissão financeira e estão disponíveis a quem pedir.
+
+Obrigado pela confiança.
+
+#EfeitoRebote #SistemaPrisional #ExecuçãoPenal #DireitosHumanos #ExtensãoUniversitária</pre><h3>Data a definir: Café da manhã com as famílias</h3><ul><li>Afeto: Um café da manhã para quem atravessa a cidade para visitar.</li><li>Pergunta: Você já pensou em quem visita alguém preso?</li><li>Bastidor: Como foi o nosso café com as famílias.</li></ul><pre style="white-space:pre-wrap">Um café da manhã para quem atravessa a cidade para visitar alguém.
+
+[Preencher depois do evento: 2 frases sobre o acolhimento.]
+
+O vínculo com a família é um dos apoios mais importantes para quem vai recomeçar. Acolher quem visita, principalmente as crianças, faz parte do Efeito Rebote.
+
+#EfeitoRebote #SistemaPrisional #ExecuçãoPenal #DireitosHumanos #ExtensãoUniversitária</pre></div></noscript>
     <section id="p-posts" role="tabpanel" aria-labelledby="t-posts" class="panel"></section>
     <section id="p-stories" role="tabpanel" aria-labelledby="t-stories" class="panel" hidden></section>
     <section id="p-copy" role="tabpanel" aria-labelledby="t-copy" class="panel" hidden></section>
@@ -287,7 +412,7 @@ const D = {"posts": [{"id": "post-1", "d": "2026-10-12", "rot": "Seg 12/10", "te
 const SELO = "data:image/jpeg;base64,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";
 document.documentElement.style.setProperty("--sl", "url(" + SELO + ")");
 const $ = s => document.querySelector(s);
-const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const sl = () => '<i class="sl" style="background-image:url(' + SELO + ')"></i>';
 
 const rich = t => esc(t).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>");
@@ -352,6 +477,7 @@ function postHtml(p, prox, i){
     + (p === prox ? '<span class="pill blue">Próximo</span>' : '') + (p.lock ? '<span class="pill red">Só após liberação</span>' : '') + (p.pend ? '<span class="pill gold">' + esc(p.pend) + '</span>' : '') + '</div>'
     + kick + '<h2 tabindex="-1">' + esc(titulo) + '</h2>' + (p.capa ? '<p class="tema">Tema no calendário: ' + esc(p.tema) + '</p>' : '') + '<p class="goal"><b>Objetivo:</b> ' + esc(p.objetivo) + '</p></div>';
   if (p.lock) h += '<p class="lock">Não publicar nem adiantar nos stories antes de a prof.ª Camila liberar a divulgação da arrecadação.</p>';
+ h += '<p class="hint">Deslize os slides para o lado. Toque no ícone do canto para ampliar.</p>';
   h += '<div class="strip" role="region" tabindex="0" aria-label="Slides do post, role para o lado">' + p.slides.map((s, k) => slide(s, k, n)).join("") + '</div>';
   h += '<div class="cols"><div class="block"><div class="bh"><h3>Legenda pronta</h3><button class="btn" type="button" data-copy="' + p.id + '">' + ICO_COPIA + 'Copiar legenda</button></div><pre class="legend">' + esc(p.legenda) + '</pre><span class="copied" aria-live="polite"></span></div>';
   h += '<div class="block"><h3>Ganchos para a capa (escolha um)</h3><ul class="hooks">' + p.ganchos.map(g => '<li><span class="tec">' + esc(g[0]) + '</span><span class="txt">' + esc(g[1]) + '</span></li>').join("") + '</ul></div></div>';
@@ -360,27 +486,46 @@ function postHtml(p, prox, i){
     + '<div class="block"><h3>Cuidados</h3><ul class="list warn">' + p.cuidados.map(c => '<li>' + esc(c) + '</li>').join("") + '</ul></div>'
     + (p.arte ? '<p class="tip"><b>Arte:</b> ' + esc(p.arte) + '</p>' : '') + '</div></details>';
   h += '<div class="pager">' + (i > 0 ? '<button class="btn ghost" type="button" data-go="' + D.posts[i - 1].id + '">← ' + esc(D.posts[i - 1].rot) + '</button>' : '<span></span>')
-    + (i < D.posts.length - 1 ? '<button class="btn ghost" type="button" data-go="' + D.posts[i + 1].id + '">' + esc(D.posts[i + 1].rot) + ' →</button>' : '<span></span>') + '</div></article>';
+    + '<span class="pos">Post ' + (i + 1) + ' de ' + D.posts.length + '</span>' + (i < D.posts.length - 1 ? '<button class="btn ghost" type="button" data-go="' + D.posts[i + 1].id + '">' + esc(D.posts[i + 1].rot) + ' →</button>' : '<span></span>') + '</div></article>';
   return h;
 }
 
+let postAtual = null;
+function tituloDoc(){
+  const aba = ABAS.find(t => !$("#p-" + t).hidden) || "posts";
+  const nomes = {stories: "Modelos de story", copy: "Regras de texto", id: "Regras de arte"};
+  document.title = (aba === "posts" && postAtual ? postAtual.rot + " · " + (postAtual.capa ? postAtual.capa.t : postAtual.tema) : nomes[aba]) + " · Kit da Comunicação";
+}
+function marcarEstouro(){
+  document.querySelectorAll(".mkw").forEach(w => {
+    const sd = w.querySelector(".sd"); if (!sd) return;
+    const x = sd.querySelector(".in"); const tem = w.querySelector(".aviso");
+    const estoura = x.scrollHeight > x.clientHeight + 1;
+    if (estoura && !tem) { const a = document.createElement("span"); a.className = "aviso"; a.textContent = "O texto é maior que o slide. Encurte antes de usar."; w.appendChild(a); }
+    if (!estoura && tem) tem.remove();
+  });
+}
 function renderPosts(){
   const hoje = new Date(); const k = hoje.getFullYear() + "-" + String(hoje.getMonth() + 1).padStart(2, "0") + "-" + String(hoje.getDate()).padStart(2, "0");
   const prox = D.posts.find(p => p.d && p.d >= k);
   const ids = D.posts.map(p => p.id);
   const doHash = decodeURIComponent(location.hash.slice(1));
   let atual = ids.includes(doHash) ? doHash : (prox || D.posts[0]).id;
+  const hashRuim = /^post-/.test(doHash) && !ids.includes(doHash);
   $("#p-posts").innerHTML = '<nav class="index" aria-label="Posts por data">'
-    + D.posts.map(p => '<button type="button" data-go="' + p.id + '">' + esc(p.rot) + (p === prox ? '<span class="nx" aria-hidden="true"></span><span class="sr-only"> (próximo a publicar)</span>' : '') + '</button>').join("") + '</nav><div id="post-atual"></div>';
+    + D.posts.map(p => '<button type="button" data-go="' + p.id + '">' + esc(p.rot) + (p === prox ? '<span class="nx" aria-hidden="true"></span><span class="sr-only"> (próximo a publicar)</span>' : '') + '</button>').join("") + '</nav>' + (hashRuim ? '<p class="note" role="status">O link pedia um post que não existe. Abri o ' + esc(D.posts[ids.indexOf(atual)].rot) + ', o mais próximo de publicar.</p>' : '') + '<div id="post-atual"></div>';
   function mostrar(id, rolar, foco){
     atual = id;
     const i = ids.indexOf(id);
+    postAtual = D.posts[i];
     $("#post-atual").innerHTML = postHtml(D.posts[i], prox, i);
     $("#p-posts").querySelectorAll(".index button").forEach(b => { const on = b.dataset.go === id; b.setAttribute("aria-current", on ? "true" : "false"); if (on) b.scrollIntoView({inline: "center", block: "nearest"}); });
     $("#post-atual").querySelectorAll("[data-copy]").forEach(b => b.addEventListener("click", () => copiar(b, D.posts[i].legenda)));
     $("#post-atual").querySelectorAll("[data-go]").forEach(b => b.addEventListener("click", () => mostrar(b.dataset.go, true, true)));
     $("#post-atual").querySelectorAll(".ampliar").forEach(b => b.addEventListener("click", () => ampliarSlide(b)));
     try { history.replaceState(null, "", "#" + id); } catch(e){}
+    tituloDoc();
+    marcarEstouro();
     if (rolar) window.scrollTo({top: 0});
     if (foco) { const t = $("#post-atual h2"); if (t) t.focus({preventScroll: true}); }
     if (rolar) $("#anuncio").textContent = "Post de " + D.posts[i].rot + " aberto.";
@@ -421,6 +566,7 @@ function renderId(){
 }
 
 const zoom = $("#zoom");
+if (typeof zoom.showModal !== "function") document.documentElement.classList.add("sem-dialog");
 function ampliarSlide(btn){
   const sd = btn.closest(".mkw").querySelector(".sd").cloneNode(true);
   sd.classList.add("zoom");
@@ -436,6 +582,7 @@ function setTab(id, foco){
   ABAS.forEach(t => { const on = t === id; const b = $("#t-" + t); b.setAttribute("aria-selected", on); b.tabIndex = on ? 0 : -1; $("#p-" + t).hidden = !on; });
   if (foco) $("#t-" + id).focus();
   try { localStorage.setItem("er-kit-aba", id); } catch(e){}
+  tituloDoc();
 }
 document.querySelectorAll(".tab").forEach(b => {
   b.addEventListener("click", () => setTab(b.id.slice(2), false));
@@ -453,11 +600,20 @@ $("#skip").addEventListener("click", e => {
   alvo.tabIndex = -1; alvo.focus();
 });
 const medirAbas = () => document.documentElement.style.setProperty("--tabs-h", $(".tabs").offsetHeight + "px");
-renderPosts(); renderStories(); renderCopy(); renderId();
-medirAbas(); addEventListener("resize", medirAbas);
-if (document.fonts && document.fonts.ready) document.fonts.ready.then(medirAbas);
-let aba = "posts"; try { aba = localStorage.getItem("er-kit-aba") || "posts"; } catch(e){}
-setTab(ABAS.includes(aba) ? aba : "posts", false);
+function falhou(e){
+  console.error(e);
+  const m = String(e && e.message || e);
+  $("#conteudo").innerHTML = '<div class="erro" role="alert"><h2>Não foi possível montar a página</h2><p>Recarregue a página. Se continuar assim, avise a equipe de Comunicação e envie o detalhe abaixo.</p><pre class="legend">' + esc(m) + '</pre><div class="bh"><button class="btn" type="button" id="recarregar">Recarregar</button><button class="btn ghost" type="button" id="copiar-erro">Copiar detalhe</button></div></div>';
+  $("#recarregar").addEventListener("click", () => location.reload());
+  $("#copiar-erro").addEventListener("click", async () => { try { await navigator.clipboard.writeText(m); $("#copiar-erro").textContent = "Copiado"; } catch(x){ $("#copiar-erro").textContent = "Selecione e copie o texto acima"; } });
+}
+try {
+  renderPosts(); renderStories(); renderCopy(); renderId();
+  medirAbas(); addEventListener("resize", medirAbas);
+  let aba = "posts"; try { aba = localStorage.getItem("er-kit-aba") || "posts"; } catch(e){}
+  setTab(ABAS.includes(aba) ? aba : "posts", false);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { medirAbas(); marcarEstouro(); });
+} catch(e){ falhou(e); }
 </script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 // Exporta os slides do Kit da Comunicação em PNG 1080 × 1350 (um por slide) e acusa texto que estoura.
 // Uso: node scripts/exportar_kit_png.mjs <pasta de saída> [datas separadas por vírgula, ex.: 12/10,14/10]
-// As fontes vêm de entregas/posts/2026-10-02-apresentacao/fontes (o Playwright daqui não baixa Google Fonts).
+// A Barlow é hospedada junto do kit (kit/fontes.css); aqui o CSS é servido com as fontes embutidas em base64, para a captura não depender de caminho de arquivo.
 import { chromium } from "/opt/node-tools/node_modules/playwright-core/index.mjs";
 import fs from "node:fs";
 import path from "node:path";
@@ -12,7 +12,7 @@ const css = fs.readFileSync(path.join(fontesDir, "fontes.css"), "utf8").replace(
   "url(data:font/woff2;base64," + fs.readFileSync(path.join(fontesDir, f)).toString("base64") + ")");
 const b = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium-1194/chrome-linux/chrome" });
 const p = await b.newPage({ viewport: { width: 1200, height: 1500 } });
-await p.route(/fonts\.googleapis\.com/, r => r.fulfill({ contentType: "text/css", body: css }));
+await p.route(/fontes\.css$/, r => r.fulfill({ contentType: "text/css", body: css }));
 await p.route(/fonts\.gstatic\.com/, r => r.abort());
 await p.goto("file://" + path.join(raiz, "entregas/posts/site/kit/index.html"));
 await p.addStyleTag({ content: ".sd{width:1080px!important;height:1350px!important;aspect-ratio:auto!important;box-shadow:none!important;border-radius:0!important}.strip{overflow:visible!important;flex-wrap:wrap}.ampliar{display:none!important}" });
