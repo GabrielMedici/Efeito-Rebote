@@ -385,6 +385,50 @@ def montar():
     return posts
 
 
+def slug(rot):
+    """Mesmo nome de pasta que scripts/exportar_kit_png.mjs usa (ex.: seg-12-10, 09-a-13-11)."""
+    return re.sub(r"^-|-$", "", re.sub(r"[^\dA-Za-z–]+", "-", rot)).lower()
+
+
+def tamanho(b):
+    return f"{b / 1048576:.1f} MB".replace(".", ",") if b >= 1048576 else f"{max(1, round(b / 1024))} KB"
+
+
+def arquivos(posts, kit):
+    """Liga cada post aos arquivos já exportados: PNG por slide, ZIP dos PNG e PowerPoint editável.
+    Falta de arquivo = erro: o botão nunca aponta para um download que não existe. Links do Canva (opcionais)
+    vêm de scripts/canva_links.json, no formato {"seg-12-10": "https://www.canva.com/design/.../view"}."""
+    import zipfile
+    if os.environ.get("ER_SEM_DOWNLOADS"):  # 1ª passada de exportar_kit_editavel.sh: só o HTML, para o navegador ler os slides
+        for p in posts:
+            p["arq"] = {"pngs": [], "zip": "", "zipTam": "", "pptx": "", "pptxTam": "", "canva": ""}
+        return {"zip": "", "tam": ""}
+    cj = os.path.join(os.path.dirname(__file__), "canva_links.json")
+    canva = json.load(open(cj, encoding="utf-8")) if os.path.exists(cj) else {}
+    for p in posts:
+        sg = slug(p["rot"])
+        pasta = os.path.join(kit, "png", sg)
+        n = len(p["slides"])
+        pngs = [f"slide-{i + 1}.png" for i in range(n)]
+        for f in pngs:
+            if not os.path.isfile(os.path.join(pasta, f)):
+                raise SystemExit(f"falta {pasta}/{f}: rode node scripts/exportar_kit_png.mjs entregas/posts/site/kit/png")
+        zp = os.path.join(kit, "png", f"efeito-rebote-{sg}-png.zip")
+        with zipfile.ZipFile(zp, "w", zipfile.ZIP_STORED) as z:  # PNG já é comprimido; datas fixas = zip igual a cada geração
+            for f in pngs:
+                zi = zipfile.ZipInfo(f"efeito-rebote-{sg}-{f}", (2026, 10, 7, 0, 0, 0)); zi.compress_type = zipfile.ZIP_STORED
+                z.writestr(zi, open(os.path.join(pasta, f), "rb").read())
+        pp = f"editavel/efeito-rebote-{sg}.pptx"
+        if not os.path.isfile(os.path.join(kit, pp)):
+            raise SystemExit(f"falta {kit}/{pp}: rode scripts/exportar_kit_editavel.sh")
+        p["arq"] = {"pngs": [f"png/{sg}/{f}" for f in pngs], "zip": f"png/efeito-rebote-{sg}-png.zip", "zipTam": tamanho(os.path.getsize(zp)),
+                    "pptx": pp, "pptxTam": tamanho(os.path.getsize(os.path.join(kit, pp))), "canva": canva.get(sg, "")}
+    fz = os.path.join(kit, "marca", "fontes-barlow.zip")
+    if not os.path.isfile(fz):
+        raise SystemExit(f"falta {fz}")
+    return {"zip": "marca/fontes-barlow.zip", "tam": tamanho(os.path.getsize(fz))}
+
+
 def conferir(posts):
     """Confere as regras de texto do plano v2 e devolve a lista de avisos (vazia = ok)."""
     av = []
@@ -419,6 +463,7 @@ def conferir(posts):
 
 def main():
     dados = {"posts": montar(), "stories": STORIES, "copy": COPY, "identidade": IDENTIDADE}
+    dados["fontesMarca"] = arquivos(dados["posts"], os.path.join(POSTS, "site", "kit"))
     for a in conferir(dados["posts"]):
         print("AVISO", a)
     modelo = open(os.path.join(os.path.dirname(__file__), "modelos", "kit.html"), encoding="utf-8").read()
