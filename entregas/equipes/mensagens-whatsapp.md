@@ -31,15 +31,15 @@ Dúvidas: fale com o líder do seu grupo.
 
 *Vice-líder:* Flauany
 
-*Roteiro e legendas (2 vagas):* 1. 2.
+*Roteiro e legendas (2 vagas):* 1. Nathan 2. Leonardo
 
-*Design (3 vagas):* 1. 2. 3.
+*Design (3 vagas):* 1. Geraldo Jackson 2. João Dionísio 3. Evelyn Noefer
 
-*Audiovisual (2 vagas):* 1. 2.
+*Audiovisual (2 vagas):* 1. Laura Martins 2. Anna Laura
 
-*Engajamento (2 vagas):* 1. 2.
+*Engajamento (2 vagas):* 1. Lívia Belentani Ventura 2. Mayara Helena Mendoza O.
 
-*Registro de imagens (2 vagas):* 1. 2.
+*Registro de imagens (2 vagas):* 1. Maria Eduarda Mendonça 2. Laura Mell
 
 *Arquivo de aprovações:*
 

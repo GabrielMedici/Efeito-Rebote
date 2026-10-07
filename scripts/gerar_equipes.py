@@ -250,6 +250,11 @@ PRAZO = "amanhã, quarta-feira (07/10), às 12h"
 PREENCHIDOS = {
     ("Comunicação e Redes Sociais", "Líder"): ["Vitória"],
     ("Comunicação e Redes Sociais", "Vice-líder"): ["Flauany"],
+    ("Comunicação e Redes Sociais", "Roteiro e legendas"): ["Nathan", "Leonardo"],
+    ("Comunicação e Redes Sociais", "Design"): ["Geraldo Jackson", "João Dionísio", "Evelyn Noefer"],
+    ("Comunicação e Redes Sociais", "Audiovisual"): ["Laura Martins", "Anna Laura"],
+    ("Comunicação e Redes Sociais", "Engajamento"): ["Lívia Belentani Ventura", "Mayara Helena Mendoza O."],
+    ("Comunicação e Redes Sociais", "Registro de imagens"): ["Maria Eduarda Mendonça", "Laura Mell"],
     ("Financeiro e Prestação de Contas", "Líder"): ["Franciele"],
     ("Financeiro e Prestação de Contas", "Vice-líder"): ["Edgar"],
     ("Criatividade e Organização de Eventos", "Líder"): ["Luan"],

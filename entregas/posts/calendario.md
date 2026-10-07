@@ -2,37 +2,35 @@
 
 > Status: **aguardando aprovação (prof.ª Camila)**. Proposta de 07/10/2026. Instagram @efeitorebote.oficial.
 
-## 1. Equipe (grupo do WhatsApp, 06/10, 18h)
-Líder: Vitória · Vice-líder: Flauany.
-Membros: Duda Mendonça, Evelyn Noefer (ainda escolhendo entre Comunicação e Eventos), Geraldo, João Pedro, Laura Martins, Laura Mel, Leo, Lívia Ventura, Mayara Mendoza, nalaura, Nathan Henrique. Lorena é vice-líder de Eventos e sai deste grupo.
+## 1. Equipe (lista de vagas preenchida no grupo, 07/10)
 
 | Função | Vagas | Quem | Entrega |
 |---|---|---|---|
 | Líder | 1 | Vitória | Fecha a pauta na segunda, envia o pacote à prof.ª na sexta e publica só o que foi aprovado |
 | Vice-líder | 1 | Flauany | Revisa os textos pelo checklist (quarta) e substitui a líder |
-| Roteiro e legendas | 2 | [PENDENTE: lista de vagas] | Textos das artes, legendas, roteiros de vídeo e áudio, com a fonte de cada dado |
-| Design | 3 | [PENDENTE: lista de vagas] | Artes e carrosséis (1080 × 1350) e modelos de story, na identidade visual |
-| Audiovisual | 2 | [PENDENTE: lista de vagas] | Gravação e edição de vídeos e áudios; live do sorteio, com Eventos |
-| Engajamento | 2 | [PENDENTE: lista de vagas] | Stories diários, moderação de comentários, métricas semanais |
-| Registro de imagens | 2 | [PENDENTE: lista de vagas] | Fotos e vídeos dos eventos, só com autorização e nunca de pessoas privadas de liberdade |
-| Arquivo de aprovações | 1 | [PENDENTE: lista de vagas] | Guarda cada versão enviada à prof.ª e a resposta dela |
+| Roteiro e legendas | 2 | Nathan e Leonardo | Textos das artes, legendas, roteiros de vídeo e áudio, com a fonte de cada dado |
+| Design | 3 | Geraldo Jackson, João Dionísio e Evelyn Noefer | Artes e carrosséis (1080 × 1350) e modelos de story, na identidade visual |
+| Audiovisual | 2 | Laura Martins e Anna Laura | Gravação e edição de vídeos e áudios; live do sorteio, com Eventos |
+| Engajamento | 2 | Lívia Ventura e Mayara Mendoza | Stories diários, moderação de comentários, métricas semanais |
+| Registro de imagens | 2 | Maria Eduarda Mendonça e Laura Mell | Fotos e vídeos dos eventos, só com autorização e nunca de pessoas privadas de liberdade |
+| Arquivo de aprovações | 1 | [PENDENTE: vaga livre, alocação pelo sorteio das vagas que sobraram] | Guarda cada versão enviada à prof.ª e a resposta dela |
 
 ## 2. Ciclo semanal (ordem de entrega)
 Cada semana produz os 3 posts da **semana seguinte**. Uma etapa só começa quando a anterior entregou.
 
 | Quando | Quem | Entrega |
 |---|---|---|
-| Segunda, na reunião | Líder | Pauta dos 3 posts da semana seguinte (temas do calendário abaixo) |
-| Terça, 20h | Roteiro e legendas | Texto de cada slide, legenda (até ~150 palavras, até 5 hashtags) e fonte dos dados |
-| Quarta, 20h | Vice-líder | Revisão pelo checklist (item 4); devolve ajustes no mesmo dia |
-| Quinta, 20h | Design + Audiovisual | Artes finais, modelos de story e vídeo/áudio, a partir do texto revisado |
-| Sexta, 12h | Líder | Envia o pacote completo à prof.ª Camila |
-| Sexta, 12h | Arquivo de aprovações | Registra o que foi enviado (data, versão) |
+| Segunda, na reunião | Líder (Vitória) | Pauta dos 3 posts da semana seguinte (temas do calendário abaixo) |
+| Terça, 20h | Roteiro (Nathan, Leonardo) | Texto de cada slide, legenda (até ~150 palavras, até 5 hashtags) e fonte dos dados |
+| Quarta, 20h | Vice-líder (Flauany) | Revisão pelo checklist (item 4); devolve ajustes no mesmo dia |
+| Quinta, 20h | Design (Geraldo, João, Evelyn) + Audiovisual (Laura Martins, Anna Laura) | Artes finais, modelos de story e vídeo/áudio, a partir do texto revisado |
+| Sexta, 12h | Líder (Vitória) | Envia o pacote completo à prof.ª Camila |
+| Sexta, 12h | Arquivo de aprovações (vaga livre) | Registra o que foi enviado (data, versão) |
 | Sábado e domingo | Roteiro + Design | Ajustes pedidos pela prof.ª; Arquivo registra a resposta |
-| Seg, qua e sex | Líder ou vice | Publica o post aprovado |
-| No dia do post | Engajamento | Repost nos stories e convite para a turma compartilhar |
-| Todo dia | Engajamento | 1 a 3 stories a partir dos modelos aprovados (enquete, caixinha de perguntas, contagem regressiva, repost) |
-| Domingo | Engajamento | Métricas da semana (alcance, seguidores, salvamentos) para o relatório |
+| Seg, qua e sex | Vitória ou Flauany | Publica o post aprovado |
+| No dia do post | Engajamento (Lívia, Mayara) | Repost nos stories e convite para a turma compartilhar |
+| Todo dia | Engajamento (Lívia, Mayara) | 1 a 3 stories a partir dos modelos aprovados (enquete, caixinha de perguntas, contagem regressiva, repost) |
+| Domingo | Engajamento (Lívia, Mayara) | Métricas da semana (alcance, seguidores, salvamentos) para o relatório |
 
 ## 3. Calendário (3 posts por semana + stories diários)
 | Data | Tema | Formato | Observação |
