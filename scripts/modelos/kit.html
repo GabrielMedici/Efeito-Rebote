@@ -248,6 +248,7 @@ dialog#zoom::backdrop{background:rgba(10,14,30,.78)}
 .sd .ciclo li.volta,.sd .ciclo li.fim{background:var(--m-azul);color:#fff;border-color:var(--m-azul)}
 .sd .ciclo li.volta span{background:var(--m-ouro);color:var(--m-azul)}
 .sd .ciclo li.fim{grid-template-columns:1fr}
+.sd .ciclo li .it{margin:0;font:inherit;color:inherit}
 .sd .serie{display:grid;margin:0;padding:0}
 .sd .serie li{list-style:none;display:grid;grid-template-columns:18.5cqw 1fr;gap:1.85cqw;padding:2.8cqw 0;border-top:.19cqw solid var(--m-linha);font-size:3.89cqw;line-height:1.25}
 .sd .serie li b{font:700 4.26cqw/1 "Barlow Condensed",Arial,sans-serif;color:var(--m-verm)}
@@ -350,7 +351,7 @@ function slide(s, i, n, noZoom){
   } else if (s.tipo === "dado") {
     h = tag + '<div class="num">' + esc(s.num) + '</div><div class="h2" style="font-size:7.04cqw">' + esc(s.t) + '</div>' + (s.p ? '<p>' + esc(s.p) + '</p>' : '') + '<div class="fonte">' + esc(s.fonte) + '</div>' + pe(s.ponte, i, n);
   } else if (s.tipo === "passos") {
-    const its = s.itens.map((x, k) => '<li' + (s.volta && k === s.itens.length - 1 ? ' class="volta"' : '') + '><span>' + (k + 1) + '</span>' + rich(x) + '</li>').join("") + (s.fim ? '<li class="fim">' + rich(s.fim) + '</li>' : '');
+    const its = s.itens.map((x, k) => '<li' + (s.volta && k === s.itens.length - 1 ? ' class="volta"' : '') + '><span>' + (k + 1) + '</span><p class="it">' + rich(x) + '</p></li>').join("") + (s.fim ? '<li class="fim">' + rich(s.fim) + '</li>' : '');
     h = tag + '<div class="h2">' + esc(s.t) + '</div><ol class="ciclo">' + its + '</ol>' + pe(s.ponte, i, n);
   } else if (s.tipo === "serie") {
     h = tag + '<div class="h2">' + esc(s.t) + '</div><ul class="serie">' + s.itens.map(x => '<li><b>' + esc(x[0]) + '</b><span>' + esc(x[1]) + '</span></li>').join("") + '</ul>' + pe(s.ponte, i, n);
