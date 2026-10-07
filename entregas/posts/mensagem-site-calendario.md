@@ -1,6 +1,6 @@
 # Mensagens do site do calendário (07/10/2026)
 
-> Status: aguardando aprovação (prof.ª Camila). Primeiro a mensagem 1 (privada, à Vitória). A mensagem 2 vai ao grupo **só depois** de a Vitória concordar, com `como-usar-calendario.jpg`.
+> Status: aguardando aprovação (prof.ª Camila). Primeiro as mensagens 1 e 1b (privadas, à Vitória e à Flauany, ao mesmo tempo). A mensagem 2 vai ao grupo **só depois** de a Vitória concordar, com `como-usar-calendario.jpg`.
 
 ## 1. Para a Vitória (privado)
 
@@ -30,13 +30,13 @@ Nesse processo, notei 3 pontos que mudei só no material do site, por causa das 
 
 Se concordar, sugiro ajustar também no guia e na planilha, para tudo bater. Se preferir de outro jeito, me fala que eu mudo no site. 🙏
 
-_Tudo segue aguardando a aprovação da prof.ª Camila._
+Acredito que isso também ajuda a prof.ª Camila a aprovar, pelo menos o escopo. As artes imagino que vocês ainda vão mudar bastante.
 ```
 
-## 1b. Para a Flauany (privado; versão revisada do rascunho do usuário)
+## 1b. Para a Flauany (privado, junto com a da Vitória)
 
 ```
-Oi, Flauany! Tudo bem? 😊
+Oi, Flau! Tudo bem? 😊
 
 Li com calma o *guia* e a *planilha de controle* da Comunicação. Ficaram muito bem organizados, e o fluxo da semana está claro para todo mundo.
 
@@ -53,13 +53,13 @@ Por isso, adaptei o que eu tinha feito para seguir o *plano de vocês*: o site d
 - *Baixar a arte pronta* de cada opção (PNG 1080 × 1350, num ZIP)
 - *Editar no Canva*: modelo editável (.pptx) com textos, formas e as fontes do projeto
 
-Nesse processo, notei 3 pontos que mudei só no material do site, por causa das regras do projeto. Queria mostrar a vocês antes de levar ao grupo, porque a decisão é de vocês:
+Nesse processo, notei 3 pontos que mudei só no material do site, por causa das regras do projeto. Mandei também para a Vitória, porque a decisão final é de vocês:
 
 1. *Nome da ação:* troquei o termo do sorteio por "ação de arrecadação" e "bilhetes". Foi o combinado da turma, e o termo antigo pode ter problema legal num material público.
 2. *Enquete de 10/10:* "a lei garante higiene à pessoa presa?" virou "a Lei de Execução Penal cita escova de dente?". O art. 12 fala em "instalações higiênicas", e não em kit de higiene. Assim, a gente evita uma correção nos comentários.
 3. *Post de 15/10 (os 5 itens):* mantive a data, mas o post só explica as regras dos itens. O pedido de doação e os pontos de coleta ficam para depois da liberação, como no checklist do guia.
 
-Se concordarem, sugiro ajustar também no guia e na planilha, para tudo bater. Se preferirem de outro jeito, me fala que eu mudo no site. 🙏
+Como você cuida da planilha e do envio à prof.ª Camila, se concordarem, vale ajustar esses 3 pontos lá também, para tudo bater. 🙏
 
 Acredito que isso também ajuda a prof.ª Camila a aprovar, pelo menos o escopo. As artes imagino que vocês ainda vão mudar bastante.
 ```

@@ -27,3 +27,9 @@ O calendário fica em `entregas/posts/calendario.md`, como uma tabela com data, 
 Siga esta estrutura: gancho (até 5 s), contexto, informação central e convite para seguir o projeto. Indique a duração estimada (cerca de 150 palavras por minuto) e marque as pausas.
 
 Por fim, rode `bash scripts/check.sh entregas/posts/<arquivo>.md`.
+
+## Roteiro de story estático (enquete)
+É o texto e a organização de UMA tela, para Design e quem posta não precisarem perguntar nada. Campos:
+1. Objetivo (1 linha). 2. Texto da arte (gancho, até 12 palavras; rótulo opcional). 3. Adesivo: pergunta curta, 2 opções de 1 a 3 palavras, qual é a certa (ou "opinião"). 4. Fonte do dado (sem fonte não entra). 5. Story de resposta: resposta + 1 ou 2 frases + fonte (opinião: agradecer e puxar o próximo post). 6. Quando (dia, horário, post do feed com que conversa). 7. Para o Design (modelo/estilo e o destaque). 8. Cuidados (nada de "a lei garante", pessoa presa, pedido de doação antes da liberação).
+Um story = uma ideia; se precisar explicar muito, vira carrossel. Arte com espaço reservado para o adesivo, fora das faixas do Instagram.
+
