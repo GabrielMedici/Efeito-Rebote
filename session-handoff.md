@@ -1,7 +1,7 @@
 # Passagem de sessão (sobrescreva a cada encerramento)
 
 **Atualizado:** 2026-10-07 (tarde)
-**Comece por aqui:** PR GabrielMedici/Efeito-Rebote#4 (rascunho). Calendário, imagens, site e kit seguem o plano da líder Vitória (guia e planilha de 06/10).
+**Comece por aqui:** PR GabrielMedici/Efeito-Rebote#4 mesclado e publicado (07/10). Calendário, imagens, site e kit seguem o plano da líder Vitória (guia e planilha de 06/10).
 
 ## Onde parou
 - `entregas/posts/calendario.md` é a fonte única: equipe e ciclo dom→sex do guia da Vitória, 18 peças com Pilar/Roteiro/Arte/Edição/Publica.
@@ -10,6 +10,6 @@
 - Mensagens: `mensagem-site-calendario.md` (1. Vitória, privada; 2. grupo, só depois do ok dela) e `mensagem-calendario.md` (imagens).
 
 ## Atenção
-- PR #3 (outra sessão, Canva/PNG por post) mexe nos mesmos arquivos do kit com as datas antigas. Mesclar o #3 antes e então adaptar `arquivos()` a opções.
+- PR #3 (outra sessão, Canva/PNG por post) foi feito sobre as datas antigas e vai conflitar com o main: adaptar `arquivos()` às opções e às datas novas.
 - Carrossel pronto de 09/10 diz "a LEP garante assistência material e à saúde": defensável pelo art. 41, VII (direitos do preso). O que não pode é dizer que garante kit/escova.
 - Pendências antigas: F02 regulamento (sexta 12h); aval da prof.ª para R$ 150 por aluno e para a ação.
