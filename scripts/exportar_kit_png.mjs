@@ -23,22 +23,29 @@ const carregadas = await p.evaluate(() => [...new Set([...document.fonts].filter
 console.log("fontes carregadas:", carregadas);
 const botoes = await p.$$("#p-posts .index button");
 let total = 0, estouros = [];
-for (const bt of botoes) {
-  await bt.click();
-  const art = await p.$("#post-atual article.post");
+const nb = botoes.length;
+for (let k = 0; k < nb; k++) {
+  await (await p.$$("#p-posts .index button"))[k].click();
+  let art = await p.$("#post-atual article.post");
   const rot = (await art.$eval(".date", e => e.textContent)).trim();
   if (filtro && !filtro.split(",").some(f => rot.includes(f))) continue;
   const nome = rot.replace(/[^\dA-Za-z–]+/g, "-").replace(/^-|-$/g, "");
-  fs.mkdirSync(path.join(saida, nome), { recursive: true });
-  const slides = await art.$$(".sd");
-  for (let i = 0; i < slides.length; i++) {
-    const sobra = await slides[i].evaluate(s => { const x = s.querySelector(".in"); return x.scrollHeight - x.clientHeight; });
-    if (sobra > 1) estouros.push(`${rot} slide ${i + 1}: estoura ${sobra}px`);
-    // fixa o slide no canto (0,0) para a captura sair com exatamente 1080 × 1350
-    await slides[i].evaluate(s => { s.dataset.antes = s.getAttribute("style") || ""; s.style.cssText += ";position:fixed;left:0;top:0;margin:0;z-index:99999"; });
-    await p.screenshot({ path: path.join(saida, nome, `slide-${i + 1}.png`), clip: { x: 0, y: 0, width: 1080, height: 1350 } });
-    await slides[i].evaluate(s => s.setAttribute("style", s.dataset.antes));
-    total++;
+  const nops = Math.max(1, (await art.$$("[data-op]")).length);
+  for (let op = 0; op < nops; op++) {
+    if (nops > 1) { await p.click(`#post-atual [data-op="${op}"]`); art = await p.$("#post-atual article.post"); }
+    const pasta = path.join(saida, nome, nops > 1 ? "opcao-" + "ABC"[op] : "");
+    const slides = await art.$$(".sd");
+    if (!slides.length) continue;
+    fs.mkdirSync(pasta, { recursive: true });
+    for (let i = 0; i < slides.length; i++) {
+      const sobra = await slides[i].evaluate(s => { const x = s.querySelector(".in"); return x.scrollHeight - x.clientHeight; });
+      if (sobra > 1) estouros.push(`${rot} opção ${"ABC"[op]} slide ${i + 1}: estoura ${sobra}px`);
+      // fixa o slide no canto (0,0) para a captura sair com exatamente 1080 × 1350
+      await slides[i].evaluate(s => { s.dataset.antes = s.getAttribute("style") || ""; s.style.cssText += ";position:fixed;left:0;top:0;margin:0;z-index:99999"; });
+      await p.screenshot({ path: path.join(pasta, `slide-${i + 1}.png`), clip: { x: 0, y: 0, width: 1080, height: 1350 } });
+      await slides[i].evaluate(s => s.setAttribute("style", s.dataset.antes));
+      total++;
+    }
   }
 }
 console.log(`${total} PNG em ${saida}`);

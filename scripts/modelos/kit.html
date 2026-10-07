@@ -57,6 +57,11 @@ body{overflow-wrap:break-word;margin:0;background:var(--surface-canvas);color:va
 .post>*,.cols>*,.block,.panel>*{min-width:0}
 .src span,.legend,.list li,.tip,.goal,.tema,.hooks .txt,.lock{overflow-wrap:anywhere}
 .hint{font-size:var(--t-xs);color:var(--text-secondary)}
+.opcoes{display:flex;flex-wrap:wrap;gap:var(--s-2);margin-block:var(--s-2)}
+.opcoes button{display:grid;justify-items:start;gap:2px;text-align:left;border:1px solid var(--border-control);background:var(--surface-raised);border-radius:var(--chip-radius);padding:var(--s-2) var(--s-3);min-height:var(--tap);font-size:var(--t-sm);color:var(--text-primary);max-width:100%}
+.opcoes button b{font-weight:700}
+.opcoes button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.opcoes-h{font-size:var(--t-xs);font-weight:700;color:var(--text-secondary)}
 .pos{font-size:var(--t-xs);color:var(--text-secondary);align-self:center}
 .note{background:var(--warning-soft);color:var(--text-primary);border-radius:var(--r-field);padding:var(--s-3) var(--s-3);font-size:var(--t-sm)}
 .aviso{background:var(--danger-soft);color:var(--danger);border-radius:var(--r-control);padding:var(--s-2) var(--s-3);font-size:var(--t-xs);font-weight:600;max-width:min(340px,86vw)}
@@ -378,16 +383,27 @@ async function copiar(btn, txt){
   if (ok) { btn.classList.add("ok"); btn.innerHTML = ICO_OK + "Copiado"; setTimeout(restaurarBotao, 2500, btn); }
 }
 
-function postHtml(p, prox, i){
-  const n = p.slides.length;
+function postHtml(p0, prox, i, op){
+  const p = Object.assign({}, p0, p0.opcoes[op]);
+  const n = (p.slides || []).length;
   const kick = p.capa && /^Série/.test(p.capa.eb || "") ? '<span class="kick">' + esc(p.capa.eb) + '</span>' : "";
   const titulo = p.capa ? p.capa.t : p.tema;
   let h = '<article class="post" id="' + p.id + '"><div class="post-h"><div class="meta"><span class="date">' + esc(p.rot) + '</span><span>' + esc(p.fmt) + '</span>'
-    + (p === prox ? '<span class="pill blue">Próximo</span>' : '') + (p.lock ? '<span class="pill red">Só após liberação</span>' : '') + (p.pend ? '<span class="pill gold">' + esc(p.pend) + '</span>' : '') + '</div>'
-    + kick + '<h2 tabindex="-1">' + esc(titulo) + '</h2>' + (p.capa ? '<p class="tema">Tema no calendário: ' + esc(p.tema) + '</p>' : '') + '<p class="goal"><b>Objetivo:</b> ' + esc(p.objetivo) + '</p></div>';
+    + (p0 === prox ? '<span class="pill blue">Próximo</span>' : '') + (p.lock ? '<span class="pill red">Só após liberação</span>' : '') + (p.pend ? '<span class="pill gold">' + esc(p.pend) + '</span>' : '') + '</div>'
+    + kick + '<h2 tabindex="-1">' + esc(titulo) + '</h2>' + (p.capa ? '<p class="tema">Tema no calendário: ' + esc(p.tema) + '</p>' : '') + '<p class="goal"><b>Objetivo:</b> ' + esc(p.objetivo) + '</p>'
+    + (p0.opcoes.length > 1 ? '<span class="opcoes-h">' + p0.opcoes.length + ' opções para esta peça. Escolha uma:</span><div class="opcoes" role="group" aria-label="Opções">'
+      + p0.opcoes.map((o, k) => '<button type="button" data-op="' + k + '" aria-pressed="' + (k === op) + '"><b>Opção ' + esc(o.nome) + '</b></button>').join("") + '</div>' : '')
+    + '</div>';
   if (p.lock) h += '<p class="lock">Não publicar nem adiantar nos stories antes de a prof.ª Camila liberar a divulgação da arrecadação.</p>';
- h += '<p class="hint">Deslize os slides para o lado. Toque no ícone do canto para ampliar.</p>';
-  h += '<div class="strip" role="region" tabindex="0" aria-label="Slides do post, role para o lado">' + p.slides.map((s, k) => slide(s, k, n)).join("") + '</div>';
+ if (p.stories) {
+    h += '<p class="hint">Sequência de stories. Use o adesivo do Instagram indicado em cada um.</p>';
+    h += '<div class="strip" role="region" tabindex="0" aria-label="Stories da peça, role para o lado">' + p.stories.map(story).join("") + '</div>';
+    const extras = p.stories.filter(s => s.resp || (s.mais && s.mais.length));
+    if (extras.length) h += '<div class="block"><h3>Respostas e outras perguntas</h3><ul class="list">' + extras.map(s => (s.resp ? '<li>' + esc(s.resp) + '</li>' : '') + (s.mais || []).map(x => '<li>' + esc(x) + '</li>').join("")).join("") + '</ul></div>';
+  } else {
+    h += '<p class="hint">Deslize os slides para o lado. Toque no ícone do canto para ampliar.</p>';
+    h += '<div class="strip" role="region" tabindex="0" aria-label="Slides do post, role para o lado">' + p.slides.map((s, k) => slide(s, k, n)).join("") + '</div>';
+  }
   h += '<div class="cols"><div class="block"><div class="bh"><h3>Legenda pronta</h3><button class="btn" type="button" data-copy="' + p.id + '">' + ICO_COPIA + 'Copiar legenda</button></div><pre class="legend">' + esc(p.legenda) + '</pre><span class="copied" aria-live="polite"></span></div>';
   h += '<div class="block"><h3>Ganchos para a capa (escolha um)</h3><ul class="hooks">' + p.ganchos.map(g => '<li><span class="tec">' + esc(g[0]) + '</span><span class="txt">' + esc(g[1]) + '</span></li>').join("") + '</ul></div></div>';
   h += '<details><summary>Fontes, cuidados e dica de arte</summary><div class="panel">'
@@ -423,13 +439,16 @@ function renderPosts(){
   const hashRuim = /^post-/.test(doHash) && !ids.includes(doHash);
   $("#p-posts").innerHTML = '<nav class="index" aria-label="Posts por data">'
     + D.posts.map(p => '<button type="button" data-go="' + p.id + '">' + esc(p.rot) + (p === prox ? '<span class="nx" aria-hidden="true"></span><span class="sr-only"> (próximo a publicar)</span>' : '') + '</button>').join("") + '</nav>' + (hashRuim ? '<p class="note" role="status">O link pedia um post que não existe. Abri o ' + esc(D.posts[ids.indexOf(atual)].rot) + ', o mais próximo de publicar.</p>' : '') + '<div id="post-atual"></div>';
+  const opc = {};
   function mostrar(id, rolar, foco){
     atual = id;
     const i = ids.indexOf(id);
-    postAtual = D.posts[i];
-    $("#post-atual").innerHTML = postHtml(D.posts[i], prox, i);
+    const op = opc[id] || 0;
+    postAtual = Object.assign({}, D.posts[i], D.posts[i].opcoes[op]);
+    $("#post-atual").innerHTML = postHtml(D.posts[i], prox, i, op);
+    $("#post-atual").querySelectorAll("[data-op]").forEach(b => b.addEventListener("click", () => { opc[id] = +b.dataset.op; mostrar(id, false, false); const x = $("#post-atual [data-op='" + b.dataset.op + "']"); if (x) x.focus(); }));
     $("#p-posts").querySelectorAll(".index button").forEach(b => { const on = b.dataset.go === id; b.setAttribute("aria-current", on ? "true" : "false"); if (on) b.scrollIntoView({inline: "center", block: "nearest"}); });
-    $("#post-atual").querySelectorAll("[data-copy]").forEach(b => b.addEventListener("click", () => copiar(b, D.posts[i].legenda)));
+    $("#post-atual").querySelectorAll("[data-copy]").forEach(b => b.addEventListener("click", () => copiar(b, postAtual.legenda)));
     $("#post-atual").querySelectorAll("[data-go]").forEach(b => b.addEventListener("click", () => mostrar(b.dataset.go, true, true)));
     $("#post-atual").querySelectorAll(".ampliar").forEach(b => b.addEventListener("click", () => ampliarSlide(b)));
     try { history.replaceState(null, "", "#" + id); } catch(e){}

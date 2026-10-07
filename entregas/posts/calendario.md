@@ -1,68 +1,67 @@
 # Calendário editorial e roteiro de produção — Comunicação e Redes Sociais
 
-> Status: **aguardando aprovação (prof.ª Camila)**. Proposta de 07/10/2026. Instagram @efeitorebote.oficial.
+> Status: **aguardando aprovação (prof.ª Camila)**. Base: guia e planilha de controle da líder Vitória (versão de 06/10/2026), com os ajustes de termo pedidos pelas regras do projeto. Instagram @efeitorebote.oficial.
 
-## 1. Equipe (lista de vagas preenchida no grupo, 07/10)
+## 1. Equipe (guia da líder, 06/10)
 
 | Função | Vagas | Quem | Entrega |
 |---|---|---|---|
-| Líder | 1 | Vitória | Fecha a pauta na segunda, envia o pacote à prof.ª na sexta e publica só o que foi aprovado |
-| Vice-líder | 1 | Flauany | Revisa os textos pelo checklist (quarta) e substitui a líder |
-| Roteiro e legendas | 2 | Nathan e Leonardo | Textos das artes, legendas, roteiros de vídeo e áudio, com a fonte de cada dado |
-| Design | 3 | Geraldo Jackson, João Dionísio e Evelyn Noefer | Artes e carrosséis (1080 × 1350) e modelos de story, na identidade visual |
-| Audiovisual | 2 | Laura Martins e Anna Laura | Gravação e edição de vídeos e áudios; live do sorteio, com Eventos |
-| Engajamento | 2 | Lívia Ventura e Mayara Mendoza | Stories diários, moderação de comentários, métricas semanais |
-| Registro de imagens | 2 | Maria Eduarda Mendonça e Laura Mell | Fotos e vídeos dos eventos, só com autorização e nunca de pessoas privadas de liberdade |
-| Arquivo de aprovações | 1 | [PENDENTE: vaga livre, alocação pelo sorteio das vagas que sobraram] | Guarda cada versão enviada à prof.ª e a resposta dela |
+| Líder | 1 | Vitória | Fecha a pauta na segunda, revisa cada peça pelo checklist, publica e oculta comentários negativos |
+| Vice-líder | 1 | Flauany | Envia o material à prof.ª Camila na quinta, atualiza a planilha de controle e publica quando a líder não puder |
+| Publicação e segurança | 1 | Gabriel | Publica Reels e lives, cuida da senha e da verificação em duas etapas e traz os 3 números de domingo |
+| Roteiro de carrossel | 1 | Nathan | Texto de cada slide e legenda com gancho, chamada final e fontes |
+| Roteiro de Reels e stories | 1 | Leonardo | Roteiro de Reels e stories, perguntas de enquete e o que a gravação precisa captar |
+| Design | 4 | Geraldo Jackson, João Dionísio, Evelyn Noefer e Lorena Dias | Carrosséis (1080 × 1350), capas de Reels, stories e destaques (1080 × 1920) em PNG |
+| Gravação | 1 | Laura Martins | Vídeo bruto dos Reels, na vertical, e cortes extras para stories |
+| Edição | 1 | Anna Laura | Edição no CapCut, com legenda na tela, exportada em 9:16 |
+| Ideias e parcerias | 1 | Lívia Belentani Ventura | 3 ideias para a pauta, tendências e lista de parcerias |
+| Interação e mobilização | 1 | Mayara Helena Mendoza O. | Enquetes, quizzes e caixinhas prontos e aviso à turma a cada post |
+| Registro de imagens | 2 | Maria Eduarda Mendonça e Laura Mell | Fotos e vídeos dos encontros e ações, no Drive em até 24h |
 
 ## 2. Ciclo semanal (ordem de entrega)
-Cada semana produz os 3 posts da **semana seguinte**. Uma etapa só começa quando a anterior entregou.
+Cada semana produz os posts da **semana seguinte**. Só Vitória, Flauany e Gabriel entram no Instagram; os demais entregam o arquivo pronto na pasta do Drive.
 
 | Quando | Quem | Entrega |
 |---|---|---|
-| Segunda, 20h | Líder (Vitória) | Posta no grupo do WhatsApp a pauta dos 3 posts da semana seguinte (temas do calendário abaixo); cada responsável confirma até terça, 12h. Sem reunião |
-| Terça, 20h | Roteiro (Nathan, Leonardo) | Texto de cada slide, legenda (até ~150 palavras, até 5 hashtags) e fonte dos dados |
-| Quarta, 20h | Vice-líder (Flauany) | Revisão pelo checklist (item 4); devolve ajustes no mesmo dia |
-| Quinta, 20h | Design (Geraldo, João, Evelyn) + Audiovisual (Laura Martins, Anna Laura) | Artes finais, modelos de story e vídeo/áudio, a partir do texto revisado |
-| Sexta, 12h | Líder (Vitória) | Envia o pacote completo à prof.ª Camila |
-| Sexta, 12h | Arquivo de aprovações (vaga livre) | Registra o que foi enviado (data, versão) |
-| Sábado e domingo | Roteiro + Design | Ajustes pedidos pela prof.ª; Arquivo registra a resposta |
-| Seg, qua e sex | Vitória ou Flauany | Publica o post aprovado |
-| No dia do post | Engajamento (Lívia, Mayara) | Repost nos stories e convite para a turma compartilhar |
-| Todo dia | Engajamento (Lívia, Mayara) | 1 a 3 stories a partir dos modelos aprovados (enquete, caixinha de perguntas, contagem regressiva, repost) |
-| Domingo | Engajamento (Lívia, Mayara) | Métricas da semana (alcance, seguidores, salvamentos) para o relatório |
+| Domingo, 20h | Ideias e parcerias (Lívia) + Publicação (Gabriel) | 3 ideias para a pauta; os 3 números da semana (alcance, salvamentos e compartilhamentos) |
+| Segunda, 18h15 | Líder (Vitória) + Registro de imagens | Encontro do projeto: a pauta da semana é fechada; o Registro fotografa o encontro |
+| Terça, 20h | Roteiro (Nathan, Leonardo) | Textos dos slides, legendas, roteiros de Reels e stories, com a fonte de cada dado |
+| Quarta, 20h | Design + Gravação (Laura Martins) + Interação (Mayara) | Artes em PNG, vídeo bruto e stories prontos |
+| Quinta, 12h | Edição (Anna Laura) + Líder (Vitória) | Edição final e revisão pelo checklist |
+| Quinta, 18h | Vice-líder (Flauany) | Envia o material à prof.ª Camila |
+| Sexta | Quem criou a peça + Vice-líder | Ajustes pedidos pela prof.ª e agendamento |
+| Ter, qui e sáb | Vitória, Flauany ou Gabriel | Publica só o que está aprovado. A Mayara avisa a turma e todos engajam na primeira hora |
 
-## Alinhamentos online (só dois, de até 30 min, por chamada de vídeo no WhatsApp ou Meet)
-| Quando | Quem | Para quê |
-|---|---|---|
-| Quinta, 08/10, 19h (sugestão) | Toda a equipe | Combinar o ciclo, os modelos de story e a identidade visual antes do primeiro envio, que tem prazo apertado |
-| Quinta, 29/10, 19h (sugestão) | Líder, Audiovisual, Engajamento e Registro de imagens, com Eventos | Planejar a live do sorteio (02/11) e a cobertura da visita (04 e 05/11) |
+Semanas 1 e 2 (posts de 09 a 17/10) estão comprimidas e são produzidas juntas: roteiro até terça, 06/10; arte e gravação até quarta, 07/10; edição e envio à prof.ª até quinta, 08/10; ajustes e agendamento na sexta, 09/10.
 
-Todo o resto se resolve por mensagem no grupo da equipe.
+## 3. Calendário (18 peças, de 09/10 a 14/11)
+| Data | Tema | Formato | Observação | Pilar | Roteiro | Arte e gravação | Edição | Publica |
+|---|---|---|---|---|---|---|---|---|
+| 09/10 (sex) | Apresentação do projeto | Carrossel | Carrossel de 5 imagens já pronto. Só apresenta, sem pedir doação | Conscientização | Nathan | Geraldo Jackson | — | Vitória |
+| 10/10 (sáb) | Enquete: a Lei de Execução Penal cita escova de dente? | Story | Fonte: LEP, arts. 12 e 14 | Conscientização | Leonardo | Mayara e Geraldo Jackson | — | Flauany |
+| 11/10 (dom) | Efeito rebote em 30 segundos (como deixar de trocar o óleo do carro) | Reel | Gancho nos 3 primeiros segundos | Conscientização | Leonardo | Laura Martins | Anna Laura | Gabriel |
+| 13/10 (ter) | O que a lei diz sobre higiene (LEP, arts. 12 e 14) | Reel | Fonte na tela, linguagem simples | Autoridade | Leonardo | Laura Martins | Anna Laura | Gabriel |
+| 15/10 (qui) | Os 5 itens e por que existe regra (salvável) | Carrossel | Explica as regras dos itens; o pedido de doação e os pontos de coleta só depois da autorização | Conscientização | Nathan | Geraldo Jackson | — | Vitória |
+| 17/10 (sáb) | Caixinha: pergunte sobre o sistema prisional | Story | Pergunta hostil não é respondida: vai para a Vitória | Conexão emocional | Leonardo | Mayara | — | Flauany |
+| 20/10 (ter) | Dados da Defensoria Pública do PR sobre as unidades de Maringá | Carrossel | Citar relatório e ano, sem dado que identifique pessoa presa | Autoridade | Nathan | Geraldo Jackson | — | Vitória |
+| 22/10 (qui) | Bastidores da triagem dos itens | Reel | Material do Registro de imagens | Conexão emocional | Leonardo | Maria Eduarda e Laura Mell | Anna Laura | Gabriel |
+| 24/10 (sáb) | Como sua doação vira prestação de contas | Carrossel | **Só após liberação** da ação de arrecadação | Arrecadação | Nathan | Geraldo Jackson | — | Vitória |
+| 27/10 (ter) | Contagem regressiva: bilhetes da ação de arrecadação até 30/10, 23h59 | Story | **Só após liberação** da ação de arrecadação | Arrecadação | Leonardo | Mayara e Geraldo Jackson | — | Flauany |
+| 29/10 (qui) | Por que a família paga a conta (higiene e visitas) | Reel | Tom humano, sem vitimização | Conexão emocional | Leonardo | Laura Martins | Anna Laura | Gabriel |
+| 01/11 (dom) | Lista dos números participantes, sem dados pessoais | Carrossel | **Só após liberação**; lista oficial da comissão financeira | Autoridade | Nathan | Geraldo Jackson | — | Vitória |
+| 02/11 (seg) | Sorteio ao vivo da ação de arrecadação | Live | **Só após liberação**; [PENDENTE: horário do sorteio]; urna, 2 testemunhas, ata e prof.ª Camila presente | Conexão emocional | Leonardo | Geraldo Jackson | — | Gabriel |
+| 05/11 (qui) | Visitas técnicas: bastidores externos (04 e 05/11) | Story | Só o que a prof.ª e as unidades autorizarem; nunca pessoas presas | Conscientização | Leonardo | Maria Eduarda e Laura Mell | — | Flauany |
+| 07/11 (sáb) | Resultado parcial: itens arrecadados e entregues | Carrossel | Números do termo de entrega | Autoridade | Nathan | Geraldo Jackson | — | Vitória |
+| 10/11 (ter) | Prestação de contas: itens por unidade | Carrossel | Com notas fiscais, números conferidos com o Financeiro | Autoridade | Nathan | Geraldo Jackson | — | Vitória |
+| 12/11 (qui) | Depoimentos dos alunos sobre o projeto | Reel | Sem dados de pessoas presas | Conexão emocional | Leonardo | Laura Martins | Anna Laura | Gabriel |
+| 14/11 (sáb) | Convite: siga e acompanhe o projeto | Story | Fechamento da campanha | Conscientização | Leonardo | Mayara e Geraldo Jackson | — | Flauany |
 
-## 3. Calendário (3 posts por semana + stories diários)
-| Data | Tema | Formato | Observação |
-|---|---|---|---|
-| 12/10 (seg) | O que é a reincidência e por que o projeto se chama Efeito Rebote | Carrossel | |
-| 14/10 (qua) | Por que cuidar de quem está preso também protege você | Carrossel | Série informativa sobre as objeções |
-| 16/10 (sex) | Higiene básica é dever do Estado, não privilégio | Carrossel | Base: Lei de Execução Penal, arts. 12 e 13 (conferir o texto da lei antes de publicar) |
-| 19/10 (seg) | Quem paga a conta hoje: as famílias | Carrossel | Série informativa |
-| 21/10 (qua) | Conheça a turma e as equipes por trás do projeto | Feed | Foto da turma só com autorização de todos |
-| 23/10 (sex) | Efeito Rebote em 30 segundos | Reels ou áudio | Roteiro de áudio: gancho, contexto, informação, convite |
-| 26/10 (seg) | Quais itens aceitamos e por quê | Carrossel | **Só após liberação** da divulgação de pedidos |
-| 28/10 (qua) | Como funciona a ação de arrecadação (bilhetes) | Carrossel | **Só após liberação**; sem a palavra proibida |
-| 30/10 (sex) | Ressocialização: o que reduz a reincidência | Carrossel | Dados com fonte |
-| 02/11 (seg) | Sorteio ao vivo + resultado | Live + feed | Audiovisual com Eventos; [PENDENTE: horário do sorteio] |
-| 04/11 (qua) | Visita às unidades | Feed | Sem imagens de pessoas privadas de liberdade |
-| 06/11 (sex) | Bastidores e agradecimento | Carrossel | |
-| 09–13/11 | Prestação de contas e resultados | Carrossel | Números conferidos com o Financeiro |
-| [PENDENTE: data] | Café da manhã com as famílias | Feed + stories | Data depende do calendário de visitação da unidade |
+Mix buscado pela líder: 40% conscientização, 30% conexão emocional, 20% autoridade e 10% arrecadação. 01/11 (domingo) e 02/11 (segunda) seguem a data do sorteio, fora do ciclo de terça, quinta e sábado.
 
-Semana de 12/10: como o ciclo começa agora, o pacote dela vai à prof.ª na **sexta, 09/10**, e as etapas desta semana ficam comprimidas: texto até quinta, 08/10, às 12h; revisão até quinta, às 20h; artes até sexta, 09/10, às 10h; envio sexta, às 12h.
-
-## 4. Checklist da revisão (vice-líder)
-- Não pede doação nem divulga a ação de arrecadação antes da liberação.
-- Não menciona avaliação da disciplina nem a palavra proibida (use "ação de arrecadação" e "bilhetes").
-- Todo dado tem fonte registrada.
-- Nenhuma imagem ou nome de pessoa privada de liberdade; tom sem sensacionalismo nem estigma.
-- Comentário hostil não é respondido: é ocultado (com print salvo antes) e vira pauta da série informativa.
+## 4. Checklist da revisão (líder, quinta até 12h)
+- Fontes citadas e linguagem de quem nunca estudou Direito.
+- Nenhuma imagem ou dado que identifique pessoa privada de liberdade; sem tom político-partidário, sensacionalismo ou vitimização.
+- Não pede doação nem divulga a ação de arrecadação antes da liberação. Escreva "ação de arrecadação" e "bilhetes", nunca a palavra proibida, e nunca cite avaliação da disciplina.
+- A lei prevê assistência material e à saúde: não escreva que ela "garante" itens de higiene.
+- Ortografia revisada, inclusive o texto na tela dos vídeos; legenda com gancho e chamada final.
+- Comentário negativo: ninguém responde. Quem vir manda print e link no grupo; a Vitória oculta (se ela estiver fora, o Gabriel).
