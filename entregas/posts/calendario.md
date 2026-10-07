@@ -20,7 +20,7 @@ Cada semana produz os 3 posts da **semana seguinte**. Uma etapa só começa quan
 
 | Quando | Quem | Entrega |
 |---|---|---|
-| Segunda, na reunião | Líder (Vitória) | Pauta dos 3 posts da semana seguinte (temas do calendário abaixo) |
+| Segunda, 20h | Líder (Vitória) | Posta no grupo do WhatsApp a pauta dos 3 posts da semana seguinte (temas do calendário abaixo); cada responsável confirma até terça, 12h. Sem reunião |
 | Terça, 20h | Roteiro (Nathan, Leonardo) | Texto de cada slide, legenda (até ~150 palavras, até 5 hashtags) e fonte dos dados |
 | Quarta, 20h | Vice-líder (Flauany) | Revisão pelo checklist (item 4); devolve ajustes no mesmo dia |
 | Quinta, 20h | Design (Geraldo, João, Evelyn) + Audiovisual (Laura Martins, Anna Laura) | Artes finais, modelos de story e vídeo/áudio, a partir do texto revisado |
@@ -31,6 +31,14 @@ Cada semana produz os 3 posts da **semana seguinte**. Uma etapa só começa quan
 | No dia do post | Engajamento (Lívia, Mayara) | Repost nos stories e convite para a turma compartilhar |
 | Todo dia | Engajamento (Lívia, Mayara) | 1 a 3 stories a partir dos modelos aprovados (enquete, caixinha de perguntas, contagem regressiva, repost) |
 | Domingo | Engajamento (Lívia, Mayara) | Métricas da semana (alcance, seguidores, salvamentos) para o relatório |
+
+## Alinhamentos online (só dois, de até 30 min, por chamada de vídeo no WhatsApp ou Meet)
+| Quando | Quem | Para quê |
+|---|---|---|
+| Quinta, 08/10, 19h (sugestão) | Toda a equipe | Combinar o ciclo, os modelos de story e a identidade visual antes do primeiro envio, que tem prazo apertado |
+| Quinta, 29/10, 19h (sugestão) | Líder, Audiovisual, Engajamento e Registro de imagens, com Eventos | Planejar a live do sorteio (02/11) e a cobertura da visita (04 e 05/11) |
+
+Todo o resto se resolve por mensagem no grupo da equipe.
 
 ## 3. Calendário (3 posts por semana + stories diários)
 | Data | Tema | Formato | Observação |
