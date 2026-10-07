@@ -1,5 +1,6 @@
 // Exporta os slides do Kit da Comunicação em PNG 1080 × 1350 (um por slide) e acusa texto que estoura.
-// Uso: node scripts/exportar_kit_png.mjs <pasta de saída> [datas separadas por vírgula, ex.: 12/10,14/10]
+// Uso: node scripts/exportar_kit_png.mjs <pasta de saída> [datas separadas por vírgula, ex.: 13/10,15/10]
+// Uma pasta por opção de cada peça: <dia-dd-mm>-opcao-a/slide-1.png (peças de story não têm slides e ficam de fora).
 // A Barlow é hospedada junto do kit (kit/fontes.css); aqui o CSS é servido com as fontes embutidas em base64, para a captura não depender de caminho de arquivo.
 import { chromium } from "/opt/node-tools/node_modules/playwright-core/index.mjs";
 import fs from "node:fs";
@@ -33,7 +34,7 @@ for (let k = 0; k < nb; k++) {
   const nops = Math.max(1, (await art.$$("[data-op]")).length);
   for (let op = 0; op < nops; op++) {
     if (nops > 1) { await p.click(`#post-atual [data-op="${op}"]`); art = await p.$("#post-atual article.post"); }
-    const pasta = path.join(saida, nome, nops > 1 ? "opcao-" + "ABC"[op] : "");
+    const pasta = path.join(saida, nome.toLowerCase() + (nops > 1 ? "-opcao-" + "abc"[op] : ""));  // mesmo nome que gerar_kit_comunicacao.slug()
     const slides = await art.$$(".sd");
     if (!slides.length) continue;
     fs.mkdirSync(pasta, { recursive: true });

@@ -19,6 +19,8 @@ Por isso, adaptei o que eu tinha feito para seguir o *seu plano*: o site do cale
 - Ver o mapa da campanha: cada dia com a cor do formato (carrossel, Reel, story, live) e cadeado no que depende de liberação
 - Abrir qualquer semana e ver o que acontece em cada dia
 - No *Kit* (link no topo): slides de cada peça, legenda pronta para copiar, ganchos e fontes, com 2 ou 3 opções por peça
+- *Baixar a arte pronta* de cada opção (PNG 1080 × 1350, num ZIP)
+- *Editar no Canva*: modelo editável (.pptx) com textos, formas e as fontes do projeto
 
 Nesse processo, notei 3 pontos que mudei só no material do site, por causa das regras do projeto. Queria te mostrar antes de levar ao grupo, porque a decisão é sua:
 
@@ -48,6 +50,8 @@ Por isso, adaptei o que eu tinha feito para seguir o *plano de vocês*: o site d
 - Ver o mapa da campanha: cada dia com a cor do formato (carrossel, Reel, story, live) e cadeado no que depende de liberação
 - Abrir qualquer semana e ver o que acontece em cada dia
 - No *Kit* (link no topo): slides de cada peça, legenda pronta para copiar, ganchos e fontes, com 2 ou 3 opções por peça
+- *Baixar a arte pronta* de cada opção (PNG 1080 × 1350, num ZIP)
+- *Editar no Canva*: modelo editável (.pptx) com textos, formas e as fontes do projeto
 
 Nesse processo, notei 3 pontos que mudei só no material do site, por causa das regras do projeto. Queria mostrar a vocês antes de levar ao grupo, porque a decisão é de vocês:
 
@@ -74,6 +78,8 @@ _Agora segue o plano da Vitória: posts às terças, quintas e sábados, de 09/1
 - Ver o mapa da campanha: cada dia com a cor do formato (carrossel, Reel, story, live) e cadeado no que depende de liberação
 - Abrir qualquer semana e ver o que acontece em cada dia
 - No *Kit* (link no topo): slides de cada peça, legenda pronta para copiar, ganchos e fontes, com 2 ou 3 opções por peça
+- *Baixar a arte pronta* de cada opção (PNG 1080 × 1350, num ZIP)
+- *Editar no Canva*: modelo editável (.pptx) com textos, formas e as fontes do projeto
 
 _O "feito" fica só no seu celular. Para a equipe saber, atualize a planilha de controle._
 
