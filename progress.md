@@ -1,7 +1,7 @@
 # Progresso (máx. 30 linhas; sobrescreva o que ficou velho)
 
 **Atualizado:** 2026-10-07 (noite)
-**Próximo passo (comece a sessão por aqui):** Comunicação no plano da líder Vitória está NO AR (site + /kit com opções, botões PNG/Canva por opção, cartão do Kit no topo). Falta: o usuário mandar as mensagens à Vitória e à Flauany (`entregas/posts/mensagem-site-calendario.md`) e o one-page `entregas/posts/ajustes-guia-planilha.jpg`; depois do ok, a mensagem do grupo. PR GabrielMedici/Efeito-Rebote#7 (mensagens + one-page) aberto, pode mesclar. PR #3 da outra sessão sem uso (fechar). Pendência antiga: F02 (regulamento, prazo sexta 12h).
+**Próximo passo (comece a sessão por aqui):** Comunicação no plano da líder Vitória está NO AR (site + /kit com opções, botões PNG/Canva por opção, cartão do Kit no topo). Falta: o usuário mandar as mensagens à Vitória e à Flauany (`entregas/posts/mensagem-site-calendario.md`) e o one-page `entregas/posts/ajustes-guia-planilha.jpg`; depois do ok, a mensagem do grupo. Tudo mesclado no main (PR #7 em 07/10, 21h25); nenhum PR desta sessão aberto. PR #3 da outra sessão sem uso (fechar). Pendência antiga: F02 (regulamento, prazo sexta 12h).
 ## Estado
 - F01 projeto escrito: versão de 06/10 (12 págs.) enviada em .docx à prof.ª Camila, que edita e insere no UniGestor. Já tem doações em dinheiro (PIX, mesma conta), prestação de contas em 4 componentes (ação, doações, compras, itens), Edgar Gabriel Castro Rocha, carga "40 ou 60 h", semestre/datas "a preencher pela professora". Editar `scripts/conteudo_projeto.py` e rodar `gerar_relatorio.py` + soffice + pdfunite.
 - Termo "rifa" BANIDO: usar "ação de arrecadação (solidária)" e "bilhetes". `check.sh` dá erro se aparecer.
