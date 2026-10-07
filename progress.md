@@ -1,7 +1,7 @@
 # Progresso (máx. 30 linhas; sobrescreva o que ficou velho)
 
 **Atualizado:** 2026-10-07
-**Próximo passo (comece a sessão por aqui):** Kit da Comunicação v2 está FEITO nos 5 passos do plano (`docs/kit-v2/README.md`), aguardando o aval do usuário e da prof.ª Camila. Falta só: reconferir na Defensoria (PEM, CPIM) a frase do kit incompleto/reposição, achar fonte de saúde para "doenças se espalham" (14/10) e fechar os [PENDENTE] dos posts de 26/10 em diante. Skills `/mkt-*` e `/ui-*` copiadas para `.claude/` (valem em sessão nova; ordem em `session-handoff.md`). Já rodados na página do kit: critique, audit e polish; harden, brief, tokens e finalize também; brief em `.ui-craft/brief.md`. Pendências antigas: Root Directory da Vercel (NÃO mesclar o PR antes) e F02 (regulamento, prazo sexta 12h).
+**Próximo passo (comece a sessão por aqui):** PRs #1 e #2 MESCLADOS em `main` (07/10). O site (calendário e kit) está no ar em https://calendario-efeito-rebote.vercel.app com tema claro travado e Root Directory `entregas/posts/site` na Vercel. Falta, do Kit da Comunicação: reconferir na Defensoria (PEM, CPIM) a frase do kit incompleto/reposição, achar fonte de saúde para "doenças se espalham" (14/10), fechar os [PENDENTE] dos posts de 26/10 em diante, testar em celular de verdade e obter o aval da prof.ª Camila. Skills `/mkt-*` e `/ui-*` em `.claude/` (ordem em `session-handoff.md`); brief em `.ui-craft/brief.md`. Pendência antiga: F02 (regulamento, prazo sexta 12h).
 ## Estado
 - F01 projeto escrito: versão de 06/10 (12 págs.) enviada em .docx à prof.ª Camila, que edita e insere no UniGestor. Já tem doações em dinheiro (PIX, mesma conta), prestação de contas em 4 componentes (ação, doações, compras, itens), Edgar Gabriel Castro Rocha, carga "40 ou 60 h", semestre/datas "a preencher pela professora". Editar `scripts/conteudo_projeto.py` e rodar `gerar_relatorio.py` + soffice + pdfunite.
 - Termo "rifa" BANIDO: usar "ação de arrecadação (solidária)" e "bilhetes". `check.sh` dá erro se aparecer.
@@ -23,7 +23,7 @@
 - Validar lista de itens com PEM, CCM e CPIM. Testar PIX real na chave antes de divulgar o one-page.
 
 - Plugins ui-craft e marketing-skills: a ativação pelo `.claude/settings.json` NÃO funcionou (comando não existe na sessão). O usuário perguntou como instalar: pesquisar a forma documentada (ex.: copiar skills para `.claude/skills/`) antes de responder; não chutar passos.
-- Vercel: projeto `calendario-efeito-rebote` (conta do usuário) ficou ligado ao GitHub; previews do PR exigem login (testado), mas produção ao mesclar = repo inteiro. NÃO mesclar o PR até ajustar Root Directory.
+- Vercel: projeto `calendario-efeito-rebote` ligado ao GitHub, com Root Directory `entregas/posts/site` (ajustado e testado em 07/10: o repositório não é exposto). Para publicar, o Redeploy refaz o MESMO commit do deploy escolhido: escolha o deploy do commit certo ou use Promote to Production.
 ## Sugestões registradas (não executadas)
 - Reescrever o projeto no estilo do pré-projeto (120 ponto e vírgula vs. 18): oferecido, sem resposta.
 - `coerencia.sh` (06/10) acusa 14 restos de planos antigos: 4 equipes antigas no projeto escrito, no Anexo 1 e no cronograma (aguarda autorização); `entregas/app/`, `formulario-vendas.md` e menções ao app no guia e em `limpar_metadados.py` (apagar? perguntar ao usuário).

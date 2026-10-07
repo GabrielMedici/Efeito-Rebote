@@ -11,7 +11,7 @@
 - Plugins (resolvido 07/10): a documentação oficial diz que `enabledPlugins`/`extraKnownMarketplaces` não carregam na nuvem. Copiei para `.claude/` as skills `/mkt-*` (6), `/ui-craft` e 13 comandos `/ui-*` (+ agentes design-reviewer e a11y-auditor), sem gatilho automático. Valem a partir de uma SESSÃO NOVA. Ordem sugerida: mkt-social → mkt-copywriting → mkt-copy-editing (texto); ui-start → ui-brief → ui-tokens → ui-critique → ui-distill → ui-adapt → ui-harden → ui-audit → ui-polish → ui-finalize (página do kit e slides). Rodados em 07/10: /ui-critique, /ui-audit e /ui-polish na página do kit (legenda inteira, botão de copiar em destaque, título = pergunta da capa, alvos de 44 px, texto dos slides legível por leitor de tela, foco após paginar, abas por setas, pular para o conteúdo, ampliar slide, safe-area). /ui-harden, /ui-brief (`.ui-craft/brief.md`), /ui-tokens (espinha de 3 camadas no `:root`) e /ui-finalize também rodados; o finalize de 07/10 deu NOT READY por tokens, transições e `[PENDENTE]`, e foi refeito depois do ajuste.
 
 ## Pendências de antes (continuam)
-- Vercel: Root Directory = `entregas/posts/site` antes de mesclar o PR GabrielMedici/Efeito-Rebote#1 (rascunho), senão o link expõe o repositório.
+- Vercel: Root Directory já ajustado para `entregas/posts/site`; PRs #1 e #2 mesclados em `main` em 07/10.
 - F02 regulamento (prazo sexta 12h): horário do sorteio; nomes da comissão financeira (vagas fecharam 07/10 12h).
 - Aval da prof.ª Camila: R$ 150 por aluno, autorização da ação e da conta.
 - Site do calendário: https://calendario-efeito-rebote.vercel.app; republicar exige novo `npx vercel login` (ver CLAUDE.md).
