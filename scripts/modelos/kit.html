@@ -207,6 +207,19 @@ dialog#zoom::backdrop{background:rgba(10,14,30,.78)}
 .zoomwrap .btn{background:var(--surface-overlay)}
 .sd.zoom{width:min(92vw,calc((100dvh - 120px)*.8),560px);box-shadow:0 8px 30px rgba(0,0,0,.4)}
 
+/* ===== arte do post: baixar e editar ===== */
+.arte{display:grid;gap:var(--s-3);background:var(--surface-sunken);border-radius:var(--r-field);padding:var(--s-4)}
+.arte h3{margin:0}
+.arte .acoes{display:flex;flex-wrap:wrap;gap:var(--s-3)}
+.arte .nota{font-size:var(--t-xs);color:var(--text-secondary);margin:0;max-width:68ch}
+a.btn{text-decoration:none}
+dialog#canva{border:0;border-radius:var(--r-field);padding:0;max-width:min(520px,94vw);width:100%;background:var(--surface-raised);color:var(--text-primary)}
+dialog#canva::backdrop{background:rgba(10,14,30,.78)}
+.canva-in{display:grid;gap:var(--s-4);padding:var(--s-6)}#canva-corpo{display:grid;gap:var(--s-4)}
+.canva-in h2{margin:0;font-size:var(--t-lg)}
+.canva-in .acoes{display:flex;flex-wrap:wrap;gap:var(--s-3)}
+.canva-in .rodape{margin:0;font-size:var(--t-sm);color:var(--text-secondary);max-width:62ch}.canva-in .muted{margin:0}
+
 /* ===== slides do carrossel (.sd): desenho aprovado em 07/10 (docs/kit-v2). Tudo em cqw: 1080 px = 100cqw ===== */
 .sd{font-variant-numeric:normal;flex:none;width:min(340px,86vw);aspect-ratio:4/5;container-type:inline-size;border-radius:var(--r-sm);overflow:hidden;position:relative;box-shadow:0 2px 10px rgba(20,27,45,.18);font-family:Barlow,Arial,sans-serif;background:var(--m-fundo);color:var(--m-tinta)}
 .sd .in{position:absolute;inset:0;padding:10.2cqw 8.9cqw 8.9cqw;display:flex;flex-direction:column;gap:3.7cqw}
@@ -314,6 +327,7 @@ footer{font-size:var(--t-xs);color:var(--text-secondary);border-top:1px solid va
   <footer>Projeto de extensão Efeito&nbsp;Rebote: o custo da reincidência. Todo post passa pela prof.ª Camila antes de ir ao ar. Mockups são referência de layout: a arte final é da equipe de Design.</footer>
 </div>
 <div class="sr-only" id="anuncio" aria-live="polite"></div>
+<dialog id="canva" aria-labelledby="canva-t"><div class="canva-in"><h2 id="canva-t">Editar no Canva</h2><div id="canva-corpo"></div><div class="acoes"><button class="btn ghost" id="canva-fechar" type="button">Fechar</button></div></div></dialog>
 <dialog id="zoom" aria-label="Slide ampliado"><div class="zoomwrap"><div id="zoom-corpo"></div><button class="btn ghost" id="zoom-fechar" type="button">Fechar</button></div></dialog>
 <script>
 const D = /*DADOS*/null;
@@ -367,6 +381,8 @@ function story(s){
   return '<div class="mkw"><div class="mk story" role="group" aria-label="Modelo de story: ' + esc(s.nome) + '"><div class="in">' + inner + '</div></div></div>';
 }
 
+const ICO_BAIXAR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const ICO_EDITAR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4L19 9a2.1 2.1 0 0 0-4-4L4 16z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>';
 const ICO_COPIA = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
 const ICO_OK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 function restaurarBotao(btn){ btn.classList.remove("ok"); btn.innerHTML = ICO_COPIA + "Copiar legenda"; }
@@ -388,6 +404,11 @@ function postHtml(p, prox, i){
   if (p.lock) h += '<p class="lock">Não publicar nem adiantar nos stories antes de a prof.ª Camila liberar a divulgação da arrecadação.</p>';
  h += '<p class="hint">Deslize os slides para o lado. Toque no ícone do canto para ampliar.</p>';
   h += '<div class="strip" role="region" tabindex="0" aria-label="Slides do post, role para o lado">' + p.slides.map((s, k) => slide(s, k, n)).join("") + '</div>';
+  const A = p.arq;
+  h += '<div class="arte"><h3>Arte do post</h3><div class="acoes">'
+    + '<a class="btn" href="' + A.zip + '" download>' + ICO_BAIXAR + 'Baixar como está (PNG, ' + A.zipTam + ')</a>'
+    + '<button class="btn ghost" type="button" data-canva="' + p.id + '">' + ICO_EDITAR + 'Editar no Canva</button></div>'
+    + '<p class="nota">Baixar como está: ' + n + ' imagens 1080 × 1350 px, prontas para postar, num único arquivo ZIP. Editar no Canva: modelo com texto, formas e imagens editáveis. ' + (p.pend ? 'Há campos [PENDENTE] no texto: preencha antes de publicar. ' : '') + 'Nada vai ao ar sem o aval da prof.ª Camila.</p></div>';
   h += '<div class="cols"><div class="block"><div class="bh"><h3>Legenda pronta</h3><button class="btn" type="button" data-copy="' + p.id + '">' + ICO_COPIA + 'Copiar legenda</button></div><pre class="legend">' + esc(p.legenda) + '</pre><span class="copied" aria-live="polite"></span></div>';
   h += '<div class="block"><h3>Ganchos para a capa (escolha um)</h3><ul class="hooks">' + p.ganchos.map(g => '<li><span class="tec">' + esc(g[0]) + '</span><span class="txt">' + esc(g[1]) + '</span></li>').join("") + '</ul></div></div>';
   h += '<details><summary>Fontes, cuidados e dica de arte</summary><div class="panel">'
@@ -429,6 +450,7 @@ function renderPosts(){
     postAtual = D.posts[i];
     $("#post-atual").innerHTML = postHtml(D.posts[i], prox, i);
     $("#p-posts").querySelectorAll(".index button").forEach(b => { const on = b.dataset.go === id; b.setAttribute("aria-current", on ? "true" : "false"); if (on) b.scrollIntoView({inline: "center", block: "nearest"}); });
+    $("#post-atual").querySelectorAll("[data-canva]").forEach(b => b.addEventListener("click", () => abrirCanva(b)));
     $("#post-atual").querySelectorAll("[data-copy]").forEach(b => b.addEventListener("click", () => copiar(b, D.posts[i].legenda)));
     $("#post-atual").querySelectorAll("[data-go]").forEach(b => b.addEventListener("click", () => mostrar(b.dataset.go, true, true)));
     $("#post-atual").querySelectorAll(".ampliar").forEach(b => b.addEventListener("click", () => ampliarSlide(b)));
@@ -485,6 +507,25 @@ function ampliarSlide(btn){
 }
 $("#zoom-fechar").addEventListener("click", () => zoom.close());
 zoom.addEventListener("click", e => { if (e.target === zoom) zoom.close(); });
+
+
+const canva = $("#canva");
+function abrirCanva(btn){
+  const p = D.posts.find(x => x.id === btn.dataset.canva), A = p.arq, F = D.fontesMarca;
+  const passos = A.canva
+    ? ['Toque em “Abrir modelo no Canva” e entre com a sua conta do Canva.', 'No Canva, use “Usar este modelo” para criar a sua cópia. Edite os textos, as cores e as imagens.', 'Ao terminar, baixe em PNG e confira com o aval da prof.ª Camila.']
+    : ['Baixe o arquivo PowerPoint (.pptx) deste post.', 'No Canva, toque em “Criar um design”, depois “Importar arquivo”, e escolha o .pptx. Ele abre como design editável: cada texto, forma e imagem é um elemento separado.', 'Confira as fontes. O kit usa Barlow e Barlow Condensed. Se o Canva trocar alguma, instale as fontes (arquivo abaixo) ou envie ao Kit de Marca, se o seu plano permitir.', 'Ao terminar, baixe em PNG e confira com o aval da prof.ª Camila.'];
+  $("#canva-corpo").innerHTML = '<p class="muted">' + esc(p.rot) + ': ' + esc(p.capa ? p.capa.t : p.tema) + '</p><ol class="steps-copy">' + passos.map(x => '<li><span>' + esc(x) + '</span></li>').join("") + '</ol>'
+    + '<div class="acoes">'
+    + (A.canva ? '<a class="btn" href="' + esc(A.canva) + '" target="_blank" rel="noopener">' + ICO_EDITAR + 'Abrir modelo no Canva</a>' : '')
+    + '<a class="btn' + (A.canva ? ' ghost' : '') + '" href="' + A.pptx + '" download>' + ICO_BAIXAR + 'Baixar modelo (.pptx, ' + A.pptxTam + ')</a>'
+    + '<a class="btn ghost" href="' + F.zip + '" download>' + ICO_BAIXAR + 'Baixar fontes (' + F.tam + ')</a></div>'
+    + '<p class="rodape">O .pptx também abre no PowerPoint e no Google Slides. A aparência no Canva pode ter pequenas diferenças (fonte e espaçamento entre linhas); a conferência final é sempre visual, comparando com o PNG.</p>';
+  canva.showModal();
+  $("#canva-fechar").focus();
+}
+$("#canva-fechar").addEventListener("click", () => canva.close());
+canva.addEventListener("click", e => { if (e.target === canva) canva.close(); });
 
 const ABAS = ["posts","stories","copy","id"];
 function setTab(id, foco){

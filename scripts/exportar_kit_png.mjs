@@ -28,7 +28,7 @@ for (const bt of botoes) {
   const art = await p.$("#post-atual article.post");
   const rot = (await art.$eval(".date", e => e.textContent)).trim();
   if (filtro && !filtro.split(",").some(f => rot.includes(f))) continue;
-  const nome = rot.replace(/[^\dA-Za-z–]+/g, "-").replace(/^-|-$/g, "");
+  const nome = rot.replace(/[^\dA-Za-z–]+/g, "-").replace(/^-|-$/g, "").toLowerCase();
   fs.mkdirSync(path.join(saida, nome), { recursive: true });
   const slides = await art.$$(".sd");
   for (let i = 0; i < slides.length; i++) {
