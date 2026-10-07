@@ -19,12 +19,13 @@ from pptx.util import Emu, Pt
 
 PX = 9525
 # Ajuste vertical do texto. O navegador centra a altura do texto (1,2 x o tamanho nas duas Barlow) dentro da
-# entrelinha; o PowerPoint com entrelinha exata encosta o texto embaixo. A diferença é (1,2 x tamanho - entrelinha) / 2,
-# mais cerca de 1 px medido (comparação pixel a pixel entre o LibreOffice e o PNG do navegador, em 07/10).
+# entrelinha; com entrelinha exata o editor encosta o texto embaixo. O erro é (1,2 x tamanho - entrelinha) / 2 e o
+# Canva (alvo principal do kit) o aplica no sentido oposto ao do LibreOffice; por isso o padrão é "canva"
+# (medido em 07/10 contra o PNG do navegador: diferença média 1-5/255, contra 7-16/255 no modo "pct").
 ALTURA_TEXTO = 1.2
 FOLGA_PX = 1.0
-# Modo de entrelinha (teste): "lo" = correção do LibreOffice; "canva" = sinal invertido; "pct" = entrelinha proporcional sem correção.
-MODO = os.environ.get("ER_PPTX_MODO", "lo")
+# "canva" (padrão) | "lo" = correção para LibreOffice/PowerPoint, se a conferência nesses programas pedir | "pct" = proporcional.
+MODO = os.environ.get("ER_PPTX_MODO", "canva")
 
 
 def px(v):
@@ -37,13 +38,12 @@ def rgb(h):
 
 
 def fonte(familia, peso):
-    """(nome da família no arquivo da fonte, negrito). Os pesos 500 e 600 são famílias próprias."""
+    """(nome da família, negrito). Só nomes que o Canva reconhece (testado em 07/10): "Barlow" e "Barlow Condensed"
+    com negrito, e "Barlow Medium". SemiBold, ExtraBold e Black caem para Regular lá; por isso o peso 600 vira negrito."""
     if "Condensed" in familia:
-        return ("Barlow Condensed", True) if peso >= 700 else ("Barlow Condensed SemiBold", False)
-    if peso >= 700:
-        return "Barlow", True
+        return "Barlow Condensed", peso >= 600
     if peso >= 600:
-        return "Barlow SemiBold", False
+        return "Barlow", True
     if peso >= 500:
         return "Barlow Medium", False
     return "Barlow", False
