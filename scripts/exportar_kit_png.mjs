@@ -15,7 +15,7 @@ const p = await b.newPage({ viewport: { width: 1200, height: 1500 } });
 await p.route(/fonts\.googleapis\.com/, r => r.fulfill({ contentType: "text/css", body: css }));
 await p.route(/fonts\.gstatic\.com/, r => r.abort());
 await p.goto("file://" + path.join(raiz, "entregas/posts/site/kit/index.html"));
-await p.addStyleTag({ content: ".sd{width:1080px!important;height:1350px!important;aspect-ratio:auto!important;box-shadow:none!important;border-radius:0!important}.strip{overflow:visible!important;flex-wrap:wrap}" });
+await p.addStyleTag({ content: ".sd{width:1080px!important;height:1350px!important;aspect-ratio:auto!important;box-shadow:none!important;border-radius:0!important}.strip{overflow:visible!important;flex-wrap:wrap}.ampliar{display:none!important}" });
 await p.evaluate(() => document.fonts.ready);
 await p.evaluate(() => document.fonts.load('700 40px "Barlow Condensed"'));
 await p.evaluate(() => document.fonts.load("400 40px Barlow"));

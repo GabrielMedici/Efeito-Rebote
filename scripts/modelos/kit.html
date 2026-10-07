@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#F4F6FB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1322" media="(prefers-color-scheme: dark)">
 <title>Kit da Comunicação</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +15,7 @@
    Os mockups reproduzem o sistema visual dos carrosséis já aprovados (capa azul com selo, rótulo dourado, título condensado). */
 :root{
   --bg:#F4F6FB; --surface:#FFFFFF; --ink:#141B2D; --muted:#4A5568; --line:#DCE1EC;
-  --accent:#1B3A8C; --accent-soft:#E8EDF8; --on-accent:#FFFFFF;
+  --accent:#1B3A8C; --accent-soft:#E8EDF8; --on-accent:#FFFFFF; --ctl:#7B869C;
   --red:#B5121B; --red-soft:#FBEAEB; --gold:#7A5600; --gold-soft:#FBEFCF;
   --shadow:0 1px 2px rgba(20,27,45,.06),0 6px 18px rgba(20,27,45,.06);
   /* cores fixas da marca, iguais nos dois temas (são as cores dos posts) */
@@ -24,17 +26,20 @@
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#0E1322; --surface:#161D30; --ink:#E9ECF5; --muted:#A4ACC2; --line:#2A3350;
-  --accent:#9DB4F5; --accent-soft:#1E2A52; --on-accent:#0E1322;
+  --accent:#9DB4F5; --accent-soft:#1E2A52; --on-accent:#0E1322; --ctl:#66739F;
   --red:#F28B93; --red-soft:#3A1A20; --gold:#EBC468; --gold-soft:#3A2F12; --shadow:0 1px 2px rgba(0,0,0,.4); color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0E1322; --surface:#161D30; --ink:#E9ECF5; --muted:#A4ACC2; --line:#2A3350;
-  --accent:#9DB4F5; --accent-soft:#1E2A52; --on-accent:#0E1322;
+  --accent:#9DB4F5; --accent-soft:#1E2A52; --on-accent:#0E1322; --ctl:#66739F;
   --red:#F28B93; --red-soft:#3A1A20; --gold:#EBC468; --gold-soft:#3A2F12; --shadow:0 1px 2px rgba(0,0,0,.4); color-scheme:dark}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 var(--body);padding-inline:16px;padding-block:20px 56px;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 var(--body);padding-inline:max(16px,env(safe-area-inset-left)) max(16px,env(safe-area-inset-right));padding-block:20px 56px;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
 .wrap{max-width:720px;margin:0 auto;display:grid;gap:18px}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:absolute;left:12px;top:-60px;z-index:20;background:var(--accent);color:var(--on-accent);padding:12px 16px;border-radius:8px;font-weight:700;text-decoration:none}
+.skip:focus{top:calc(env(safe-area-inset-top,0px) + 8px)}
 h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;line-height:1.05}
 h1{font-size:clamp(2.1rem,8vw,2.8rem);color:var(--accent);letter-spacing:-.01em}
 h2{font-size:1.5rem}
@@ -44,6 +49,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 button{font:inherit;color:inherit;cursor:pointer}
 button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 a{color:var(--accent)}
+.back{display:inline-flex;align-items:center;min-height:44px}
 .muted{color:var(--muted)}
 .small{font-size:.86rem}
 header{display:grid;gap:8px}
@@ -53,39 +59,51 @@ header{display:grid;gap:8px}
 .pill.gold{background:var(--gold-soft);color:var(--gold)}
 .pill.red{background:var(--red-soft);color:var(--red)}
 .pill.blue{background:var(--accent-soft);color:var(--accent)}
-.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;min-height:48px;background:var(--bg);padding-block:6px;display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
-.tab{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:8px 4px;font-weight:600;font-size:.92rem}
+.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:6px;display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+.tab{border:1px solid var(--ctl);background:var(--surface);border-radius:8px;padding:0 4px;min-height:44px;font-weight:600;font-size:.92rem}
 .tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
 .panel{display:grid;gap:16px}
 .intro{font-size:.95rem;color:var(--muted);max-width:62ch}
 
-/* índice de posts: barra fixa logo abaixo das abas, rola de lado e centraliza a data aberta */
-.index{position:sticky;top:calc(env(safe-area-inset-top,0px) + 52px);z-index:4;background:var(--bg);display:flex;gap:6px;overflow-x:auto;padding:4px 0 8px;scrollbar-width:thin;margin-bottom:12px}
-.index button{flex:none;border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:8px 12px;font-size:.88rem;font-weight:600;color:var(--ink);white-space:nowrap}
-.index button[data-next]{border-color:var(--accent);color:var(--accent)}
+/* índice de posts: barra fixa logo abaixo das abas (altura medida em JS), rola de lado e centraliza a data aberta */
+.index{position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--tabs-h,56px));z-index:4;background:var(--bg);display:flex;gap:6px;overflow-x:auto;padding:4px 0 8px;scrollbar-width:thin;margin-bottom:12px}
+.index button{flex:none;display:inline-flex;align-items:center;gap:6px;border:1px solid var(--ctl);background:var(--surface);border-radius:8px;padding:0 14px;min-height:44px;font-size:.88rem;font-weight:600;color:var(--ink);white-space:nowrap}
 .index button[aria-current="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.nx{width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none}
+.index button[aria-current="true"] .nx{background:var(--on-accent)}
 .pager{display:flex;justify-content:space-between;gap:8px;border-top:1px solid var(--line);padding-top:12px}
+@media (max-height:520px){.index{position:static}}
 
 /* cartão de post */
-.post{background:var(--surface);border-radius:14px;box-shadow:var(--shadow);padding:16px;display:grid;gap:14px;scroll-margin-top:64px}
+.post{background:var(--surface);border-radius:14px;box-shadow:var(--shadow);padding:16px;display:grid;gap:18px;scroll-margin-top:calc(var(--tabs-h,56px) + 60px)}
 .post-h{display:grid;gap:6px}
 .post-h .meta{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-size:.86rem;color:var(--muted)}
-.post-h .date{font-family:var(--display);font-weight:700;font-size:1.1rem;color:var(--accent)}
+.post-h .date{font-family:var(--display);font-weight:700;font-size:1.1rem;color:var(--ink)}
+.kick{font-size:.86rem;font-weight:700;color:var(--red)}
+.tema{font-size:.86rem;color:var(--muted)}
+.post-h h2:focus{outline:none}
 .post-h h2{font-size:1.45rem}
 .goal{font-size:.92rem;color:var(--muted)}
-.strip{display:flex;gap:10px;overflow-x:auto;padding-bottom:8px;scroll-snap-type:x mandatory;scrollbar-width:thin}
+.strip{display:flex;gap:10px;overflow-x:auto;padding-bottom:8px;scroll-snap-type:x mandatory;scrollbar-width:thin;scroll-padding-inline:2px}
+.strip:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
 .strip>*{scroll-snap-align:start}
 .block{display:grid;gap:8px}
-.block h3{font-size:1.05rem;color:var(--accent)}
-.hooks{display:grid;gap:8px}
-.hooks li{border:1px solid var(--line);border-radius:10px;padding:9px 12px;display:grid;gap:2px}
-.hooks .tec{font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.block h3{font-size:1.05rem;color:var(--ink)}
+.bh{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.hooks{display:grid}
+.hooks li{border-top:1px solid var(--line);padding:10px 0;display:grid;gap:2px}
+.hooks li:first-child{border-top:0;padding-top:0}
+.hooks .tec{font-size:.8rem;font-weight:600;color:var(--muted)}
 .hooks .txt{font-weight:600}
-.legend{font-family:inherit;margin:0;white-space:pre-wrap;background:var(--bg);border-radius:10px;padding:12px 14px;font-size:.93rem;max-height:260px;overflow:auto}
+.legend{font-family:inherit;margin:0;white-space:pre-wrap;background:var(--bg);border-radius:10px;padding:14px 16px;font-size:.96rem;line-height:1.5}
 .copy-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.btn{border:0;border-radius:8px;padding:8px 14px;font-weight:700;background:var(--accent);color:var(--on-accent)}
-.btn.ghost{background:var(--accent-soft);color:var(--accent)}
-.copied{font-size:.84rem;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--accent);border-radius:8px;padding:0 16px;min-height:44px;font-weight:700;background:var(--accent);color:var(--on-accent)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn.ghost{background:var(--surface);border-color:var(--ctl);color:var(--ink)}
+.btn.ok{background:var(--surface);color:var(--ink)}
+.cols{display:grid;gap:18px}
+@media (min-width:1024px){.wrap{max-width:1040px}.cols{grid-template-columns:1.5fr 1fr;gap:28px;align-items:start}}
+.copied{font-size:.86rem;color:var(--muted);min-height:1.2em}
 .list{display:grid;gap:4px;font-size:.92rem}
 .list li{display:grid;grid-template-columns:16px 1fr;gap:6px}
 .list li::before{content:"•";color:var(--accent);font-weight:700}
@@ -94,8 +112,8 @@ header{display:grid;gap:8px}
 .lock{background:var(--red-soft);color:var(--red);border-radius:10px;padding:10px 12px;font-size:.9rem;font-weight:600}
 .tip{background:var(--gold-soft);color:var(--ink);border-radius:10px;padding:10px 12px;font-size:.9rem}
 .tip b{color:var(--gold)}
-details{border-top:1px solid var(--line);padding-top:10px}
-summary{cursor:pointer;font-weight:700;color:var(--accent)}
+details{border-top:1px solid var(--line);padding-top:2px}
+summary{cursor:pointer;font-weight:700;color:var(--ink);min-height:44px;display:flex;align-items:center}
 details[open] summary{margin-bottom:10px}
 
 /* ===== mockups (sempre com as cores da marca) ===== */
@@ -151,20 +169,26 @@ details[open] summary{margin-bottom:10px}
 .mk .stk .cd{font-family:"Barlow Condensed",Arial,sans-serif;font-weight:700;font-size:11cqw;color:var(--m-verm);letter-spacing:.04em}
 .mk .stk .bar{height:3cqw;border-radius:2cqw;background:linear-gradient(90deg,var(--m-azul) 0 55%,var(--m-linha) 55%)}
 .mk .mini{width:62cqw;margin:0 auto;aspect-ratio:4/5;background:var(--m-fundo);border-radius:2cqw;border:1.5cqw solid var(--m-branco);display:grid;place-items:center;padding:4cqw;font-family:"Barlow Condensed",Arial,sans-serif;font-weight:700;color:var(--m-azul);font-size:7cqw;text-align:center;line-height:1}
-.slab{font-size:.78rem;color:var(--muted);margin-top:4px;max-width:min(300px,78vw)}
-.mkw{flex:none;display:grid;gap:2px}
+.slab{font-size:.82rem;color:var(--muted);margin-top:4px;max-width:min(340px,86vw)}
+.mkw{flex:none;display:grid;gap:2px;position:relative}
+.ampliar{position:absolute;top:8px;right:8px;width:44px;height:44px;border-radius:50%;border:1px solid var(--ctl);background:rgba(255,255,255,.94);color:#1B3A8C;display:grid;place-items:center;padding:0}
+.ampliar svg{width:20px;height:20px}
+dialog#zoom{border:0;padding:0;background:transparent;max-width:none;max-height:none;overflow:visible}
+dialog#zoom::backdrop{background:rgba(10,14,30,.78)}
+.zoomwrap{display:grid;gap:10px;justify-items:center}
+.sd.zoom{width:min(92vw,calc((100dvh - 120px)*.8),560px);box-shadow:0 8px 30px rgba(0,0,0,.4)}
 
 /* ===== slides do carrossel (.sd): desenho aprovado em 07/10 (docs/kit-v2). Tudo em cqw: 1080 px = 100cqw ===== */
-.sd{flex:none;width:min(300px,78vw);aspect-ratio:4/5;container-type:inline-size;border-radius:6px;overflow:hidden;position:relative;box-shadow:0 2px 10px rgba(20,27,45,.18);font-family:Barlow,Arial,sans-serif;background:var(--m-fundo);color:var(--m-tinta)}
+.sd{font-variant-numeric:normal;flex:none;width:min(340px,86vw);aspect-ratio:4/5;container-type:inline-size;border-radius:6px;overflow:hidden;position:relative;box-shadow:0 2px 10px rgba(20,27,45,.18);font-family:Barlow,Arial,sans-serif;background:var(--m-fundo);color:var(--m-tinta)}
 .sd .in{position:absolute;inset:0;padding:10.2cqw 8.9cqw 8.9cqw;display:flex;flex-direction:column;gap:3.7cqw}
 .sd.azul{background:var(--m-azul);color:#fff}
 .sd .tag{font:600 2.96cqw/1 Barlow,Arial,sans-serif;color:var(--m-verm)}
 .sd.azul .tag{color:var(--m-ouro)}
 .sd .in>.tag:first-child{margin-bottom:auto}
-.sd h1,.sd h2{margin:0;font-family:"Barlow Condensed","Arial Narrow",Arial,sans-serif;font-weight:700;letter-spacing:-.015em;line-height:.98;text-wrap:balance}
-.sd h1{font-size:12.2cqw;color:#fff}
-.sd h2{font-size:9.26cqw;color:var(--m-azul)}
-.sd.azul h2{color:#fff}
+.sd .h1,.sd .h2{margin:0;font-family:"Barlow Condensed","Arial Narrow",Arial,sans-serif;font-weight:700;letter-spacing:-.015em;line-height:.98;text-wrap:balance}
+.sd .h1{font-size:12.2cqw;color:#fff}
+.sd .h2{font-size:9.26cqw;color:var(--m-azul)}
+.sd.azul .h2{color:#fff}
 .sd .lead{font-size:3.89cqw;line-height:1.3;max-width:24ch;color:rgba(255,255,255,.9)}
 .sd p{margin:0;font-size:3.89cqw;line-height:1.38}
 .sd .box{background:#fff;border:.19cqw solid var(--m-linha);border-radius:2cqw;padding:3.7cqw 4.07cqw;font-size:3.89cqw;line-height:1.38;color:var(--m-tinta)}
@@ -183,7 +207,7 @@ details[open] summary{margin-bottom:10px}
 .sd.azul .dots i{background:rgba(255,255,255,.3)}
 .sd.azul .dots i.on{background:var(--m-ouro)}
 .sd .rebote{position:absolute;right:-8.3cqw;top:8.3cqw;width:57.4cqw;height:57.4cqw;opacity:.14;color:var(--m-ouro);pointer-events:none}
-.sd .selo{width:13.9cqw;height:13.9cqw;border-radius:50%;background:center/cover no-repeat var(--m-branco);flex:none}
+.sd .selo{width:13.9cqw;height:13.9cqw;border-radius:50%;background:var(--sl) center/cover no-repeat var(--m-branco);flex:none}
 .sd .ciclo{display:grid;gap:2cqw;margin:0;padding:0}
 .sd .ciclo li{list-style:none;display:grid;grid-template-columns:6.67cqw 1fr;gap:2.4cqw;align-items:center;font-size:3.89cqw;line-height:1.3;background:#fff;border-radius:2cqw;padding:2.6cqw 3cqw;border:.19cqw solid var(--m-linha)}
 .sd .ciclo li span{width:6.67cqw;height:6.67cqw;border-radius:50%;background:var(--m-verm);color:#fff;font:700 3.7cqw/6.67cqw "Barlow Condensed",Arial,sans-serif;text-align:center}
@@ -195,12 +219,12 @@ details[open] summary{margin-bottom:10px}
 .sd .serie li b{font:700 4.26cqw/1 "Barlow Condensed",Arial,sans-serif;color:var(--m-verm)}
 .sd .cta{align-self:center;background:var(--m-ouro);color:var(--m-azul);font:700 4.8cqw/1 "Barlow Condensed",Arial,sans-serif;padding:2.8cqw 4.26cqw;border-radius:999px;text-align:center}
 .sd.final .in{align-items:center;justify-content:center;text-align:center}
-.sd.final h2{font-size:9.26cqw}
+.sd.final .h2{font-size:9.26cqw}
 .sd.foto{background:repeating-linear-gradient(135deg,#C9D1E3 0 6cqw,#D6DCEA 6cqw 12cqw)}
 .sd.foto .in{justify-content:flex-end}
 .sd .ph{position:absolute;top:8cqw;left:8.9cqw;right:8.9cqw;font-size:3cqw;font-weight:700;color:var(--m-cinza);text-transform:uppercase;letter-spacing:.08em}
 .sd .cap{background:var(--m-azul);color:#fff;padding:4cqw;border-radius:2cqw;display:grid;gap:1.5cqw}
-.sd .cap h2{color:#fff;font-size:7.4cqw}
+.sd .cap .h2{color:#fff;font-size:7.4cqw}
 .sd .cap p{color:rgba(255,255,255,.9);font-size:3.4cqw}
 
 /* copy e identidade */
@@ -222,7 +246,8 @@ details[open] summary{margin-bottom:10px}
 .steps-copy li::before{content:counter(s);width:26px;height:26px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-weight:700;font-size:.85rem}
 footer{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
 @media (max-width:480px){.two{grid-template-columns:1fr}}
-@media (prefers-reduced-motion:no-preference){.tab{transition:background-color .15s,border-color .15s}.strip{scroll-behavior:smooth}}
+@media (prefers-reduced-motion:no-preference){.tab,.index button,.btn,.ampliar{transition:background-color .15s,border-color .15s,transform .15s}.strip{scroll-behavior:smooth}.btn:active,.ampliar:active{transform:scale(.97)}}
+@media (hover:hover) and (pointer:fine){.tab:hover,.index button:hover,.btn.ghost:hover{border-color:var(--accent)}.btn:not(.ghost):not(.ok):hover{background:var(--accent);filter:brightness(1.12)}}
 </style>
 </head>
 <body>
@@ -230,12 +255,13 @@ footer{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);paddi
 <symbol id="seta" viewBox="0 0 200 200"><path d="M40 40 L40 120 A50 50 0 0 0 140 120 L140 70" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round"/><path d="M110 92 L140 60 L170 92" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 <symbol id="dir" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 </defs></svg>
+<a class="skip" href="#conteudo" id="skip">Pular para o conteúdo do post</a>
 <div class="wrap">
   <header>
-    <span class="brand">Efeito Rebote · Comunicação e redes</span>
+    <span class="brand">Efeito&nbsp;Rebote · Comunicação e redes</span>
     <h1>Kit da Comunicação</h1>
-    <div class="status"><span class="pill gold">Proposta aguardando aprovação da prof.ª Camila</span><a href="../">Voltar ao calendário</a></div>
-    <p class="intro">Mockup, roteiro slide a slide, ganchos e legenda pronta de cada post do calendário, mais modelos de story e as regras de texto e de arte. Use como ponto de partida e confira cada dado na fonte antes de publicar.</p>
+    <div class="status"><span class="pill gold">Proposta aguardando aprovação da prof.ª Camila</span><a class="back" href="../">Voltar ao calendário</a></div>
+    <p class="intro">Slides, ganchos e legenda pronta de cada post, mais modelos de story e regras de texto e de arte. Confira cada dado na fonte antes de publicar.</p>
   </header>
 
   <nav class="tabs" role="tablist" aria-label="Seções">
@@ -245,15 +271,17 @@ footer{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);paddi
     <button class="tab" role="tab" id="t-id" aria-selected="false" aria-controls="p-id">Arte</button>
   </nav>
 
-  <main>
+  <main id="conteudo" tabindex="-1">
     <section id="p-posts" role="tabpanel" aria-labelledby="t-posts" class="panel"></section>
     <section id="p-stories" role="tabpanel" aria-labelledby="t-stories" class="panel" hidden></section>
     <section id="p-copy" role="tabpanel" aria-labelledby="t-copy" class="panel" hidden></section>
     <section id="p-id" role="tabpanel" aria-labelledby="t-id" class="panel" hidden></section>
   </main>
 
-  <footer>Projeto de extensão Efeito Rebote: o custo da reincidência. Todo post passa pela prof.ª Camila antes de ir ao ar. Mockups são referência de layout: a arte final é da equipe de Design.</footer>
+  <footer>Projeto de extensão Efeito&nbsp;Rebote: o custo da reincidência. Todo post passa pela prof.ª Camila antes de ir ao ar. Mockups são referência de layout: a arte final é da equipe de Design.</footer>
 </div>
+<div class="sr-only" id="anuncio" aria-live="polite"></div>
+<dialog id="zoom" aria-label="Slide ampliado"><div class="zoomwrap"><div id="zoom-corpo"></div><button class="btn ghost" id="zoom-fechar" type="button">Fechar</button></div></dialog>
 <script>
 const D = /*DADOS*/null;
 const SELO = "/*SELO*/";
@@ -263,35 +291,36 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":
 const sl = () => '<i class="sl" style="background-image:url(' + SELO + ')"></i>';
 
 const rich = t => esc(t).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>");
-const ARR = '<svg viewBox="0 0 24 24"><use href="#dir"/></svg>';
-const dots = (i, n) => '<div class="dots">' + Array.from({length: n}, (_, k) => '<i' + (k === i ? ' class="on"' : '') + '></i>').join("") + '</div>';
+const ARR = '<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#dir"/></svg>';
+const dots = (i, n) => '<div class="dots" aria-hidden="true">' + Array.from({length: n}, (_, k) => '<i' + (k === i ? ' class="on"' : '') + '></i>').join("") + '</div>';
 const pe = (txt, i, n) => '<div class="pe"><div class="ponte">' + (txt ? esc(txt) + ARR : "") + '</div>' + dots(i, n) + '</div>';
-const seloSd = () => '<i class="selo" style="background-image:url(' + SELO + ')"></i>';
-const rebote = () => '<svg class="rebote" viewBox="0 0 200 200"><use href="#seta"/></svg>';
+const seloSd = () => '<i class="selo" aria-hidden="true"></i>';
+const rebote = () => '<svg class="rebote" viewBox="0 0 200 200" aria-hidden="true"><use href="#seta"/></svg>';
 
 /* Um slide do carrossel. O mesmo código serve ao mockup da página e à exportação em 1080 × 1350 (container em cqw). */
-function slide(s, i, n){
+function slide(s, i, n, noZoom){
   const tag = s.eb ? '<div class="tag">' + esc(s.eb) + '</div>' : "";
   let cls = s.tipo, h = "";
   if (s.tipo === "capa") {
     cls = "capa azul";
-    h = rebote() + seloSd() + '<div class="grp">' + tag + '<h1>' + esc(s.t) + '</h1>' + (s.p ? '<div class="lead">' + esc(s.p) + '</div>' : '') + (s.fonte ? '<div class="fonte">' + esc(s.fonte) + '</div>' : '') + '</div>' + pe("Arraste", i, n);
+    h = rebote() + seloSd() + '<div class="grp">' + tag + '<div class="h1">' + esc(s.t) + '</div>' + (s.p ? '<div class="lead">' + esc(s.p) + '</div>' : '') + (s.fonte ? '<div class="fonte">' + esc(s.fonte) + '</div>' : '') + '</div>' + pe("Arraste", i, n);
   } else if (s.tipo === "final") {
     cls = "final azul";
-    h = rebote() + seloSd() + tag + '<h2>' + esc(s.t) + '</h2>' + (s.cta ? '<div class="cta">' + esc(s.cta) + '</div>' : '');
+    h = rebote() + seloSd() + tag + '<div class="h2">' + esc(s.t) + '</div>' + (s.cta ? '<div class="cta">' + esc(s.cta) + '</div>' : '');
   } else if (s.tipo === "foto") {
-    h = '<span class="ph">' + esc(s.ph || "Foto real aqui") + '</span><div class="cap"><h2>' + esc(s.t) + '</h2>' + (s.p ? '<p>' + esc(s.p) + '</p>' : '') + '</div>';
+    h = '<span class="ph">' + esc(s.ph || "Foto real aqui") + '</span><div class="cap"><div class="h2">' + esc(s.t) + '</div>' + (s.p ? '<p>' + esc(s.p) + '</p>' : '') + '</div>';
   } else if (s.tipo === "dado") {
-    h = tag + '<div class="num">' + esc(s.num) + '</div><h2 style="font-size:7.04cqw">' + esc(s.t) + '</h2>' + (s.p ? '<p>' + esc(s.p) + '</p>' : '') + '<div class="fonte">' + esc(s.fonte) + '</div>' + pe(s.ponte, i, n);
+    h = tag + '<div class="num">' + esc(s.num) + '</div><div class="h2" style="font-size:7.04cqw">' + esc(s.t) + '</div>' + (s.p ? '<p>' + esc(s.p) + '</p>' : '') + '<div class="fonte">' + esc(s.fonte) + '</div>' + pe(s.ponte, i, n);
   } else if (s.tipo === "passos") {
     const its = s.itens.map((x, k) => '<li' + (s.volta && k === s.itens.length - 1 ? ' class="volta"' : '') + '><span>' + (k + 1) + '</span>' + rich(x) + '</li>').join("") + (s.fim ? '<li class="fim">' + rich(s.fim) + '</li>' : '');
-    h = tag + '<h2>' + esc(s.t) + '</h2><ol class="ciclo">' + its + '</ol>' + pe(s.ponte, i, n);
+    h = tag + '<div class="h2">' + esc(s.t) + '</div><ol class="ciclo">' + its + '</ol>' + pe(s.ponte, i, n);
   } else if (s.tipo === "serie") {
-    h = tag + '<h2>' + esc(s.t) + '</h2><ul class="serie">' + s.itens.map(x => '<li><b>' + esc(x[0]) + '</b><span>' + esc(x[1]) + '</span></li>').join("") + '</ul>' + pe(s.ponte, i, n);
+    h = tag + '<div class="h2">' + esc(s.t) + '</div><ul class="serie">' + s.itens.map(x => '<li><b>' + esc(x[0]) + '</b><span>' + esc(x[1]) + '</span></li>').join("") + '</ul>' + pe(s.ponte, i, n);
   } else {
-    h = tag + '<h2>' + esc(s.t) + '</h2>' + (s.box ? '<div class="box">' + rich(s.box) + '</div>' : '') + (s.p ? '<p>' + rich(s.p) + '</p>' : '') + pe(s.ponte, i, n);
+    h = tag + '<div class="h2">' + esc(s.t) + '</div>' + (s.box ? '<div class="box">' + rich(s.box) + '</div>' : '') + (s.p ? '<p>' + rich(s.p) + '</p>' : '') + pe(s.ponte, i, n);
   }
-  return '<div class="mkw"><div class="sd ' + cls + '" role="img" aria-label="Slide ' + (i + 1) + ': ' + esc(s.t) + '"><div class="in">' + h + '</div></div>' + (s.nota ? '<span class="slab">' + esc(s.nota) + '</span>' : '') + '</div>';
+  const ampliar = noZoom ? '' : '<button class="ampliar" type="button" aria-label="Ampliar o slide ' + (i + 1) + ' de ' + n + '"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>';
+  return '<div class="mkw"><div class="sd ' + cls + '" role="group" aria-roledescription="slide" aria-label="Slide ' + (i + 1) + ' de ' + n + '"><div class="in">' + h + '</div></div>' + ampliar + (s.nota ? '<span class="slab">' + esc(s.nota) + '</span>' : '') + '</div>';
 }
 
 function story(s){
@@ -302,30 +331,36 @@ function story(s){
   else if (s.tipo === "contagem") inner += '<div class="t">' + esc(s.t) + '</div><div class="stk"><span class="q">' + esc(s.q) + '</span><span class="cd">' + esc(s.cd) + '</span></div>';
   else if (s.tipo === "repost") inner += '<p class="p">' + esc(s.q) + '</p><div class="mini">' + esc(s.t) + '</div><div class="stk"><span class="q">' + esc(s.cta) + '</span></div>';
   else if (s.tipo === "deslize") inner += '<div class="t">' + esc(s.t) + '</div><div class="stk"><span class="q">' + esc(s.q) + '</span><span class="bar"></span></div>';
-  return '<div class="mkw"><div class="mk story" role="img" aria-label="Modelo de story: ' + esc(s.nome) + '"><div class="in">' + inner + '</div></div></div>';
+  return '<div class="mkw"><div class="mk story" role="group" aria-label="Modelo de story: ' + esc(s.nome) + '"><div class="in">' + inner + '</div></div></div>';
 }
 
+const ICO_COPIA = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+const ICO_OK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 async function copiar(btn, txt){
-  const out = btn.parentElement.querySelector(".copied");
+  const out = btn.closest(".block").querySelector(".copied");
+  let ok = true;
   try { await navigator.clipboard.writeText(txt); out.textContent = "Legenda copiada."; }
-  catch(e){ const pre = btn.closest(".block").querySelector(".legend"); const r = document.createRange(); r.selectNodeContents(pre); const s = getSelection(); s.removeAllRanges(); s.addRange(r); out.textContent = "Texto selecionado: copie com o menu do celular."; }
+  catch(e){ ok = false; const pre = btn.closest(".block").querySelector(".legend"); const r = document.createRange(); r.selectNodeContents(pre); const s = getSelection(); s.removeAllRanges(); s.addRange(r); out.textContent = "Texto selecionado: copie com o menu do celular."; }
+  if (ok) { btn.classList.add("ok"); btn.innerHTML = ICO_OK + "Copiado"; setTimeout(() => { btn.classList.remove("ok"); btn.innerHTML = ICO_COPIA + "Copiar legenda"; }, 2500); }
 }
 
 function postHtml(p, prox, i){
   const n = p.slides.length;
+  const kick = p.capa && /^Série/.test(p.capa.eb || "") ? '<span class="kick">' + esc(p.capa.eb) + '</span>' : "";
+  const titulo = p.capa ? p.capa.t : p.tema;
   let h = '<article class="post" id="' + p.id + '"><div class="post-h"><div class="meta"><span class="date">' + esc(p.rot) + '</span><span>' + esc(p.fmt) + '</span>'
     + (p === prox ? '<span class="pill blue">Próximo</span>' : '') + (p.lock ? '<span class="pill red">Só após liberação</span>' : '') + (p.pend ? '<span class="pill gold">' + esc(p.pend) + '</span>' : '') + '</div>'
-    + '<h2>' + esc(p.tema) + '</h2><p class="goal"><b>Objetivo:</b> ' + esc(p.objetivo) + '</p></div>';
+    + kick + '<h2 tabindex="-1">' + esc(titulo) + '</h2>' + (p.capa ? '<p class="tema">Tema no calendário: ' + esc(p.tema) + '</p>' : '') + '<p class="goal"><b>Objetivo:</b> ' + esc(p.objetivo) + '</p></div>';
   if (p.lock) h += '<p class="lock">Não publicar nem adiantar nos stories antes de a prof.ª Camila liberar a divulgação da arrecadação.</p>';
-  h += '<div class="strip" aria-label="Slides do post">' + p.slides.map((s, k) => slide(s, k, n)).join("") + '</div>';
-  h += '<div class="block"><h3>Ganchos para a capa (escolha um)</h3><ul class="hooks">' + p.ganchos.map(g => '<li><span class="tec">' + esc(g[0]) + '</span><span class="txt">' + esc(g[1]) + '</span></li>').join("") + '</ul></div>';
-  h += '<div class="block"><h3>Legenda pronta</h3><pre class="legend">' + esc(p.legenda) + '</pre><div class="copy-row"><button class="btn" data-copy="' + p.id + '">Copiar legenda</button><span class="copied" aria-live="polite"></span></div></div>';
+  h += '<div class="strip" role="region" tabindex="0" aria-label="Slides do post, role para o lado">' + p.slides.map((s, k) => slide(s, k, n)).join("") + '</div>';
+  h += '<div class="cols"><div class="block"><div class="bh"><h3>Legenda pronta</h3><button class="btn" type="button" data-copy="' + p.id + '">' + ICO_COPIA + 'Copiar legenda</button></div><pre class="legend">' + esc(p.legenda) + '</pre><span class="copied" aria-live="polite"></span></div>';
+  h += '<div class="block"><h3>Ganchos para a capa (escolha um)</h3><ul class="hooks">' + p.ganchos.map(g => '<li><span class="tec">' + esc(g[0]) + '</span><span class="txt">' + esc(g[1]) + '</span></li>').join("") + '</ul></div></div>';
   h += '<details><summary>Fontes, cuidados e dica de arte</summary><div class="panel">'
     + '<div class="block"><h3>Fontes</h3><div class="src">' + p.fontes.map(f => '<span>' + esc(f) + '</span>').join("") + '</div></div>'
     + '<div class="block"><h3>Cuidados</h3><ul class="list warn">' + p.cuidados.map(c => '<li>' + esc(c) + '</li>').join("") + '</ul></div>'
     + (p.arte ? '<p class="tip"><b>Arte:</b> ' + esc(p.arte) + '</p>' : '') + '</div></details>';
-  h += '<div class="pager">' + (i > 0 ? '<button class="btn ghost" data-go="' + D.posts[i - 1].id + '">← ' + esc(D.posts[i - 1].rot) + '</button>' : '<span></span>')
-    + (i < D.posts.length - 1 ? '<button class="btn ghost" data-go="' + D.posts[i + 1].id + '">' + esc(D.posts[i + 1].rot) + ' →</button>' : '<span></span>') + '</div></article>';
+  h += '<div class="pager">' + (i > 0 ? '<button class="btn ghost" type="button" data-go="' + D.posts[i - 1].id + '">← ' + esc(D.posts[i - 1].rot) + '</button>' : '<span></span>')
+    + (i < D.posts.length - 1 ? '<button class="btn ghost" type="button" data-go="' + D.posts[i + 1].id + '">' + esc(D.posts[i + 1].rot) + ' →</button>' : '<span></span>') + '</div></article>';
   return h;
 }
 
@@ -336,19 +371,22 @@ function renderPosts(){
   const doHash = decodeURIComponent(location.hash.slice(1));
   let atual = ids.includes(doHash) ? doHash : (prox || D.posts[0]).id;
   $("#p-posts").innerHTML = '<nav class="index" aria-label="Posts por data">'
-    + D.posts.map(p => '<button data-go="' + p.id + '"' + (p === prox ? ' data-next="1"' : '') + '>' + esc(p.rot) + '</button>').join("") + '</nav><div id="post-atual"></div>';
-  function mostrar(id, rolar){
+    + D.posts.map(p => '<button type="button" data-go="' + p.id + '">' + esc(p.rot) + (p === prox ? '<span class="nx" aria-hidden="true"></span><span class="sr-only"> (próximo a publicar)</span>' : '') + '</button>').join("") + '</nav><div id="post-atual"></div>';
+  function mostrar(id, rolar, foco){
     atual = id;
     const i = ids.indexOf(id);
     $("#post-atual").innerHTML = postHtml(D.posts[i], prox, i);
     $("#p-posts").querySelectorAll(".index button").forEach(b => { const on = b.dataset.go === id; b.setAttribute("aria-current", on ? "true" : "false"); if (on) b.scrollIntoView({inline: "center", block: "nearest"}); });
     $("#post-atual").querySelectorAll("[data-copy]").forEach(b => b.addEventListener("click", () => copiar(b, D.posts[i].legenda)));
-    $("#post-atual").querySelectorAll("[data-go]").forEach(b => b.addEventListener("click", () => mostrar(b.dataset.go, true)));
+    $("#post-atual").querySelectorAll("[data-go]").forEach(b => b.addEventListener("click", () => mostrar(b.dataset.go, true, true)));
+    $("#post-atual").querySelectorAll(".ampliar").forEach(b => b.addEventListener("click", () => ampliarSlide(b)));
     try { history.replaceState(null, "", "#" + id); } catch(e){}
     if (rolar) window.scrollTo({top: 0});
+    if (foco) { const t = $("#post-atual h2"); if (t) t.focus({preventScroll: true}); }
+    if (rolar) $("#anuncio").textContent = "Post de " + D.posts[i].rot + " aberto.";
   }
-  $("#p-posts").querySelectorAll(".index button").forEach(b => b.addEventListener("click", () => mostrar(b.dataset.go, true)));
-  mostrar(atual, false);
+  $("#p-posts").querySelectorAll(".index button").forEach(b => b.addEventListener("click", () => mostrar(b.dataset.go, true, false)));
+  mostrar(atual, false, false);
 }
 
 function renderStories(){
@@ -376,20 +414,50 @@ function renderCopy(){
 function renderId(){
   const I = D.identidade;
   let h = '<div class="card"><h2>Cores</h2><div class="sw">' + I.cores.map(c => '<div><i style="background:' + c[1] + '"></i><span><b>' + esc(c[0]) + '</b><br><code>' + c[1] + '</code><br>' + esc(c[2]) + '</span></div>').join("") + '</div></div>';
-  h += '<div class="card"><h2>Tipos de slide</h2><p class="muted">Os 6 layouts que se repetem em todos os posts. Copie a estrutura do mockup.</p><div class="strip">' + I.tipos.map((s, i) => slide(s, i, I.tipos.length)).join("") + '</div></div>';
+  h += '<div class="card"><h2>Tipos de slide</h2><p class="muted">Os 6 layouts que se repetem em todos os posts. Copie a estrutura do mockup.</p><div class="strip">' + I.tipos.map((s, i) => slide(s, i, I.tipos.length, true)).join("") + '</div></div>';
   h += '<div class="card"><h2>Regras de arte</h2><ul class="list">' + I.regras.map(x => '<li>' + esc(x) + '</li>').join("") + '</ul></div>';
   h += '<div class="card"><h2>Checklist antes de enviar à revisão</h2><ul class="list warn">' + I.checklist.map(x => '<li>' + esc(x) + '</li>').join("") + '</ul></div>';
   $("#p-id").innerHTML = h;
 }
 
-function setTab(id){
-  ["posts","stories","copy","id"].forEach(t => { $("#t-" + t).setAttribute("aria-selected", t === id); $("#p-" + t).hidden = t !== id; });
+const zoom = $("#zoom");
+function ampliarSlide(btn){
+  const sd = btn.closest(".mkw").querySelector(".sd").cloneNode(true);
+  sd.classList.add("zoom");
+  $("#zoom-corpo").replaceChildren(sd);
+  zoom.showModal();
+  $("#zoom-fechar").focus();
+}
+$("#zoom-fechar").addEventListener("click", () => zoom.close());
+zoom.addEventListener("click", e => { if (e.target === zoom) zoom.close(); });
+
+const ABAS = ["posts","stories","copy","id"];
+function setTab(id, foco){
+  ABAS.forEach(t => { const on = t === id; const b = $("#t-" + t); b.setAttribute("aria-selected", on); b.tabIndex = on ? 0 : -1; $("#p-" + t).hidden = !on; });
+  if (foco) $("#t-" + id).focus();
   try { localStorage.setItem("er-kit-aba", id); } catch(e){}
 }
-document.querySelectorAll(".tab").forEach(b => b.addEventListener("click", () => setTab(b.id.slice(2))));
+document.querySelectorAll(".tab").forEach(b => {
+  b.addEventListener("click", () => setTab(b.id.slice(2), false));
+  b.addEventListener("keydown", e => {
+    const i = ABAS.indexOf(b.id.slice(2)); let j = null;
+    if (e.key === "ArrowRight") j = (i + 1) % ABAS.length;
+    else if (e.key === "ArrowLeft") j = (i + ABAS.length - 1) % ABAS.length;
+    else if (e.key === "Home") j = 0; else if (e.key === "End") j = ABAS.length - 1;
+    if (j !== null) { e.preventDefault(); setTab(ABAS[j], true); }
+  });
+});
+$("#skip").addEventListener("click", e => {
+  e.preventDefault();
+  const alvo = document.querySelector(".panel:not([hidden]) .post h2, .panel:not([hidden]) .card h2") || $("#conteudo");
+  alvo.tabIndex = -1; alvo.focus();
+});
+const medirAbas = () => document.documentElement.style.setProperty("--tabs-h", $(".tabs").offsetHeight + "px");
 renderPosts(); renderStories(); renderCopy(); renderId();
+medirAbas(); addEventListener("resize", medirAbas);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(medirAbas);
 let aba = "posts"; try { aba = localStorage.getItem("er-kit-aba") || "posts"; } catch(e){}
-setTab(["posts","stories","copy","id"].includes(aba) ? aba : "posts");
+setTab(ABAS.includes(aba) ? aba : "posts", false);
 </script>
 </body>
 </html>

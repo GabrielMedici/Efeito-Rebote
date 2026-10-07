@@ -378,6 +378,7 @@ def montar():
         c = CONTEUDO[chave]
         posts.append({"id": f"post-{i + 1}", "d": p["d"], "rot": p["rot"], "tema": p["tema"], "fmt": p["fmt"], "lock": p["lock"],
                       "pend": p["pend"], "objetivo": c["objetivo"], "slides": c["slides"], "ganchos": c["ganchos"],
+                      "capa": ({"eb": c["slides"][0].get("eb", ""), "t": c["slides"][0]["t"]} if c["slides"][0]["tipo"] == "capa" else None),
                       "legenda": c["legenda"], "fontes": c["fontes"], "cuidados": c["cuidados"], "arte": c.get("arte", "")})
     return posts
 
