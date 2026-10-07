@@ -29,3 +29,4 @@ O integrante abre um post, confere cada slide e sua fonte e copia a legenda sem 
 - **2026-10-07**: dado da Pastoral Carcerária (R$ 263) fora dos posts. *Por quê:* as reportagens divergem e o relatório original não foi aberto.
 - **2026-10-07**: a palavra "rifa" é banida: usar "ação de arrecadação" e "bilhetes". *Por quê:* pedido da turma, e o `check.sh` barra.
 - **2026-10-07**: o selo foi gerado com IA; quando for o destaque da arte, informar na legenda. *Por quê:* regra do projeto, para declarar o uso de IA.
+- **2026-10-07**: `[PENDENTE: …]` é marcação deliberada de lacuna, e não texto provisório. *Por quê:* regra do `CLAUDE.md` (não inventar prêmio, datas, quantidades ou parceiros); a página mostra a lacuna e a etiqueta de pendência para a equipe ver o que falta antes de publicar. Só sai quando o dado for conferido.

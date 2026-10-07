@@ -425,6 +425,8 @@ def main():
     ns = "".join(f"<h3>{_html.escape(p['rot'])}: {_html.escape(p['capa']['t'] if p['capa'] else p['tema'])}</h3><ul>"
                  + "".join(f"<li>{_html.escape(g[0])}: {_html.escape(g[1])}</li>" for g in p["ganchos"])
                  + f"</ul><pre style=\"white-space:pre-wrap\">{_html.escape(p['legenda'])}</pre>" for p in dados["posts"])
+    escuro = re.search(r"/\*DARK<\*/(.*?)/\*>DARK\*/", modelo, re.S).group(1)  # tokens do escuro: fonte única no modelo
+    modelo = modelo.replace("/*DARK-COPY*/", escuro)
     html = (modelo.replace("/*DADOS*/null", json.dumps(dados, ensure_ascii=False)).replace("/*SELO*/", selo_data_uri())
             .replace("<!--NOSCRIPT-->", ns))
     saida = os.path.join(POSTS, "site", "kit")
