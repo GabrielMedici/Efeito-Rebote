@@ -13,7 +13,10 @@ Cópias de dois repositórios públicos, empacotadas como plugins do Claude Code
 - Os comandos (`/ui-craft:polish`, `/ui-craft:critique`...) já são manuais por natureza.
 - Ficou de fora o servidor MCP do ui-craft (`.mcp.json`, que rodaria `npx ui-craft-mcp`), além de CLI, evals e testes dos repositórios.
 
-## Como usar (só quando quiser)
+## Ativação nas sessões em nuvem (08/10)
+Como o `/plugin` não existe no ambiente em nuvem, os dois plugins são ativados pelo `.claude/settings.json` do projeto (`extraKnownMarketplaces` apontando para `./plugins` e `enabledPlugins`). Valem a partir da próxima sessão. Continuam sem gatilho automático: as skills só rodam quando chamadas pelo nome (`/ui-craft:...`, `/marketing-skills:...`). Para desativar, troque `true` por `false` em `enabledPlugins`.
+
+## Como usar no terminal local (só quando quiser)
 No Claude Code, dentro do projeto:
 
 ```

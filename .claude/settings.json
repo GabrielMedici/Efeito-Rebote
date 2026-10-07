@@ -3,7 +3,10 @@
     "SessionStart": [
       {
         "hooks": [
-          { "type": "command", "command": "bash \"$CLAUDE_PROJECT_DIR/scripts/status.sh\"" }
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/scripts/status.sh\""
+          }
         ]
       }
     ]
@@ -16,5 +19,17 @@
       "Bash(unzip -p:*)",
       "Bash(pdftotext:*)"
     ]
+  },
+  "extraKnownMarketplaces": {
+    "efeito-rebote-plugins": {
+      "source": {
+        "source": "directory",
+        "path": "./plugins"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "ui-craft@efeito-rebote-plugins": true,
+    "marketing-skills@efeito-rebote-plugins": true
   }
 }
