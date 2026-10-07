@@ -1,7 +1,7 @@
 # Passagem de sessão (sobrescreva a cada encerramento)
 
-**Atualizado:** 2026-10-07 (tarde)
-**Comece por aqui:** PR GabrielMedici/Efeito-Rebote#4 mesclado e publicado (07/10). Calendário, imagens, site e kit seguem o plano da líder Vitória (guia e planilha de 06/10).
+**Atualizado:** 2026-10-07 (noite)
+**Comece por aqui:** progress.md. Site e Kit no ar no plano da Vitória; falta o usuário enviar as mensagens e o one-page à Vitória e à Flauany (PR #7).
 
 ## Onde parou (07/10, noite)
 - Site e Kit no ar no plano da Vitória (PRs #4, #5 e #6 mesclados). PR #7 aberto: mensagens finais à Vitória/Flauany + one-page `ajustes-guia-planilha` (onde ela ajusta guia e planilha; busca por "rif", "garant", "5 itens").
