@@ -148,7 +148,7 @@ def main():
         f.write(saida)
     # versão autônoma para a Vercel (pasta entregas/posts/site)
     doc = ('<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
-           '<meta name="robots" content="noindex,nofollow"><style>html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body>'
+           '<meta name="robots" content="noindex,nofollow"><meta name="color-scheme" content="only light"><meta name="theme-color" content="#F4F6FB"><style>html{color-scheme:only light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body>'
            + saida + '</body></html>')
     os.makedirs(os.path.join(POSTS, "site"), exist_ok=True)
     with open(os.path.join(POSTS, "site", "index.html"), "w", encoding="utf-8") as f:

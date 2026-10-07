@@ -4,73 +4,67 @@
 
 ## Seg 12/10: O que é a reincidência e por que o projeto se chama Efeito Rebote
 
+- Dado: Quase 1 em cada 4 volta a ser condenado.
 - Pergunta direta: Você sabe o que é reincidência?
 - Curiosidade: Por que um projeto de Direito se chama Efeito Rebote?
-- Promessa de valor: Reincidência explicada em 6 slides.
 
-Você sabe o que é reincidência?
+24,4%. Esse foi o percentual de pessoas que voltaram a ser condenadas em até cinco anos, num estudo do Ipea para o CNJ em cinco estados, entre eles o Paraná.
 
-No Código Penal, reincidir é cometer um novo crime depois de já ter sido condenado em definitivo. Um estudo do Ipea para o CNJ encontrou 24,4% de reincidência em cinco estados, entre eles o Paraná.
+Pelo Código Penal, reincidir é cometer um novo crime depois de uma condenação definitiva. Outras pesquisas contam quem volta à prisão, mesmo sem nova condenação, e chegam a 36% a 42%. São medidas diferentes, e por isso os números mudam de um estudo para outro.
 
-O nome do nosso projeto vem daí. Quando falta o básico dentro do sistema prisional, o custo não fica lá dentro: ele volta para a sociedade, na saúde, na segurança e no orçamento das famílias. É esse movimento que chamamos de efeito rebote.
+O nome do projeto vem desse movimento. Quando falta o básico dentro do sistema prisional, o custo volta para fora, na saúde, na segurança e no orçamento das famílias.
 
-Nas próximas semanas, vamos explicar o sistema prisional com dados e fontes, sempre sem sensacionalismo.
-
-Salve este post e acompanhe a série.
+Na quarta, parte 2. Siga o perfil para acompanhar a série.
 
 #EfeitoRebote #SistemaPrisional #ExecuçãoPenal #DireitosHumanos #ExtensãoUniversitária
 
 ## Qua 14/10: Por que cuidar de quem está preso também protege você
 
-- Pergunta direta: Por que cuidar de quem está preso?
-- Fato surpreendente: No Brasil, toda pena tem fim. E depois?
 - Dado local: 1.198 pessoas em 960 vagas. Aqui em Maringá.
+- Fato surpreendente: No Brasil, toda pena tem fim. E depois?
+- Pergunta direta: Por que cuidar de quem está preso?
 
-Por que cuidar de quem está preso?
+Em Maringá, a Casa de Custódia tinha 1.198 pessoas para 960 vagas. Na inspeção da Defensoria Pública do Paraná, em 21 de março de 2025, a unidade estava cerca de 25% acima da capacidade.
 
-A Constituição proíbe a prisão perpétua. Isso quer dizer que toda pessoa presa hoje vai voltar a conviver em sociedade. As condições em que ela cumpre a pena influenciam como ela sai.
+Isso importa para quem está fora porque no Brasil não existe prisão perpétua. A Constituição proíbe penas de caráter perpétuo, e o Código Penal limita o cumprimento a 40 anos. Toda pessoa presa hoje vai voltar a conviver em sociedade, e as condições da pena influenciam como ela sai.
 
-Em Maringá, a Casa de Custódia tinha 1.198 pessoas para 960 vagas na inspeção da Defensoria Pública em março de 2025. Em lugares lotados e sem higiene, doenças se espalham com mais facilidade, e servidores e visitantes circulam por ali todos os dias.
+Em lugares lotados e com pouca higiene, doenças se espalham com mais facilidade, e servidores e visitantes circulam por ali todos os dias. Garantir o básico funciona como prevenção.
 
-Garantir o básico é uma forma de prevenção que protege todo mundo.
-
-Compartilhe com alguém que já fez essa pergunta.
+Na sexta, parte 3. Siga o perfil para não perder.
 
 #EfeitoRebote #SistemaPrisional #ExecuçãoPenal #DireitosHumanos #ExtensãoUniversitária
 
 ## Sex 16/10: Higiene básica é dever do Estado, não privilégio
 
+- Fato surpreendente: A Lei de Execução Penal não cita escova de dente.
 - Pergunta direta: Escova de dente é direito de quem está preso?
-- Contraste lei × prática: A lei garante. Nas unidades de Maringá, faltou.
 - Lista: 3 itens que faltavam numa penitenciária de Maringá.
 
-Escova de dente é direito de quem está preso?
+A Lei de Execução Penal não cita escova de dente.
 
-Sim. A Lei de Execução Penal prevê assistência material à pessoa presa, o que inclui condições de higiene.
+O art. 12 diz que a assistência material inclui alimentação, vestuário e instalações higiênicas, e o art. 14 prevê atendimento médico, farmacêutico e odontológico. Em 2023, o STF reconheceu um cenário de violação massiva de direitos no sistema prisional, entre eles o direito à higiene (ADPF 347).
 
-Na prática, as inspeções da Defensoria Pública do Paraná em 2025 encontraram falta de itens básicos em Maringá. Na Penitenciária Estadual faltavam pasta de dente, aparelho de barbear e escova. Na Colônia Penal Industrial, a direção relatou que o kit de higiene não tem chegado completo.
+Nas inspeções da Defensoria Pública do Paraná em 2025, a Penitenciária Estadual de Maringá estava sem pasta de dente, aparelho de barbear e escova. Na Colônia Penal Industrial, a direção relatou que o kit de higiene não tem chegado completo. Quando falta, o Conselho da Comunidade e as famílias cobrem parte.
 
-Quando falta, quem cobre é o Conselho da Comunidade ou a própria família.
-
-Salve para lembrar o que a lei diz.
+Na segunda, parte 4. Siga o perfil para acompanhar.
 
 #EfeitoRebote #SistemaPrisional #ExecuçãoPenal #DireitosHumanos #ExtensãoUniversitária
 
 ## Seg 19/10: Quem paga a conta hoje: as famílias
 
+- Mudança de ponto de vista: Quando falta o básico, alguém compra o que falta.
 - Pergunta direta: Quem paga a conta quando falta o básico na prisão?
-- Mudança de ponto de vista: Uma parte da pena também recai sobre a família.
 - Curiosidade: O custo do sistema prisional que ninguém coloca na conta.
 
-Quem paga a conta quando falta o básico na prisão?
+Quando o kit de higiene não chega completo, alguém compra o que falta.
 
-Quando o kit de higiene não chega completo, muitas famílias compram os itens e levam no dia da visita. Um custo que a lei atribui ao Estado acaba saindo do orçamento de quem está do lado de fora.
+Nas inspeções da Defensoria Pública do Paraná em 2025, a direção da Colônia Penal Industrial de Maringá relatou que o kit não tem chegado completo, e o Conselho da Comunidade e as famílias cobrem parte dos itens. Uma pesquisa de Minas Gerais, publicada na PLOS ONE em 2025, descreve algo parecido: a população presa depende de instituições religiosas ou de familiares para ter escova e pasta.
 
-Isso pesa ainda mais porque o vínculo com a família é um dos apoios mais importantes para quem vai recomeçar. Quando visitar fica caro ou difícil, as visitas diminuem.
+Isso pesa porque uma revisão de 144 estudos brasileiros, do Instituto Igarapé, associa a falta de apoio da família a mais chances de voltar à prisão. É uma associação, e não uma garantia.
 
-Por isso, o projeto também prevê um momento de acolhimento às famílias, com atenção especial às crianças.
+Por isso o projeto prevê um café da manhã com as famílias, com atenção especial às crianças.
 
-Compartilhe para mais gente enxergar esse custo.
+Na quarta, conheça a turma. Siga o perfil.
 
 #EfeitoRebote #SistemaPrisional #ExecuçãoPenal #DireitosHumanos #ExtensãoUniversitária
 
@@ -79,8 +73,6 @@ Compartilhe para mais gente enxergar esse custo.
 - Bastidor: Quem está por trás do Efeito Rebote?
 - Número: 80 estudantes de Direito, 5 equipes, um projeto.
 - Convite: Conheça a turma que está estudando o sistema prisional de Maringá.
-
-Quem está por trás do Efeito Rebote?
 
 Somos cerca de 80 acadêmicos do curso de Direito da UniCesumar. Neste semestre, estamos estudando a realidade das unidades prisionais de Maringá e transformando esse estudo em informação e ação.
 
@@ -98,9 +90,9 @@ Marque um colega da turma nos comentários.
 - Pergunta: Você sabe o que é o efeito rebote?
 - Dado local: Em 2025, faltou escova de dente numa penitenciária de Maringá.
 
-O que falta dentro da prisão não fica lá dentro.
-
 Em 30 segundos, explicamos por que escolhemos o nome Efeito Rebote e o que vamos fazer neste semestre.
+
+São cerca de 80 estudantes de Direito estudando a realidade das unidades prisionais de Maringá, com dados e fonte em cada post.
 
 Dê o play e compartilhe com quem ainda não conhece o projeto.
 
@@ -122,25 +114,27 @@ O Efeito Rebote está arrecadando 5 itens de higiene para as unidades prisionais
 4. Sabão em pó, pacote de até 500 g
 5. Detergente em embalagem transparente, de até 500 ml
 
-Siga as especificações: itens fora do padrão podem não entrar nas unidades.
+Siga as especificações: itens fora do padrão podem não entrar nas unidades. A Triagem confere cada doação antes de levar.
 
 Pontos de coleta: [PENDENTE: pontos de coleta, dias e horários]
 
-Compartilhe com quem pode ajudar.
+Compartilhe a lista com quem pode ajudar.
 
 #EfeitoRebote #SistemaPrisional #ExecuçãoPenal #DireitosHumanos #ExtensãoUniversitária
 
 ## Qua 28/10: Como funciona a ação de arrecadação (bilhetes)
 
-- Benefício duplo: Com R$ 5, você concorre a um tablet e ajuda quem precisa.
+- Benefício duplo: Com R$ 5, você concorre a um tablet e ajuda a comprar itens de higiene.
 - Pergunta: Sabe como funciona a nossa ação de arrecadação?
-- Transparência: Para onde vai cada real dos bilhetes.
+- Transparência: Para onde vai o dinheiro dos bilhetes.
 
-Com R$ 5, você concorre a um tablet e ajuda quem precisa.
+Com R$ 5, você concorre a um tablet e ajuda a comprar itens de higiene.
 
-A ação de arrecadação do Efeito Rebote funciona assim: você compra um bilhete com um aluno da turma, guarda o canhoto com o seu número e acompanha o sorteio ao vivo aqui no perfil, em 02/11.
+Funciona assim: você compra um bilhete com um aluno da turma, guarda o canhoto com o seu número e acompanha o sorteio ao vivo aqui no perfil, em 02/11, com ata e testemunhas. A lista dos números participantes, sem dados pessoais, sai em 01/11.
 
-O prêmio é um tablet Samsung Galaxy Tab A11+ ou equivalente, conforme o regulamento. Todo o valor arrecadado será usado na compra de itens de higiene para as unidades prisionais de Maringá, com prestação de contas publicada aqui.
+O prêmio é um tablet Samsung Galaxy Tab A11+ ou equivalente, conforme o regulamento. Descontado o custo do prêmio, o valor arrecadado compra itens de higiene para as unidades prisionais de Maringá, com nota fiscal e prestação de contas publicada aqui.
+
+Regulamento: [PENDENTE: onde fica publicado]
 
 Fale com um aluno da turma e garanta o seu número.
 
@@ -148,19 +142,17 @@ Fale com um aluno da turma e garanta o seu número.
 
 ## Sex 30/10: Ressocialização: o que reduz a reincidência
 
-- Pergunta: O que ajuda alguém a não voltar para a prisão?
+- Número: 12 horas de estudo valem 1 dia a menos de pena.
 - Fato pouco conhecido: Estudar na prisão diminui a pena. Está na lei.
-- Número: 12 horas de estudo, 1 dia a menos de pena.
+- Pergunta: O que ajuda alguém a não voltar para a prisão?
 
-O que ajuda alguém a não voltar para a prisão?
+12 horas de estudo valem 1 dia a menos de pena.
 
-A Lei de Execução Penal prevê a remição: a cada 12 horas de estudo ou a cada 3 dias de trabalho, a pessoa presa tem 1 dia a menos de pena. A ideia é incentivar atividades que ajudam no recomeço.
+É a remição, prevista na Lei de Execução Penal (art. 126): 1 dia de pena a cada 12 horas de frequência escolar, divididas em no mínimo 3 dias, e 1 dia a cada 3 dias de trabalho.
 
-Além do estudo e do trabalho, manter o vínculo com a família é outro apoio importante para quem vai voltar à convivência em sociedade.
+As pesquisas apontam um terceiro caminho. Uma revisão de 144 estudos brasileiros, do Instituto Igarapé, associa a falta de apoio da família, e não estudar nem trabalhar, a mais chances de voltar à prisão. É uma associação, e não uma garantia.
 
-Garantir dignidade no cumprimento da pena é também uma forma de prevenir a reincidência.
-
-Salve e compartilhe.
+Na semana que vem, a visita às unidades. Siga o perfil para acompanhar.
 
 #EfeitoRebote #SistemaPrisional #ExecuçãoPenal #DireitosHumanos #ExtensãoUniversitária
 
@@ -172,9 +164,9 @@ Salve e compartilhe.
 
 Saiu o número sorteado da ação de arrecadação do Efeito Rebote!
 
-O sorteio foi ao vivo aqui no perfil, e a gravação fica salva nos destaques. Número sorteado: [PENDENTE]. A comissão financeira vai entrar em contato pelos dados do canhoto.
+O sorteio foi ao vivo aqui no perfil, com ata e testemunhas, e a gravação fica salva nos destaques. Número sorteado: [PENDENTE]. A comissão financeira vai entrar em contato pelos dados do canhoto.
 
-Obrigado a cada pessoa que comprou um bilhete. Todo o valor será usado em itens de higiene para as unidades prisionais de Maringá, e a prestação de contas sai aqui na próxima semana.
+Obrigado a cada pessoa que comprou um bilhete. Descontado o custo do prêmio, o valor arrecadado compra itens de higiene para as unidades prisionais de Maringá, com nota fiscal, e a prestação de contas sai aqui na próxima semana.
 
 #EfeitoRebote #SistemaPrisional #ExecuçãoPenal #DireitosHumanos #ExtensãoUniversitária
 
