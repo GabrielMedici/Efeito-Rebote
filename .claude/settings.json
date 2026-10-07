@@ -19,17 +19,5 @@
       "Bash(unzip -p:*)",
       "Bash(pdftotext:*)"
     ]
-  },
-  "extraKnownMarketplaces": {
-    "efeito-rebote-plugins": {
-      "source": {
-        "source": "directory",
-        "path": "./plugins"
-      }
-    }
-  },
-  "enabledPlugins": {
-    "ui-craft@efeito-rebote-plugins": true,
-    "marketing-skills@efeito-rebote-plugins": true
   }
 }

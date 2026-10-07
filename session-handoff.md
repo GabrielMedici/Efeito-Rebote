@@ -8,7 +8,7 @@
 - PNG gerados só para os posts sem pendência e sem trava: 12/10, 14/10, 16/10, 19/10 e 30/10 (`entregas/posts/kit-png/`). 26/10 e 28/10 (travados) e os de evento (ainda com [PENDENTE]) não foram exportados.
 - Erros do kit antigo corrigidos: "todo o valor vira itens" (agora "descontado o custo do prêmio"), "a lei garante itens" (a LEP fala em "instalações higiênicas"; escova não aparece), Pastoral R$ 263 removida, 28/10 travado.
 - Não conferido ainda (aviso nos "cuidados" de cada post): frase da Defensoria sobre kit incompleto e reposição pelo Conselho da Comunidade e famílias; fonte de saúde para transmissão de doenças (14/10); a frase da PLOS ONE está na revisão de literatura do artigo.
-- Plugins: `/marketing-skills:social` não existe na nuvem; usei o SKILL.md em `plugins/` (social, carrossel Problem-Proof/Value-Stack) e as regras de copy. A skill ui-craft só foi aplicada como critério (hierarquia, um destaque por slide, ponte), não carregada.
+- Plugins (resolvido 07/10): a documentação oficial diz que `enabledPlugins`/`extraKnownMarketplaces` não carregam na nuvem. Copiei para `.claude/` as skills `/mkt-*` (6), `/ui-craft` e 13 comandos `/ui-*` (+ agentes design-reviewer e a11y-auditor), sem gatilho automático. Valem a partir de uma SESSÃO NOVA. Ordem sugerida: mkt-social → mkt-copywriting → mkt-copy-editing (texto); ui-start → ui-brief → ui-tokens → ui-critique → ui-distill → ui-adapt → ui-harden → ui-audit → ui-polish → ui-finalize (página do kit e slides). Nunca rodei esses comandos ainda.
 
 ## Pendências de antes (continuam)
 - Vercel: Root Directory = `entregas/posts/site` antes de mesclar o PR GabrielMedici/Efeito-Rebote#1 (rascunho), senão o link expõe o repositório.
