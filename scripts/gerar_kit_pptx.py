@@ -23,6 +23,8 @@ PX = 9525
 # mais cerca de 1 px medido (comparação pixel a pixel entre o LibreOffice e o PNG do navegador, em 07/10).
 ALTURA_TEXTO = 1.2
 FOLGA_PX = 1.0
+# Modo de entrelinha (teste): "lo" = correção do LibreOffice; "canva" = sinal invertido; "pct" = entrelinha proporcional sem correção.
+MODO = os.environ.get("ER_PPTX_MODO", "lo")
 
 
 def px(v):
@@ -109,7 +111,8 @@ def caixa_texto(slide, it):
         w = larg_auto
         x = it["x"]
     fam0, _ = fonte(runs[0]["familia"], runs[0]["peso"])
-    y = it["y"] + (ALTURA_TEXTO * runs[0]["tam"] - alt) / 2 + FOLGA_PX
+    delta = (ALTURA_TEXTO * runs[0]["tam"] - alt) / 2
+    y = it["y"] + {"lo": delta + FOLGA_PX, "canva": -delta + FOLGA_PX, "pct": 0}[MODO]
     h = nlin * alt
     tb = slide.shapes.add_textbox(px(x), px(y), px(w), px(h))
     tb.name = it["nome"]
@@ -124,7 +127,12 @@ def caixa_texto(slide, it):
     for tag in ("a:lnSpc", "a:spcBef", "a:spcAft"):
         for e in pPr.findall(qn(tag)):
             pPr.remove(e)
-    ln = pPr.makeelement(qn("a:lnSpc"), {}); sp = ln.makeelement(qn("a:spcPts"), {"val": str(int(round(alt * 0.75 * 100)))}); ln.append(sp)
+    ln = pPr.makeelement(qn("a:lnSpc"), {})
+    if MODO == "pct":
+        sp = ln.makeelement(qn("a:spcPct"), {"val": str(int(round(alt / (ALTURA_TEXTO * runs[0]["tam"]) * 100000)))})
+    else:
+        sp = ln.makeelement(qn("a:spcPts"), {"val": str(int(round(alt * 0.75 * 100)))})
+    ln.append(sp)
     pPr.insert(0, ln)
     for tag in ("a:spcBef", "a:spcAft"):
         e = pPr.makeelement(qn(tag), {}); e.append(e.makeelement(qn("a:spcPts"), {"val": "0"})); pPr.append(e)
