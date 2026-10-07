@@ -1,0 +1,23 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/scripts/status.sh\""
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(bash scripts/check.sh:*)",
+      "Bash(bash scripts/status.sh)",
+      "Bash(soffice --headless --convert-to:*)",
+      "Bash(unzip -p:*)",
+      "Bash(pdftotext:*)"
+    ]
+  }
+}

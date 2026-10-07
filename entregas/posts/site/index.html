@@ -1,0 +1,337 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta name="color-scheme" content="only light"><meta name="theme-color" content="#F4F6FB"><style>html{color-scheme:only light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>Calendário da Comunicação</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap">
+<style>
+/* Layout: coluna única de celular. Cabeçalho, seletor "quem é você", abas (minhas entregas, semana, posts, regras).
+   Identidade dos carrosséis do Efeito Rebote: azul institucional, vermelho só para prazo e trava, ouro para pendente. */
+:root{
+  --bg:#F4F6FB; --surface:#FFFFFF; --ink:#141B2D; --muted:#4A5568; --line:#DCE1EC;
+  --accent:#1B3A8C; --accent-soft:#E8EDF8; --on-accent:#FFFFFF;
+  --red:#B5121B; --red-soft:#FBEAEB; --gold:#7A5600; --gold-soft:#FBEFCF; --ok:#1F6B3A; --ok-soft:#E3F2E8;
+  --shadow:0 1px 2px rgba(20,27,45,.06),0 6px 18px rgba(20,27,45,.06);
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:Barlow,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color-scheme:only light;
+}
+/* Tema: o site é sempre claro (decisão do usuário, 07/10). O bloco escuro abaixo só vale se alguém ligar data-theme="dark" à mão. */
+:root[data-theme="dark"]{
+  --bg:#0E1322; --surface:#161D30; --ink:#E9ECF5; --muted:#A4ACC2; --line:#2A3350;
+  --accent:#9DB4F5; --accent-soft:#1E2A52; --on-accent:#0E1322;
+  --red:#F28B93; --red-soft:#3A1A20; --gold:#EBC468; --gold-soft:#3A2F12; --ok:#7FD39B; --ok-soft:#173523;
+  --shadow:0 1px 2px rgba(0,0,0,.4); color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font:16px/1.45 var(--body);padding-inline:16px;padding-block:20px 56px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:640px;margin:0 auto;display:grid;gap:18px}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;line-height:1.05}
+h1{font-size:clamp(2.1rem,8vw,2.7rem);color:var(--accent);letter-spacing:-.01em}
+h2{font-size:1.45rem}
+h3{font-size:1.15rem}
+p{margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.muted{color:var(--muted)}
+.small{font-size:.86rem}
+header{display:grid;gap:8px}
+.brand{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.status{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;font-size:.86rem;color:var(--muted)}
+.pill{display:inline-block;border-radius:999px;padding:2px 10px;font-size:.78rem;font-weight:700;white-space:nowrap}
+.pill.gold{background:var(--gold-soft);color:var(--gold)}
+.pill.red{background:var(--red-soft);color:var(--red)}
+.pill.blue{background:var(--accent-soft);color:var(--accent)}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}
+/* abas */
+.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:6px;display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+.tab{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:8px 4px;font-weight:600;font-size:.92rem}
+.tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+/* quem é você */
+.who{display:grid;gap:14px}
+.group{display:grid;gap:6px}
+.group-label{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.names{display:flex;flex-wrap:wrap;gap:8px}
+.name-btn{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:9px 14px;font-weight:600;box-shadow:var(--shadow)}
+.name-btn:hover{border-color:var(--accent)}
+.vaga{font-size:.86rem;color:var(--gold)}
+/* painel pessoal */
+.me{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px}
+.me h2{font-size:1.7rem}
+.link{background:none;border:0;padding:4px 0;color:var(--accent);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.next{background:var(--accent);color:var(--on-accent);border-radius:14px;padding:16px 18px;display:grid;gap:6px;box-shadow:var(--shadow)}
+.next .lbl{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.85}
+.next .when{font-family:var(--display);font-weight:700;font-size:2rem;line-height:1}
+.next .what{font-weight:600;font-size:1.05rem}
+.next .det{font-size:.9rem;opacity:.9}
+.next.late{background:var(--red);}
+.next .actions{display:flex;gap:8px;margin-top:4px}
+.btn-on{border:0;border-radius:8px;padding:8px 14px;font-weight:700;background:var(--on-accent);color:var(--accent)}
+.next.late .btn-on{color:var(--red)}
+.panel{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:14px 16px;display:grid;gap:8px}
+.reg{display:grid;gap:6px}
+.reg li{display:grid;grid-template-columns:96px 1fr;gap:10px;font-size:.95rem}
+.reg b{font-family:var(--display);font-size:1.05rem;color:var(--accent)}
+ul,ol{list-style:none;margin:0;padding:0}
+/* lista de entregas */
+.day-block{display:grid;gap:6px}
+.day-h{display:flex;align-items:baseline;gap:8px;font-family:var(--display);font-weight:700;font-size:1.15rem}
+.day-h .pill{font-family:var(--body)}
+.task{display:grid;grid-template-columns:28px 54px 1fr;gap:8px;align-items:start;background:var(--surface);border-radius:10px;padding:10px 12px;box-shadow:var(--shadow)}
+.task input{width:22px;height:22px;margin:1px 0 0;accent-color:var(--accent)}
+.task .hr{font-family:var(--display);font-weight:700;font-size:1.05rem;color:var(--accent);font-variant-numeric:tabular-nums}
+.task .tx{min-width:0;display:grid;gap:2px}
+.task .tx b{font-weight:600}
+.task .tx span{font-size:.88rem;color:var(--muted)}
+.task.done .tx b{text-decoration:line-through;color:var(--muted)}
+.task.late .hr{color:var(--red)}
+.toggle{justify-self:start}
+.note{font-size:.84rem;color:var(--muted)}
+/* semana */
+.weeknav{display:grid;grid-template-columns:44px 1fr 44px;align-items:center;gap:8px}
+.weeknav button{height:44px;border:1px solid var(--line);border-radius:10px;background:var(--surface);font-size:1.3rem}
+.weeknav button:disabled{opacity:.35;cursor:default}
+.weeknav h2{text-align:center;font-size:1.35rem}
+.day{display:grid;gap:6px;padding-block:10px;border-top:1px solid var(--line)}
+.day.today{background:var(--accent-soft);border-radius:12px;border-top-color:transparent;padding-inline:10px}
+.ev{display:grid;grid-template-columns:48px 1fr;gap:8px;font-size:.94rem}
+.ev .hr{font-family:var(--display);font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+.ev .tx{min-width:0}
+.ev .who-tag{font-size:.8rem;color:var(--muted);display:block}
+.ev.mine .tx{font-weight:600}
+.ev.mine .who-tag{color:var(--accent);font-weight:700}
+.ev.air .hr{color:var(--ok)}
+.empty{font-size:.9rem;color:var(--muted)}
+/* posts */
+.week{background:var(--surface);border-radius:12px;box-shadow:var(--shadow);padding:12px 16px 6px;display:grid}
+.wk{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap;padding-bottom:4px}
+.wk h3{color:var(--accent)}
+.post{display:grid;grid-template-columns:78px 1fr;gap:10px;padding-block:9px;border-top:1px solid var(--line)}
+.post .dt{font-family:var(--display);font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+.post .tm{font-weight:600;display:block}
+.post .meta{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;font-size:.84rem;color:var(--muted);margin-top:2px}
+.post .obs{display:block;font-size:.84rem;color:var(--gold);margin-top:2px}
+.post.past{opacity:.55}
+.post.now .dt::after{content:" • hoje";color:var(--red)}
+/* regras */
+.rules{display:grid;gap:10px;counter-reset:r}
+.rules li{display:grid;grid-template-columns:26px 1fr;gap:8px;counter-increment:r;background:var(--surface);border-radius:10px;padding:10px 12px;box-shadow:var(--shadow)}
+.rules li::before{content:counter(r);font-family:var(--display);font-weight:700;font-size:1.2rem;color:var(--red)}
+footer{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+@media (prefers-reduced-motion:no-preference){.tab,.name-btn{transition:background-color .15s,border-color .15s}}
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="brand">Efeito Rebote · Comunicação e redes</span>
+    <h1>Calendário da Comunicação</h1>
+    <div class="status"><span class="pill gold">Proposta aguardando aprovação da prof.ª Camila</span><span id="upd"></span><a href="kit/" style="font-weight:700">Kit da Comunicação: modelos e textos prontos</a></div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Seções">
+    <button class="tab" role="tab" id="t-me" aria-selected="true" aria-controls="p-me">Minhas</button>
+    <button class="tab" role="tab" id="t-week" aria-selected="false" aria-controls="p-week">Semana</button>
+    <button class="tab" role="tab" id="t-posts" aria-selected="false" aria-controls="p-posts">Posts</button>
+    <button class="tab" role="tab" id="t-rules" aria-selected="false" aria-controls="p-rules">Regras</button>
+  </nav>
+
+  <main>
+    <section id="p-me" role="tabpanel" aria-labelledby="t-me" class="who"></section>
+    <section id="p-week" role="tabpanel" aria-labelledby="t-week" class="who" hidden></section>
+    <section id="p-posts" role="tabpanel" aria-labelledby="t-posts" class="who" hidden></section>
+    <section id="p-rules" role="tabpanel" aria-labelledby="t-rules" class="who" hidden></section>
+  </main>
+
+  <footer>Projeto de extensão Efeito Rebote: o custo da reincidência. Dúvidas sobre o calendário: pergunte no grupo da equipe de Comunicação. As marcações de "feito" ficam salvas só neste aparelho.</footer>
+</div>
+
+<script>
+const D = {"pessoas": [{"nome": "Vitória", "f": "Líder"}, {"nome": "Flauany", "f": "Vice-líder"}, {"nome": "Nathan", "f": "Roteiro e legendas"}, {"nome": "Leonardo", "f": "Roteiro e legendas"}, {"nome": "Geraldo Jackson", "f": "Design"}, {"nome": "João Dionísio", "f": "Design"}, {"nome": "Evelyn Noefer", "f": "Design"}, {"nome": "Laura Martins", "f": "Audiovisual"}, {"nome": "Anna Laura", "f": "Audiovisual"}, {"nome": "Lívia Ventura", "f": "Engajamento"}, {"nome": "Mayara Mendoza", "f": "Engajamento"}, {"nome": "Maria Eduarda Mendonça", "f": "Registro de imagens"}, {"nome": "Laura Mell", "f": "Registro de imagens"}], "vagas": ["Arquivo de aprovações"], "funcoes": {"Líder": {"entrega": "Fecha a pauta na segunda, envia o pacote à prof.ª na sexta e publica só o que foi aprovado", "regular": [["Seg 20h", "posta a pauta da semana seguinte no grupo"], ["Sex 12h", "envia o pacote completo à prof.ª Camila"], ["Dia de post", "publica só o post aprovado (seg, qua e sex)"]]}, "Vice-líder": {"entrega": "Revisa os textos pelo checklist (quarta) e substitui a líder", "regular": [["Qua 20h", "revisa os textos pelo checklist e devolve ajustes no mesmo dia"], ["Sempre", "substitui a líder e também pode publicar"]]}, "Roteiro e legendas": {"entrega": "Textos das artes, legendas, roteiros de vídeo e áudio, com a fonte de cada dado", "regular": [["Ter 20h", "texto de cada slide, legenda (até ~150 palavras e 5 hashtags) e fonte dos dados"], ["Sáb e dom", "ajustes pedidos pela prof.ª"]]}, "Design": {"entrega": "Artes e carrosséis (1080 × 1350) e modelos de story, na identidade visual", "regular": [["Qui 20h", "artes finais (1080 × 1350) e modelos de story, a partir do texto revisado"], ["Sáb e dom", "ajustes pedidos pela prof.ª"]]}, "Audiovisual": {"entrega": "Gravação e edição de vídeos e áudios; live do sorteio, com Eventos", "regular": [["Qui 20h", "vídeos e áudios editados"], ["02/11", "live do sorteio, com a equipe de Eventos"]]}, "Engajamento": {"entrega": "Stories diários, moderação de comentários, métricas semanais", "regular": [["Todo dia", "1 a 3 stories com os modelos aprovados"], ["Dia do post", "repost nos stories e convite para a turma compartilhar"], ["Domingo", "métricas da semana (alcance, seguidores, salvamentos)"]]}, "Registro de imagens": {"entrega": "Fotos e vídeos dos eventos, só com autorização e nunca de pessoas privadas de liberdade", "regular": [["Eventos", "fotos e vídeos só com autorização, nunca de pessoas privadas de liberdade"]]}, "Arquivo de aprovações": {"entrega": "Guarda cada versão enviada à prof.ª e a resposta dela", "regular": [["Sex 12h", "registra o que foi enviado (data e versão)"], ["Sáb e dom", "registra a resposta da prof.ª"]]}}, "eventos": [{"id": "2026-10-08-0", "d": "2026-10-08", "h": 12, "f": ["Roteiro e legendas"], "t": "Texto dos 3 posts de 12 a 16/10 (slides, legenda e fonte dos dados)", "det": "O que é a reincidência e por que o projeto se chama Efeito Rebote; Por que cuidar de quem está preso também protege você; Higiene básica é dever do Estado, não privilégio"}, {"id": "2026-10-08-1", "d": "2026-10-08", "h": 19, "f": ["*"], "t": "Alinhamento online, até 30 min (sugestão)", "det": "Ciclo, modelos de story e identidade visual antes do 1º envio."}, {"id": "2026-10-08-2", "d": "2026-10-08", "h": 20, "f": ["Vice-líder"], "t": "Revisão dos textos de 12 a 16/10 pelo checklist", "det": "Devolve os ajustes no mesmo dia."}, {"id": "2026-10-09-3", "d": "2026-10-09", "h": 10, "f": ["Design"], "t": "Artes finais dos posts de 12 a 16/10 e modelos de story", "det": "1080 × 1350, na identidade visual."}, {"id": "2026-10-09-4", "d": "2026-10-09", "h": 12, "f": ["Líder"], "t": "Enviar o pacote de 12 a 16/10 à prof.ª Camila", "det": ""}, {"id": "2026-10-09-5", "d": "2026-10-09", "h": 12, "f": ["Arquivo de aprovações"], "t": "Registrar o envio do pacote de 12 a 16/10 (data e versão)", "det": ""}, {"id": "2026-10-11-6", "d": "2026-10-11", "h": null, "f": ["Roteiro e legendas", "Design"], "t": "Ajustes pedidos pela prof.ª nos posts de 12 a 16/10", "det": ""}, {"id": "2026-10-11-7", "d": "2026-10-11", "h": null, "f": ["Arquivo de aprovações"], "t": "Registrar a resposta da prof.ª", "det": ""}, {"id": "2026-10-12-8", "d": "2026-10-12", "h": 20, "f": ["Líder"], "t": "Postar no grupo a pauta dos posts de 19/10 a 23/10", "det": "Quem paga a conta hoje: as famílias; Conheça a turma e as equipes por trás do projeto; Efeito Rebote em 30 segundos"}, {"id": "2026-10-12-43", "d": "2026-10-12", "h": null, "f": ["Líder", "Vice-líder"], "t": "Publicar: O que é a reincidência e por que o projeto se chama Efeito Rebote", "det": "Só a versão aprovada pela prof.ª."}, {"id": "2026-10-12-44", "d": "2026-10-12", "h": null, "f": ["Engajamento"], "t": "Repost nos stories: O que é a reincidência e por que o projeto se chama Efeito Rebote", "det": "E convite para a turma compartilhar."}, {"id": "2026-10-13-9", "d": "2026-10-13", "h": 12, "f": ["*"], "t": "Confirmar no grupo a sua parte da pauta de 19/10 a 23/10", "det": ""}, {"id": "2026-10-13-10", "d": "2026-10-13", "h": 20, "f": ["Roteiro e legendas"], "t": "Texto dos posts de 19/10 a 23/10 (slides, legenda e fonte dos dados)", "det": "Quem paga a conta hoje: as famílias; Conheça a turma e as equipes por trás do projeto; Efeito Rebote em 30 segundos"}, {"id": "2026-10-14-11", "d": "2026-10-14", "h": 20, "f": ["Vice-líder"], "t": "Revisão dos textos de 19/10 a 23/10 pelo checklist", "det": "Devolve os ajustes no mesmo dia."}, {"id": "2026-10-14-45", "d": "2026-10-14", "h": null, "f": ["Líder", "Vice-líder"], "t": "Publicar: Por que cuidar de quem está preso também protege você", "det": "Só a versão aprovada pela prof.ª."}, {"id": "2026-10-14-46", "d": "2026-10-14", "h": null, "f": ["Engajamento"], "t": "Repost nos stories: Por que cuidar de quem está preso também protege você", "det": "E convite para a turma compartilhar."}, {"id": "2026-10-15-12", "d": "2026-10-15", "h": 20, "f": ["Design"], "t": "Artes finais e modelos de story dos posts de 19/10 a 23/10", "det": "Quem paga a conta hoje: as famílias; Conheça a turma e as equipes por trás do projeto; Efeito Rebote em 30 segundos"}, {"id": "2026-10-15-13", "d": "2026-10-15", "h": 20, "f": ["Audiovisual"], "t": "Vídeo ou áudio editado para 19/10 a 23/10", "det": "Efeito Rebote em 30 segundos (Reels ou áudio)"}, {"id": "2026-10-16-14", "d": "2026-10-16", "h": 12, "f": ["Líder"], "t": "Enviar o pacote de 19/10 a 23/10 à prof.ª Camila", "det": ""}, {"id": "2026-10-16-15", "d": "2026-10-16", "h": 12, "f": ["Arquivo de aprovações"], "t": "Registrar o envio do pacote de 19/10 a 23/10", "det": ""}, {"id": "2026-10-16-47", "d": "2026-10-16", "h": null, "f": ["Líder", "Vice-líder"], "t": "Publicar: Higiene básica é dever do Estado, não privilégio", "det": "Só a versão aprovada pela prof.ª."}, {"id": "2026-10-16-48", "d": "2026-10-16", "h": null, "f": ["Engajamento"], "t": "Repost nos stories: Higiene básica é dever do Estado, não privilégio", "det": "E convite para a turma compartilhar."}, {"id": "2026-10-18-16", "d": "2026-10-18", "h": null, "f": ["Roteiro e legendas", "Design"], "t": "Ajustes pedidos pela prof.ª nos posts de 19/10 a 23/10", "det": ""}, {"id": "2026-10-18-17", "d": "2026-10-18", "h": null, "f": ["Arquivo de aprovações"], "t": "Registrar a resposta da prof.ª", "det": ""}, {"id": "2026-10-18-67", "d": "2026-10-18", "h": null, "f": ["Engajamento"], "t": "Métricas da semana (alcance, seguidores, salvamentos)", "det": "Para o relatório final."}, {"id": "2026-10-19-18", "d": "2026-10-19", "h": 20, "f": ["Líder"], "t": "Postar no grupo a pauta dos posts de 26/10 a 30/10", "det": "Quais itens aceitamos e por quê; Como funciona a ação de arrecadação (bilhetes); Ressocialização: o que reduz a reincidência"}, {"id": "2026-10-19-49", "d": "2026-10-19", "h": null, "f": ["Líder", "Vice-líder"], "t": "Publicar: Quem paga a conta hoje: as famílias", "det": "Só a versão aprovada pela prof.ª."}, {"id": "2026-10-19-50", "d": "2026-10-19", "h": null, "f": ["Engajamento"], "t": "Repost nos stories: Quem paga a conta hoje: as famílias", "det": "E convite para a turma compartilhar."}, {"id": "2026-10-20-19", "d": "2026-10-20", "h": 12, "f": ["*"], "t": "Confirmar no grupo a sua parte da pauta de 26/10 a 30/10", "det": ""}, {"id": "2026-10-20-20", "d": "2026-10-20", "h": 20, "f": ["Roteiro e legendas"], "t": "Texto dos posts de 26/10 a 30/10 (slides, legenda e fonte dos dados)", "det": "Quais itens aceitamos e por quê; Como funciona a ação de arrecadação (bilhetes); Ressocialização: o que reduz a reincidência"}, {"id": "2026-10-21-21", "d": "2026-10-21", "h": 20, "f": ["Vice-líder"], "t": "Revisão dos textos de 26/10 a 30/10 pelo checklist", "det": "Devolve os ajustes no mesmo dia."}, {"id": "2026-10-21-51", "d": "2026-10-21", "h": null, "f": ["Líder", "Vice-líder"], "t": "Publicar: Conheça a turma e as equipes por trás do projeto", "det": "Só a versão aprovada pela prof.ª."}, {"id": "2026-10-21-52", "d": "2026-10-21", "h": null, "f": ["Engajamento"], "t": "Repost nos stories: Conheça a turma e as equipes por trás do projeto", "det": "E convite para a turma compartilhar."}, {"id": "2026-10-22-22", "d": "2026-10-22", "h": 20, "f": ["Design"], "t": "Artes finais e modelos de story dos posts de 26/10 a 30/10", "det": "Quais itens aceitamos e por quê; Como funciona a ação de arrecadação (bilhetes); Ressocialização: o que reduz a reincidência"}, {"id": "2026-10-23-23", "d": "2026-10-23", "h": 12, "f": ["Líder"], "t": "Enviar o pacote de 26/10 a 30/10 à prof.ª Camila", "det": ""}, {"id": "2026-10-23-24", "d": "2026-10-23", "h": 12, "f": ["Arquivo de aprovações"], "t": "Registrar o envio do pacote de 26/10 a 30/10", "det": ""}, {"id": "2026-10-23-53", "d": "2026-10-23", "h": null, "f": ["Líder", "Vice-líder"], "t": "Publicar: Efeito Rebote em 30 segundos", "det": "Só a versão aprovada pela prof.ª."}, {"id": "2026-10-23-54", "d": "2026-10-23", "h": null, "f": ["Engajamento"], "t": "Repost nos stories: Efeito Rebote em 30 segundos", "det": "E convite para a turma compartilhar."}, {"id": "2026-10-25-25", "d": "2026-10-25", "h": null, "f": ["Roteiro e legendas", "Design"], "t": "Ajustes pedidos pela prof.ª nos posts de 26/10 a 30/10", "det": ""}, {"id": "2026-10-25-26", "d": "2026-10-25", "h": null, "f": ["Arquivo de aprovações"], "t": "Registrar a resposta da prof.ª", "det": ""}, {"id": "2026-10-25-68", "d": "2026-10-25", "h": null, "f": ["Engajamento"], "t": "Métricas da semana (alcance, seguidores, salvamentos)", "det": "Para o relatório final."}, {"id": "2026-10-26-27", "d": "2026-10-26", "h": 20, "f": ["Líder"], "t": "Postar no grupo a pauta dos posts de 02/11 a 06/11", "det": "Sorteio ao vivo + resultado; Visita às unidades; Bastidores e agradecimento"}, {"id": "2026-10-26-55", "d": "2026-10-26", "h": null, "f": ["Líder", "Vice-líder"], "t": "Publicar: Quais itens aceitamos e por quê", "det": "Só a versão aprovada pela prof.ª. Só se a divulgação já tiver sido liberada."}, {"id": "2026-10-26-56", "d": "2026-10-26", "h": null, "f": ["Engajamento"], "t": "Repost nos stories: Quais itens aceitamos e por quê", "det": "E convite para a turma compartilhar."}, {"id": "2026-10-27-28", "d": "2026-10-27", "h": 12, "f": ["*"], "t": "Confirmar no grupo a sua parte da pauta de 02/11 a 06/11", "det": ""}, {"id": "2026-10-27-29", "d": "2026-10-27", "h": 20, "f": ["Roteiro e legendas"], "t": "Texto dos posts de 02/11 a 06/11 (slides, legenda e fonte dos dados)", "det": "Sorteio ao vivo + resultado; Visita às unidades; Bastidores e agradecimento"}, {"id": "2026-10-28-30", "d": "2026-10-28", "h": 20, "f": ["Vice-líder"], "t": "Revisão dos textos de 02/11 a 06/11 pelo checklist", "det": "Devolve os ajustes no mesmo dia."}, {"id": "2026-10-28-57", "d": "2026-10-28", "h": null, "f": ["Líder", "Vice-líder"], "t": "Publicar: Como funciona a ação de arrecadação (bilhetes)", "det": "Só a versão aprovada pela prof.ª. Só se a divulgação já tiver sido liberada."}, {"id": "2026-10-28-58", "d": "2026-10-28", "h": null, "f": ["Engajamento"], "t": "Repost nos stories: Como funciona a ação de arrecadação (bilhetes)", "det": "E convite para a turma compartilhar."}, {"id": "2026-10-29-72", "d": "2026-10-29", "h": 19, "f": ["Líder", "Audiovisual", "Engajamento", "Registro de imagens"], "t": "Alinhamento online com Eventos, até 30 min (sugestão)", "det": "Planejar a live do sorteio e a cobertura da visita."}, {"id": "2026-10-29-31", "d": "2026-10-29", "h": 20, "f": ["Design"], "t": "Artes finais e modelos de story dos posts de 02/11 a 06/11", "det": "Sorteio ao vivo + resultado; Visita às unidades; Bastidores e agradecimento"}, {"id": "2026-10-29-32", "d": "2026-10-29", "h": 20, "f": ["Audiovisual"], "t": "Vídeo ou áudio editado para 02/11 a 06/11", "det": "Sorteio ao vivo + resultado (Live + feed)"}, {"id": "2026-10-30-33", "d": "2026-10-30", "h": 12, "f": ["Líder"], "t": "Enviar o pacote de 02/11 a 06/11 à prof.ª Camila", "det": ""}, {"id": "2026-10-30-34", "d": "2026-10-30", "h": 12, "f": ["Arquivo de aprovações"], "t": "Registrar o envio do pacote de 02/11 a 06/11", "det": ""}, {"id": "2026-10-30-59", "d": "2026-10-30", "h": null, "f": ["Líder", "Vice-líder"], "t": "Publicar: Ressocialização: o que reduz a reincidência", "det": "Só a versão aprovada pela prof.ª."}, {"id": "2026-10-30-60", "d": "2026-10-30", "h": null, "f": ["Engajamento"], "t": "Repost nos stories: Ressocialização: o que reduz a reincidência", "det": "E convite para a turma compartilhar."}, {"id": "2026-11-01-35", "d": "2026-11-01", "h": null, "f": ["Roteiro e legendas", "Design"], "t": "Ajustes pedidos pela prof.ª nos posts de 02/11 a 06/11", "det": ""}, {"id": "2026-11-01-36", "d": "2026-11-01", "h": null, "f": ["Arquivo de aprovações"], "t": "Registrar a resposta da prof.ª", "det": ""}, {"id": "2026-11-01-69", "d": "2026-11-01", "h": null, "f": ["Engajamento"], "t": "Métricas da semana (alcance, seguidores, salvamentos)", "det": "Para o relatório final."}, {"id": "2026-11-02-37", "d": "2026-11-02", "h": 20, "f": ["Líder"], "t": "Postar no grupo a pauta da prestação de contas (09 a 13/11)", "det": "Números conferidos com o Financeiro."}, {"id": "2026-11-02-61", "d": "2026-11-02", "h": null, "f": ["Líder", "Vice-líder"], "t": "Publicar: Sorteio ao vivo + resultado", "det": "Só a versão aprovada pela prof.ª."}, {"id": "2026-11-02-62", "d": "2026-11-02", "h": null, "f": ["Engajamento"], "t": "Repost nos stories: Sorteio ao vivo + resultado", "det": "E convite para a turma compartilhar."}, {"id": "2026-11-02-73", "d": "2026-11-02", "h": null, "f": ["Audiovisual"], "t": "Live do sorteio, com a equipe de Eventos", "det": "Horário do sorteio ainda a definir."}, {"id": "2026-11-02-74", "d": "2026-11-02", "h": null, "f": ["Registro de imagens"], "t": "Fotos e vídeos do sorteio", "det": "Só com autorização das pessoas."}, {"id": "2026-11-03-38", "d": "2026-11-03", "h": 20, "f": ["Roteiro e legendas"], "t": "Texto da prestação de contas (09 a 13/11)", "det": "Números conferidos com o Financeiro."}, {"id": "2026-11-04-39", "d": "2026-11-04", "h": 20, "f": ["Vice-líder"], "t": "Revisão do texto da prestação de contas pelo checklist", "det": ""}, {"id": "2026-11-04-63", "d": "2026-11-04", "h": null, "f": ["Líder", "Vice-líder"], "t": "Publicar: Visita às unidades", "det": "Só a versão aprovada pela prof.ª."}, {"id": "2026-11-04-64", "d": "2026-11-04", "h": null, "f": ["Engajamento"], "t": "Repost nos stories: Visita às unidades", "det": "E convite para a turma compartilhar."}, {"id": "2026-11-04-75", "d": "2026-11-04", "h": null, "f": ["Registro de imagens"], "t": "Fotos e vídeos da visita", "det": "Só com autorização. Nunca de pessoas privadas de liberdade."}, {"id": "2026-11-05-40", "d": "2026-11-05", "h": 20, "f": ["Design"], "t": "Artes da prestação de contas (09 a 13/11)", "det": ""}, {"id": "2026-11-05-76", "d": "2026-11-05", "h": null, "f": ["Registro de imagens"], "t": "Fotos e vídeos da visita", "det": "Só com autorização. Nunca de pessoas privadas de liberdade."}, {"id": "2026-11-06-41", "d": "2026-11-06", "h": 12, "f": ["Líder"], "t": "Enviar o pacote da prestação de contas à prof.ª Camila", "det": ""}, {"id": "2026-11-06-42", "d": "2026-11-06", "h": 12, "f": ["Arquivo de aprovações"], "t": "Registrar o envio do pacote da prestação de contas", "det": ""}, {"id": "2026-11-06-65", "d": "2026-11-06", "h": null, "f": ["Líder", "Vice-líder"], "t": "Publicar: Bastidores e agradecimento", "det": "Só a versão aprovada pela prof.ª."}, {"id": "2026-11-06-66", "d": "2026-11-06", "h": null, "f": ["Engajamento"], "t": "Repost nos stories: Bastidores e agradecimento", "det": "E convite para a turma compartilhar."}, {"id": "2026-11-08-70", "d": "2026-11-08", "h": null, "f": ["Engajamento"], "t": "Métricas da semana (alcance, seguidores, salvamentos)", "det": "Para o relatório final."}, {"id": "2026-11-15-71", "d": "2026-11-15", "h": null, "f": ["Engajamento"], "t": "Métricas da semana (alcance, seguidores, salvamentos)", "det": "Para o relatório final."}], "posts": [{"d": "2026-10-12", "rot": "Seg 12/10", "tema": "O que é a reincidência e por que o projeto se chama Efeito Rebote", "fmt": "Carrossel", "obs": "", "lock": false, "pend": ""}, {"d": "2026-10-14", "rot": "Qua 14/10", "tema": "Por que cuidar de quem está preso também protege você", "fmt": "Carrossel", "obs": "Série informativa sobre as objeções", "lock": false, "pend": ""}, {"d": "2026-10-16", "rot": "Sex 16/10", "tema": "Higiene básica é dever do Estado, não privilégio", "fmt": "Carrossel", "obs": "Base: Lei de Execução Penal, arts. 12 e 13 (conferir o texto da lei antes de publicar)", "lock": false, "pend": ""}, {"d": "2026-10-19", "rot": "Seg 19/10", "tema": "Quem paga a conta hoje: as famílias", "fmt": "Carrossel", "obs": "Série informativa", "lock": false, "pend": ""}, {"d": "2026-10-21", "rot": "Qua 21/10", "tema": "Conheça a turma e as equipes por trás do projeto", "fmt": "Feed", "obs": "Foto da turma só com autorização de todos", "lock": false, "pend": ""}, {"d": "2026-10-23", "rot": "Sex 23/10", "tema": "Efeito Rebote em 30 segundos", "fmt": "Reels ou áudio", "obs": "Roteiro de áudio: gancho, contexto, informação, convite", "lock": false, "pend": ""}, {"d": "2026-10-26", "rot": "Seg 26/10", "tema": "Quais itens aceitamos e por quê", "fmt": "Carrossel", "obs": "", "lock": true, "pend": ""}, {"d": "2026-10-28", "rot": "Qua 28/10", "tema": "Como funciona a ação de arrecadação (bilhetes)", "fmt": "Carrossel", "obs": "", "lock": true, "pend": ""}, {"d": "2026-10-30", "rot": "Sex 30/10", "tema": "Ressocialização: o que reduz a reincidência", "fmt": "Carrossel", "obs": "Dados com fonte", "lock": false, "pend": ""}, {"d": "2026-11-02", "rot": "Seg 02/11", "tema": "Sorteio ao vivo + resultado", "fmt": "Live + feed", "obs": "Audiovisual com Eventos", "lock": false, "pend": "Horário a definir"}, {"d": "2026-11-04", "rot": "Qua 04/11", "tema": "Visita às unidades", "fmt": "Feed", "obs": "Sem imagens de pessoas privadas de liberdade", "lock": false, "pend": ""}, {"d": "2026-11-06", "rot": "Sex 06/11", "tema": "Bastidores e agradecimento", "fmt": "Carrossel", "obs": "", "lock": false, "pend": ""}, {"d": null, "rot": "09 a 13/11", "tema": "Prestação de contas e resultados", "fmt": "Carrossel", "obs": "Números conferidos com o Financeiro", "lock": false, "pend": ""}, {"d": null, "rot": "Data a definir", "tema": "Café da manhã com as famílias", "fmt": "Feed + stories", "obs": "Data depende do calendário de visitação da unidade", "lock": false, "pend": ""}], "regras": ["Nada de pedir doação ou divulgar a ação de arrecadação antes da liberação.", "Nunca citar avaliação da disciplina. Escreva sempre “ação de arrecadação” e “bilhetes”.", "Todo dado precisa de fonte registrada.", "Nenhuma imagem ou nome de pessoa privada de liberdade. Sem sensacionalismo nem estigma.", "Comentário hostil não se responde: salve o print, oculte e leve ao grupo."], "atualizado": "07/10/2026"};
+const SEM = ["Dom","Seg","Ter","Qua","Qui","Sex","Sáb"];
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const store = {
+  get(k, def){ try { const v = localStorage.getItem("er-cal-" + k); return v === null ? def : JSON.parse(v); } catch(e){ return def; } },
+  set(k, v){ try { localStorage.setItem("er-cal-" + k, JSON.stringify(v)); } catch(e){} }
+};
+let me = store.get("eu", null);
+if (me && !D.pessoas.some(p => p.nome === me)) me = null;
+let feitos = new Set(store.get("feitos", []));
+let showOld = false;
+
+const parse = s => { const [y,m,d] = s.split("-").map(Number); return new Date(y, m-1, d); };
+const due = e => { const x = parse(e.d); if (e.h === null) x.setHours(23,59); else x.setHours(e.h, 0); return x; };
+const dayKey = x => x.getFullYear() + "-" + String(x.getMonth()+1).padStart(2,"0") + "-" + String(x.getDate()).padStart(2,"0");
+const label = x => SEM[x.getDay()] + " " + String(x.getDate()).padStart(2,"0") + "/" + String(x.getMonth()+1).padStart(2,"0");
+const hr = e => e.h === null ? "no dia" : e.h + "h";
+const funcaoDe = nome => (D.pessoas.find(p => p.nome === nome) || {}).f;
+const isMine = (e, f) => e.f.includes("*") || e.f.includes(f);
+const whoTag = e => e.f.includes("*") ? "Toda a equipe" : e.f.map(f => {
+  const ns = D.pessoas.filter(p => p.f === f).map(p => p.nome.split(" ")[0]);
+  return ns.length ? f + " (" + ns.join(", ") + ")" : f + " (vaga livre)";
+}).join(" · ");
+
+function quando(x){
+  const now = new Date(), hoje = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const dia = new Date(x.getFullYear(), x.getMonth(), x.getDate());
+  const n = Math.round((dia - hoje) / 864e5);
+  const h = x.getHours() === 23 && x.getMinutes() === 59 ? "" : ", " + x.getHours() + "h";
+  if (n === 0) return "Hoje" + h;
+  if (n === 1) return "Amanhã" + h;
+  if (n === -1) return "Ontem" + h;
+  if (n > 1 && n < 7) return SEM[x.getDay()] + " " + label(x).slice(4) + h + " · em " + n + " dias";
+  return label(x) + h;
+}
+
+function setTab(id){
+  ["me","week","posts","rules"].forEach(t => {
+    $("#t-" + t).setAttribute("aria-selected", t === id);
+    $("#p-" + t).hidden = t !== id;
+  });
+  store.set("aba", id);
+}
+document.querySelectorAll(".tab").forEach(b => b.addEventListener("click", () => setTab(b.id.slice(2))));
+
+function renderChooser(){
+  const funcs = Object.keys(D.funcoes);
+  let h = '<h2>Quem é você?</h2><p class="muted">Toque no seu nome para ver sua função, seus prazos e a próxima entrega.</p>';
+  funcs.forEach(f => {
+    const ps = D.pessoas.filter(p => p.f === f);
+    h += '<div class="group"><span class="group-label">' + esc(f) + '</span><div class="names">';
+    h += ps.length ? ps.map(p => '<button class="name-btn" data-n="' + esc(p.nome) + '">' + esc(p.nome) + '</button>').join("")
+                   : '<span class="vaga">Vaga livre: sai no sorteio das vagas</span>';
+    h += '</div></div>';
+  });
+  $("#p-me").innerHTML = h;
+  $("#p-me").querySelectorAll(".name-btn").forEach(b => b.addEventListener("click", () => {
+    me = b.dataset.n; store.set("eu", me); renderAll(); window.scrollTo({top:0});
+  }));
+}
+
+function toggleDone(id, on){
+  if (on) feitos.add(id); else feitos.delete(id);
+  store.set("feitos", [...feitos]); renderMe(); renderWeek();
+}
+
+function renderMe(){
+  if (!me) return renderChooser();
+  const f = funcaoDe(me), info = D.funcoes[f], now = new Date();
+  const meus = D.eventos.filter(e => isMine(e, f));
+  const pend = meus.filter(e => !feitos.has(e.id));
+  const prox = pend.find(e => due(e) >= now) ;
+  const atras = pend.filter(e => due(e) < now && (now - due(e)) < 3 * 864e5);
+  const alvo = atras[0] || prox;
+  let h = '<div class="me"><div><span class="pill blue">' + esc(f) + '</span><h2>' + esc(me) + '</h2></div>'
+        + '<button class="link" id="trocar">Não é você? Trocar</button></div>';
+  if (alvo){
+    const late = due(alvo) < now;
+    h += '<div class="next' + (late ? ' late' : '') + '"><span class="lbl">' + (late ? 'Prazo passou, ainda não marcado' : 'Sua próxima entrega') + '</span>'
+       + '<span class="when">' + esc(quando(due(alvo))) + '</span><span class="what">' + esc(alvo.t) + '</span>'
+       + (alvo.det ? '<span class="det">' + esc(alvo.det) + '</span>' : '')
+       + '<div class="actions"><button class="btn-on" data-done="' + alvo.id + '">Marcar como feito</button></div></div>';
+  } else {
+    h += '<div class="panel"><b>Nenhuma entrega pendente.</b><span class="muted small">Tudo marcado como feito neste aparelho.</span></div>';
+  }
+  h += '<div class="panel"><h3>O que você faz</h3><p>' + esc(info.entrega) + '</p><ul class="reg">'
+     + info.regular.map(r => '<li><b>' + esc(r[0]) + '</b><span>' + esc(r[1]) + '</span></li>').join("") + '</ul></div>';
+  const lista = meus.filter(e => showOld || (!feitos.has(e.id) && due(e) >= new Date(now - 3 * 864e5)) || (feitos.has(e.id) && due(e) >= now));
+  h += '<h2>Suas entregas</h2>';
+  let ultimo = "";
+  h += '<div class="who">';
+  lista.forEach(e => {
+    if (e.d !== ultimo){
+      if (ultimo) h += '</div>';
+      const x = parse(e.d), hoje = e.d === dayKey(now);
+      h += '<div class="day-block"><div class="day-h">' + label(x) + (hoje ? ' <span class="pill red">Hoje</span>' : '') + '</div>';
+      ultimo = e.d;
+    }
+    const done = feitos.has(e.id), late = !done && due(e) < now;
+    h += '<label class="task' + (done ? ' done' : '') + (late ? ' late' : '') + '"><input type="checkbox" id="c-' + e.id + '" data-id="' + e.id + '"' + (done ? ' checked' : '') + '>'
+       + '<span class="hr">' + hr(e) + '</span><span class="tx"><b>' + esc(e.t) + '</b>' + (e.det ? '<span>' + esc(e.det) + '</span>' : '') + '</span></label>';
+  });
+  if (ultimo) h += '</div>';
+  if (!lista.length) h += '<p class="empty">Nada por aqui.</p>';
+  h += '</div><button class="link toggle" id="old">' + (showOld ? 'Esconder entregas antigas e concluídas' : 'Mostrar também as antigas e concluídas') + '</button>'
+     + '<p class="note">O "feito" fica salvo só neste aparelho. Para a equipe saber, responda à enquete de sexta no grupo.</p>';
+  $("#p-me").innerHTML = h;
+  $("#trocar").addEventListener("click", () => { me = null; store.set("eu", null); renderAll(); });
+  $("#old").addEventListener("click", () => { showOld = !showOld; renderMe(); });
+  $("#p-me").querySelectorAll("[data-done]").forEach(b => b.addEventListener("click", () => toggleDone(b.dataset.done, true)));
+  $("#p-me").querySelectorAll("input[data-id]").forEach(c => c.addEventListener("change", () => toggleDone(c.dataset.id, c.checked)));
+}
+
+// Semana: navegação entre a semana do 1º envio (05/10) e a da prestação de contas (09/11)
+const PRIMEIRA = parse("2026-10-05"), ULTIMA = parse("2026-11-09");
+const segunda = x => { const y = new Date(x.getFullYear(), x.getMonth(), x.getDate()); y.setDate(y.getDate() - ((y.getDay() + 6) % 7)); return y; };
+let semana = segunda(new Date());
+if (semana < PRIMEIRA) semana = new Date(PRIMEIRA);
+if (semana > ULTIMA) semana = new Date(ULTIMA);
+
+function renderWeek(){
+  const f = me ? funcaoDe(me) : null, hoje = dayKey(new Date());
+  const fim = new Date(semana); fim.setDate(fim.getDate() + 6);
+  let h = '<div class="weeknav"><button id="prev" aria-label="Semana anterior"' + (semana <= PRIMEIRA ? ' disabled' : '') + '>‹</button>'
+        + '<h2>' + label(semana).slice(4) + ' a ' + label(fim).slice(4) + '</h2>'
+        + '<button id="next" aria-label="Próxima semana"' + (semana >= ULTIMA ? ' disabled' : '') + '>›</button></div>'
+        + '<p class="muted small">' + (f ? 'Em destaque, o que é seu. ' : 'Escolha seu nome em "Minhas" para destacar o que é seu. ') + 'Em verde, o que vai ao ar no dia.</p><div>';
+  for (let i = 0; i < 7; i++){
+    const x = new Date(semana); x.setDate(x.getDate() + i);
+    const k = dayKey(x);
+    const evs = D.eventos.filter(e => e.d === k && !e.t.startsWith("Publicar") && !e.t.startsWith("Repost"));
+    const ar = D.posts.filter(p => p.d === k);
+    h += '<div class="day' + (k === hoje ? ' today' : '') + '"><div class="day-h">' + label(x) + (k === hoje ? ' <span class="pill red">Hoje</span>' : '') + '</div>';
+    ar.forEach(p => { h += '<div class="ev air"><span class="hr">No ar</span><span class="tx">' + esc(p.tema) + (p.lock ? ' <span class="pill red">Só após liberação</span>' : '') + '<span class="who-tag">' + esc(p.fmt) + '</span></span></div>'; });
+    evs.forEach(e => {
+      const mine = f && isMine(e, f);
+      h += '<div class="ev' + (mine ? ' mine' : '') + '"><span class="hr">' + hr(e) + '</span><span class="tx">' + esc(e.t)
+         + (mine && feitos.has(e.id) ? ' <span class="pill ok">Feito</span>' : '') + '<span class="who-tag">' + esc(whoTag(e)) + '</span></span></div>';
+    });
+    if (!ar.length && !evs.length) h += '<p class="empty">Sem prazos. Engajamento segue com os stories do dia.</p>';
+    h += '</div>';
+  }
+  h += '</div>';
+  $("#p-week").innerHTML = h;
+  $("#prev").addEventListener("click", () => { semana.setDate(semana.getDate() - 7); renderWeek(); });
+  $("#next").addEventListener("click", () => { semana.setDate(semana.getDate() + 7); renderWeek(); });
+}
+
+function renderPosts(){
+  const hoje = dayKey(new Date());
+  const grupos = [];
+  D.posts.forEach(p => {
+    const key = p.d ? dayKey(segunda(parse(p.d))) : "fim";
+    let g = grupos.find(g => g.key === key);
+    if (!g) grupos.push(g = {key, posts: []});
+    g.posts.push(p);
+  });
+  let h = '<h2>O que vai ao ar</h2><p class="muted">3 posts por semana, às segundas, quartas e sextas, mais stories todo dia. Cada pacote vai à prof.ª na sexta anterior.</p>';
+  grupos.forEach(g => {
+    let tit = "Encerramento", env = "Envio na sexta anterior";
+    if (g.key !== "fim"){
+      const s = parse(g.key), sx = new Date(s); sx.setDate(sx.getDate() + 4);
+      const ev = new Date(s); ev.setDate(ev.getDate() - 3);
+      tit = label(s).slice(4) + ' a ' + label(sx).slice(4); env = 'Envio à prof.ª: ' + label(ev);
+    }
+    h += '<section class="week"><div class="wk"><h3>' + tit + '</h3><span class="small muted">' + env + '</span></div>';
+    g.posts.forEach(p => {
+      const cls = p.d === hoje ? ' now' : (p.d && p.d < hoje ? ' past' : '');
+      h += '<div class="post' + cls + '"><span class="dt">' + (p.rot === "Data a definir" ? '<span class="pill gold">A definir</span>' : esc(p.rot)) + '</span><div><span class="tm">' + esc(p.tema) + '</span>'
+         + '<span class="meta">' + esc(p.fmt) + (p.lock ? ' <span class="pill red">Só após liberação</span>' : '') + (p.pend ? ' <span class="pill gold">' + esc(p.pend) + '</span>' : '') + '</span>'
+         + (p.obs ? '<span class="obs">' + esc(p.obs) + '</span>' : '') + '</div></div>';
+    });
+    h += '</section>';
+  });
+  $("#p-posts").innerHTML = h;
+}
+
+function renderRules(){
+  $("#p-rules").innerHTML = '<h2>Vale para todo post</h2><p class="muted">A vice-líder confere cada texto por esta lista antes de ir para o design.</p><ol class="rules">'
+    + D.regras.map(r => '<li><span>' + esc(r) + '</span></li>').join("") + '</ol>'
+    + '<div class="panel"><h3>Como funciona a semana</h3><p>O que a equipe produz numa semana vai ao ar na semana seguinte. Cada etapa começa quando a anterior entrega: atraso numa atrasa todas.</p></div>';
+}
+
+function renderAll(){ renderMe(); renderWeek(); renderPosts(); renderRules(); }
+$("#upd").textContent = "Atualizado em " + D.atualizado;
+renderAll();
+const aba = store.get("aba", "me");
+setTab(["me","week","posts","rules"].includes(aba) ? aba : "me");
+</script>
+</body></html>

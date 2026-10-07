@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../entregas/posts/2026-10-02-apresentacao/fontes.css">
+<style>
+:root{--azul:#1B3A8C;--azul2:#152E70;--ouro:#E9C46A;--verm:#B5121B;--fundo:#F4F6FB;--tinta:#141B2D;--cinza:#4A5568;--linha:#DCE1EC;
+--disp:"Barlow Condensed","Barlow Condensed Fallback",sans-serif;--corpo:Barlow,"Barlow Fallback",sans-serif}
+*{box-sizing:border-box;margin:0}
+body{background:#888;font-family:var(--corpo);color:var(--tinta)}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;background:var(--fundo);padding:110px 96px 96px;display:flex;flex-direction:column;gap:40px}
+.s.azul{background:var(--azul);color:#fff}
+.tag{font:600 32px/1 var(--corpo);color:var(--verm);display:flex;align-items:center;gap:14px}
+.azul .tag{color:var(--ouro)}
+h1,h2{font-family:var(--disp);font-weight:700;letter-spacing:-.015em;line-height:.98;text-wrap:balance}
+h1{font-size:132px}
+h2{font-size:100px;color:var(--azul)}
+.azul h2{color:#fff}
+.lead{font-size:42px;line-height:1.3;max-width:24ch}
+.azul .lead{color:rgba(255,255,255,.9)}
+ol,ul{padding:0}
+.s:not(.azul)>.tag{margin-bottom:auto}
+p{font-size:42px;line-height:1.38}
+.box{background:#fff;border:2px solid var(--linha);border-radius:22px;padding:40px 44px;font-size:42px;line-height:1.38}
+.box b{color:var(--azul)}
+.num{font:700 300px/.85 var(--disp);color:var(--verm);letter-spacing:-.03em}
+.fonte{font-size:26px;color:var(--cinza);line-height:1.35}
+.azul .fonte{color:rgba(255,255,255,.7)}
+/* rodapé: ponte para o próximo slide + progresso */
+.pe{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;gap:30px}
+.ponte{font:700 40px/1.15 var(--disp);color:var(--azul);display:flex;align-items:center;gap:14px}
+.azul .ponte{color:var(--ouro)}
+.dots{display:flex;gap:10px;flex:none}
+.dots i{width:14px;height:14px;border-radius:50%;background:var(--linha)}
+.dots i.on{background:var(--azul);width:40px;border-radius:7px}
+.azul .dots i{background:rgba(255,255,255,.3)} .azul .dots i.on{background:var(--ouro)}
+/* detalhe-assinatura: a seta de rebote */
+.rebote{position:absolute;right:-90px;top:90px;width:620px;height:620px;opacity:.14}
+.selo{width:150px;height:150px;border-radius:50%;background:url(../../entregas/posts/2026-10-02-apresentacao/selo.jpg) center/cover}
+.ciclo{display:grid;gap:22px}
+.ciclo li{list-style:none;display:grid;grid-template-columns:72px 1fr;gap:26px;align-items:center;font-size:42px;line-height:1.3;background:#fff;border-radius:22px;padding:28px 32px;border:2px solid var(--linha)}
+.ciclo li span{width:72px;height:72px;border-radius:50%;background:var(--verm);color:#fff;font:700 40px/72px var(--disp);text-align:center}
+.ciclo li.volta{background:var(--azul);color:#fff;border-color:var(--azul)}
+.ciclo li.volta span{background:var(--ouro);color:var(--azul)}
+.serie{display:grid;gap:0}
+.serie li{list-style:none;display:grid;grid-template-columns:200px 1fr;gap:20px;padding:30px 0;border-top:2px solid var(--linha);font-size:42px;line-height:1.25}
+.serie li b{font:700 46px/1 var(--disp);color:var(--verm)}
+.cta{display:inline-flex;align-self:center;background:var(--ouro);color:var(--azul);font:700 52px/1 var(--disp);padding:30px 46px;border-radius:999px}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="seta" viewBox="0 0 200 200"><path d="M40 40 L40 120 A50 50 0 0 0 140 120 L140 70" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round"/><path d="M110 92 L140 60 L170 92" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="dir" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</defs></svg>
+
+<!-- 1 capa -->
+<section class="s azul">
+  <svg class="rebote" style="color:var(--ouro)"><use href="#seta"/></svg>
+  <div class="selo"></div>
+  <div style="margin-top:auto;display:grid;gap:36px">
+    <div class="tag">Série Entenda o projeto · parte 1</div>
+    <h1>Quase 1 em cada 4 volta a ser condenado.</h1>
+    <div class="lead">O que é reincidência e por que ela também pesa do lado de fora.</div>
+    <div class="fonte">Ipea para o CNJ, 2015, em 5 estados</div>
+  </div>
+  <div class="pe"><div class="ponte">Arraste <svg width="40" height="40"><use href="#dir"/></svg></div><div class="dots"><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div></div>
+</section>
+
+<!-- 2 conceito -->
+<section class="s">
+  <div class="tag">O conceito</div>
+  <h2>Reincidir é cometer um novo crime depois de uma condenação definitiva.</h2>
+  <div class="box">É o que diz o <b>Código Penal, art. 63</b>. Nas pesquisas, a palavra às vezes ganha sentido mais amplo, e por isso os números mudam de um estudo para outro.</div>
+  <div class="pe"><div class="ponte">E quantas pessoas reincidem? <svg width="40" height="40"><use href="#dir"/></svg></div><div class="dots"><i></i><i class="on"></i><i></i><i></i><i></i><i></i></div></div>
+</section>
+
+<!-- 3 número -->
+<section class="s">
+  <div class="tag">O número</div>
+  <div class="num">24,4%</div>
+  <h2 style="font-size:76px">voltaram a ser condenados em até 5 anos.</h2>
+  <p>Estudo do Ipea para o CNJ em 5 estados, entre eles o Paraná. Pesquisas que contam quem volta à prisão, mesmo sem nova condenação, chegam a 36% a 42%.</p>
+  <div class="fonte">Ipea, 2015 (reincidência legal) · Depen/UFPE, 2022 (reentrada)</div>
+  <div class="pe"><div class="ponte">E de onde vem o nome do projeto? <svg width="40" height="40"><use href="#dir"/></svg></div><div class="dots"><i></i><i></i><i class="on"></i><i></i><i></i><i></i></div></div>
+</section>
+
+<!-- 4 nome -->
+<section class="s">
+  <div class="tag">O nome</div>
+  <h2>Quando falta o básico lá dentro, o custo volta para fora.</h2>
+  <ol class="ciclo">
+    <li><span>1</span>Falta o básico na unidade prisional</li>
+    <li><span>2</span>Saúde e vínculos com a família se desgastam</li>
+    <li class="volta"><span>3</span>A pessoa sai sem apoio, e o ciclo pode recomeçar</li>
+  </ol>
+  <div class="pe"><div class="ponte">E o que vem por aí? <svg width="40" height="40"><use href="#dir"/></svg></div><div class="dots"><i></i><i></i><i></i><i class="on"></i><i></i><i></i></div></div>
+</section>
+
+<!-- 5 série -->
+<section class="s">
+  <div class="tag">Nas próximas semanas</div>
+  <h2>Um dado com fonte, toda segunda, quarta e sexta.</h2>
+  <ul class="serie">
+    <li><b>Qua 14/10</b>Por que cuidar de quem está preso também protege você</li>
+    <li><b>Sex 16/10</b>Escova de dente é direito de quem está preso?</li>
+    <li><b>Seg 19/10</b>Quem paga a conta quando falta o básico</li>
+  </ul>
+  <div class="pe"><div class="ponte">Último slide <svg width="40" height="40"><use href="#dir"/></svg></div><div class="dots"><i></i><i></i><i></i><i></i><i class="on"></i><i></i></div></div>
+</section>
+
+<!-- 6 final -->
+<section class="s azul" style="text-align:center;align-items:center;justify-content:center">
+  <svg class="rebote" style="color:var(--ouro)"><use href="#seta"/></svg>
+  <div class="selo"></div>
+  <div class="tag" style="justify-content:center">Na quarta, parte 2</div>
+  <h2 style="font-size:100px">Por que cuidar de quem está preso também protege você.</h2>
+  <div class="cta">Siga @efeitorebote.oficial</div>
+</section>
+</body></html>

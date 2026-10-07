@@ -1,0 +1,107 @@
+{
+  "features": [
+    {
+      "id": "F01",
+      "name": "Projeto escrito no modelo da professora",
+      "description": "Adaptar docs/fonte/Trabalho Escrito.pdf ao modelo relatorio_extensao_projeto word.docx, incluindo todas as ações (rifa com regulamento, pontos de coleta, redes sociais, visita) com regras e forma de execução. Saída: entregas/projeto-escrito.docx e .pdf",
+      "deadline": "sexta 12h",
+      "dependencies": [],
+      "status": "done",
+      "evidence": "entregas/projeto-escrito.pdf (11 págs.), check.sh 0 erros em 06/10; entregue em 02/10 e ajustado (café da manhã, ação de arrecadação, repasse R$150)."
+    },
+    {
+      "id": "F02",
+      "name": "Regulamento e controle da ação de arrecadação (bilhetes)",
+      "description": "Regulamento (prêmio, sorteio, prestação de contas), numeração 0001-2400, distribuição de 30 números por aluno, planilha de controle. Usado dentro do F01.",
+      "deadline": "sexta 12h (resumo no F01)",
+      "dependencies": [],
+      "status": "in-progress",
+      "evidence": "2026-10-02: regulamento (anexo 1) com prazos e método; folhas-bilhetes-0001-2400.pdf (480 folhas, 5 por folha, 6 por aluno, QR para @efeitorebote.oficial); controle-acao-arrecadacao.xlsx (fórmulas testadas no LibreOffice); formulario-vendas.md. Faltam comissão, PIX e horário do sorteio.",
+      "notes": "Regulamento (Anexo 1), bilhetes e planilha atualizados para o repasse de R$150; faltam nome do Edgar, comissão e horário do sorteio."
+    },
+    {
+      "id": "F03",
+      "name": "Post de apresentação do projeto",
+      "description": "Arte e legenda explicando o projeto, sem pedido de doação. Enviar à prof.ª Camila.",
+      "deadline": "envio sexta; publicação até segunda",
+      "dependencies": [],
+      "status": "in-progress",
+      "evidence": "2026-10-02: carrossel de 5 slides 1080x1350 + legenda em entregas/posts/2026-10-02-apresentacao/ (aguardando aprovação); check.sh ok; sem pedido de doação. Falta: aprovação da prof.ª Camila e publicação até segunda."
+    },
+    {
+      "id": "F05",
+      "name": "Calendário editorial (3x/semana)",
+      "description": "Pauta de posts até a visita, com status de aprovação por post.",
+      "deadline": "antes do 3º encontro",
+      "dependencies": [
+        "F03"
+      ],
+      "status": "in-progress",
+      "evidence": "2026-10-07: redesign para o WhatsApp — scripts/gerar_calendario.py (lê calendario.md) + renderizar_calendario.mjs → entregas/posts/calendario-1-ache-seu-nome.jpg, -2-semana-de-producao.jpg, -3-o-que-vai-ao-ar.jpg e calendario.pdf (3 págs.); mensagem + enquete semanal em mensagem-calendario.md; check.sh 0 erros, coerencia.sh sem obsoletos em posts/. Falta: vaga do Arquivo de aprovações, horário do sorteio, data do café e aprovação da prof.ª Camila. | 2026-10-07 (noite): Kit da Comunicação v2 — passos 1-5 do docs/kit-v2/README.md; gerar_kit_comunicacao.py sem avisos do conferidor; check.sh 0 erros; PNG 1080x1350 de 12/10, 14/10, 16/10, 19/10 e 30/10 em entregas/posts/kit-png/ sem estouro de texto (exportar_kit_png.mjs)."
+    },
+    {
+      "id": "F06",
+      "name": "Controle da arrecadação",
+      "description": "Planilha de itens recebidos por tipo e por aluno, repasses da ação de arrecadação e doações em dinheiro, compras.",
+      "deadline": "antes do 3º encontro",
+      "dependencies": [
+        "F02"
+      ],
+      "status": "in-progress",
+      "evidence": "Controle da rifa pronto em entregas/acao-arrecadacao/controle-acao-arrecadacao.xlsx; falta o controle dos itens doados"
+    },
+    {
+      "id": "F07",
+      "name": "Relatório final",
+      "description": "Resultados, visita de 04-05/nov, avaliação qualitativa, no modelo da instituição. Seguir docs/roteiro-relatorio-final.md.",
+      "deadline": "último encontro",
+      "dependencies": [
+        "F01",
+        "F06"
+      ],
+      "status": "not-started",
+      "evidence": ""
+    },
+    {
+      "id": "F08",
+      "name": "Facilitador de vendas da rifa (Next.js + Supabase)",
+      "description": "App em vendas/: vendedor registra vendas e gera PIX; comissão confirma, lança despesas com NF; livro-caixa imutável, auditoria e conciliacao(); página pública de transparência.",
+      "deadline": "antes do início das vendas",
+      "dependencies": [
+        "F02"
+      ],
+      "status": "cancelled",
+      "evidence": "Cancelado em 05/10: substituído por repasse de R$150 por bloco via PIX. Código mantido em vendas/."
+    },
+    {
+      "id": "F09",
+      "name": "Organização das equipes da turma",
+      "description": "Arrecadação e Captação (todos) + 5 equipes fixas com funções, vagas e líder; planilha de vagas para os nomes.",
+      "status": "in-progress",
+      "evidence": "2026-10-06: entregas/equipes/ — organograma A4 paisagem (1 pág.), organizacao-equipes md/pdf, planilha-equipes.xlsx (fórmulas testadas), mensagens-whatsapp.md (aviso + 5 listas, líderes preenchidos); check.sh 0 erros. Falta: nomes após 07/10 12h e atualizar projeto escrito (cita 4 equipes).",
+      "dependencies": []
+    },
+    {
+      "id": "F10",
+      "name": "Café da manhã com as famílias",
+      "description": "Café da manhã na unidade, em dia de visitação, com foco nas crianças (org.: Francieli Araújo). Definir unidade e data, obter autorização da direção e doações de alimentos; descrever no projeto escrito.",
+      "deadline": "[PENDENTE: data da visitação]",
+      "dependencies": [
+        "F01"
+      ],
+      "status": "not-started",
+      "evidence": ""
+    },
+    {
+      "id": "F11",
+      "name": "Posts informativos que respondem às objeções",
+      "description": "Série de posts que explica por que ajudar pessoas presas e suas famílias também protege a sociedade (custo da reincidência, famílias que sustentam o básico, ressocialização), em resposta indireta a comentários hostis. Pedido da prof.ª Camila em 06/10.",
+      "deadline": "[PENDENTE: definir no calendário editorial]",
+      "dependencies": [
+        "F03"
+      ],
+      "status": "not-started",
+      "evidence": ""
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+# Termos que ficaram velhos quando um plano mudou. Formato: regex PCRE (sem distinção de maiúsculas) | motivo e substituto.
+# Ao mudar um plano, acrescente aqui o termo antigo e rode: bash scripts/coerencia.sh
+formul[áa]rio (on-?line|de (registro de )?vendas)|05/10: o formulário foi substituído pelo repasse de R$ 150 por PIX com os 30 canhotos
+acerto (às|nas) segundas|05/10: o acerto semanal foi substituído pelo repasse único até 30/10, às 23h59
+\bapp\b|aplicativo de vendas|Supabase|Vercel|05/10: o app de vendas foi descontinuado e não pode ser citado
+Apresenta[çc][ãa]o e Visitas|Cria[çc][ãa]o e Audiovisual|Pesquisa e Escrita|Log[íi]stica e Arrecada[çc][ãa]o|06/10: as 4 equipes antigas foram substituídas pelas 5 equipes fixas + Arrecadação e Captação
+chave PIX[^.\n]{0,40}PENDENTE|05/10: a chave PIX já foi definida (docs/projeto.md)
+todo o valor (arrecadado )?(vira|será usado|compra)|07/10: o prêmio sai do valor arrecadado; escreva "descontado o custo do prêmio, o valor compra itens"
+a lei garante (esses )?itens|07/10: a LEP (art. 12) fala em "instalações higiênicas" e o art. 14 inclui atendimento odontológico; não diga que ela garante itens ou escova

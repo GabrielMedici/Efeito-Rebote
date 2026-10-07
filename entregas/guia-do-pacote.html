@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Guia do Pacote Efeito Rebote</title>
+<style>
+@font-face{font-family:Barlow;font-style:normal;font-weight:400;font-display:swap;src:url(posts/2026-10-02-apresentacao/fontes/88e4012f2051f8b4-s.woff2) format("woff2");unicode-range:u+0102-0103,u+0110-0111,u+0128-0129,u+0168-0169,u+01a0-01a1,u+01af-01b0,u+0300-0301,u+0303-0304,u+0308-0309,u+0323,u+0329,u+1ea0-1ef9,u+20ab}
+@font-face{font-family:Barlow;font-style:normal;font-weight:400;font-display:swap;src:url(posts/2026-10-02-apresentacao/fontes/0be08cad6fae8421-s.woff2) format("woff2");unicode-range:u+0100-02ba,u+02bd-02c5,u+02c7-02cc,u+02ce-02d7,u+02dd-02ff,u+0304,u+0308,u+0329,u+1d00-1dbf,u+1e00-1e9f,u+1ef2-1eff,u+2020,u+20a0-20ab,u+20ad-20c0,u+2113,u+2c60-2c7f,u+a720-a7ff}
+@font-face{font-family:Barlow;font-style:normal;font-weight:400;font-display:swap;src:url(posts/2026-10-02-apresentacao/fontes/61d96c4884191721-s.p.woff2) format("woff2");unicode-range:u+00??,u+0131,u+0152-0153,u+02bb-02bc,u+02c6,u+02da,u+02dc,u+0304,u+0308,u+0329,u+2000-206f,u+20ac,u+2122,u+2191,u+2193,u+2212,u+2215,u+feff,u+fffd}
+@font-face{font-family:Barlow;font-style:normal;font-weight:500;font-display:swap;src:url(posts/2026-10-02-apresentacao/fontes/cd5242d34e82716d-s.woff2) format("woff2");unicode-range:u+0102-0103,u+0110-0111,u+0128-0129,u+0168-0169,u+01a0-01a1,u+01af-01b0,u+0300-0301,u+0303-0304,u+0308-0309,u+0323,u+0329,u+1ea0-1ef9,u+20ab}
+@font-face{font-family:Barlow;font-style:normal;font-weight:500;font-display:swap;src:url(posts/2026-10-02-apresentacao/fontes/6662f7f4c6f2f062-s.woff2) format("woff2");unicode-range:u+0100-02ba,u+02bd-02c5,u+02c7-02cc,u+02ce-02d7,u+02dd-02ff,u+0304,u+0308,u+0329,u+1d00-1dbf,u+1e00-1e9f,u+1ef2-1eff,u+2020,u+20a0-20ab,u+20ad-20c0,u+2113,u+2c60-2c7f,u+a720-a7ff}
+@font-face{font-family:Barlow;font-style:normal;font-weight:500;font-display:swap;src:url(posts/2026-10-02-apresentacao/fontes/b0bb26939bb40fdb-s.p.woff2) format("woff2");unicode-range:u+00??,u+0131,u+0152-0153,u+02bb-02bc,u+02c6,u+02da,u+02dc,u+0304,u+0308,u+0329,u+2000-206f,u+20ac,u+2122,u+2191,u+2193,u+2212,u+2215,u+feff,u+fffd}
+@font-face{font-family:Barlow;font-style:normal;font-weight:600;font-display:swap;src:url(posts/2026-10-02-apresentacao/fontes/7816b93d847886e9-s.woff2) format("woff2");unicode-range:u+0102-0103,u+0110-0111,u+0128-0129,u+0168-0169,u+01a0-01a1,u+01af-01b0,u+0300-0301,u+0303-0304,u+0308-0309,u+0323,u+0329,u+1ea0-1ef9,u+20ab}
+@font-face{font-family:Barlow;font-style:normal;font-weight:600;font-display:swap;src:url(posts/2026-10-02-apresentacao/fontes/ea06843a6d8e9ab3-s.woff2) format("woff2");unicode-range:u+0100-02ba,u+02bd-02c5,u+02c7-02cc,u+02ce-02d7,u+02dd-02ff,u+0304,u+0308,u+0329,u+1d00-1dbf,u+1e00-1e9f,u+1ef2-1eff,u+2020,u+20a0-20ab,u+20ad-20c0,u+2113,u+2c60-2c7f,u+a720-a7ff}
+@font-face{font-family:Barlow;font-style:normal;font-weight:600;font-display:swap;src:url(posts/2026-10-02-apresentacao/fontes/60c9b95e8d9e49be-s.p.woff2) format("woff2");unicode-range:u+00??,u+0131,u+0152-0153,u+02bb-02bc,u+02c6,u+02da,u+02dc,u+0304,u+0308,u+0329,u+2000-206f,u+20ac,u+2122,u+2191,u+2193,u+2212,u+2215,u+feff,u+fffd}
+@font-face{font-family:Barlow;font-style:normal;font-weight:700;font-display:swap;src:url(posts/2026-10-02-apresentacao/fontes/1e6ec62843814326-s.woff2) format("woff2");unicode-range:u+0102-0103,u+0110-0111,u+0128-0129,u+0168-0169,u+01a0-01a1,u+01af-01b0,u+0300-0301,u+0303-0304,u+0308-0309,u+0323,u+0329,u+1ea0-1ef9,u+20ab}
+@font-face{font-family:Barlow;font-style:normal;font-weight:700;font-display:swap;src:url(posts/2026-10-02-apresentacao/fontes/a8bcd0492b5976ee-s.woff2) format("woff2");unicode-range:u+0100-02ba,u+02bd-02c5,u+02c7-02cc,u+02ce-02d7,u+02dd-02ff,u+0304,u+0308,u+0329,u+1d00-1dbf,u+1e00-1e9f,u+1ef2-1eff,u+2020,u+20a0-20ab,u+20ad-20c0,u+2113,u+2c60-2c7f,u+a720-a7ff}
+@font-face{font-family:Barlow;font-style:normal;font-weight:700;font-display:swap;src:url(posts/2026-10-02-apresentacao/fontes/6ad0344ed98ac2e9-s.p.woff2) format("woff2");unicode-range:u+00??,u+0131,u+0152-0153,u+02bb-02bc,u+02c6,u+02da,u+02dc,u+0304,u+0308,u+0329,u+2000-206f,u+20ac,u+2122,u+2191,u+2193,u+2212,u+2215,u+feff,u+fffd}
+@font-face{font-family:Barlow Fallback;src:local("Arial");ascent-override:103.43%;descent-override:20.69%;line-gap-override:0.00%;size-adjust:96.68%}
+@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:600;font-display:swap;src:url(posts/2026-10-02-apresentacao/fontes/d6e015f239232eb3-s.woff2) format("woff2");unicode-range:u+0102-0103,u+0110-0111,u+0128-0129,u+0168-0169,u+01a0-01a1,u+01af-01b0,u+0300-0301,u+0303-0304,u+0308-0309,u+0323,u+0329,u+1ea0-1ef9,u+20ab}
+@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:600;font-display:swap;src:url(posts/2026-10-02-apresentacao/fontes/55b35d87b6156eea-s.woff2) format("woff2");unicode-range:u+0100-02ba,u+02bd-02c5,u+02c7-02cc,u+02ce-02d7,u+02dd-02ff,u+0304,u+0308,u+0329,u+1d00-1dbf,u+1e00-1e9f,u+1ef2-1eff,u+2020,u+20a0-20ab,u+20ad-20c0,u+2113,u+2c60-2c7f,u+a720-a7ff}
+@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:600;font-display:swap;src:url(posts/2026-10-02-apresentacao/fontes/5fb5c05ff73c0616-s.p.woff2) format("woff2");unicode-range:u+00??,u+0131,u+0152-0153,u+02bb-02bc,u+02c6,u+02da,u+02dc,u+0304,u+0308,u+0329,u+2000-206f,u+20ac,u+2122,u+2191,u+2193,u+2212,u+2215,u+feff,u+fffd}
+@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:700;font-display:swap;src:url(posts/2026-10-02-apresentacao/fontes/8599be8653318abe-s.woff2) format("woff2");unicode-range:u+0102-0103,u+0110-0111,u+0128-0129,u+0168-0169,u+01a0-01a1,u+01af-01b0,u+0300-0301,u+0303-0304,u+0308-0309,u+0323,u+0329,u+1ea0-1ef9,u+20ab}
+@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:700;font-display:swap;src:url(posts/2026-10-02-apresentacao/fontes/3352fdb488e19d84-s.woff2) format("woff2");unicode-range:u+0100-02ba,u+02bd-02c5,u+02c7-02cc,u+02ce-02d7,u+02dd-02ff,u+0304,u+0308,u+0329,u+1d00-1dbf,u+1e00-1e9f,u+1ef2-1eff,u+2020,u+20a0-20ab,u+20ad-20c0,u+2113,u+2c60-2c7f,u+a720-a7ff}
+@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:700;font-display:swap;src:url(posts/2026-10-02-apresentacao/fontes/437e5f23c97e320c-s.p.woff2) format("woff2");unicode-range:u+00??,u+0131,u+0152-0153,u+02bb-02bc,u+02c6,u+02da,u+02dc,u+0304,u+0308,u+0329,u+2000-206f,u+20ac,u+2122,u+2191,u+2193,u+2212,u+2215,u+feff,u+fffd}
+@font-face{font-family:Barlow Condensed Fallback;src:local("Arial");ascent-override:130.73%;descent-override:26.15%;line-gap-override:0.00%;size-adjust:76.49%}
+:root{--azul:#1B3A8C;--verm:#B5121B;--ouro:#E9C46A;--tinta:#141B2D;--cinza:#4A5568;--linha:#E1E6F0;--fundo:#F4F6FB}
+@page{size:A4;margin:0}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Barlow',sans-serif;color:var(--tinta);font-size:8.2pt;line-height:1.22;background:#fff}
+.pg{width:210mm;height:297mm;display:flex;flex-direction:column;overflow:hidden}
+header{background:var(--azul);color:#fff;padding:5mm 11mm 3.5mm;display:flex;gap:5mm;align-items:center}
+header img{width:21mm;height:21mm;border-radius:50%}
+.kicker{font-family:'Barlow Condensed';font-weight:700;letter-spacing:2px;color:var(--ouro);font-size:9pt}
+h1{font-family:'Barlow Condensed';font-weight:700;font-size:22pt;line-height:1;margin:1mm 0 1.2mm}
+header p{margin:0;color:#D7DEF2;font-size:9.8pt}
+main{padding:3.5mm 11mm 0;flex:1;display:flex;flex-direction:column;gap:2mm}
+.pasta{display:grid;grid-template-columns:37mm 1fr 1fr;gap:3mm;border:1px solid var(--linha);border-radius:2.5mm;padding:1.8mm 3mm;background:#fff}
+.pasta:nth-child(odd){background:var(--fundo)}
+.nome{font-family:'Barlow Condensed';font-weight:700;color:var(--azul);font-size:11.5pt;line-height:1.05}
+.nome small{display:block;font-family:'Barlow';font-weight:500;color:var(--cinza);font-size:8pt;margin-top:1mm;line-height:1.2}
+.rot{font-family:'Barlow Condensed';font-weight:700;font-size:8.3pt;letter-spacing:.8px;color:var(--verm);text-transform:uppercase;margin-bottom:.6mm}
+ul{margin:0;padding-left:3.8mm}
+li{margin:0 0 .4mm}
+b{color:var(--azul)}
+.duas{display:grid;grid-template-columns:1fr 1fr;gap:3mm}
+.box{border:1px solid var(--linha);border-radius:2.5mm;padding:2.3mm 3.5mm}
+.box.alerta{border-color:#E6B8BB;background:#FDF3F3}
+h2{font-family:'Barlow Condensed';font-weight:700;color:var(--azul);font-size:11.5pt;margin:0 0 1mm}
+.alerta h2{color:var(--verm)}
+footer{padding:2.3mm 11mm 4.5mm;color:var(--cinza);font-size:7.8pt;display:flex;justify-content:space-between;border-top:1px solid var(--linha);margin-top:2.5mm}
+</style>
+</head>
+<body>
+<div class="pg">
+<header>
+  <img src="posts/2026-10-02-apresentacao/selo.jpg" alt="Selo Efeito Rebote">
+  <div>
+    <div class="kicker">PROJETO DE EXTENSÃO · DIREITO · UNICESUMAR MARINGÁ</div>
+    <h1>Guia do pacote: o que há em cada pasta e por quê</h1>
+    <p>Cada pasta atende a uma orientação da prof.ª Camila ou a uma exigência do modelo do UniGestor. Leia antes de executar qualquer ação.</p>
+  </div>
+</header>
+<main>
+<div class="pasta"><div class="nome">01 · Projeto Escrito<small>Word, PDF e PDF único com os anexos</small></div>
+<div><div class="rot">O que é</div><ul><li>O projeto no <b>modelo do UniGestor</b> enviado pela professora: Identificação, Períodos e vagas, Dimensão pedagógica, Cronograma e Anexos.</li><li>É o documento que a professora cadastra no sistema; a entrega foi em 02/10, às 12h.</li></ul></div>
+<div><div class="rot">Embasamento</div><ul><li>Áudio da professora: o modelo é <b>o que ela coloca no UniGestor</b>, e o projeto deve dizer <b>o que acontece em cada um dos 15 encontros</b>.</li><li>As <b>reuniões às segundas</b> e as <b>ações junto à sociedade</b> precisam estar explícitas no texto.</li></ul></div></div>
+<div class="pasta"><div class="nome">02 · Anexos<small>um arquivo por anexo</small></div>
+<div><div class="rot">O que é</div><ul><li><b>Anexo 1:</b> regulamento da doação de itens e da ação de arrecadação. <b>Anexo 2:</b> texto de apresentação. <b>Anexo 3:</b> pré-projeto aprovado.</li><li>Separados para subir no UniGestor.</li></ul></div>
+<div><div class="rot">Embasamento</div><ul><li>A professora anexa o <b>pré-projeto aprovado</b> na seção de anexos do UniGestor.</li><li>Orientação: <b>toda ação que formos fazer precisa estar no projeto, com regras e forma de execução</b>. O regulamento cumpre isso.</li></ul></div></div>
+<div class="pasta"><div class="nome">03 · Ação de arrecadação<small>folhas, amostra, planilha de repasses, PIX e custo-benefício do prêmio</small></div>
+<div><div class="rot">O que é</div><ul><li>2.400 bilhetes (30 por aluno, R$ 5,00), 5 por folha, com QR Code do Instagram.</li><li>Prêmio: tablet Galaxy Tab A11+, escolhido para gerar interesse. Vendas até 30/10, lista em 01/11, sorteio em 02/11.</li><li>Cada aluno faz <b>um PIX de R$ 150,00</b> até 30/10 (QR Code no one-page) e entrega os 30 canhotos: <b>bloco quitado</b>.</li><li><b>Imprima a AMOSTRA</b> antes das 480 folhas.</li></ul></div>
+<div><div class="rot">Embasamento</div><ul><li>Ação de arrecadação aprovada na fase 1, com 30 números por aluno a R$ 5,00.</li><li>QR Code e @ nos bilhetes: a ação de arrecadação sozinha alcança pouco a sociedade, por isso cada bilhete <b>divulga o projeto</b>.</li><li>Ações de arrecadação dependem de autorização (Decreto-Lei 6.259/1944 e Lei 5.768/1971). Por isso o projeto condiciona a venda à aprovação.</li><li>A <b>prestação de contas precisa bater</b>: conta exclusiva, extrato conferido com a planilha de repasses e despesa só com nota fiscal.</li></ul></div></div>
+<div class="pasta"><div class="nome">04 · Redes Sociais<small>Post 1: 5 imagens e legenda</small></div>
+<div><div class="rot">O que é</div><ul><li>Carrossel de apresentação do projeto, com texto acessível e fontes citadas.</li><li>Status: <b>aguardando aprovação</b> da prof.ª Camila.</li></ul></div>
+<div><div class="rot">Embasamento</div><ul><li>O <b>primeiro post apresenta e explica</b> o projeto e <b>não pede doações</b>.</li><li>Depois, <b>3 publicações por semana</b>, sempre com <b>aprovação prévia</b> e seguindo as regras institucionais.</li></ul></div></div>
+<div class="pasta"><div class="nome">05 · Fontes e Pesquisa<small>versão da turma, áudios, dados de Maringá e roteiro do relatório final</small></div>
+<div><div class="rot">O que é</div><ul><li>A fundamentação produzida pela turma, a transcrição das orientações em áudio e os dados das unidades de Maringá.</li><li>O roteiro já organiza o que guardar para o <b>relatório final</b> (encontro 15).</li></ul></div>
+<div><div class="rot">Embasamento</div><ul><li>A justificativa se apoia em dados oficiais: relatórios da Defensoria Pública do Paraná (2025) sobre a PEM, a CCM e a CPIM.</li><li>Fotos, listas e comprovantes de cada ação são a <b>evidência</b> que o relatório final vai exigir.</li></ul></div></div>
+<div>
+<div class="pasta" style="grid-template-columns:37mm 1fr"><div class="nome">06 · Identidade Visual<small>logos, selo e figuras</small></div>
+<div><div class="rot">Embasamento</div><ul><li>As figuras do projeto escrito (seção Identidade visual) e o padrão de cores e fontes de posts, bilhetes e app.</li></ul></div></div>
+
+</div>
+<div class="duas">
+<div class="box alerta"><h2>Regras antes de executar</h2><ul>
+<li>A ação de arrecadação e a conta PIX só começam com <b>autorização</b> da professora e da instituição.</li>
+<li>Nada é publicado sem <b>aprovação prévia</b>. O primeiro post não pede doações.</li>
+<li>A lista de itens (tipo, cor, embalagem e entrega) deve ser <b>validada com a PEM, a CCM e a CPIM</b> antes de qualquer compra.</li>
+<li>Material público não menciona critérios de avaliação da disciplina.</li>
+</ul></div>
+<div class="box"><h2>Pendências (marcadas como [PENDENTE] nos documentos)</h2><ul>
+<li><b>Café da manhã de acolhimento às famílias</b> (organização: Francieli Araújo): unidade e data de visitação, autorização da direção e doações de alimentos.</li>
+<li><b>Ação de arrecadação:</b> horário do sorteio, integrantes da comissão financeira, nome completo do Edgar (conta dos repasses) e cota de impressão.</li>
+<li><b>Institucionais:</b> semestres participantes, datas de início e término e carga horária.</li>
+</ul></div>
+</div>
+</main>
+<footer><span>Efeito Rebote: o custo da reincidência · @efeitorebote.oficial</span><span>Versão de 02/10/2026</span></footer>
+</div>
+</body></html>
