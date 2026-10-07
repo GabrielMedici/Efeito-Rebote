@@ -37,7 +37,7 @@
         "F03"
       ],
       "status": "in-progress",
-      "evidence": "2026-10-07: entregas/posts/calendario.md/.pdf (equipe e funções, ciclo semanal de entrega seg→sex, calendário 12/10–13/11, checklist); check.sh 0 erros. Falta: nomes por função e aprovação da prof.ª Camila."
+      "evidence": "2026-10-07: redesign para o WhatsApp — scripts/gerar_calendario.py (lê calendario.md) + renderizar_calendario.mjs → entregas/posts/calendario-1-ache-seu-nome.jpg, -2-semana-de-producao.jpg, -3-o-que-vai-ao-ar.jpg e calendario.pdf (3 págs.); mensagem + enquete semanal em mensagem-calendario.md; check.sh 0 erros, coerencia.sh sem obsoletos em posts/. Falta: vaga do Arquivo de aprovações, horário do sorteio, data do café e aprovação da prof.ª Camila."
     },
     {
       "id": "F06",

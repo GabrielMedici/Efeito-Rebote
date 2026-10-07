@@ -1,12 +1,11 @@
 # Passagem de sessão (sobrescreva a cada encerramento)
 
 **Atualizado:** 2026-10-07
-**Comece por aqui:** pergunte ao usuário se segue com o **redesign do calendário da Comunicação** usando o plugin `ui-craft`.
+**Comece por aqui:** confirme se o usuário enviou o calendário ao grupo; depois F02 (regulamento).
 
 ## Calendário da Comunicação (F05, em andamento)
-- Fonte: `entregas/posts/calendario.md`; versões `calendario.html` (design reprovado pelo usuário) e `calendario.pdf`.
+- Fonte: `entregas/posts/calendario.md` → `python3 scripts/gerar_calendario.py` → `node scripts/renderizar_calendario.mjs` (3 JPG 1080 px + PDF). Prazos por função ficam em PRAZOS/CICLO no gerador. Design novo (07/10): identidade dos carrosséis (Barlow, azul/vermelho/ouro), regras da ui-craft (sem caixa-alta em títulos, um acento).
 - Conteúdo já aprovado pelo usuário: equipe com nomes por função (Vitória líder, Flauany vice; Roteiro Nathan e Leonardo; Design Geraldo, João Dionísio, Evelyn; Audiovisual Laura Martins, Anna Laura; Engajamento Lívia, Mayara Mendoza; Registro Maria Eduarda Mendonça, Laura Mell; Arquivo de aprovações vago). Ciclo semanal SEM reunião: pauta por mensagem segunda 20h, confirmação até terça 12h; texto ter 20h, revisão qua 20h, artes/vídeo qui 20h, envio à prof.ª sex 12h, ajustes fim de semana, publicação seg/qua/sex; stories diários. Dois alinhamentos online sugeridos (08/10 e 29/10, 19h, até 30 min). Calendário 12/10 a 13/11 (série informativa primeiro; itens e ação de arrecadação só após liberação; sorteio 02/11; visita 04–05/11).
-- Pedido do usuário: design novo com o ui-craft (`plugins/ui-craft/skills/ui-craft/SKILL.md` e comandos em `plugins/ui-craft/commands/`). Ler a skill do disco; não instalar o plugin sem pedido.
 - A confirmar: João Dionísio = "João Pedro Turma B"? Anna Laura = "nalaura"? Grafia "Laura Mel" × "Laura Mell".
 
 ## Plugins (07/10)

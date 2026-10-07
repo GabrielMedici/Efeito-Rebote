@@ -1,223 +1,66 @@
-<!doctype html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Pauta Efeito Rebote</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Public+Sans:wght@400;600;700&display=swap">
-<style>
-/* Layout: cabeçalho de pauta + 4 blocos empilhados (equipe em grade, ciclo em linha do tempo, calendário por semana, checklist) */
-:root{
-  --bg:#F6F7FB; --surface:#FFFFFF; --ink:#151A2E; --muted:#5A6178; --line:#D9DDEA;
-  --blue:#1B3A8C; --blue-soft:#E7ECF8; --red:#B3263A; --red-soft:#FBEAED; --gold:#9A6A00; --gold-soft:#FFF3D6;
-  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
-  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  color-scheme:light;
-}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0F1324; --surface:#171C31; --ink:#E8EBF5; --muted:#A3AAC2; --line:#2C3350;
-  --blue:#8FA9F0; --blue-soft:#1F2850; --red:#F08A99; --red-soft:#3A1C25; --gold:#F0C25A; --gold-soft:#3A2F14; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#0F1324; --surface:#171C31; --ink:#E8EBF5; --muted:#A3AAC2; --line:#2C3350;
-  --blue:#8FA9F0; --blue-soft:#1F2850; --red:#F08A99; --red-soft:#3A1C25; --gold:#F0C25A; --gold-soft:#3A2F14; color-scheme:dark}
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Calendário da Comunicação</title><style>@font-face{font-family:Barlow;font-style:normal;font-weight:400;font-display:swap;src:url(2026-10-02-apresentacao/fontes/88e4012f2051f8b4-s.woff2) format("woff2");unicode-range:u+0102-0103,u+0110-0111,u+0128-0129,u+0168-0169,u+01a0-01a1,u+01af-01b0,u+0300-0301,u+0303-0304,u+0308-0309,u+0323,u+0329,u+1ea0-1ef9,u+20ab}@font-face{font-family:Barlow;font-style:normal;font-weight:400;font-display:swap;src:url(2026-10-02-apresentacao/fontes/0be08cad6fae8421-s.woff2) format("woff2");unicode-range:u+0100-02ba,u+02bd-02c5,u+02c7-02cc,u+02ce-02d7,u+02dd-02ff,u+0304,u+0308,u+0329,u+1d00-1dbf,u+1e00-1e9f,u+1ef2-1eff,u+2020,u+20a0-20ab,u+20ad-20c0,u+2113,u+2c60-2c7f,u+a720-a7ff}@font-face{font-family:Barlow;font-style:normal;font-weight:400;font-display:swap;src:url(2026-10-02-apresentacao/fontes/61d96c4884191721-s.p.woff2) format("woff2");unicode-range:u+00??,u+0131,u+0152-0153,u+02bb-02bc,u+02c6,u+02da,u+02dc,u+0304,u+0308,u+0329,u+2000-206f,u+20ac,u+2122,u+2191,u+2193,u+2212,u+2215,u+feff,u+fffd}@font-face{font-family:Barlow;font-style:normal;font-weight:500;font-display:swap;src:url(2026-10-02-apresentacao/fontes/cd5242d34e82716d-s.woff2) format("woff2");unicode-range:u+0102-0103,u+0110-0111,u+0128-0129,u+0168-0169,u+01a0-01a1,u+01af-01b0,u+0300-0301,u+0303-0304,u+0308-0309,u+0323,u+0329,u+1ea0-1ef9,u+20ab}@font-face{font-family:Barlow;font-style:normal;font-weight:500;font-display:swap;src:url(2026-10-02-apresentacao/fontes/6662f7f4c6f2f062-s.woff2) format("woff2");unicode-range:u+0100-02ba,u+02bd-02c5,u+02c7-02cc,u+02ce-02d7,u+02dd-02ff,u+0304,u+0308,u+0329,u+1d00-1dbf,u+1e00-1e9f,u+1ef2-1eff,u+2020,u+20a0-20ab,u+20ad-20c0,u+2113,u+2c60-2c7f,u+a720-a7ff}@font-face{font-family:Barlow;font-style:normal;font-weight:500;font-display:swap;src:url(2026-10-02-apresentacao/fontes/b0bb26939bb40fdb-s.p.woff2) format("woff2");unicode-range:u+00??,u+0131,u+0152-0153,u+02bb-02bc,u+02c6,u+02da,u+02dc,u+0304,u+0308,u+0329,u+2000-206f,u+20ac,u+2122,u+2191,u+2193,u+2212,u+2215,u+feff,u+fffd}@font-face{font-family:Barlow;font-style:normal;font-weight:600;font-display:swap;src:url(2026-10-02-apresentacao/fontes/7816b93d847886e9-s.woff2) format("woff2");unicode-range:u+0102-0103,u+0110-0111,u+0128-0129,u+0168-0169,u+01a0-01a1,u+01af-01b0,u+0300-0301,u+0303-0304,u+0308-0309,u+0323,u+0329,u+1ea0-1ef9,u+20ab}@font-face{font-family:Barlow;font-style:normal;font-weight:600;font-display:swap;src:url(2026-10-02-apresentacao/fontes/ea06843a6d8e9ab3-s.woff2) format("woff2");unicode-range:u+0100-02ba,u+02bd-02c5,u+02c7-02cc,u+02ce-02d7,u+02dd-02ff,u+0304,u+0308,u+0329,u+1d00-1dbf,u+1e00-1e9f,u+1ef2-1eff,u+2020,u+20a0-20ab,u+20ad-20c0,u+2113,u+2c60-2c7f,u+a720-a7ff}@font-face{font-family:Barlow;font-style:normal;font-weight:600;font-display:swap;src:url(2026-10-02-apresentacao/fontes/60c9b95e8d9e49be-s.p.woff2) format("woff2");unicode-range:u+00??,u+0131,u+0152-0153,u+02bb-02bc,u+02c6,u+02da,u+02dc,u+0304,u+0308,u+0329,u+2000-206f,u+20ac,u+2122,u+2191,u+2193,u+2212,u+2215,u+feff,u+fffd}@font-face{font-family:Barlow;font-style:normal;font-weight:700;font-display:swap;src:url(2026-10-02-apresentacao/fontes/1e6ec62843814326-s.woff2) format("woff2");unicode-range:u+0102-0103,u+0110-0111,u+0128-0129,u+0168-0169,u+01a0-01a1,u+01af-01b0,u+0300-0301,u+0303-0304,u+0308-0309,u+0323,u+0329,u+1ea0-1ef9,u+20ab}@font-face{font-family:Barlow;font-style:normal;font-weight:700;font-display:swap;src:url(2026-10-02-apresentacao/fontes/a8bcd0492b5976ee-s.woff2) format("woff2");unicode-range:u+0100-02ba,u+02bd-02c5,u+02c7-02cc,u+02ce-02d7,u+02dd-02ff,u+0304,u+0308,u+0329,u+1d00-1dbf,u+1e00-1e9f,u+1ef2-1eff,u+2020,u+20a0-20ab,u+20ad-20c0,u+2113,u+2c60-2c7f,u+a720-a7ff}@font-face{font-family:Barlow;font-style:normal;font-weight:700;font-display:swap;src:url(2026-10-02-apresentacao/fontes/6ad0344ed98ac2e9-s.p.woff2) format("woff2");unicode-range:u+00??,u+0131,u+0152-0153,u+02bb-02bc,u+02c6,u+02da,u+02dc,u+0304,u+0308,u+0329,u+2000-206f,u+20ac,u+2122,u+2191,u+2193,u+2212,u+2215,u+feff,u+fffd}@font-face{font-family:Barlow Fallback;src:local("Arial");ascent-override:103.43%;descent-override:20.69%;line-gap-override:0.00%;size-adjust:96.68%}@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:600;font-display:swap;src:url(2026-10-02-apresentacao/fontes/d6e015f239232eb3-s.woff2) format("woff2");unicode-range:u+0102-0103,u+0110-0111,u+0128-0129,u+0168-0169,u+01a0-01a1,u+01af-01b0,u+0300-0301,u+0303-0304,u+0308-0309,u+0323,u+0329,u+1ea0-1ef9,u+20ab}@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:600;font-display:swap;src:url(2026-10-02-apresentacao/fontes/55b35d87b6156eea-s.woff2) format("woff2");unicode-range:u+0100-02ba,u+02bd-02c5,u+02c7-02cc,u+02ce-02d7,u+02dd-02ff,u+0304,u+0308,u+0329,u+1d00-1dbf,u+1e00-1e9f,u+1ef2-1eff,u+2020,u+20a0-20ab,u+20ad-20c0,u+2113,u+2c60-2c7f,u+a720-a7ff}@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:600;font-display:swap;src:url(2026-10-02-apresentacao/fontes/5fb5c05ff73c0616-s.p.woff2) format("woff2");unicode-range:u+00??,u+0131,u+0152-0153,u+02bb-02bc,u+02c6,u+02da,u+02dc,u+0304,u+0308,u+0329,u+2000-206f,u+20ac,u+2122,u+2191,u+2193,u+2212,u+2215,u+feff,u+fffd}@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:700;font-display:swap;src:url(2026-10-02-apresentacao/fontes/8599be8653318abe-s.woff2) format("woff2");unicode-range:u+0102-0103,u+0110-0111,u+0128-0129,u+0168-0169,u+01a0-01a1,u+01af-01b0,u+0300-0301,u+0303-0304,u+0308-0309,u+0323,u+0329,u+1ea0-1ef9,u+20ab}@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:700;font-display:swap;src:url(2026-10-02-apresentacao/fontes/3352fdb488e19d84-s.woff2) format("woff2");unicode-range:u+0100-02ba,u+02bd-02c5,u+02c7-02cc,u+02ce-02d7,u+02dd-02ff,u+0304,u+0308,u+0329,u+1d00-1dbf,u+1e00-1e9f,u+1ef2-1eff,u+2020,u+20a0-20ab,u+20ad-20c0,u+2113,u+2c60-2c7f,u+a720-a7ff}@font-face{font-family:Barlow Condensed;font-style:normal;font-weight:700;font-display:swap;src:url(2026-10-02-apresentacao/fontes/437e5f23c97e320c-s.p.woff2) format("woff2");unicode-range:u+00??,u+0131,u+0152-0153,u+02bb-02bc,u+02c6,u+02da,u+02dc,u+0304,u+0308,u+0329,u+2000-206f,u+20ac,u+2122,u+2191,u+2193,u+2212,u+2215,u+feff,u+fffd}@font-face{font-family:Barlow Condensed Fallback;src:local("Arial");ascent-override:130.73%;descent-override:26.15%;line-gap-override:0.00%;size-adjust:76.49%}
+:root{--azul:#1B3A8C;--azul-2:#E8EDF8;--tinta:#141B2D;--cinza:#4A5568;--linha:#DCE1EC;--fundo:#F4F6FB;
+--verm:#B5121B;--verm-2:#FBEAEB;--ouro:#7A5600;--ouro-2:#FBEFCF;
+--cond:"Barlow Condensed","Barlow Condensed Fallback",Arial,sans-serif;--txt:Barlow,"Barlow Fallback",Arial,sans-serif}
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 var(--body);padding-inline:16px;padding-block:28px 48px}
-.wrap{max-width:1040px;margin:0 auto;display:grid;gap:36px}
-h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:.01em}
-h1{font-size:clamp(2rem,5vw,3rem);line-height:1;color:var(--blue);text-transform:uppercase}
-h2{font-size:1.55rem;text-transform:uppercase;color:var(--blue)}
-h3{font-size:1.15rem;text-transform:uppercase}
-p{margin:0}
-.eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-header{display:grid;gap:12px;border-bottom:4px solid var(--blue);padding-bottom:18px}
-.meta{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;color:var(--muted);font-size:.9rem}
-.chip{justify-self:start;display:inline-block;border-radius:999px;padding:2px 10px;font-size:.78rem;font-weight:700;white-space:nowrap}
-.chip.wait{background:var(--gold-soft);color:var(--gold)}
-.chip.lock{background:var(--red-soft);color:var(--red)}
-.chip.todo{background:var(--gold-soft);color:var(--gold)}
-section{display:grid;gap:14px}
-.sec-head{display:grid;gap:4px}
-.sec-head p{color:var(--muted);max-width:65ch}
-
-/* 1. Equipe */
-.leads{display:flex;flex-wrap:wrap;gap:10px}
-.lead{background:var(--blue);color:var(--surface);border-radius:6px;padding:8px 14px;display:grid}
-.lead small{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;opacity:.85}
-.lead b{font-family:var(--display);font-size:1.35rem;letter-spacing:.02em}
-.roles{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
-.role{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px;display:grid;gap:8px;align-content:start;min-width:0}
-.role h3{color:var(--blue);display:flex;justify-content:space-between;gap:8px;align-items:baseline}
-.role h3 span{white-space:nowrap;font-family:var(--body);font-size:.75rem;color:var(--muted);text-transform:none;letter-spacing:0;font-weight:600}
-.role ul{margin:0;padding:0;list-style:none;display:grid;gap:2px;font-weight:600}
-.role p{font-size:.86rem;color:var(--muted)}
-
-/* 2. Ciclo semanal: sequência real de entrega */
-.cycle{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:etapa}
-.step{display:grid;grid-template-columns:132px 1fr;gap:16px;padding:12px 0;border-top:1px solid var(--line);counter-increment:etapa}
-.step:last-child{border-bottom:1px solid var(--line)}
-.when{font-family:var(--display);font-size:1.15rem;font-weight:700;color:var(--blue);text-transform:uppercase;line-height:1.15}
-.when::before{content:counter(etapa);display:inline-grid;place-items:center;width:1.5em;height:1.5em;margin-right:8px;border-radius:50%;background:var(--blue-soft);color:var(--blue);font-size:.85rem}
-.what{display:grid;gap:2px;min-width:0}
-.who{font-weight:700}
-.what p{color:var(--muted);font-size:.92rem}
-.ongoing{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
-.note{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px 14px;font-size:.9rem;display:grid;gap:4px}
-.note b{color:var(--blue)}
-.alert{background:var(--gold-soft);border-left:4px solid var(--gold);border-radius:4px;padding:12px 14px;font-size:.92rem;max-width:80ch}
-
-/* 3. Calendário por semana */
-.weeks{display:grid;gap:14px}
-.week{background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden}
-.week-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;padding:10px 14px;background:var(--blue-soft)}
-.week-head h3{color:var(--blue)}
-.week-head span{color:var(--muted);font-size:.85rem}
-.days{display:grid;grid-template-columns:repeat(3,1fr)}
-.day{padding:12px 14px;display:grid;gap:6px;align-content:start;border-left:1px solid var(--line);min-width:0}
-.day:first-child{border-left:0}
-.date{font-variant-numeric:tabular-nums;font-weight:700;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.topic{font-weight:700;line-height:1.3}
-.fmt{font-size:.8rem;color:var(--blue);font-weight:700}
-.obs{font-size:.84rem;color:var(--muted)}
-.extra{padding:10px 14px;border-top:1px solid var(--line);font-size:.88rem;display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
-
-/* 4. Checklist */
-.check{list-style:none;margin:0;padding:0;display:grid;gap:8px;max-width:75ch}
-.check li{display:grid;grid-template-columns:22px 1fr;gap:8px;align-items:start}
-.check li::before{content:"";width:16px;height:16px;margin-top:3px;border:2px solid var(--blue);border-radius:3px}
-footer{color:var(--muted);font-size:.82rem;border-top:1px solid var(--line);padding-top:12px}
-
-@media (max-width:700px){
-  .days{grid-template-columns:1fr}
-  .day{border-left:0;border-top:1px solid var(--line)}
-  .day:first-child{border-top:0}
-  .step{grid-template-columns:1fr;gap:4px}
-}
-</style>
-</head>
-<body>
-<div class="wrap">
-
-<header>
-  <span class="eyebrow">Efeito Rebote · Comunicação e Redes Sociais</span>
-  <h1>Pauta e roteiro de produção</h1>
-  <div class="meta">
-    <span class="chip wait">Aguardando aprovação da prof.ª Camila</span>
-    <span>Proposta de 07/10/2026</span>
-    <span>Instagram @efeitorebote.oficial</span>
-    <span>3 posts por semana (seg, qua, sex) + stories diários</span>
-  </div>
-</header>
-
-<section aria-labelledby="s-equipe">
-  <div class="sec-head">
-    <h2 id="s-equipe">Equipe</h2>
-    <p>Lista de vagas preenchida no grupo da equipe em 07/10. Cada função entrega uma parte do post; a ordem das entregas está no ciclo semanal abaixo.</p>
-  </div>
-  <div class="leads">
-    <div class="lead"><small>Líder</small><b>Vitória</b></div>
-    <div class="lead"><small>Vice-líder</small><b>Flauany</b></div>
-  </div>
-  <div class="roles">
-    <article class="role"><h3>Roteiro e legendas <span>2 vagas</span></h3><ul><li>Nathan</li><li>Leonardo</li></ul><p>Texto de cada slide, legenda, roteiros de vídeo e áudio, com a fonte de cada dado.</p></article>
-    <article class="role"><h3>Design <span>3 vagas</span></h3><ul><li>Geraldo Jackson</li><li>João Dionísio</li><li>Evelyn Noefer</li></ul><p>Artes e carrosséis em 1080 × 1350 px e modelos de story, na identidade visual do projeto.</p></article>
-    <article class="role"><h3>Audiovisual <span>2 vagas</span></h3><ul><li>Laura Martins</li><li>Anna Laura</li></ul><p>Gravação e edição de vídeos e áudios; live do sorteio, junto com Eventos.</p></article>
-    <article class="role"><h3>Engajamento <span>2 vagas</span></h3><ul><li>Lívia Ventura</li><li>Mayara Mendoza</li></ul><p>Stories diários, moderação de comentários e métricas semanais para o relatório.</p></article>
-    <article class="role"><h3>Registro de imagens <span>2 vagas</span></h3><ul><li>Maria Eduarda Mendonça</li><li>Laura Mell</li></ul><p>Fotos e vídeos dos eventos, só com autorização e nunca de pessoas privadas de liberdade.</p></article>
-    <article class="role"><h3>Arquivo de aprovações <span>1 vaga</span></h3><ul><li><span class="chip todo">Vaga livre</span></li></ul><p>Guarda cada versão enviada à professora e a resposta dela.</p></article>
-  </div>
-</section>
-
-<section aria-labelledby="s-ciclo">
-  <div class="sec-head">
-    <h2 id="s-ciclo">Ciclo semanal</h2>
-    <p>Cada semana produz os 3 posts da semana seguinte. Uma etapa só começa quando a anterior entregou; atraso numa etapa atrasa todas as outras.</p>
-  </div>
-  <ol class="cycle">
-    <li class="step"><span class="when">Segunda<br>20h</span><div class="what"><span class="who">Vitória (líder)</span><p>Posta no grupo do WhatsApp a pauta dos 3 posts da semana seguinte. Cada responsável confirma até terça, 12h. Sem reunião.</p></div></li>
-    <li class="step"><span class="when">Terça<br>20h</span><div class="what"><span class="who">Roteiro: Nathan e Leonardo</span><p>Texto de cada slide, legenda (até ~150 palavras e 5 hashtags) e fonte dos dados.</p></div></li>
-    <li class="step"><span class="when">Quarta<br>20h</span><div class="what"><span class="who">Flauany (vice-líder)</span><p>Revisa pelo checklist e devolve os ajustes no mesmo dia.</p></div></li>
-    <li class="step"><span class="when">Quinta<br>20h</span><div class="what"><span class="who">Design: Geraldo, João e Evelyn · Audiovisual: Laura Martins e Anna Laura</span><p>Artes finais, modelos de story e vídeo ou áudio, a partir do texto revisado.</p></div></li>
-    <li class="step"><span class="when">Sexta<br>12h</span><div class="what"><span class="who">Vitória + Arquivo de aprovações</span><p>Envia o pacote completo à prof.ª Camila; o arquivo registra o que foi enviado.</p></div></li>
-    <li class="step"><span class="when">Sábado e<br>domingo</span><div class="what"><span class="who">Roteiro + Design</span><p>Fazem os ajustes pedidos pela professora; o arquivo registra a resposta.</p></div></li>
-    <li class="step"><span class="when">Seg, qua<br>e sex</span><div class="what"><span class="who">Vitória ou Flauany</span><p>Publicam somente o post aprovado.</p></div></li>
-  </ol>
-  <div class="ongoing">
-    <div class="note"><b>No dia de cada post</b><span>Engajamento (Lívia e Mayara) reposta nos stories e chama a turma para compartilhar.</span></div>
-    <div class="note"><b>Todo dia</b><span>1 a 3 stories a partir dos modelos aprovados: enquete, caixinha de perguntas, contagem regressiva, repost.</span></div>
-    <div class="note"><b>Domingo</b><span>Métricas da semana (alcance, seguidores, salvamentos) para o relatório final.</span></div>
-  </div>
-  <div class="ongoing">
-    <div class="note"><b>Alinhamento online 1 · qui 08/10, 19h (sugestão)</b><span>Toda a equipe, até 30 min por chamada de vídeo: ciclo, modelos de story e identidade visual antes do primeiro envio.</span></div>
-    <div class="note"><b>Alinhamento online 2 · qui 29/10, 19h (sugestão)</b><span>Líder, Audiovisual, Engajamento e Registro de imagens, com Eventos: live do sorteio (02/11) e cobertura da visita.</span></div>
-    <div class="note"><b>O resto</b><span>Tudo se resolve por mensagem no grupo da equipe.</span></div>
-  </div>
-  <p class="alert"><b>Primeira semana:</b> para publicar em 12/10, o pacote vai à professora na sexta, 09/10. Texto até quinta (08/10), às 12h; revisão até quinta, às 20h; artes até sexta, às 10h; envio sexta, às 12h.</p>
-</section>
-
-<section aria-labelledby="s-cal">
-  <div class="sec-head">
-    <h2 id="s-cal">Calendário</h2>
-    <p>Abre com a série informativa pedida pela professora, que responde às objeções sem citar comentários. Posts que pedem doação ou divulgam a ação de arrecadação dependem de liberação.</p>
-  </div>
-  <div class="weeks">
-    <article class="week">
-      <div class="week-head"><h3>Semana 1</h3><span>12 a 16/10 · pacote enviado em 09/10</span></div>
-      <div class="days">
-        <div class="day"><span class="date">Seg 12/10</span><span class="topic">O que é a reincidência e por que o projeto se chama Efeito Rebote</span><span class="fmt">Carrossel</span></div>
-        <div class="day"><span class="date">Qua 14/10</span><span class="topic">Por que cuidar de quem está preso também protege você</span><span class="fmt">Carrossel</span><span class="obs">Série informativa</span></div>
-        <div class="day"><span class="date">Sex 16/10</span><span class="topic">Higiene básica é dever do Estado, não privilégio</span><span class="fmt">Carrossel</span><span class="obs">Lei de Execução Penal, arts. 12 e 13: conferir o texto da lei antes de publicar</span></div>
-      </div>
-    </article>
-    <article class="week">
-      <div class="week-head"><h3>Semana 2</h3><span>19 a 23/10 · pacote enviado em 16/10</span></div>
-      <div class="days">
-        <div class="day"><span class="date">Seg 19/10</span><span class="topic">Quem paga a conta hoje: as famílias</span><span class="fmt">Carrossel</span><span class="obs">Série informativa</span></div>
-        <div class="day"><span class="date">Qua 21/10</span><span class="topic">Conheça a turma e as equipes por trás do projeto</span><span class="fmt">Feed</span><span class="obs">Foto da turma só com autorização de todos</span></div>
-        <div class="day"><span class="date">Sex 23/10</span><span class="topic">Efeito Rebote em 30 segundos</span><span class="fmt">Reels ou áudio</span><span class="obs">Roteiro: gancho, contexto, informação e convite</span></div>
-      </div>
-    </article>
-    <article class="week">
-      <div class="week-head"><h3>Semana 3</h3><span>26 a 30/10 · pacote enviado em 23/10</span></div>
-      <div class="days">
-        <div class="day"><span class="date">Seg 26/10</span><span class="topic">Quais itens aceitamos e por quê</span><span class="fmt">Carrossel</span><span class="chip lock">Só após liberação</span></div>
-        <div class="day"><span class="date">Qua 28/10</span><span class="topic">Como funciona a ação de arrecadação (bilhetes)</span><span class="fmt">Carrossel</span><span class="chip lock">Só após liberação</span></div>
-        <div class="day"><span class="date">Sex 30/10</span><span class="topic">Ressocialização: o que reduz a reincidência</span><span class="fmt">Carrossel</span><span class="obs">Dados com fonte</span></div>
-      </div>
-    </article>
-    <article class="week">
-      <div class="week-head"><h3>Semana 4</h3><span>02 a 06/11 · pacote enviado em 30/10</span></div>
-      <div class="days">
-        <div class="day"><span class="date">Seg 02/11</span><span class="topic">Sorteio ao vivo e resultado</span><span class="fmt">Live + feed</span><span class="obs">Audiovisual com Eventos</span><span class="chip todo">Horário a definir</span></div>
-        <div class="day"><span class="date">Qua 04/11</span><span class="topic">Visita às unidades</span><span class="fmt">Feed</span><span class="obs">Sem imagens de pessoas privadas de liberdade</span></div>
-        <div class="day"><span class="date">Sex 06/11</span><span class="topic">Bastidores e agradecimento</span><span class="fmt">Carrossel</span></div>
-      </div>
-    </article>
-    <article class="week">
-      <div class="week-head"><h3>Semana 5</h3><span>09 a 13/11</span></div>
-      <div class="extra"><b>Prestação de contas e resultados</b><span class="fmt">Carrossel</span><span class="obs">Números conferidos com o Financeiro e Prestação de Contas</span></div>
-      <div class="extra"><b>Café da manhã com as famílias</b><span class="fmt">Feed + stories</span><span class="chip todo">Data a definir</span><span class="obs">Depende do calendário de visitação da unidade</span></div>
-    </article>
-  </div>
-</section>
-
-<section aria-labelledby="s-check">
-  <div class="sec-head">
-    <h2 id="s-check">Checklist da revisão</h2>
-    <p>A vice-líder confere cada post antes de ele seguir para o design.</p>
-  </div>
-  <ul class="check">
-    <li>Não pede doação nem divulga a ação de arrecadação antes da liberação.</li>
-    <li>Não menciona avaliação da disciplina; usa sempre "ação de arrecadação" e "bilhetes".</li>
-    <li>Todo dado tem a fonte registrada.</li>
-    <li>Nenhuma imagem ou nome de pessoa privada de liberdade; tom sem sensacionalismo nem estigma.</li>
-    <li>Comentário hostil não é respondido: é ocultado, com print salvo antes, e vira pauta da série informativa.</li>
-  </ul>
-</section>
-
-<footer>Projeto de extensão Efeito Rebote: o custo da reincidência · Direito, 3º semestre noturno, Turma B · UniCesumar · Maringá, 2026</footer>
-</div>
-</body>
-</html>
+body{margin:0;background:#D9DEE9;font:16px/1.4 var(--txt);color:var(--tinta);-webkit-font-smoothing:antialiased}
+.card{width:540px;background:var(--fundo);padding:28px 24px 20px;display:flex;flex-direction:column;gap:18px;margin:0 auto 24px;break-after:page}
+ul,ol{list-style:none;margin:0;padding:0}
+h1,h2{font-family:var(--cond);margin:0;text-wrap:balance}
+h1{font-size:46px;line-height:.95;letter-spacing:-.01em;color:var(--azul);font-weight:700}
+h2{font-size:21px;line-height:1.1;font-weight:700;color:var(--tinta)}
+.hd{display:grid;gap:8px}
+.top{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cinza)}
+.pg{font-variant-numeric:tabular-nums;background:var(--azul);color:#fff;border-radius:999px;padding:2px 9px;letter-spacing:.04em}
+.sub{margin:0;font-size:16.5px;color:var(--cinza);max-width:42ch}
+.when{font-family:var(--cond);font-weight:700;font-size:16px;color:var(--azul);white-space:nowrap;font-variant-numeric:tabular-nums}
+.dl{display:grid;gap:5px}
+.dl li{display:grid;grid-template-columns:92px 1fr;gap:10px;align-items:baseline;font-size:14.5px;line-height:1.3}
+.tag{display:inline-block;border-radius:4px;padding:1px 7px;font-size:12.5px;font-weight:700;margin-top:4px}
+.tag.gold{background:var(--ouro-2);color:var(--ouro)}
+.tag.red{background:var(--verm-2);color:var(--verm)}
+.ft{margin-top:auto;font-size:11.5px;color:var(--cinza);border-top:1px solid var(--linha);padding-top:10px}
+.note{margin:0;font-size:13.5px;color:var(--cinza)}
+/* card 1 */
+.roles{display:grid;background:#fff;border-radius:12px;box-shadow:0 1px 2px rgba(20,27,45,.06),0 4px 14px rgba(20,27,45,.05);overflow:hidden}
+.role{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 14px;border-top:1px solid var(--linha)}
+.role:first-child{border-top:0}
+.role.lead{background:var(--azul-2)}
+.who{display:grid;gap:2px;align-content:start}
+.fn{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--azul)}
+.people{font-weight:700;font-size:16px;line-height:1.25}
+.role .dl li{grid-template-columns:78px 1fr}
+.rules{display:grid;gap:8px}
+.rules ul{display:grid;gap:5px;counter-reset:r}
+.rules li{display:grid;grid-template-columns:20px 1fr;gap:6px;font-size:14px;line-height:1.3;counter-increment:r}
+.rules li::before{content:counter(r);font-family:var(--cond);font-weight:700;color:var(--verm);font-size:15px}
+/* card 2 */
+.card section{display:grid;gap:8px}
+.alert{background:var(--verm-2);border-radius:10px;padding:14px 16px}
+.alert h2{color:var(--verm)}
+.alert p{margin:0;font-size:14.5px}
+.alert .when{color:var(--verm)}
+.alert .dl li{grid-template-columns:118px 1fr}
+.cycle{background:#fff;border-radius:12px;box-shadow:0 1px 2px rgba(20,27,45,.06),0 4px 14px rgba(20,27,45,.05);padding:4px 14px}
+.step{display:grid;grid-template-columns:58px 1fr;gap:12px;padding:9px 0;border-top:1px solid var(--linha);align-items:start}
+.step:first-child{border-top:0}
+.day{display:grid;justify-items:center;background:var(--azul);color:#fff;border-radius:6px;padding:4px 0 5px;font-size:12.5px;line-height:1.1;font-variant-numeric:tabular-nums}
+.day b{font-family:var(--cond);font-size:19px;font-weight:700}
+.step div{display:grid;gap:1px}
+.name{font-weight:700;font-size:15px}
+.task{font-size:14px;color:var(--cinza);line-height:1.3}
+/* card 3 */
+.week{background:#fff;border-radius:12px;box-shadow:0 1px 2px rgba(20,27,45,.06),0 4px 14px rgba(20,27,45,.05);padding:10px 14px 4px;gap:2px!important}
+.wk{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.wk h2{color:var(--azul)}
+.wk span{font-size:12.5px;color:var(--cinza)}
+.post{display:grid;grid-template-columns:76px 1fr;gap:10px;padding:7px 0;border-top:1px solid var(--linha)}
+.post:first-child{border-top:0}
+.date{font-family:var(--cond);font-size:16px;color:var(--azul);font-variant-numeric:tabular-nums;white-space:nowrap}
+.date b{font-weight:700}
+.post div{display:block}
+.topic{font-weight:600;font-size:15px;line-height:1.25;display:block}
+.fmt{font-size:12.5px;color:var(--cinza);margin-right:6px}
+.obs{display:block;font-size:13px;color:var(--ouro);line-height:1.3;margin-top:2px}
+@media print{body{background:none}.card{margin:0}}
+</style></head><body><article class="card" id="c1"><header class="hd"><div class="top"><span class="brand">Efeito Rebote · Comunicação</span><span class="pg">1/3</span></div><h1>Ache seu nome</h1><p class="sub">Procure seu nome. Ao lado está o que você entrega e até quando.</p></header><div class="roles"><section class="role lead"><div class="who"><span class="fn">Líder</span><span class="people">Vitória</span></div><ul class="dl"><li><b class="when">Seg 20h</b><span>posta a pauta da semana seguinte no grupo</span></li><li><b class="when">Sex 12h</b><span>envia o pacote completo à prof.ª Camila</span></li><li><b class="when">Dia de post</b><span>publica só o post aprovado (seg, qua e sex)</span></li></ul></section><section class="role lead"><div class="who"><span class="fn">Vice-líder</span><span class="people">Flauany</span></div><ul class="dl"><li><b class="when">Qua 20h</b><span>revisa os textos pelo checklist e devolve ajustes no mesmo dia</span></li><li><b class="when">Sempre</b><span>substitui a líder e também pode publicar</span></li></ul></section><section class="role"><div class="who"><span class="fn">Roteiro e legendas</span><span class="people">Nathan<br>Leonardo</span></div><ul class="dl"><li><b class="when">Ter 20h</b><span>texto de cada slide, legenda (até ~150 palavras e 5 hashtags) e fonte dos dados</span></li><li><b class="when">Sáb e dom</b><span>ajustes pedidos pela prof.ª</span></li></ul></section><section class="role"><div class="who"><span class="fn">Design</span><span class="people">Geraldo Jackson<br>João Dionísio<br>Evelyn Noefer</span></div><ul class="dl"><li><b class="when">Qui 20h</b><span>artes finais (1080 × 1350) e modelos de story, a partir do texto revisado</span></li><li><b class="when">Sáb e dom</b><span>ajustes pedidos pela prof.ª</span></li></ul></section><section class="role"><div class="who"><span class="fn">Audiovisual</span><span class="people">Laura Martins<br>Anna Laura</span></div><ul class="dl"><li><b class="when">Qui 20h</b><span>vídeos e áudios editados</span></li><li><b class="when">02/11</b><span>live do sorteio, com a equipe de Eventos</span></li></ul></section><section class="role"><div class="who"><span class="fn">Engajamento</span><span class="people">Lívia Ventura<br>Mayara Mendoza</span></div><ul class="dl"><li><b class="when">Todo dia</b><span>1 a 3 stories com os modelos aprovados</span></li><li><b class="when">Dia do post</b><span>repost nos stories e convite para a turma compartilhar</span></li><li><b class="when">Domingo</b><span>métricas da semana (alcance, seguidores, salvamentos)</span></li></ul></section><section class="role"><div class="who"><span class="fn">Registro de imagens</span><span class="people">Maria Eduarda Mendonça<br>Laura Mell</span></div><ul class="dl"><li><b class="when">Eventos</b><span>fotos e vídeos só com autorização, nunca de pessoas privadas de liberdade</span></li></ul></section><section class="role"><div class="who"><span class="fn">Arquivo de aprovações</span><span class="people"><span class="tag gold">Vaga livre: sai no sorteio das vagas</span></span></div><ul class="dl"><li><b class="when">Sex 12h</b><span>registra o que foi enviado (data e versão)</span></li><li><b class="when">Sáb e dom</b><span>registra a resposta da prof.ª</span></li></ul></section></div><section class="rules"><h2>Vale para todo post</h2><ul><li>Nada de pedir doação ou divulgar a ação de arrecadação antes da liberação.</li><li>Nunca citar avaliação da disciplina. Escreva sempre “ação de arrecadação” e “bilhetes”.</li><li>Todo dado precisa de fonte registrada.</li><li>Nenhuma imagem ou nome de pessoa privada de liberdade. Sem sensacionalismo nem estigma.</li><li>Comentário hostil não se responde: salve o print, oculte e leve ao grupo.</li></ul></section><footer class="ft">Proposta de 07/10, aguardando aprovação da prof.ª Camila. Dúvidas: pergunte no grupo da equipe.</footer></article><article class="card" id="c2"><header class="hd"><div class="top"><span class="brand">Efeito Rebote · Comunicação</span><span class="pg">2/3</span></div><h1>A semana de produção</h1><p class="sub">O que a equipe produz numa semana vai ao ar na semana seguinte.</p></header><section class="alert"><h2>Esta semana é diferente</h2><p>O 1º pacote (posts de 12/10) vai à prof.ª já na sexta.</p><ul class="dl"><li><b class="when">Qui 08/10, 12h</b><span>Texto pronto (Roteiro)</span></li><li><b class="when">Qui 08/10, 19h</b><span>Alinhamento online, até 30 min (sugestão)</span></li><li><b class="when">Qui 08/10, 20h</b><span>Revisão pronta (vice-líder)</span></li><li><b class="when">Sex 09/10, 10h</b><span>Artes prontas (Design)</span></li><li><b class="when">Sex 09/10, 12h</b><span>Envio à prof.ª Camila (líder)</span></li></ul></section><section><h2>A partir de 12/10, toda semana</h2><ol class="cycle"><li class="step"><span class="day"><b>Seg</b>20h</span><div><span class="name">Vitória</span><span class="task">Posta a pauta dos 3 posts da semana seguinte. Todos confirmam até terça, 12h.</span></div></li><li class="step"><span class="day"><b>Ter</b>20h</span><div><span class="name">Nathan e Leonardo</span><span class="task">Texto dos slides, legenda e fonte de cada dado.</span></div></li><li class="step"><span class="day"><b>Qua</b>20h</span><div><span class="name">Flauany</span><span class="task">Revisa pelo checklist e devolve os ajustes no mesmo dia.</span></div></li><li class="step"><span class="day"><b>Qui</b>20h</span><div><span class="name">Design: Geraldo Jackson, João Dionísio e Evelyn Noefer<br>Audiovisual: Laura Martins e Anna Laura</span><span class="task">Artes, modelos de story, vídeo e áudio, a partir do texto revisado.</span></div></li><li class="step"><span class="day"><b>Sex</b>12h</span><div><span class="name">Vitória</span><span class="task">Envia o pacote à prof.ª Camila. O Arquivo de aprovações registra o envio.</span></div></li><li class="step"><span class="day"><b>Sáb</b>e dom</span><div><span class="name">Roteiro e Design</span><span class="task">Fazem os ajustes pedidos pela prof.ª.</span></div></li></ol><p class="note">Cada etapa começa quando a anterior entrega. Atraso numa atrasa todas.</p></section><section><h2>Depois de aprovado</h2><ul class="dl"><li><b class="when">Seg, qua, sex</b><span><span class="name">Vitória ou Flauany</span>: publicam só o post aprovado</span></li><li><b class="when">Dia do post</b><span><span class="name">Lívia Ventura e Mayara Mendoza</span>: repost nos stories</span></li><li><b class="when">Todo dia</b><span><span class="name">Lívia Ventura e Mayara Mendoza</span>: 1 a 3 stories</span></li><li><b class="when">Domingo</b><span><span class="name">Lívia Ventura e Mayara Mendoza</span>: métricas da semana</span></li></ul></section><p class="note">Só há mais um alinhamento online: qui 29/10, 19h (sugestão), sobre a live do sorteio e a visita. O resto se resolve no grupo.</p><footer class="ft">Proposta de 07/10, aguardando aprovação da prof.ª Camila. Dúvidas: pergunte no grupo da equipe.</footer></article><article class="card" id="c3"><header class="hd"><div class="top"><span class="brand">Efeito Rebote · Comunicação</span><span class="pg">3/3</span></div><h1>O que vai ao ar</h1><p class="sub">3 posts por semana, às segundas, quartas e sextas, mais stories todo dia.</p></header><section class="week"><div class="wk"><h2>12 a 16/10</h2><span>Envio à prof.ª: sex 09/10</span></div><ol><li class="post"><span class="date"><b>Seg</b> 12/10</span><div><span class="topic">O que é a reincidência e por que o projeto se chama Efeito Rebote</span><span class="fmt">Carrossel</span></div></li><li class="post"><span class="date"><b>Qua</b> 14/10</span><div><span class="topic">Por que cuidar de quem está preso também protege você</span><span class="fmt">Carrossel</span><span class="obs">Série informativa sobre as objeções</span></div></li><li class="post"><span class="date"><b>Sex</b> 16/10</span><div><span class="topic">Higiene básica é dever do Estado, não privilégio</span><span class="fmt">Carrossel</span><span class="obs">Base: Lei de Execução Penal, arts. 12 e 13 (conferir o texto da lei antes de publicar)</span></div></li></ol></section><section class="week"><div class="wk"><h2>19 a 23/10</h2><span>Envio à prof.ª: sex 16/10</span></div><ol><li class="post"><span class="date"><b>Seg</b> 19/10</span><div><span class="topic">Quem paga a conta hoje: as famílias</span><span class="fmt">Carrossel</span></div></li><li class="post"><span class="date"><b>Qua</b> 21/10</span><div><span class="topic">Conheça a turma e as equipes por trás do projeto</span><span class="fmt">Feed</span><span class="obs">Foto da turma só com autorização de todos</span></div></li><li class="post"><span class="date"><b>Sex</b> 23/10</span><div><span class="topic">Efeito Rebote em 30 segundos</span><span class="fmt">Reels ou áudio</span><span class="obs">Roteiro de áudio: gancho, contexto, informação, convite</span></div></li></ol></section><section class="week"><div class="wk"><h2>26 a 30/10</h2><span>Envio à prof.ª: sex 23/10</span></div><ol><li class="post"><span class="date"><b>Seg</b> 26/10</span><div><span class="topic">Quais itens aceitamos e por quê</span><span class="fmt">Carrossel</span><span class="tag red">Só após liberação</span></div></li><li class="post"><span class="date"><b>Qua</b> 28/10</span><div><span class="topic">Como funciona a ação de arrecadação (bilhetes)</span><span class="fmt">Carrossel</span><span class="tag red">Só após liberação</span></div></li><li class="post"><span class="date"><b>Sex</b> 30/10</span><div><span class="topic">Ressocialização: o que reduz a reincidência</span><span class="fmt">Carrossel</span><span class="obs">Dados com fonte</span></div></li></ol></section><section class="week"><div class="wk"><h2>02 a 06/11</h2><span>Envio à prof.ª: sex 30/10</span></div><ol><li class="post"><span class="date"><b>Seg</b> 02/11</span><div><span class="topic">Sorteio ao vivo + resultado</span><span class="fmt">Live + feed</span><span class="obs">Audiovisual com Eventos</span><span class="tag gold">Horário a definir</span></div></li><li class="post"><span class="date"><b>Qua</b> 04/11</span><div><span class="topic">Visita às unidades</span><span class="fmt">Feed</span><span class="obs">Sem imagens de pessoas privadas de liberdade</span></div></li><li class="post"><span class="date"><b>Sex</b> 06/11</span><div><span class="topic">Bastidores e agradecimento</span><span class="fmt">Carrossel</span></div></li></ol></section><section class="week"><div class="wk"><h2>Encerramento</h2><span>Envio na sexta anterior</span></div><ol><li class="post"><span class="date"><b>09–13/11</b></span><div><span class="topic">Prestação de contas e resultados</span><span class="fmt">Carrossel</span><span class="obs">Números conferidos com o Financeiro</span></div></li><li class="post"><span class="date"><span class="tag gold">Data a definir</span></span><div><span class="topic">Café da manhã com as famílias</span><span class="fmt">Feed + stories</span><span class="obs">Data depende do calendário de visitação da unidade</span></div></li></ol></section><footer class="ft">Proposta de 07/10, aguardando aprovação da prof.ª Camila. Dúvidas: pergunte no grupo da equipe.</footer></article></body></html>

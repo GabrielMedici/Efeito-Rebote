@@ -1,7 +1,7 @@
 # Progresso (máx. 30 linhas; sobrescreva o que ficou velho)
 
 **Atualizado:** 2026-10-07
-**Próximo passo (comece a sessão por aqui e pergunte ao usuário):** refazer o design do calendário da Comunicação (`entregas/posts/calendario.html`, fonte `calendario.md`) usando o plugin `ui-craft` (ler `plugins/ui-craft/skills/ui-craft/SKILL.md`); o usuário não gostou do design atual.
+**Próximo passo (comece a sessão por aqui e pergunte ao usuário):** usuário enviar as 3 imagens do calendário + mensagem (`entregas/posts/mensagem-calendario.md`) ao grupo da Comunicação; depois voltar à F02 (regulamento, prazo sexta 12h).
 ## Estado
 - F01 projeto escrito: versão de 06/10 (12 págs.) enviada em .docx à prof.ª Camila, que edita e insere no UniGestor. Já tem doações em dinheiro (PIX, mesma conta), prestação de contas em 4 componentes (ação, doações, compras, itens), Edgar Gabriel Castro Rocha, carga "40 ou 60 h", semestre/datas "a preencher pela professora". Editar `scripts/conteudo_projeto.py` e rodar `gerar_relatorio.py` + soffice + pdfunite.
 - Termo "rifa" BANIDO: usar "ação de arrecadação (solidária)" e "bilhetes". `check.sh` dá erro se aparecer.
@@ -12,7 +12,7 @@
 - F09 equipes (06/10): Grupo Geral Arrecadação e Captação (todos, líder Sidney) + 5 fixas: Comunicação 14 (Vitória/Flauany), Eventos 22 (Luan/Lorena), Relatório 12 (Gabriel/vice aberta), Financeiro 7 (Franciele/Edgar), Triagem 25 (Anna/vice aberta) = 80. Fonte única: `scripts/gerar_equipes.py` (dict PREENCHIDOS) → organograma PDF/JPG, md, planilha, `mensagens-whatsapp.md` (aviso + 5 listas). Vagas preenchidas nos grupos da comunidade do WhatsApp até 07/10 12h; depois sorteio. Financeiro = comissão financeira do regulamento.
 - Conferência dos grupos fechada (06/10, 18h15, prints dos 5 grupos): `entregas/equipes/conferencia-grupos.pdf` (sem telefones no repositório; com telefones só entregue ao usuário). 5 em dois grupos (Vitória, Flauany, Lorena, Evelyn — todos já definidos — e Simone, que precisa escolher); Comunicação 14/14 com nomes por função em `gerar_equipes.py` (falta Arquivo de aprovações), Eventos 23/22, Relatório 5/12, Financeiro 7/7, Triagem 17/25; 12 fora dos grupos. Anna conta em Financeiro e Triagem (líder); Gabriel em Financeiro e Relatório (líder).
 
-- Redes: calendário editorial + ciclo de produção da Comunicação em `entregas/posts/calendario.pdf` (07/10, aguardando aprovação; faltam nomes por função). Comentários hostis: ocultar e responder com posts informativos (F11).
+- Redes (07/10): calendário redesenhado em 3 imagens para WhatsApp (ache seu nome / semana de produção / o que vai ao ar) + PDF, gerados de `calendario.md` por `scripts/gerar_calendario.py`; mensagem + enquete semanal de entrega prontas. Aguardando aprovação. Link de Artifact privado (versão antiga) descartado: alunos não abrem sem conta. Comentários hostis: ocultar e responder com posts informativos (F11).
 ## Pendentes do usuário
 - Nomes das vagas (após 07/10 12h): lançar em PREENCHIDOS, regenerar e preencher [PENDENTE: integrantes da comissão financeira] no regulamento.
 - Autorizar trocar, no projeto escrito, as 4 equipes antigas pelas novas. Confirmar grafia Franciele × Francieli.
