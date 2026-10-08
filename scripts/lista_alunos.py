@@ -99,7 +99,9 @@ tr:nth-child(even) td{{background:#F4F6FB}} .c{{text-align:right;color:#4A5568;w
 
 
 def html_img(d, al):
-    nomes = [(curto(a["nome"]), bool(pendentes(a))) for a in al]
+    curtos = [curto(a["nome"]) for a in al]
+    tres = lambda n: " ".join([w for w in n.split() if w.lower() not in ("de", "da", "do", "dos", "das")][:3])
+    nomes = [(tres(a["nome"]) if curtos.count(c) > 1 else c, bool(pendentes(a))) for a, c in zip(al, curtos)]
     n = -(-len(nomes) // 3)
     cols = "".join("<ul>" + "".join(f'<li>{html.escape(s)}{"<i>●</i>" if p else ""}</li>' for s, p in nomes[i:i + n]) + "</ul>"
                    for i in range(0, len(nomes), n))
