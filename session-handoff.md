@@ -1,7 +1,21 @@
 # Passagem de sessão (sobrescreva a cada encerramento)
 
-**Atualizado:** 2026-10-07 (noite)
-**Comece por aqui:** progress.md. Site e Kit no ar no plano da Vitória; falta o usuário enviar as mensagens e o one-page à Vitória e à Flauany (já no main, PR #7 mesclado).
+**Atualizado:** 2026-10-08
+**Comece por aqui:** progress.md → entregar ao usuário o PDF da lista de alunos, a imagem do grupo e as pendências (curto).
+
+## Sessão 08/10 — lista de alunos para a visita
+- O usuário mandou os dados aluno por aluno (nome, CPF, RG, RA, turma). Resultado: 68 alunos, 28 campos pendentes (quase todos o turno: Matutino B ou Noturno B). O grupo tem 74 membros (73 alunos + prof.ª): faltam 2 com certeza e 7 apelidos sem identificação.
+- Dados pessoais NÃO vão para o repositório (público; o classificador também barrou até a versão criptografada). O usuário guarda `lista-alunos-dados.json` e reenvia; `scripts/lista_alunos.py` gera tudo fora do repo e se recusa a gravar dentro dele.
+- Cuidados: a imagem do grupo mostra só nomes; CPF/RG apenas no privado; avisar o usuário de que o PDF é para a professora/autorização, e não para o grupo.
+
+## Sessão 08/10 — fim (chat renomeado "OK - Pesquisa de dados prisionais (BR/PR/Maringá) + dossiê PDF para os posts")
+- Tudo no PR #9 (branch `claude/quirky-wright-osin0u`, draft, CI/Vercel verdes, sem conflito): prompt, pesquisa (`docs/fonte/pesquisa-dados-prisionais/`), dossiê PDF + `scripts/gerar_dossie_dados.py`. Falta o usuário MESCLAR.
+- Check-in automático do PR #9 armado (trig_01Rdam4ZjFmBZp3rQDs99wY1, 08/10 05h05 UTC); se o PR já estiver mesclado, só parar.
+- Divergência PEM (538 SISDEPEN × 360 DPE): nenhuma fonte explica; nos posts usar "523 presos para 360 vagas (Defensoria, mai./2025)" e perguntar à direção na visita de 04/11. Oferecido e não feito: conferir ciclo SISDEPEN jun/2025.
+- Para atualizar o dossiê: editar listas no gerador → rodar gerador + `node scripts/renderizar.mjs ...` + `limpar_metadados.py` (playwright-core instalado em vendas/node_modules se faltar).
+
+## Sessão 08/10 (curta)
+- Usuário pediu um prompt para rodar no OUTRO repositório (harness de scraping) levantando: para que serve o sistema prisional; nº de presídios e de presos no BR; presídios no PR e na região de Maringá. Prompt salvo em `docs/prompt-pesquisa-dados-prisionais.md`; RESULTADO já em `docs/fonte/pesquisa-dados-prisionais/` (o usuário subiu pelo PowerShell; amostra conferida, ver progress.md) (entrega: zip com relatorio.md, dados.json, fontes.csv, para-posts.md, brutos/). Riscos avisados: "presos" tem 2 contagens (celas × com domiciliar/tornozeleira) — escolher uma; nome oficial de "CPIM" não confirmado; frases para post precisam de aval da prof.ª.
 
 ## Onde parou (07/10, noite)
 - Site e Kit no ar no plano da Vitória (PRs #4, #5 e #6 mesclados). PR #7 mesclado em 07/10: mensagens finais à Vitória/Flauany + one-page `ajustes-guia-planilha` (onde ela ajusta guia e planilha; busca por "rif", "garant", "5 itens").
