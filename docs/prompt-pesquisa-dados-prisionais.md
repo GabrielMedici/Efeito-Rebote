@@ -1,7 +1,7 @@
 # Prompt de pesquisa de dados prisionais (para a sessão do repositório de scraping)
 
 > Criado em 07/10/2026. Uso: colar numa sessão do outro repositório (que tem harness de scraping). O resultado volta como `efeito-rebote-dados-prisionais.zip` (relatorio.md, dados.json, fontes.csv, para-posts.md, brutos/) para ser encaixado no projeto escrito e nos posts.
-> Status: prompt entregue ao usuário; pesquisa ainda NÃO rodada (ou resultado ainda não trazido para cá).
+> Status (08/10): pesquisa rodada; resultado em `docs/fonte/pesquisa-dados-prisionais/`. Amostra conferida nos originais (1.360 estab.; 727.301 estaduais em cela; CCM 960, CPIM 330, PEM 538 vagas).
 
 ````text
 # Pesquisa de dados: projeto de extensão "Efeito Rebote — o custo da reincidência"
