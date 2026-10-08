@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Lista de alunos (CPF/RG/RA/turma) para a visita: PDF para a professora, imagem para o grupo e pendências.
+"""Lista de alunos (CPF/RG/RA/turma) para a visita: PDFs para a professora, imagem para o grupo e pendências.
+
+Saídas: lista-alunos-atualizada.pdf (todos em ordem alfabética, com CPF e RG), lista-por-turno.pdf
+(nome e RA, separada em Noturno B e Matutino B, como a prof.ª pediu em 08/10) e lista-conferencia-grupo.jpg.
 
 Os dados pessoais NÃO ficam no repositório (ele é público): o usuário guarda o arquivo
 lista-alunos-dados.json e o reenvia no início da sessão. Salve-o no scratchpad, nunca no repo.
@@ -12,7 +15,6 @@ import html, json, subprocess, sys, unicodedata
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
-ENC = RAIZ / "docs/privado/lista-alunos.json.enc"
 FONTES = RAIZ / "entregas/posts/site/kit/fontes.css"
 
 
@@ -71,6 +73,31 @@ thead{{display:table-header-group}} tr{{break-inside:avoid}}
 </body></html>'''
 
 
+def html_turnos(d, al):
+    grupos = [("Noturno B", [a for a in al if a["turma"] == "Noturno B"]),
+              ("Matutino B", [a for a in al if a["turma"] == "Matutino B"]),
+              ("Turno a confirmar", [a for a in al if a["turma"] not in ("Noturno B", "Matutino B")])]
+    sec = ""
+    for t, xs in grupos:
+        if not xs:
+            continue
+        tr = "".join(f'<tr><td class=c>{i}</td><td>{html.escape(a["nome"])}</td><td class=m>{html.escape(a["ra"]) or "<span class=p>pendente</span>"}</td></tr>'
+                     for i, a in enumerate(xs, 1))
+        aviso = '<div class=sub>Estes alunos ainda não informaram se são do matutino ou do noturno.</div>' if t.startswith("Turno a") else ""
+        sec += f'<h2>{t} <small>({len(xs)})</small></h2>{aviso}<table><thead><tr><th></th><th>Nome</th><th>RA</th></tr></thead><tbody>{tr}</tbody></table>'
+    return f'''<!doctype html><html lang=pt-BR><head><meta charset=utf-8><style>
+@page{{size:A4;margin:12mm 14mm}}body{{font-family:Arial,sans-serif;font-size:9.6pt;color:#141B2D}}
+h1{{font-size:15pt;color:#1B3A8C;margin:0}} h2{{font-size:12pt;color:#1B3A8C;margin:14px 0 4px;break-after:avoid}} h2 small{{color:#4A5568;font-weight:400}}
+.sub{{color:#4A5568;margin:3px 0 6px;font-size:8.8pt}} table{{width:100%;border-collapse:collapse}}
+th{{background:#1B3A8C;color:#fff;text-align:left;padding:4px 6px;font-size:8.6pt}} td{{border-bottom:1px solid #D5DBEA;padding:3px 6px}}
+tr:nth-child(even) td{{background:#F4F6FB}} .c{{text-align:right;color:#4A5568;width:22px}} .m{{font-variant-numeric:tabular-nums;white-space:nowrap;width:120px}}
+.p{{background:#FFF1C2;color:#8A5A00;font-weight:700;padding:0 4px;border-radius:3px;font-size:8pt}} thead{{display:table-header-group}} tr{{break-inside:avoid}}
+</style></head><body>
+<h1>Lista de alunos por turno – Projeto de Extensão “Efeito Rebote: o custo da reincidência”</h1>
+<div class=sub>Direito, Unicesumar Maringá, Turma B · atualizada em {d["atualizado"]} · {len(al)} alunos · nome e RA</div>
+{sec}</body></html>'''
+
+
 def html_img(d, al):
     nomes = [(curto(a["nome"]), bool(pendentes(a))) for a in al]
     n = -(-len(nomes) // 3)
@@ -110,9 +137,11 @@ def pendencias(d, al):
     out += ["", "== Conferir =="] + [f"- {x}" for x in d["conferir"]]
     g = d["grupo"]
     out += ["", f"== Grupo: {g['total']} membros ({g['total'] - g['professora']} alunos) × {len(al)} na lista =="]
-    out += ["Sem dados (certeza): " + "; ".join(g["sem_dados_certeza"]),
+    out += [g.get("conta", ""), "Sem dados (certeza): " + "; ".join(g["sem_dados_certeza"]),
             "Apelidos não identificados: " + ", ".join(g["apelidos_nao_identificados"]),
             "Da lista e não achados no grupo: " + "; ".join(g["nao_achados_no_grupo"]),
+            "Saíram do grupo: " + "; ".join(g.get("sairam_do_grupo", [])),
+            "RA (lista de 30/09) de quem falta: " + "; ".join(f"{k} {v}" for k, v in g.get("ra_lista_30_09", {}).items()),
             "Números conhecidos: " + "; ".join(f"{k} {v}" for k, v in g["numeros"].items())]
     return "\n".join(out)
 
@@ -126,6 +155,7 @@ def main():
     al = sorted(d["alunos"], key=lambda x: chave(x["nome"]))
     (saida / "lista.html").write_text(html_pdf(d, al))
     (saida / "grupo.html").write_text(html_img(d, al))
+    (saida / "turnos.html").write_text(html_turnos(d, al))
     subprocess.run(["node", str(RAIZ / "scripts/lista_alunos_render.mjs"), str(saida)], check=True)
     print(pendencias(d, al))
 

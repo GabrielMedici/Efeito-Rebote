@@ -9,6 +9,11 @@ await p.pdf({ path: dir + "/lista-alunos-atualizada.pdf", preferCSSPageSize: tru
   headerTemplate: "<span></span>",
   footerTemplate: '<div style="font-size:7pt;width:100%;text-align:center;color:#888">Página <span class=pageNumber></span> de <span class=totalPages></span></div>',
   margin: { top: "12mm", bottom: "14mm", left: "11mm", right: "11mm" } });
+await p.goto("file://" + dir + "/turnos.html");
+await p.pdf({ path: dir + "/lista-por-turno.pdf", preferCSSPageSize: true, displayHeaderFooter: true,
+  headerTemplate: "<span></span>",
+  footerTemplate: '<div style="font-size:7pt;width:100%;text-align:center;color:#888">Página <span class=pageNumber></span> de <span class=totalPages></span></div>',
+  margin: { top: "12mm", bottom: "14mm", left: "14mm", right: "14mm" } });
 p = await b.newPage({ viewport: { width: 1080, height: 1080 } });
 await p.goto("file://" + dir + "/grupo.html");
 await p.evaluate(() => document.fonts.ready);
