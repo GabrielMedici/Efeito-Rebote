@@ -106,7 +106,8 @@ def html_img(d, al):
     cols = "".join("<ul>" + "".join(f'<li>{html.escape(s)}{"<i>●</i>" if p else ""}</li>' for s, p in nomes[i:i + n]) + "</ul>"
                    for i in range(0, len(nomes), n))
     g = d["grupo"]
-    falta = " · ".join(html.escape(x) for x in g["sem_dados_certeza"]) or "ninguém confirmado"
+    falta = " · ".join(html.escape(x) for x in g["sem_dados_certeza"])
+    bloco_falta = f'<b>Ainda não enviaram:</b><p>{falta}</p>' if falta else ""
     apel = " · ".join(html.escape(x) for x in g["apelidos_nao_identificados"])
     bloco_apel = (f'<b style="font-size:19px">Não conseguimos identificar pelo apelido:</b><p>{apel} → mande seu '
                   f'<b style="color:#141B2D;font-size:20.5px">nome completo</b></p>') if apel else ""
@@ -125,7 +126,7 @@ li i{{color:#D08A00;font-style:normal;font-size:15px;margin-left:5px;vertical-al
 <div class=top><div class=k>Efeito Rebote · Turma B</div><h1>Lista de dados para a visita</h1><div class=sub>Conferência de {d["atualizado"][:5]} · {len(al)} na lista</div></div>
 <div class=ok>✔ Já estão na lista <span>&nbsp;● = falta algum dado (CPF, RG ou turma): mande no privado</span></div>
 <div class=cols>{cols}</div>
-<div class=falta><b>Ainda não enviaram:</b><p>{falta}</p>{bloco_apel}</div>
+<div class=falta>{bloco_falta}{bloco_apel}</div>
 <div class=foot>Envie nome completo, CPF, RG, RA e turma <b>no privado</b>, não aqui no grupo.</div>
 </body></html>'''
 
