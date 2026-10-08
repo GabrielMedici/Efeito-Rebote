@@ -1,7 +1,10 @@
 # Passagem de sessão (sobrescreva a cada encerramento)
 
-**Atualizado:** 2026-10-07 (noite)
+**Atualizado:** 2026-10-08
 **Comece por aqui:** progress.md. Site e Kit no ar no plano da Vitória; falta o usuário enviar as mensagens e o one-page à Vitória e à Flauany (já no main, PR #7 mesclado).
+
+## Sessão 08/10 (curta)
+- Usuário pediu um prompt para rodar no OUTRO repositório (harness de scraping) levantando: para que serve o sistema prisional; nº de presídios e de presos no BR; presídios no PR e na região de Maringá. Prompt salvo em `docs/prompt-pesquisa-dados-prisionais.md` (entrega: zip com relatorio.md, dados.json, fontes.csv, para-posts.md, brutos/). Riscos avisados: "presos" tem 2 contagens (celas × com domiciliar/tornozeleira) — escolher uma; nome oficial de "CPIM" não confirmado; frases para post precisam de aval da prof.ª.
 
 ## Onde parou (07/10, noite)
 - Site e Kit no ar no plano da Vitória (PRs #4, #5 e #6 mesclados). PR #7 mesclado em 07/10: mensagens finais à Vitória/Flauany + one-page `ajustes-guia-planilha` (onde ela ajusta guia e planilha; busca por "rif", "garant", "5 itens").
