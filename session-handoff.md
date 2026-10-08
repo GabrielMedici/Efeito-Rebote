@@ -15,6 +15,6 @@
 
 ## Atenção
 - PR #3 (outra sessão): seus scripts de PNG/Canva já estão no main, adaptados às opções; o PR pode ser fechado.
-- Sessão encerrada em 07/10 (chat renomeado "Comunicação: calendário, site e Kit no plano da Vitória + enquetes e apresentação para stories"). Próxima tarefa ativa: F02 (regulamento, prazo sexta 12h).
+- Sessão encerrada em 07/10 (chat renomeado "OK - Comunicação: calendário, site e Kit da Vitória + stories"; o prefixo "OK" marca sessão encerrada). Próxima tarefa ativa: F02 (regulamento, prazo sexta 12h).
 - Carrossel pronto de 09/10 diz "a LEP garante assistência material e à saúde": defensável pelo art. 41, VII (direitos do preso). O que não pode é dizer que garante kit/escova.
 - Pendências antigas: F02 regulamento (sexta 12h); aval da prof.ª para R$ 150 por aluno e para a ação.
