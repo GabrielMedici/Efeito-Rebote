@@ -3,7 +3,7 @@
 **Atualizado:** 2026-10-08
 **Comece por aqui:** progress.md. Site e Kit no ar no plano da Vitória; falta o usuário enviar as mensagens e o one-page à Vitória e à Flauany (já no main, PR #7 mesclado).
 
-## Sessão 08/10 — fim (usuário deu clear)
+## Sessão 08/10 — fim (chat renomeado "OK - Pesquisa de dados prisionais (BR/PR/Maringá) + dossiê PDF para os posts")
 - Tudo no PR #9 (branch `claude/quirky-wright-osin0u`, draft, CI/Vercel verdes, sem conflito): prompt, pesquisa (`docs/fonte/pesquisa-dados-prisionais/`), dossiê PDF + `scripts/gerar_dossie_dados.py`. Falta o usuário MESCLAR.
 - Check-in automático do PR #9 armado (trig_01Rdam4ZjFmBZp3rQDs99wY1, 08/10 05h05 UTC); se o PR já estiver mesclado, só parar.
 - Divergência PEM (538 SISDEPEN × 360 DPE): nenhuma fonte explica; nos posts usar "523 presos para 360 vagas (Defensoria, mai./2025)" e perguntar à direção na visita de 04/11. Oferecido e não feito: conferir ciclo SISDEPEN jun/2025.
