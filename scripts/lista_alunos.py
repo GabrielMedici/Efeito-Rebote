@@ -122,8 +122,8 @@ li i{{color:#D08A00;font-style:normal;font-size:15px;margin-left:5px;vertical-al
 .falta b{{font-size:22px;color:#B5121B}} .falta p{{font-size:20.5px;line-height:1.35;margin-top:3px}}
 .foot{{font-size:18px;color:#4A5568;margin-top:10px}}
 </style></head><body>
-<div class=top><div class=k>Efeito Rebote · Turma B</div><h1>Lista de dados para a visita</h1><div class=sub>Conferência de {d["atualizado"][:5]} · {len(al)} já enviaram</div></div>
-<div class=ok>✔ Já estão na lista <span>&nbsp;● = falta algum dado (quase sempre a turma: Matutino B ou Noturno B)</span></div>
+<div class=top><div class=k>Efeito Rebote · Turma B</div><h1>Lista de dados para a visita</h1><div class=sub>Conferência de {d["atualizado"][:5]} · {len(al)} na lista</div></div>
+<div class=ok>✔ Já estão na lista <span>&nbsp;● = falta algum dado (CPF, RG ou turma): mande no privado</span></div>
 <div class=cols>{cols}</div>
 <div class=falta><b>Ainda não enviaram:</b><p>{falta}</p>{bloco_apel}</div>
 <div class=foot>Envie nome completo, CPF, RG, RA e turma <b>no privado</b>, não aqui no grupo.</div>
