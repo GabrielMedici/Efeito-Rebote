@@ -30,11 +30,13 @@ Cada semana produz os posts da **semana seguinte**. Só Vitória, Flauany e Gabr
 | Quinta, 12h | Edição (Anna Laura) + Líder (Vitória) | Edição final e revisão pelo checklist |
 | Quinta, 18h | Vice-líder (Flauany) | Envia o material à prof.ª Camila |
 | Sexta | Quem criou a peça + Vice-líder | Ajustes pedidos pela prof.ª e agendamento |
-| Ter, qui e sáb | Vitória, Flauany ou Gabriel | Publica só o que está aprovado. A Mayara avisa a turma e todos engajam na primeira hora |
+| Todo dia, a partir de 17/10 | Vitória, Flauany ou Gabriel | Publica só o que está aprovado: post no feed em dias alternados e story todo dia. A Mayara avisa a turma e todos engajam na primeira hora |
+
+A partir de 17/10, a Comunicação publica todos os dias: post no feed em dias alternados e story todo dia (pedido de 16/10, com a nova liderança). A semana vai de sábado a sexta e é enviada à prof.ª Camila na quinta anterior, com a programação dia a dia em `entregas/posts/programacao-17-a-23-10.md` e na página /programacao do site.
 
 Semanas 1 e 2 (posts de 09 a 17/10) estão comprimidas e são produzidas juntas: roteiro até terça, 06/10; arte e gravação até quarta, 07/10; edição e envio à prof.ª até quinta, 08/10; ajustes e agendamento na sexta, 09/10.
 
-## 3. Calendário (18 peças, de 09/10 a 14/11)
+## 3. Calendário (22 peças, de 09/10 a 14/11)
 | Data | Tema | Formato | Observação | Pilar | Roteiro | Arte e gravação | Edição | Publica |
 |---|---|---|---|---|---|---|---|---|
 | 09/10 (sex) | Apresentação do projeto | Carrossel | Carrossel de 5 imagens já pronto. Só apresenta, sem pedir doação | Conscientização | Nathan | Geraldo Jackson | — | Vitória |
@@ -43,8 +45,12 @@ Semanas 1 e 2 (posts de 09 a 17/10) estão comprimidas e são produzidas juntas:
 | 13/10 (ter) | O que a lei diz sobre higiene (LEP, arts. 12 e 14) | Reel | Fonte na tela, linguagem simples | Autoridade | Leonardo | Laura Martins | Anna Laura | Gabriel |
 | 15/10 (qui) | Os 5 itens e por que existe regra (salvável) | Carrossel | Explica as regras dos itens; o pedido de doação e os pontos de coleta só depois da autorização | Conscientização | Nathan | Geraldo Jackson | — | Vitória |
 | 17/10 (sáb) | Caixinha: pergunte sobre o sistema prisional | Story | Pergunta hostil não é respondida: vai para a Vitória | Conexão emocional | Leonardo | Mayara | — | Flauany |
+| 18/10 (dom) | O que é reincidência e de onde vem o nome do projeto | Carrossel | Diz qual conceito o número usa (Ipea, 2015); sem pedir doação | Conscientização | Nathan | Geraldo Jackson | — | Vitória |
+| 19/10 (seg) | Respostas da caixinha e quiz: existe prisão perpétua no Brasil? | Story | Resposta só com fonte; quem perguntou não aparece | Conexão emocional | Leonardo | Mayara | — | Flauany |
 | 20/10 (ter) | Dados da Defensoria Pública do PR sobre as unidades de Maringá | Carrossel | Citar relatório e ano, sem dado que identifique pessoa presa | Autoridade | Nathan | Geraldo Jackson | — | Vitória |
+| 21/10 (qua) | Quiz: estudar na prisão diminui a pena? | Story | Fonte: LEP, art. 126 | Conscientização | Leonardo | Mayara | — | Flauany |
 | 22/10 (qui) | Bastidores da triagem dos itens | Reel | Material do Registro de imagens | Conexão emocional | Leonardo | Maria Eduarda e Laura Mell | Anna Laura | Gabriel |
+| 23/10 (sex) | Enquete de pauta e chamada para a próxima semana | Story | Só temas que já têm fonte conferida | Conexão emocional | Leonardo | Mayara | — | Flauany |
 | 24/10 (sáb) | Como sua doação vira prestação de contas | Carrossel | **Só após liberação** da ação de arrecadação | Arrecadação | Nathan | Geraldo Jackson | — | Vitória |
 | 27/10 (ter) | Contagem regressiva: bilhetes da ação de arrecadação até 30/10, 23h59 | Story | **Só após liberação** da ação de arrecadação | Arrecadação | Leonardo | Mayara e Geraldo Jackson | — | Flauany |
 | 29/10 (qui) | Por que a família paga a conta (higiene e visitas) | Reel | Tom humano, sem vitimização | Conexão emocional | Leonardo | Laura Martins | Anna Laura | Gabriel |
@@ -56,7 +62,7 @@ Semanas 1 e 2 (posts de 09 a 17/10) estão comprimidas e são produzidas juntas:
 | 12/11 (qui) | Depoimentos dos alunos sobre o projeto | Reel | Sem dados de pessoas presas | Conexão emocional | Leonardo | Laura Martins | Anna Laura | Gabriel |
 | 14/11 (sáb) | Convite: siga e acompanhe o projeto | Story | Fechamento da campanha | Conscientização | Leonardo | Mayara e Geraldo Jackson | — | Flauany |
 
-Mix buscado pela líder: 40% conscientização, 30% conexão emocional, 20% autoridade e 10% arrecadação. 01/11 (domingo) e 02/11 (segunda) seguem a data do sorteio, fora do ciclo de terça, quinta e sábado.
+Mix buscado pela líder: 40% conscientização, 30% conexão emocional, 20% autoridade e 10% arrecadação. Até 15/10, os posts saíam às terças, quintas e sábados; de 17/10 em diante, o feed sai em dias alternados e há story todo dia. 01/11 (domingo) e 02/11 (segunda) seguem a data do sorteio.
 
 ## 4. Checklist da revisão (líder, quinta até 12h)
 - Fontes citadas e linguagem de quem nunca estudou Direito.

@@ -9,7 +9,7 @@ Oi, Vitória! Tudo bem? 😊
 
 Li com calma o seu *guia* e a *planilha de controle* da Comunicação. Ficaram muito bem organizados, e o fluxo da semana está claro para todo mundo.
 
-Por isso, adaptei o que eu tinha feito para seguir o *seu plano*: o site do calendário e o Kit da Comunicação agora usam as suas datas (ter, qui e sáb, de 09/10 a 14/11), as suas 18 peças, as funções de cada um e o fluxo de domingo a sexta.
+Por isso, adaptei o que eu tinha feito para seguir o *seu plano*: o site do calendário e o Kit da Comunicação agora usam as suas datas (ter, qui e sáb, de 09/10 a 14/11), as suas peças, as funções de cada um e o fluxo de domingo a sexta.
 
 👉 https://calendario-efeito-rebote.vercel.app
 
@@ -40,7 +40,7 @@ Oi, Flau! Tudo bem? 😊
 
 Li com calma o *guia* e a *planilha de controle* da Comunicação. Ficaram muito bem organizados, e o fluxo da semana está claro para todo mundo.
 
-Por isso, adaptei o que eu tinha feito para seguir o *plano de vocês*: o site do calendário e o Kit da Comunicação agora usam as datas de vocês (ter, qui e sáb, de 09/10 a 14/11), as 18 peças, as funções de cada um e o fluxo de domingo a sexta.
+Por isso, adaptei o que eu tinha feito para seguir o *plano de vocês*: o site do calendário e o Kit da Comunicação agora usam as datas de vocês (ter, qui e sáb, de 09/10 a 14/11), as peças, as funções de cada um e o fluxo de domingo a sexta.
 
 👉🏻 https://calendario-efeito-rebote.vercel.app
 
@@ -70,7 +70,7 @@ Acredito que isso também ajuda a prof.ª Camila a aprovar, pelo menos o escopo.
 *📅 Calendário da Comunicação atualizado*
 https://calendario-efeito-rebote.vercel.app
 
-_Agora segue o plano da Vitória: posts às terças, quintas e sábados, de 09/10 a 14/11._
+_Segue o plano da Comunicação: de 17/10 em diante, feed em dias alternados e story todo dia. A programação de cada semana fica em /programacao._
 
 *O que dá para fazer no site:*
 - Escolher seu nome e ver sua próxima entrega, com dia e hora

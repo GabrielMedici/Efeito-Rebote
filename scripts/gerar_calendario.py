@@ -51,7 +51,7 @@ CICLO = [
     ("Sex", "", "Quem criou a peça", "Ajustes pedidos pela prof.ª; a vice-líder agenda."),
 ]
 NO_AR = [
-    ("Ter, qui e sáb", "{Líder}, {Vice-líder} ou {Publicação e segurança}", "publicam só o que está aprovado"),
+    ("Todo dia", "{Líder}, {Vice-líder} ou {Publicação e segurança}", "publicam só o que está aprovado: feed em dias alternados e story diário"),
     ("Na hora do post", "{Interação e mobilização}", "avisa a turma no grupo; todos engajam na 1ª hora"),
     ("Comentário negativo", "{Líder}", "oculta, sem responder; quem vir manda print no grupo"),
 ]
@@ -67,10 +67,10 @@ PRIMEIRA = [
 SEMANAS = [
     ("Semana 1", "qui 08/10", ("09/10", "10/10", "11/10")),
     ("Semana 2", "qui 08/10", ("13/10", "15/10", "17/10")),
-    ("Semana 3", "qui 15/10", ("20/10", "22/10", "24/10")),
-    ("Semana 4", "qui 22/10", ("27/10", "29/10", "01/11")),
-    ("Semana 5", "qui 29/10", ("02/11", "05/11", "07/11")),
-    ("Semana 6", "qui 05/11", ("10/11", "12/11", "14/11")),
+    ("Semana 3", "qui 15/10", ("18/10", "19/10", "20/10", "21/10", "22/10", "23/10")),
+    ("Semana 4", "qui 22/10", ("24/10", "27/10", "29/10")),
+    ("Semana 5", "qui 29/10", ("01/11", "02/11", "05/11")),
+    ("Semana 6", "qui 05/11", ("07/11", "10/11", "12/11", "14/11")),
 ]
 REGRAS = [
     "Nada vai ao ar sem a aprovação da prof.ª Camila.",
@@ -196,7 +196,7 @@ def card3(posts):
     itens = "".join(post_linha(*p) for p in resto)
     if resto:
         blocos.append(f'<section class="week"><div class="wk"><h2>Encerramento</h2><span>Envio na quinta anterior</span></div><ol>{itens}</ol></section>')
-    return (f'<article class="card" id="c3">{card_head(3, "O que vai ao ar", "3 peças por semana, às terças, quintas e sábados, de 09/10 a 14/11.")}'
+    return (f'<article class="card" id="c3">{card_head(3, "O que vai ao ar", "De 09/10 a 14/11. A partir de 17/10: feed em dias alternados e story todo dia.")}'
             f'{"".join(blocos)}{rodape()}</article>')
 
 

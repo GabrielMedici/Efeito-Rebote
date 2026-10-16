@@ -30,7 +30,7 @@
     },
     {
       "id": "F05",
-      "name": "Calendário editorial (3x/semana)",
+      "name": "Calendário editorial (feed alternado + story diário a partir de 17/10)",
       "description": "Pauta de posts até a visita, com status de aprovação por post.",
       "deadline": "antes do 3º encontro",
       "dependencies": [
@@ -102,6 +102,17 @@
       ],
       "status": "not-started",
       "evidence": ""
+    },
+    {
+      "id": "F12",
+      "name": "Programação semanal das redes (feed alternado + story diário)",
+      "description": "Pedido de 16/10: posts diários a partir de 17/10, com a semana inteira produzida antes e enviada à prof.ª Camila numa página didática (dia a dia, código por peça, legenda, stories). O usuário assumiu a liderança da Comunicação. Fonte: scripts/programacao_conteudo.py + Kit; gerador: scripts/gerar_programacao.py.",
+      "deadline": "Toda sexta, para a semana de sábado a sexta; 1ª semana (17 a 23/10) aprovada até sáb 17/10, 9h",
+      "dependencies": [
+        "F05"
+      ],
+      "status": "in-progress",
+      "evidence": "2026-10-16: semana 17–23/10 gerada — entregas/posts/programacao-17-a-23-10.md e .pdf (16 págs.), entregas/posts/site/programacao/index.html (página /programacao, com aprovação por código), 14 stories PNG 1080×1920 em programacao/stories/, 7 pacotes de agendamento em programacao/pacote/ (imagens numeradas + LEIA.txt); posts novos 18/10 A/B no Kit; calendário (22 peças) e site regenerados. check.sh 0 erro; coerencia.sh sem termo novo (21 restos antigos já registrados). Falta: aprovação da prof.ª (aguardando aprovação)."
     }
   ]
 }

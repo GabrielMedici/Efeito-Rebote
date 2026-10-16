@@ -1,7 +1,13 @@
 # Passagem de sessão (sobrescreva a cada encerramento)
 
 **Atualizado:** 2026-10-16
-**Comece por aqui:** progress.md → o usuário quer iniciar uma NOVA FASE; pergunte qual antes de agir.
+**Comece por aqui:** progress.md → F12 (programação diária das redes).
+
+## Sessão 16/10 — posts diários e programação semanal
+- Pedido: posts diários a partir de 17/10, a semana toda feita antes, e um HTML didático para a prof.ª. Escolhas do usuário: feed em dias alternados + story diário; ele assumiu a liderança da Comunicação.
+- Feito: 18/10, 19/10, 21/10 e 23/10 entraram no calendário e no Kit (18/10 com opções A e B). Novos: `scripts/programacao_conteudo.py` (SEMANA), `scripts/gerar_programacao.py`, `scripts/renderizar_stories.mjs` (ids começam com dígito: usa `[id="..."]`). Página `site/programacao/`, que vai ao ar na Vercel ao mesclar; PDF `entregas/posts/programacao-17-a-23-10.pdf` para enviar antes disso.
+- Cuidado: sem `loading="lazy"` nas imagens, ou o PDF sai com os slides em branco. Escrever "Instagram", não "app" (o coerencia.sh barra "app").
+- Perguntas em aberto ao usuário: o que já foi publicado de 09 a 15/10 (o 09/10 foi a opção A ou a B? se foi a B, o 18/10 deve usar a opção B, porque a A repete o dado de 24,4%); se ele é o Gabriel; se a conta é profissional (para agendar).
 
 ## Sessão 08/10 (noite) a 16/10 — lista de alunos FECHADA (chat "Lista de alunos da visita (CPF/RG/RA) e identificação do grupo")
 - 73 alunos (47 Noturno B, 26 Matutino B), todos com CPF (dígitos verificados), RG e RA; grupo do WhatsApp 74 membros = 73 alunos + prof.ª, todos identificados. Entregue ao usuário: JSON, `lista-alunos-atualizada.pdf`, `lista-por-turno.pdf/.docx` (nome+RA), `lista-completa-por-turno.docx` (Nº, nome, CPF, RG, RA por turno) e imagem do grupo.
@@ -27,7 +33,7 @@
 - Site e Kit no ar no plano da Vitória (PRs #4, #5 e #6 mesclados). PR #7 mesclado em 07/10: mensagens finais à Vitória/Flauany + one-page `ajustes-guia-planilha` (onde ela ajusta guia e planilha; busca por "rif", "garant", "5 itens").
 - Peças de story entregues só no chat (ver progress.md). Para refazer, os geradores estavam no scratchpad desta sessão: HTML com as artes em 1080x1920 → screenshot (Playwright) → `scripts/extrair_cena_kit.mjs` adaptado (fundo em imagem + textos) → `scripts/gerar_kit_pptx.py` (caixa_texto). Roteiro de story de enquete: seção nova na skill `post-redes`.
 
-- `entregas/posts/calendario.md` é a fonte única: equipe e ciclo dom→sex do guia da Vitória, 18 peças com Pilar/Roteiro/Arte/Edição/Publica.
+- `entregas/posts/calendario.md` é a fonte única: equipe e ciclo dom→sex do guia da Vitória, 22 peças com Pilar/Roteiro/Arte/Edição/Publica.
 - Site (`scripts/modelos/calendario-site.html`): abre na agenda; seletor de nome opcional; cartão "Agora"; mapa da campanha (cor por formato, cadeado, "envio" na quinta); semana só com dias que têm algo; abas Agenda / Minhas tarefas / Como funciona. `h` dos eventos agora é texto ("18h15") ou null.
 - Kit (07/10, fim da tarde): botões "Baixar como está" (ZIP de PNG) e "Editar no Canva" (.pptx + fontes) trazidos do PR #3 e feitos por opção; `bash scripts/exportar_kit_editavel.sh` refaz tudo (36 opções com slides). O PR #3 ficou sem uso.
 - Kit: `scripts/kit_conteudo.py` (CONTEUDO[data]["opcoes"], STORIES) → `gerar_kit_comunicacao.py` → `site/kit/index.html` com botões de opção; peças de story usam `stories` no lugar de `slides`. `exportar_kit_png.mjs` exporta cada opção em `<data>/opcao-X/`.

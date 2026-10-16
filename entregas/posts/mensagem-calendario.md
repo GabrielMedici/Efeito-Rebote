@@ -11,7 +11,7 @@ _Plano da Vitória, aguardando aprovação da prof.ª Camila_
 Mandei 3 imagens. Salvem e deixem à mão:
 1. *Ache seu nome:* o que você entrega e até quando
 2. *A semana de produção:* a ordem das entregas, de domingo a sexta
-3. *O que vai ao ar:* as 18 peças, de 09/10 a 14/11
+3. *O que vai ao ar:* os posts de 09/10 a 14/11 (a partir de 17/10, feed em dias alternados e story todo dia)
 
 > ⚠️ *Semanas 1 e 2 estão comprimidas:* os posts de 09 a 17/10 são produzidos juntos.
 > 1. Artes, gravação e stories: qua 07/10, 20h (*Design, Laura Martins e Mayara*)
