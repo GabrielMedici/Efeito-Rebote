@@ -1,6 +1,6 @@
 ---
 name: post-redes
-description: Cria posts/legendas/roteiros (inclusive áudios) para as redes do Efeito Rebote e mantém o calendário 3x/semana. Use para qualquer conteúdo de divulgação.
+description: Cria posts/legendas/roteiros (inclusive áudios) para as redes do Efeito Rebote e mantém o calendário (feed em dias alternados + story diário) e a programação semanal (scripts/gerar_programacao.py). Use para qualquer conteúdo de divulgação.
 ---
 
 # Posts e redes

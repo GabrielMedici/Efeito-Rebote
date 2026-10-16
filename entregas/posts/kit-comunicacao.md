@@ -228,6 +228,46 @@ Instrução: escolha a frase mais enviada e transforme em quiz; responda no stor
 
 Instrução: os dois temas já têm conteúdo conferido (lotação: Defensoria 2025; estudo e trabalho: LEP, art. 126). O vencedor entra no carrossel de 20/10 ou na série seguinte.
 
+## Dom 18/10: O que é reincidência e de onde vem o nome do projeto
+
+### Opção A · Dado na capa: reincidência
+
+- Dado: Quase 1 em cada 4 volta a ser condenado.
+- Pergunta direta: Você sabe o que é reincidência?
+- Curiosidade: Por que um projeto de Direito se chama Efeito Rebote?
+
+24,4%. Esse foi o percentual de pessoas que voltaram a ser condenadas em até cinco anos, num estudo do Ipea para o CNJ em cinco estados, entre eles o Paraná.
+
+Reincidir é cometer um novo crime depois de uma condenação definitiva, como define o Código Penal (art. 63). O número ajuda a explicar o nome do nosso projeto: quando falta o básico dentro do sistema prisional, o custo volta para fora, na saúde e no orçamento das famílias, e o ciclo pode recomeçar.
+
+Na terça, o que a Defensoria Pública encontrou nas unidades de Maringá. Siga o perfil para acompanhar.
+
+#EfeitoRebote #SistemaPrisional #ExecuçãoPenal #DireitosHumanos #ExtensãoUniversitária
+
+### Opção B · Verdade ou mito: 4 frases sobre prisão
+
+- Desafio: Verdade ou mito? Teste o que você sabe sobre prisão.
+- Lista: 4 frases sobre prisão que muita gente repete.
+- Para salvar: O que a lei diz, em 4 respostas curtas.
+
+Quantas dessas você acertou? Existe prisão perpétua no Brasil? Estudar diminui a pena? A lei manda entregar escova de dente? Reincidir é só voltar a ser preso?
+
+A Constituição proíbe penas perpétuas e o Código Penal limita o cumprimento a 40 anos. A Lei de Execução Penal reduz 1 dia de pena a cada 12 horas de estudo. O art. 12 da mesma lei fala em instalações higiênicas, sem listar escova. E, para o Código Penal, reincidir é cometer novo crime depois de uma condenação definitiva.
+
+Salve para consultar depois. Na terça, o que a Defensoria Pública encontrou em Maringá.
+
+#EfeitoRebote #SistemaPrisional #ExecuçãoPenal #DireitosHumanos #ExtensãoUniversitária
+
+## Seg 19/10: Respostas da caixinha e quiz: existe prisão perpétua no Brasil?
+
+### Opção A · Respostas da caixinha + quiz da pena
+
+- Resposta: Vocês perguntaram, a gente respondeu com fonte.
+- Desafio: Existe prisão perpétua no Brasil? Responda antes de ver.
+- Bastidor: As perguntas da caixinha viram pauta.
+
+Instrução: a resposta de cada pergunta vai em até 3 frases, com a fonte no rodapé. Pergunta agressiva ou com dado pessoal não é respondida nem exposta.
+
 ## Ter 20/10: Dados da Defensoria Pública do PR sobre as unidades de Maringá
 
 ### Opção A · Dado local na capa: as 3 unidades
@@ -276,6 +316,16 @@ Na quinta, os bastidores da triagem. Siga o perfil.
 
 #EfeitoRebote #SistemaPrisional #ExecuçãoPenal #DireitosHumanos #ExtensãoUniversitária
 
+## Qua 21/10: Quiz: estudar na prisão diminui a pena?
+
+### Opção A · Quiz do estudo + resposta
+
+- Desafio: Estudar na prisão diminui a pena? Responda.
+- Fato: 12 horas de estudo, 1 dia a menos de pena.
+- Pergunta: Você sabia disso?
+
+Instrução: mostre a resposta no story seguinte ao quiz, com a fonte no rodapé.
+
 ## Qui 22/10: Bastidores da triagem dos itens
 
 ### Opção A · Do saco à caixa: o caminho do item
@@ -319,6 +369,16 @@ Cada item de higiene tem regra de tamanho e embalagem, e um item fora do padrão
 Na quinta que vem, por que a família acaba pagando a conta. Siga o perfil.
 
 #EfeitoRebote #SistemaPrisional #ExecuçãoPenal #DireitosHumanos #ExtensãoUniversitária
+
+## Sex 23/10: Enquete de pauta e chamada para a próxima semana
+
+### Opção A · Enquete de pauta + chamada da semana
+
+- Escolha: Você decide o próximo tema do Efeito Rebote.
+- Resumo: Os 3 posts da semana em um story.
+- Convite: Vote e acompanhe.
+
+Instrução: os dois temas da enquete já têm conteúdo com fonte (LEP, art. 126; Reel de 29/10). O vencedor entra na programação de 24 a 30/10.
 
 ## Sáb 24/10: Como sua doação vira prestação de contas
 

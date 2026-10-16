@@ -118,7 +118,7 @@ CONTEUDO = {
              {"tipo": "passos", "eb": "O nome", "t": "Quando falta o básico lá dentro, o custo volta para fora.",
               "itens": ["Falta o básico na unidade prisional", "Saúde e vínculos com a família se desgastam", "A pessoa sai sem apoio, e o ciclo pode recomeçar"],
               "volta": True, "ponte": "E o que vem por aí?"},
-             {"tipo": "serie", "eb": "Nos próximos dias", "t": "Um tema com fonte, três vezes por semana.",
+             {"tipo": "serie", "eb": "Nos próximos dias", "t": "Um tema com fonte a cada post.",
               "itens": [("Dom 11/10", "O efeito rebote em 30 segundos"), ("Ter 13/10", "O que a lei diz sobre higiene"), ("Qui 15/10", "Os 5 itens e por que existe regra")],
               "ponte": "Último slide"},
              final("No domingo", "O efeito rebote em 30 segundos."),
@@ -468,6 +468,82 @@ CONTEUDO = {
          "arte": "Duas opções curtas no adesivo de enquete; fundo azul."},
     ]},
 
+    # ------------------------------------------------------------------ 18/10 · carrossel · Conscientização
+    "18/10": {"opcoes": [
+        {"nome": "A · Dado na capa: reincidência",
+         "objetivo": "Explicar o que é reincidência, com o número do Ipea, e de onde vem o nome do projeto. Abre a semana e anuncia os posts de terça e quinta.",
+         "slides": [
+             {"tipo": "capa", "eb": "Você sabe o que é reincidência?", "t": "Quase 1 em cada 4 volta a ser condenado.",
+              "p": "O que esse número quer dizer e por que ele pesa também do lado de fora.", "fonte": "Ipea para o CNJ, 2015, em 5 estados"},
+             S_CONCEITO,
+             dict(S_244, ponte="E por que isso importa para quem está fora?"),
+             {"tipo": "passos", "eb": "O efeito rebote", "t": "Quando falta o básico lá dentro, o custo volta para fora.",
+              "itens": ["Falta o básico na unidade prisional", "Saúde e vínculos com a família se desgastam", "A pessoa sai sem apoio, e o ciclo pode recomeçar"],
+              "volta": True, "ponte": "E o que vem esta semana?"},
+             {"tipo": "serie", "eb": "Nesta semana", "t": "Post no feed em dias alternados e story todo dia.",
+              "itens": [("Ter 20/10", "O que a Defensoria encontrou em Maringá"), ("Qui 22/10", "O checklist da Triagem")],
+              "ponte": "Último slide"},
+             final("Na terça", "O que a Defensoria encontrou nas unidades de Maringá."),
+         ],
+         "ganchos": [("Dado", "Quase 1 em cada 4 volta a ser condenado."),
+                     ("Pergunta direta", "Você sabe o que é reincidência?"),
+                     ("Curiosidade", "Por que um projeto de Direito se chama Efeito Rebote?")],
+         "legenda": "24,4%. Esse foi o percentual de pessoas que voltaram a ser condenadas em até cinco anos, num estudo do Ipea para o CNJ em cinco estados, entre eles o Paraná.\n\nReincidir é cometer um novo crime depois de uma condenação definitiva, como define o Código Penal (art. 63). O número ajuda a explicar o nome do nosso projeto: quando falta o básico dentro do sistema prisional, o custo volta para fora, na saúde e no orçamento das famílias, e o ciclo pode recomeçar.\n\nNa terça, o que a Defensoria Pública encontrou nas unidades de Maringá. Siga o perfil para acompanhar.\n\n" + HASH,
+         "fontes": [F_CP, F_REINC],
+         "cuidados": ["Se a opção B de 09/10 já foi ao ar, este post repete a capa: use a opção B deste dia.",
+                      "Diga sempre qual conceito de reincidência o número usa: nunca compare 24,4% com 36% a 42%.",
+                      "Não use foto de pessoas privadas de liberdade. Não pede doação."],
+         "arte": "Padrão novo aprovado: capa azul com o dado, pergunta-ponte no rodapé e bolinhas de progresso. Seta de rebote na capa e no fechamento."},
+
+        {"nome": "B · Verdade ou mito: 4 frases sobre prisão",
+         "objetivo": "Corrigir quatro ideias comuns sobre prisão com a lei, num carrossel para salvar. Serve se o dado de reincidência já tiver saído em 09/10.",
+         "slides": [
+             {"tipo": "capa", "eb": "Verdade ou mito?", "t": "4 frases sobre prisão que muita gente repete.", "p": "A resposta de cada uma está na lei."},
+             {"tipo": "texto", "eb": "1 · Mito", "t": "“Existe prisão perpétua no Brasil.”",
+              "box": "A **Constituição** proíbe penas de caráter perpétuo (art. 5º, XLVII, b). O **Código Penal** limita o cumprimento a 40 anos (art. 75).",
+              "ponte": "E o estudo?"},
+             {"tipo": "texto", "eb": "2 · Verdade", "t": "“Estudar na prisão diminui a pena.”",
+              "box": "A **Lei de Execução Penal** prevê 1 dia a menos de pena a cada 12 horas de estudo, divididas em pelo menos 3 dias (art. 126, § 1º, I).",
+              "ponte": "E a escova de dente?"},
+             {"tipo": "texto", "eb": "3 · Mito", "t": "“A lei manda entregar escova de dente.”",
+              "box": "O **art. 12 da LEP** fala em instalações higiênicas. Escova não aparece na lista; o art. 14 inclui atendimento odontológico.",
+              "ponte": "E a reincidência?"},
+             {"tipo": "texto", "eb": "4 · Mito", "t": "“Reincidir é só voltar a ser preso.”",
+              "box": "Para o **Código Penal** (art. 63), reincidir é cometer novo crime depois de uma condenação definitiva. Voltar à prisão sem nova condenação é outra coisa.",
+              "ponte": "Último slide"},
+             final("Na terça", "O que a Defensoria encontrou nas unidades de Maringá."),
+         ],
+         "ganchos": [("Desafio", "Verdade ou mito? Teste o que você sabe sobre prisão."),
+                     ("Lista", "4 frases sobre prisão que muita gente repete."),
+                     ("Para salvar", "O que a lei diz, em 4 respostas curtas.")],
+         "legenda": "Quantas dessas você acertou? Existe prisão perpétua no Brasil? Estudar diminui a pena? A lei manda entregar escova de dente? Reincidir é só voltar a ser preso?\n\nA Constituição proíbe penas perpétuas e o Código Penal limita o cumprimento a 40 anos. A Lei de Execução Penal reduz 1 dia de pena a cada 12 horas de estudo. O art. 12 da mesma lei fala em instalações higiênicas, sem listar escova. E, para o Código Penal, reincidir é cometer novo crime depois de uma condenação definitiva.\n\nSalve para consultar depois. Na terça, o que a Defensoria Pública encontrou em Maringá.\n\n" + HASH,
+         "fontes": [F_CF, F_CP, LEP + ", arts. 12, 14 e 126."],
+         "cuidados": ["Os quizzes dos stories de 19 e 21/10 usam duas destas frases: se esta opção for ao ar, troque os quizzes pela barra de emoji ou pela caixinha.",
+                      "Tom de explicação, sem ironia com quem acreditava no mito."],
+         "arte": "Selo “VERDADE” em azul ou “MITO” em vermelho no rótulo de cada slide; a frase entre aspas como título."},
+    ]},
+
+    # ------------------------------------------------------------------ 19/10 · story · Conexão emocional
+    "19/10": {"opcoes": [
+        {"nome": "A · Respostas da caixinha + quiz da pena",
+         "objetivo": "Responder com fonte as perguntas recebidas na caixinha de 17/10 e corrigir um mito comum com um quiz.",
+         "stories": [
+             {"tipo": "repost", "nome": "Resposta da caixinha", "quando": "19/10, 12h", "para": "Mostra que a pergunta foi levada a sério.",
+              "q": "Vocês perguntaram", "t": "[Pergunta recebida na caixinha]", "cta": "Resposta com fonte no próximo story",
+              "mais": ["Use de 2 a 3 perguntas reais, uma por story, sem nome nem foto de quem perguntou.", "Sem pergunta boa? Pule este story e publique só o quiz."]},
+             {"tipo": "quiz", "nome": "Quiz", "quando": "19/10, 19h", "para": "Corrige um mito com a lei.",
+              "t": "Verdade ou mito?", "q": "Existe prisão perpétua no Brasil?", "ops": ["Verdade", "Mito"], "mais": [],
+              "resp": "Mito. A Constituição proíbe penas de caráter perpétuo (art. 5º, XLVII, b), e o Código Penal limita o cumprimento a 40 anos (art. 75)."},
+         ],
+         "ganchos": [("Resposta", "Vocês perguntaram, a gente respondeu com fonte."),
+                     ("Desafio", "Existe prisão perpétua no Brasil? Responda antes de ver."),
+                     ("Bastidor", "As perguntas da caixinha viram pauta.")],
+         "legenda": "Instrução: a resposta de cada pergunta vai em até 3 frases, com a fonte no rodapé. Pergunta agressiva ou com dado pessoal não é respondida nem exposta.",
+         "fontes": [F_CF, F_CP, "As fontes de cada resposta da caixinha, conforme o tema."],
+         "cuidados": ["Nunca responda sobre um caso ou uma pessoa específica.", "Resposta sem fonte não vai ao ar: “Vamos pesquisar e respondemos” é melhor que um palpite."],
+         "arte": "Pergunta em caixa branca sobre fundo azul; resposta em fundo claro, com a fonte no rodapé."},
+    ]},
+
     # ------------------------------------------------------------------ 20/10 · carrossel · Autoridade
     "20/10": {"opcoes": [
         {"nome": "A · Dado local na capa: as 3 unidades",
@@ -542,6 +618,26 @@ CONTEUDO = {
          "arte": "Slide da lei com o artigo literal na caixa branca. A citação do STF entre aspas, com [...] no corte."},
     ]},
 
+    # ------------------------------------------------------------------ 21/10 · story · Conscientização
+    "21/10": {"opcoes": [
+        {"nome": "A · Quiz do estudo + resposta",
+         "objetivo": "Mostrar, com a lei, que estudar e trabalhar reduzem a pena, um dos caminhos para não voltar ao crime.",
+         "stories": [
+             {"tipo": "quiz", "nome": "Quiz", "quando": "21/10, 12h", "para": "Engaja e ensina uma regra da LEP.",
+              "t": "Verdade ou mito?", "q": "Estudar na prisão diminui a pena?", "ops": ["Verdade", "Mito"], "mais": [],
+              "resp": "Verdade. A LEP prevê 1 dia a menos de pena a cada 12 horas de estudo, divididas em pelo menos 3 dias, e 1 dia a cada 3 dias de trabalho (art. 126, § 1º)."},
+             {"tipo": "deslize", "nome": "Barra de emoji", "quando": "21/10, 19h", "para": "Interação rápida no fim do dia.",
+              "t": "Seja sincero", "q": "Você sabia que estudo e trabalho reduzem a pena?", "mais": []},
+         ],
+         "ganchos": [("Desafio", "Estudar na prisão diminui a pena? Responda."),
+                     ("Fato", "12 horas de estudo, 1 dia a menos de pena."),
+                     ("Pergunta", "Você sabia disso?")],
+         "legenda": "Instrução: mostre a resposta no story seguinte ao quiz, com a fonte no rodapé.",
+         "fontes": [LEP + ", art. 126, § 1º, I e II."],
+         "cuidados": ["Não diga que todas as unidades oferecem estudo ou trabalho: a lei prevê a remição, mas a oferta varia."],
+         "arte": "Fundo azul no quiz; resposta em fundo claro com “VERDADE” em destaque."},
+    ]},
+
     # ------------------------------------------------------------------ 22/10 · Reel · Conexão emocional
     "22/10": {"opcoes": [
         {"nome": "A · Do saco à caixa: o caminho do item",
@@ -608,6 +704,25 @@ CONTEUDO = {
          "fontes": [F_TRIAGEM],
          "cuidados": ["A fala do quadro 4 tem de ser real: não escreva o depoimento pela pessoa.", "Nome e imagem só com autorização.", "Sem pedido de doação se a arrecadação não estiver liberada."],
          "arte": "9:16, plano médio com a mesa da triagem ao fundo. Legenda na tela com a fala completa."},
+    ]},
+
+    # ------------------------------------------------------------------ 23/10 · story · Conexão emocional
+    "23/10": {"opcoes": [
+        {"nome": "A · Enquete de pauta + chamada da semana",
+         "objetivo": "Deixar o público escolher um tema da próxima semana e lembrar o que saiu no feed.",
+         "stories": [
+             {"tipo": "enquete", "nome": "Enquete de pauta", "quando": "23/10, 12h", "para": "O público decide parte da pauta.",
+              "t": "Você escolhe", "q": "Qual tema você quer ver primeiro?", "ops": ["Estudo e trabalho na prisão", "Por que a família paga a conta"], "mais": []},
+             {"tipo": "repost", "nome": "Resumo da semana", "quando": "23/10, 19h", "para": "Leva quem chegou agora aos posts da semana.",
+              "q": "Perdeu algum? Esta semana no feed", "t": "Reincidência · Maringá · Triagem", "cta": "Toque no perfil e confira", "mais": []},
+         ],
+         "ganchos": [("Escolha", "Você decide o próximo tema do Efeito Rebote."),
+                     ("Resumo", "Os 3 posts da semana em um story."),
+                     ("Convite", "Vote e acompanhe.")],
+         "legenda": "Instrução: os dois temas da enquete já têm conteúdo com fonte (LEP, art. 126; Reel de 29/10). O vencedor entra na programação de 24 a 30/10.",
+         "fontes": [LEP + ", art. 126.", "Roteiro do Reel de 29/10 no kit."],
+         "cuidados": ["Só ofereça na enquete temas que já têm fonte conferida.", "Não anuncie a ação de arrecadação antes da liberação."],
+         "arte": "Duas opções curtas no adesivo; fundo azul. O resumo usa as capas dos três posts lado a lado."},
     ]},
 
     # ------------------------------------------------------------------ 24/10 · carrossel · Arrecadação (TRAVADO)

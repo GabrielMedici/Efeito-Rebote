@@ -9,3 +9,4 @@ todo o valor (arrecadado )?(vira|será usado|compra)|07/10: o prêmio sai do val
 a lei garante (esses )?itens|07/10: a LEP (art. 12) fala em "instalações higiênicas" e o art. 14 inclui atendimento odontológico; não diga que ela garante itens ou escova
 segundas, quartas e sextas|seg(unda)?, qua(rta)? e sex(ta)?|Seg, qua, sex|07/10: a Comunicação publica às terças, quintas e sábados (plano da líder Vitória)
 [Aa]linhamento online|07/10: no plano da líder, o alinhamento é o encontro de segunda, 18h15
+18 peças|3 peças por semana|3x/semana|três vezes por semana|posts às terças, quintas e sábados|16/10: a partir de 17/10 a Comunicação publica todo dia (feed em dias alternados + story diário); programação semanal em scripts/gerar_programacao.py
