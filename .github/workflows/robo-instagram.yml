@@ -1,0 +1,54 @@
+# Robô de publicação do Instagram: a cada 15 minutos publica as peças aprovadas cujo horário chegou.
+# Ele só faz algo depois que o secret IG_TOKEN existir e a peça estiver em "aprovadas"
+# (scripts/programacao_conteudo.py). Guia: docs/robo-instagram.md
+name: Robô do Instagram
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+    inputs:
+      modo:
+        description: "publicar, verificar (testa a chave) ou simular (mostra o que faria)"
+        default: verificar
+        type: choice
+        options: [verificar, simular, publicar]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: robo-instagram
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Rodar o robô
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          MODO: ${{ inputs.modo || 'publicar' }}
+        run: |
+          case "$MODO" in
+            verificar) python3 scripts/robo_instagram.py --verificar ;;
+            simular)   python3 scripts/robo_instagram.py --simular ;;
+            *)         python3 scripts/robo_instagram.py ;;
+          esac
+      - name: Guardar o que foi publicado
+        if: always()
+        run: |
+          git add scripts/robo_publicados.json 2>/dev/null || exit 0
+          git diff --cached --quiet && exit 0
+          git config user.name "robo-efeito-rebote"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Robô do Instagram: registra publicações [skip ci]"
+          for i in 1 2 3 4; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep $((i * 5))
+          done
+          exit 1

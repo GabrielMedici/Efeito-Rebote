@@ -1,0 +1,86 @@
+{
+ "semana": "17-a-23-10",
+ "pausado": false,
+ "itens": [
+  {
+   "cod": "18-P",
+   "quando": "2026-10-18T18:00:00-03:00",
+   "tipo": "carrossel",
+   "imagens": [
+    "https://calendario-efeito-rebote.vercel.app/programacao/ig/17-a-23-10/18-P-1.jpg",
+    "https://calendario-efeito-rebote.vercel.app/programacao/ig/17-a-23-10/18-P-2.jpg",
+    "https://calendario-efeito-rebote.vercel.app/programacao/ig/17-a-23-10/18-P-3.jpg",
+    "https://calendario-efeito-rebote.vercel.app/programacao/ig/17-a-23-10/18-P-4.jpg",
+    "https://calendario-efeito-rebote.vercel.app/programacao/ig/17-a-23-10/18-P-5.jpg",
+    "https://calendario-efeito-rebote.vercel.app/programacao/ig/17-a-23-10/18-P-6.jpg"
+   ],
+   "legenda": "24,4%. Esse foi o percentual de pessoas que voltaram a ser condenadas em até cinco anos, num estudo do Ipea para o CNJ em cinco estados, entre eles o Paraná.\n\nReincidir é cometer um novo crime depois de uma condenação definitiva, como define o Código Penal (art. 63). O número ajuda a explicar o nome do nosso projeto: quando falta o básico dentro do sistema prisional, o custo volta para fora, na saúde e no orçamento das famílias, e o ciclo pode recomeçar.\n\nNa terça, o que a Defensoria Pública encontrou nas unidades de Maringá. Siga o perfil para acompanhar.\n\n#EfeitoRebote #SistemaPrisional #ExecuçãoPenal #DireitosHumanos #ExtensãoUniversitária",
+   "aprovado": false
+  },
+  {
+   "cod": "18-S3",
+   "quando": "2026-10-18T21:00:00-03:00",
+   "tipo": "story",
+   "imagens": [
+    "https://calendario-efeito-rebote.vercel.app/programacao/ig/17-a-23-10/18-S3-1.jpg"
+   ],
+   "legenda": "",
+   "aprovado": false
+  },
+  {
+   "cod": "19-S3",
+   "quando": "2026-10-19T21:00:00-03:00",
+   "tipo": "story",
+   "imagens": [
+    "https://calendario-efeito-rebote.vercel.app/programacao/ig/17-a-23-10/19-S3-1.jpg"
+   ],
+   "legenda": "",
+   "aprovado": false
+  },
+  {
+   "cod": "20-P",
+   "quando": "2026-10-20T18:00:00-03:00",
+   "tipo": "carrossel",
+   "imagens": [
+    "https://calendario-efeito-rebote.vercel.app/programacao/ig/17-a-23-10/20-P-1.jpg",
+    "https://calendario-efeito-rebote.vercel.app/programacao/ig/17-a-23-10/20-P-2.jpg",
+    "https://calendario-efeito-rebote.vercel.app/programacao/ig/17-a-23-10/20-P-3.jpg",
+    "https://calendario-efeito-rebote.vercel.app/programacao/ig/17-a-23-10/20-P-4.jpg",
+    "https://calendario-efeito-rebote.vercel.app/programacao/ig/17-a-23-10/20-P-5.jpg",
+    "https://calendario-efeito-rebote.vercel.app/programacao/ig/17-a-23-10/20-P-6.jpg"
+   ],
+   "legenda": "Na Penitenciária Estadual de Maringá, eram 523 pessoas para 360 vagas no dia da inspeção, em maio de 2025.\n\nA Defensoria Pública do Paraná inspecionou as três unidades prisionais da cidade em 2025. As três estavam acima da capacidade. Faltavam escova e creme dental na Penitenciária Estadual e na Casa de Custódia, e a direção da Colônia Penal Industrial relatou que o kit de higiene não tem chegado completo.\n\nO retrato combina com o que o STF reconheceu em 2023 na ADPF 347: a falta de higiene nas prisões brasileiras é uma violação de direitos.\n\nNa quinta, os bastidores da triagem. Siga o perfil.\n\n#EfeitoRebote #SistemaPrisional #ExecuçãoPenal #DireitosHumanos #ExtensãoUniversitária",
+   "aprovado": false
+  },
+  {
+   "cod": "21-S2",
+   "quando": "2026-10-21T19:00:00-03:00",
+   "tipo": "story",
+   "imagens": [
+    "https://calendario-efeito-rebote.vercel.app/programacao/ig/17-a-23-10/21-S2-1.jpg"
+   ],
+   "legenda": "",
+   "aprovado": false
+  },
+  {
+   "cod": "22-S3",
+   "quando": "2026-10-22T21:00:00-03:00",
+   "tipo": "story",
+   "imagens": [
+    "https://calendario-efeito-rebote.vercel.app/programacao/ig/17-a-23-10/22-S3-1.jpg"
+   ],
+   "legenda": "",
+   "aprovado": false
+  },
+  {
+   "cod": "23-S2",
+   "quando": "2026-10-23T19:00:00-03:00",
+   "tipo": "story",
+   "imagens": [
+    "https://calendario-efeito-rebote.vercel.app/programacao/ig/17-a-23-10/23-S2-1.jpg"
+   ],
+   "legenda": "",
+   "aprovado": false
+  }
+ ]
+}

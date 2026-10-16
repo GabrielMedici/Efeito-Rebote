@@ -7,6 +7,7 @@ Saídas:
   entregas/posts/programacao-<semana>.md / .pdf  cópia em texto (conferida pelo check.sh) e PDF para enviar
 Uso: python3 scripts/gerar_programacao.py   (depois de bash scripts/exportar_kit_editavel.sh, se o kit mudou)"""
 import html as _html
+import json
 import os
 import re
 import subprocess
@@ -23,6 +24,19 @@ OUT = os.path.join(SITE, "programacao")
 e = _html.escape
 STATUS = "Aguardando aprovação da prof.ª Camila"
 COM_PNG = ("caixinha", "enquete", "quiz", "deslize", "resposta", "resumo")
+ANO = 2026
+URL_SITE = "https://calendario-efeito-rebote.vercel.app/programacao"
+
+
+def robo(pc):
+    """Peças que o robô (scripts/robo_instagram.py) consegue publicar: imagem pronta, sem adesivo nem vídeo."""
+    return pc["tipo"] in ("resposta", "resumo") or (pc["tipo"] == "feed" and pc.get("fmt") == "Carrossel")
+
+
+def quem(pc):
+    if robo(pc):
+        return "Quem publica: o robô do projeto, no horário, só depois da sua aprovação."
+    return "Quem publica: a equipe de Comunicação, à mão, no Instagram."
 NOME_TIPO = {"repost": "Story · compartilhar o post", "caixinha": "Story · caixinha de perguntas", "enquete": "Story · enquete",
              "quiz": "Story · quiz", "deslize": "Story · barra de emoji", "resposta": "Story · resposta com fonte",
              "respostas": "Story · respostas da caixinha", "resumo": "Story · resumo da semana"}
@@ -263,7 +277,8 @@ def peca_feed(pc):
            f'<button class="btn no-print" type="button" data-copiar="{lid}" data-rotulo="Copiar legenda">Copiar legenda</button></div>')
     fontes = "<b>Fontes</b><ul class=\"lista\">" + "".join(f"<li>{e(f)}</li>" for f in o["fontes"]) + "</ul>"
     cuid = "<details><summary><b>O que a equipe confere antes de publicar</b></summary><ul class=\"lista\">" + "".join(f"<li>{e(c)}</li>" for c in o["cuidados"]) + "</ul></details>"
-    return f'<article class="peca feed">{cab}<p>{e(o["objetivo"])}</p>{corpo}{leg}<div>{fontes}</div>{cuid}{aprovacao(pc["cod"])}</article>'
+    return (f'<article class="peca feed">{cab}<p>{e(o["objetivo"])}</p>{corpo}{leg}<div>{fontes}</div>{cuid}'
+            f'<p class="small">{e(quem(pc))}</p>{aprovacao(pc["cod"])}</article>')
 
 
 def peca_story(pc, stories_rel):
@@ -283,7 +298,7 @@ def peca_story(pc, stories_rel):
         txt.append(f'<p><b>{e(pc["t"])}</b> {e(pc["q"])}: ' + ", ".join(f"{e(d)} ({e(sem_md(t))})" for d, _, t in pc["thumbs"]) + ".</p>")
     if pc.get("para"):
         txt.append(f'<p class="small">Para quê: {e(pc["para"])}</p>')
-    txt.append(f'<p class="small">Como publicar: {e(COMO[pc["tipo"]])}</p>')
+    txt.append(f'<p class="small">Como publicar: {e(COMO[pc["tipo"]])}<br>{e(quem(pc))}</p>')
     if pc.get("nota"):
         txt.append(f'<p class="aviso"><b>Atenção:</b> {e(pc["nota"])}</p>')
     cab = (f'<div class="cab"><span class="cod s">{pc["cod"]}</span><span class="hora">{e(pc["hora"])}</span>'
@@ -328,6 +343,7 @@ def pagina(sem, selo):
 <li>Os horários são sugestões; quem publica pode ajustar em até 1 hora.</li>
 <li>Nos stories com enquete, quiz ou caixinha, a imagem já está pronta; o adesivo branco é colocado no próprio Instagram.</li>
 <li>Para responder, marque “Aprovado” ou “Ajustar” em cada peça e copie a resposta no fim da página. Também vale escrever no WhatsApp, por exemplo: <i>“18-P ok, 20-S2 ajustar: trocar a pergunta”</i>.</li>
+<li>As peças com imagem pronta (carrosséis e respostas dos quizzes) são publicadas por um robô do projeto no horário marcado, só depois da aprovação. As demais, a equipe publica à mão.</li>
 <li>Nada é publicado sem a sua aprovação. Nenhuma peça desta semana pede doação ou divulga a ação de arrecadação.</li></ol>
 <p class="aviso">{e(sem["limite"])}</p></section>
 
@@ -358,7 +374,7 @@ def markdown(sem):
                     if s.get("nota"):
                         partes.append(s["nota"])
                     L.append(f"{i}. " + " | ".join(partes))
-                L += ["", "Legenda:", "", o["legenda"], "", "Fontes:"] + [f"- {f}" for f in o["fontes"]] + [""]
+                L += ["", "Legenda:", "", o["legenda"], "", "Fontes:"] + [f"- {f}" for f in o["fontes"]] + ["", quem(pc), ""]
             else:
                 L += [f"### {pc['cod']} · {pc['hora']} · {NOME_TIPO[pc['tipo']]}: {pc['titulo']}", ""]
                 for k, rot in (("t", "Título"), ("q", "Texto"), ("p", "Resposta")):
@@ -371,6 +387,7 @@ def markdown(sem):
                 if pc.get("nota"):
                     L.append(f"- Atenção: {pc['nota']}")
                 L.append(f"- Como publicar: {COMO[pc['tipo']]}")
+                L.append(f"- {quem(pc)}")
                 L.append("")
     return "\n".join(L) + "\n"
 
@@ -406,6 +423,49 @@ def pacotes(sem):
         print("ok", os.path.relpath(zp, RAIZ))
 
 
+def quando(data, hora):
+    h, _, m = hora.partition("h")
+    d, mes = data.split("/")
+    return f"{ANO}-{int(mes):02d}-{int(d):02d}T{int(h):02d}:{int(m or 0):02d}:00-03:00"
+
+
+def agenda(sem):
+    """Agenda do robô: entregas/posts/site/programacao/agenda/<semana>.json + imagens JPEG em ig/<semana>/
+    (o Instagram só aceita JPEG por URL pública). Um arquivo por semana, para a semana nova não apagar a anterior."""
+    from PIL import Image
+    pecas = {pc["cod"]: pc for d in sem["dias"] for pc in d["pecas"]}
+    for cod in sem.get("aprovadas", []):
+        if cod not in pecas:
+            raise SystemExit(f"aprovadas: {cod} não existe na semana")
+        if not robo(pecas[cod]):
+            raise SystemExit(f"aprovadas: {cod} não é publicada pelo robô (é manual)")
+    pasta = os.path.join(OUT, "ig", sem["slug"])
+    os.makedirs(pasta, exist_ok=True)
+    itens = []
+    for d in sem["dias"]:
+        for pc in d["pecas"]:
+            if not robo(pc):
+                continue
+            if pc["tipo"] == "feed":
+                origens = [os.path.join(SITE, "kit", "png", pc["sg"], f"slide-{i + 1}.png") for i in range(len(pc["o"]["slides"]))]
+            else:
+                origens = [os.path.join(OUT, "stories", f"{pc['cod']}.png")]
+            urls = []
+            for i, src in enumerate(origens, 1):
+                nome = f"{pc['cod']}-{i}.jpg"
+                Image.open(src).convert("RGB").save(os.path.join(pasta, nome), "JPEG", quality=90, optimize=True)
+                urls.append(f"{URL_SITE}/ig/{sem['slug']}/{nome}")
+            itens.append({"cod": pc["cod"], "quando": quando(d["data"], pc["hora"]),
+                          "tipo": "carrossel" if pc["tipo"] == "feed" else "story", "imagens": urls,
+                          "legenda": pc["o"]["legenda"] if pc["tipo"] == "feed" else "",
+                          "aprovado": pc["cod"] in sem.get("aprovadas", [])})
+    arq = os.path.join(OUT, "agenda", f"{sem['slug']}.json")
+    os.makedirs(os.path.dirname(arq), exist_ok=True)
+    json.dump({"semana": sem["slug"], "pausado": bool(sem.get("pausado")), "itens": itens},
+              open(arq, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    print("ok", os.path.relpath(arq, RAIZ), f"({sum(i['aprovado'] for i in itens)}/{len(itens)} aprovadas)")
+
+
 def main():
     sem = dados()
     selo = selo_data_uri()
@@ -421,6 +481,7 @@ def main():
     subprocess.run(["node", os.path.join(RAIZ, "scripts", "renderizar.mjs"), os.path.join(OUT, "index.html"), pdf], check=True)
     subprocess.run([sys.executable, os.path.join(RAIZ, "scripts", "limpar_metadados.py"), pdf], check=False)
     pacotes(sem)
+    agenda(sem)
 
 
 if __name__ == "__main__":
