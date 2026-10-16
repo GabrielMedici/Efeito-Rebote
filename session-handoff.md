@@ -3,6 +3,9 @@
 **Atualizado:** 2026-10-16
 **Comece por aqui:** progress.md → F12 (programação diária das redes).
 
+## Sessão 16/10 (fim) — uma página para a prof.ª
+- A prof.ª não aprova pelo site. `gerar_programacao.py` agora também gera `uma-pagina.html` e `entregas/posts/programacao-<semana>-uma-pagina.pdf/.jpg` (A4, 2 colunas, dia → horário/código → post com slides e legenda, stories). Se uma semana não couber em 1 página, reduzir legendas no CSS_UMA (o conteúdo vai até ~1104 de 1123 px).
+
 ## Sessão 16/10 — posts diários e programação semanal
 - Pedido: posts diários a partir de 17/10, a semana toda feita antes, e um HTML didático para a prof.ª. Escolhas do usuário: feed em dias alternados + story diário; ele assumiu a liderança da Comunicação.
 - Feito: 18/10, 19/10, 21/10 e 23/10 entraram no calendário e no Kit (18/10 com opções A e B). Novos: `scripts/programacao_conteudo.py` (SEMANA), `scripts/gerar_programacao.py`, `scripts/renderizar_stories.mjs` (ids começam com dígito: usa `[id="..."]`). Página `site/programacao/`, que vai ao ar na Vercel ao mesclar; PDF `entregas/posts/programacao-17-a-23-10.pdf` para enviar antes disso.
