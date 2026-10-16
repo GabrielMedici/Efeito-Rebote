@@ -484,6 +484,8 @@ nav a{flex:0 0 auto;background:#fff;border:1px solid #DCE1EC;border-radius:16px;
 .leg{white-space:pre-wrap;font-size:15px;background:#F8F9FC;border-left:3px solid #1B3A8C;border-radius:0 6px 6px 0;padding:10px 12px}
 .leg-t{font-size:13px;font-weight:700;color:#4A5568;text-transform:uppercase;letter-spacing:.04em;margin:10px 0 4px}
 .sto{display:block;width:62%;max-width:260px;aspect-ratio:9/16;object-fit:cover;border-radius:10px;border:1px solid #DCE1EC;margin:6px 0 10px}
+.rep{display:flex;align-items:center;justify-content:center;width:62%;max-width:260px;aspect-ratio:9/16;background:#1B3A8C;border-radius:10px;margin:6px 0 10px}
+.rep img{width:80%;aspect-ratio:4/5;border:3px solid #fff;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,.35)}
 .vz{display:flex;align-items:center;justify-content:center;text-align:center;width:62%;max-width:260px;aspect-ratio:9/16;border:2px dashed #B8C0D4;border-radius:10px;color:#4A5568;font-size:14px;padding:12px;margin:6px 0 10px}
 .fim{margin-top:22px;font-size:14px;color:#4A5568;text-align:center}
 """
@@ -515,7 +517,7 @@ def web_aprovar(sem, selo):
                     im = f'<img class="sto" src="../stories/{pc["cod"]}.png" alt="Story {pc["cod"]}">'
                 elif pc["tipo"] == "repost":
                     feed = [x["cod"] for x in d["pecas"] if x["tipo"] == "feed"][0]
-                    im = f'<img class="sto" src="{up(capas[feed])}" alt="Capa do post {feed}">'
+                    im = f'<div class="rep"><img src="{up(capas[feed])}" alt="Capa do post {feed}"></div>'
                 else:
                     im = '<div class="vz">A imagem é montada com as perguntas que chegarem na caixinha.</div>'
                 linhas += f'<div class="pc">{cab}<p class="desc">Story · {texto_story(pc)}</p>{im}</div>'
