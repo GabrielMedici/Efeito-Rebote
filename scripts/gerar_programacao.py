@@ -5,6 +5,7 @@ Saídas:
   entregas/posts/site/programacao/stories/*.png  stories prontos, 1080 × 1920 (adesivos entram no Instagram)
   entregas/posts/site/programacao/baixar/*.zip   pacote de agendamento por dia (imagens numeradas + LEIA.txt)
   entregas/posts/programacao-<semana>.md / .pdf  cópia em texto (conferida pelo check.sh) e PDF para enviar
+  entregas/posts/site/programacao/aprovar/  a mesma página única, para celular, com os posts em tamanho real (link para a prof.ª)
   entregas/posts/programacao-<semana>-uma-pagina.pdf / .jpg  uma página (dia, horário, post) para a prof.ª aprovar pelo WhatsApp
 Uso: python3 scripts/gerar_programacao.py   (depois de bash scripts/exportar_kit_editavel.sh, se o kit mudou)"""
 import html as _html
@@ -454,6 +455,86 @@ Horários aproximados (até 1 hora de ajuste). Nenhuma peça pede doação. {e(s
 </div></body></html>"""
 
 
+CSS_WEB = """
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:56px}
+body{background:#F4F6FB;color:#141B2D;font-family:Barlow,Arial,sans-serif;font-size:16px;line-height:1.45}
+.w{max-width:560px;margin:0 auto;padding:0 16px 40px}
+.top{display:flex;align-items:center;gap:12px;padding:18px 0 12px}
+.top img{width:46px;height:46px;border-radius:50%}
+.top h1{font-family:"Barlow Condensed",Arial,sans-serif;font-size:26px;line-height:1.05;color:#1B3A8C}
+.top p{font-size:14px;color:#4A5568}
+.st{display:inline-block;background:#FFF4D6;border:1px solid #E9C46A;color:#7A5A00;border-radius:6px;padding:3px 8px;font-size:13px;font-weight:700;margin-bottom:10px}
+.como{background:#fff;border:1px solid #DCE1EC;border-radius:10px;padding:12px 14px;font-size:15px;margin-bottom:14px}
+.como p+p{margin-top:6px}
+nav{position:sticky;top:0;z-index:2;background:#F4F6FB;display:flex;gap:6px;overflow-x:auto;padding:8px 0;margin:0 -16px;padding-left:16px;padding-right:16px}
+nav a{flex:0 0 auto;background:#fff;border:1px solid #DCE1EC;border-radius:16px;padding:5px 11px;font-size:14px;font-weight:600;color:#1B3A8C;text-decoration:none}
+.dia{margin-top:18px}
+.dia h2{font-family:"Barlow Condensed",Arial,sans-serif;font-size:24px;color:#fff;background:#1B3A8C;border-radius:10px 10px 0 0;padding:6px 14px}
+.pc{background:#fff;border:1px solid #DCE1EC;border-top:0;padding:14px}
+.pc:last-child{border-radius:0 0 10px 10px}
+.cab{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.hora{font-size:20px;font-weight:700;color:#1B3A8C}
+.cod{font-size:14px;font-weight:700;background:#EDF0F6;border-radius:4px;padding:1px 6px}
+.rb{font-size:12px;font-weight:700;background:#E8EEFB;color:#1B3A8C;border-radius:4px;padding:1px 6px}
+.desc{margin-bottom:8px}
+.car{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -14px;padding:0 14px 6px}
+.car img{flex:0 0 84%;width:84%;aspect-ratio:4/5;object-fit:cover;border-radius:8px;border:1px solid #DCE1EC;scroll-snap-align:center;background:#EDF0F6}
+.dica{font-size:13px;color:#4A5568;margin:2px 0 10px}
+.leg{white-space:pre-wrap;font-size:15px;background:#F8F9FC;border-left:3px solid #1B3A8C;border-radius:0 6px 6px 0;padding:10px 12px}
+.leg-t{font-size:13px;font-weight:700;color:#4A5568;text-transform:uppercase;letter-spacing:.04em;margin:10px 0 4px}
+.sto{display:block;width:62%;max-width:260px;aspect-ratio:9/16;object-fit:cover;border-radius:10px;border:1px solid #DCE1EC;margin:6px 0 10px}
+.vz{display:flex;align-items:center;justify-content:center;text-align:center;width:62%;max-width:260px;aspect-ratio:9/16;border:2px dashed #B8C0D4;border-radius:10px;color:#4A5568;font-size:14px;padding:12px;margin:6px 0 10px}
+.fim{margin-top:22px;font-size:14px;color:#4A5568;text-align:center}
+"""
+
+
+def web_aprovar(sem, selo):
+    """Versão para celular da página única: a prof.ª vê os posts em tamanho real e responde pelo WhatsApp."""
+    capas = {pc["cod"]: pc["pngs"][0] for d in sem["dias"] for pc in d["pecas"] if pc["tipo"] == "feed"}
+    up = lambda src: "../" + src  # a página fica em programacao/aprovar/
+    nav, dias = "", ""
+    for i, d in enumerate(sem["dias"]):
+        nav += f'<a href="#d{i}">{e(d["dia"][:3])} {e(d["data"][:5])}</a>'
+        linhas = ""
+        for pc in d["pecas"]:
+            cab = (f'<div class="cab"><span class="hora">{e(pc["hora"])}</span><span class="cod">{pc["cod"]}</span>'
+                   + ('<span class="rb">robô publica</span>' if robo(pc) else "") + "</div>")
+            if pc["tipo"] == "feed":
+                o = pc["o"]
+                reel = pc["fmt"] in ("Reel", "Live")
+                leg = re.sub(r"\n\s*\n", "\n\n", o["legenda"].strip())
+                figs = "".join(f'<img src="{up(src)}" alt="Imagem {n} de {len(pc["pngs"])}">' for n, src in enumerate(pc["pngs"], 1))
+                desc = (f"<b>Post do feed · Reel (cerca de 30 s):</b> {e(pc['tema'])}. Abaixo, os quadros do vídeo." if reel
+                        else f"<b>Post do feed · Carrossel de {len(pc['pngs'])} imagens:</b> {e(pc['tema'])}.")
+                linhas += (f'<div class="pc">{cab}<p class="desc">{desc}</p><div class="car">{figs}</div>'
+                           f'<p class="dica">Arraste para o lado para ver todas as imagens →</p>'
+                           f'<p class="leg-t">Legenda</p><div class="leg">{e(leg)}</div></div>')
+            else:
+                if pc["tipo"] in COM_PNG:
+                    im = f'<img class="sto" src="../stories/{pc["cod"]}.png" alt="Story {pc["cod"]}">'
+                elif pc["tipo"] == "repost":
+                    feed = [x["cod"] for x in d["pecas"] if x["tipo"] == "feed"][0]
+                    im = f'<img class="sto" src="{up(capas[feed])}" alt="Capa do post {feed}">'
+                else:
+                    im = '<div class="vz">A imagem é montada com as perguntas que chegarem na caixinha.</div>'
+                linhas += f'<div class="pc">{cab}<p class="desc">Story · {texto_story(pc)}</p>{im}</div>'
+        dias += f'<section class="dia" id="d{i}"><h2>{e(d["dia"])}, {e(d["data"])}</h2>{linhas}</section>'
+    return f"""<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Posts para aprovar</title>
+<link rel="stylesheet" href="../../kit/fontes.css"><style>{CSS_WEB}</style></head><body><div class="w">
+<header class="top"><img src="{selo}" alt=""><div><h1>Instagram · {e(sem["titulo"])}</h1>
+<p>@efeitorebote.oficial · para a prof.ª Camila aprovar</p></div></header>
+<span class="st">{STATUS}</span>
+<div class="como"><p><b>Para aprovar, responda no WhatsApp:</b> “aprovado tudo” ou o código do que quiser ajustar, por exemplo “20-S2: trocar a pergunta”.</p>
+<p>P é o post do feed; S1, S2… são os stories do dia. O que diz <b>robô publica</b> sai sozinho no horário, só depois da aprovação; o resto a equipe publica à mão. Horários aproximados (até 1 hora de ajuste). Nenhuma peça pede doação. {e(sem["limite"])}</p></div>
+<nav>{nav}</nav>
+{dias}
+<p class="fim">Dúvidas ou ajustes: responda no WhatsApp com o código da peça.</p>
+</div></body></html>"""
+
+
 # ---------------------------------------------------------------- cópia em texto (check.sh) e pacotes
 def markdown(sem):
     L = [f"# {sem['titulo']}", "", f"Status: {STATUS.lower()}. Enviado à prof.ª Camila em {sem['envio']}.", "",
@@ -582,6 +663,9 @@ def main():
     subprocess.run(["node", os.path.join(RAIZ, "scripts", "renderizar.mjs"), uma, base + ".pdf"], check=True)
     subprocess.run(["node", os.path.join(RAIZ, "scripts", "renderizar.mjs"), uma, base + ".jpg", ".pg", "794", "1123"], check=True)
     subprocess.run([sys.executable, os.path.join(RAIZ, "scripts", "limpar_metadados.py"), base + ".pdf"], check=False)
+    os.makedirs(os.path.join(OUT, "aprovar"), exist_ok=True)
+    open(os.path.join(OUT, "aprovar", "index.html"), "w", encoding="utf-8").write(web_aprovar(sem, selo))
+    print("ok entregas/posts/site/programacao/aprovar/index.html")
     pacotes(sem)
     agenda(sem)
 
