@@ -28,7 +28,8 @@ td .cod{margin:1px 2px 1px 0}
 .dia{margin-top:28px}
 .dia>header{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;border-bottom:3px solid var(--azul);padding-bottom:6px}
 .dia>header p{margin:0;color:var(--cinza)}
-.peca{background:#fff;border:1px solid var(--linha);border-radius:14px;padding:18px;margin-top:14px;display:grid;gap:12px}
+.peca{background:#fff;border:1px solid var(--linha);border-radius:14px;padding:18px;margin-top:14px;display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+.peca>*,.card>*{min-width:0}
 .peca .cab{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
 .peca .cab .hora{font-weight:700}
 .peca .cab .tp{color:var(--cinza)}
@@ -45,10 +46,10 @@ td .cod{margin:1px 2px 1px 0}
 .btn{font:inherit;font-weight:700;min-height:44px;padding:8px 14px;border-radius:8px;border:1px solid var(--azul);background:#fff;color:var(--azul);cursor:pointer}
 .btn.pri{background:var(--azul);color:#fff}
 .small{font-size:.88rem;color:var(--cinza)}
-.lista{margin:0;padding-left:20px;display:grid;gap:2px;font-size:.92rem}
+.lista{margin:0;padding-left:20px;display:grid;gap:2px;font-size:.92rem;overflow-wrap:anywhere}
 .aviso{background:var(--ambar-bg);border-radius:10px;padding:12px 14px;font-size:.95rem}
 .aviso b{color:var(--ambar)}
-.story{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start}
+.story{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:start;overflow-wrap:anywhere}
 .fone{width:180px;aspect-ratio:9/16;border-radius:18px;overflow:hidden;position:relative;box-shadow:0 2px 10px rgba(20,27,45,.22);background:var(--azul);container-type:inline-size;flex:none}
 .fone>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .stk{position:absolute;left:12cqw;right:12cqw;top:44%;background:#fff;color:var(--tinta);border-radius:5cqw;padding:5cqw;display:grid;gap:3cqw;text-align:center;box-shadow:0 2cqw 6cqw rgba(0,0,0,.3);font-size:6cqw;line-height:1.2}
@@ -66,7 +67,7 @@ td .cod{margin:1px 2px 1px 0}
 .aprov input[type=text]{flex:1 1 220px;min-height:44px;border:1px solid #7B869C;border-radius:8px;padding:0 10px;font:inherit}
 #resposta{width:100%;min-height:140px;border:1px solid #7B869C;border-radius:10px;padding:10px;font:inherit}
 :focus-visible{outline:3px solid var(--ouro);outline-offset:2px}
-@media (max-width:560px){.story{grid-template-columns:1fr}.fone{width:min(200px,60vw)}}
+@media (max-width:560px){.story{grid-template-columns:minmax(0,1fr)}.fone{width:min(200px,60vw)}}
 @media print{
   body{background:#fff;font-size:12px}
   main{max-width:none;padding:0}
