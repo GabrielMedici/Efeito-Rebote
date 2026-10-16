@@ -3,7 +3,7 @@ Fonte: SEMANA em scripts/programacao_conteudo.py (stories e horários) + Kit (po
 Saídas:
   entregas/posts/site/programacao/index.html     página didática (dia a dia, código por peça, legenda, fontes)
   entregas/posts/site/programacao/stories/*.png  stories prontos, 1080 × 1920 (adesivos entram no Instagram)
-  entregas/posts/site/programacao/pacote/*.zip   pacote de agendamento por dia (imagens numeradas + LEIA.txt)
+  entregas/posts/site/programacao/baixar/*.zip   pacote de agendamento por dia (imagens numeradas + LEIA.txt)
   entregas/posts/programacao-<semana>.md / .pdf  cópia em texto (conferida pelo check.sh) e PDF para enviar
 Uso: python3 scripts/gerar_programacao.py   (depois de bash scripts/exportar_kit_editavel.sh, se o kit mudou)"""
 import html as _html
@@ -311,7 +311,7 @@ def pagina(sem, selo):
         corpo = "".join(peca_feed(pc) if pc["tipo"] == "feed" else peca_story(pc, "stories") for pc in d["pecas"])
         dias += (f'<section class="dia" id="d-{d["data"].replace("/", "-")}"><header><h2>{e(d["dia"])}, {e(d["data"])}</h2>'
                  f'<p>{e(d["foco"])}</p></header>{corpo}'
-                 f'<p class="small no-print"><a href="pacote/efeito-rebote-{d["data"].replace("/", "-")}.zip">Baixar o pacote do dia</a> (imagens numeradas e textos, para agendar).</p></section>')
+                 f'<p class="small no-print"><a href="baixar/efeito-rebote-{d["data"].replace("/", "-")}.zip">Baixar o pacote do dia</a> (imagens numeradas e textos, para agendar).</p></section>')
     return f"""<!doctype html>
 <html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow"><meta name="color-scheme" content="only light">
@@ -375,7 +375,7 @@ def markdown(sem):
 
 
 def pacotes(sem):
-    pasta = os.path.join(OUT, "pacote")
+    pasta = os.path.join(OUT, "baixar")
     os.makedirs(pasta, exist_ok=True)
     for d in sem["dias"]:
         nome = f"efeito-rebote-{d['data'].replace('/', '-')}"
