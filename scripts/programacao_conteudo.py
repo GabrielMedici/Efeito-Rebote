@@ -20,6 +20,10 @@ SEMANA = {
     "titulo": "Programação de 17 a 23/10",
     "envio": "sexta, 16/10",
     "limite": "Para o sábado, 17/10, ir ao ar, a aprovação precisa chegar até sábado, 9h.",
+    # Robô de publicação (scripts/robo_instagram.py): só publica as peças cujo código está aqui, depois que a
+    # prof.ª Camila aprovar. "pausado": True para tudo de uma vez.
+    "aprovadas": [],
+    "pausado": False,
     "dias": [
         {"data": "17/10", "dia": "Sábado", "foco": "Abrir a conversa: enquete e caixinha de perguntas",
          "pecas": [

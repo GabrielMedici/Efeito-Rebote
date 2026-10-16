@@ -44,3 +44,8 @@
 - Sessão encerrada em 07/10 (chat renomeado "Comunicação: calendário, site e Kit no plano da Vitória + enquetes e apresentação para stories"). Próxima tarefa ativa: F02 (regulamento, prazo sexta 12h).
 - Carrossel pronto de 09/10 diz "a LEP garante assistência material e à saúde": defensável pelo art. 41, VII (direitos do preso). O que não pode é dizer que garante kit/escova.
 - Pendências antigas: F02 regulamento (sexta 12h); aval da prof.ª para R$ 150 por aluno e para a ação.
+
+## Onde parou (16/10, tarde)
+- PR #11 mesclado: programação 17–23/10 no ar em https://calendario-efeito-rebote.vercel.app/programacao/ (testado 200, sem rolagem lateral no celular). Usuário = Gabriel, líder da Comunicação.
+- Robô do Instagram (PR novo): `scripts/robo_instagram.py`, workflow `robo-instagram.yml` (cron 15 min, roda só no main), guia `docs/robo-instagram.md`. Liga quando existir o secret IG_TOKEN; publica só códigos em `SEMANA["aprovadas"]`. Estado em `scripts/robo_publicados.json` (commit do robô no main). Agenda por semana em `programacao/agenda/<slug>.json` (a semana nova não apaga a anterior).
+- `obsoletos.txt`: regra do aplicativo de vendas agora ignora o domínio `vercel.app` do site.

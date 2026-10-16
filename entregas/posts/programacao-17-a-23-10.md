@@ -12,6 +12,7 @@ Códigos: P = post do feed; S1, S2... = stories do dia, na ordem. Horários são
 - Texto: Você já ouviu falar em reincidência?
 - Opções: Sim / Nunca ouvi
 - Como publicar: No Instagram: suba a imagem e coloque o adesivo “Enquete” no espaço vazio, com a pergunta e as opções acima.
+- Quem publica: a equipe de Comunicação, à mão, no Instagram.
 
 ### 17-S2 · 12h · Story · caixinha de perguntas: Caixinha de perguntas
 
@@ -19,6 +20,7 @@ Códigos: P = post do feed; S1, S2... = stories do dia, na ordem. Horários são
 - Texto: O que você quer saber sobre o sistema prisional?
 - Atenção: Pergunta agressiva ou com dado pessoal não é respondida nem exposta.
 - Como publicar: No Instagram: suba a imagem e coloque o adesivo “Perguntas” no espaço vazio, com o texto acima.
+- Quem publica: a equipe de Comunicação, à mão, no Instagram.
 
 ## Domingo, 18/10: Post no feed: o que é reincidência
 
@@ -47,11 +49,14 @@ Fontes:
 - BRASIL. Decreto-Lei nº 2.848, de 7 de dezembro de 1940 (Código Penal), arts. 63 e 75.
 - INSTITUTO DE PESQUISA ECONÔMICA APLICADA. Reincidência criminal no Brasil: relatório de pesquisa. Rio de Janeiro: Ipea, 2015. Disponível em: https://repositorio.ipea.gov.br/bitstream/11058/7510/1/RP_Reincid%c3%aancia_2015.pdf. | CARRILLO, B. et al. Reincidência criminal no Brasil. Recife: GAPPE/UFPE; Brasília: DEPEN, 2022. Disponível em: https://www.gov.br/senappen/.
 
+Quem publica: o robô do projeto, no horário, só depois da sua aprovação.
+
 ### 18-S1 · 18h05 · Story · compartilhar o post: Compartilhar o post
 
 - Título: Post novo no feed
 - Texto: Você sabe o que é reincidência?
 - Como publicar: No Instagram: abra o post, toque no avião de papel e escolha “Adicionar ao story”.
+- Quem publica: a equipe de Comunicação, à mão, no Instagram.
 
 ### 18-S2 · 20h · Story · quiz: Quiz
 
@@ -59,6 +64,7 @@ Fontes:
 - Texto: Reincidir é só voltar a ser preso?
 - Opções: Verdade / Mito (certa: Mito)
 - Como publicar: No Instagram: suba a imagem e coloque o adesivo “Quiz” no espaço vazio, marcando a opção certa.
+- Quem publica: a equipe de Comunicação, à mão, no Instagram.
 
 ### 18-S3 · 21h · Story · resposta com fonte: Resposta do quiz
 
@@ -66,6 +72,7 @@ Fontes:
 - Resposta: Para o Código Penal, reincidir é cometer um novo crime depois de uma condenação definitiva. Voltar à prisão sem nova condenação é outra situação.
 - Fonte: BRASIL. Decreto-Lei nº 2.848, de 7 de dezembro de 1940 (Código Penal), arts. 63 e 75.
 - Como publicar: Imagem pronta: é só publicar.
+- Quem publica: o robô do projeto, no horário, só depois da sua aprovação.
 
 ## Segunda, 19/10: Stories: respostas da caixinha e quiz
 
@@ -75,6 +82,7 @@ Fontes:
 - Resposta: 2 ou 3 perguntas recebidas, uma por story, com a resposta em até 3 frases e a fonte.
 - Atenção: As perguntas só existem depois de sábado: os textos de resposta serão enviados à prof.ª no domingo, antes de ir ao ar. Sem pergunta boa, este story sai da programação.
 - Como publicar: No Instagram: abra as respostas da caixinha, toque em “Compartilhar resposta” e escreva a resposta com a fonte.
+- Quem publica: a equipe de Comunicação, à mão, no Instagram.
 
 ### 19-S2 · 19h · Story · quiz: Quiz
 
@@ -82,6 +90,7 @@ Fontes:
 - Texto: Existe prisão perpétua no Brasil?
 - Opções: Verdade / Mito (certa: Mito)
 - Como publicar: No Instagram: suba a imagem e coloque o adesivo “Quiz” no espaço vazio, marcando a opção certa.
+- Quem publica: a equipe de Comunicação, à mão, no Instagram.
 
 ### 19-S3 · 21h · Story · resposta com fonte: Resposta do quiz
 
@@ -89,6 +98,7 @@ Fontes:
 - Resposta: A Constituição proíbe penas de caráter perpétuo, e o Código Penal limita o cumprimento da pena a 40 anos.
 - Fonte: BRASIL. Constituição da República Federativa do Brasil de 1988, art. 5º, XLVII, b. BRASIL. Decreto-Lei nº 2.848, de 7 de dezembro de 1940 (Código Penal), arts. 63 e 75.
 - Como publicar: Imagem pronta: é só publicar.
+- Quem publica: o robô do projeto, no horário, só depois da sua aprovação.
 
 ## Terça, 20/10: Post no feed: o que a Defensoria encontrou em Maringá
 
@@ -119,17 +129,21 @@ Fontes:
 - Defensoria Pública do Paraná, relatórios de inspeção de 2025 (dados declarados pelas direções no dia da inspeção): PEM (13/05/2025), CCM (21/03/2025) e CPIM (ago./2025).
 - SUPREMO TRIBUNAL FEDERAL. ADPF 347: Informação à Sociedade. Julgamento em 04/10/2023. Lido em cópia no TJAC: https://tjac.jus.br/wp-content/uploads/2025/02/ADPF347InformaoSociedade.pdf (o site do STF devolveu erro 403).
 
+Quem publica: o robô do projeto, no horário, só depois da sua aprovação.
+
 ### 20-S1 · 18h05 · Story · compartilhar o post: Compartilhar o post
 
 - Título: Post novo no feed
 - Texto: O que a Defensoria encontrou nas prisões de Maringá
 - Como publicar: No Instagram: abra o post, toque no avião de papel e escolha “Adicionar ao story”.
+- Quem publica: a equipe de Comunicação, à mão, no Instagram.
 
 ### 20-S2 · 20h · Story · barra de emoji: Barra de emoji
 
 - Título: Seja sincero
 - Texto: Você sabia que as três unidades de Maringá estavam acima da capacidade?
 - Como publicar: No Instagram: suba a imagem e coloque o adesivo “Barra de emoji” no espaço vazio, com a pergunta acima.
+- Quem publica: a equipe de Comunicação, à mão, no Instagram.
 
 ## Quarta, 21/10: Stories: quiz sobre estudo e pena
 
@@ -139,6 +153,7 @@ Fontes:
 - Texto: Estudar na prisão diminui a pena?
 - Opções: Verdade / Mito (certa: Verdade)
 - Como publicar: No Instagram: suba a imagem e coloque o adesivo “Quiz” no espaço vazio, marcando a opção certa.
+- Quem publica: a equipe de Comunicação, à mão, no Instagram.
 
 ### 21-S2 · 19h · Story · resposta com fonte: Resposta do quiz
 
@@ -146,12 +161,14 @@ Fontes:
 - Resposta: A Lei de Execução Penal prevê 1 dia a menos de pena a cada 12 horas de estudo, divididas em pelo menos 3 dias. Trabalhar também reduz: 1 dia a cada 3 dias de trabalho.
 - Fonte: BRASIL. Lei nº 7.210, de 11 de julho de 1984 (Lei de Execução Penal). Texto literal conferido na Câmara dos Deputados (https://www2.camara.leg.br/legin/fed/lei/1980-1987/lei-7210-11-julho-1984-356938-normaatualizada-pl.html), art. 126, § 1º, I e II.
 - Como publicar: Imagem pronta: é só publicar.
+- Quem publica: o robô do projeto, no horário, só depois da sua aprovação.
 
 ### 21-S3 · 20h · Story · barra de emoji: Barra de emoji
 
 - Título: Seja sincero
 - Texto: Você sabia que estudo e trabalho reduzem a pena?
 - Como publicar: No Instagram: suba a imagem e coloque o adesivo “Barra de emoji” no espaço vazio, com a pergunta acima.
+- Quem publica: a equipe de Comunicação, à mão, no Instagram.
 
 ## Quinta, 22/10: Reel no feed: o checklist da Triagem
 
@@ -179,11 +196,14 @@ Fontes:
 - Lista de itens do projeto escrito (docs/projeto.md).
 - Registros da equipe Triagem e Aferição dos Itens.
 
+Quem publica: a equipe de Comunicação, à mão, no Instagram.
+
 ### 22-S1 · 18h05 · Story · compartilhar o post: Compartilhar o Reel
 
 - Título: Reel novo
 - Texto: O checklist que todo item passa antes de entrar na prisão
 - Como publicar: No Instagram: abra o post, toque no avião de papel e escolha “Adicionar ao story”.
+- Quem publica: a equipe de Comunicação, à mão, no Instagram.
 
 ### 22-S2 · 20h · Story · quiz: Quiz
 
@@ -191,6 +211,7 @@ Fontes:
 - Texto: Um creme dental de 200 g passa na triagem do projeto?
 - Opções: Passa / Não passa (certa: Não passa)
 - Como publicar: No Instagram: suba a imagem e coloque o adesivo “Quiz” no espaço vazio, marcando a opção certa.
+- Quem publica: a equipe de Comunicação, à mão, no Instagram.
 
 ### 22-S3 · 21h · Story · resposta com fonte: Resposta do quiz
 
@@ -198,6 +219,7 @@ Fontes:
 - Resposta: A lista do projeto aceita creme dental de até 100 g. As regras de tamanho e embalagem fazem parte da segurança das unidades.
 - Fonte: Lista de itens do projeto escrito (docs/projeto.md).
 - Como publicar: Imagem pronta: é só publicar.
+- Quem publica: o robô do projeto, no horário, só depois da sua aprovação.
 
 ## Sexta, 23/10: Stories: você escolhe a pauta e o resumo da semana
 
@@ -207,10 +229,12 @@ Fontes:
 - Texto: Qual tema você quer ver primeiro?
 - Opções: Estudo e trabalho na prisão / Por que a família paga a conta
 - Como publicar: No Instagram: suba a imagem e coloque o adesivo “Enquete” no espaço vazio, com a pergunta e as opções acima.
+- Quem publica: a equipe de Comunicação, à mão, no Instagram.
 
 ### 23-S2 · 19h · Story · resumo da semana: Resumo da semana
 
 - Título: Perdeu algum?
 - Texto: Esta semana no feed
 - Como publicar: Imagem pronta: é só publicar. Se quiser, marque os posts com o adesivo de link do perfil.
+- Quem publica: o robô do projeto, no horário, só depois da sua aprovação.
 
