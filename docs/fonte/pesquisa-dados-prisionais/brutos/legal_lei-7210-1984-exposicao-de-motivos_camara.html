@@ -1,0 +1,964 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="apple-itunes-app" content="app-id=1049343067" />
+    <meta name="google-play-app" content="app-id=br.leg.camara.infolegmovel" />
+    <script>
+      (function () {
+        let initialized = false;
+        let loading = false;
+
+        function ensureBody(callback) {
+          if (document.body) {
+            callback();
+          } else {
+            setTimeout(() => ensureBody(callback), 50);
+          }
+        }
+
+        function loadScript() {
+          if (loading || window.VLibras) return;
+          loading = true;
+
+          ensureBody(() => {
+            const s = document.createElement("script");
+            s.src = "https://vlibras.gov.br/app/vlibras-plugin.js";
+            s.onload = initVLibras;
+            document.body.appendChild(s);
+          });
+        }
+
+        function initVLibras() {
+          if (initialized || !window.VLibras) return;
+
+          ensureBody(() => {
+            if (!document.querySelector("[vw]")) {
+              const container = document.createElement("div");
+              container.innerHTML = `
+              <div vw class="enabled">
+                <div vw-access-button class="active"></div>
+                <div vw-plugin-wrapper>
+                  <div class="vw-plugin-top-wrapper"></div>
+                </div>
+              </div>
+            `;
+              document.body.appendChild(container);
+            }
+
+            (new window.VLibras.Widget(
+              "https://vlibras.gov.br/app",
+              "https://vlibras.gov.br/config/camara.json",
+            ),
+              $("body").append(
+                '<aside><div vw class="enabled"><div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div></div></aside>',
+              ));
+            initialized = true;
+
+            injectCSS();
+            if (!window.location.pathname.includes("/comissoes")) {
+              bindButton();
+            }
+          });
+        }
+
+        function injectCSS() {
+          if (document.getElementById("vlibras-style")) return;
+          const style = document.createElement("style");
+          style.id = "vlibras-style";
+          style.innerHTML = `
+          [vw-access-button] { display: none !important; }
+          div[vw] { z-index: 999999 !important; }
+        `;
+          document.head.appendChild(style);
+        }
+
+        function bindButton() {
+          const btn = document.getElementById("meu-botao-vlibras");
+          if (!btn) {
+            setTimeout(bindButton, 300);
+            return;
+          }
+
+          btn.onclick = function (e) {
+            e.preventDefault();
+            const original = document.querySelector("[vw-access-button]");
+            if (original) original.click();
+          };
+        }
+
+        // OBSERVA MUTA&#199;&#213;ES DO DOM (ESSENCIAL NO PLONE)
+        const observer = new MutationObserver(() => {
+          if (!document.querySelector("[vw]") && !initialized) {
+            loadScript();
+          }
+        });
+
+        observer.observe(document.documentElement, {
+          childList: true,
+          subtree: true,
+        });
+
+        window.addEventListener("load", loadScript);
+      })();
+    </script>
+
+    <title>Portal da Câmara dos Deputados</title>
+  <style type="text/css">@import url(https://www2.camara.leg.br/portal_css/camara_leg_viradadigital/member-cachekey-46bb2e0fc9968a457e63f356c0ff3900.css);</style><style type="text/css">@import url(https://www2.camara.leg.br/portal_css/camara_leg_viradadigital/portlets-cachekey-8a45f49b338591ae0c9c8a91f261dc78.css);</style><style type="text/css" media="screen">@import url(https://www2.camara.leg.br/portal_css/camara_leg_viradadigital/deprecated-cachekey-32595b622b36f2eee9478f07796d4f67.css);</style><style type="text/css" media="screen">@import url(https://www2.camara.leg.br/portal_css/camara_leg_viradadigital/resourceplone.app.discussion.stylesheetsdiscussion-cachekey-5b23f388acd88bdb65020b51a5a278fb.css);</style><style type="text/css">@import url(https://www2.camara.leg.br/portal_css/camara_leg_viradadigital/elements-cachekey-57e40a70bd8192a6f63782abff5c2748.css);</style><style type="text/css" media="all">@import url(https://www2.camara.leg.br/portal_css/camara_leg_viradadigital/ploneCustom-cachekey-7fb44e17264e070fccf4e31d9f2ada1c.css);</style><link rel="stylesheet" type="text/css" href="https://www2.camara.leg.br/portal_css/camara_leg_viradadigital/themecamara.leg.viradadigitalcsslibsbootstrap-datetimepicker.min-cachekey-ab2d257c1b49d2d194633e2ecb4564a2.css" /><link rel="stylesheet" type="text/css" href="https://www.camara.leg.br/tema/global/camara-custom.css" /><link rel="stylesheet" type="text/css" href="https://www2.camara.leg.br/portal_css/camara_leg_viradadigital/++theme++camara.leg.viradadigital/css/all.min.css" /><link rel="apple-touch-icon" sizes="180x180" href="https://www.camara.leg.br/tema/apple-touch-icon.png" /><link rel="icon" type="image/png" sizes="32x32" href="https://www.camara.leg.br/tema/favicon-32x32.png" /><link rel="icon" type="image/png" sizes="16x16" href="https://www.camara.leg.br/tema/favicon-16x16.png" /><link rel="manifest" href="https://www.camara.leg.br/tema/site.webmanifest" /><link rel="mask-icon" href="https://www.camara.leg.br/tema/safari-pinned-tab.svg" color="#009e49" /><link rel="search" href="http://www2.camara.leg.br/busca-geral" title="Buscar neste site" /><script type="text/javascript" src="https://www2.camara.leg.br/portal_javascripts/camara_leg_viradadigital/resourceplone.app.jquery-cachekey-3fa72abea58e1799bd3b0bc237335d45.js"></script><script type="text/javascript" src="https://www2.camara.leg.br/portal_javascripts/camara_leg_viradadigital/styleswitcher-cachekey-9178d2d1bc80488214ac8d40a46c7bdf.js"></script><script type="text/javascript" src="https://www2.camara.leg.br/portal_javascripts/camara_leg_viradadigital/impressaoIframes-cachekey-7de901cf3c737563606c12fa53b7a321.js"></script><script type="text/javascript" src="https://www2.camara.leg.br/portal_javascripts/camara_leg_viradadigital/GoogleAnalyticsTracker.js"></script><script type="text/javascript" src="https://www2.camara.leg.br/portal_javascripts/camara_leg_viradadigital/kss-bbb-cachekey-df10a37e7aa4176c3b122c2e3b0ee128.js"></script><script type="text/javascript" src="https://www2.camara.leg.br/portal_javascripts/camara_leg_viradadigital/inline_validation-cachekey-35d4d75a94cdb17b403a636871dd92cb.js"></script><script type="text/javascript" src="https://www2.camara.leg.br/portal_javascripts/camara_leg_viradadigital/themecamara.leg.viradadigitaljsbootstrap.min-cachekey-c15df71e2ec454087fe4c4eab0ce9d3e.js"></script><script type="text/javascript" src="https://www2.camara.leg.br/portal_javascripts/camara_leg_viradadigital/themecamara.leg.viradadigitaljslibsmoment.min-cachekey-860514b918ea422f7e82fa48125015c4.js"></script><script type="text/javascript" src="https://www2.camara.leg.br/portal_javascripts/camara_leg_viradadigital/themecamara.leg.viradadigitaljslibsmoment-pt-br-cachekey-0aafba4fb000126f1ed0f6701186de00.js"></script><script type="text/javascript" src="https://www2.camara.leg.br/portal_javascripts/camara_leg_viradadigital/themecamara.leg.viradadigitaljslibsbootstrap-datetimepicker.min-cachekey-fac2884b384d9c99236b26d0746facc4.js"></script><script type="text/javascript" src="https://www2.camara.leg.br/portal_javascripts/camara_leg_viradadigital/themecamara.leg.viradadigitaljslibsjquery.maskedinput.min-cachekey-e2f8b2523378532cc132594675b6dc6f.js"></script><script type="text/javascript" src="https://www2.camara.leg.br/portal_javascripts/camara_leg_viradadigital/themecamara.leg.viradadigitaljsacoes-tema-cachekey-a0084cf69f1785571a18f6a58a4986ac.js"></script><script type="text/javascript" src="https://www2.camara.leg.br/portal_javascripts/camara_leg_viradadigital/themecamara.leg.viradadigitaljscorrecoes-bootstrap-tema-cachekey-bd4c19550531506aa59d8b0aa7e8d6c5.js"></script><script type="text/javascript" src="https://www2.camara.leg.br/portal_javascripts/camara_leg_viradadigital/themecamara.leg.viradadigitalviradadigitalvendorjquery.mmenu.all-cachekey-f0e297313e30d6b2b2c2588ef23b5ef2.js"></script><script type="text/javascript" src="https://www2.camara.leg.br/portal_javascripts/camara_leg_viradadigital/themecamara.leg.viradadigitalviradadigitaljsvd_correcoes-cachekey-52a3614631388ad9e07bf35264bc73d5.js"></script><script type="text/javascript" src="https://www2.camara.leg.br/portal_javascripts/camara_leg_viradadigital/themecamara.leg.viradadigitalviradadigitaljsmmenu-correcoes-cachekey-8e45cc1e451978774afbfe2f5f1e95cf.js"></script><script type="text/javascript" src="https://www2.camara.leg.br/portal_javascripts/camara_leg_viradadigital/themecamara.leg.viradadigitalviradadigitaljsselecao-idioma-cachekey-998dbb210e1353a5d7f94011740ee16c.js"></script><meta name="msapplication-TileColor" content="#00a300" /><meta name="msapplication-TileImage" content="https://www.camara.leg.br/tema/mstile-144x144.png" /><meta name="theme-color" content="#009e49" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><link rel="canonical" href="" /><script type="text/javascript">
+          $("link[rel='canonical']").attr("href", window.location.href);
+        </script>
+
+
+
+
+
+
+
+<title>LEI Nº 7.210, DE 11 DE JULHO DE 1984 - Exposição de Motivos - Portal Câmara dos Deputados</title>
+
+<meta name="description" content="Publicação de Lei Ordinária: Institui a Lei de Execução Penal. " />
+
+<!-- Coloque aqui sua referência ao CSS local -->
+<link rel="stylesheet" type="text/css" href="../../../_css/legislacao-v1.css" />
+
+<!-- Coloque aqui seu javascript -->
+<!-- script type="text/javascript" src="caminho-e-nome-do-arquivo.js"></script -->
+
+</head>
+<body>
+    <header class="l-cabecalho-portal" role="banner" id="portal-header">
+        <ul aria-label="Acesso direto" class="acesso-direto">
+          <!-- Links para saltar diretamente para &#225;reas importantes da p&#225;gina accesskey 2 = conte&#250;do e 3 = navega&#231;&#227;o -->
+          <li>
+            <a class="acesso-direto__link" href="#main-content" accesskey="2">Ir ao conteúdo</a>
+          </li>
+          <li>
+            <a class="acesso-direto__link" href="#main-nav" accesskey="3">Ir à navegação principal</a>
+          </li>
+        </ul>
+
+        <!--[if lte IE 9]>
+          <p class="browserupgrade">
+            Voc&#234; est&#225; usando um navegador <strong>defasado</strong>. Por favor,
+            <a href="https://browsehappy.com/">atualize seu navegador</a> para
+            melhorar sua experi&#234;ncia e sua seguran&#231;a.
+          </p>
+        <![endif]-->
+
+        <div class="nav-top">
+          <div class="container nav-top--container">
+            <a href="https://www2.camara.leg.br" class="logo-camara" accesskey="1"><span class="sr-only">Página inicial</span></a>
+
+            <div class="nav-top__palacio"></div>
+
+            <div class="nav-top__menu-superior">
+              <ul aria-label="Ferramentas de apoio" class="links-apoio">
+                <li class="links-apoio__item links-apoio__item--vlibras">
+                  <a id="meu-botao-vlibras" href="javascript:void(0);">
+                    <span>
+                      <img src="https://www.camara.leg.br/tema/assets/images/ico-vlibras-branco.png" alt="Ativar VLibras" width="28px" height="30px" />
+                    </span>
+                  </a>
+                </li>
+                <li class="links-apoio__item links-apoio__item--acessibilidade">
+                  <a href="https://www2.camara.leg.br/acessibilidade/recursos-de-acessibilidade" accesskey="0">Acessibilidade</a>
+                </li>
+                <li class="links-apoio__item links-apoio__item--faleconosco">
+                  <a href="https://www.camara.leg.br/fale-conosco" accesskey="9">Fale Conosco</a>
+                </li>
+              </ul>
+
+              <ul class="orgaos-parceiros" aria-label="Órgãos parceiros">
+                <li class="orgaos-parceiros__item orgaos-parceiros__item--congresso">
+                  <a href="http://www.congressonacional.leg.br"><span>Congresso</span></a>
+                </li>
+                <li class="orgaos-parceiros__item orgaos-parceiros__item--senado">
+                  <a href="http://www.senado.leg.br"><span>Senado</span></a>
+                </li>
+              </ul>
+
+              <div class="lista-idiomas">
+                <button class="botao-idioma-topo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="4,0">
+                  <span class="botao-idioma-topo__sigla">PT</span>
+                </button>
+
+                <ul class="dropdown-menu dropdown-menu-right l-lista-idiomas" aria-label="Idioma">
+                  <li class="l-lista-idiomas__item">
+                    <a href="https://www2.camara.leg.br/english" class="idioma-topo">
+                      <span class="idioma-topo__bandeira idioma-topo__bandeira--ingles" aria-hidden="true"></span>
+                      <span class="idioma-topo__nome">English</span>
+                      <span class="idioma-topo__sigla">EN</span>
+                    </a>
+                  </li>
+                  <li class="l-lista-idiomas__item">
+                    <a href="https://www2.camara.leg.br/espanol" class="idioma-topo">
+                      <span class="idioma-topo__bandeira idioma-topo__bandeira--espanhol" aria-hidden="true"></span>
+                      <span class="idioma-topo__nome">Español</span>
+                      <span class="idioma-topo__sigla">ES</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="home-camara-menu">
+    <nav class="menu-global navbar navbar-expand-lg" role="navigation" aria-label="Navegação principal" id="menuglobal">
+      <div class="container menu-global--container">
+      
+
+        <a href="https://www.camara.leg.br" class="logo-camara" accesskey="1">
+          <span class="sr-only">Página inicial</span>
+        </a>
+
+      
+        
+        <!-- icone menu -->
+        <button class="menu-global--btnmenu navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarportal" aria-controls="navbarportal" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="menu-global--icon"></span>
+        </button>
+
+        <!-- icone busca -->
+        <button class="menu-global--btnsearch" type="button" data-toggle="collapse" data-target="#buscaportal" aria-controls="buscaportal" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="fa fa-search"></span>
+        </button>
+
+        <div class="navbar-collapse hidden-sm hidden-md hidden-xs" id="navbarportal">
+          <ul title="Navegação Principal" id="main-nav" class="navbar-nav">
+            
+              
+                <li class="nav-item dropdown">
+                  <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="menu-global__item-temas nav-link dropdown-toggle" id="temas">Assuntos</a>
+
+                  
+                    <ul class="dropdown-menu" aria-labelledby="temas">
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/assuntos/agropecuaria">Agropecuária</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/assuntos/cidades-e-transportes">Cidades e transportes</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/assuntos/ciencia-tecnologia-e-comunicacoes">Ciência, tecnologia e comunicações</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/assuntos/consumidor">Consumidor</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/assuntos/direitos-humanos">Direitos humanos</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/assuntos/economia">Economia</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/assuntos/educacao-cultura-e-esportes">Educação, cultura e esportes</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/assuntos/meio-ambiente-e-energia">Meio ambiente e energia</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/assuntos/politica-e-administracao-publica">Política e administração pública</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/assuntos/relacoes-exteriores">Relações exteriores</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/assuntos/saude">Saúde</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/assuntos/seguranca">Segurança</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/assuntos/trabalho-previdencia-e-assistencia">Trabalho, previdência e assistência</a>
+                      </li>
+                    </ul>
+                  
+                </li>
+              
+            
+            
+              
+                <li class="nav-item dropdown">
+                  <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="menu-global__item-institucional nav-link dropdown-toggle" id="institucional">Institucional</a>
+
+                  
+                    <ul class="dropdown-menu" aria-labelledby="institucional">
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/agenda">Agenda</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www2.camara.leg.br/transparencia/servicos-ao-cidadao">Serviços</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www2.camara.leg.br/a-camara/estruturaadm/mesa/presidencia">Presidência</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/biblioteca-e-publicacoes/">Biblioteca e publicações</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/escola-da-camara/">Escola da Câmara</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/papel-e-estrutura/">Papel e estrutura</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/historia-e-arquivo/">História e arquivo</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www2.camara.leg.br/a-camara/visiteacamara">Visite</a>
+                      </li>
+                    </ul>
+                  
+                </li>
+              
+            
+            
+              
+                <li class="nav-item dropdown">
+                  <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="menu-global__item-deputados nav-link dropdown-toggle" id="deputados">Deputados</a>
+
+                  
+                    <ul class="dropdown-menu" aria-labelledby="deputados">
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/deputados/quem-sao">Quem são</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/deputados/liderancas-e-bancadas-partidarias">Lideranças e bancadas</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www2.camara.leg.br/deputados/frentes-e-grupos-parlamentares">Frentes e grupos parlamentares</a>
+                      </li>
+                    </ul>
+                  
+                </li>
+              
+            
+            
+              
+                <li class="nav-item dropdown">
+                  <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="menu-global__item-atvlegislativa nav-link dropdown-toggle" id="atvlegislativa">Atividade Legislativa</a>
+
+                  
+                    <ul class="dropdown-menu" aria-labelledby="atvlegislativa">
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/busca-portal/proposicoes/pesquisa-simplificada">Propostas legislativas</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/plenario">Plenário</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/comissoes">Comissões</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/sessoesereunioes">Sessões e reuniões</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www2.camara.leg.br/atividade-legislativa/estudos-e-notas-tecnicas">Estudos legislativos</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www2.camara.leg.br/atividade-legislativa/orcamento-da-uniao">Orçamento da União</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/legislacao">Legislação</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/entenda-o-processo-legislativo/">Entenda o processo legislativo</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www2.camara.leg.br/atividade-legislativa/participe">Participe</a>
+                      </li>
+                    </ul>
+                  
+                </li>
+              
+            
+            
+              
+                <li class="nav-item dropdown">
+                  <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="menu-global__item-comunicacao nav-link dropdown-toggle" id="comunicacao">Comunicação</a>
+
+                  
+                    <ul class="dropdown-menu" aria-labelledby="comunicacao">
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/noticias">Agência Câmara de Notícias</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/radio">Rádio Câmara</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/tv">TV Câmara</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/banco-imagens">Banco de Imagens</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/assessoria-de-imprensa">Assessoria de Imprensa</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/comprove">Comprove uma notícia</a>
+                      </li>
+                    </ul>
+                  
+                </li>
+              
+            
+            
+              
+                <li class="nav-item dropdown">
+                  <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="menu-global__item-transprestcontas nav-link dropdown-toggle" id="transprestcontas">Transparência e prestação de contas</a>
+
+                  
+                    <ul class="dropdown-menu" aria-labelledby="transprestcontas">
+                      <li class="dropdown-item">
+                        <a href="https://www.camara.leg.br/transparencia/">Transparência</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://www2.camara.leg.br/transparencia/prestacao-de-contas">Prestação de contas</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a href="https://dadosabertos.camara.leg.br/">Dados abertos</a>
+                      </li>
+                    </ul>
+                  
+                </li>
+              
+            
+          </ul>
+          <div class="outras-opcoes-menu-usuario hidden-md hidden-lg">
+            <ul aria-label="Ferramentas de apoio" class="links-apoio links-apoio--menu-mobile">
+              <li class="links-apoio__item links-apoio__item--acessibilidade">
+                <a href="https://www2.camara.leg.br/acessibilidade/recursos-de-acessibilidade" accesskey="0">Acessibilidade</a>
+              </li>
+              <li class="links-apoio__item links-apoio__item--faleconosco">
+                <a href="https://www.camara.leg.br/fale-conosco" accesskey="9">Fale Conosco</a>
+              </li>
+            </ul>
+          </div>
+          <div class="lista-idiomas hidden-md hidden-lg">
+            <button id="botao-idioma-topo" class="botao-idioma-topo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="4,0">
+                <span class="botao-idioma-topo__sigla">PT</span>
+            </button>
+        
+            <ul class="dropdown-menu-right l-lista-idiomas " aria-label="Idioma">
+                <li class="l-lista-idiomas__item">
+                    <a href="https://www2.camara.leg.br/english" class="idioma-topo">
+                        <span class="idioma-topo__bandeira idioma-topo__bandeira--ingles" aria-hidden="true"></span>
+                        <span class="idioma-topo__nome">English</span>
+                        <span class="idioma-topo__sigla">EN</span>
+                    </a>
+                </li>
+                <li class="l-lista-idiomas__item">
+                    <a href="https://www2.camara.leg.br/espanol" class="idioma-topo">
+                        <span class="idioma-topo__bandeira idioma-topo__bandeira--espanhol" aria-hidden="true"></span>
+                        <span class="idioma-topo__nome">Español</span>
+                        <span class="idioma-topo__sigla">ES</span>            
+                    </a>
+                </li>
+            </ul>
+        </div>
+        </div>
+
+
+        <div class="collapse box-search" id="buscaportal">
+          <form role="search" accesskey="4" class="box-search__busca form-inline" action="https://www.camara.leg.br/busca-geral">
+            <label for="termo" class="sr-only box-search__label">Pesquise no Portal da Câmara</label>
+            <input class="form-control box-search__campo" type="search" name="termo" id="termo" placeholder="Buscar" aria-label="Search" />
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div>
+      </header>
+
+    <div class="breadcrumbs-marcacao">
+        <div class="container">
+            <nav aria-label="Onde estou">
+                <ol class="breadcrumb portal-breadcrumbs">
+                    <li class="breadcrumb-item"><a href="//www.camara.leg.br">Início</a></li>
+                    
+	<li class='breadcrumb-item'><a href='http://www2.camara.gov.br/atividade-legislativa'>Atividade Legislativa</a></li>
+    <li class='breadcrumb-item'><a href='http://www2.camara.gov.br/atividade-legislativa/legislacao'>Legislação</a></li>
+
+                    <li class="breadcrumb-item active" aria-current="page">Esta página</li>
+                </ol>
+            </nav>
+        </div>
+        
+        <div class="container-fluid p-0">
+            <div id="menu-secoes-internas" class="menu-secoes-internass">
+                <div id="portal-mainsection">
+                    <div class="l-identificacao-landing">
+                        <div class="container">
+                            <h1 class="titulo-landing">Legislação</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="marcacao-conteudo-portal" class="conteudo-portal container nopadding-right nopadding-left">
+        <div class="coluna-centro col-md-12">
+
+
+<div id="portal-column-content">
+	<div id="portal-content-wrapper">
+		<div class="documentContent">
+			<div id="content">
+	
+				<h2 class="documentFirstHeading">Legislação Informatizada - LEI Nº 7.210, DE 11 DE JULHO DE 1984 - Exposição de Motivos</h2>
+				<div class="vejaTambem">
+			    	<p>Veja também:</p>
+			    	<ul>
+                                        <li>
+
+
+                                                <a href="lei-7210-11-julho-1984-356938-normaatualizada-pl.doc">
+                                                    Texto Atualizado
+                                                    <span class="descricaoArquivo">
+                                                            (arquivo em formato doc)
+                                                    </span>
+                                                </a>
+
+                                            
+                                        </li>
+                                            <li>  	
+                                                <a href="lei-7210-11-julho-1984-356938-publicacaooriginal-1-pl.html">Publicação Original</a>
+                                            </li>
+                                            <li>  	
+                                                <a href="lei-7210-11-julho-1984-356938-veto-30543-pl.html">Veto</a>
+                                            </li>
+                                        <li>
+                                            <a href="http://www.camara.gov.br/sileg/Prop_Detalhe.asp?id=194701">Proposição Originária</a>
+                                        </li>
+                                    <li>
+                                        <a href="lei-7210-11-julho-1984-356938-norma-pl.html">Dados da Norma</a>
+                                    </li>
+                                </ul>
+			    </div>	
+                                
+
+					<h1>LEI Nº 7.210, DE 11 DE JULHO DE 1984</h1>
+				
+				<div class="textoNorma">
+				
+						<p class="ementa">
+							Institui a Lei de Execução Penal. 
+						</p>
+				
+						<div class="texto">
+							<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt" align=center><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>EXPOSIÇÃO DE MOTIVOS Nº 213, DE 9 DE MAIO DE 1983<BR>(Do Senhor Ministro de Estado da Justiça)<?xml:namespace prefix = "o" ns = "urn:schemas-microsoft-com:office:office" /><o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; Excelentíssimo Senhor Presidente da República,<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; A edição de lei específica para regular a execução das penas e das medidas de segurança tem sido preconizada por numerosos especialistas.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>2. Em 1933, a Comissão integrada por Cândido Mendes de Almeida, José Gabriel de Lemos Brito e Heitor Carrilho apresentou ao Governo o Anteprojeto de Código Penitenciário da República, encaminhado dois anos depois à Câmara dos Deputados por iniciativa da bancada da Paraíba, e cuja discussão ficou impedida com o advento do Estado Novo.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>3. Em 1955 e 1963, respectivamente, os eminentes juristas Oscar Stevenson e Roberto Lyra traziam&nbsp;a lume os Anteprojetos de Código das Execuções Penais, que haviam elaborado, e que não chegaram à fase de revisão. Objetava-se, então, à constitucionalidade da iniciativa da União para legislar sobre as regras jurídicas fundamentais do regime penitenciário, de molde a instituir no País uma política penal executiva.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>4. Contentou-se, assim, o Governo da República com a sanção, em 2 de outubro de 1957, da Lei nº 3.274, que dispõe sobre as normas gerais de regime penitenciário.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>5. Finalmente, em 29 de outubro de 1970 o Coordenador da Comissão de Estudos Legislativos, Professor José Carlos Moreira Alves, encaminhou ao Ministro Alfredo Buzaid o texto do Anteprojeto de Código das Execuções Penais elaborado pelo Professor Benjamin Moraes Filho, revisto por comissão composta dos Professores José Frederico Marques, José Salgado Martins e José Carlos Moreira Alves.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>6. Na Exposição de Motivos desse último Anteprojeto já se demonstrou com bastante clareza a pertinência constitucional da iniciativa da União para editar um Código de Execuções Penais.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>7. Foi essa a posição que sustentamos no Relatório da Comissão Parlamentar de Inquérito instituída em 1975 na Câmara dos Deputados para apurar a situação penitenciária do País. Acentuávamos, ali, que a doutrina evoluíra no sentido da constitucionalidade de um diploma federal regulador da execução, alijando, assim, argumentos impugnadores da iniciativa da União para legislar sobre as regras jurídicas fundamentais do regime penitenciário. Com efeito, se a etapa de cumprimento das penas ou medidas de segurança "não se dissocia do Direito Penal, sendo, ao contrário, o esteio central de seu sistema, não há como sustentar a idéia de um Código Penal unitário e leis de regulamentos regionais de execução penal". Uma lei específica e abrangente atenderá "a todos os problemas relacionados com a execução penal, equacionando matérias pertinentes aos organismos administrativos, à intervenção jurisdicional e, sobretudo, ao tratamento penal em suas diversas fases e estágios, demarcando, assim, os limites penais de segurança. Retirará, em suma, a execução penal do hiato de legalidade em que se encontra" (Diário do Congresso Nacional, Suplemento ao nº 61, de 4-6-1976, pág. 9).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>8. O tema relativo à instituição de lei específica para regular a execução penal vincula-se à autonomia científica da disciplina, que em razão de sua modernidade não possui designação definitiva. Tem-se usado a denominação <U>Direito Penitenciário</U>, à semelhança dos penalistas franceses, embora se restrinja essa expressão à problemática do cárcere. Outras, de sentido mais abrangente, foram propostas, como <U>Direito Penal Executivo</U> por Roberto Lyra ("As execuções penais do Brasil", Rio de Janeiro, 1963, pág. 13) e <U>Direito Executivo Penal</U> por Ítalo Luder ("El principio de legalidad en la ejecución de la pena", <U>in</U> Revista del Centro de Estudios Criminológicos, Mendoza, 1968, págs. 29 e seguintes).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>9. Em nosso entendimento pode-se denominar esse ramo <U>Direito de Execução Penal</U>, para abrangência do conjunto das normas jurídicas relativas à execução das penas e das medidas de segurança (cf. Cuello Calón, "Derecho Penal", Barcelona, 1971, vol. II, tomo I, pág. 773; Jorge de Figueiredo Dias, "Direito Processual Penal", Coimbra, 1974, pág. 37).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>10. Vencida a crença histórica de que o direito regulador da execução é de índole predominantemente administrativa, deve-se reconhecer, em nome de sua própria autonomia, a impossibilidade de sua inteira submissão aos domínios do Direito Penal e do Direito Processual Penal.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>11. Seria, por outro lado, inviável a pretensão de confinar em diplomas herméticos todas as situações jurídicas oriundas das relações estabelecidas por uma disciplina. Na Constituição existem normas processuais penais, como as proibições de detenção arbitrária, da pena de morte, da prisão perpétua e da prisão por dívida. A Constituição consagra ainda regras características da execução ao estabelecer a personalidade e a individualização da pena como garantias do homem perante o Estado. Também no Código Penal existem regras de execução, destacando-se, dentre elas, as pertinentes aos estágios de cumprimento da pena e respectivos regimes prisionais.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>12. O Projeto reconhece o caráter material de muitas de suas normas. Não sendo, porém, regulamento penitenciário ou estatuto do presidiário, avoca todo o complexo de princípios e regras que delimitam e jurisdicionalizam a execução das medidas de reação criminal. A execução das penas e das medidas de segurança deixa de ser um Livro do Código de Processo para ingressar nos costumes jurídicos do País com a autonomia inerente à dignidade de um novo ramo jurídico: o Direito de Execução Penal.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt" align=center><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><U>DO OBJETO E DA APLICAÇÃO DA LEI DE EXECUÇÃO PENAL</U></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>13. Contém o artigo 1º duas ordens de finalidades: a correta efetivação dos mandamentos existentes nas sentenças ou outras decisões, destinados a reprimir e a prevenir os delitos, e a oferta de meios pelos quais os apenados e os submetidos às medidas de segurança venham a ter participação construtiva na comunhão social.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>14. Sem questionar profundamente a grande temática das finalidades da pena, curva-se o Projeto, na esteira das concepções menos sujeitas à polêmica doutrinária, ao princípio de que as penas e medidas de segurança devem realizar <U>a proteção dos bens jurídicos</U> e a <U>reincorporação do autor à comunidade</U>.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>15.&nbsp;À autonomia do Direito de Execução Penal corresponde o exercício de uma jurisdição especializada, razão pela qual, no artigo 2º, se estabelece que a "jurisdição penal dos juízes ou tribunais da justiça ordinária, em todo o território nacional, será exercida, no processo de execução, na conformidade desta lei e do Código de Processo Penal".<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>16. A aplicação dos princípios e regras do Direito Processual Penal constitui corolário lógico da interação existente entre o <U>direito de execução das penas e das medidas de segurança</U> e os demais ramos do ordenamento jurídico, principalmente os que regulam em caráter fundamental ou complementar os problemas postos pela execução.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>17. A igualdade da aplicação da lei ao preso provisório e ao condenado pela Justiça Eleitoral ou Militar, quando recolhidos a estabelecimento sujeito à jurisdição ordinária, assegurada no parágrafo único do artigo 2º, visa a impedir o tratamento discriminatório de presos ou internados submetidos a jurisdições diversas.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>18. Com o texto agora proposto, desaparece a injustificável diversidade de tratamento disciplinar a presos recolhidos ao mesmo estabelecimento, aos quais se assegura idêntico regime jurídico.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>19. O <U>princípio da legalidade</U> domina o corpo e o espírito do Projeto, de forma a impedir que o excesso ou o desvio da execução comprometam a dignidade e a humanidade do Direito Penal.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>20. É comum, no cumprimento das penas privativas da liberdade, a privação ou a limitação de direitos inerentes ao patrimônio jurídico do homem e não alcançados pela sentença condenatória. Essa <U>hipertrofia da punição</U> não só viola a medida da proporcionalidade como se transforma em poderoso fator de reincidência, pela formação de focos criminógenos que propicia.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>21. O Projeto torna obrigatória a extensão, a toda a comunidade carcerária, de direitos sociais, econômicos e culturais de que ora se beneficia uma restrita percentagem da população penitenciária, tais como segurança social, saúde, trabalho remunerado sob regime previdenciário, ensino e desportos.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>22. Como reconhece Hilde Kaufman "la ejecución penal humanizada no solo no pone em peligro la seguridad y el orden estatal, sino todo lo contrario. Mientras la ejecución penal humanizada es un apoyo del orden y la seguridad estatal, una ejecución penal deshumanizada atenta precisamente contra la seguridad estatal" ("Principios para la Reforma de la Ejecución Penal", Buenos Aires, 1977, pág. 55).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>23. Com a declaração de que não haverá nenhuma distinção de natureza racial, social, religiosa ou política, o Projeto contempla o princípio da isonomia, comum à nossa tradição jurídica.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>24. Nenhum programa destinado a enfrentar os problemas referentes ao delito, ao delinqüente e à pena se completaria sem o indispensável e contínuo apoio comunitário.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>25. Muito além da passividade ou da ausência de reação quanto às vítimas mortas ou traumatizadas, a comunidade participa ativamente do procedimento da execução, quer através de um Conselho, quer através das pessoas jurídicas ou naturais que assistem ou fiscalizam não somente as reações penais em meio fechado (penas privativas da liberdade e medida de segurança detentiva) como também em meio livre (pena de multa e penas restritivas de direitos).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt" align=center><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><U>DA CLASSIFICAÇÃO DOS CONDENADOS<o:p></o:p></U></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>26. A classificação dos condenados é requisito fundamental para demarcar o início da execução científica das penas privativas da liberdade e da medida de segurança detentiva. Além de constituir a efetivação de antiga norma geral do regime penitenciário, a classificação é desdobramento lógico do princípio da <U>personalidade da pena</U>, inserido entre os direitos e garantias constitucionais. A exigência dogmática da <U>proporcionalidade da pena</U> está igualmente atendida no processo de classificação, de modo que a cada sentenciado, conhecida a sua personalidade e analisado o fato cometido, corresponda o tratamento penitenciário adequado.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>27. Reduzir-se-á a mera falácia o princípio da individualização da pena, com todas as proclamações otimistas sobre a recuperação social, se não for efetuado o exame de personalidade no início da execução, como fator determinante do tipo de tratamento penal, e se não forem registradas as mutações de comportamento ocorridas no itinerário da execução.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>28. O Projeto cria a Comissão Técnica de Classificação com atribuições específicas para elaborar o programa de individualização e acompanhar a execução das penas privativas da liberdade e restritivas de direitos. Cabe-lhe propor as progressões e as regressões dos regimes, bem como as conversões que constituem incidentes de execução resolvidos pela autoridade judiciária competente.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>29. Fiel aos objetivos assinados ao dinamismo do procedimento executivo, o sistema atende não somente aos direitos do condenado, como também, e inseparavelmente, aos interesses da defesa social. O mérito do sentenciado é o critério que comanda a execução progressiva, mas o Projeto também exige o cumprimento de pelo menos um sexto do tempo da pena do regime inicial ou anterior. Com esta ressalva, limitam-se os abusos a que conduz a execução arbitrária das penas privativas da liberdade em manifesta ofensa aos interesses sociais. Através da progressão, evolui-se de regime mais rigoroso para outro mais brando (do regime fechado para o semi-aberto; do semi-aberto para o aberto). Na regressão dá-se o inverso, se ocorrer qualquer das hipóteses taxativamente previstas pelo Projeto, entre elas a prática de fato definido como crime doloso ou falta grave.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>30. Em homenagem ao princípio da <U>presunção de inocência</U>, o exame criminológico, pelas suas peculiaridades de investigação, somente é admissível após declarada a culpa ou a periculosidade do sujeito. O exame é obrigatório para os condenados à pena privativa da liberdade em regime fechado.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>31. A gravidade do fato delituoso ou as condições pessoais do agente, determinantes da execução em regime fechado, aconselham o exame criminológico, que se orientará no sentido de conhecer a inteligência, a vida afetiva e os princípios morais do preso, para determinar a sua inserção no grupo com o qual conviverá no curso da execução da pena.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>32. A ausência de tal exame e de outras cautelas tem permitido a transferência de reclusos para o regime de semi-liberdade ou de prisão-albergue, bem como a concessão de livramento condicional, sem que eles estivessem para tanto preparados, em flagrante desatenção aos interesses da segurança social.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>33. Com a adoção do exame criminológico entre as regras obrigatórias da execução da pena privativa da liberdade em regime fechado, os projetos de reforma da Parte Geral do Código Penal e da Lei de Execução Penal eliminam a controvérsia ainda não exaurida na literatura internacional acerca do momento processual e dos tipos criminológicos de autores passíveis desta forma de exame. Os escritores brasileiros tiveram o ensejo de analisar mais concretamente este ângulo do problema com a edição do Anteprojeto do Código de Processo Penal elaborado pelo Professor José Frederico Marques, quando se previu o exame facultativo de categorias determinadas de delinqüentes, no curso do processo ou, conforme a condição do autor, no período inicial do cumprimento da sentença (Álvaro Mayrink da Costa, "Exame Criminológico", São Paulo, 1972, págs. 255 e seguintes). As discussões amplamente travadas a partir de tais textos revelaram que não obstante as naturais inquietações a propósito dos destinatários das investigações e da fase em que se deve processá-las, a soma das divergências não afetou a convicção da necessidade desse tipo de exame para o conhecimento mais aprofundado não só da relação delito-delinqüente, mas também da essência e da circunstância do evento anti-social.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>34. O Projeto distingue o <U>exame criminológico</U> do <U>exame da personalidade</U> como a espécie do gênero. O primeiro parte do binômio delito-delinqüente, numa interação de causa e efeito, tendo como objetivo a investigação médica, psicológica e social, como o&nbsp;reclamavam os pioneiros da Criminologia. O segundo consiste no inquérito sobre o agente para além do crime cometido. Constitui tarefa exigida em todo o curso do procedimento criminal e não apenas elemento característico da execução da pena ou da medida de segurança. Diferem também quanto ao método esses dois tipos de análise, sendo o exame de personalidade submetido a esquemas técnicos de maior profundidade nos campos morfológico, funcional e psíquico, como recomendam os mais prestigiados especialistas, entre eles Di Tullio ("Principi di criminologia generale e clinica", Roma, V ed., págs. 213 e seguintes).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>35. O exame criminológico e o dossiê de personalidade constituem pontos de conexão necessários entre a Criminologia e o Direito Penal, particularmente sob as perspectivas da causalidade e da prevenção do delito.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>36. O trabalho a ser desenvolvido pela Comissão Técnica de Classificação não se limita, pois, ao exame de peças ou informações processuais, o que restringiria a visão do condenado a certo trecho de sua vida mas não a ela toda. Observando as prescrições éticas, a Comissão poderá entrevistar pessoas e requisitar às repartições ou estabelecimentos privados elementos de informação sobre o condenado, além de proceder a outras diligências e exames que reputar necessários.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>37. Trata-se, portanto, de <U>individualizar</U> a observação como meio prático de identificar o tratamento penal adequado, em contraste com a perspectiva massificante e segregadora, responsável pela avaliação feita "através das grades: "olhando" para um delinqüente por fora de sua natureza e distante de sua condição humana" (René Ariel Dotti, "Bases e alternativas para o sistema de penas", Curitiba, 1980, págs. 162/3).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt" align=center><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><U>DA ASSISTÊNCIA<o:p></o:p></U></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>38. A assistência aos condenados e aos internados é exigência básica para se conceber a pena e a medida de segurança como processo de diálogo entre os seus destinatários e a comunidade.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>39. No Relatório da CPI do Sistema Penitenciário acentuamos que "a ação educativa individualizada ou a individualização da pena sobre a personalidade, requisito inafastável para a eficiência do tratamento penal, é obstaculizada na quase totalidade do sistema penitenciário brasileiro pela superlotação carcerária, que impede a classificação dos prisioneiros em grupo e sua conseqüente distribuição por estabelecimentos distintos, onde se concretize o tratamento adequado"... "Tem, pois, esta singularidade o que entra nós se denomina <U>sistema penitenciário</U>: constitui-se de uma rede de prisões destinadas ao confinamento do recluso, caracterizadas pela ausência de qualquer tipo de tratamento penal e penitenciárias entre as quais há esforços sistematizados no sentido da reeducação do delinqüente. Singularidade, esta, vincada por característica extremamente discriminatória: a minoria ínfima da população carcerária, recolhida a instituições penitenciárias, tem assistência clínica, psiquiátrica e psicológica nas diversas fases da execução da pena, tem cela individual, trabalho e estudo, pratica esportes e tem recreação. A grande maioria, porém, vive confinada em celas, sem trabalho, sem estudos, sem qualquer assistência no sentido da ressocialização" ("Diário do Congresso Nacional", Suplemento ao nº 61, de 4-6-76, pág. 2).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>40. Para evitar esse tratamento discriminatório, o Projeto institui no Capítulo II a assistência ao preso&nbsp;e ao internado, concebendo-a como dever do Estado, visando a prevenir o delito e a reincidência e a orientar o retorno ao convívio social. Enumera o artigo 11 as espécies de assistência a que terão direito o preso e o internado - material, à saúde, jurídica, educacional, social e religiosa - e a forma de sua prestação pelos estabelecimentos prisionais, cobrindo-se, dessa forma, o <U>vazio legislativo</U> dominante neste setor.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>41. Tornou-se necessário esclarecer em que consiste cada uma das espécies de assistência em obediência aos princípios e regras internacionais sobre os direitos da pessoa presa, especialmente as que defluem das <U>regras mínimas</U> da ONU.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>42. Em virtude de sua importância prática e das projeções naturais sobre a atividade dos estabelecimentos penais, o tema da assistência foi dos mais discutidos durante o I Congresso Brasileiro de Política Criminal e Penitenciária (Brasília, 27 a 30/9/81) por grande número de especialistas. Reconhecido o acerto das disposições contidas no Anteprojeto, nenhum dos participantes fez objeção à existência de textos claros sobre a matéria. Os debates se travaram em torno de seus pormenores e de seu alcance, o mesmo ocorrendo em relação às emendas recebidas pela Comissão Revisora.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>43. O Projeto garante assistência social à família do preso e do internado, consistente em orientação e amparo, quando necessários, estendendo à vítima essa forma de atendimento.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>44. Nesta quadra da vida nacional, marcada pela extensão de benefícios previdenciários a faixas crescentes da população, devem ser incluídas entre os assistidos, por via de legislação específica, as famílias das vítimas, quando carentes de recursos. A perda ou lesão por elas sofrida não deixa de ter como causa a falência, ainda que ocasional, dos organismos de prevenção da segurança pública, mantidos pelo Estado. Se os Poderes Públicos se preocupam com os delinqüentes, com mais razão devem preocupar-se com a vítima e sua família.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>45. Adotam alguns países, além do diploma legal regulador da execução, lei específica sobre o processo de reintegrar à vida social as pessoas liberadas do regime penitenciário.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>46. O Projeto unifica os sistemas. A legislação ora proposta, ao cuidar minuciosamente dos problemas da execução em geral, cuida também da questão do egresso, ao qual se estende a assistência social nele estabelecida.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>47. Para impedir distorção na aplicação da lei, o Projeto reconhece como egresso o liberado definitivo, pelo prazo de um ano, a contar da saída do estabelecimento penal, e o liberado condicional, durante o período de prova (artigo 25).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>48. A assistência ao egresso consiste em orientação e apoio para reintegrá-lo à vida em liberdade e na concessão, se necessária, de alojamento e alimentação em estabelecimento adequado, por dois meses, prorrogável por uma única vez mediante comprovação idônea de esforço na obtenção de emprego.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 10pt" align=center><U><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>DO TRABALHO<o:p></o:p></SPAN></U></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>49. No Projeto de reforma da Parte Geral do Código Penal ficou previsto que o trabalho do preso "será sempre remunerado, sendo-lhe garantidos os benefícios da Previdência Social".<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>50. A remuneração obrigatória do trabalho prisional foi introduzida na Lei nº 6.416, de 1977, que estabeleceu também a forma de sua aplicação. O Projeto mantém o texto, ficando assim reproduzido o elenco das exigências pertinentes ao emprego da remuneração obtida pelo preso: na indenização&nbsp;dos danos causados pelo crime, desde que determinados judicialmente e não reparados por outros meios; na assistência à própria família, segundo a lei civil; em pequenas despesas pessoais; e na constituição de pecúlio, em caderneta de poupança, que lhe será entregue à saída do estabelecimento penal.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>51. Acrescentou-se a essas obrigações a previsão do ressarcimento do Estado quanto às despesas de manutenção do condenado, em proporção a ser fixada e sem prejuízo da destinação prevista nas letras anteriores (artigo 28, § 1º e 2º).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>52. A remuneração é previamente estabelecida em tabela própria e não poderá ser inferior a três quartos do salário mínimo (artigo 28).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>53. Essas disposições colocam o trabalho penitenciário sob a proteção de um regime jurídico. Até agora, nas penitenciárias onde o trabalho prisional é obrigatório, o preso não recebe remuneração e seu trabalho não é tutelado contra riscos nem amparado por seguro social. Nos estabelecimentos prisionais de qualquer natureza, os Poderes Públicos têm-se valido das aptidões profissionais dos presos em trabalhos gratuitos.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>54. O Projeto adota a idéia de que o trabalho penitenciário deve ser organizado de forma tão aproximada quanto possível do trabalho na sociedade. Admite, por isso, observado o grau de recuperação e os interesses da segurança pública, o trabalho externo do condenado, nos estágios finais de execução da pena.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>55. O trabalho externo, de natureza excepcional, depende da aptidão, disciplina e responsabilidade o preso, além do cumprimento mínimo de um sexto da pena. Tais exigências impedirão o favor arbitrário, em prejuízo do sistema progressivo a que se submete a execução da pena. Evidenciado tal critério, o Projeto dispõe sobre os casos em que deve ser revogada a autorização para o trabalho externo.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>56. O Projeto conceitua o trabalho dos condenados presos como dever social e condição de dignidade humana - tal como dispõe a Constituição, no artigo 160, inciso II -, assentando-o em dupla finalidade: educativa e produtiva.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>57. Procurando, também nesse passo, reduzir as diferenças entre a vida nas prisões e a vida em liberdade, os textos propostos aplicam ao trabalho, tanto interno como externo, a organização, métodos e precauções relativas à segurança e à higiene, embora não esteja submetida essa forma de atividade à Consolidação das Leis do Trabalho, dada a inexistência de condição fundamental, de que o preso foi despojado pela sentença condenatória: a liberdade para a formação do contrato.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>58. Evitando possíveis antagonismos entre a obrigação de trabalhar e o princípio da individualização da pena, o Projeto dispõe que a atividade laboral será destinada ao preso na medida de suas aptidões e capacidade. Serão levadas em conta a habilitação, a condição pessoal e as necessidades futuras do preso, bem como as oportunidades oferecidas pelo mercado.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>59. O conjunto de normas a que se subordinará o trabalho do preso, sua remuneração e forma de aplicação de seus frutos, sua higiene e segurança poderiam tornar-se inócuas sem a previsão de mudança radical em sua direção e gerência, de forma a protegê-lo ao mesmo tempo dos excessos da burocracia e da imprevisão comercial.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>60. O Projeto dispõe que o trabalho nos estabelecimentos prisionais será gerenciado por fundação ou empresa pública dotada de autonomia administrativa, com a finalidade específica de se dedicar à formação profissional do condenado. Incumbirá a essa entidade promover e supervisionar a produção, financiá-la e comercializá-la, bem como encarregar-se das obrigações salariais.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>61. O Projeto limita o artesanato sem expressão econômica, permitindo-o apenas nos presídios existentes em regiões de turismo.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>62. Voltado para o objetivo de dar preparação profissional ao preso, o Projeto faculta aos órgãos da administração direta ou indireta da União, Estados, Territórios, Distrito Federal e Municípios a adquirir, com dispensa da concorrência pública, os bens ou produtos do trabalho prisional, sempre que não for possível ou recomendável realizar-se a venda a particulares.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt" align=center><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><U>DOS DEVERES<o:p></o:p></U></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>63. A instituição dos deveres gerais do preso (artigo 37) e do conjunto de regras inerentes à boa convivência (artigo 38), representa uma tomada de posição da lei em face do fenômeno da prisionalização, visando a depurá-lo, tanto quanto possível, das distorções e dos estigmas que encerra. Sem característica infamante ou aflitiva, os deveres do condenado se inserem no repertório normal das obrigações do apenado como ônus naturais da existência comunitária.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>64. A especificação exaustiva atende ao interesse do condenado, cuja conduta passa a ser regulada mediante regras disciplinares claramente previstas.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt" align=center><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><U>DOS DIREITOS<o:p></o:p></U></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>65. Tornar-se-á inútil, contudo, a luta contra os efeitos nocivos da prisionalização, sem que se estabeleça a garantia jurídica dos direitos do condenado.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>66. O Projeto declara que ao condenado e ao internado serão assegurados todos os direitos não atingidos pela sentença ou pela lei (artigo 3º). Trata-se de proclamação formal de garantia, que ilumina todo o procedimento da execução.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>67. A norma do artigo 39, que impõe a todas as autoridades o respeito à integridade física e moral dos condenados e presos provisórios, reedita a garantia constitucional que integra a Constituição do Brasil desde 1967.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>68. No estágio atual de revisão dos métodos e meios de execução penal, o reconhecimento dos direitos da pessoa presa configura exigência fundamental.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>69. As regras mínimas da ONU, de 1955, têm como antecedentes remotos as disposições do Congresso de Londres, de 1872, e as da reunião de Berna, de 1926. Publicadas em 1929 no <U>Boletim da Comissão Internacional Penal Penitenciária</U>, essas disposições foram levadas ao exame do Congresso de Praga em 1930 e submetidas à Assembléia Geral da Liga das Nações, que as aprovou em 26 de setembro de 1934.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>70. Concluída a 2ª Grande Guerra, foram várias as sugestões oferecidas pelos especialistas no sentido da refusão dos textos. Reconhecendo que nos últimos vinte anos se promovera acentuada mudança de idéias sobre a execução penal, a Comissão Internacional Penal Penitenciária propôs no Congresso de Berna de 1949 o reexame do elenco de direitos da pessoa presa. Multiplicaram-se, a partir de então, os debates e trabalhos sobre o tema. Finalmente, durante o I Congresso das Nações Unidas sobre a Prevenção do Delito e Tratamento do Delinqüente, realizado em Genebra, em agosto de 1955, foram aprovadas as novas regras mínimas que progressivamente se têm positivado nas legislações dos países membros.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>71. O tema foi novamente abordado pelo Grupo Consultivo das Nações Unidas sobre Prevenção do Delito e Tratamento do Delinqüente, que recomendou ao Secretário Geral da ONU a necessidade de novas modificações nas regras estabelecidas, em face do&nbsp;progresso da doutrina sobre a proteção dos direitos humanos nos domínios da execução da pena ("Pacto Internacional de Direitos Civis e Políticos", Nova Iorque, 1956).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>72. Cumprindo determinação tomada no IV Congresso da ONU sobre Prevenção do Delito e Tratamento do Delinqüente, realizado em Kioto, em 1970, a Assembléia Geral recomendou aos Estados membros, pela Resolução nº 2.858, de 20 de dezembro de 1971, reiterada pela Resolução nº 3.218, de 6 de novembro de 1974, a implementação das <U>regras mínimas</U> na administração das instituições penais e de correção. A propósito dessa luta pelos direitos da pessoa presa, retomada, ainda, no V Congresso da ONU, realizado em Genebra, em 1975, merecem leitura a pesquisa e os comentários de Heleno Fragoso, Yolanda Catão e Elisabeth Sussekind, em "Direitos dos Presos", Rio de Janeiro, 1980, págs. 17 e seguintes.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>73. As <U>regras mínimas</U> da ONU constituem a expressão de valores universais tidos como imutáveis no patrimônio jurídico do homem. Paul Cornil observa a semelhança entre a redação do texto final de 1955 e as recomendações ditadas por John Howard dois séculos antes, afirmando que são "assombrosas as analogias entre ambos os textos" ("Las reglas internacionales para el Tratamento de los delinquentes", <U>in</U> Revista Internacional de Política Criminal, México, 1968, nº 26, pág. 7).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>74. A declaração desses direitos não pode conservar-se, porém, como corpo de regras meramente programáticas. O problema central está na conversão das <U>regras</U> em <U>direitos</U> do prisioneiro, positivados através de preceitos e sanções.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>75. O Projeto indica com clareza e precisão o repertório dos direitos do condenado, a fim de evitar a fluidez e as incertezas resultantes de textos vagos ou omissos: alimentação suficiente e vestuário; atribuição de trabalho e sua remuneração; previdência social; constituição de pecúlio; proporcionalidade na distribuição do tempo para o trabalho, o descanso e a recreação; exercício das atividades profissionais, intelectuais, artísticas e desportivas anteriores, quando compatíveis com a execução da pena; assistência material, à saúde, jurídica, educacional, social e religiosa; proteção contra qualquer forma de sensacionalismo; entrevista pessoal e reservada com o advogado; visita do cônjuge, da companheira, de parentes e amigos; chamamento nominal; igualdade de tratamento; audiência com o diretor do estabelecimento; representação e petição a qualquer autoridade em defesa de direito; contato com o mundo exterior através de correspondência escrita, da leitura e de outros meios de informação (artigo 40).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>76. Esse repertório, de notável importância para o habitante do sistema prisional, seja ele condenado ou preso provisório, imputável, semi-imputável ou inimputável, se harmoniza não somente com as declarações internacionais de direitos mas também com os princípios subjacentes ou expressos de nosso sistema jurídico e ainda com o pensamento e idéias dos penitenciaristas (Jason Soares de Albergaria, "Os direitos do homem no Processo Penal e na execução da pena", Belo Horizonte, 1975).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt" align=center><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><U>DA DISCIPLINA<o:p></o:p></U></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>77. O Projeto enfrenta de maneira adequada a tormentosa questão da disciplina. Consagra o princípio da reserva legal e defende os condenados e presos provisórios das sanções coletivas ou das que possam colocar em perigo sua integridade física, vedando, ainda, o emprego da chamada <U>cela escura</U> (artigo 44 e §§).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>78. Na Comissão Parlamentar de Inquérito que levantou a situação penitenciária do País, chegamos à conclusão de que a disciplina tem sido considerada "matéria vaga por excelência, dada a interveniência de dois fatores: o da superposição da vontade do diretor ou guarda ao texto disciplinar e o da concepção dominantemente repressiva do texto. Com efeito, cumulativamente atribuídos à direção de cada estabelecimento prisional a competência para elaborar o seu código disciplinar e o poder de executá-lo, podem as normas alterar-se a cada conjuntura e se substituírem as penas segundo um conceito variável de necessidade, o que importa, afinal, na prevalência de vontades pessoais sobre a eficácia da norma disciplinar. O regime disciplinar, por seu turno, tem visado à conquista da obediência pelo império da punição, sem a tônica da preocupação com o despertar do senso de responsabilidade e da capacidade de autodomínio do paciente". (Diário do Congresso Nacional, Suplemento ao nº 61, de 6-4-76, pág. 6).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>79. O Projeto confia a enumeração das faltas leves e médias, bem como as respectivas sanções, ao poder discricionário do legislador local. As peculiaridades de cada região, o tipo de criminalidade, mutante quanto aos meios e modos de execução, a natureza do bem jurídico ofendido e outros aspectos sugerem tratamentos disciplinares que se harmonizem com as características do ambiente.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>80. Com relação às faltas graves, porém, o Projeto adota solução diversa. Além das repercussões que causa na vida do estabelecimento e no quadro da execução, a falta grave justifica a <U>regressão</U>, consistente, como já se viu, na transferência do condenado para regime mais rigoroso. A falta grave, para tal efeito, é equiparada à prática de fato definido como crime (artigo 117, I) e a sua existência obriga a autoridade administrativa a representar ao juiz da execução (parágrafo único do artigo 47) para decidir sobre a regressão.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>81. Dadas as diferenças entre as penas de prisão e as restritivas de direitos, os tipos de ilicitude são igualmente considerados como distintos.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>82. As sanções disciplinares - advertência verbal, repreensão, suspensão, restrição de direito e isolamento na própria cela ou local adequado, com as garantias mínimas de salubridade (artigo 52) - demonstram moderado rigor.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>83. Teve-se extremo cuidado na individualização concreta das sanções disciplinares, na exigência da motivação do ato determinante do procedimento e na garantia de direito de defesa.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>84. O Projeto elimina a forma pela qual o sistema disciplinar, quase sempre humilhante e restritivo, é atualmente instituído nos estabelecimentos prisionais. Abole o arbítrio existente em sua aplicação. Introduz disposições precisas, no lugar da regulamentação vaga e quase sempre arbitrária. Dá a definição legal taxativa das faltas. Prevê as regras do processo disciplinar, assegura a defesa e institui o sistema de recursos. Submete, em suma, o problema da disciplina, a tratamento legislativo científico e humanizado.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt" align=center><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><U>DOS ÓRGÃOS DA EXECUÇÃO PENAL<o:p></o:p></U></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>85. De forma incomparavelmente superior às disposições atuais, que indicam os órgãos encarregados da execução e regulamentam as suas atribuições, o Projeto abre a relação indicando o Conselho Nacional de Política Criminal e Penitenciária.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>86. Hoje não mais se admite que o fenômeno da execução das penas e das medidas de segurança se mantenha neutro em relação aos aspectos variados e dinâmicos da delinqüência e da Justiça Criminal, nos quadros da prevenção e repressão dos ilícitos penais. Nem que persista como processo indiferente ou marginal às preocupações do Estado e da comunidade quanto aos problemas de Política Criminal e Penitenciária, de Estatística, de planificação geral de combate ao delito, de avaliação periódica do sistema criminal para sua adequação às necessidades do País, de estímulo e promoção das investigações criminológicas, de elaboração do programa nacional penitenciário e de formação e aperfeiçoamento do servidor, de estabelecimento de regras sobre arquitetura e construção de estabelecimentos penais, de inspeção e fiscalização dos estabelecimentos penais e dos poderes de representação, sempre que ocorra violação das normas de execução ou quando o estabelecimento estiver funcionando sem as condições adequadas.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>87. O Juízo da Execução, o Ministério Público, o Conselho Penitenciário, os Departamentos Penitenciários, o Patronato e o Conselho da Comunidade (artigos 64 e seguintes) são os demais órgãos da execução, segundo a distribuição feita no Projeto.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>88. As atribuições pertinentes a cada um de tais órgãos foram estabelecidas de forma a evitar conflitos, realçando-se, ao contrário, a possibilidade da atuação conjunta, destinada a superar os inconvenientes graves, resultantes do antigo e generalizado conceito de que a execução das penas e medidas de segurança é assunto de natureza eminentemente administrativa.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>89. Diante das dúvidas sobre a natureza jurídica da execução e do conseqüente hiato de legalidade nesse terreno, o controle jurisdicional, que deveria ser freqüente, tem-se manifestado timidamente para não ferir a suposta "autonomia" administrativa do processo executivo.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>90. Essa compreensão sobre o caráter administrativo da execução tem sua sede jurídica na doutrina política de Montesquieu sobre a separação dos poderes. Discorrendo sobre a "individualização administrativa", Montesquieu sustentou que a lei deve conceder bastante elasticidade para o desempenho da administração penitenciária, "porque ela individualiza a aplicação da pena às exigências educacionais e morais de cada um" ("L' individualisation da la peine", Paris, 1927, págs. 267/268).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>91. O rigor metodológico dessa <U>divisão de poderes</U> tem sido, ao longo dos séculos, uma das causas marcantes do enfraquecimento do <U>direito penitenciário</U> como disciplina abrangente de todo o processo de execução.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>92. A orientação estabelecida pelo Projeto, ao demarcar as áreas de competência dos órgãos da execução, vem consagrar antigos esforços no sentido de jurisdicionalizar, no que for possível, o Direito de Execução Penal. Já em 1893, no Congresso promovido pela recém-fundada União Internacional de Direito Penal, concluiu-se que como os tribunais e a administração penitenciária concorriam para um fim comum - valendo a condenação, principalmente, pelo seu modo de execução - o divisionismo consumado pelo Direito do final do século, entre as funções repressiva e penitenciária, deveria ser relegado como "irracional e danoso". O texto da conclusão votada naquele conclave já deixava antever a figura do juiz de execução, surgido na Itália em 1930 e em França após 1945.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>93. Esse juízo especializado já existe, entre nós, em algumas Unidades da Federação. Com a transformação do Projeto em lei, estamos certos de que virá a ser criado, tão celeremente quanto possível, nos demais Estados e Territórios.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt" align=center><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><U>DOS ESTABELECIMENTOS PENAIS<o:p></o:p></U></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>94. Os estabelecimentos penais compreendem: 1º - a Penitenciária, destinada ao condenado à reclusão, a ser cumprida em regime fechado; 2º - a Colônia Agrícola, Industrial ou similar, reservada para a execução da pena de reclusão ou detenção em regime semi-aberto; 3º - a Casa do Albergado, prevista para acolher os condenados à pena privativa da liberdade em regime aberto e à pena de limitação de fim de semana; 4º - o Centro de Observação, onde serão realizados os exames gerais e o criminológico; 5º - o Hospital de Custódia e Tratamento Psiquiátrico, que se destina aos doentes mentais, aos portadores de desenvolvimento mental incompleto ou retardado e aos que manifestam perturbações das faculdades mentais; e, 6º - a Cadeia Pública, para onde devem ser remetidos os presos provisórios (prisão em flagrante, prisão temporária, prisão preventiva ou em razão da pronúncia e, finalmente, os condenados enquanto não transitar em julgado a sentença (artigos 86 e seguintes).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>95. O Projeto regulou as diferentes situações pessoais, dispondo que "a mulher será recolhida a estabelecimento próprio e adequado à sua condição pessoal", "o preso provisório ficará separado do condenado por sentença transitada em julgado", "o preso primário cumprirá a pena em seção distinta daquela reservada para os reincidentes" e "o preso que, ao tempo do fato, era funcionário da Administração da Justiça Criminal ficará em dependência separada" (artigos 81, § 1º 83, e §§).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>96. Relaciona-se com o problema da separação dos presidiários a superlotação dos estabelecimentos penais.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>97. Na CPI do Sistema Penitenciário salientamos que o "dramático problema da vida sexual nas prisões não se resume na prática do homossexualismo, posto que comum. Seu aspecto mais grave está no assalto sexual, vitimador dos presos vencidos pela força de um ou mais agressores em celas superpovoadas. Trata-se de conseqüência inelutável da superlotação carcerária, já que o problema praticamente desaparece nos estabelecimentos de semi-liberdade, em que se faculta aos presos saídas periódicas. Sua existência torna imperiosa a adoção de cela individual" ("Diário do Congresso Nacional", Suplemento ao nº 61, de 4-6-76, pág. 9).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>98. O Projeto adota, sem vacilação, a regra da cela individual, com requisitos básicos quanto à salubridade e área mínima. As Penitenciárias e as Cadeias Públicas terão, necessariamente, as celas individuais. As Colônias, pela natureza de estabelecimento de regime semi-aberto, admitem o alojamento em compartimentos coletivos, porém com os requisitos legais de salubridade ambiental (aeração, insolação e condicionamento térmico adequado à existência humana).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>99. Relativamente ao Hospital de Custódia e Tratamento Psiquiátrico não existe a previsão de cela individual, já que a estrutura e as divisões de tal unidade estão na dependência de planificação especializada, dirigida segundo os padrões de medicina psiquiátrica. Estabelecem-se, entretanto, as garantias mínimas de salubridade do ambiente e área física de cada aposento.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>100. É de conhecimento geral que "grande parte da população carcerária está confinada em cadeias públicas, presídios, casas de detenção e estabelecimentos análogos, onde prisioneiros de alta periculosidade convivem em celas superlotadas com criminosos ocasionais, de escassa ou nenhuma periculosidade, e pacientes de imposição penal prévia (presos provisórios ou aguardando julgamento), para quem é um mito, no caso, a presunção de inocência. Nestes ambientes de estufa, a ociosidade é a regra; a intimidade, inevitável e profunda. A deterioração do caráter, resultante da influência corruptora da subcultura criminal, o hábito da ociosidade, a alienação mental, a perda paulatina da aptidão para o trabalho, o comprometimento da saúde, são conseqüências desse tipo de confinamento promíscuo, já definido alhures como "sementeiras de reincidências", dados os seus efeitos criminógenos" (cf. o nosso Relatório à CPI do Sistema Penitenciário, loc. cit. pág. 002).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>101. O Projeto é incisivo ao declarar que "o estabelecimento penal deverá ter lotação compatível com a sua estrutura e finalidade" (artigo 84).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>102. Para evitar o inconveniente de se prefixar, através da lei, o número adequado de presos ou internados, defere-se ao Conselho Nacional de Política Criminal e Penitenciária a atribuição para determinar os limites máximos de capacidade de cada estabelecimento, atendendo à sua natureza e peculiaridades (parágrafo único, artigo 84).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>103. A violação da regra sobre a capacidade de lotação é punida com a interdição do estabelecimento, a ser determinada pelo juiz da execução (inc. VIII, artigo 65). O Projeto igualmente prevê a sanção a ser imposta às unidades federativas, consistente na suspensão de qualquer ajuda financeira a elas destinadas pela União, a fim de atender às despesas de execução das penas e medidas de segurança (§ 4º, artigo 202).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>104. A execução da pena privativa da liberdade em estabelecimento penal pertencente a outra unidade federativa é uma possibilidade já consagrada em nossos costumes penitenciários pelo Código Penal de 1940 (§ 3º, artigo 29).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>105. Anteriormente, o Código republicano (1890) dispunha que a prisão celular poderia ser cumprida em qualquer estabelecimento especial ainda que não fosse no local do domicílio do condenado (artigo 54).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>106. O artigo 85 do Projeto atende não somente ao interesse público da administração penitenciária como também ao interesse do próprio condenado.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>107. Em princípio, a pena deve ser executada na comarca onde o delito se consumou, em coerência, aliás, com a regra da competência jurisdicional. Existem, no entanto, situações que determinam ou recomendam, no interesse da segurança pública ou do próprio condenado, o cumprimento da pena em local distante da condenação. Sendo assim, a previsão legal de que se cogita (§ 1º artigo 85) é pertinente à categoria especial de presidiários sujeitos&nbsp;à pena superior a quinze anos. O recolhimento depende de decisão judicial e poderá ocorrer no início ou durante a execução. Os estabelecimentos a serem construídos pela União podem ser tanto penitenciárias, como colônias agrícolas, industriais ou similares.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>108. O artigo 82 dispõe que o estabelecimento penal, segundo a sua natureza, deverá contar em suas dependências com áreas e serviços destinados a dar assistência, educação, trabalho, recreação e prática desportiva. Trata-se de norma destinada a desartificializar <SPAN style="mso-spacerun: yes">&nbsp;</SPAN>o cenário que ainda hoje transparece em muitos presídios, nos quais se conservam a arquitetura e o cheiro de antigüidades medievais. Com grande propriedade, Eberhard Schmidt se referiu o arcaísmo do sistema ortodoxo mundial, impregnado de "erros monumentais talhados em pedra" (cf. Peter Aebersold, "Le Projet alternatif alleman D'une loi sur i l'exécution des peines" (A.E.); trabalho divulgado na Revue Internationale de Droit Pénal, nºs 3/4 de 1975, págs. 269 e seguintes).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>109. A Casa do Albergado deverá situar-se em centro urbano, separada dos demais estabelecimentos, caracterizando-se pela ausência de obstáculos físicos contra a fuga (artigo 93). Tratando-se de estabelecimento que recolhe os condenados à pena privativa da liberdade em regime aberto e também os apenados com a limitação de fim de semana, há necessidade de conter, além dos aposentos para acomodar os presos, local apropriado para cursos e palestras (artigo 94).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>110. A experiência da prisão-albergue obteve grande receptividade no Estado de São Paulo, quando Secretário da Justiça o Professor Manoel Pedro Pimentel. Até o mês de outubro de 1977 já estavam instaladas 59 Casas do Albergado com uma população de 2.000 sentenciados. A propósito, o ilustre penalista iniciou uma grande campanha, "convocando as forças vivas da comunidade" (Clubes de Serviço, Lojas Maçônicas, Federações Espíritas, Igrejas Evangélicas, Igreja Católica), de maneira a ensejar uma pergunta: "por que o Estado, que já arrecada impostos para a prestação de serviços, não se encarrega da construção e manutenção das Casas do Albergado?" A resposta é simples. Trata-se da necessidade de modificação da atitude da sociedade frente ao preso e da atitude do preso frente à sociedade. Estas atitudes jamais se modificarão se a sociedade não ficar conhecendo melhor o preso e este conhecendo melhor a sociedade. Não devemos esperar que o sentenciado seja o primeiro a estender a mão, por óbvias razões. O primeiro passo deve ser dado pela sociedade" (Prisões Fechadas - Prisões Abertas, São Paulo, 1978, pág. 43).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>111. Com a finalidade de melhor apurar o senso de responsabilidade dos condenados e promover-lhes a devida orientação, a Casa do Albergado deverá ser dotada de instalações apropriadas. Esta providência é uma das cautelas que, aliadas à rigorosa análise dos requisitos e das condições para o cumprimento da pena privativa da liberdade em regime aberto (artigo 113 e seguintes), permitirá à instituição permanecer no sistema, já que ao longo dos anos tem sido consagrada nos textos da reforma, como se poderá ver pelas Leis nºs 6.016, de 31 de dezembro de 1973, e 6.416, de 24 de maio de 1977, e pelo Projeto de revisão da Parte Geral do Código Penal.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>112. O funcionamento satisfatório da prisão-albergue depende, portanto, de regulamentação adequada quanto às condições de concessão e ao sujeito a que se destina. Além disso, a necessidade de efetivo controle jurisdicional, que impeça abusos, se coloca como providência indispensável para a estabilidade da instituição. O Projeto cuidou de tais aspectos visando a fazer da Casa do Albergado um estabelecimento idôneo para determinados tipo de condenados (cf., para maiores detalhes sobre o tema, Alípio Silveira, Prisão Albergue - Teoria e Prática).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt" align=center><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><U>DA EXECUÇÃO DAS PENAS PRIVATIVAS<BR>DA LIBERDADE<o:p></o:p></U></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>113. O Título V do Projeto abre a parte que se poderia reconhecer como especial, em cotejo com uma parte geral. Inicia-se com disposições sobre a execução das penas em espécie, particularmente as penas privativas da liberdade.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>114. A matéria tratada nas disposições gerais diz respeito às exigências formais relativas ao início do cumprimento da pena com a declaração da garantia de que "ninguém será recolhido, para cumprimento da pena privativa da liberdade, sem a guia expedida pela autoridade judiciária" (artigo 106).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>115. O Projeto evoluiu sensivelmente, ao ampliar o conteúdo da carta de guia, documento que deve servir de indicador e roteiro primários para o procedimento da execução.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>116. Nos termos do artigo 676 do Código de Processo Penal, a carta de guia deve conter:<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>I - o nome do réu e a alcunha por que for conhecido;<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>II - a sua qualificação civil (naturalidade, filiação, idade, estado, profissão), instrução e, se constar, o número do registro geral do Instituto de Identificação e Estatística ou de repartição congênere;<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>III - o teor integral da sentença condenatória e a data da terminação da pena.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>117. Segundo a redação agora proposta, a carta de guia conterá, além desses dados, informações sobre os antecedentes e o grau de instrução do condenado. Ao Ministério Público se dará ciência da guia de recolhimento, por lhe incumbir a fiscalização da regularidade formal de tal documento, além dos deveres próprios no processo executivo (artigos 66 e 67).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>118. O Projeto dispõe que o regime inicial de execução da pena privativa da liberdade é o estabelecido na sentença de condenação, com observância do artigo 33 e seus parágrafos do Código Penal (artigo 109). Mas o processo de execução deve ser dinâmico, sujeito a mutações. As mudanças no itinerário da execução consistem na transferência do condenado de regime mais rigoroso para outro menos rigoroso (progressão) ou de regime menos rigoroso para outro mais rigoroso (regressão).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>119. A progressão deve ser uma conquista do condenado pelo seu mérito e pressupõe o cumprimento mínimo de um sexto da pena no regime inicial ou anterior. A transferência é determinada somente pelo juiz da execução, cuja decisão será motivada e precedida de parecer da Comissão Técnica de Classificação. Quando se tratar de condenado oriundo do sistema fechado, é imprescindível o exame criminológico (artigo 111 e parágrafo único).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>120. Se o condenado estiver no regime fechado não poderá ser transferido diretamente para o regime aberto. Esta progressão depende do cumprimento mínimo de um sexto da pena no regime semi-aberto, além da demonstração do mérito, compreendido tal vocábulo como aptidão, capacidade e merecimento, demonstrados no curso da execução.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>121. Segundo a orientação do Projeto, a prisão-albergue é espécie do regime aberto. O ingresso do condenado em tal regime poderá ocorrer no início ou durante a execução. Na primeira hipótese, os requisitos são os seguintes: a) pena igual ou inferior a quatro anos; b) não ser o condenado reincidente; c) exercício do trabalho ou comprovação da possibilidade de trabalhar imediatamente; d) apresentar, pelos antecedentes ou resultado dos exames a que foi submetido, fundados indícios de que irá ajustar-se, com autodisciplina e senso de responsabilidade, ao novo regime (Projeto de revisão da Parte Geral do Código Penal, letra <U>c</U>, § 2º, artigos 33 e 113 do presente Projeto).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>122. Para a segunda hipótese, isto é, a passagem do regime semi-aberto para o aberto (progressão), além dos requisitos indicados nas letras <U>c</U> e <U>d</U>, exige-se, também, o cumprimento de um sexto da pena no regime anterior (artigo 111).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>123. O deferimento do regime aberto pressupõe a aceitação do programa de execução e as condições impostas pelo juiz, que se classificam em especiais e gerais. As primeiras serão impostas segundo prudente arbítrio do magistrado, levando em conta a natureza do delito e as condições pessoais de seu autor. As outras têm caráter obrigatório e consistem: 1ª - na permanência, no local designado, durante o repouso e nos dias de folga; 2ª - na saída para o trabalho e no retorno, nos horários fixados; 3º - em não se ausentar da cidade onde reside, sem autorização judicial; 4ª - no comparecimento a juízo, para informar e justificar as atividades (artigo 114).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>124. Reconhecendo que a prisão-albergue não se confunde com a prisão-domiciliar, o Projeto declara, para evitar dúvidas, que o regime aberto não admite a execução da pena em residência particular, salvo quando se tratar de condenado maior de setenta anos ou acometido de grave doença e de condenada com filho menor ou deficiente físico ou mental ou, finalmente, de condenada gestante (artigo 116). Trata-se, aí, de exceção plenamente justificada em face das condições pessoais do agente.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>125. A regressão (transferência do condenado de regime menos rigoroso para outro mais rigoroso) será determinada pelo juiz quando o condenado praticar fato definido como crime doloso ou falta grave; sofrer condenação, por delito anterior, cuja pena, somada ao restante da pena em execução, torne incabível o regime. Relativamente à execução em regime aberto, a regressão também poderá ocorrer se o condenado frustrar os fins de execução ou, podendo, não pagar a multa cumulativamente aplicada.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>126. A legislação local poderá estabelecer normas complementares para o cumprimento da pena privativa da liberdade em regime aberto, no que tange à regulamentação das atividades exercidas fora do estabelecimento penal, bem como dos dias e dos horários de recolhimento e dos dias de folga.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>127. As autorizações de saída (permissão de saída e saída temporária) constituem notáveis fatores para atenuar o rigor da execução contínua da pena de prisão. Não se confundem tais autorizações com os chamados favores gradativos que são característicos de matéria tratada no Cap. IV do Tít. II (mais especialmente dos direitos e da disciplina).</SPAN></P><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>128. As autorizações de saída estão acima da categoria normal dos direitos (artigo 40), visto que constituem, ora aspectos da assistência em favor de todos os presidiários, ora etapa da progressão em favor dos condenados que satisfaçam determinados requisitos e condições. No primeiro caso estão as permissões de saída (artigo 119 e incisos) que se fundam em razões humanitárias. <o:p></o:p></SPAN></P><o:p></o:p></SPAN>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>129. As saídas temporárias são restritas aos condenados que cumprem pena em regime semi-aberto (colônias). Consistem na autorização para sair do estabelecimento para, sem vigilância direta, visitar a família, freqüentar cursos na Comarca da execução e participar de atividades que concorram para o retorno ao convívio social (artigo 121 e incisos). A relação é exaustiva.</SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>130. A limitação do prazo para a saída, as hipóteses de revogação e recuperação do benefício, além da motivação do ato judicial, após audiência do Ministério Público e da administração penitenciária, conferem o necessário rigor a este mecanismo de progressão que depende dos seguintes requisitos: 1º - comportamento adequado; 2º - cumprimento mínimo de um sexto da pena para o primário e um quarto para o reincidente; e 3º - a compatibilidade do benefício com os objetivos da pena (artigo 122 e incisos).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>131. Na lição de Elias Neuman, as autorizações de saída representam um considerável avanço penalógico e os seus resultados são sempre proveitosos quando outorgados mediante bom senso e adequada fiscalização (Prisión abierta, Buenos Aires, 1962, págs. 136/137).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>132. A remição é uma nova proposta ao sistema e tem, entre outros méritos, o de abreviar, pelo trabalho, parte do tempo da condenação. Três dias de trabalho correspondem a um dia de resgate. O tempo remido será computado para a concessão do livramento condicional e do indulto, que a exemplo da remição constituem hipóteses práticas de sentença indeterminada como fenômeno que abranda os rigores da pré-fixação invariável, contrária aos objetivos da Política Criminal e da reversão pessoal do delinqüente.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>133. O instituto da remição é consagrado pelo Código Penal Espanhol (artigo 100). Tem origem no Direito Penal Militar da guerra civil e foi estabelecido por decreto de 28 de maio de 1937 para os prisioneiros de guerra e os condenados por crimes especiais. Em 7 de outubro de 1938 foi criado um patronato central para tratar da "redención de penas por el trabajo" e a partir de 14 de março de 1939 o benefício foi estendido aos crimes comuns. Após mais alguns avanços, a prática foi incorporada ao Código Penal com a Reforma de 1944. Outras ampliações ao funcionamento da remição verificaram-se em 1956 e 1963 (cf. Rodriguez Devesa, "Derecho Penal Español", parte geral, Madrid, 1971, págs. 763 e seguintes).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>134. Com a finalidade de se evitarem as distorções que poderiam comprometer a eficiência e o crédito deste novo mecanismo em nosso sistema, o Projeto adota cautelas para a concessão e revogação do benefício, dependente da declaração judicial e audiência do Ministério Público. E reconhece caracterizado&nbsp;o crime de falsidade ideológica quando se declara ou atesta falsamente a prestação de serviço para instruir o pedido de remição.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>135. Relativamente ao livramento condicional as alterações são relevantes, conforme orientação adotada pelo Projeto de revisão da Parte Geral do Código Penal (artigos&nbsp;83 e seguintes).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>136. No quadro da execução (artigos 130 e seguintes) o tema do livramento condicional acompanhou as importantes modificações introduzidas pela Lei nº 6.416/77, que alterou os artigos 710 e seguintes do Código de Processo Penal. Além do minucioso e adequado repertório de obrigações, deu-se ênfase à solenidade da audiência de concessão da medida e adotaram-se critérios de revogação fiéis ao regime de legalidade, de necessidade e de oportunidade. A observação cautelar e a proteção social do liberado constituem medidas de grande repercussão humana e social ao substituírem a chamada "vigilância da autoridade policial" prevista pelo Código de 1940 onde não existisse (e não existe em quase lugar algum do País!) patronato oficial ou particular.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>137. Esses são alguns dos aspectos de acentuado valor para maior flexibilidade do livramento condicional, que é uma das medidas alternativas ao encarceramento.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt" align=center><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><U>DA EXECUÇÃO DAS PENAS RESTRITIVAS<BR>DE DIREITOS<o:p></o:p></U></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>138. A atividade judicial é de notável relevo na execução destas espécies de pena. Como se trata de inovação absoluta, inexistem parâmetros rigorosos&nbsp;a guiá-la. Cabe-lhe, assim, designar entidades ou programas comunitários ou estatais; determinar a intimação do condenado e adverti-lo das obrigações; alterar a forma de execução; verificar a natureza e a qualidade dos cursos a serem ministrados; comunicar à autoridade competente a existência da interdição temporária de direitos; determinar a apreensão dos documentos que autorizem o direito interditado, etc artigos 148 e seguintes).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>139. Na execução das penas restritivas de direitos domina também o princípio da individualização, aliado às características do estabelecimento, da entidade ou do programa comunitário ou estatal (artigo 147).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>140. A responsabilidade da autoridade judiciária no cumprimento das penas restritivas de direitos é dividida com as pessoas jurídicas de direito público ou privado ou com os particulares beneficiados com a prestação de serviços gratuitos. Mas o seu desempenho não é minimizado pelo servidor ou pela burocracia, como sucede, atualmente, com a execução das penas privativas da liberdade. O caráter pessoal e indelegável da jurisdição é marcante na hipótese de conversão da pena restritiva de direito em privativa da liberdade (artigo 180) ou desta para aquela (artigo 179).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>141. Tais procedimentos revelam o dinamismo e a personalidade da execução.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt" align=center><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><U>DA SUSPENSÃO CONDICIONAL<o:p></o:p></U></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>142. A prática da suspensão condicional da pena tem revelado com freqüência a perda do poder aflitivo que constitui a essência da reação anticriminal. Considerado como garantia de impunidade para o primeiro delito ou como expressão de clemência judicial, o instituto não tem atendido aos objetivos próprios à sua natureza.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>143. O problema, visto pelos escritores italianos como a <U>debolezze della repressione</U>, tem contribuído para o descrédito da medida sob os ângulos da proporcionalidade e da intimidação. Marc Ancel analisa essa corrente crítica em obra vertida para a língua italiana sob o título <U>La sospensione dell'esecuzione della sentenza</U>, Milão, 1976, pág. 80 e seguintes.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>144. Na rotina forense, o procedimento da suspensão condicional da pena se encerra com a leitura de condições rotineiras que, distanciadas da realidade e do condenado, permanecem depois como naturezas mortas nos escaninhos dos cartórios.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>145. Reagindo, porém, a essa letargia, o Projeto consagra as linhas da reforma introduzida pela Lei nº 6.416/77 que emprestou novos contornos materiais e formais à suspensão da pena privativa da liberdade, mediante condições. Além de alterações que deram mais amplitude, como a aplicação geral aos casos de reclusão e aos reincidentes, salvo exceção expressa, o sistema exige que o juiz, ao impor pena privativa da liberdade não superior a dois anos, se pronuncie, obrigatória e motivadamente, sobre o <U>sursis</U>, quer o conceda, quer o denegue.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>146. As condições devem ser adequadas ao fato e à situação pessoal do condenado, evitando-se dessa forma as generalizações incompatíveis com o princípio da individualização.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>147. A leitura da sentença pelo juiz, com advertência formal sobre as conseqüências de nova infração e do descumprimento das condições (artigo 159), confere dignidade à mecânica do instituto, que não se pode manter como ato de rotina. A audiência especial presidida pelo magistrado visa a emprestar à cerimônia dignidade compatível com o ato, evitando-se que a sentença e as condições sejam anunciadas por funcionários do cartório, que colhem, no balcão, a assinatura do condenado.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt" align=center><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><U>DA EXECUÇÃO DA PENA DE MULTA<o:p></o:p></U></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>148. A pena de multa fixada em dias constitui grande evolução no sistema ora proposto à consideração de Vossa Excelência. Para compatibilizar tal progresso com os meios para efetivar a cobrança, o Projeto prevê que a nomeação de bens à penhora e a posterior execução (quando o condenado, regularmente citado, não paga o valor da multa e nem indica bens à penhora) se processem segundo as disposições do Código de Processo Civil (§ 2º, artigo 163). Recaindo a penhora sobre bem imóvel, os autos de execução (que se formam em apartado) serão remetidos ao juízo cível para o devido prosseguimento (artigo 164).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>149. Melhor flexibilidade para o instituto da multa advém da forma de cobrança mediante desconto no vencimento ou salário do condenado, com a intimação do responsável pelo desconto para que proceda ao recolhimento mensal da importância determinada, até o dia fixado pelo juiz. A recusa ou a simples omissão caracteriza o delito de desobediência.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>150. O desconto, porém, é limitado (no máximo, a quarta parte da remuneração, e no mínimo, um décimo) a fim de impedir que a execução da pena de multa alcance expressão aflitiva exagerada ou desproporcional, com sacrifício do objetivo da prevenção especial, tanto em se tratando de condenado em meio livre (artigo 167) como de condenado que cumpre, cumulativamente, a pena privativa da liberdade (artigo 169).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt" align=center><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><U>DA EXECUÇÃO DAS MEDIDAS DE SEGURANÇA<o:p></o:p></U></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>151. Extremamente simplificada é a execução das medidas de segurança em face da revisão imposta pelo Projeto que altera a Parte Geral do Código Penal, com a supressão de algumas espécies de medidas e estabelecimentos.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>152. O sistema agora proposto contém apenas dois tipos de medidas de segurança: internamento e sujeição a tratamento ambulatorial.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>153. A guia expedida pela autoridade judiciária constitui o documento indispensável para a execução de qualquer uma das medidas. Trata-se da reafirmação da garantia individual da liberdade que deve existir para todas as pessoas, independentemente de sua condição, salvo as exceções legais.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>154. A exemplo do que ocorre com o procedimento executivo das penas privativas da liberdade, a guia de internamento ou tratamento ambulatorial contém as indicações necessária</SPAN><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>s à boa e fiel execução fiscalizada pelo Ministério Público, que deverá manifestar a ciência do ato no próprio documento.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>155. Tanto o exame criminológico como o exame geral de personalidade são, conforme as circunstâncias do caso concreto, necessários ou recomendáveis em relação aos destinatários das medidas de segurança. Daí porque o Projeto expressamente consigna a realização de tais pesquisas. Em relação aos internados, o exame criminológico é obrigatório. É facultativo - na dependência da natureza do fato e das condições do agente - quanto aos submetidos a tratamento ambulatorial.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>156. Findo o prazo mínimo de duração da medida de segurança, detentiva ou não detentiva, proceder-se-á à verificação do estado de periculosidade. Trata-se, em tal caso, de procedimento <U>ex-officio</U>. A decisão judicial será instruída com o relatório da autoridade administrativa, laudo psiquiátrico e diligências. O Ministério Público e o curador ou defensor do agente serão necessariamente ouvidos, exigência que caracteriza a legalidade e o relevo de tal procedimento.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>157.<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>Significativa é a alteração proposta ao sistema atual, no sentido de que a averiguação do estado de periculosidade, antes mesmo de expirado o prazo mínimo, possa ser levada a cabo por iniciativa do próprio juiz da execução (artigo 175). Atualmente, tal investigação somente é promovida por ordem do Tribunal (CPP artigo 777) suprimindo-se, portanto, a instância originária e natural, visto que a cessação da periculosidade é procedimento típico de execução.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>158. A pesquisa sobre a condição dos internados ou dos submetidos a tratamento ambulatorial deve ser estimulada com rigor científico e desvelo humano. O problema assume contornos dramáticos em relação aos internamentos que não raro ultrapassam os limites razoáveis de durabilidade, consumando, em alguns casos, a perpétua privação da liberdade.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt" align=center><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><U>DOS INCIDENTES DE EXECUÇÃO<o:p></o:p></U></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>159. Os incidentes de execução compreendem as conversões, o excesso ou desvio de execução, a anistia e o indulto, salientando-se, quanto a estes dois últimos, o caráter substantivo de causas de extinção da punibilidade.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>160. A conversão se distingue da transferência do condenado de um regime para outro, como ocorre com as progressões e as regressões.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>161. Enquanto a conversão implica alterar de uma pena para outra (a detenção não superior a dois anos pode ser convertida em prestação de serviços à comunidade; a limitação de fim de semana pode ser convertida em detenção), a transferência é um evento que ocorre na dinâmica de execução da mesma pena (a reclusão é exeqüível em etapas: desde o regime fechado até o aberto, passando pelo semi-aberto).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>162. As hipóteses de conversão foram minuciosamente indicadas no Projeto (artigos 179 e seguintes) de modo a se cumprir fielmente o regime de legalidade e se atenderem amplamente aos interesses da defesa social e aos direitos do condenado.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>163. A conversão, isto é, a alternatividade de uma pena por outra no curso da execução, poderá ser favorável ou prejudicial ao condenado. Exemplo do primeiro caso é a mudança da privação da liberdade para a restrição de direitos; exemplo do segundo caso é o processo inverso ou a passagem da multa para a detenção.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>164. A instituição e a prática das conversões demonstram a orientação da reforma como um todo, consistente em dinamizar o quadro da execução de tal maneira que a pena finalmente cumprida não é, necessariamente, a pena da sentença. Esta possibilidade, permanentemente aberta, traduz o inegável empenho em dignificar o procedimento executivo das medidas de reação ao delito, em atenção ao interesse público e na dependência exclusiva da conduta e das condições pessoais do condenado. Todas as hipóteses de conversão, quer para agravar, quer para atenuar, resultam, necessariamente, do comportamento do condenado, embora sejam também considerados os antecedentes e a personalidade, mas de modo a complementar a investigação dos requisitos.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>165. Uma das importantes alterações consiste em se eliminar a conversão da multa em detenção quando o condenado reincidente deixa de pagá-la, conforme prevê o artigo 38, primeira parte, do Código Penal.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>166. Limitando a conversão da pena de multa em privativa da liberdade somente quando o condenado solvente deixa de pagá-la ou frustra a sua execução (artigo 181), o Projeto se coloca em harmonia com a melhores lições que consideram desumana a prisão por insuficiência econômica.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>167. A conversão também ocorre quando se substitui a pena privativa da liberdade pela medida de segurança, sempre que, no curso da execução, sobrevier doença mental ou perturbação da saúde mental.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt" align=center><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><U>DO EXCESSO OU DESVIO<o:p></o:p></U></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>168. Todo procedimento está sujeito a desvios de rota. Em harmonia com o sistema instituído pelo Projeto, todos os atos e termos da execução se submetem aos rigores do princípio de legalidade. Um dos preceitos cardeais do texto ora posto à alta consideração de Vossa Excelência proclama que "ao condenado e ao internado serão assegurados todos os direitos não atingidos pela sentença ou pela lei" (artigo 3º).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>169. O excesso ou desvio na execução caracterizam fenômenos aberrantes não apenas sob a perspectiva individualista do <U>status</U> jurídico do destinatário das penas e das medidas de segurança. Para muito além dos direitos, a normalidade do processo de execução é uma das exigências da defesa social.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>170. O excesso ou o desvio de execução consistem na prática de qualquer ato fora dos limites fixados pela sentença, por normas legais ou regulamentares.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>171. Pode-se afirmar com segurança que a execução, no processo civil, guarda mais fidelidade aos limites da sentença, visto que se movimenta pelos caminhos rigorosamente traçados pela lei, o que nem sempre ocorre com o acidentado procedimento executivo penal. A explicação maior para essa diferença de tratamento consiste na provisão de sanções específicas para neutralizar o excesso de execução no cível - além da livre e atuante presença da parte executada -, o que não ocorre quanto à execução penal. A impotência da pessoa presa ou internada constitui poderoso obstáculo à autoproteção de direitos ou ao cumprimento dos princípios de legalidade e justiça que devem nortear o procedimento executivo. Na ausência de tal controle, necessariamente judicial, o arbítrio torna inseguras as suas próprias vítimas e o descompasso entre o crime e sua punição transforma a desproporcionalidade em fenômeno de hipertrofia e de abuso de poder.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>172. As disposições em torno da anistia e do indulto (artigo 186 e seguintes) aprimoram sensivelmente os respectivos procedimentos e se ajustam também&nbsp;à orientação segundo a qual o instituto da graça foi absorvido pelo indulto, que pode ser individual ou coletivo. A Constituição Federal, aliás, não se refere à graça mas somente à anistia e ao indulto (artigo 8º, XVI; 43, VIII; 57, VI; 81, XXII). Em sentido amplo, a graça abrangeria tanto a anistia como o indulto.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt" align=center><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><U>DO PROCEDIMENTO JUDICIAL<o:p></o:p></U></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>173. O Juízo da Execução é o foro natural para o conhecimento de todos os atos praticados por qualquer autoridade, na execução das penas e das medidas de segurança (artigos 193 e seguintes).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>174. A legitimidade para provocar o procedimento se estende para além da iniciativa judicial, cabendo, também, ao Ministério Público, ao interessado, ao Conselho Penitenciário e às autoridades administrativas invocar a prestação jurisdicional em face da natureza complexa da execução.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>175. O procedimento judicial comporta a produção de prova pericial ou oral e as decisões são todas recorríveis (artigos 194 e seguintes). O agravo, sem efeito suspensivo, é o recurso adequado.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt" align=center><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><U>DISPOSIÇÕES FINAIS E TRANSITÓRIAS<o:p></o:p></U></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>176. A segurança pública e individual é comprometida quando as fugas ou as tentativas de fuga se manifestam, principalmente fora dos limites físicos dos estabelecimentos prisionais, quando a redução do número de guardas e as circunstâncias do transporte dos presos impedem o melhor policiamento. Daí a necessidade do emprego de algemas como instrumentos de constrição física.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>177. O uso de tal meio&nbsp;deve ser disciplinado em caráter geral e uniforme. Esta é a razão do disposto no artigo 198, segundo o qual "o emprego de algemas será disciplinado por decreto federal".<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>178. A preocupação generalizada em preservar o condenado por delito político de tratamento penitenciário idêntico ao dos delinqüentes comuns é hoje dominante. Daí a orientação do Projeto.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>179. O cumprimento da prisão civil ou administrativa não se dará nos estabelecimentos do sistema. Até que se construa ou adapte o estabelecimento adequado, tais formas não criminais de privação da liberdade serão efetivadas em seção especial da Cadeia Pública.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>180. A reabilitação ganhou autonomia científica quando o Projeto de reforma da Parte Geral do Código Penal libertou o instituto do confinamento imposto pelo atual sistema, tratado timidamente entre as causas de extinção da punibilidade. Alcançando quaisquer penas e também os efeitos da condenação<SPAN style="mso-spacerun: yes">&nbsp;</SPAN>(artigo 93 e parágrafo único) a reabilitação deve ser preservada contra a devassa pública ou particular que compromete o processo de ajustamento social do condenado.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>181. O Código Penal de 1969 previa o cancelamento, mediante averbação, dos antecedentes criminais, uma vez declarada a reabilitação. Em conseqüência, o registro oficial das condenações penais não poderia ser comunicado senão à autoridade policial ou judiciária, ou ao representante do Ministério Público para instrução do processo penal que viesse a ser instaurado contra o reabilitado (artigos 119 e 120).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>182. O Projeto adota solução mais econômica e eficiente. Dispõe que cumprida ou extinta a pena "não constará da folha corrida, atestados ou certidões fornecidas por autoridade policial ou por auxiliares da Justiça, nenhuma notícia ou referência à condenação, salvo para instruir processo pela prática de nova infração penal" (artigo 201).<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>183. O artigo 202 e seus parágrafos contêm preceitos de absoluta necessidade a fim de se prover a execução das penas e das medidas de segurança dos meios materiais e humanos e dos mecanismos indispensáveis à fiel aplicação do futuro diploma.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>184. Atualmente o chamado Direito Penitenciário em nosso País é reduzido a meras proclamações otimistas oriundas de princípios gerais e regras de proteção dos condenados ou internados. As normas gerais do regime penitenciário, caracterizadas na Lei nº 3.274/57, não são verdadeiras normas jurídicas: materialmente, porque ineficazes nos casos concretos e, assim, inaplicáveis; formalmente, porque não contêm o elemento de coercibilidade, consistente na sanção para o descumprimento do comando emergente da norma. O referido diploma é sistematicamente ignorado, e ao longo de sua existência - mais de vinte anos - não ensejou o desenvolvimento da doutrina nem sensibilizou juízes, tribunais e a própria administração pública.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>185. As unidades federativas, sob a orientação do novo diploma, devem prestar a necessária contribuição para que a frente de luta aberta contra a violência e a criminalidade possa alcançar bons resultados no campo prático, atenuando o sentimento de insegurança oriundo dos índices preocupantes da reincidência. O apoio da União é também fator poderoso para que o sistema de execução das penas e das medidas de segurança possa contar com os padrões científicos e humanos apropriados ao progresso social e cultural de nosso País.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt" align=center><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><U>CONCLUSÃO<o:p></o:p></U></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>186. O Projeto que tenho a honra de apresentar à consideração de Vossa Excelência constitui a síntese de todo um processo histórico no conjunto de problemas fundamentais à comunidade. A contribuição prestada por magistrados, membros do Ministério Público, professores de Direito, advogados e especialistas na questão penitenciária foi extensa e constante durante o tempo de maturação do Anteprojeto de Lei de Execução Penal, até o estágio final da revisão. As discussões abertas com a divulgação nacional do documento foram ensejadas pela Portaria nº 429, de 22 de julho de 1981, quando se declarou ser "do interesse do Governo o amplo e democrático debate sobre a reformulação das normas referentes à execução da pena". O I Congresso Brasileiro de Política Criminal e Penitenciária, realizado em Brasília (27 a 30/9/1981), foi o ponto de convergência das discussões entre os melhores especialistas, oportunidade em que o texto de reforma sofreu minudente e judiciosa apreciação crítica para aprimorá-lo. A elaboração do Anteprojeto foi iniciada em fevereiro de 1981, por Comissão integrada pelos Professores FRANCISCO DE ASSIS TOLEDO, Coordenador, RENÉ ARIEL DOTTI, BENJAMIN MORAES FILHO, MIGUEL REALE JÚNIOR, ROGÉRIO LAURIA TUCCI, RICARDO ANTUNES ANDREUCCI, SÉRGIO MARCOS DE MORAES PITOMBO e NEGI CALIXTO. Os trabalhos de revisão, de que resultou o presente Projeto, foram levados a bom termo, um ano após, por Comissão Revisora composta pelos Professores FRANCISCO DE ASSIS TOLEDO, Coordenador, RENÉ ARIEL DOTTI, JASON SOARES ALBERGARIA e RICARDO ANTUNES ANDREUCCI. Contou esta última, nas reuniões preliminares, com a colaboração dos Professores SÉRGIO MARCOS DE MORAES PITOMBO e EVERARDO DA CUNHA LUNA.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>187. Merece referência especial o apoio dado às Comissões pelo Conselho Nacional de Política Penitenciária. Este órgão, eficientemente presidido pelo Doutor PIO SOARES CANEDO, tem proporcionado, desde a sua recente instalação, em junho do ano de 1980, valioso contingente de informações, de análises, de deliberações e de estímulo intelectual e material às atividades de prevenção da criminalidade.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>188. Devo recomendar especialmente a Vossa Excelência os juristas mencionados, que tudo fizeram, com sacrifício de suas atividades normais, para que o Projeto alcançasse o estágio agora apresentado. Os trabalhos sintetizam a esperança e os esforços voltados para a causa universal do aprimoramento da pessoa humana e do progresso espiritual da comunidade.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>189. Vencidas quatro décadas, durante as quais vigorou o regime penal-processual-penitenciário amoldado ao pensamento e à experiência da Europa do final do século passado e do começo deste, abre-se agora uma generosa e fecunda perspectiva. Apesar de inspirado também nas modernas e importantes contribuições científicas e doutrinárias, que não têm pátria, o sistema ora proposto não desconhece nem se afasta da realidade brasileira.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>190. A sua transformação em lei fará com que a obra de reforma legislativa de Vossa Excelência seja inscrita entre os grandes monumentos de nossa história.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN>Valho-me da oportunidade para renovar a Vossa Excelência as expressões do meu profundo respeito.<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt"><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'><o:p>&nbsp;</o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 10pt" align=center><SPAN style='FONT-SIZE: 12pt; FONT-FAMILY: "Arial","sans-serif"; LINE-HEIGHT: 115%'>IBRAHIM ABI-ACKEL<BR>Ministro da Justiça<o:p></o:p></SPAN></P>
+						</div>
+					    
+				</div>
+				
+
+                                            <br>
+                                            <div class="rodapeTexto">
+                                                <div class="texto">
+                                                    Este texto não substitui o original publicado no Diário do Congresso Nacional - Seção 1 - Suplemento B de 01/07/1983
+                                                </div>
+                                            </div>
+
+					<br><br>
+					<div class="publicacoesTI">
+                                            <strong>Publicação:</strong>
+                                            <ul class="listaMarcada">
+                                                    <li>
+                                                        
+                                                        Diário do Congresso Nacional - Seção 1 - Suplemento B
+                                                         - 1/7/1983, Página 017 
+                                                        
+                                                        (Exposição de Motivos)
+                                                        
+                                                    </li>
+                                            </ul>
+					</div>
+
+
+
+			</div> <!-- content // -->
+		</div> <!-- documentContent // -->
+	</div> <!-- portal-content-wrapper // -->
+</div> <!-- portal-column-content // --> 
+</div></div>
+<div class="js-mmenu-container">
+      
+
+      
+      
+
+      
+
+      <footer role="contentinfo" class="rodape-portal">
+        <!-- Coloque aqui o endere&#231;o e demais informa&#231;&#245;es de assinatura -->
+        <address class="rodape-portal-info">
+          <div class="container">
+            <div class="rodape-portal-info__nome">
+              <p>
+                <strong id="legislaturaRodape">57ª Legislatura - 4ª Sessão Legislativa Ordinária</strong>
+              </p>
+            </div>
+
+            <div class="l-rodape-info">
+              <div class="l-rodape-info__local rodape-portal-info__texto">
+                <span class="rodape-info">Câmara dos Deputados - Palácio do Congresso Nacional - Praça
+                  dos Três Poderes</span>
+                <span class="rodape-info">Brasília - DF - Brasil - CEP 70160-900</span>
+                <span class="rodape-info"><span class="rodape-info__destaque">CNPJ:</span>
+                  00.530.352/0001-59</span>
+              </div>
+
+              <div class="l-rodape-info__telefones rodape-portal-info__texto">
+                <ul class="list-unstyled" aria-label="Número para contato e horário de atendimento">
+                  <li>
+                    <span class="rodape-info__destaque">Disque-Câmara:</span>
+                    <a href="tel:0800-0-619-619">0800-0-619-619</a>, das 8h às
+                    20h
+                  </li>
+                  <li>
+                    <span class="rodape-info__destaque">Atendimento por WhatsApp:</span>
+                    <a href="https://wa.me//556132160000?text">(61) 3216-0000</a>, das 8h às 19h
+                  </li>
+                  <li>
+                    <span class="rodape-info__destaque">Atendimento presencial:</span>
+                    das 9h às 19h
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="acesso-provedor text-right">
+              <a title="Autenticar-se no site" href="/login_form">
+                <i class="fas fa-lock" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </address>
+        <!-- Coloque aqui a lista de redes sociais da C&#226;mara -->
+        <div class="rodape-portal-links rodape-portal-links--redes-sociais">
+          <div class="container">
+            <ul class="rodape-portal-links__lista" aria-label="Câmara nas redes sociais">
+              <li class="rodape-portal-links__item">
+                <a href="https://whatsapp.com/channel/0029Va2fexI3gvWgfMs6Fv31" class="rodape-portal-links__link">
+                  <span class="g-social-icon-outline g-social-icon-outline--whatsapp" aria-hidden="true"></span>
+                  <span class="sr-only">Whatsapp</span>
+                </a>
+              </li>
+
+              <li class="rodape-portal-links__item">
+                <a href="https://t.me/CamaradosDeputados" class="rodape-portal-links__link">
+                  <span class="g-social-icon-outline g-social-icon-outline--telegram" aria-hidden="true"></span>
+                  <span class="sr-only">Telegram</span>
+                </a>
+              </li>
+
+              <li class="rodape-portal-links__item">
+                <a href="https://www.facebook.com/camaradeputados" class="rodape-portal-links__link">
+                  <span class="g-social-icon-outline g-social-icon-outline--facebook" aria-hidden="true"></span>
+                  <span class="sr-only">Facebook</span>
+                </a>
+              </li>
+
+              <li class="rodape-portal-links__item">
+                <a href="https://twitter.com/camaradeputados" class="rodape-portal-links__link">
+                  <span class="g-social-icon-outline g-social-icon-outline--twitter" aria-hidden="true"></span>
+                  <span class="sr-only">X</span>
+                </a>
+              </li>
+
+              <li class="rodape-portal-links__item">
+                <a href="https://www.youtube.com/channel/UC-ZkSRh-7UEuwXJQ9UMCFJA" class="rodape-portal-links__link">
+                  <span class="g-social-icon-outline g-social-icon-outline--youtube" aria-hidden="true"></span>
+                  <span class="sr-only">Youtube</span>
+                </a>
+              </li>
+
+              <li class="rodape-portal-links__item">
+                <a href="https://tiktok.com/@camaradosdeputados" class="rodape-portal-links__link">
+                  <span class="g-social-icon-outline g-social-icon-outline--tiktok" aria-hidden="true"></span>
+                  <span class="sr-only">Tiktok</span>
+                </a>
+              </li>
+
+              <li class="rodape-portal-links__item">
+                <a href="https://www.instagram.com/camaradeputados" class="rodape-portal-links__link">
+                  <span class="g-social-icon-outline g-social-icon-outline--instagram" aria-hidden="true"></span>
+                  <span class="sr-only">Instagram</span>
+                </a>
+              </li>
+              <li class="rodape-portal-links__item">
+                  <a href="https://www.threads.com/@camaradosdeputados" class="rodape-portal-links__link">
+                      <span class="g-social-icon-outline g-social-icon-outline--threads" aria-hidden="true"></span>
+                      <span class="sr-only">Threads</span>
+                  </a>
+              </li>
+              <li class="rodape-portal-links__item">
+                  <a href="https://bsky.app/profile/camara.leg.br" class="rodape-portal-links__link">
+                      <span class="g-social-icon-outline g-social-icon-outline--bluesky" aria-hidden="true"></span>
+                      <span class="sr-only">Bluesky</span>
+                  </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Coloque aqui a lista de links de apoio do rodap&#233; -->
+        <div class="rodape-portal-links rodape-portal-links--apoio">
+          <div class="container">
+            <ul class="rodape-portal-links__lista" aria-label="Links de apoio">
+              <li class="rodape-portal-links__item">
+                <a href="https://www2.camara.leg.br/sobre-o-portal" class="rodape-portal-links__link">Sobre o portal</a>
+              </li>
+
+              <li class="rodape-portal-links__item">
+                <a href="https://www2.camara.leg.br/termo-de-uso-e-politica-de-privacidade" class="rodape-portal-links__link">Termos de uso</a>
+              </li>
+
+              <li class="rodape-portal-links__item">
+                <a href="https://www2.camara.leg.br/aplicativos/" class="rodape-portal-links__link">Aplicativos</a>
+              </li>
+
+              <li class="rodape-portal-links__item">
+                <a href="https://www.camara.leg.br/extranet" class="rodape-portal-links__link">Extranet</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+
+      <div class="barra-carregando" style="display: none">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Carregando</h5>
+            </div>
+            <div class="modal-body">
+              <p>Por favor, aguarde.</p>
+              <div class="progress">
+                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                  <span class="sr-only"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

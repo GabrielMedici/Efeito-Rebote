@@ -1,7 +1,7 @@
 # Progresso (máx. 30 linhas; sobrescreva o que ficou velho)
 
-**Atualizado:** 2026-10-07 (noite)
-**Próximo passo (comece a sessão por aqui):** Comunicação no plano da líder Vitória está NO AR (site + /kit com opções, botões PNG/Canva por opção, cartão do Kit no topo). Falta: o usuário mandar as mensagens à Vitória e à Flauany (`entregas/posts/mensagem-site-calendario.md`) e o one-page `entregas/posts/ajustes-guia-planilha.jpg`; depois do ok, a mensagem do grupo. Tudo mesclado no main (PR #7 em 07/10, 21h25); nenhum PR desta sessão aberto. PR #3 da outra sessão sem uso (fechar). Pendência antiga: F02 (regulamento, prazo sexta 12h).
+**Atualizado:** 2026-10-16
+**Próximo passo (comece a sessão por aqui):** NOVA FASE pedida pelo usuário em 16/10: perguntar qual é a fase (o que já aconteceu desde 08/10: F02 regulamento, aval da prof.ª, PR #9) antes de agir. Lista de alunos da visita FECHADA em 08/10 (73 alunos: 47 Noturno B + 26 Matutino B, todos com CPF/RG/RA, sem pendência); dados só com o usuário (`lista-alunos-dados.json`, nunca no repo). Para refazer: pedir o JSON → `python3 scripts/lista_alunos.py <json> <scratchpad>/out` (PDFs + JPG + pendências) e `python3 scripts/lista_alunos_docx.py <json> <scratchpad>/x.docx completo|ra` (Word por turno). PR #9 (draft) ainda NÃO mesclado.
 ## Estado
 - F01 projeto escrito: versão de 06/10 (12 págs.) enviada em .docx à prof.ª Camila, que edita e insere no UniGestor. Já tem doações em dinheiro (PIX, mesma conta), prestação de contas em 4 componentes (ação, doações, compras, itens), Edgar Gabriel Castro Rocha, carga "40 ou 60 h", semestre/datas "a preencher pela professora". Editar `scripts/conteudo_projeto.py` e rodar `gerar_relatorio.py` + soffice + pdfunite.
 - Termo "rifa" BANIDO: usar "ação de arrecadação (solidária)" e "bilhetes". `check.sh` dá erro se aparecer.
