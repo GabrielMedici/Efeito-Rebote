@@ -5,6 +5,7 @@ Saídas:
   entregas/posts/site/programacao/stories/*.png  stories prontos, 1080 × 1920 (adesivos entram no Instagram)
   entregas/posts/site/programacao/baixar/*.zip   pacote de agendamento por dia (imagens numeradas + LEIA.txt)
   entregas/posts/programacao-<semana>.md / .pdf  cópia em texto (conferida pelo check.sh) e PDF para enviar
+  entregas/posts/programacao-<semana>-uma-pagina.pdf / .jpg  uma página (dia, horário, post) para a prof.ª aprovar pelo WhatsApp
 Uso: python3 scripts/gerar_programacao.py   (depois de bash scripts/exportar_kit_editavel.sh, se o kit mudou)"""
 import html as _html
 import json
@@ -358,6 +359,101 @@ def pagina(sem, selo):
 </main><script>{JS}</script></body></html>"""
 
 
+# ---------------------------------------------------------------- uma página para a prof.ª (PDF e JPG pelo WhatsApp)
+CSS_UMA = """
+@page{size:A4;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#fff;color:#141B2D;font-family:Barlow,Arial,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.pg{width:794px;height:1123px;padding:20px 26px 16px;overflow:hidden;display:flex;flex-direction:column;gap:8px}
+.top{display:flex;align-items:center;gap:12px;border-bottom:3px solid #1B3A8C;padding-bottom:9px}
+.top img{width:40px;height:40px;border-radius:50%}
+.top h1{font-family:"Barlow Condensed",Arial,sans-serif;font-size:27px;line-height:1;color:#1B3A8C}
+.top p{font-size:11.5px;color:#4A5568}
+.top .st{margin-left:auto;background:#FFF4D6;border:1px solid #E9C46A;color:#7A5A00;border-radius:6px;padding:4px 8px;font-size:10.5px;font-weight:700;white-space:nowrap}
+.como{font-size:10.5px;line-height:1.35;background:#F4F6FB;border-radius:8px;padding:7px 10px}
+.cols{column-count:2;column-gap:16px;flex:1}
+.dia{break-inside:avoid;margin-bottom:9px;border:1px solid #DCE1EC;border-radius:8px;overflow:hidden}
+.dia h2{background:#1B3A8C;color:#fff;font-family:"Barlow Condensed",Arial,sans-serif;font-size:15px;padding:3px 8px;letter-spacing:.02em}
+.pc{display:flex;gap:7px;padding:4px 7px;border-top:1px solid #EDF0F6;font-size:9.6px;line-height:1.3}
+.dia h2+.pc{border-top:0}
+.pc .h{flex:0 0 38px;font-weight:700;color:#1B3A8C}
+.pc .h i{display:block;font-style:normal;font-size:8.5px;color:#4A5568;font-weight:600}
+.pc .th{flex:0 0 19px;height:34px;border-radius:3px;object-fit:cover;border:1px solid #DCE1EC}
+.pc .vz{flex:0 0 19px;height:34px;border-radius:3px;border:1px dashed #B8C0D4}
+.pc .tx{flex:1;min-width:0}
+.pc b{color:#141B2D}
+.feed{background:#FBFCFE}
+.slides{display:flex;gap:3px;margin:3px 0 4px}
+.slides img{width:38px;height:48px;object-fit:cover;border-radius:3px;border:1px solid #DCE1EC}
+.leg{white-space:pre-wrap;font-size:8.3px;line-height:1.3;color:#2D3748;border-left:2px solid #1B3A8C;padding-left:6px}
+.rb{display:inline-block;background:#E8EEFB;color:#1B3A8C;border-radius:3px;padding:0 4px;font-size:8px;font-weight:700;margin-left:3px;vertical-align:1px}
+.pe{font-size:9.5px;color:#4A5568;border-top:1px solid #DCE1EC;padding-top:6px;display:flex;justify-content:space-between;gap:12px}
+"""
+
+
+def texto_story(pc):
+    t = pc["tipo"]
+    ops = " / ".join(pc.get("ops", []))
+    if t == "enquete":
+        return f"<b>Enquete:</b> {e(pc['q'])} ({e(ops)})"
+    if t == "quiz":
+        return f"<b>Quiz:</b> {e(pc['q'])} ({e(ops)}; certa: {e(pc['certa'])})"
+    if t == "caixinha":
+        return f"<b>Caixinha de perguntas:</b> {e(pc['q'])}"
+    if t == "deslize":
+        return f"<b>Barra de emoji:</b> {e(pc['q'])}"
+    if t == "resposta":
+        return f"<b>Resposta: {e(pc['selo'])}.</b> {e(pc['p'])} <i>Fonte: {e(pc['fonte'])}.</i>"
+    if t == "repost":
+        return f"<b>Compartilha o post do dia no story.</b> {e(pc['t'])}: {e(pc['q'])}"
+    if t == "respostas":
+        return f"<b>Respostas da caixinha</b> (2 ou 3 perguntas recebidas, com fonte). Os textos chegam para a sua aprovação no domingo."
+    if t == "resumo":
+        return "<b>Resumo da semana:</b> capas dos posts " + ", ".join(e(d) for d, _, _ in pc["thumbs"]) + "."
+    return e(pc.get("q", ""))
+
+
+def uma_pagina(sem, selo):
+    """Uma página A4 com dia, horário e post: a prof.ª aprova pelo WhatsApp, sem abrir o site."""
+    capas = {pc["cod"]: pc["pngs"][0] for d in sem["dias"] for pc in d["pecas"] if pc["tipo"] == "feed"}
+    rb = '<span class="rb">robô</span>'
+    dias = ""
+    for d in sem["dias"]:
+        linhas = ""
+        for pc in d["pecas"]:
+            h = f'<div class="h">{e(pc["hora"])}<i>{pc["cod"]}</i></div>'
+            r = rb if robo(pc) else ""
+            if pc["tipo"] == "feed":
+                o = pc["o"]
+                reel = pc["fmt"] in ("Reel", "Live")
+                leg = re.sub(r"\n\s*\n", "\n", o["legenda"])
+                figs = "".join(f'<img src="{src}" alt="">' for src in pc["pngs"])
+                desc = (f"<b>Reel (cerca de 30 s):</b> {e(pc['tema'])}. Quadros do vídeo:" if reel
+                        else f"<b>Carrossel de {len(pc['pngs'])} imagens:</b> {e(pc['tema'])}.")
+                linhas += (f'<div class="pc feed">{h}<div class="tx">{desc}{r}<div class="slides">{figs}</div>'
+                           f'<div class="leg">{e(leg)}</div></div></div>')
+            else:
+                if pc["tipo"] in COM_PNG:
+                    th = f'<img class="th" src="stories/{pc["cod"]}.png" alt="">'
+                elif pc["tipo"] == "repost":
+                    th = f'<img class="th" src="{capas[[x["cod"] for x in d["pecas"] if x["tipo"] == "feed"][0]]}" alt="">'
+                else:
+                    th = '<span class="vz"></span>'
+                linhas += f'<div class="pc">{h}{th}<div class="tx">{texto_story(pc)}{r}</div></div>'
+        dias += f'<section class="dia"><h2>{e(d["dia"])}, {e(d["data"])}</h2>{linhas}</section>'
+    return f"""<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=794">
+<meta name="robots" content="noindex,nofollow"><title>Programação em uma página</title>
+<link rel="stylesheet" href="../kit/fontes.css"><style>{CSS_UMA}</style></head><body><div class="pg">
+<header class="top"><img src="{selo}" alt=""><div><h1>Instagram · {e(sem["titulo"])}</h1>
+<p>@efeitorebote.oficial · para a prof.ª Camila aprovar</p></div><span class="st">{STATUS}</span></header>
+<p class="como"><b>Para aprovar, responda no WhatsApp:</b> “aprovado tudo” ou só o código do que ajustar, por exemplo “20-S2: trocar a pergunta”.
+P é o post do feed e S1, S2… são os stories do dia. O que tem <span class="rb">robô</span> é publicado automaticamente no horário, só depois da aprovação; o resto a equipe publica à mão.
+Horários aproximados (até 1 hora de ajuste). Nenhuma peça pede doação. {e(sem["limite"])}</p>
+<div class="cols">{dias}</div>
+</div></body></html>"""
+
+
 # ---------------------------------------------------------------- cópia em texto (check.sh) e pacotes
 def markdown(sem):
     L = [f"# {sem['titulo']}", "", f"Status: {STATUS.lower()}. Enviado à prof.ª Camila em {sem['envio']}.", "",
@@ -480,6 +576,12 @@ def main():
     pdf = os.path.join(RAIZ, "entregas", "posts", f"programacao-{sem['slug']}.pdf")
     subprocess.run(["node", os.path.join(RAIZ, "scripts", "renderizar.mjs"), os.path.join(OUT, "index.html"), pdf], check=True)
     subprocess.run([sys.executable, os.path.join(RAIZ, "scripts", "limpar_metadados.py"), pdf], check=False)
+    uma = os.path.join(OUT, "uma-pagina.html")
+    open(uma, "w", encoding="utf-8").write(uma_pagina(sem, selo))
+    base = os.path.join(RAIZ, "entregas", "posts", f"programacao-{sem['slug']}-uma-pagina")
+    subprocess.run(["node", os.path.join(RAIZ, "scripts", "renderizar.mjs"), uma, base + ".pdf"], check=True)
+    subprocess.run(["node", os.path.join(RAIZ, "scripts", "renderizar.mjs"), uma, base + ".jpg", ".pg", "794", "1123"], check=True)
+    subprocess.run([sys.executable, os.path.join(RAIZ, "scripts", "limpar_metadados.py"), base + ".pdf"], check=False)
     pacotes(sem)
     agenda(sem)
 
