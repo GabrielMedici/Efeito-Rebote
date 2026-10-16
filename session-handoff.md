@@ -1,7 +1,13 @@
 # Passagem de sessão (sobrescreva a cada encerramento)
 
-**Atualizado:** 2026-10-08
-**Comece por aqui:** progress.md → entregar ao usuário o PDF da lista de alunos, a imagem do grupo e as pendências (curto).
+**Atualizado:** 2026-10-16
+**Comece por aqui:** progress.md → o usuário quer iniciar uma NOVA FASE; pergunte qual antes de agir.
+
+## Sessão 08/10 (noite) a 16/10 — lista de alunos FECHADA (chat "Lista de alunos da visita (CPF/RG/RA) e identificação do grupo")
+- 73 alunos (47 Noturno B, 26 Matutino B), todos com CPF (dígitos verificados), RG e RA; grupo do WhatsApp 74 membros = 73 alunos + prof.ª, todos identificados. Entregue ao usuário: JSON, `lista-alunos-atualizada.pdf`, `lista-por-turno.pdf/.docx` (nome+RA), `lista-completa-por-turno.docx` (Nº, nome, CPF, RG, RA por turno) e imagem do grupo.
+- Decisões do usuário: RG igual ao CPF (Simone, Jemerson, Maria Aparecida, Lucas) aceito (provável CIN); RG de 7 dígitos do João Pedro Ramos confirmado (RG de outro estado); RG da Evelyn corrigido (dígito a mais removido).
+- Apelidos do grupo resolvidos cruzando o lote de entradas por link (05/10, 17h55–18h05 = os 26 do Matutino) com a lista; contatos pedidos no privado por links wa.me com mensagem pronta (prefixo `microsoft-edge:` para abrir no Edge).
+- Novo gerador: `scripts/lista_alunos_docx.py` (Word, modos `completo` e `ra`; recusa gravar dentro do repo).
 
 ## Sessão 08/10 — lista de alunos para a visita
 - O usuário mandou os dados aluno por aluno (nome, CPF, RG, RA, turma). Resultado: 68 alunos, 28 campos pendentes (quase todos o turno: Matutino B ou Noturno B). O grupo tem 74 membros (73 alunos + prof.ª): faltam 2 com certeza e 7 apelidos sem identificação.
