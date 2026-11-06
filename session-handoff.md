@@ -1,7 +1,11 @@
 # Passagem de sessão (sobrescreva a cada encerramento)
 
-**Atualizado:** 2026-10-16
+**Atualizado:** 2026-11-06
 **Comece por aqui:** progress.md → F12 (programação diária das redes).
+
+## Sessão 06/11 — retomada e dúvida da Comunicação
+- Última entrega do repo: página `/postar` (30/10, PR #15, outra sessão). Estes arquivos estavam defasados desde 16/10; registro de 17–30/10 e da visita de 04–05/11 não existe: perguntar ao usuário.
+- Dúvida de uma colega (Reel da Amaral Ruti às 12h): a página pede 18h para o post "Acompanhe e entenda" (Feed · post, imagem única `ge-acompanhe.jpg`, legenda sem pedido de doação). É só essa imagem; "seis horas" = 18h. Riscos: peça fora do `calendario.md`, sem aprovação registrada, mesma arte do slide final do carrossel de 02/10.
 
 ## Sessão 16/10 (fim) — uma página para a prof.ª
 - A prof.ª não aprova pelo site. `gerar_programacao.py` agora também gera `uma-pagina.html` e `entregas/posts/programacao-<semana>-uma-pagina.pdf/.jpg` (A4, 2 colunas, dia → horário/código → post com slides e legenda, stories). Se uma semana não couber em 1 página, reduzir legendas no CSS_UMA (o conteúdo vai até ~1104 de 1123 px).
